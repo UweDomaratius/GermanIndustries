@@ -1,0 +1,54 @@
+grf {
+	grfid: "UD\01\00";
+	name: string(STR_GRF_NAME);
+	desc: string(STR_GRF_DESCRIPTION);
+	version: 0;
+	min_compatible_version: 0;
+	
+	param {
+		param_primary_production {
+			type: int;
+			name: string(STR_PARAM_PRIMARY_PRODUCTION);
+			desc: string(STR_PARAM_PRIMARY_PRODUCTION_DESC);
+			min_value: 1;
+			max_value: 500;
+			def_value: 100;
+		}
+	}
+	param {
+		param_economy_model {
+			type: int;
+			name: string(STR_PARAM_ECONOMY_MODEL);
+			desc: string(STR_PARAM_ECONOMY_MODEL_DESC);
+			min_value: 0;
+			max_value: 1;
+			def_value: 0;
+			names: {
+				0: string(STR_PARAM_ECONOMY_MODEL_SIMPLE);
+				1: string(STR_PARAM_ECONOMY_MODEL_REALISTIC);
+			};
+		}
+	}
+	param {
+		param_electricity_needed {
+			type: bool;
+			name: string(STR_PARAM_ELECTRICITY_NEEDED);
+			desc: string(STR_PARAM_ELECTRICITY_NEEDED_DESC);
+		}
+	}
+}
+
+if (ttd_platform != PLATFORM_OPENTTD || openttd_version < version_openttd(14, 0)) {
+	error(FATAL, REQUIRES_OPENTTD, string(STR_ERR_OPENTTD_VERSION));
+	exit;
+}
+
+// TODO: check for incompatible grfs
+
+// disable all default industries
+disable_item(FEAT_INDUSTRIES, 0, 36);
+
+// TODO: build the cargo table from the defined cargos instead of having a fixed list here
+cargotable {
+	PASS, COAL, MAIL, OIL_, LVST, GOOD, GRAI, WOOD, IORE, STEL, FISH, FOOD, PLAS, WDPR, VEHI
+}

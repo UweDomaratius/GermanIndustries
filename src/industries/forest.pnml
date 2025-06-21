@@ -1,0 +1,5086 @@
+spriteset(forest_spriteset_2) {
+	[80, 10, 64, 78, -31, -45, ANIM | NOCROP, "graphics/industries/forest.png"]
+}
+spriteset(forest_spriteset_woodstack) {
+	[150, 10, 64, 78, -31, -45, ANIM | NOCROP, "graphics/industries/forest.png"]
+}
+
+spritelayout forest_wood_stack_spritelayout {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_MUD_TRACK;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+    building {
+		sprite: forest_spriteset_woodstack(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+
+// for slope values, see https://newgrf-specs.tt-wiki.net/wiki/NML:List_of_tile_slopes
+// flat slope
+spritelayout forest_slope_aware_ground_with_trees_uniform0 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}			
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 5;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 5;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 5;		yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 11;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 11;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 11;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 11;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 11;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 11;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 11;		yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 11;		yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 11;		yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout forest_slope_aware_ground_with_trees_uniform1 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: -1;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 5;		yoffset: -1;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: -1;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 4;		yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 4;		yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 4;		yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 5;		yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: -2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 9;		yoffset: -2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: -2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 10;	yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 10;	yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 10;	yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 11;	yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 11;	yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 11;	yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout forest_slope_aware_ground_with_trees_uniform2 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 5;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 4;		yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 4;		yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 4;		yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 4;		yoffset: 8;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 4;		yoffset: 8;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 4;		yoffset: 8;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 10;	yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 10;	yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 10;	yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 9;		yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 7;		yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 7;		yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 7;		yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout forest_slope_aware_ground_with_trees_uniform3 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: -1;		yoffset: -3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: -1;		yoffset: -3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: -1;		yoffset: -3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: -1;		yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: -1;		yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: -1;		yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: -1;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: -1;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: -1;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 3;		yoffset: -3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 3;		yoffset: -3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 3;		yoffset: -3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 3;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 3;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 3;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 3;		yoffset: 8;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 3;		yoffset: 8;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 3;		yoffset: 8;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 7;		yoffset: -3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 7;		yoffset: -3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 7;		yoffset: -3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 7;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 7;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 7;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 7;		yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 7;		yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 7;		yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout forest_slope_aware_ground_with_trees_uniform4 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}			
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: -2;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: -2;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: -2;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 5;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 5;		yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: 10;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 5;		yoffset: 10;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: 10;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 11;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 11;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 11;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 11;		yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 11;		yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 11;		yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 11;		yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 11;		yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 11;		yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout forest_slope_aware_ground_with_trees_uniform5 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: -2;	yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: -2;	yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: -2;	yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: -4;	yoffset: 8;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: -4;	yoffset: 8;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: -4;	yoffset: 8;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 5;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 3;		yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 3;		yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 3;		yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 3;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 3;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 3;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 10;	yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 10;	yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 10;	yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 8;		yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 8;		yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 8;		yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 11;	yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 11;	yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 11;	yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout forest_slope_aware_ground_with_trees_uniform6 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: -2;	yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: -2;	yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: -2;	yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: -4;	yoffset: 8;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: -4;	yoffset: 8;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: -4;	yoffset: 8;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 5;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 3;		yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 3;		yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 3;		yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 1;		yoffset: 8;		
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 1;		yoffset: 8;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 1;		yoffset: 8;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 10;	yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 10;	yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 10;	yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 8;		yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 8;		yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 8;		yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 6;		yoffset: 8;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 6;		yoffset: 8;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 6;		yoffset: 8;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout forest_slope_aware_ground_with_trees_uniform7 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: -3;	yoffset: -3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: -3;	yoffset: -3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: -3;	yoffset: -3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: -3;	yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: -3;	yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: -3;	yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: -3;	yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: -3;	yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: -3;	yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: -3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 2;		yoffset: -3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: -3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 2;		yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 7;		yoffset: -3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 7;		yoffset: -3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 7;		yoffset: -3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 7;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 7;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 7;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 7;		yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 7;		yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 7;		yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout forest_slope_aware_ground_with_trees_uniform8 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 5;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 5;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 5;		yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 11;	yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 11;	yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 11;	yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 11;	yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 11;	yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 11;	yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 11;	yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 11;	yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 11;	yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout forest_slope_aware_ground_with_trees_uniform9 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: -1;	yoffset: -1;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: -1;	yoffset: -1;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: -1;	yoffset: -1;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 1;		yoffset: 10;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 1;		yoffset: 10;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 1;		yoffset: 10;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 3;		yoffset: -1;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 3;		yoffset: -1;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 3;		yoffset: -1;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 4;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 4;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 4;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: 10;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 5;		yoffset: 10;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: 10;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 8;		yoffset: -1;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 8;		yoffset: -1;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 8;		yoffset: -1;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 9;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 10;	yoffset: 10;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 10;	yoffset: 10;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 10;	yoffset: 10;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout forest_slope_aware_ground_with_trees_uniform10 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: -3;	yoffset: -3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: -3;	yoffset: -3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: -3;	yoffset: -3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: -3;	yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: -3;	yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: -3;	yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 1;		yoffset: 10;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 1;		yoffset: 10;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 1;		yoffset: 10;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: -3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 2;		yoffset: -3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: -3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 5;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 10;	yoffset: 1;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 10;	yoffset: 1;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 10;	yoffset: 1;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 9;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 8;		yoffset: 8;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 8;		yoffset: 8;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 8;		yoffset: 8;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout forest_slope_aware_ground_with_trees_uniform11 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: -3;	yoffset: -3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: -3;	yoffset: -3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: -3;	yoffset: -3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: -3;	yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: -3;	yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: -3;	yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: -1;	yoffset: 10;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: -1;	yoffset: 10;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: -1;	yoffset: 10;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: -3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 2;		yoffset: -3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: -3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 3;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 3;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 3;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 7;		yoffset: -3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 7;		yoffset: -3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 7;		yoffset: -3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 7;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 7;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 7;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 7;		yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 7;		yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 7;		yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout forest_slope_aware_ground_with_trees_uniform12 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: -1;	yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: -1;	yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: -1;	yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: -3;	yoffset: 8;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: -3;	yoffset: 8;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: -3;	yoffset: 8;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 5;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 5;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 4;		yoffset: 10;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 4;		yoffset: 10;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 4;		yoffset: 10;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 11;	yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 11;	yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 11;	yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 11;	yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 11;	yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 11;	yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 11;	yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 11;	yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 11;	yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout forest_slope_aware_ground_with_trees_uniform13 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: -2;	yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: -2;	yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: -2;	yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 4;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 4;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 4;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 5;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 4;		yoffset: 10;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 4;		yoffset: 10;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 4;		yoffset: 10;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: -2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 9;		yoffset: -2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: -2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 10;	yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 10;	yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 10;	yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 11;	yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 11;	yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 11;	yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout forest_slope_aware_ground_with_trees_uniform14 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 10;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 10;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 10;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 5;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 5;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: 10;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 5;		yoffset: 10;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: 10;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 10;	yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 10;	yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 10;	yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 9;		yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 7;		yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 7;		yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 7;		yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout forest_slope_aware_ground_with_trees_uniform23 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: -2;	yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: -2;	yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: -2;	yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: -5;	yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: -5;	yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: -5;	yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 2;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: -1;	yoffset: 6;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: -1;	yoffset: 6;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: -1;	yoffset: 6;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 8;		yoffset: -2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 8;		yoffset: -2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 8;		yoffset: -2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 5;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 4;		yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 4;		yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 4;		yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout forest_slope_aware_ground_with_trees_uniform27 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: -1;	yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: -1;	yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: -1;	yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 2;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 3;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 3;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 3;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 3;		yoffset: 10;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 3;		yoffset: 10;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 3;		yoffset: 10;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: -5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 5;		yoffset: -5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: -5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 6;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 6;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 6;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 7;		yoffset: 8;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 7;		yoffset: 8;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 7;		yoffset: 8;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout forest_slope_aware_ground_with_trees_uniform29 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: -3;	yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: -3;	yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: -3;	yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: -3;	yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: -3;	yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: -3;	yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: -3;	yoffset: 8;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: -3;	yoffset: 8;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: -3;	yoffset: 8;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 3;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 3;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 3;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 1;		yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 1;		yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 1;		yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 4;		yoffset: 10;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 4;		yoffset: 10;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 4;		yoffset: 10;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 8;		yoffset: -3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 8;		yoffset: -3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 8;		yoffset: -3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 10;	yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 10;	yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 10;	yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 11;	yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 11;	yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 11;	yoffset: 11;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout forest_slope_aware_ground_with_trees_uniform30 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: -3;	yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: -3;	yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: -3;	yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: -5;	yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: -5;	yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: -5;	yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: -8;	yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: -8;	yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: -8;	yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 3;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 3;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 3;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 1;		yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 1;		yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 1;		yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: -1;	yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: -1;	yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: -1;	yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 10;	yoffset: -1;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 10;	yoffset: -1;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 10;	yoffset: -1;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 9;		yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 3;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 7;		yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 7;		yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 7;		yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout forest_slope_aware_ground_with_trees_dying0 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 2;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 9;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 9;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout forest_slope_aware_ground_with_trees_dying1 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 2;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 9;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 9;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout forest_slope_aware_ground_with_trees_dying2 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 2;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 9;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 9;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout forest_slope_aware_ground_with_trees_dying3 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 2;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 6;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 6;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 6;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 6;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 6;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 6;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 6;		yoffset: 6;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 6;		yoffset: 6;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 6;		yoffset: 6;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout forest_slope_aware_ground_with_trees_dying4 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 2;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 9;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 9;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout forest_slope_aware_ground_with_trees_dying5 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 2;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 9;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 9;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout forest_slope_aware_ground_with_trees_dying6 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 2;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 6;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 6;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 6;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 8;		yoffset: 1;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 8;		yoffset: 1;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 8;		yoffset: 1;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 6;		yoffset: 6;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 6;		yoffset: 6;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 6;		yoffset: 6;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout forest_slope_aware_ground_with_trees_dying7 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 5;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 5;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout forest_slope_aware_ground_with_trees_dying8 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}			
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 2;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 9;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 9;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout forest_slope_aware_ground_with_trees_dying9 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 1;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 1;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 1;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 2;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 8;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 8;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 8;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 9;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout forest_slope_aware_ground_with_trees_dying10 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 2;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 9;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 9;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout forest_slope_aware_ground_with_trees_dying11 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 8;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 8;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 8;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 7;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 7;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 7;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 7;		yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 7;		yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 7;		yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout forest_slope_aware_ground_with_trees_dying12 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 2;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 9;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 9;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout forest_slope_aware_ground_with_trees_dying13 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 2;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 9;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 9;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 9;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout forest_slope_aware_ground_with_trees_dying14 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}			
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 1;		yoffset: 1;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 1;		yoffset: 1;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 1;		yoffset: 1;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: -1;	yoffset: 6;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: -1;	yoffset: 6;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: -1;	yoffset: 6;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 8;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 8;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 8;		yoffset: 2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 6;		yoffset: 6;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 6;		yoffset: 6;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 6;		yoffset: 6;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout forest_slope_aware_ground_with_trees_dying23 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: -2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 5;		yoffset: -2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: -2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 4;		yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 4;		yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 4;		yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout forest_slope_aware_ground_with_trees_dying27 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: -2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 5;		yoffset: -2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: -2;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 5;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout forest_slope_aware_ground_with_trees_dying29 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 7;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 7;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 7;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 7;		yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 7;		yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 7;		yoffset: 7;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout forest_slope_aware_ground_with_trees_dying30 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_HALF_GREEN + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE1;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: -1;	yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: -1;	yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: -1;	yoffset: 4;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 7;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 7;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 7;		yoffset: 0;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 6;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_SNOW_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_SNOW_TREE);
+		xoffset: 6;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_DYING_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 6;		yoffset: 5;
+		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// graphics choice switch chain
+//////////////////////////////////////////////////////////////////////////////
+
+switch(FEAT_INDUSTRYTILES, SELF, forest_slope_aware_ground_with_trees_uniform, nearby_tile_slope(0,0)) {
+	0: forest_slope_aware_ground_with_trees_uniform0;
+	1: forest_slope_aware_ground_with_trees_uniform1;
+	2: forest_slope_aware_ground_with_trees_uniform2;
+	3: forest_slope_aware_ground_with_trees_uniform3;
+	4: forest_slope_aware_ground_with_trees_uniform4;
+	5: forest_slope_aware_ground_with_trees_uniform5;
+	6: forest_slope_aware_ground_with_trees_uniform6;
+	7: forest_slope_aware_ground_with_trees_uniform7;
+	8: forest_slope_aware_ground_with_trees_uniform8;
+	9: forest_slope_aware_ground_with_trees_uniform9;
+	10: forest_slope_aware_ground_with_trees_uniform10;
+	11: forest_slope_aware_ground_with_trees_uniform11;
+	12: forest_slope_aware_ground_with_trees_uniform12;
+	13: forest_slope_aware_ground_with_trees_uniform13;
+	14: forest_slope_aware_ground_with_trees_uniform14;
+	23: forest_slope_aware_ground_with_trees_uniform23;
+	27: forest_slope_aware_ground_with_trees_uniform27;
+	29: forest_slope_aware_ground_with_trees_uniform29;
+	30: forest_slope_aware_ground_with_trees_uniform30;
+	forest_slope_aware_ground_with_trees_uniform0;
+}
+switch(FEAT_INDUSTRYTILES, SELF, forest_slope_aware_ground_with_trees_dying, nearby_tile_slope(0,0)) {
+	0: forest_slope_aware_ground_with_trees_dying0;
+	1: forest_slope_aware_ground_with_trees_dying1;
+	2: forest_slope_aware_ground_with_trees_dying2;
+	3: forest_slope_aware_ground_with_trees_dying3;
+	4: forest_slope_aware_ground_with_trees_dying4;
+	5: forest_slope_aware_ground_with_trees_dying5;
+	6: forest_slope_aware_ground_with_trees_dying6;
+	7: forest_slope_aware_ground_with_trees_dying7;
+	8: forest_slope_aware_ground_with_trees_dying8;
+	9: forest_slope_aware_ground_with_trees_dying9;
+	10: forest_slope_aware_ground_with_trees_dying10;
+	11: forest_slope_aware_ground_with_trees_dying11;
+	12: forest_slope_aware_ground_with_trees_dying12;
+	13: forest_slope_aware_ground_with_trees_dying13;
+	14: forest_slope_aware_ground_with_trees_dying14;
+	23: forest_slope_aware_ground_with_trees_dying23;
+	27: forest_slope_aware_ground_with_trees_dying27;
+	29: forest_slope_aware_ground_with_trees_dying29;
+	30: forest_slope_aware_ground_with_trees_dying30;
+	forest_slope_aware_ground_with_trees_dying0;
+}
+switch(FEAT_INDUSTRYTILES, SELF, forest_layout_1_graphics_switch, relative_pos) {
+	relative_coord(0, 0): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(0, 1): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(0, 2): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(1, 0): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(1, 1): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(1, 2): forest_slope_aware_ground_with_trees_dying;
+	relative_coord(2, 0): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(2, 1): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(2, 2): forest_slope_aware_ground_with_trees_dying;
+	relative_coord(3, 0): forest_slope_aware_ground_with_trees_dying;
+	relative_coord(3, 1): forest_wood_stack_spritelayout;
+	relative_coord(3, 2): forest_wood_stack_spritelayout;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, forest_layout_2_graphics_switch, relative_pos) {
+	relative_coord(0, 0): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(0, 1): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(0, 2): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(0, 3): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(0, 4): forest_wood_stack_spritelayout;
+	relative_coord(1, 0): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(1, 1): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(1, 2): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(1, 3): forest_slope_aware_ground_with_trees_dying;
+	relative_coord(1, 4): forest_wood_stack_spritelayout;
+	relative_coord(2, 0): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(2, 1): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(2, 2): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(2, 3): forest_slope_aware_ground_with_trees_dying;
+	relative_coord(2, 4): forest_slope_aware_ground_with_trees_dying;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, forest_layout_3_graphics_switch, relative_pos) {
+	relative_coord(0, 0): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(0, 1): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(0, 2): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(0, 3): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(1, 0): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(1, 1): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(1, 2): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(1, 3): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(2, 0): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(2, 1): forest_slope_aware_ground_with_trees_dying;
+	relative_coord(2, 2): forest_slope_aware_ground_with_trees_dying;
+	relative_coord(2, 3): forest_slope_aware_ground_with_trees_dying;
+	relative_coord(3, 0): forest_slope_aware_ground_with_trees_dying;
+	relative_coord(3, 1): forest_wood_stack_spritelayout;
+	relative_coord(3, 2): forest_wood_stack_spritelayout;
+	relative_coord(3, 3): forest_slope_aware_ground_with_trees_dying;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, forest_layout_4_graphics_switch, relative_pos) {
+	relative_coord(0, 0): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(0, 1): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(0, 2): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(0, 3): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(1, 0): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(1, 1): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(1, 2): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(1, 3): forest_slope_aware_ground_with_trees_dying;
+	relative_coord(2, 0): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(2, 1): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(2, 2): forest_slope_aware_ground_with_trees_dying;
+	relative_coord(2, 3): forest_slope_aware_ground_with_trees_dying;
+	relative_coord(3, 0): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(3, 1): forest_slope_aware_ground_with_trees_dying;
+	relative_coord(3, 2): forest_wood_stack_spritelayout;
+	relative_coord(4, 0): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(4, 1): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(4, 2): forest_wood_stack_spritelayout;
+	relative_coord(5, 0): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(5, 1): forest_slope_aware_ground_with_trees_uniform;
+	relative_coord(5, 2): forest_slope_aware_ground_with_trees_dying;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, PARENT, forest_industry_graphics_switch_layouts, layout_num) {
+    1: forest_layout_1_graphics_switch;
+    2: forest_layout_2_graphics_switch;
+    3: forest_layout_3_graphics_switch;
+    4: forest_layout_4_graphics_switch;
+    forest_layout_1_graphics_switch; // default
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, forest_switch_graphics,
+	[switch_trees(),switch_graphics_init_temp_registers()
+	]) {
+    forest_industry_graphics_switch_layouts;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// location checks
+//////////////////////////////////////////////////////////////////////////////
+switch (FEAT_INDUSTRYTILES, PARENT, forest_switch_tile_location_check, 
+			(is_funded_or_prospected() || (not_next_to_industry() && not_next_to_desert() && !nearby_tile_is_water(0, 0))))
+{
+	1: return CB_RESULT_LOCATION_ALLOW;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// industry tile and layout definition
+//////////////////////////////////////////////////////////////////////////////
+item(FEAT_INDUSTRYTILES, forest_tile_1, INDUSTRY_TILE_ID_FOREST_1) {
+	property {
+		substitute:         0;
+		land_shape_flags:   0;
+		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+		animation_triggers: bitmask();
+	}
+	graphics {
+		tile_check: forest_switch_tile_location_check;
+		foundations: return CB_RESULT_NO_FOUNDATIONS;
+		autoslope: return CB_RESULT_NO_AUTOSLOPE;
+		forest_switch_graphics;
+	}
+}
+item(FEAT_INDUSTRYTILES, forest_tile_2, INDUSTRY_TILE_ID_FOREST_2) {
+	property {
+		substitute:         0;
+		land_shape_flags:   0;
+		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+		animation_triggers: bitmask();
+	}
+	graphics {
+		tile_check: forest_switch_tile_location_check;
+		forest_switch_graphics;
+	}
+}
+
+tilelayout forest_layout_1_tilelayout {
+	0, 0: forest_tile_1;
+	0, 1: forest_tile_1;
+	0, 2: forest_tile_1;
+	1, 0: forest_tile_1;
+	1, 1: forest_tile_1;
+	1, 2: forest_tile_1;
+	2, 0: forest_tile_1;
+	2, 1: forest_tile_1;
+	2, 2: forest_tile_1;
+	3, 0: forest_tile_1;
+	3, 1: forest_tile_2;
+	3, 2: forest_tile_2;
+}
+tilelayout forest_layout_2_tilelayout {
+	0, 0: forest_tile_1;
+	0, 1: forest_tile_1;
+	0, 2: forest_tile_1;
+	0, 3: forest_tile_1;
+	0, 4: forest_tile_2;
+	1, 0: forest_tile_1;
+	1, 1: forest_tile_1;
+	1, 2: forest_tile_1;
+	1, 3: forest_tile_1;
+	1, 4: forest_tile_2;
+	2, 0: forest_tile_1;
+	2, 1: forest_tile_1;
+	2, 2: forest_tile_1;
+	2, 3: forest_tile_1;
+	2, 4: forest_tile_1;
+}
+tilelayout forest_layout_3_tilelayout {
+	0, 0: forest_tile_1;
+	0, 1: forest_tile_1;
+	0, 2: forest_tile_1;
+	0, 3: forest_tile_1;
+	1, 0: forest_tile_1;
+	1, 1: forest_tile_1;
+	1, 2: forest_tile_1;
+	1, 3: forest_tile_1;
+	2, 0: forest_tile_1;
+	2, 1: forest_tile_1;
+	2, 2: forest_tile_1;
+	2, 3: forest_tile_1;
+	3, 0: forest_tile_1;
+	3, 1: forest_tile_2;
+	3, 2: forest_tile_2;
+	3, 3: forest_tile_1;
+}
+tilelayout forest_layout_4_tilelayout {
+	0, 0: forest_tile_1;
+	0, 1: forest_tile_1;
+	0, 2: forest_tile_1;
+	0, 3: forest_tile_1;
+	1, 0: forest_tile_1;
+	1, 1: forest_tile_1;
+	1, 2: forest_tile_1;
+	1, 3: forest_tile_1;
+	2, 0: forest_tile_1;
+	2, 1: forest_tile_1;
+	2, 2: forest_tile_1;
+	2, 3: forest_tile_1;
+	3, 0: forest_tile_1;
+	3, 1: forest_tile_1;
+	3, 2: forest_tile_2;
+	4, 0: forest_tile_1;
+	4, 1: forest_tile_1;
+	4, 2: forest_tile_2;
+	5, 0: forest_tile_1;
+	5, 1: forest_tile_1;
+	5, 2: forest_tile_1;
+}
+
+switch(FEAT_INDUSTRIES, SELF, forest_switch_location_check_industry_distance,
+       (industry_distance(INDUSTRY_ID_FOREST) >= 16) 
+	   //&& (industry_distance(INDUSTRY_ID_SAW_MILL) >= 32)
+		) 
+{ // TODO: check for distance to paper mill, ...
+	   1: return CB_RESULT_LOCATION_ALLOW;
+	   return CB_RESULT_LOCATION_DISALLOW;
+}
+
+switch(FEAT_INDUSTRIES, SELF, forest_func_calc_max_prod, 128) {
+	return;
+}
+
+// if nothing has been transported at all, do not change production (industry might just not be serviced)
+switch(FEAT_INDUSTRIES, SELF, forest_switch_prod_change, 
+	[STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
+	 STORE_TEMP(transported_last_month_pct("WOOD"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 STORE_TEMP(forest_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)])
+{
+	change_production; // use default rules to adapt production
+}
+
+// randomize production at build time based on random bits: 96t min, 152t max
+switch(FEAT_INDUSTRIES, SELF, forest_switch_prod_change_build,
+	[initialize_extractive_resources(),
+	 STORE_TEMP(forest_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	])
+{
+	randomize_initial_production;
+}
+
+produce(forest_produce,
+	[],
+	[WOOD: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, forest_switch_produce,
+	[init_primary_production()]) {
+	forest_produce;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// build the industry window text here
+////////////////////////////////////////////////////////////////////////////////
+switch(FEAT_INDUSTRIES, SELF, forest_switch_extra_text, 
+	[STORE_TEMP(forest_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
+	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 STORE_TEMP(production_level * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	 STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
+	 STORE_TEMP(
+		LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL) < LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION) ? string(STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION) : string(STR_INDUSTRY_PREREQ_KEEP_PRODUCTION) | 
+		string(STR_EMPTY) << 16,
+		TEMP_REGISTER_EXTRA_TEXT_ARG0)
+	]) {
+	return string(STR_ORGANIC_INDUSTRY_TEXT);
+}
+
+item(FEAT_INDUSTRIES, forest, INDUSTRY_ID_FOREST) {
+	property {
+		substitute: 0;
+		map_colour: 0x56;
+		life_type: IND_LIFE_TYPE_ORGANIC;
+		min_cargo_distr: 1;
+		layouts: [forest_layout_1_tilelayout,forest_layout_2_tilelayout,forest_layout_3_tilelayout,forest_layout_4_tilelayout];
+		spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+		conflicting_ind_types: [];
+		random_sound_effects: [];
+		name: TTD_STR_INDUSTRY_NAME_FOREST;
+		prob_map_gen: 10;
+		prob_in_game: 10;
+		prospect_chance: 0.75;
+		fund_cost_multiplier: 8;
+		remove_cost_multiplier: 0;
+		remove_cost_multiplier: 0;
+		cargo_types: [produce_cargo("WOOD",0)];
+		nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FOREST));
+	}
+
+	graphics {
+		construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+		produce_cargo_arrival:    empty_produce; 
+		produce_256_ticks:        forest_switch_produce;
+		monthly_prod_change:      forest_switch_prod_change;
+		random_prod_change:       forest_switch_prod_change;
+		build_prod_change:        forest_switch_prod_change_build;
+		location_check:           forest_switch_location_check_industry_distance;
+		extra_text_fund:          return string(STR_EMPTY);
+		extra_text_industry:      forest_switch_extra_text;
+	}
+}
+    

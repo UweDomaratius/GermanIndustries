@@ -1,0 +1,580 @@
+spriteset(steel_mill_spriteset_2) {
+    [500, 10, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+}
+spriteset(steel_mill_greeble) {
+	[150, 10, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+}
+spriteset(steel_mill_spriteset_4) {
+	[10, 10, 64, 144, -31, -114, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+}
+spriteset(steel_mill_spriteset_5) {
+	[80, 10, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+}
+spriteset(steel_mill_small_shed) {
+	[220, 10, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+}
+spriteset(steel_mill_ladle_transporter) {
+	[290, 10, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+}
+spriteset(steel_mill_spriteset_8) {
+	[360, 10, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+}
+spriteset(steel_mill_small_tanks) {
+	[430, 10, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+}
+spriteset(steel_mill_large_shed_rear_part) {
+	[570, 10, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+}
+spriteset(steel_mill_large_shed_front_part) {
+	[10, 160, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+	[80, 160, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+	[150, 160, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+	[220, 160, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+	[290, 160, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+	[360, 160, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+	[430, 160, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+	[500, 160, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+	[570, 160, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+	[640, 160, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+}
+spriteset(steel_mill_large_shed_floor) {
+	[500, 10, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+	[500, 10, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+	[500, 10, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+	[500, 10, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+	[500, 10, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+	[500, 10, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+	[500, 10, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+	[500, 10, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+	[500, 10, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+	[500, 10, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+}
+spriteset(steel_mill_casting_shed) {
+	[10, 310, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+	[80, 310, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+	[150, 310, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+	[220, 310, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+	[290, 310, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+	[360, 310, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+	[430, 310, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+	[500, 310, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+	[570, 310, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+	[640, 310, 64, 122, -31, -91, ANIM | NOCROP, "graphics/industries/integrated_steel_mill.png"]
+}
+spritelayout steel_mill_spritelayout_empty {
+	childsprite {
+		sprite: default_spriteset_ground_hard_standing_dirt;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+}
+spritelayout steel_mill_spritelayout_greeble {
+	childsprite {
+		sprite: default_spriteset_ground_hard_standing_dirt;
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: steel_mill_greeble(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+spritelayout steel_mill_spritelayout_steel_mill_1 {
+	childsprite {
+		sprite: default_spriteset_ground_hard_standing_dirt;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: steel_mill_spriteset_5(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: TTD_SMOKE_SPRITE_WHITE_BIG + ((animation_frame + 0)%8);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 5;
+		yoffset: 6;
+		zoffset: 68;
+		xextent: 15;
+		yextent: 7;
+		zextent: 7;
+		hide_sprite: 0;
+	}
+}
+spritelayout steel_mill_spritelayout_steel_mill_2 {
+	childsprite {
+		sprite: default_spriteset_ground_hard_standing_dirt;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: steel_mill_spriteset_4(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+spritelayout steel_mill_spritelayout_small_shed {
+	childsprite {
+		sprite: default_spriteset_ground_hard_standing_dirt;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: steel_mill_small_shed(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+spritelayout steel_mill_spritelayout_ladle_transporter {
+	childsprite {
+		sprite: default_spriteset_ground_hard_standing_dirt;
+		hide_sprite: (LOAD_TEMP(13));
+		always_draw: 1;
+	}                    
+	building {
+		sprite: steel_mill_ladle_transporter(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+spritelayout steel_mill_spritelayout_brick_building {
+	childsprite {
+		sprite: default_spriteset_ground_hard_standing_dirt;
+		hide_sprite: 0;
+		always_draw: 1;
+	}                   
+	building {
+		sprite: steel_mill_spriteset_8(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(18));
+	}
+}
+spritelayout steel_mill_spritelayout_small_tanks {
+	childsprite {
+		sprite: default_spriteset_ground_hard_standing_dirt;
+		hide_sprite: (LOAD_TEMP(13));
+		always_draw: 1;
+	}                    
+	building {
+		sprite: steel_mill_small_tanks(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+spritelayout steel_mill_spritelayout_large_shed_rear_part {
+	childsprite {
+		sprite: default_spriteset_ground_hard_standing_dirt;
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: steel_mill_large_shed_rear_part(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+spritelayout steel_mill_spritelayout_large_shed_front_part {
+	childsprite {
+		sprite: steel_mill_large_shed_floor(0);
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: steel_mill_large_shed_front_part(1*(animation_frame < 10) ? (animation_frame % 10) : 0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+spritelayout steel_mill_spritelayout_casting_shed {
+	childsprite {
+		sprite: steel_mill_large_shed_floor(0);
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: steel_mill_casting_shed(1*(animation_frame < 10) ? (animation_frame % 10) : 0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// graphics choice switch chain
+//////////////////////////////////////////////////////////////////////////////
+
+switch(FEAT_INDUSTRYTILES, SELF, steel_mill_switch_graphics_layout_1, relative_pos) {
+	relative_coord(0, 0): steel_mill_spritelayout_empty;
+	relative_coord(0, 1): steel_mill_spritelayout_empty;
+	relative_coord(0, 2): steel_mill_spritelayout_empty;
+	relative_coord(0, 3): steel_mill_spritelayout_empty;
+	relative_coord(1, 0): steel_mill_spritelayout_steel_mill_1;
+	relative_coord(1, 1): steel_mill_spritelayout_steel_mill_2;
+	relative_coord(1, 2): steel_mill_spritelayout_small_tanks;
+	relative_coord(1, 3): steel_mill_spritelayout_brick_building;
+	relative_coord(2, 0): steel_mill_spritelayout_steel_mill_1;
+	relative_coord(2, 1): steel_mill_spritelayout_steel_mill_2;
+	relative_coord(2, 2): steel_mill_spritelayout_small_shed;
+	relative_coord(2, 3): steel_mill_spritelayout_empty;
+	relative_coord(3, 0): steel_mill_spritelayout_steel_mill_1;
+	relative_coord(3, 1): steel_mill_spritelayout_steel_mill_2;
+	relative_coord(3, 2): steel_mill_spritelayout_greeble;
+	relative_coord(3, 3): steel_mill_spritelayout_empty;
+	relative_coord(4, 0): steel_mill_spritelayout_empty;
+	relative_coord(4, 1): steel_mill_spritelayout_large_shed_rear_part;
+	relative_coord(4, 2): steel_mill_spritelayout_small_shed;
+	relative_coord(4, 3): steel_mill_spritelayout_small_shed;
+	relative_coord(5, 0): steel_mill_spritelayout_casting_shed;
+	relative_coord(5, 1): steel_mill_spritelayout_large_shed_front_part;
+	relative_coord(5, 2): steel_mill_spritelayout_ladle_transporter;
+	relative_coord(5, 3): steel_mill_spritelayout_greeble;
+	return 0;
+}
+switch(FEAT_INDUSTRYTILES, SELF, steel_mill_switch_graphics_layout_2, relative_pos) {
+	relative_coord(0, 0): steel_mill_spritelayout_small_tanks;
+	relative_coord(0, 1): steel_mill_spritelayout_large_shed_rear_part;
+	relative_coord(0, 2): steel_mill_spritelayout_small_shed;
+	relative_coord(0, 3): steel_mill_spritelayout_steel_mill_1;
+	relative_coord(0, 4): steel_mill_spritelayout_steel_mill_2;
+	relative_coord(0, 5): steel_mill_spritelayout_empty;
+	relative_coord(1, 0): steel_mill_spritelayout_casting_shed;
+	relative_coord(1, 1): steel_mill_spritelayout_large_shed_front_part;
+	relative_coord(1, 2): steel_mill_spritelayout_steel_mill_1;
+	relative_coord(1, 3): steel_mill_spritelayout_steel_mill_2;
+	relative_coord(1, 4): steel_mill_spritelayout_brick_building;
+	relative_coord(1, 5): steel_mill_spritelayout_empty;
+	relative_coord(2, 0): steel_mill_spritelayout_empty;
+	relative_coord(2, 1): steel_mill_spritelayout_large_shed_rear_part;
+	relative_coord(2, 2): steel_mill_spritelayout_steel_mill_1;
+	relative_coord(2, 3): steel_mill_spritelayout_steel_mill_2;
+	relative_coord(2, 4): steel_mill_spritelayout_small_shed;
+	relative_coord(2, 5): steel_mill_spritelayout_empty;
+	relative_coord(3, 0): steel_mill_spritelayout_casting_shed;
+	relative_coord(3, 1): steel_mill_spritelayout_large_shed_front_part;
+	relative_coord(3, 2): steel_mill_spritelayout_ladle_transporter;
+	relative_coord(3, 3): steel_mill_spritelayout_empty;
+	relative_coord(3, 4): steel_mill_spritelayout_greeble;
+	relative_coord(3, 5): steel_mill_spritelayout_empty;
+	return 0;
+}
+switch(FEAT_INDUSTRYTILES, PARENT, steel_mill_industry_graphics_switch_layouts, layout_num) {
+    1: steel_mill_switch_graphics_layout_1;
+    2: steel_mill_switch_graphics_layout_2;
+    steel_mill_switch_graphics_layout_1; // default
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, steel_mill_switch_graphics_construction_state, construction_state) {
+    0..2: spritelayout_default_construction_states;
+    steel_mill_industry_graphics_switch_layouts; // default
+}
+
+
+switch (FEAT_INDUSTRYTILES, SELF, steel_mill_switch_graphics,
+	[switch_tile_fences(),
+	 switch_terrain_sprite(),switch_graphics_init_temp_registers()
+]) {
+    steel_mill_switch_graphics_construction_state;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// location checks
+//////////////////////////////////////////////////////////////////////////////
+// This check works as follows: calculate height of the northernmost tile of the industry and add 0, 1 or 2 for flat, slope. steep slope
+// Do the same for the current tile and compare the results. If the result is equal, the terrain is effectively flat
+// and industry can be placed.
+// It just looks weird due to the stacked ternary operators needed here
+switch (FEAT_INDUSTRYTILES, SELF, steel_mill_switch_tile_location_check2,
+			(nearby_tile_height(-relative_x, -relative_y) + 
+			(nearby_tile_slope(-relative_x, -relative_y)== SLOPE_FLAT ? 0 : nearby_tile_slope(-relative_x, -relative_y) == bitmask(IS_STEEP_SLOPE) ? 2 : 1)) 
+			== 
+			(nearby_tile_height(0, 0) + (nearby_tile_slope(0, 0) == SLOPE_FLAT ? 0 : nearby_tile_slope(0, 0) == bitmask(IS_STEEP_SLOPE) ? 2 : 1))
+			) {
+	1: return CB_RESULT_LOCATION_ALLOW;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, steel_mill_switch_tile_location_check,
+	is_funded_or_prospected() || (not_next_to_industry() && not_next_to_buildings()))
+{
+	1: steel_mill_switch_tile_location_check2;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// industry tile and layout definition
+//////////////////////////////////////////////////////////////////////////////
+item(FEAT_INDUSTRYTILES, steel_mill_tile_1, INDUSTRY_TILE_ID_INTEGRATED_STEEL_MILL_1) {
+	property {
+		substitute:         0;
+		land_shape_flags:   0;
+		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+		animation_info: [ANIMATION_LOOPING, 7];
+		animation_speed: 3;
+		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
+	}
+	graphics {
+		tile_check: steel_mill_switch_tile_location_check;
+		steel_mill_switch_graphics;
+	}
+}
+item(FEAT_INDUSTRYTILES, steel_mill_tile_2, INDUSTRY_TILE_ID_INTEGRATED_STEEL_MILL_2) {
+	property {
+		substitute:         0;
+		land_shape_flags:   0;
+		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+		animation_info: [ANIMATION_LOOPING, 30];
+		animation_speed: 4;
+		animation_triggers: bitmask();
+	}
+	graphics {
+		tile_check: steel_mill_switch_tile_location_check;
+		steel_mill_switch_graphics;
+	}
+}
+
+tilelayout steel_mill_tilelayout_1 {
+	0, 0: steel_mill_tile_1;
+	0, 1: steel_mill_tile_1;
+	0, 2: steel_mill_tile_1;
+	0, 3: steel_mill_tile_1;
+	1, 0: steel_mill_tile_1;
+	1, 1: steel_mill_tile_1;
+	1, 2: steel_mill_tile_1;
+	1, 3: steel_mill_tile_1;
+	2, 0: steel_mill_tile_1;
+	2, 1: steel_mill_tile_1;
+	2, 2: steel_mill_tile_1;
+	2, 3: steel_mill_tile_1;
+	3, 0: steel_mill_tile_1;
+	3, 1: steel_mill_tile_1;
+	3, 2: steel_mill_tile_1;
+	3, 3: steel_mill_tile_1;
+	4, 0: steel_mill_tile_1;
+	4, 1: steel_mill_tile_2;
+	4, 2: steel_mill_tile_1;
+	4, 3: steel_mill_tile_1;
+	5, 0: steel_mill_tile_2;
+	5, 1: steel_mill_tile_2;
+	5, 2: steel_mill_tile_1;
+	5, 3: steel_mill_tile_1;
+}
+tilelayout steel_mill_tilelayout_2 {
+	0, 0: steel_mill_tile_1;
+	0, 1: steel_mill_tile_2;
+	0, 2: steel_mill_tile_1;
+	0, 3: steel_mill_tile_1;
+	0, 4: steel_mill_tile_1;
+	0, 5: steel_mill_tile_1;
+	1, 0: steel_mill_tile_2;
+	1, 1: steel_mill_tile_2;
+	1, 2: steel_mill_tile_1;
+	1, 3: steel_mill_tile_1;
+	1, 4: steel_mill_tile_1;
+	1, 5: steel_mill_tile_1;
+	2, 0: steel_mill_tile_1;
+	2, 1: steel_mill_tile_2;
+	2, 2: steel_mill_tile_1;
+	2, 3: steel_mill_tile_1;
+	2, 4: steel_mill_tile_1;
+	2, 5: steel_mill_tile_1;
+	3, 0: steel_mill_tile_2;
+	3, 1: steel_mill_tile_2;
+	3, 2: steel_mill_tile_1;
+	3, 3: steel_mill_tile_1;
+	3, 4: steel_mill_tile_1;
+	3, 5: steel_mill_tile_1;
+}
+
+// todo: check against correct industries
+switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_location_check_industry_distance,
+       [STORE_TEMP(32, TEMP_REGISTER_TOWN_MIN_DISTANCE),
+	    STORE_TEMP(64, TEMP_REGISTER_TOWN_MAX_DISTANCE),
+	    (distance_from_town() && 
+	    //(industry_distance(INDUSTRY_ID_FURNITURE_FACTORY) >= 32) &&
+	    (industry_distance(INDUSTRY_ID_COAL_MINE) >= 32) && 
+		(industry_distance(INDUSTRY_ID_IRON_ORE_MINE) >= 32) && 
+	    (industry_distance(INDUSTRY_ID_INTEGRATED_STEEL_MILL) >= 16))]) {
+	   1: return CB_RESULT_LOCATION_ALLOW;
+	   return CB_RESULT_LOCATION_DISALLOW;
+}
+
+// 1 COAL + 1 IORE => 1 STEL
+produce(steel_mill_produce,
+	[COAL: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);IORE: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
+	[STEL: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
+	0 // do not run again
+)
+
+// steel_mill uses 10% of stockpile for production, if stockpile is big enough
+// if stockpile is < 80t, 8t are produced per 256ticks
+// if stockpile is < 8t, whatever is available is used
+// it stockpile is empty, nothing is produced
+switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_produce, 
+	[STORE_TEMP(min(incoming_cargo_waiting("COAL"),incoming_cargo_waiting("IORE")), TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT),
+	 STORE_TEMP(((LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) / 10) > 8) ? LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) / 10 : 
+	 (LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) > 8 ? 8 : LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT)),TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)
+	]) {
+	steel_mill_produce;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// cargo subtexts to show how much incoming cargo is waiting
+////////////////////////////////////////////////////////////////////////////////
+switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_cargo_subtype_display_info_iore, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("IORE") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	IORE: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_cargo_subtype_display_info_coal, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("COAL") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	COAL: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_cargo_subtype_display_info, 
+	getbits(extra_callback_info2, 16, 8)) {
+	IORE: steel_mill_switch_cargo_subtype_display_info_iore;
+	COAL: steel_mill_switch_cargo_subtype_display_info_coal;
+	return 0x3800 + string(STR_EMPTY);
+}
+
+// getbits(extra_callback_info2, 8, 8) == 1 -> industry window, 0 -> industry buy/prospect window, 2 -> industry directory
+switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_cargo_subtype, 
+	 getbits(extra_callback_info2, 8, 8)) {
+	0: return CB_RESULT_IND_NO_TEXT_NO_AMOUNT;
+	1: steel_mill_switch_cargo_subtype_display_info;
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_extra_text_fund, 
+	[STORE_TEMP(string(STR_1800), TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	current_year]) {
+	1800..500000: return string(STR_EMPTY);
+	return string(STR_INDUSTRY_NOT_AVAILABLE_BEFORE);
+}
+
+// year < 1800: no creation, 1800 <= year: certain probability
+switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_check_availability, 
+	current_year) {
+	0..1799: return CB_RESULT_IND_NO_CONSTRUCTION;
+	return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+}
+
+item(FEAT_INDUSTRIES, steel_mill, INDUSTRY_ID_INTEGRATED_STEEL_MILL) {
+	property {
+		substitute: 0;
+		map_colour: 9;
+		life_type: IND_LIFE_TYPE_PROCESSING;
+		min_cargo_distr: 1;
+		layouts: [steel_mill_tilelayout_1, steel_mill_tilelayout_2];
+		spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+		conflicting_ind_types: [];
+		random_sound_effects: [];
+		name: string(STR_IND_INTEGRATED_STEEL_MILL);
+		prob_map_gen: 5;
+		prob_in_game: 3;
+		fund_cost_multiplier: 190;
+		remove_cost_multiplier: 0;
+		remove_cost_multiplier: 0;
+		cargo_types: [accept_cargo("COAL"),accept_cargo("IORE"),produce_cargo("STEL",0)];
+		nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_INTEGRATED_STEEL_MILL));
+	}
+        
+	graphics {
+		construction_probability: steel_mill_switch_check_availability;
+		produce_cargo_arrival:    empty_produce; 
+		produce_256_ticks:        steel_mill_switch_produce;
+		monthly_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
+		random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+		location_check:           steel_mill_switch_location_check_industry_distance;
+		extra_text_fund:          steel_mill_switch_extra_text_fund;
+		//extra_text_industry:    steel_mill_switch_extra_text;
+		cargo_subtype_display:    steel_mill_switch_cargo_subtype;
+	}
+}
+    

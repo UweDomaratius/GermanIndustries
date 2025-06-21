@@ -1,0 +1,75 @@
+////////////////////////////////////////////////////////////////////////////////
+// Placeholder produce rule that does not consume or produce anything
+////////////////////////////////////////////////////////////////////////////////
+produce(empty_produce, [], [])
+
+////////////////////////////////////////////////////////////////////////////////
+// if < 30% of produced goods were transported, half production
+// if < 40% of produced goods were transported, decrease production by 1
+// if > 60% of produced goods were transported, increase production by 1
+// if > 75% of produced goods were transported, double production
+// Precondition: Temp storage registers hold the current production level and
+// the maximum possible production.
+// Result is written into temporary storage register 0x100 and returned as 
+// CB result.
+// The result is always >=4 (to prevent the industry from closing).
+// The result is always <= maximum production level (which may be statically or 
+// dynamically computed)
+////////////////////////////////////////////////////////////////////////////////
+switch(FEAT_INDUSTRIES, SELF, set_new_production, 
+	[ LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 30 ? STORE_TEMP(max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL) / 2,4) << 16, TEMP_REGISTER_CB_RESULT_IND_PROD_SET_BY_0x100) : 
+	  LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 40 ? STORE_TEMP(max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL) - 1,4) << 16, TEMP_REGISTER_CB_RESULT_IND_PROD_SET_BY_0x100) : 
+	  LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 75 ? STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL)+1,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)) << 16, TEMP_REGISTER_CB_RESULT_IND_PROD_SET_BY_0x100) : 
+	STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL)*2,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)) << 16, TEMP_REGISTER_CB_RESULT_IND_PROD_SET_BY_0x100)
+	]) {
+	return CB_RESULT_IND_PROD_SET_BY_0x100;
+}
+
+switch(FEAT_INDUSTRIES, SELF, change_production,
+	[(LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) != 0 && 
+	((LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 40) || LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) > 59))])
+{
+	1: set_new_production;
+	return CB_RESULT_IND_PROD_NO_CHANGE;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Randomize initial production value for newly generated industries.
+// monthly production: 96t min, 152t max (with default production scaling)
+// Precondition: Temp storage register holds the maximum possible production.
+// Returns the production value in game units (12-19).
+// Value is <= maximum production value, which may also be lower than 12.
+////////////////////////////////////////////////////////////////////////////////
+switch(FEAT_INDUSTRIES, SELF, randomize_initial_production, extra_callback_info2)
+{
+	return min(12+getbits(extra_callback_info2, 0, 3),LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION));
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Extractive industries have resources which can be depleted. They are
+// initialized upon construction of the industry and updated with every produce
+// command. If the resources are depleted, the industry closes.
+// Stores a value between 750000 and 2500000. TODO: adapt after playtesting
+////////////////////////////////////////////////////////////////////////////////
+switch(FEAT_INDUSTRIES, SELF, initialize_extractive_resources,
+	[
+	STORE_PERM(250000 + getbits(extra_callback_info2, 3, 3)*250000,PERM_REGISTER_RESOURCES)
+	]
+)
+{
+	return;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Initialize temporary registers for the actual produce calls of primary industries
+////////////////////////////////////////////////////////////////////////////////
+switch(FEAT_INDUSTRIES, SELF, init_primary_production,
+[	// load the GRF parameter for production scaling percentage and ensure it's not 0
+	STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 // store the theoretical amount of production (production level * scaling percentage)
+	 STORE_TEMP(production_level * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	 // reduce production amount if remaining resources are less than what should be produced
+	 STORE_TEMP(min(LOAD_PERM(PERM_REGISTER_RESOURCES),LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT)),TEMP_REGISTER_PRODUCTION_AMOUNT),
+	 // update the value for remaining resources
+	 STORE_PERM(LOAD_PERM(PERM_REGISTER_RESOURCES) - LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT),PERM_REGISTER_RESOURCES)])
+{ return; }

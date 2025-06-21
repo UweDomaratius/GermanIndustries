@@ -1,0 +1,430 @@
+spritelayout hotel_spritelayout_modern_1_left {
+	childsprite {
+		sprite: GROUNDSPRITE_CLEARED;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: 4615+(construction_state-1)*2;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 16;
+		always_draw: 0;
+		hide_sprite: construction_state == 0;
+	}
+}
+spritelayout hotel_spritelayout_modern_1_right {
+	childsprite {
+		sprite: GROUNDSPRITE_CLEARED;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: 4614+(construction_state-1)*2;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 16;
+		always_draw: 0;
+		hide_sprite: construction_state == 0;
+	}
+}
+spritelayout hotel_spritelayout_single_tile_1 {
+	childsprite {
+		sprite: default_spriteset_ground_cobblestones;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: 4434+construction_state;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 16;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+spritelayout hotel_spritelayout_single_tile_2 {
+	childsprite {
+		sprite: default_spriteset_ground_cobblestones;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: 4438+construction_state;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 16;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+
+spritelayout hotel_spritelayout_modern_2_left {
+	childsprite {
+		sprite: 4486;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: 4488+(construction_state-1)*2;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 16;
+		always_draw: 0;
+		hide_sprite: construction_state == 0;
+	}
+}
+spritelayout hotel_spritelayout_modern_2_right {
+	childsprite {
+		sprite: 4485;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: 4487+(construction_state-1)*2;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 16;
+		always_draw: 0;
+		hide_sprite: construction_state == 0;
+	}
+}
+
+spritelayout hotel_spritelayout_hotel_with_pool_on_roof_left {
+	childsprite {
+		sprite: GROUNDSPRITE_CLEARED;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: 1448+(construction_state-1);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 16;
+		always_draw: 0;
+		hide_sprite: construction_state == 0;
+	}
+}
+spritelayout hotel_spritelayout_hotel_with_pool_on_roof_right {
+	childsprite {
+		sprite: GROUNDSPRITE_CLEARED;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: 1451+(construction_state-1);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 16;
+		always_draw: 0;
+		hide_sprite: construction_state == 0;
+	}
+}
+
+spritelayout hotel_spritelayout_small_bungalow_left {
+	childsprite {
+		sprite: GROUNDSPRITE_CLEARED;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: 4471+(construction_state-1)*2;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 16;
+		always_draw: 0;
+		hide_sprite: construction_state == 3 || construction_state == 0;
+	}
+	building {
+		sprite: (terrain_type == TILETYPE_SNOW) ? 4583 : 4475;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 16;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE)) || construction_state < 3;
+	}
+	building {
+		sprite: (terrain_type == TILETYPE_SNOW) ? 4583 : 4475;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 16;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW)) || construction_state < 3;
+	}
+}
+spritelayout hotel_spritelayout_small_bungalow_right {
+	childsprite {
+		sprite: GROUNDSPRITE_CLEARED;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: 4472+(construction_state-1)*2;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 16;
+		always_draw: 0;
+		hide_sprite: construction_state == 3 || construction_state == 0;
+	}
+	building {
+		sprite: (terrain_type == TILETYPE_SNOW) ? 4584 : 4476;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 16;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE)) || construction_state < 3;
+	}
+	building {
+		sprite: (terrain_type == TILETYPE_SNOW) ? 4584 : 4476;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 16;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW))  || construction_state < 3;
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// graphics choice switch chain
+//////////////////////////////////////////////////////////////////////////////
+switch(FEAT_INDUSTRYTILES, SELF, hotel_switch_graphics_hotel_with_pool_on_roof, relative_pos) {
+    relative_coord(0, 0): hotel_spritelayout_hotel_with_pool_on_roof_left;
+	relative_coord(0, 1): hotel_spritelayout_hotel_with_pool_on_roof_right;
+    return 0;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, hotel_switch_graphics_small_bungalow, relative_pos) {
+    relative_coord(0, 0): hotel_spritelayout_small_bungalow_left;
+	relative_coord(0, 1): hotel_spritelayout_small_bungalow_right;
+    return 0;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, hotel_switch_graphics_modern_1, relative_pos) {
+    relative_coord(0, 0): hotel_spritelayout_modern_1_right;
+	relative_coord(1, 0): hotel_spritelayout_modern_1_left;
+    return 0;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, hotel_switch_graphics_modern_2, relative_pos) {
+    relative_coord(0, 0): hotel_spritelayout_modern_2_right;
+	relative_coord(1, 0): hotel_spritelayout_modern_2_left;
+    return 0;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, hotel_switch_single_tile_1, relative_pos) {
+    relative_coord(0, 0): hotel_spritelayout_single_tile_1;
+    return 0;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, hotel_switch_single_tile_2, relative_pos) {
+    relative_coord(0, 0): hotel_spritelayout_single_tile_2;
+    return 0;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, hotel_switch_graphics_layouts, layout_num) {
+    1: hotel_switch_graphics_hotel_with_pool_on_roof;
+	2: hotel_switch_graphics_small_bungalow;	
+	3: hotel_switch_graphics_modern_1;
+	4: hotel_switch_graphics_modern_2;
+	5: hotel_switch_single_tile_1;
+	6: hotel_switch_single_tile_2;
+    hotel_switch_graphics_hotel_with_pool_on_roof;
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, hotel_switch_graphics,
+	[switch_terrain_sprite(),
+	 switch_tile_fences(),switch_graphics_init_temp_registers()
+	]) {
+    hotel_switch_graphics_layouts;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// location checks
+//////////////////////////////////////////////////////////////////////////////
+// This check works as follows: calculate height of the northernmost tile of the industry and add 0, 1 or 2 for flat, slope. steep slope
+// Do the same for the current tile and compare the results. If the result is equal, the terrain is effectively flat
+// and industry can be placed.
+// It just looks weird due to the stacked ternary operators needed here
+switch (FEAT_INDUSTRYTILES, SELF, hotel_switch_tile_location_check,
+			(nearby_tile_height(-relative_x, -relative_y) + 
+			(nearby_tile_slope(-relative_x, -relative_y)== SLOPE_FLAT ? 0 : nearby_tile_slope(-relative_x, -relative_y) == bitmask(IS_STEEP_SLOPE) ? 2 : 1)) 
+			== 
+			(nearby_tile_height(0, 0) + (nearby_tile_slope(0, 0) == SLOPE_FLAT ? 0 : nearby_tile_slope(0, 0) == bitmask(IS_STEEP_SLOPE) ? 2 : 1))
+			) {
+	1: CB_RESULT_LOCATION_ALLOW;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// industry tile and layout definition
+//////////////////////////////////////////////////////////////////////////////
+item(FEAT_INDUSTRYTILES, hotel_tile, INDUSTRY_TILE_ID_HOTEL) {
+	property {
+		substitute:         0;
+		land_shape_flags:   0;
+		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+		animation_triggers: bitmask();
+	}
+	graphics {
+		tile_check: hotel_switch_tile_location_check;
+		hotel_switch_graphics;
+	}
+}
+
+tilelayout hotel_tilelayout_pool_on_roof {
+    0, 0: hotel_tile;
+    0, 1: hotel_tile;
+}
+
+tilelayout hotel_tilelayout_small_bungalow {
+    0, 0: hotel_tile;
+    0, 1: hotel_tile;
+}
+
+tilelayout hotel_tilelayout_modern_1 {
+    0, 0: hotel_tile;
+    1, 0: hotel_tile;
+}
+
+tilelayout hotel_tilelayout_modern_2 {
+    0, 0: hotel_tile;
+    1, 0: hotel_tile;
+}
+
+tilelayout hotel_tilelayout_single_tile_1 {
+    0, 0: hotel_tile;
+}
+
+tilelayout hotel_tilelayout_single_tile_2 {
+    0, 0: hotel_tile;
+}
+
+// todo: check against correct industries
+switch(FEAT_INDUSTRIES, SELF, hotel_switch_location_check_industry_distance,
+       [(//TODO
+	    
+		(town_euclidean_dist(0,0) < 16) &&
+		(industry_distance(INDUSTRY_ID_GENERAL_STORE) >= 16) &&
+		(industry_distance(INDUSTRY_ID_HOTEL) >= 16))]) {
+	   1: return CB_RESULT_LOCATION_ALLOW;
+	   return CB_RESULT_LOCATION_DISALLOW;
+}
+
+// hotels produce as many passengers as are delivered (hotel guests want to get away again...)
+produce(hotel_produce,
+	[PASS: LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0);FOOD:LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1);],
+	[PASS: max(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0),15);],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, hotel_switch_produce,
+	[STORE_TEMP(incoming_cargo_waiting("PASS"), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	STORE_TEMP(incoming_cargo_waiting("FOOD"), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	]) {
+	hotel_produce; 
+}
+
+item(FEAT_INDUSTRIES, hotel, INDUSTRY_ID_HOTEL) {
+	property {
+		substitute: 0;
+		map_colour: 158;
+		life_type: IND_LIFE_TYPE_BLACK_HOLE;
+		min_cargo_distr: 1;
+		layouts: [hotel_tilelayout_pool_on_roof,hotel_tilelayout_small_bungalow,hotel_tilelayout_modern_1,hotel_tilelayout_modern_2,hotel_tilelayout_single_tile_1,hotel_tilelayout_single_tile_2];
+		spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+		conflicting_ind_types: [];
+		random_sound_effects: [];
+		name: string(STR_IND_HOTEL);
+		prob_map_gen: 10;
+		prob_in_game: 15;
+		prospect_chance: 0.75;
+		fund_cost_multiplier: 101;
+		remove_cost_multiplier: 0;
+		remove_cost_multiplier: 0;
+		cargo_types: [accept_cargo("FOOD"),accept_cargo("PASS"),produce_cargo("PASS",0)];
+		nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_HOTEL));
+	}
+
+	graphics {
+		construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+		produce_cargo_arrival:    empty_produce; 
+		produce_256_ticks:        hotel_switch_produce;
+		monthly_prod_change:      CB_RESULT_IND_PROD_NO_CHANGE;
+		random_prod_change:       CB_RESULT_IND_PROD_NO_CHANGE;
+		location_check:           hotel_switch_location_check_industry_distance;
+		extra_text_fund:          return CB_RESULT_NO_TEXT;
+		extra_text_industry:      return CB_RESULT_NO_TEXT;
+		cargo_subtype_display:    return CB_RESULT_IND_NO_TEXT_NO_AMOUNT;
+	}
+}
+    

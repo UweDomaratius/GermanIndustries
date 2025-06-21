@@ -1,0 +1,89 @@
+##grflangid 0x02
+# This is the German language file
+
+# GRF name und Beschreibung
+STR_GRF_DESCRIPTION :Deutsche Industrien für OpenTTD{}{COPYRIGHT}2025{}Basiert auf FIRS v5 von andythenorth et al.{}Lizenz: GPLv2, CC-BY-NC-SA v4.0
+
+# Set parameter
+STR_PARAM_PRIMARY_PRODUCTION :Skalierung der Produktion von Primärindustrien
+STR_PARAM_PRIMARY_PRODUCTION_DESC :Skaliert die monatliche Produktion von Primärindustrien. 100% ist voreingestellt und entspricht den originalen Industrien.
+STR_PARAM_ECONOMY_MODEL :Wirtschaftsmodell
+STR_PARAM_ECONOMY_MODEL_DESC :Das realistische Modell simuliert historische Verfügbarkeiten und Produktivitätsverbesserungen. Das einfache Modell ignoriert die Geschichte der realen Wirtschaft.
+STR_PARAM_ECONOMY_MODEL_SIMPLE :Einfache (konstante) Wirtschaft.
+STR_PARAM_ECONOMY_MODEL_REALISTIC :Realistische Wirtschaft
+STR_PARAM_ELECTRICITY_NEEDED :Industrien benötigen elektrische Energie.
+STR_PARAM_ELECTRICITY_NEEDED_DESC :Einige Industrien benötigen Strom um etwas produzieren zu können. Strom wird von Kraftwerken produziert, die wiederum beliefert werden müssen.
+
+# Frachten
+STR_CARGO_NAME_FISH                 :Fisch
+STR_CARGO_NAME_PLASTICS             :Kunststoffe
+STR_CARGO_NAME_TIMBER               :Schnittholz
+STR_CARGO_NAME_VEHICLES             :Fahrzeuge
+
+# lange Form der Frachtanzeige (x Einheiten Fracht)
+STR_QUANTITY_FISH                 :{WEIGHT} Fisch
+STR_QUANTITY_GOODS                :{WEIGHT} Güter
+STR_QUANTITY_OIL                  :{WEIGHT} Öl
+STR_QUANTITY_PLASTICS             :{WEIGHT} Kunststoffe
+STR_QUANTITY_TIMBER               :{WEIGHT} Schnittholz
+STR_QUANTITY_VEHICLES             :{COMMA} Fahrzeug{P "" e}
+
+# Industrien
+STR_IND_BUILDERS_YARD        :Bauhof
+STR_IND_FISHING_GROUNDS      :Fischgründe
+STR_IND_FURNITURE_FACTORY    :Möbelfabrik
+STR_IND_DEPARTMENT_STORE     :Kaufhaus
+STR_IND_GENERAL_STORE        :Laden
+STR_IND_HOTEL                :Hotel
+STR_IND_INTEGRATED_STEEL_MILL:Integriertes Stahlwerk
+STR_IND_PORT                 :Hafen
+STR_IND_VEHICLE_DISTRIBUTOR  :Autohaus
+STR_IND_VEHICLE_FACTORY      :Autofabrik
+
+# Stationsnamen
+STR_STATION_BUILDERS_YARD        :Bauhof
+STR_STATION_COAL_MINE            :Bergwerk
+STR_STATION_DEPARTMENT_STORE     :Kaufhaus
+STR_STATION_FARM                 :Bauernhof
+STR_STATION_FISHING_GROUNDS      :Fischgründe
+STR_STATION_FOOD_PROCESSOR       :Lebensmittelfabrik
+STR_STATION_FOREST               :Wald
+STR_STATION_FURNITURE_FACTORY    :Möbelfabrik
+STR_STATION_GENERAL_STORE        :Laden
+STR_STATION_HOTEL                :Hotel
+STR_STATION_INTEGRATED_STEEL_MILL:Integriertes Stahlwerk
+STR_STATION_IRON_ORE_MINE        :Bergwerk
+STR_STATION_OIL_REFINERY         :Raffinerie
+STR_STATION_OIL_RIG              :Bohrplattform
+STR_STATION_OIL_WELL             :Ölquelle
+STR_STATION_PORT                 :Hafen
+STR_STATION_POWER_PLANT          :Kraftwerk
+STR_STATION_SAWMILL              :Sägewerk
+STR_STATION_VEHICLE_DISTRIBUTOR  :Autohändler
+STR_STATION_VEHICLE_FACTORY      :Autofabrik
+
+# Industriefenster
+STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION :Transportiere mehr als 60% der produzierten Fracht um die Produktion zu erhöhen.
+STR_INDUSTRY_PREREQ_KEEP_PRODUCTION     :Industrie produziert am Maximum. Transportiere mehr als 60% der produzierten Fracht um diesen Produktionslevel zu halten.
+# Extractive Industrien (Bergwerke) zeigen die Info zum Produktionslevel und die Menge der verbleibenden Rohstoffe.
+STR_EXTRACTIVE_INDUSTRY_TEXT:{STRING}{STRING}{}Etwa {YELLOW}{COMMA} kt {BLACK} verbleibend (ca. {YELLOW}{COMMA} Jahre{BLACK} bei aktuellem Produktionslevel)
+
+# Texte für Energiewirtschaft, Kraftwerke zeigen die Produktion, Industrien zeigen an wie viel Strom sie benötigen und ob der Bedarf gedeckt ist
+STR_POWER_PLANT_TEXT :Stromproduktion {YELLOW}{COMMA}{BLACK}, Bedarf {YELLOW}{COMMA}{BLACK}
+STR_INDUSTRY_ELECTRICITY_TEXT :Industrie kann {YELLOW}{COMMA}{BLACK} Einheiten produzieren ({YELLOW}{COMMA}{BLACK}% der maximalen Produktion){}Maximale Produktion benötigt {YELLOW}{COMMA}{BLACK} Strom.{}{STRING}
+STR_INDUSTRY_NO_POWER :{RED}Kein Strom verfügbar, Produktion gestoppt!
+STR_INDUSTRY_NOT_ENOUGH_POWER :{YELLOW}Nicht genug Strom verfügbar, Produktion reduziert!
+STR_INDUSTRY_ENOUGH_POWER :{GREEN}Genug Strom verfügbar.
+
+# Texte für Industriefinanzierung
+STR_INDUSTRY_NOT_AVAILABLE_BEFORE :{}{BLACK}Industrie erst ab {STRING} verfügbar.
+STR_INDUSTRY_AVAILABLE_TIMEFRAME  :{}{BLACK}Industrie nur zwischen {STRING} und {STRING} verfügbar.
+
+# Display für Vorratsanzeige
+STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE         :{BLACK}({CARGO_SHORT} vorrätig)
+STR_CARGO_SUBTYPE_DISPLAY_CARGO_BOOSTS_PRODUCTION :{WHITE}({CARGO_SHORT} vorrätig)
+
+# Fehlertexte
+STR_ERR_OPENTTD_VERSION:{ORANGE}E00: {TITLE} benötigt OpenTTD 14.0 oder neuer
+STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE: muss unterhalb der Schneegrenze platziert werden
+STR_ERRO_LOCATION_NOT_ON_STEEP_SLOPE: kann nicht auf steilen Hängen platziert werden
