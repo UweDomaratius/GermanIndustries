@@ -1,0 +1,285 @@
+spriteset(vehicle_distributor_spriteset_2) {
+	[10, 60, 64, 59, -31, -28, ANIM | NOCROP, "graphics/industries/vehicle_distributor.png"]
+}
+spriteset(vehicle_distributor_spriteset_2_snow) {
+	[10, 60, 64, 59, -31, -28, ANIM | NOCROP, "graphics/industries/vehicle_distributor_snow.png"]
+}
+spriteset(vehicle_distributor_spriteset_3) {
+	[80, 60, 64, 59, -31, -28, ANIM | NOCROP, "graphics/industries/vehicle_distributor.png"]
+}
+spriteset(vehicle_distributor_spriteset_3_snow) {
+	[80, 60, 64, 59, -31, -28, ANIM | NOCROP, "graphics/industries/vehicle_distributor_snow.png"]
+}
+spritelayout vehicle_distributor_spritelayout_1 {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: (LOAD_TEMP(13));
+		always_draw: 1;
+	}
+    building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: vehicle_distributor_spriteset_2(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: vehicle_distributor_spriteset_2_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+    building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout vehicle_distributor_spritelayout_2 {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: (LOAD_TEMP(13));
+		always_draw: 1;
+	}
+    building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: vehicle_distributor_spriteset_3(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: vehicle_distributor_spriteset_3_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+    building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// graphics choice switch chain
+//////////////////////////////////////////////////////////////////////////////
+
+switch(FEAT_INDUSTRYTILES, SELF, vehicle_distributor_switch_graphics_spritelayout_1, relative_pos) {
+	relative_coord(0, 0): vehicle_distributor_spritelayout_1;
+	relative_coord(0, 1): vehicle_distributor_spritelayout_2;
+	relative_coord(0, 2): vehicle_distributor_spritelayout_2;
+	relative_coord(1, 0): vehicle_distributor_spritelayout_1;
+	relative_coord(1, 1): vehicle_distributor_spritelayout_2;
+	relative_coord(1, 2): vehicle_distributor_spritelayout_2;
+	relative_coord(2, 0): vehicle_distributor_spritelayout_1;
+	relative_coord(2, 1): vehicle_distributor_spritelayout_2;
+	relative_coord(2, 2): vehicle_distributor_spritelayout_2;
+	relative_coord(3, 0): vehicle_distributor_spritelayout_2;
+	relative_coord(3, 1): vehicle_distributor_spritelayout_2;
+	relative_coord(3, 2): vehicle_distributor_spritelayout_2;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, vehicle_distributor_switch_graphics_spritelayout_2, relative_pos) {
+	relative_coord(0, 0): vehicle_distributor_spritelayout_1;
+	relative_coord(0, 1): vehicle_distributor_spritelayout_2;
+	relative_coord(1, 0): vehicle_distributor_spritelayout_1;
+	relative_coord(1, 1): vehicle_distributor_spritelayout_2;
+	relative_coord(2, 0): vehicle_distributor_spritelayout_1;
+	relative_coord(2, 1): vehicle_distributor_spritelayout_2;
+	relative_coord(3, 0): vehicle_distributor_spritelayout_2;
+	relative_coord(3, 1): vehicle_distributor_spritelayout_2;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, vehicle_distributor_switch_graphics_spritelayout_3, relative_pos) {
+	relative_coord(0, 0): vehicle_distributor_spritelayout_1;
+	relative_coord(0, 1): vehicle_distributor_spritelayout_2;
+	relative_coord(1, 0): vehicle_distributor_spritelayout_1;
+	relative_coord(1, 1): vehicle_distributor_spritelayout_2;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, vehicle_distributor_switch_graphics_layouts, layout_num) {
+    1: vehicle_distributor_switch_graphics_spritelayout_1;
+    2: vehicle_distributor_switch_graphics_spritelayout_2;
+    3: vehicle_distributor_switch_graphics_spritelayout_3;
+    vehicle_distributor_switch_graphics_spritelayout_1; // default
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, vehicle_distributor_switch_graphics,
+	[switch_terrain_sprite(),
+	 switch_tile_fences(),switch_graphics_init_temp_registers()
+	]) {
+    vehicle_distributor_switch_graphics_layouts;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// industry tile and layout definition
+//////////////////////////////////////////////////////////////////////////////
+item(FEAT_INDUSTRYTILES, vehicle_distributor_tile, INDUSTRY_TILE_ID_VEHICLE_DISTRIBUTOR) {
+	property {
+		substitute:         0;
+		land_shape_flags:   0;
+		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+		animation_triggers: bitmask();
+	}
+	graphics {
+		vehicle_distributor_switch_graphics;
+	}
+}
+
+tilelayout vehicle_distributor_tilelayout_1 {
+	0, 0: vehicle_distributor_tile;
+	0, 1: vehicle_distributor_tile;
+	0, 2: vehicle_distributor_tile;
+	1, 0: vehicle_distributor_tile;
+	1, 1: vehicle_distributor_tile;
+	1, 2: vehicle_distributor_tile;
+	2, 0: vehicle_distributor_tile;
+	2, 1: vehicle_distributor_tile;
+	2, 2: vehicle_distributor_tile;
+	3, 0: vehicle_distributor_tile;
+	3, 1: vehicle_distributor_tile;
+	3, 2: vehicle_distributor_tile;
+}
+
+tilelayout vehicle_distributor_tilelayout_2 {
+	0, 0: vehicle_distributor_tile;
+	0, 1: vehicle_distributor_tile;
+	1, 0: vehicle_distributor_tile;
+	1, 1: vehicle_distributor_tile;
+	2, 0: vehicle_distributor_tile;
+	2, 1: vehicle_distributor_tile;
+	3, 0: vehicle_distributor_tile;
+	3, 1: vehicle_distributor_tile;
+}
+
+tilelayout vehicle_distributor_tilelayout_3 {
+	0, 0: vehicle_distributor_tile;
+	0, 1: vehicle_distributor_tile;
+	1, 0: vehicle_distributor_tile;
+	1, 1: vehicle_distributor_tile;
+}
+
+// todo: check against correct industries
+switch(FEAT_INDUSTRIES, SELF, vehicle_distributor_switch_location_check_industry_distance,
+       [(//TODO
+	    (town_euclidean_dist(0,0) < 16) &&
+	    (industry_distance(INDUSTRY_ID_VEHICLE_FACTORY) >= 32) &&
+		(industry_distance(INDUSTRY_ID_VEHICLE_DISTRIBUTOR) >= 16))]) {
+	   1: return CB_RESULT_LOCATION_ALLOW;
+	   return CB_RESULT_LOCATION_DISALLOW;
+}
+
+// take all incoming cargo and produce nothing
+produce(vehicle_distributor_produce,
+	[VEHI: LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0);],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, vehicle_distributor_switch_produce,
+	[STORE_TEMP(incoming_cargo_waiting("VEHI"), TEMP_REGISTER_INCOMING_CARGO_WAITING0)]) {
+	vehicle_distributor_produce; 
+}
+
+item(FEAT_INDUSTRIES, vehicle_distributor, INDUSTRY_ID_VEHICLE_DISTRIBUTOR) {
+	property {
+		substitute: 0;
+		map_colour: 153;
+		life_type: IND_LIFE_TYPE_BLACK_HOLE;
+		min_cargo_distr: 1;
+		layouts: [vehicle_distributor_tilelayout_1, vehicle_distributor_tilelayout_2, vehicle_distributor_tilelayout_3];
+		spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+		conflicting_ind_types: [];
+		random_sound_effects: [];
+		name: string(STR_IND_VEHICLE_DISTRIBUTOR);
+		prob_map_gen: 24;
+		prob_in_game: 12;
+		prospect_chance: 0.75;
+		fund_cost_multiplier: 15;
+		remove_cost_multiplier: 0;
+		remove_cost_multiplier: 0;
+		cargo_types: [accept_cargo("VEHI")];
+		nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_DISTRIBUTOR));
+	}
+        
+	graphics {
+		construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+		produce_cargo_arrival:    empty_produce; 
+		produce_256_ticks:        vehicle_distributor_switch_produce;
+		monthly_prod_change:      CB_RESULT_IND_PROD_NO_CHANGE;
+		random_prod_change:       CB_RESULT_IND_PROD_NO_CHANGE;
+		location_check:           vehicle_distributor_switch_location_check_industry_distance;
+		extra_text_fund:          return CB_RESULT_NO_TEXT;
+		extra_text_industry:      return CB_RESULT_NO_TEXT;
+		cargo_subtype_display:    return CB_RESULT_IND_NO_TEXT_NO_AMOUNT;
+	}
+}
+    

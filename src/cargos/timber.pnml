@@ -1,0 +1,31 @@
+spriteset(cargoicon_timber) {
+        [10 + 20 * 6, 10 + 20 * 1, 10, 10, 0, 0,  "graphics/other/cargoicons.png"]
+    }
+
+
+item(FEAT_CARGOS, timber, CARGO_ID_TIMBER) {
+    property {
+        type_name: string(STR_CARGO_NAME_TIMBER);
+        unit_name: string(STR_CARGO_NAME_TIMBER);
+        type_abbreviation: string(STR_CID_TIMBER);
+        sprite: NEW_CARGO_SPRITE;
+        weight: 1.0;
+        is_freight: 1;
+        cargo_classes: bitmask(CC_PIECE_GOODS);
+        town_growth_effect: TOWNGROWTH_NONE;
+        town_growth_multiplier: 1.0;
+        units_of_cargo: TTD_STR_TONS;
+        items_of_cargo: string(STR_QUANTITY_TIMBER);
+        penalty_lowerbound: 18;
+        single_penalty_length: 255;
+        capacity_multiplier: 1;
+        cargo_payment_list_colour: 0x3A;
+        station_list_colour: 0x3A;
+        price_factor: 117;
+        cargo_label: "WDPR";
+        number: CARGO_ID_TIMBER;
+    }
+    graphics {
+        cargoicon_timber;
+    }
+}

@@ -1,0 +1,158 @@
+switch (FEAT_INDUSTRIES, SELF, GetTileX, var[0x80, 0, 0xFFFFFFFF] % map_x_edge) {return;}
+switch (FEAT_INDUSTRIES, SELF, GetTileY, var[0x80, 0, 0xFFFFFFFF] / map_y_edge) {return;}
+
+////////////////////////////////////////////////////////////////////////////////
+// Checks if a tile is close to the map edge - parameter to be given to call.
+// Returns 1 if it is, 0 if it is not.
+////////////////////////////////////////////////////////////////////////////////
+switch (FEAT_INDUSTRIES, SELF, is_near_map_edge, distance,
+	(GetTileX() < distance) ||
+	((map_x_edge - GetTileX()) < distance) ||
+	(GetTileY() < distance) ||
+	((map_y_edge - GetTileY()) < distance),
+) {return;}
+
+////////////////////////////////////////////////////////////////////////////////
+// Check if an industry is funded or prospected rather than being built randomly.
+// Used to bypass other location checks.
+// Returns 1 if funded or prospected, 0 otherwise.
+////////////////////////////////////////////////////////////////////////////////
+switch (FEAT_INDUSTRYTILES, PARENT, is_funded_or_prospected, 
+			((getbits(extra_callback_info2, 0, 8) == IND_CREATION_FUND) ||
+			 (getbits(extra_callback_info2, 0, 8) == IND_CREATION_PROSPECT)))
+{
+	return;
+}
+
+switch (FEAT_INDUSTRIES, SELF, is_industry_funded_or_prospected, 
+			((getbits(extra_callback_info2, 0, 8) == IND_CREATION_FUND) ||
+			 (getbits(extra_callback_info2, 0, 8) == IND_CREATION_PROSPECT)))
+{
+	return;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Check if next 2 surrounding tiles in any direction belong to an industry.
+// Used to avoid having industries generated almost next to each other.
+// Returns 1 if true, 0 if false.
+////////////////////////////////////////////////////////////////////////////////
+switch(FEAT_INDUSTRYTILES, SELF, not_next_to_industry,
+		(nearby_tile_class(  2,  2) != TILE_CLASS_INDUSTRY) &&
+		(nearby_tile_class(  2,  1) != TILE_CLASS_INDUSTRY) &&
+		(nearby_tile_class(  2,  0) != TILE_CLASS_INDUSTRY) &&
+		(nearby_tile_class(  2, -1) != TILE_CLASS_INDUSTRY) &&
+		(nearby_tile_class(  2, -2) != TILE_CLASS_INDUSTRY) &&
+		(nearby_tile_class(  1,  2) != TILE_CLASS_INDUSTRY) &&
+		(nearby_tile_class(  1,  1) != TILE_CLASS_INDUSTRY) &&
+		(nearby_tile_class(  1,  0) != TILE_CLASS_INDUSTRY) &&
+		(nearby_tile_class(  1, -1) != TILE_CLASS_INDUSTRY) &&
+		(nearby_tile_class(  1, -2) != TILE_CLASS_INDUSTRY) &&
+		(nearby_tile_class(  0,  2) != TILE_CLASS_INDUSTRY) &&
+		(nearby_tile_class(  0,  1) != TILE_CLASS_INDUSTRY) &&
+		(nearby_tile_class(  0,  0) != TILE_CLASS_INDUSTRY) &&
+		(nearby_tile_class(  0, -1) != TILE_CLASS_INDUSTRY) &&
+		(nearby_tile_class(  0, -2) != TILE_CLASS_INDUSTRY) &&
+		(nearby_tile_class( -1,  2) != TILE_CLASS_INDUSTRY) &&
+		(nearby_tile_class( -1,  1) != TILE_CLASS_INDUSTRY) &&
+		(nearby_tile_class( -1,  0) != TILE_CLASS_INDUSTRY) &&
+		(nearby_tile_class( -1, -1) != TILE_CLASS_INDUSTRY) &&
+		(nearby_tile_class( -1, -2) != TILE_CLASS_INDUSTRY) &&
+		(nearby_tile_class( -2,  2) != TILE_CLASS_INDUSTRY) &&
+		(nearby_tile_class( -2,  1) != TILE_CLASS_INDUSTRY) &&
+		(nearby_tile_class( -2,  0) != TILE_CLASS_INDUSTRY) &&
+		(nearby_tile_class( -2, -1) != TILE_CLASS_INDUSTRY) &&
+		(nearby_tile_class( -2, -2) != TILE_CLASS_INDUSTRY)
+	) {
+	return;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Check if next 2 surrounding tiles in any direction contain houses.
+// Used to avoid having industries generated next to city buildings - unrealistic for e.g. steel mills.
+// Returns 1 if true, 0 if false.
+////////////////////////////////////////////////////////////////////////////////
+switch(FEAT_INDUSTRYTILES, SELF, not_next_to_buildings,
+		(nearby_tile_class(  2,  2) != TILE_CLASS_HOUSE) &&
+		(nearby_tile_class(  2,  1) != TILE_CLASS_HOUSE) &&
+		(nearby_tile_class(  2,  0) != TILE_CLASS_HOUSE) &&
+		(nearby_tile_class(  2, -1) != TILE_CLASS_HOUSE) &&
+		(nearby_tile_class(  2, -2) != TILE_CLASS_HOUSE) &&
+		(nearby_tile_class(  1,  2) != TILE_CLASS_HOUSE) &&
+		(nearby_tile_class(  1,  1) != TILE_CLASS_HOUSE) &&
+		(nearby_tile_class(  1,  0) != TILE_CLASS_HOUSE) &&
+		(nearby_tile_class(  1, -1) != TILE_CLASS_HOUSE) &&
+		(nearby_tile_class(  1, -2) != TILE_CLASS_HOUSE) &&
+		(nearby_tile_class(  0,  2) != TILE_CLASS_HOUSE) &&
+		(nearby_tile_class(  0,  1) != TILE_CLASS_HOUSE) &&
+		(nearby_tile_class(  0,  0) != TILE_CLASS_HOUSE) &&
+		(nearby_tile_class(  0, -1) != TILE_CLASS_HOUSE) &&
+		(nearby_tile_class(  0, -2) != TILE_CLASS_HOUSE) &&
+		(nearby_tile_class( -1,  2) != TILE_CLASS_HOUSE) &&
+		(nearby_tile_class( -1,  1) != TILE_CLASS_HOUSE) &&
+		(nearby_tile_class( -1,  0) != TILE_CLASS_HOUSE) &&
+		(nearby_tile_class( -1, -1) != TILE_CLASS_HOUSE) &&
+		(nearby_tile_class( -1, -2) != TILE_CLASS_HOUSE) &&
+		(nearby_tile_class( -2,  2) != TILE_CLASS_HOUSE) &&
+		(nearby_tile_class( -2,  1) != TILE_CLASS_HOUSE) &&
+		(nearby_tile_class( -2,  0) != TILE_CLASS_HOUSE) &&
+		(nearby_tile_class( -2, -1) != TILE_CLASS_HOUSE) &&
+		(nearby_tile_class( -2, -2) != TILE_CLASS_HOUSE)
+	) {
+	return;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Check if next 2 surrounding tiles in any direction contain desert.
+// Used to avoid having forests next to deserts.
+// Returns 1 if true, 0 if false.
+////////////////////////////////////////////////////////////////////////////////
+switch(FEAT_INDUSTRYTILES, SELF, not_next_to_desert,
+		(nearby_tile_terrain_type(  2,  2) != TILETYPE_DESERT) &&
+		(nearby_tile_terrain_type(  2,  1) != TILETYPE_DESERT) &&
+		(nearby_tile_terrain_type(  2,  0) != TILETYPE_DESERT) &&
+		(nearby_tile_terrain_type(  2, -1) != TILETYPE_DESERT) &&
+		(nearby_tile_terrain_type(  2, -2) != TILETYPE_DESERT) &&
+		(nearby_tile_terrain_type(  1,  2) != TILETYPE_DESERT) &&
+		(nearby_tile_terrain_type(  1,  1) != TILETYPE_DESERT) &&
+		(nearby_tile_terrain_type(  1,  0) != TILETYPE_DESERT) &&
+		(nearby_tile_terrain_type(  1, -1) != TILETYPE_DESERT) &&
+		(nearby_tile_terrain_type(  1, -2) != TILETYPE_DESERT) &&
+		(nearby_tile_terrain_type(  0,  2) != TILETYPE_DESERT) &&
+		(nearby_tile_terrain_type(  0,  1) != TILETYPE_DESERT) &&
+		(nearby_tile_terrain_type(  0,  0) != TILETYPE_DESERT) &&
+		(nearby_tile_terrain_type(  0, -1) != TILETYPE_DESERT) &&
+		(nearby_tile_terrain_type(  0, -2) != TILETYPE_DESERT) &&
+		(nearby_tile_terrain_type( -1,  2) != TILETYPE_DESERT) &&
+		(nearby_tile_terrain_type( -1,  1) != TILETYPE_DESERT) &&
+		(nearby_tile_terrain_type( -1,  0) != TILETYPE_DESERT) &&
+		(nearby_tile_terrain_type( -1, -1) != TILETYPE_DESERT) &&
+		(nearby_tile_terrain_type( -1, -2) != TILETYPE_DESERT) &&
+		(nearby_tile_terrain_type( -2,  2) != TILETYPE_DESERT) &&
+		(nearby_tile_terrain_type( -2,  1) != TILETYPE_DESERT) &&
+		(nearby_tile_terrain_type( -2,  0) != TILETYPE_DESERT) &&
+		(nearby_tile_terrain_type( -2, -1) != TILETYPE_DESERT) &&
+		(nearby_tile_terrain_type( -2, -2) != TILETYPE_DESERT)
+	) {
+	return;
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, is_next_to_road,
+		(
+		nearby_tile_class(0, -1) == TILE_CLASS_ROAD ? 1 :
+		(nearby_tile_class(0, 1) == TILE_CLASS_ROAD ? 1 :
+		(nearby_tile_class(-1, 0) == TILE_CLASS_ROAD ? 1 :
+		(nearby_tile_class(1, 0) == TILE_CLASS_ROAD ? 1 : 0
+		))))) {
+    return;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Check if a tile is in a certain distance from a city center
+// requires min distance to be in TEMP_REGISTER_TOWN_MIN_DISTANCE and 
+// max distance to be in TEMP_REGISTER_TOWN_MAX_DISTANCE
+// Returns 1 if true, 0 if false
+////////////////////////////////////////////////////////////////////////////////
+switch(FEAT_INDUSTRIES, SELF, distance_from_town,
+	LOAD_TEMP(TEMP_REGISTER_TOWN_MIN_DISTANCE) < town_euclidean_dist(0,0) && town_euclidean_dist(0,0) < LOAD_TEMP(TEMP_REGISTER_TOWN_MAX_DISTANCE)) {
+	return;
+}

@@ -1,0 +1,17 @@
+switch(FEAT_INDUSTRIES, PARENT, city_get_power_demand_for_industries, 
+	[LOAD_PERM(PERM_REGISTER_CITY_POWER_DEMAND)])
+{
+	return;
+}
+
+switch(FEAT_INDUSTRIES, PARENT, city_get_power_demand_for_buildings, 
+	[num_houses/2])
+{
+	return;
+}
+
+switch(FEAT_INDUSTRIES, PARENT, city_get_power_available, 
+	[LOAD_PERM(PERM_REGISTER_CITY_POWER_AVAILABLE)])
+{
+	return;
+}

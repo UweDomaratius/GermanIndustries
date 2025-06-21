@@ -1,0 +1,311 @@
+spriteset(fishing_grounds_spriteset_1) {
+	[10, 10, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/fishing_grounds.png"]
+}
+spriteset(fishing_grounds_spriteset_2) {
+	[80, 10, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/fishing_grounds.png"]
+}
+spriteset(fishing_grounds_spriteset_3) {
+	[150, 10, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/fishing_grounds.png"]
+}
+spriteset(fishing_grounds_spriteset_4) {
+	[220, 10, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/fishing_grounds.png"]
+}
+spriteset(fishing_grounds_spriteset_5) {
+	[290, 10, 64, 31, -31, -32, ANIM | NOCROP, "graphics/industries/fishing_grounds.png"]
+}
+
+spritelayout fishing_grounds_spritelayout_1 {
+	childsprite {
+		sprite: GROUNDSPRITE_WATER;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: fishing_grounds_spriteset_1(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+}
+spritelayout fishing_grounds_spritelayout_2 {
+	childsprite {
+		sprite: GROUNDSPRITE_WATER;
+		hide_sprite: 0;
+		always_draw: 1;
+	}                   
+	building {
+		sprite: fishing_grounds_spriteset_2(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+}
+spritelayout fishing_grounds_spritelayout_3 {
+	childsprite {
+		sprite: GROUNDSPRITE_WATER;
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: fishing_grounds_spriteset_3(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+}
+spritelayout fishing_grounds_spritelayout_4 {
+	childsprite {
+		sprite: GROUNDSPRITE_WATER;
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	childsprite {
+		sprite: fishing_grounds_spriteset_5(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		always_draw: 1;
+	}            
+	building {
+		sprite: fishing_grounds_spriteset_4(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// graphics choice switch chain
+//////////////////////////////////////////////////////////////////////////////
+
+switch(FEAT_INDUSTRYTILES, SELF, fishing_grounds_industry_layout_1_graphics_switch, relative_pos) {
+	relative_coord(3, 2): fishing_grounds_spritelayout_1;
+	relative_coord(3, 3): fishing_grounds_spritelayout_4;
+	relative_coord(3, 4): fishing_grounds_spritelayout_2;
+	relative_coord(4, 3): fishing_grounds_spritelayout_3;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, fishing_grounds_industry_layout_2_graphics_switch, relative_pos) {
+	relative_coord(3, 2): fishing_grounds_spritelayout_1;
+	relative_coord(3, 3): fishing_grounds_spritelayout_2;
+	relative_coord(3, 4): fishing_grounds_spritelayout_4;
+	relative_coord(4, 4): fishing_grounds_spritelayout_3;
+	relative_coord(5, 4): fishing_grounds_spritelayout_3;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, fishing_grounds_industry_layout_3_graphics_switch, relative_pos) {
+	relative_coord(2, 3): fishing_grounds_spritelayout_3;
+	relative_coord(5, 2): fishing_grounds_spritelayout_2;
+	relative_coord(5, 3): fishing_grounds_spritelayout_4;
+	relative_coord(5, 4): fishing_grounds_spritelayout_2;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, fishing_grounds_industry_layout_4_graphics_switch, relative_pos) {
+	relative_coord(2, 5): fishing_grounds_spritelayout_3;
+	relative_coord(3, 2): fishing_grounds_spritelayout_2;
+	relative_coord(3, 3): fishing_grounds_spritelayout_4;
+	relative_coord(3, 4): fishing_grounds_spritelayout_3;
+	relative_coord(3, 5): fishing_grounds_spritelayout_1;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, PARENT, fishing_grounds_switch_graphics_layout, layout_num) {
+	1: fishing_grounds_industry_layout_1_graphics_switch;
+	2: fishing_grounds_industry_layout_2_graphics_switch;
+	3: fishing_grounds_industry_layout_3_graphics_switch;
+	4: fishing_grounds_industry_layout_4_graphics_switch;
+	fishing_grounds_industry_layout_1_graphics_switch; // default
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, fishing_grounds_switch_graphics,
+	[switch_terrain_sprite(),switch_graphics_init_temp_registers()
+	]) {
+    fishing_grounds_switch_graphics_layout;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// location checks
+//////////////////////////////////////////////////////////////////////////////
+switch (FEAT_INDUSTRYTILES, SELF, fishing_grounds_switch_location_check_flat_tile, nearby_tile_slope(0,0) == SLOPE_FLAT) {
+	1: return CB_RESULT_LOCATION_ALLOW;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, fishing_grounds_switch_tile_location_check,
+	is_funded_or_prospected())
+{
+	1: fishing_grounds_switch_location_check_flat_tile;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// industry tile and layout definition
+//////////////////////////////////////////////////////////////////////////////
+item(FEAT_INDUSTRYTILES, fishing_grounds_tile, INDUSTRY_TILE_ID_FISHING_GROUNDS) {
+	property {
+		substitute:         0;
+		land_shape_flags:   0;
+		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+		animation_triggers: bitmask();
+	}
+	graphics {
+		tile_check: fishing_grounds_switch_tile_location_check;
+		fishing_grounds_switch_graphics;
+	}
+}
+
+tilelayout fishing_grounds_industry_layout_1_tilelayout {
+	0, 0: 255;	0, 1: 255;	0, 2: 255;						0, 3: 255;						0, 4: 255;					0, 5: 255;	0, 6: 255;
+	1, 0: 255;	1, 1: 255;	1, 2: 255;						1, 3: 255;						1, 4: 255;					1, 5: 255;	1, 6: 255;
+	2, 0: 255;	2, 1: 255;	2, 2: TTD_OILRIG_STATION_TILE;	2, 3: TTD_OILRIG_STATION_TILE;	2, 4: 255;					2, 5: 255;	2, 6: 255;
+	3, 0: 255;	3, 1: 255;	3, 2: fishing_grounds_tile;		3, 3: fishing_grounds_tile;		3, 4: fishing_grounds_tile;	3, 5: 255;	3, 6: 255;
+	4, 0: 255;	4, 1: 255;	4, 2: 255;						4, 3: fishing_grounds_tile;		4, 4: 255;					4, 5: 255;	4, 6: 255;
+	5, 0: 255;	5, 1: 255;	5, 2: 255;						5, 3: 255;						5, 4: 255;					5, 5: 255;	5, 6: 255;	
+	6, 0: 255;	6, 1: 255;	6, 2: 255;						6, 3: 255;						6, 4: 255;					6, 5: 255;	6, 6: 255;
+}
+tilelayout fishing_grounds_industry_layout_2_tilelayout {
+	0, 0: 255;	0, 1: 255;	0, 2: 255;					0, 3: 255;						0, 4: 255;						0, 5: 255;	0, 6: 255;
+	1, 0: 255;	1, 1: 255;	1, 2: 255;					1, 3: 255;						1, 4: 255;						1, 5: 255;	1, 6: 255;
+	2, 0: 255;	2, 1: 255;	2, 2: 255;					2, 3: TTD_OILRIG_STATION_TILE;	2, 4: TTD_OILRIG_STATION_TILE;	2, 5: 255;	2, 6: 255;
+	3, 0: 255;	3, 1: 255;	3, 2: fishing_grounds_tile;	3, 3: fishing_grounds_tile;		3, 4: fishing_grounds_tile;		3, 5: 255;	3, 6: 255;
+	4, 0: 255;	4, 1: 255;	4, 2: 255;					4, 3: 255;						4, 4: fishing_grounds_tile;		4, 5: 255;	4, 6: 255;
+	5, 0: 255;	5, 1: 255;	5, 2: 255;					5, 3: 255;						5, 4: fishing_grounds_tile;		5, 5: 255;	5, 6: 255;
+	6, 0: 255;	6, 1: 255;	6, 2: 255;					6, 3: 255;						6, 4: 255;						6, 5: 255;	6, 6: 255;
+	7, 0: 255;	7, 1: 255;	7, 2: 255;					7, 3: 255;						7, 4: 255;						7, 5: 255;	7, 6: 255;
+}
+tilelayout fishing_grounds_industry_layout_3_tilelayout {
+	0, 0: 255;	0, 1: 255;	0, 2: 255;						0, 3: 255;						0, 4: 255;					0, 5: 255;	0, 6: 255;
+	1, 0: 255;	1, 1: 255;	1, 2: 255;						1, 3: 255;						1, 4: 255;					1, 5: 255;	1, 6: 255;
+	2, 0: 255;	2, 1: 255;	2, 2: 255;						2, 3: fishing_grounds_tile;		2, 4: 255;					2, 5: 255;	2, 6: 255;
+	3, 0: 255;	3, 1: 255;	3, 2: 255;						3, 3: 255;						3, 4: 255;					3, 5: 255;	3, 6: 255;
+	4, 0: 255;	4, 1: 255;	4, 2: TTD_OILRIG_STATION_TILE;	4, 3: TTD_OILRIG_STATION_TILE;	4, 4: 255;					4, 5: 255;	4, 6: 255;
+	5, 0: 255;	5, 1: 255;	5, 2: fishing_grounds_tile;		5, 3: fishing_grounds_tile;		5, 4: fishing_grounds_tile;	5, 5: 255;	5, 6: 255;
+	6, 0: 255;	6, 1: 255;	6, 2: 255;						6, 3: 255;						6, 4: 255;					6, 5: 255;	6, 6: 255;
+	7, 0: 255;	7, 1: 255;	7, 2: 255;						7, 3: 255;						7, 4: 255;					7, 5: 255;	7, 6: 255;
+}
+tilelayout fishing_grounds_industry_layout_4_tilelayout {
+	0, 0: 255;	0, 1: 255;	0, 2: 255;						0, 3: 255;						0, 4: 255;					0, 5: 255;					0, 6: 255;
+	1, 0: 255;	1, 1: 255;	1, 2: 255;						1, 3: 255;						1, 4: 255;					1, 5: 255;					1, 6: 255;
+	2, 0: 255;	2, 1: 255;	2, 2: TTD_OILRIG_STATION_TILE;	2, 3: TTD_OILRIG_STATION_TILE;	2, 4: 255;					2, 5: fishing_grounds_tile;	2, 6: 255;
+	3, 0: 255;	3, 1: 255;	3, 2: fishing_grounds_tile;		3, 3: fishing_grounds_tile;		3, 4: fishing_grounds_tile;	3, 5: fishing_grounds_tile;	3, 6: 255;
+	4, 0: 255;	4, 1: 255;	4, 2: 255;						4, 3: 255;						4, 4: 255;					4, 5: 255;					4, 6: 255;
+	5, 0: 255;	5, 1: 255;	5, 2: 255;						5, 3: 255;						5, 4: 255;					5, 5: 255;					5, 6: 255;
+}
+
+// TODO
+switch(FEAT_INDUSTRIES, SELF, fishing_grounds_switch_location_check_industry_distance,
+	   (industry_distance(INDUSTRY_ID_FISHING_GROUNDS) >= 16) 
+	   && is_near_map_edge(32)
+	   //&& (industry_distance(INDUSTRY_ID_FOOD_PROCESSOR) >= 32)
+	   ) 
+	   { // TODO: check for distance of correct industries, ...
+	   1: return CB_RESULT_LOCATION_ALLOW;
+	   return CB_RESULT_LOCATION_DISALLOW;
+}
+
+switch(FEAT_INDUSTRIES, SELF, fishing_grounds_switch_prod_change, 
+	[STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
+	 STORE_TEMP(transported_last_month_pct("FISH"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 STORE_TEMP(128,TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)])
+{
+	change_production; // use default rules to adapt production
+}
+
+// randomize production at build time based on random bits: 96t min, 152t max
+switch(FEAT_INDUSTRIES, SELF, fishing_grounds_switch_prod_change_build,
+	[initialize_extractive_resources(),
+	 STORE_TEMP(128,TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	])
+{
+	randomize_initial_production;
+}
+
+produce(fishing_grounds_produce,
+	[],
+	[FISH: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, fishing_grounds_switch_produce,
+	[init_primary_production()]) {
+	fishing_grounds_produce;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// build the industry window text here
+////////////////////////////////////////////////////////////////////////////////
+switch(FEAT_INDUSTRIES, SELF, fishing_grounds_switch_extra_text, 
+	[STORE_TEMP(128,TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
+	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 STORE_TEMP(production_level * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	 STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
+	 STORE_TEMP(
+		LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL) < LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION) ? string(STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION) : string(STR_INDUSTRY_PREREQ_KEEP_PRODUCTION) | 
+		string(STR_EMPTY) << 16,
+		TEMP_REGISTER_EXTRA_TEXT_ARG0)
+	]) {
+	return string(STR_ORGANIC_INDUSTRY_TEXT);
+}
+
+item(FEAT_INDUSTRIES, fishing_grounds, INDUSTRY_ID_FISHING_GROUNDS) {
+	property {
+		substitute: 5;
+		override: 0;
+		map_colour: 160;
+		life_type: IND_LIFE_TYPE_ORGANIC;
+		min_cargo_distr: 1;
+		layouts: [fishing_grounds_industry_layout_1_tilelayout,fishing_grounds_industry_layout_2_tilelayout,fishing_grounds_industry_layout_3_tilelayout,fishing_grounds_industry_layout_4_tilelayout];
+		spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_BUILT_ON_WATER,IND_FLAG_AI_CREATES_AIR_AND_SHIP_ROUTES);
+		conflicting_ind_types: [];
+		random_sound_effects: [];
+		name: string(STR_IND_FISHING_GROUNDS);
+		prob_map_gen: 14;
+		prob_in_game: 14;
+		prospect_chance: 0.75;
+		fund_cost_multiplier: 88;
+		remove_cost_multiplier: 0;
+		remove_cost_multiplier: 0;
+		cargo_types: [produce_cargo("FISH",0)];
+		nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FISHING_GROUNDS));
+	}
+
+	graphics {
+		construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+		produce_cargo_arrival:    empty_produce; 
+		produce_256_ticks:        fishing_grounds_switch_produce;
+		monthly_prod_change:      fishing_grounds_switch_prod_change;
+		random_prod_change:       fishing_grounds_switch_prod_change;
+		build_prod_change:        fishing_grounds_switch_prod_change_build;
+		location_check:           fishing_grounds_switch_location_check_industry_distance;
+		extra_text_fund:          return string(STR_EMPTY);
+		extra_text_industry:      fishing_grounds_switch_extra_text;
+	}
+}
+    
