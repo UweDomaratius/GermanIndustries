@@ -1,0 +1,1470 @@
+spriteset(port_spriteset_1) {
+    [10, 10, 64, 39, -31, -8, ANIM | NOCROP, "graphics/industries/port.png"]
+}
+spriteset(port_spriteset_1_spriteset_default_construction_state_0) {
+	[10, 10, 64, 39, -31, -8, ANIM | NOCROP, "graphics/industries/port_construction_1.png"]
+}
+spriteset(port_spriteset_1_spriteset_default_construction_state_1) {
+	[10, 10, 64, 39, -31, -8, ANIM | NOCROP, "graphics/industries/port_construction_2.png"]
+}
+spriteset(port_spriteset_1_spriteset_default_construction_state_2) {
+	[10, 10, 64, 39, -31, -8, ANIM | NOCROP, "graphics/industries/port_construction_3.png"]
+}
+spriteset(port_spriteset_2) {
+	[10, 60, 64, 39, -31, -7, ANIM | NOCROP, "graphics/industries/port.png"]
+}
+spriteset(port_spriteset_2_spriteset_default_construction_state_0) {
+	[10, 60, 64, 39, -31, -7, ANIM | NOCROP, "graphics/industries/port_construction_1.png"]
+}
+spriteset(port_spriteset_2_spriteset_default_construction_state_1) {
+	[10, 60, 64, 39, -31, -7, ANIM | NOCROP, "graphics/industries/port_construction_2.png"]
+}
+spriteset(port_spriteset_2_spriteset_default_construction_state_2) {
+	[10, 60, 64, 39, -31, -7, ANIM | NOCROP, "graphics/industries/port_construction_3.png"]
+}
+spriteset(port_spriteset_3) {
+	[80, 60, 64, 39, -31, -7, ANIM | NOCROP, "graphics/industries/port.png"]
+}
+spriteset(port_spriteset_3_spriteset_default_construction_state_0) {
+	[80, 60, 64, 39, -31, -7, ANIM | NOCROP, "graphics/industries/port_construction_1.png"]
+}
+spriteset(port_spriteset_3_spriteset_default_construction_state_1) {
+	[80, 60, 64, 39, -31, -7, ANIM | NOCROP, "graphics/industries/port_construction_2.png"]
+}
+spriteset(port_spriteset_3_spriteset_default_construction_state_2) {
+	[80, 60, 64, 39, -31, -7, ANIM | NOCROP, "graphics/industries/port_construction_3.png"]
+}
+spriteset(port_spriteset_4) {
+	[150, 60, 64, 39, -31, -7, ANIM | NOCROP, "graphics/industries/port.png"]
+}
+spriteset(port_spriteset_4_spriteset_default_construction_state_0) {
+	[150, 60, 64, 39, -31, -7, ANIM | NOCROP, "graphics/industries/port_construction_1.png"]
+}
+spriteset(port_spriteset_4_spriteset_default_construction_state_1) {
+	[150, 60, 64, 39, -31, -7, ANIM | NOCROP, "graphics/industries/port_construction_2.png"]
+}
+spriteset(port_spriteset_4_spriteset_default_construction_state_2) {
+	[150, 60, 64, 39, -31, -7, ANIM | NOCROP, "graphics/industries/port_construction_3.png"]
+}
+spriteset(port_spriteset_5) {
+	[220, 60, 64, 39, -31, -7, ANIM | NOCROP, "graphics/industries/port.png"]
+}
+spriteset(port_spriteset_5_spriteset_default_construction_state_0) {
+	[220, 60, 64, 39, -31, -7, ANIM | NOCROP, "graphics/industries/port_construction_1.png"]
+}
+spriteset(port_spriteset_5_spriteset_default_construction_state_1) {
+	[220, 60, 64, 39, -31, -7, ANIM | NOCROP, "graphics/industries/port_construction_2.png"]
+}
+spriteset(port_spriteset_5_spriteset_default_construction_state_2) {
+	[220, 60, 64, 39, -31, -7, ANIM | NOCROP, "graphics/industries/port_construction_3.png"]
+}
+spriteset(port_spriteset_6) {
+	[290, 60, 64, 39, -31, -7, ANIM | NOCROP, "graphics/industries/port.png"]
+}
+spriteset(port_spriteset_6_spriteset_default_construction_state_0) {
+	[290, 60, 64, 39, -31, -7, ANIM | NOCROP, "graphics/industries/port_construction_1.png"]
+}
+spriteset(port_spriteset_6_spriteset_default_construction_state_1) {
+	[290, 60, 64, 39, -31, -7, ANIM | NOCROP, "graphics/industries/port_construction_2.png"]
+}
+spriteset(port_spriteset_6_spriteset_default_construction_state_2) {
+	[290, 60, 64, 39, -31, -7, ANIM | NOCROP, "graphics/industries/port_construction_3.png"]
+}
+spriteset(port_spriteset_7) {
+	[360, 60, 64, 39, -31, -7, ANIM | NOCROP, "graphics/industries/port.png"]
+}
+spriteset(port_spriteset_7_spriteset_default_construction_state_0) {
+	[360, 60, 64, 39, -31, -7, ANIM | NOCROP, "src/graphics/industries/port_construction_1.png"]
+}
+spriteset(port_spriteset_7_spriteset_default_construction_state_1) {
+	[360, 60, 64, 39, -31, -7, ANIM | NOCROP, "src/graphics/industries/port_construction_2.png"]
+}
+spriteset(port_spriteset_7_spriteset_default_construction_state_2) {
+	[360, 60, 64, 39, -31, -7, ANIM | NOCROP, "src/graphics/industries/port_construction_3.png"]
+}
+spriteset(port_spriteset_8) {
+	[440, 10, 64, 74, -31, -34, ANIM | NOCROP, "graphics/industries/port.png"]
+}
+spriteset(port_spriteset_8_spriteset_default_construction_state_0) {
+	[440, 10, 64, 74, -31, -34, ANIM | NOCROP, "src/graphics/industries/port_construction_1.png"]
+}
+spriteset(port_spriteset_8_spriteset_default_construction_state_1) {
+	[440, 10, 64, 74, -31, -34, ANIM | NOCROP, "src/graphics/industries/port_construction_2.png"]
+}
+spriteset(port_spriteset_8_spriteset_default_construction_state_2) {
+	[440, 10, 64, 74, -31, -34, ANIM | NOCROP, "src/graphics/industries/port_construction_3.png"]
+}
+spriteset(port_spriteset_9) {
+	[150, 10, 64, 39, -31, 0, ANIM | NOCROP, "graphics/industries/port.png"]
+}
+spriteset(port_spriteset_9_spriteset_default_construction_state_0) {
+	[150, 10, 64, 39, -31, 0, ANIM | NOCROP, "src/graphics/industries/port_construction_1.png"]
+}
+spriteset(port_spriteset_9_spriteset_default_construction_state_1) {
+	[150, 10, 64, 39, -31, 0, ANIM | NOCROP, "src/graphics/industries/port_construction_2.png"]
+}
+spriteset(port_spriteset_9_spriteset_default_construction_state_2) {
+	[150, 10, 64, 39, -31, 0, ANIM | NOCROP, "src/graphics/industries/port_construction_3.png"]
+}
+spriteset(port_spriteset_10) {
+	[150, 10, 64, 39, -31, 0, ANIM | NOCROP, "graphics/industries/port.png"]
+}
+spriteset(port_spriteset_10_spriteset_default_construction_state_0) {
+	[150, 10, 64, 39, -31, 0, ANIM | NOCROP, "src/graphics/industries/port_construction_1.png"]
+}
+spriteset(port_spriteset_10_spriteset_default_construction_state_1) {
+	[150, 10, 64, 39, -31, 0, ANIM | NOCROP, "src/graphics/industries/port_construction_2.png"]
+}
+spriteset(port_spriteset_10_spriteset_default_construction_state_2) {
+	[150, 10, 64, 39, -31, 0, ANIM | NOCROP, "src/graphics/industries/port_construction_3.png"]
+}
+spriteset(port_spriteset_11) {
+	[220, 10, 64, 39, -31, -7, ANIM | NOCROP, "graphics/industries/port.png"]
+}        
+spriteset(port_spriteset_11_spriteset_default_construction_state_0) {
+	[220, 10, 64, 39, -31, -7, ANIM | NOCROP, "src/graphics/industries/port_construction_1.png"]
+}
+spriteset(port_spriteset_11_spriteset_default_construction_state_1) {
+	[220, 10, 64, 39, -31, -7, ANIM | NOCROP, "src/graphics/industries/port_construction_2.png"]
+}
+spriteset(port_spriteset_11_spriteset_default_construction_state_2) {
+	[220, 10, 64, 39, -31, -7, ANIM | NOCROP, "src/graphics/industries/port_construction_3.png"]
+}
+spriteset(port_spriteset_12) {
+	[10, 110, 64, 39, -35, -15, ANIM | NOCROP, "graphics/industries/port.png"]
+}
+spriteset(port_spriteset_12_spriteset_default_construction_state_0) {
+	[10, 110, 64, 39, -35, -15, ANIM | NOCROP, "src/graphics/industries/port_construction_1.png"]
+}
+spriteset(port_spriteset_12_spriteset_default_construction_state_1) {
+	[10, 110, 64, 39, -35, -15, ANIM | NOCROP, "src/graphics/industries/port_construction_2.png"]
+}
+spriteset(port_spriteset_12_spriteset_default_construction_state_2) {
+	[10, 110, 64, 39, -35, -15, ANIM | NOCROP, "src/graphics/industries/port_construction_3.png"]
+}
+spriteset(port_spriteset_13) {
+	[80, 110, 64, 39, -31, -14, ANIM | NOCROP, "graphics/industries/port.png"]
+}
+spriteset(port_spriteset_13_spriteset_default_construction_state_0) {
+	[80, 110, 64, 39, -31, -14, ANIM | NOCROP, "src/graphics/industries/port_construction_1.png"]
+}
+spriteset(port_spriteset_13_spriteset_default_construction_state_1) {
+	[80, 110, 64, 39, -31, -14, ANIM | NOCROP, "src/graphics/industries/port_construction_2.png"]
+}
+spriteset(port_spriteset_13_spriteset_default_construction_state_2) {
+	[80, 110, 64, 39, -31, -14, ANIM | NOCROP, "src/graphics/industries/port_construction_3.png"]
+}
+spriteset(port_spriteset_14) {
+	[150, 110, 64, 39, -31, -8, ANIM | NOCROP, "graphics/industries/port.png"]
+}
+spriteset(port_spriteset_14_spriteset_default_construction_state_0) {
+	[150, 110, 64, 39, -31, -8, ANIM | NOCROP, "src/graphics/industries/port_construction_1.png"]
+}
+spriteset(port_spriteset_14_spriteset_default_construction_state_1) {
+	[150, 110, 64, 39, -31, -8, ANIM | NOCROP, "src/graphics/industries/port_construction_2.png"]
+}
+spriteset(port_spriteset_14_spriteset_default_construction_state_2) {
+	[150, 110, 64, 39, -31, -8, ANIM | NOCROP, "src/graphics/industries/port_construction_3.png"]
+}
+spriteset(port_spriteset_15) {
+	[220, 110, 64, 39, -27, -12, ANIM | NOCROP, "graphics/industries/port.png"]
+}
+spriteset(port_spriteset_15_spriteset_default_construction_state_0) {
+	[220, 110, 64, 39, -27, -12, ANIM | NOCROP, "src/graphics/industries/port_construction_1.png"]
+}
+spriteset(port_spriteset_15_spriteset_default_construction_state_1) {
+	[220, 110, 64, 39, -27, -12, ANIM | NOCROP, "src/graphics/industries/port_construction_2.png"]
+}
+spriteset(port_spriteset_15_spriteset_default_construction_state_2) {
+	[220, 110, 64, 39, -27, -12, ANIM | NOCROP, "src/graphics/industries/port_construction_3.png"]
+}
+spriteset(port_spriteset_16) {
+	[290, 110, 64, 39, -15, -11, ANIM | NOCROP, "graphics/industries/port.png"]
+}
+spriteset(port_spriteset_16_spriteset_default_construction_state_0) {
+	[290, 110, 64, 39, -15, -11, ANIM | NOCROP, "src/graphics/industries/port_construction_1.png"]
+}
+spriteset(port_spriteset_16_spriteset_default_construction_state_1) {
+	[290, 110, 64, 39, -15, -11, ANIM | NOCROP, "src/graphics/industries/port_construction_2.png"]
+}
+spriteset(port_spriteset_16_spriteset_default_construction_state_2) {
+	[290, 110, 64, 39, -15, -11, ANIM | NOCROP, "src/graphics/industries/port_construction_3.png"]
+}
+spriteset(port_spriteset_17) {
+	[360, 110, 64, 39, -45, -15, ANIM | NOCROP, "graphics/industries/port.png"]
+}
+spriteset(port_spriteset_17_spriteset_default_construction_state_0) {
+	[360, 110, 64, 39, -45, -15, ANIM | NOCROP, "src/graphics/industries/port_construction_1.png"]
+}
+spriteset(port_spriteset_17_spriteset_default_construction_state_1) {
+	[360, 110, 64, 39, -45, -15, ANIM | NOCROP, "src/graphics/industries/port_construction_2.png"]
+}
+spriteset(port_spriteset_17_spriteset_default_construction_state_2) {
+	[360, 110, 64, 39, -45, -15, ANIM | NOCROP, "src/graphics/industries/port_construction_3.png"]
+}
+spriteset(port_spriteset_18) {
+	[360, 10, 64, 39, -31, 0, ANIM | NOCROP, "graphics/industries/port.png"]
+}
+spriteset(port_spriteset_18_spriteset_default_construction_state_0) {
+	[360, 10, 64, 39, -31, 0, ANIM | NOCROP, "src/graphics/industries/port_construction_1.png"]
+}
+spriteset(port_spriteset_18_spriteset_default_construction_state_1) {
+	[360, 10, 64, 39, -31, 0, ANIM | NOCROP, "src/graphics/industries/port_construction_2.png"]
+}
+spriteset(port_spriteset_18_spriteset_default_construction_state_2) {
+	[360, 10, 64, 39, -31, 0, ANIM | NOCROP, "src/graphics/industries/port_construction_3.png"]
+}
+spritelayout port_spritelayout_2 {
+	building {
+		sprite: port_spriteset_2(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_3(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_1(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_18(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 18;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+spritelayout port_spritelayout_11 {
+	building {
+		sprite: port_spriteset_2(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}            
+	building {
+		sprite: port_spriteset_1(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_8(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 18;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}            
+}
+spritelayout port_spritelayout_12 {
+	building {
+		sprite: port_spriteset_3(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}            
+	building {
+		sprite: port_spriteset_1(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_8(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 18;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+spritelayout port_spritelayout_13 {
+	building {
+		sprite: port_spriteset_2(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}	
+	building {
+		sprite: port_spriteset_3(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}	
+	building {
+		sprite: port_spriteset_1(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_8(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 18;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+spritelayout port_spritelayout_21 {
+	childsprite {
+		sprite: GROUNDSPRITE_WATER;
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: port_spriteset_12(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+spritelayout port_spritelayout_22 {
+	childsprite {
+		sprite: GROUNDSPRITE_WATER;
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: port_spriteset_13(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+spritelayout port_spritelayout_23 {
+	childsprite {
+		sprite: GROUNDSPRITE_WATER;
+		hide_sprite: 0;
+		always_draw: 1;
+	}                   
+	building {
+		sprite: port_spriteset_14(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+spritelayout port_spritelayout_24 {
+	childsprite {
+		sprite: GROUNDSPRITE_WATER;
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: port_spriteset_15(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+spritelayout port_spritelayout_25 {
+	childsprite {
+		sprite: GROUNDSPRITE_WATER;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: port_spriteset_15(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+spritelayout port_spritelayout_26 {
+	childsprite {
+		sprite: GROUNDSPRITE_WATER;
+		hide_sprite: 0;
+		always_draw: 1;
+	}                   
+	building {
+		sprite: port_spriteset_16(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+spritelayout port_spritelayout_27 {
+	childsprite {
+		sprite: GROUNDSPRITE_WATER;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: port_spriteset_17(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+spritelayout port_spritelayout_28 {
+	building {
+		sprite: port_spriteset_2(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}            
+	building {
+		sprite: port_spriteset_3(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}            
+	building {
+		sprite: port_spriteset_1(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}            
+	building {
+		sprite: port_spriteset_9(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 4;		zoffset: 27;
+		xextent: 16;	yextent: 12;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+spritelayout port_spritelayout_29 {
+	building {
+		sprite: port_spriteset_2(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}           
+	building {
+		sprite: port_spriteset_3(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}            
+	building {
+		sprite: port_spriteset_1(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}           
+	building {
+		sprite: port_spriteset_11(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 4;		zoffset: 27;
+		xextent: 16;	yextent: 12;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+spritelayout port_spritelayout_30 {
+	building {
+		sprite: port_spriteset_2(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_3(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_1(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}            
+	building {
+		sprite: port_spriteset_10(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 5;		yoffset: 0;		zoffset: 40;
+		xextent: 11;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}           
+}
+spritelayout port_spritelayout_coast_warehouse1 {
+	building {
+		sprite: port_spriteset_1(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;  	yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: (construction_state != 0);
+	}
+	building {
+		sprite: port_spriteset_8(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 18;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+spritelayout port_spritelayout_coast_warehouse2 {
+	building {
+		sprite: port_spriteset_7(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}           
+	building {
+		sprite: port_spriteset_1(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_8(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 18;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+spritelayout port_spritelayout_coast_warehouse3 {
+	building {
+		sprite: port_spriteset_2(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_3(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_1(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_8(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 18;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+spritelayout port_spritelayout_coast_warehouse4 {
+	building {
+		sprite: port_spriteset_3(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_4(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_1(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_8(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 18;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+spritelayout port_spritelayout_coast_warehouse5 {
+	building {
+		sprite: port_spriteset_5(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_4(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_1(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_8(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 18;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+spritelayout port_spritelayout_coast_warehouse6 {
+	building {
+		sprite: port_spriteset_5(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_2(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: (construction_state != 0);
+	}            
+	building {
+		sprite: port_spriteset_1(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_8(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 18;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+spritelayout port_spritelayout_coast_warehouse7 {
+	building {
+		sprite: port_spriteset_6(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_1(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_8(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 18;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+spritelayout port_spritelayout_coast_warehouse8 {
+	building {
+		sprite: port_spriteset_6(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_7(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_1(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_8(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 18;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+spritelayout port_spritelayout_coast_truck1 {
+	building {
+		sprite: port_spriteset_1(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_18(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 18;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+spritelayout port_spritelayout_coast_truck2 {
+	building {
+		sprite: port_spriteset_7(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_1(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_18(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 18;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+spritelayout port_spritelayout_coast_truck3 {
+	building {
+		sprite: port_spriteset_2(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_3(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_1(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_18(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 18;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+spritelayout port_spritelayout_coast_truck4 {
+	building {
+		sprite: port_spriteset_3(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_4(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_1(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_18(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 18;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+spritelayout port_spritelayout_coast_truck5 {
+	building {
+		sprite: port_spriteset_5(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_4(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_1(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_18(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 18;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+spritelayout port_spritelayout_coast_truck6 {
+	building {
+		sprite: port_spriteset_5(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_2(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_1(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_18(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 18;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+spritelayout port_spritelayout_coast_truck7 {
+	building {
+		sprite: port_spriteset_6(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_1(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_18(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 18;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+spritelayout port_spritelayout_coast_truck8 {
+	building {
+		sprite: port_spriteset_6(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_7(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_1(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 1;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: port_spriteset_18(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 18;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+}
+switch(FEAT_INDUSTRYTILES, SELF, port_spritelayout_coast_warehouse, nearby_tile_slope(0,0)) {
+	0: port_spritelayout_coast_warehouse1;
+	1: port_spritelayout_coast_warehouse4;
+	2: port_spritelayout_coast_warehouse8;
+	3: port_spritelayout_coast_warehouse2;
+	4: port_spritelayout_coast_warehouse6;
+	5: port_spritelayout_coast_warehouse5;
+	6: port_spritelayout_coast_warehouse7;
+	7: port_spritelayout_coast_warehouse1;
+	8: port_spritelayout_coast_warehouse3;
+	9: port_spritelayout_coast_warehouse4;
+	10: port_spritelayout_coast_warehouse8;
+	11: port_spritelayout_coast_warehouse2;
+	12: port_spritelayout_coast_warehouse6;
+	13: port_spritelayout_coast_warehouse5;
+	14: port_spritelayout_coast_warehouse7;
+	port_spritelayout_coast_warehouse1;
+}
+switch(FEAT_INDUSTRYTILES, SELF, port_spritelayout_coast_truck, nearby_tile_slope(0,0)) {
+	0: port_spritelayout_coast_truck1;
+	1: port_spritelayout_coast_truck4;
+	2: port_spritelayout_coast_truck8;
+	3: port_spritelayout_coast_truck2;
+	4: port_spritelayout_coast_truck6;
+	5: port_spritelayout_coast_truck5;
+	6: port_spritelayout_coast_truck7;
+	7: port_spritelayout_coast_truck1;
+	8: port_spritelayout_coast_truck3;
+	9: port_spritelayout_coast_truck4;
+	10: port_spritelayout_coast_truck8;
+	11: port_spritelayout_coast_truck2;
+	12: port_spritelayout_coast_truck6;
+	13: port_spritelayout_coast_truck5;
+	14: port_spritelayout_coast_truck7;
+	port_spritelayout_coast_truck1;
+}
+switch(FEAT_INDUSTRYTILES, SELF, port_switch_graphics_layout_1, relative_pos) {
+	relative_coord(0, 3): port_spritelayout_27;
+	relative_coord(0, 4): port_spritelayout_coast_truck;
+	relative_coord(1, 1): port_spritelayout_11;
+	relative_coord(1, 2): port_spritelayout_29;
+	relative_coord(1, 3): port_spritelayout_11;
+	relative_coord(1, 4): port_spritelayout_coast_warehouse;
+	relative_coord(2, 1): port_spritelayout_24;
+	relative_coord(2, 2): port_spritelayout_24;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, port_switch_graphics_layout_2, relative_pos) {
+	relative_coord(1, 0): port_spritelayout_23;
+	relative_coord(1, 1): port_spritelayout_23;
+	relative_coord(2, 0): port_spritelayout_30;
+	relative_coord(2, 1): port_spritelayout_12;
+	relative_coord(2, 2): port_spritelayout_21;
+	relative_coord(3, 1): port_spritelayout_coast_warehouse;
+	relative_coord(3, 2): port_spritelayout_coast_truck;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, port_switch_graphics_layout_3, relative_pos) {
+	relative_coord(0, 0): port_spritelayout_coast_warehouse;
+	relative_coord(0, 1): port_spritelayout_coast_warehouse;
+	relative_coord(0, 2): port_spritelayout_coast_warehouse;
+	relative_coord(1, 0): port_spritelayout_24;
+	relative_coord(1, 2): port_spritelayout_2;
+	relative_coord(2, 1): port_spritelayout_26;
+	relative_coord(2, 2): port_spritelayout_28;
+	relative_coord(2, 3): port_spritelayout_22;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, port_switch_graphics_layout_4, relative_pos) {
+	relative_coord(0, 0): port_spritelayout_coast_warehouse;
+	relative_coord(0, 1): port_spritelayout_2;
+	relative_coord(0, 2): port_spritelayout_29;
+	relative_coord(0, 3): port_spritelayout_11;
+	relative_coord(0, 4): port_spritelayout_28;
+	relative_coord(1, 0): port_spritelayout_coast_warehouse;
+	relative_coord(1, 1): port_spritelayout_28;
+	relative_coord(1, 2): port_spritelayout_25;
+	relative_coord(1, 4): port_spritelayout_25;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, port_switch_graphics_layout_5, relative_pos) {
+	relative_coord(0, 0): port_spritelayout_coast_warehouse;
+	relative_coord(1, 0): port_spritelayout_12;
+	relative_coord(2, 0): port_spritelayout_12;
+	relative_coord(2, 1): port_spritelayout_29;
+	relative_coord(2, 2): port_spritelayout_28;
+	relative_coord(3, 0): port_spritelayout_12;
+	relative_coord(3, 1): port_spritelayout_2;
+	relative_coord(3, 2): port_spritelayout_28;
+	relative_coord(4, 0): port_spritelayout_13;
+	relative_coord(4, 1): port_spritelayout_24;
+	relative_coord(4, 2): port_spritelayout_24;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, PARENT, port_switch_graphics_layouts, layout_num) {
+	1: port_switch_graphics_layout_1;
+	2: port_switch_graphics_layout_2;
+	3: port_switch_graphics_layout_3;
+	4: port_switch_graphics_layout_4;
+	5: port_switch_graphics_layout_5;
+    port_switch_graphics_layout_1; // default
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, port_switch_graphics,
+	[switch_terrain_sprite(),switch_graphics_init_temp_registers()
+	]) {
+    port_switch_graphics_layouts;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// location checks
+//////////////////////////////////////////////////////////////////////////////
+switch(FEAT_INDUSTRYTILES, SELF, port_tile_location_check_flat_land, nearby_tile_slope(0,0) == SLOPE_FLAT) {
+	1: return CB_RESULT_LOCATION_DISALLOW;
+	return CB_RESULT_LOCATION_ALLOW;
+}
+switch(FEAT_INDUSTRYTILES, SELF, port_tile_location_check_nearby_water, nearby_tile_water_class(0,0)) {
+	WATER_CLASS_SEA: port_tile_location_check_flat_land;
+	WATER_CLASS_NONE: port_tile_location_check_flat_land;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// industry tile and layout definition
+//////////////////////////////////////////////////////////////////////////////
+item(FEAT_INDUSTRYTILES, port_tile_1, INDUSTRY_TILE_ID_PORT_1) {
+	property {
+		substitute:         0;
+		land_shape_flags:   bitmask(LSF_ONLY_ON_FLAT_LAND);
+		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+		animation_triggers: bitmask();
+	}
+	graphics {
+		port_switch_graphics;
+	}
+}
+item(FEAT_INDUSTRYTILES, port_tile_2, INDUSTRY_TILE_ID_PORT_2) {
+	property {
+		substitute:         0;
+		land_shape_flags:   0;
+		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+		animation_triggers: bitmask();
+	}
+	graphics {
+		tile_check: port_tile_location_check_nearby_water;
+		foundations: return CB_RESULT_NO_FOUNDATIONS;
+		port_switch_graphics;
+	}
+}
+
+tilelayout port_tilelayout_1 {
+	0, 3: port_tile_1;
+	0, 4: port_tile_2;
+	1, 0: 255;
+	1, 1: port_tile_1;
+	1, 2: port_tile_1;
+	1, 3: port_tile_1;
+	1, 4: port_tile_2;
+	2, 1: port_tile_1;
+	2, 2: port_tile_1;
+}
+tilelayout port_tilelayout_2 {
+	0, 0: 255;
+	0, 1: 255;
+	0, 2: 255;
+	1, 0: port_tile_1;
+	1, 1: port_tile_1;
+	1, 255: 255;
+	2, 0: port_tile_1;
+	2, 1: port_tile_1;
+	2, 2: port_tile_1;
+	2, 255: 255;
+	3, 1: port_tile_2;
+	3, 2: port_tile_2;
+}
+tilelayout port_tilelayout_3 {
+	0, 0: port_tile_2;
+	0, 1: port_tile_2;
+	0, 2: port_tile_2;
+	1, 0: port_tile_1;
+	1, 2: port_tile_1;
+	2, 1: port_tile_1;
+	2, 2: port_tile_1;
+	2, 3: port_tile_1;
+	2, 4: 255;
+	3, 2: 255;
+	3, 3: 255;
+}
+tilelayout port_tilelayout_4 {
+	0, 0: port_tile_2;
+	0, 1: port_tile_1;
+	0, 2: port_tile_1;
+	0, 3: port_tile_1;
+	0, 4: port_tile_1;
+	0, 5: 255;
+	1, 0: port_tile_2;
+	1, 1: port_tile_1;
+	1, 2: port_tile_1;
+	1, 4: port_tile_1;
+	1, 5: 255;
+	2, 3: 255;
+	2, 4: 255;
+	2, 5: 255;
+}
+tilelayout port_tilelayout_5 {
+	0, 0: port_tile_2;
+	1, 0: port_tile_1;
+	1, 2: 255;
+	2, 0: port_tile_1;
+	2, 1: port_tile_1;
+	2, 2: port_tile_1;
+	2, 3: 255;
+	3, 0: port_tile_1;
+	3, 1: port_tile_1;
+	3, 2: port_tile_1;
+	3, 3: 255;
+	4, 255: 255;
+	4, 0: port_tile_1;
+	4, 1: port_tile_1;
+	4, 2: port_tile_1;
+	4, 3: 255;
+	5, 255: 255;
+	5, 0: 255;
+	5, 1: 255;
+	5, 2: 255;
+	5, 3: 255;
+}
+
+// TODO: port should be near cities
+switch(FEAT_INDUSTRIES, SELF, port_switch_location_check_industry_distance,
+    [STORE_TEMP(32, TEMP_REGISTER_TOWN_MIN_DISTANCE),
+	 STORE_TEMP(128, TEMP_REGISTER_TOWN_MAX_DISTANCE),
+	   (distance_from_town() && 
+	   (industry_distance(INDUSTRY_ID_OIL_WELL) >= 32) && 
+	   (industry_distance(INDUSTRY_ID_OIL_RIG) >= 32) &&
+	   (industry_distance(INDUSTRY_ID_COAL_MINE) >= 32) &&
+	   (industry_distance(INDUSTRY_ID_IRON_ORE_MINE) >= 32) &&
+	   (industry_distance(INDUSTRY_ID_PORT) >= 16))])
+{ // TODO: check for distance of correct industries, ...
+	   1: return CB_RESULT_LOCATION_ALLOW;
+	   return CB_RESULT_LOCATION_DISALLOW;
+}
+
+produce(port_produce,
+	[],
+	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, port_func_calc_max_prod, 
+	param_economy_model == 0 ? 128 :
+	  4 + max(0,(current_year - 1900))) {
+	return;
+}
+
+// randomize production at build time based on random bits: 96t min, 152t max
+switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_build,
+	[
+	  STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	])
+{
+	randomize_initial_production;
+}
+
+produce(port_produce_cargo_arrival,
+	[GOOD: incoming_cargo_waiting("GOOD"); VEHI: incoming_cargo_waiting("VEHI");],
+	[],
+	0
+)
+
+switch(FEAT_INDUSTRIES, SELF, port_switch_produce,
+	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
+	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 // store the theoretical amount of production (production level * scaling percentage)
+	 STORE_TEMP(production_level * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	]) {
+	port_produce;
+}
+
+switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change, 
+	[STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
+	 STORE_TEMP((transported_last_month_pct("COAL") != 0 && transported_last_month_pct("OIL_") != 0 && transported_last_month_pct("IORE") != 0) ? 
+		(transported_last_month_pct("COAL")+transported_last_month_pct("OIL_")+transported_last_month_pct("IORE")) / 3 :
+	(transported_last_month_pct("COAL") != 0 && transported_last_month_pct("OIL_")) ? 
+		(transported_last_month_pct("COAL")+transported_last_month_pct("OIL_")) / 2 :
+	(transported_last_month_pct("COAL") != 0 && transported_last_month_pct("IORE")) ? 
+		(transported_last_month_pct("COAL")+transported_last_month_pct("IORE")) / 2 :
+	(transported_last_month_pct("OIL_") != 0 && transported_last_month_pct("IORE")) ? 
+		(transported_last_month_pct("OIL_")+transported_last_month_pct("IORE")) / 2 :
+		(transported_last_month_pct("COAL") != 0) ? transported_last_month_pct("COAL") :
+		(transported_last_month_pct("OIL_") != 0) ? transported_last_month_pct("OIL_") :
+		transported_last_month_pct("IORE"), 
+	 TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	])
+{
+	change_production;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// build the industry window text here
+////////////////////////////////////////////////////////////////////////////////
+switch(FEAT_INDUSTRIES, SELF, port_switch_extra_text, 
+	[STORE_TEMP(128,TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
+	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 STORE_TEMP(production_level * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	 STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
+	 STORE_TEMP(
+		LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL) < LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION) ? string(STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION) : string(STR_INDUSTRY_PREREQ_KEEP_PRODUCTION) | 
+		string(STR_EMPTY) << 16,
+		TEMP_REGISTER_EXTRA_TEXT_ARG0)
+	]) {
+	return string(STR_ORGANIC_INDUSTRY_TEXT);
+}
+
+item(FEAT_INDUSTRIES, port, INDUSTRY_ID_PORT) {
+	property {
+		substitute: 0;
+		map_colour: 186;
+		life_type: IND_LIFE_TYPE_PROCESSING;
+		min_cargo_distr: 1;
+		layouts: [port_tilelayout_1,port_tilelayout_2,port_tilelayout_3,port_tilelayout_4,port_tilelayout_5];
+		spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_BUILT_ON_WATER);
+		conflicting_ind_types: [];
+		random_sound_effects: [];
+		name: string(STR_IND_PORT);
+		prob_map_gen: 8;
+		prob_in_game: 1;
+		prospect_chance: 0.75;
+		fund_cost_multiplier: 152;
+		remove_cost_multiplier: 0;
+		remove_cost_multiplier: 0;
+		cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0)];
+		nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
+	}
+        
+	graphics {
+		construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+		produce_cargo_arrival:    port_produce_cargo_arrival; 
+		produce_256_ticks:        port_switch_produce;
+		monthly_prod_change:      port_switch_prod_change;
+		random_prod_change:       port_switch_prod_change;
+		build_prod_change:        port_switch_prod_change_build;
+		location_check:           port_switch_location_check_industry_distance;
+		extra_text_fund:          return string(STR_EMPTY);
+		extra_text_industry:      port_switch_extra_text;
+		cargo_subtype_display:    return CB_RESULT_IND_NO_TEXT_NO_AMOUNT;
+	}
+
+}
+    

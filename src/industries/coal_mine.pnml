@@ -1,0 +1,583 @@
+spriteset(coal_mine_spriteset_headgear_animated) {
+	[10, 10, 64, 110, -31, -70, ANIM | NOCROP, "graphics/industries/coal_mine.png"]
+    [10, 130, 64, 110, -31, -70, ANIM | NOCROP, "graphics/industries/coal_mine.png"]
+    [10, 250, 64, 110, -31, -70, ANIM | NOCROP, "graphics/industries/coal_mine.png"]
+}
+spriteset(coal_mine_spriteset_headgear_animated_snow) {
+    [10, 10, 64, 110, -31, -70, ANIM | NOCROP, "graphics/industries/coal_mine_snow.png"]
+    [10, 130, 64, 110, -31, -70, ANIM | NOCROP, "graphics/industries/coal_mine_snow.png"]
+    [10, 250, 64, 110, -31, -70, ANIM | NOCROP, "graphics/industries/coal_mine_snow.png"]
+}
+spriteset(coal_mine_spriteset_big_building) {
+    [80, 10, 64, 110, -31, -70, ANIM | NOCROP, "graphics/industries/coal_mine.png"]
+}
+spriteset(coal_mine_spriteset_big_building_snow) {
+    [80, 10, 64, 110, -31, -70, ANIM | NOCROP, "graphics/industries/coal_mine_snow.png"]
+}
+spriteset(coal_mine_spriteset_small_building) {
+    [150, 10, 64, 64, -31, -30, ANIM | NOCROP, "graphics/industries/coal_mine.png"]
+}
+spriteset(coal_mine_spriteset_small_building_snow) {
+	[150, 10, 64, 64, -31, -30, ANIM | NOCROP, "graphics/industries/coal_mine_snow.png"]
+}
+spriteset(coal_mine_spriteset_coal_1) {
+	[220, 10, 64, 64, -31, -33, ANIM | NOCROP, "graphics/industries/coal_mine.png"]
+}
+spriteset(coal_mine_spriteset_coal_1_snow) {
+	[220, 10, 64, 64, -31, -33, ANIM | NOCROP, "graphics/industries/coal_mine_snow.png"]
+}
+spriteset(coal_mine_spriteset_coal_2) {
+	[290, 10, 64, 64, -31, -33, ANIM | NOCROP, "graphics/industries/coal_mine.png"]
+}
+spriteset(coal_mine_spriteset_coal_2_snow) {
+	[290, 10, 64, 64, -31, -33, ANIM | NOCROP, "graphics/industries/coal_mine_snow.png"]
+}
+spriteset(coal_mine_spriteset_coal_3) {
+	[360, 10, 64, 64, -31, -33, ANIM | NOCROP, "graphics/industries/coal_mine.png"]
+}
+spriteset(coal_mine_spriteset_coal_3_snow) {
+	[360, 10, 64, 64, -31, -33, ANIM | NOCROP, "graphics/industries/coal_mine_snow.png"]
+}
+
+spritelayout coal_mine_spritelayout_headgear_animated {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_MUD_TRACK;
+		hide_sprite: 0;
+		always_draw: 1;
+	}            
+	building {
+		sprite: coal_mine_spriteset_headgear_animated(animation_frame % 3);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: coal_mine_spriteset_headgear_animated_snow(animation_frame % 3);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+}
+
+spritelayout coal_mine_spritelayout_big_building {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_MUD_TRACK;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+                    
+	building {
+		sprite: coal_mine_spriteset_big_building(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: coal_mine_spriteset_big_building_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+}
+
+spritelayout coal_mine_spritelayout_small_building {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_MUD_TRACK;
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: coal_mine_spriteset_small_building(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: coal_mine_spriteset_small_building_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+}
+spritelayout coal_mine_spritelayout_coal_1 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_MUD_TRACK;
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: coal_mine_spriteset_coal_1(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: coal_mine_spriteset_coal_1_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+}
+spritelayout coal_mine_spritelayout_coal_2 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_MUD_TRACK;
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: coal_mine_spriteset_coal_2(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: coal_mine_spriteset_coal_2_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+}
+spritelayout coal_mine_spritelayout_coal_3 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_MUD_TRACK;
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: coal_mine_spriteset_coal_3(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: coal_mine_spriteset_coal_3_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, coal_mine_switch_graphics_layout_1, relative_pos) {
+	relative_coord(0, 1): coal_mine_spritelayout_headgear_animated;
+	relative_coord(0, 2): coal_mine_spritelayout_big_building;
+	relative_coord(0, 3): coal_mine_spritelayout_coal_1;
+	relative_coord(1, 0): coal_mine_spritelayout_coal_3;
+	relative_coord(1, 1): coal_mine_spritelayout_headgear_animated;
+	relative_coord(1, 2): coal_mine_spritelayout_big_building;
+	relative_coord(1, 3): coal_mine_spritelayout_small_building;
+	relative_coord(2, 0): coal_mine_spritelayout_coal_2;
+	relative_coord(2, 1): coal_mine_spritelayout_coal_1;
+	relative_coord(2, 2): coal_mine_spritelayout_small_building;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, coal_mine_switch_graphics_layout_2, relative_pos) {
+	relative_coord(0, 0): coal_mine_spritelayout_headgear_animated;
+	relative_coord(0, 1): coal_mine_spritelayout_big_building;
+	relative_coord(0, 2): coal_mine_spritelayout_coal_3;
+	relative_coord(1, 0): coal_mine_spritelayout_small_building;
+	relative_coord(1, 1): coal_mine_spritelayout_small_building;
+	relative_coord(1, 2): coal_mine_spritelayout_coal_2;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, coal_mine_switch_graphics_layout_3, relative_pos) {
+	relative_coord(0, 0): coal_mine_spritelayout_coal_1;
+	relative_coord(1, 0): coal_mine_spritelayout_coal_1;
+	relative_coord(1, 1): coal_mine_spritelayout_headgear_animated;
+	relative_coord(1, 2): coal_mine_spritelayout_big_building;
+	relative_coord(2, 0): coal_mine_spritelayout_coal_3;
+	relative_coord(2, 2): coal_mine_spritelayout_coal_2;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, coal_mine_switch_graphics_layout_4, relative_pos) {
+	relative_coord(0, 0): coal_mine_spritelayout_small_building;
+	relative_coord(0, 1): coal_mine_spritelayout_coal_1;
+	relative_coord(0, 2): coal_mine_spritelayout_coal_1;
+	relative_coord(1, 0): coal_mine_spritelayout_small_building;
+	relative_coord(1, 1): coal_mine_spritelayout_headgear_animated;
+	relative_coord(1, 2): coal_mine_spritelayout_big_building;
+	relative_coord(2, 0): coal_mine_spritelayout_headgear_animated;
+	relative_coord(2, 1): coal_mine_spritelayout_big_building;
+	relative_coord(2, 2): coal_mine_spritelayout_coal_3;
+	relative_coord(3, 0): coal_mine_spritelayout_small_building;
+	relative_coord(3, 1): coal_mine_spritelayout_coal_1;
+	relative_coord(3, 2): coal_mine_spritelayout_coal_2;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, coal_mine_switch_graphics_layout_5, relative_pos) {
+	relative_coord(0, 0): coal_mine_spritelayout_coal_1;
+	relative_coord(0, 1): coal_mine_spritelayout_coal_3;
+	relative_coord(1, 0): coal_mine_spritelayout_small_building;
+	relative_coord(1, 1): coal_mine_spritelayout_coal_2;
+	relative_coord(2, 0): coal_mine_spritelayout_headgear_animated;
+	relative_coord(2, 1): coal_mine_spritelayout_big_building;
+	relative_coord(3, 0): coal_mine_spritelayout_headgear_animated;
+	relative_coord(3, 1): coal_mine_spritelayout_big_building;
+	relative_coord(4, 0): coal_mine_spritelayout_small_building;
+	relative_coord(4, 1): coal_mine_spritelayout_coal_1;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, coal_mine_switch_graphics_layout_6, relative_pos) {
+	relative_coord(0, 0): coal_mine_spritelayout_headgear_animated;
+	relative_coord(0, 1): coal_mine_spritelayout_big_building;
+	relative_coord(0, 2): coal_mine_spritelayout_headgear_animated;
+	relative_coord(0, 3): coal_mine_spritelayout_big_building;
+	relative_coord(0, 4): coal_mine_spritelayout_coal_3;
+	relative_coord(1, 0): coal_mine_spritelayout_small_building;
+	relative_coord(1, 1): coal_mine_spritelayout_coal_1;
+	relative_coord(1, 2): coal_mine_spritelayout_small_building;
+	relative_coord(1, 3): coal_mine_spritelayout_coal_1;
+	relative_coord(1, 4): coal_mine_spritelayout_coal_2;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, PARENT, coal_mine_switch_graphics_layouts, layout_num) {
+	1: coal_mine_switch_graphics_layout_1;
+	2: coal_mine_switch_graphics_layout_2;
+	3: coal_mine_switch_graphics_layout_3;
+	4: coal_mine_switch_graphics_layout_4;
+	5: coal_mine_switch_graphics_layout_5;
+	6: coal_mine_switch_graphics_layout_6;
+    coal_mine_switch_graphics_layout_1; // default
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, coal_mine_switch_graphics_construction_state, construction_state) {
+    0..2: spritelayout_default_construction_states;
+    coal_mine_switch_graphics_layouts; // default
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, coal_mine_switch_graphics,
+    [switch_terrain_sprite(),
+	 switch_graphics_init_temp_registers()]) {
+    coal_mine_switch_graphics_construction_state;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// location checks
+//////////////////////////////////////////////////////////////////////////////
+switch (FEAT_INDUSTRYTILES, SELF, coal_mine_switch_tile_location_check2,
+	(nearby_tile_height(-relative_x, -relative_y) + 
+	(nearby_tile_slope(-relative_x, -relative_y)== SLOPE_FLAT ? 0 : nearby_tile_slope(-relative_x, -relative_y) == bitmask(IS_STEEP_SLOPE) ? 2 : 1)) 
+	== 
+	(nearby_tile_height(0, 0) + (nearby_tile_slope(0, 0) == SLOPE_FLAT ? 0 : nearby_tile_slope(0, 0) == bitmask(IS_STEEP_SLOPE) ? 2 : 1))
+	) {
+	1: return CB_RESULT_LOCATION_ALLOW;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, coal_mine_switch_tile_location_check,
+	is_funded_or_prospected() || not_next_to_industry())
+{
+	1: coal_mine_switch_tile_location_check2;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+	
+//////////////////////////////////////////////////////////////////////////////
+// industry tile and layout definition
+//////////////////////////////////////////////////////////////////////////////
+item(FEAT_INDUSTRYTILES, coal_mine_tile_animated_headgear, INDUSTRY_TILE_ID_COAL_MINE_1) {
+	property {
+		substitute:         0;
+		land_shape_flags:   0;
+		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+		animation_info: [ANIMATION_LOOPING, 81];
+        animation_speed: 1;
+        animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_TILE_LOOP);
+	}
+	graphics {
+		tile_check: coal_mine_switch_tile_location_check;
+		coal_mine_switch_graphics;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, coal_mine_tile_non_animated, INDUSTRY_TILE_ID_COAL_MINE_2) {
+	property {
+		substitute:         0;
+		land_shape_flags:   0;
+		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+		animation_triggers: bitmask();
+	}
+	graphics {
+		tile_check: coal_mine_switch_tile_location_check;
+		coal_mine_switch_graphics;
+	}
+}
+
+tilelayout coal_mine_industry_layout_1_tilelayout {
+	0, 1: coal_mine_tile_animated_headgear;
+	0, 2: coal_mine_tile_non_animated;
+	0, 3: coal_mine_tile_non_animated;
+	1, 0: coal_mine_tile_non_animated;
+	1, 1: coal_mine_tile_animated_headgear;
+	1, 2: coal_mine_tile_non_animated;
+	1, 3: coal_mine_tile_non_animated;
+	2, 0: coal_mine_tile_non_animated;
+	2, 1: coal_mine_tile_non_animated;
+	2, 2: coal_mine_tile_non_animated;
+}
+tilelayout coal_mine_industry_layout_2_tilelayout {
+	0, 0: coal_mine_tile_animated_headgear;
+	0, 1: coal_mine_tile_non_animated;
+	0, 2: coal_mine_tile_non_animated;
+	1, 0: coal_mine_tile_non_animated;
+	1, 1: coal_mine_tile_non_animated;
+	1, 2: coal_mine_tile_non_animated;
+}
+tilelayout coal_mine_industry_layout_3_tilelayout {
+	0, 0: coal_mine_tile_non_animated;
+	1, 0: coal_mine_tile_non_animated;
+	1, 1: coal_mine_tile_animated_headgear;
+	1, 2: coal_mine_tile_non_animated;
+	2, 0: coal_mine_tile_non_animated;
+	2, 2: coal_mine_tile_non_animated;
+}
+tilelayout coal_mine_industry_layout_4_tilelayout {
+	0, 0: coal_mine_tile_non_animated;
+	0, 1: coal_mine_tile_non_animated;
+	0, 2: coal_mine_tile_non_animated;
+	1, 0: coal_mine_tile_non_animated;
+	1, 1: coal_mine_tile_animated_headgear;
+	1, 2: coal_mine_tile_non_animated;
+	2, 0: coal_mine_tile_animated_headgear;
+	2, 1: coal_mine_tile_non_animated;
+	2, 2: coal_mine_tile_non_animated;
+	3, 0: coal_mine_tile_non_animated;
+	3, 1: coal_mine_tile_non_animated;
+	3, 2: coal_mine_tile_non_animated;
+}
+tilelayout coal_mine_industry_layout_5_tilelayout {
+	0, 0: coal_mine_tile_non_animated;
+	0, 1: coal_mine_tile_non_animated;
+	1, 0: coal_mine_tile_non_animated;
+	1, 1: coal_mine_tile_non_animated;
+	2, 0: coal_mine_tile_animated_headgear;
+	2, 1: coal_mine_tile_non_animated;
+	3, 0: coal_mine_tile_animated_headgear;
+	3, 1: coal_mine_tile_non_animated;
+	4, 0: coal_mine_tile_non_animated;
+	4, 1: coal_mine_tile_non_animated;
+}
+tilelayout coal_mine_industry_layout_6_tilelayout {
+	0, 0: coal_mine_tile_animated_headgear;
+	0, 1: coal_mine_tile_non_animated;
+	0, 2: coal_mine_tile_animated_headgear;
+	0, 3: coal_mine_tile_non_animated;
+	0, 4: coal_mine_tile_non_animated;
+	1, 0: coal_mine_tile_non_animated;
+	1, 1: coal_mine_tile_non_animated;
+	1, 2: coal_mine_tile_non_animated;
+	1, 3: coal_mine_tile_non_animated;
+	1, 4: coal_mine_tile_non_animated;
+}
+
+switch(FEAT_INDUSTRIES, SELF, coal_mine_switch_location_check_industry_distance,
+        (water_distance > 16) &&
+		(industry_distance(INDUSTRY_ID_COAL_MINE) >= 16) && 
+	    (industry_distance(INDUSTRY_ID_POWER_PLANT) >= 32) &&
+		(industry_distance(INDUSTRY_ID_INTEGRATED_STEEL_MILL) >= 32)) 
+{ 
+	1: return CB_RESULT_LOCATION_ALLOW;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+
+switch(FEAT_INDUSTRIES, SELF, coal_mine_func_calc_max_prod, 
+	param_economy_model == 0 ? 128 :
+	  current_year <= 1859 ? 4 : 
+	  current_year <= 1894 ? (current_year-1860)+4 : 
+	  current_year <= 1914 ? (current_year-1895)*4+40 : 
+	  current_year <= 1923 ? (current_year-1915)+120 : 
+	  current_year <= 1954 ? 128 : 
+	  max(4,128-2*(current_year-1955))) {
+	return;
+}
+
+// if nothing has been transported at all, do not change production (industry might just not be serviced)
+switch(FEAT_INDUSTRIES, SELF, coal_mine_switch_prod_change, 
+	[STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
+	 STORE_TEMP(transported_last_month_pct("COAL"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 STORE_TEMP(coal_mine_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
+	 LOAD_PERM(PERM_REGISTER_RESOURCES) != 0])
+{
+	1: change_production; // use default rules to adapt production
+	return CB_RESULT_IND_PROD_CLOSE; // resources are depleted - close
+}
+
+// randomize production at build time based on random bits: 96t min, 152t max
+switch(FEAT_INDUSTRIES, SELF, coal_mine_switch_prod_change_build,
+	[initialize_extractive_resources(),
+	 STORE_TEMP(coal_mine_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	])
+{
+	randomize_initial_production;
+}
+
+produce(coal_mine_produce,
+	[],
+	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);],
+	0 // do not run again
+)
+
+////////////////////////////////////////////////////////////////////////////////
+// calculate how much to produce, based on remaining reserves, current production level etc.
+////////////////////////////////////////////////////////////////////////////////
+switch(FEAT_INDUSTRIES, SELF, coal_mine_switch_produce,
+	[init_primary_production()]) {
+	coal_mine_produce;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// build the industry window text here
+////////////////////////////////////////////////////////////////////////////////
+switch(FEAT_INDUSTRIES, SELF, coal_mine_switch_extra_text, 
+	[STORE_TEMP(coal_mine_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
+	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 STORE_TEMP(production_level * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	 STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
+	 STORE_TEMP(
+		LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL) < LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION) ? string(STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION) : string(STR_INDUSTRY_PREREQ_KEEP_PRODUCTION) | 
+		string(STR_EMPTY) << 16,
+		TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_RESOURCES) / 1000,TEMP_REGISTER_EXTRA_TEXT_ARG1),
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_RESOURCES) / (LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT)*8*12),TEMP_REGISTER_EXTRA_TEXT_ARG2)
+	]) {
+	return string(STR_EXTRACTIVE_INDUSTRY_TEXT);
+}
+
+switch(FEAT_INDUSTRIES, SELF, coal_mine_switch_extra_text_fund, 
+    [STORE_TEMP(string(STR_1800) | string(STR_1950) << 16, TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	current_year]) {
+	1800..1950: return string(STR_EMPTY);
+	return string(STR_INDUSTRY_AVAILABLE_TIMEFRAME);
+}
+
+// check creation type (getbits(extra_callback_info2, 0, 8))
+switch(FEAT_INDUSTRIES, SELF, coal_mine_switch_check_availability_map_gen, 
+	getbits(extra_callback_info2, 0, 8) == IND_CREATION_GENERATION) {
+	1: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+	return CB_RESULT_IND_NO_CONSTRUCTION;
+}
+
+// year < 1800: no creation, 1800 <= year < 1950: certain probability, 1950 <= year: no creation (take coal from harbours instead)
+switch(FEAT_INDUSTRIES, SELF, coal_mine_switch_check_availability, current_year) {
+	0..1799: return CB_RESULT_IND_NO_CONSTRUCTION;               // no coal mines before 1800
+	1950..5000000: coal_mine_switch_check_availability_map_gen;  // check mode, if the map is generated with that starting year, coal mines should exist
+	return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+}
+
+item(FEAT_INDUSTRIES, coal_mine, INDUSTRY_ID_COAL_MINE) {
+	property {
+		substitute: 0;
+		map_colour: 1;
+		life_type: IND_LIFE_TYPE_EXTRACTIVE;
+		min_cargo_distr: 1;
+		layouts: [coal_mine_industry_layout_1_tilelayout,coal_mine_industry_layout_2_tilelayout,coal_mine_industry_layout_3_tilelayout,coal_mine_industry_layout_4_tilelayout,coal_mine_industry_layout_5_tilelayout,coal_mine_industry_layout_6_tilelayout];
+		spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+		conflicting_ind_types: [];
+		random_sound_effects: [];
+		name: TTD_STR_INDUSTRY_NAME_COAL_MINE;
+		prob_map_gen: 10;
+		prob_in_game: 5;
+		prospect_chance: 0.75;
+		fund_cost_multiplier: 8;
+		remove_cost_multiplier: 0;
+		remove_cost_multiplier: 0;
+		cargo_types: [produce_cargo("COAL",0)];
+		nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_COAL_MINE));
+	}
+
+	graphics {
+		construction_probability: coal_mine_switch_check_availability;
+		produce_cargo_arrival:    empty_produce; 
+		produce_256_ticks:        coal_mine_switch_produce;
+		monthly_prod_change:      coal_mine_switch_prod_change;
+		random_prod_change:       coal_mine_switch_prod_change;
+		build_prod_change:        coal_mine_switch_prod_change_build;
+		location_check:           coal_mine_switch_location_check_industry_distance;
+		extra_text_fund:          coal_mine_switch_extra_text_fund;
+		extra_text_industry:      coal_mine_switch_extra_text;
+	}
+}
+    

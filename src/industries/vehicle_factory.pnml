@@ -1,0 +1,752 @@
+spriteset(vehicle_factory_spriteset_rear_assembly_hall_windows) {
+    [10, 10, 64, 80, -31, -49, ANIM | NOCROP, "graphics/industries/assembly_plant.png"]
+}       
+spriteset(vehicle_factory_spriteset_central_assembly_hall) {
+	[150, 10, 64, 80, -31, -49, ANIM | NOCROP, "graphics/industries/assembly_plant.png"]
+}       
+spriteset(vehicle_factory_spriteset_front_assembly_hall_windows) {
+	[220, 10, 64, 80, -31, -49, ANIM | NOCROP, "graphics/industries/assembly_plant.png"]
+}       
+spriteset(vehicle_factory_spriteset_front_assembly_hall_doors) {
+	[290, 10, 64, 80, -31, -49, ANIM | NOCROP, "graphics/industries/assembly_plant.png"]
+}      
+spriteset(vehicle_factory_spriteset_goods_in_1) {
+	[360, 10, 64, 80, -31, -49, ANIM | NOCROP, "graphics/industries/assembly_plant.png"]
+}       
+spriteset(vehicle_factory_spriteset_offices) {
+	[500, 10, 64, 80, -31, -49, ANIM | NOCROP, "graphics/industries/assembly_plant.png"]
+}
+spriteset(vehicle_factory_spriteset_tyres) {
+	[570, 10, 64, 80, -31, -49, ANIM | NOCROP, "graphics/industries/assembly_plant.png"]
+}        
+spritelayout vehicle_factory_spritelayout_rear_assembly_hall_windows {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+    building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: vehicle_factory_spriteset_rear_assembly_hall_windows(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+    building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout vehicle_factory_spritelayout_central_assembly_hall {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+    building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: vehicle_factory_spriteset_central_assembly_hall(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+    building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout vehicle_factory_spritelayout_front_assembly_hall_windows {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+    building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: vehicle_factory_spriteset_front_assembly_hall_windows(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout vehicle_factory_spritelayout_front_assembly_hall_doors {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+    building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: vehicle_factory_spriteset_front_assembly_hall_doors(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset: 16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout vehicle_factory_spritelayout_goods_in_1 {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+    building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: vehicle_factory_spriteset_goods_in_1(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+    building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout vehicle_factory_spritelayout_offices {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+    building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: vehicle_factory_spriteset_offices(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+    building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout vehicle_factory_spritelayout_tyres {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+    building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: vehicle_factory_spriteset_tyres(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+    building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// graphics choice switch chain
+//////////////////////////////////////////////////////////////////////////////
+switch(FEAT_INDUSTRYTILES, SELF, vehicle_factory_spritelayout_1, relative_pos) {
+	relative_coord(3, 4): vehicle_factory_spritelayout_rear_assembly_hall_windows;
+	relative_coord(3, 5): vehicle_factory_spritelayout_central_assembly_hall;
+	relative_coord(3, 6): vehicle_factory_spritelayout_central_assembly_hall;
+	relative_coord(3, 7): vehicle_factory_spritelayout_front_assembly_hall_doors;
+	relative_coord(4, 4): vehicle_factory_spritelayout_rear_assembly_hall_windows;
+	relative_coord(4, 5): vehicle_factory_spritelayout_central_assembly_hall;
+	relative_coord(4, 6): vehicle_factory_spritelayout_central_assembly_hall;
+	relative_coord(4, 7): vehicle_factory_spritelayout_front_assembly_hall_windows;
+	relative_coord(5, 4): vehicle_factory_spritelayout_goods_in_1;
+	relative_coord(5, 5): vehicle_factory_spritelayout_offices;
+	relative_coord(5, 6): vehicle_factory_spritelayout_offices;
+	relative_coord(5, 7): vehicle_factory_spritelayout_tyres;
+	relative_coord(0, 0): vehicle_factory_spritelayout_rear_assembly_hall_windows;
+	relative_coord(0, 1): vehicle_factory_spritelayout_central_assembly_hall;
+	relative_coord(0, 2): vehicle_factory_spritelayout_front_assembly_hall_doors;
+	relative_coord(1, 0): vehicle_factory_spritelayout_offices;
+	relative_coord(1, 1): vehicle_factory_spritelayout_tyres;
+	relative_coord(1, 2): vehicle_factory_spritelayout_offices;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, vehicle_factory_spritelayout_2, relative_pos) {
+	relative_coord(0, 0): vehicle_factory_spritelayout_rear_assembly_hall_windows;
+	relative_coord(0, 1): vehicle_factory_spritelayout_central_assembly_hall;
+	relative_coord(0, 2): vehicle_factory_spritelayout_central_assembly_hall;
+	relative_coord(0, 3): vehicle_factory_spritelayout_front_assembly_hall_doors;
+	relative_coord(1, 0): vehicle_factory_spritelayout_rear_assembly_hall_windows;
+	relative_coord(1, 1): vehicle_factory_spritelayout_central_assembly_hall;
+	relative_coord(1, 2): vehicle_factory_spritelayout_central_assembly_hall;
+	relative_coord(1, 3): vehicle_factory_spritelayout_front_assembly_hall_windows;
+	relative_coord(2, 0): vehicle_factory_spritelayout_goods_in_1;
+	relative_coord(2, 1): vehicle_factory_spritelayout_offices;
+	relative_coord(2, 2): vehicle_factory_spritelayout_offices;
+	relative_coord(2, 3): vehicle_factory_spritelayout_tyres;
+	relative_coord(4, 5): vehicle_factory_spritelayout_rear_assembly_hall_windows;
+	relative_coord(4, 6): vehicle_factory_spritelayout_central_assembly_hall;
+	relative_coord(4, 7): vehicle_factory_spritelayout_front_assembly_hall_doors;
+	relative_coord(5, 5): vehicle_factory_spritelayout_offices;
+	relative_coord(5, 6): vehicle_factory_spritelayout_tyres;
+	relative_coord(5, 7): vehicle_factory_spritelayout_offices;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, vehicle_factory_spritelayout_3, relative_pos) {
+	relative_coord(0, 0): vehicle_factory_spritelayout_rear_assembly_hall_windows;
+	relative_coord(0, 1): vehicle_factory_spritelayout_central_assembly_hall;
+	relative_coord(0, 2): vehicle_factory_spritelayout_central_assembly_hall;
+	relative_coord(0, 3): vehicle_factory_spritelayout_front_assembly_hall_doors;
+	relative_coord(1, 0): vehicle_factory_spritelayout_rear_assembly_hall_windows;
+	relative_coord(1, 1): vehicle_factory_spritelayout_central_assembly_hall;
+	relative_coord(1, 2): vehicle_factory_spritelayout_central_assembly_hall;
+	relative_coord(1, 3): vehicle_factory_spritelayout_front_assembly_hall_windows;
+	relative_coord(2, 0): vehicle_factory_spritelayout_goods_in_1;
+	relative_coord(2, 1): vehicle_factory_spritelayout_offices;
+	relative_coord(2, 2): vehicle_factory_spritelayout_offices;
+	relative_coord(2, 3): vehicle_factory_spritelayout_tyres;
+	relative_coord(0, 6): vehicle_factory_spritelayout_rear_assembly_hall_windows;
+	relative_coord(0, 7): vehicle_factory_spritelayout_central_assembly_hall;
+	relative_coord(0, 8): vehicle_factory_spritelayout_front_assembly_hall_doors;
+	relative_coord(1, 6): vehicle_factory_spritelayout_offices;
+	relative_coord(1, 7): vehicle_factory_spritelayout_tyres;
+	relative_coord(1, 8): vehicle_factory_spritelayout_offices;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, vehicle_factory_spritelayout_4, relative_pos) {
+	relative_coord(0, 0): vehicle_factory_spritelayout_rear_assembly_hall_windows;
+	relative_coord(0, 1): vehicle_factory_spritelayout_central_assembly_hall;
+	relative_coord(0, 2): vehicle_factory_spritelayout_central_assembly_hall;
+	relative_coord(0, 3): vehicle_factory_spritelayout_front_assembly_hall_doors;
+	relative_coord(1, 0): vehicle_factory_spritelayout_rear_assembly_hall_windows;
+	relative_coord(1, 1): vehicle_factory_spritelayout_central_assembly_hall;
+	relative_coord(1, 2): vehicle_factory_spritelayout_central_assembly_hall;
+	relative_coord(1, 3): vehicle_factory_spritelayout_front_assembly_hall_windows;
+	relative_coord(2, 0): vehicle_factory_spritelayout_goods_in_1;
+	relative_coord(2, 1): vehicle_factory_spritelayout_offices;
+	relative_coord(2, 2): vehicle_factory_spritelayout_offices;
+	relative_coord(2, 3): vehicle_factory_spritelayout_tyres;
+	relative_coord(5, 0): vehicle_factory_spritelayout_rear_assembly_hall_windows;
+	relative_coord(5, 1): vehicle_factory_spritelayout_central_assembly_hall;
+	relative_coord(5, 2): vehicle_factory_spritelayout_front_assembly_hall_doors;
+	relative_coord(6, 0): vehicle_factory_spritelayout_offices;
+	relative_coord(6, 1): vehicle_factory_spritelayout_tyres;
+	relative_coord(6, 2): vehicle_factory_spritelayout_offices;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, PARENT, vehicle_factory_switch_graphics_layouts, layout_num) {
+    1: vehicle_factory_spritelayout_1;
+    2: vehicle_factory_spritelayout_2;
+    3: vehicle_factory_spritelayout_3;
+    4: vehicle_factory_spritelayout_4;
+    vehicle_factory_spritelayout_1; // default
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, vehicle_factory_switch_graphics_construction_state, construction_state) {
+    0..2: spritelayout_default_construction_states;
+    vehicle_factory_switch_graphics_layouts; // default
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, vehicle_factory_switch_graphics,
+	[switch_tile_fences(),
+	 switch_terrain_sprite(),switch_graphics_init_temp_registers()]) {
+    vehicle_factory_switch_graphics_construction_state;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// location checks
+//////////////////////////////////////////////////////////////////////////////
+// This check works as follows: calculate height of the northernmost tile of the industry and add 0, 1 or 2 for flat, slope. steep slope
+// Do the same for the current tile and compare the results. If the result is equal, the terrain is effectively flat
+// and industry can be placed.
+// It just looks weird due to the stacked ternary operators needed here
+switch (FEAT_INDUSTRYTILES, SELF, vehicle_factory_switch_tile_location_check2,
+			(nearby_tile_height(-relative_x, -relative_y) + 
+			(nearby_tile_slope(-relative_x, -relative_y)== SLOPE_FLAT ? 0 : nearby_tile_slope(-relative_x, -relative_y) == bitmask(IS_STEEP_SLOPE) ? 2 : 1)) 
+			== 
+			(nearby_tile_height(0, 0) + (nearby_tile_slope(0, 0) == SLOPE_FLAT ? 0 : nearby_tile_slope(0, 0) == bitmask(IS_STEEP_SLOPE) ? 2 : 1))
+			) {
+	1: return CB_RESULT_LOCATION_ALLOW;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, vehicle_factory_switch_tile_location_check,
+	is_funded_or_prospected() || (not_next_to_industry() && not_next_to_buildings()))
+{
+	1: vehicle_factory_switch_tile_location_check2;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// industry tile and layout definition
+//////////////////////////////////////////////////////////////////////////////
+item(FEAT_INDUSTRYTILES, vehicle_factory_tile, INDUSTRY_TILE_ID_VEHICLE_FACTORY) {
+	property {
+		substitute:         0;
+		land_shape_flags:   0;
+		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+		animation_triggers: bitmask();
+	}
+	graphics {
+		tile_check: vehicle_factory_switch_tile_location_check;
+		vehicle_factory_switch_graphics;
+	}
+}
+
+tilelayout vehicle_factory_tilelayout_1 {
+	3, 4: vehicle_factory_tile;
+    3, 5: vehicle_factory_tile;
+    3, 6: vehicle_factory_tile;
+    3, 7: vehicle_factory_tile;
+    4, 4: vehicle_factory_tile;
+    4, 5: vehicle_factory_tile;
+    4, 6: vehicle_factory_tile;
+    4, 7: vehicle_factory_tile;
+    5, 4: vehicle_factory_tile;
+    5, 5: vehicle_factory_tile;
+    5, 6: vehicle_factory_tile;
+    5, 7: vehicle_factory_tile;
+    0, 0: vehicle_factory_tile;
+    0, 1: vehicle_factory_tile;
+    0, 2: vehicle_factory_tile;
+    1, 0: vehicle_factory_tile;
+    1, 1: vehicle_factory_tile;
+    1, 2: vehicle_factory_tile;
+}
+tilelayout vehicle_factory_tilelayout_2 {
+	0, 0: vehicle_factory_tile;
+    0, 1: vehicle_factory_tile;
+    0, 2: vehicle_factory_tile;
+    0, 3: vehicle_factory_tile;
+    1, 0: vehicle_factory_tile;
+    1, 1: vehicle_factory_tile;
+    1, 2: vehicle_factory_tile;
+    1, 3: vehicle_factory_tile;
+    2, 0: vehicle_factory_tile;
+    2, 1: vehicle_factory_tile;
+    2, 2: vehicle_factory_tile;
+    2, 3: vehicle_factory_tile;
+    4, 5: vehicle_factory_tile;
+    4, 6: vehicle_factory_tile;
+    4, 7: vehicle_factory_tile;
+    5, 5: vehicle_factory_tile;
+    5, 6: vehicle_factory_tile;
+    5, 7: vehicle_factory_tile;
+}
+
+tilelayout vehicle_factory_tilelayout_3 {
+	0, 0: vehicle_factory_tile;
+    0, 1: vehicle_factory_tile;
+    0, 2: vehicle_factory_tile;
+    0, 3: vehicle_factory_tile;
+    1, 0: vehicle_factory_tile;
+    1, 1: vehicle_factory_tile;
+    1, 2: vehicle_factory_tile;
+    1, 3: vehicle_factory_tile;
+    2, 0: vehicle_factory_tile;
+    2, 1: vehicle_factory_tile;
+    2, 2: vehicle_factory_tile;
+    2, 3: vehicle_factory_tile;
+    0, 6: vehicle_factory_tile;
+    0, 7: vehicle_factory_tile;
+    0, 8: vehicle_factory_tile;
+    1, 6: vehicle_factory_tile;
+    1, 7: vehicle_factory_tile;
+    1, 8: vehicle_factory_tile;
+}
+
+tilelayout vehicle_factory_tilelayout_4 {
+	0, 0: vehicle_factory_tile;
+    0, 1: vehicle_factory_tile;
+    0, 2: vehicle_factory_tile;
+    0, 3: vehicle_factory_tile;
+    1, 0: vehicle_factory_tile;
+    1, 1: vehicle_factory_tile;
+    1, 2: vehicle_factory_tile;
+    1, 3: vehicle_factory_tile;
+    2, 0: vehicle_factory_tile;
+    2, 1: vehicle_factory_tile;
+    2, 2: vehicle_factory_tile;
+    2, 3: vehicle_factory_tile;
+    5, 0: vehicle_factory_tile;
+    5, 1: vehicle_factory_tile;
+    5, 2: vehicle_factory_tile;
+    6, 0: vehicle_factory_tile;
+    6, 1: vehicle_factory_tile;
+    6, 2: vehicle_factory_tile;
+}
+
+// todo: check against correct industries
+switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_location_check_industry_distance,
+       [STORE_TEMP(24, TEMP_REGISTER_TOWN_MIN_DISTANCE),
+	    STORE_TEMP(128, TEMP_REGISTER_TOWN_MAX_DISTANCE),
+	    (distance_from_town() && 
+		(industry_town_count(INDUSTRY_ID_POWER_PLANT) > 0) && // industry requires a power plant in the city
+		(industry_distance(INDUSTRY_ID_INTEGRATED_STEEL_MILL) >= 32) &&
+	    (industry_distance(INDUSTRY_ID_VEHICLE_FACTORY) >= 16) &&
+		(industry_distance(INDUSTRY_ID_FURNITURE_FACTORY) >= 16)
+		)]) {
+	   1: return CB_RESULT_LOCATION_ALLOW;
+	   return CB_RESULT_LOCATION_DISALLOW;
+}
+
+// TODO: make sure that production requires electricity
+
+// 1 STEL => 1 VEHI
+produce(vehicle_factory_produce,
+	[STEL: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);PLAS: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
+	[VEHI: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, PARENT, vehicle_factory_update_city_persistent_storage,
+	[
+		STORE_PERM(LOAD_TEMP(TEMP_REGISTER_POWER_DEMAND)+LOAD_PERM(PERM_REGISTER_CITY_POWER_DEMAND), PERM_REGISTER_CITY_POWER_DEMAND),
+		STORE_PERM(LOAD_PERM(PERM_REGISTER_CITY_POWER_AVAILABLE) - LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT), PERM_REGISTER_CITY_POWER_AVAILABLE)
+	]
+)
+{
+	vehicle_factory_produce;
+}
+
+// TODO: factor in how much energy is needed to produce one item - currently it's 1:1
+switch(FEAT_INDUSTRIES, SELF, vehicle_factory_update_production_according_to_power,
+	[
+	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT), PERM_REGISTER_POWER_DEMAND),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT), TEMP_REGISTER_POWER_DEMAND),
+	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT),
+	 // reduce amount of production if not enough electricity is available
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),city_get_power_available()), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT), PERM_REGISTER_PRODUCTION_AMOUNT),
+	 STORE_PERM((LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * 100) / LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT), PERM_REGISTER_PRODUCTION_PERCENTAGE),
+	])
+{
+	vehicle_factory_update_city_persistent_storage;
+}
+
+// vehicle factory uses 10% of stockpile for production, if stockpile is big enough
+// if stockpile is < 80t, 8t are produced per 256ticks
+// if stockpile is < 8t, whatever is available is used
+// it stockpile is empty, nothing is produced
+switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_produce, 
+	[STORE_TEMP(min(incoming_cargo_waiting("STEL"),incoming_cargo_waiting("PLAS")), TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT),
+	 STORE_TEMP(((LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) / 10) > 8) ? LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) / 10 : 
+	 (LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) > 8 ? 8 : LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT)),TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT), PERM_REGISTER_PRODUCTION_AMOUNT),
+	 param_electricity_needed
+	]) {
+	1: vehicle_factory_update_production_according_to_power;
+	vehicle_factory_produce;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// cargo subtexts to show how much incoming cargo is waiting
+////////////////////////////////////////////////////////////////////////////////
+switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_cargo_subtype_display_info_steel, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("STEL") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	STEL: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_cargo_subtype_display_info, 
+	getbits(extra_callback_info2, 16, 8)) {
+	STEL: vehicle_factory_switch_cargo_subtype_display_info_steel;
+	return 0x3800 + string(STR_EMPTY);
+}
+
+// getbits(extra_callback_info2, 8, 8) == 1 -> industry window, 0 -> industry buy/prospect window, 2 -> industry directory
+switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_cargo_subtype, 
+	 getbits(extra_callback_info2, 8, 8)) {
+	0: return CB_RESULT_IND_NO_TEXT_NO_AMOUNT;
+	1: vehicle_factory_switch_cargo_subtype_display_info;
+	return 0x3800 + string(STR_EMPTY);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// build the industry window text here
+////////////////////////////////////////////////////////////////////////////////
+switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_extra_text_electricity, 
+	[
+	 // the relevant information is stored in the permanent registers of the industry, which are updated in the production cycle
+	 // now store the relevant values in the different registers
+	 STORE_TEMP(city_get_power_available(), TEMP_REGISTER_POWER_AVAILABLE),
+	 
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT), TEMP_REGISTER_EXTRA_TEXT_ARG0), 
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_PERCENTAGE), TEMP_REGISTER_EXTRA_TEXT_ARG1), 
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_POWER_DEMAND), TEMP_REGISTER_EXTRA_TEXT_ARG2),
+	 
+	 // if (power_available_from_city == 0) -> STR_INDUSTRY_NO_POWER
+	 // else if (production_percentage == 100 && max_production > 0) -> STR_ENOUGH_POWER
+	 // else -> STR_NOT_ENOUGH_POWER
+	 STORE_TEMP((LOAD_PERM(PERM_REGISTER_PRODUCTION_PERCENTAGE) == 0 && LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT) > 0) ? string(STR_INDUSTRY_NO_POWER) :
+	 ((LOAD_PERM(PERM_REGISTER_PRODUCTION_PERCENTAGE) == 100 && LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT) > 0) ? string(STR_INDUSTRY_ENOUGH_POWER) :
+	 ((LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT) > 0) ? string(STR_INDUSTRY_NOT_ENOUGH_POWER) : string(STR_EMPTY)))
+	 | string(STR_EMPTY) << 16, TEMP_REGISTER_EXTRA_TEXT_ARG3)
+	])
+{
+	return string(STR_INDUSTRY_ELECTRICITY_TEXT);
+}
+
+switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_extra_text, param_electricity_needed)
+{
+	1: vehicle_factory_switch_extra_text_electricity;
+	return string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_extra_text_fund, 
+	[STORE_TEMP(string(STR_1800), TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	current_year]) {
+	1910..500000: return string(STR_EMPTY);
+	return string(STR_INDUSTRY_NOT_AVAILABLE_BEFORE);
+}
+
+// year < 1910: no creation, 1910 <= year: certain probability
+switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_check_availability, 
+	current_year) {
+	0..1909: return CB_RESULT_IND_NO_CONSTRUCTION;
+	return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+}
+
+item(FEAT_INDUSTRIES, vehicle_factory, INDUSTRY_ID_VEHICLE_FACTORY) {
+	property {
+		substitute: 0;
+		map_colour: 145;
+		life_type: IND_LIFE_TYPE_PROCESSING;
+		min_cargo_distr: 1;
+		layouts: [vehicle_factory_tilelayout_1,vehicle_factory_tilelayout_2,vehicle_factory_tilelayout_3,vehicle_factory_tilelayout_4];
+		spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+		conflicting_ind_types: [];
+		random_sound_effects: [];
+		name: string(STR_IND_VEHICLE_FACTORY);
+		prob_map_gen: 5;
+		prob_in_game: 1;
+		fund_cost_multiplier: 145;
+		remove_cost_multiplier: 0;
+		remove_cost_multiplier: 0;
+		cargo_types: [accept_cargo("STEL"),accept_cargo("PLAS"),produce_cargo("VEHI",0)];
+		nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_FACTORY));
+	}
+        
+	graphics {
+		construction_probability: vehicle_factory_switch_check_availability;
+		produce_cargo_arrival:    empty_produce; 
+		produce_256_ticks:        vehicle_factory_switch_produce;
+		monthly_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
+		random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+		location_check:           vehicle_factory_switch_location_check_industry_distance;
+		extra_text_fund:          vehicle_factory_switch_extra_text_fund;
+		extra_text_industry:      vehicle_factory_switch_extra_text;
+		cargo_subtype_display:    vehicle_factory_switch_cargo_subtype;
+	}
+}
+    

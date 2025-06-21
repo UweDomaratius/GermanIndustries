@@ -1,0 +1,30 @@
+spriteset(cargoicon_passengers) {
+    [10 + 20 * 0, 10 + 20 * 0, 10, 10, 0, 0,  "graphics/other/cargoicons.png"]
+}
+
+item(FEAT_CARGOS, passengers, CARGO_ID_PASSENGERS) {
+    property {
+        type_name: TTD_STR_CARGO_PLURAL_PASSENGERS;
+        unit_name: TTD_STR_CARGO_SINGULAR_PASSENGER;
+        type_abbreviation: TTD_STR_ABBREV_PASSENGERS;
+        sprite: NEW_CARGO_SPRITE;
+        weight: 0.0625;
+        is_freight: 0;
+        cargo_classes: bitmask(CC_PASSENGERS);
+        town_growth_effect: TOWNGROWTH_PASSENGERS;
+        town_growth_multiplier: 1.0;
+        units_of_cargo: TTD_STR_PASSENGERS;
+        items_of_cargo: TTD_STR_QUANTITY_PASSENGERS;
+        penalty_lowerbound: 0;
+        single_penalty_length: 22;
+        capacity_multiplier: 4;
+        cargo_payment_list_colour: 152;
+        station_list_colour: 152;
+        price_factor: 137;
+        cargo_label: "PASS";
+        number: CARGO_ID_PASSENGERS;
+    }
+    graphics {
+        cargoicon_passengers;
+    }
+}

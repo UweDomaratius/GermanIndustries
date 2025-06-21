@@ -1,0 +1,560 @@
+spritelayout power_plant_spritelayout_cooling_tower {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_MUD_TRACK;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0) || construction_state < 3;
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0) || construction_state < 3;
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_POWER_PLANT_COOLING_TOWER+construction_state-1;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 16;
+		always_draw: 0;
+		hide_sprite: construction_state == 0;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0) || construction_state < 3;
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0) || construction_state < 3;
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout power_plant_spritelayout_large_building {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_MUD_TRACK;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0) || construction_state < 3;
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0) || construction_state < 3;
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_POWER_PLANT_BUILDING+construction_state-1;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 16;
+		always_draw: 0;
+		hide_sprite: construction_state == 0;
+	}
+	building {
+		sprite: TTD_SMOKE_SPRITE_WHITE_BIG + ((animation_frame + 0)%8);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 3;
+		yoffset: 0;
+		zoffset: 36;
+		xextent: 15;
+		yextent: 7;
+		zextent: 7;
+		hide_sprite: construction_state < 3;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0) || construction_state < 3;
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0) || construction_state < 3;
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout power_plant_spritelayout_small_building {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_MUD_TRACK;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0) || construction_state < 3;
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0) || construction_state < 3;
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_POWER_PLANT_SMALL_BUILDING+construction_state-1;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 16;
+		always_draw: 0;
+		hide_sprite: construction_state == 0;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0) || construction_state < 3;
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0) || construction_state < 3;
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout power_plant_spritelayout_substation {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_MUD_TRACK;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0) || construction_state < 3;
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0) || construction_state < 3;
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_POWER_PLANT_SUBSTATION;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 16;
+		always_draw: 0;
+		hide_sprite:  construction_state < 3;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0) || construction_state < 3;
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0) || construction_state < 3;
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+switch(FEAT_INDUSTRYTILES, SELF, power_plant_switch_graphics_layout_1, relative_pos) {
+	relative_coord(0, 0): power_plant_spritelayout_cooling_tower;
+	relative_coord(0, 1): power_plant_spritelayout_small_building;
+	relative_coord(1, 0): power_plant_spritelayout_cooling_tower;
+	relative_coord(1, 1): power_plant_spritelayout_large_building;
+	relative_coord(2, 0): power_plant_spritelayout_cooling_tower;
+	relative_coord(2, 1): power_plant_spritelayout_large_building;
+	relative_coord(3, 0): power_plant_spritelayout_substation;
+	relative_coord(3, 1): power_plant_spritelayout_substation;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, power_plant_switch_graphics_layout_2, relative_pos) {
+	relative_coord(0, 1): power_plant_spritelayout_cooling_tower;
+	relative_coord(0, 2): power_plant_spritelayout_cooling_tower;
+	relative_coord(1, 0): power_plant_spritelayout_large_building;
+	relative_coord(1, 1): power_plant_spritelayout_large_building;
+	relative_coord(1, 2): power_plant_spritelayout_cooling_tower;
+	relative_coord(2, 0): power_plant_spritelayout_small_building;
+	relative_coord(2, 1): power_plant_spritelayout_substation;
+	relative_coord(2, 2): power_plant_spritelayout_small_building;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, power_plant_switch_graphics_layout_3, relative_pos) {
+	relative_coord(0, 0): power_plant_spritelayout_cooling_tower;
+	relative_coord(0, 1): power_plant_spritelayout_cooling_tower;
+	relative_coord(1, 0): power_plant_spritelayout_small_building;
+	relative_coord(1, 1): power_plant_spritelayout_large_building;
+	relative_coord(2, 0): power_plant_spritelayout_substation;
+	relative_coord(2, 1): power_plant_spritelayout_small_building;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, PARENT, power_plant_switch_graphics_layouts, layout_num) {
+    1: power_plant_switch_graphics_layout_1;
+    2: power_plant_switch_graphics_layout_2;
+    3: power_plant_switch_graphics_layout_3;
+    power_plant_switch_graphics_layout_1; // default
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, power_plant_switch_graphics,
+	[switch_terrain_sprite(),
+	 switch_tile_fences(),switch_graphics_init_temp_registers()
+
+	]) {
+    power_plant_switch_graphics_layouts;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// location checks
+//////////////////////////////////////////////////////////////////////////////
+switch (FEAT_INDUSTRYTILES, SELF, power_plant_switch_tile_location_check2,
+	(nearby_tile_height(-relative_x, -relative_y) + 
+	(nearby_tile_slope(-relative_x, -relative_y)== SLOPE_FLAT ? 0 : nearby_tile_slope(-relative_x, -relative_y) == bitmask(IS_STEEP_SLOPE) ? 2 : 1)) 
+	== 
+	(nearby_tile_height(0, 0) + (nearby_tile_slope(0, 0) == SLOPE_FLAT ? 0 : nearby_tile_slope(0, 0) == bitmask(IS_STEEP_SLOPE) ? 2 : 1))
+	) {
+	1: return CB_RESULT_LOCATION_ALLOW;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, power_plant_switch_tile_location_check,
+		is_funded_or_prospected() || not_next_to_industry()
+	) {
+	1: power_plant_switch_tile_location_check2;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+	
+//////////////////////////////////////////////////////////////////////////////
+// industry tile and layout definition
+//////////////////////////////////////////////////////////////////////////////
+item(FEAT_INDUSTRYTILES, power_plant_tile, INDUSTRY_TILE_ID_POWER_PLANT_ANIM) {
+	property {
+		substitute:         0;
+		land_shape_flags:   0;
+		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+		animation_info: [ANIMATION_LOOPING, 6];
+		animation_speed: 3;
+		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
+	}
+	graphics {
+		tile_check: power_plant_switch_tile_location_check;
+		power_plant_switch_graphics;
+	}
+}
+
+tilelayout power_plant_tilelayout_1 {
+	0, 0: power_plant_tile;
+	0, 1: power_plant_tile;
+	1, 0: power_plant_tile;
+	1, 1: power_plant_tile;
+	2, 0: power_plant_tile;
+	2, 1: power_plant_tile;
+	3, 0: power_plant_tile;
+	3, 1: power_plant_tile;
+}
+tilelayout power_plant_tilelayout_2 {
+	0, 1: power_plant_tile;
+	0, 2: power_plant_tile;
+	1, 0: power_plant_tile;
+	1, 1: power_plant_tile;
+	1, 2: power_plant_tile;
+	2, 0: power_plant_tile;
+	2, 1: power_plant_tile;
+	2, 2: power_plant_tile;
+}
+tilelayout power_plant_tilelayout_3 {
+	0, 0: power_plant_tile;
+	0, 1: power_plant_tile;
+	1, 0: power_plant_tile;
+	1, 1: power_plant_tile;
+	2, 0: power_plant_tile;
+	2, 1: power_plant_tile;
+}
+
+switch(FEAT_INDUSTRIES, SELF, power_plant_switch_location_check,
+    is_industry_funded_or_prospected() ||
+	(industry_town_count(INDUSTRY_ID_POWER_PLANT) == 0 &&
+	water_distance < 5 && // power plants require water (steam generation!)
+	((industry_distance(INDUSTRY_ID_POWER_PLANT) >= 16) && 
+	 (industry_distance(INDUSTRY_ID_COAL_MINE) >= 32)))) { // TODO: check for distance to harbor, ...
+	1: return CB_RESULT_LOCATION_ALLOW;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+// produce the calculated amount of power
+produce(power_plant_produce,
+	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	],
+	[],
+	0
+)
+
+switch(FEAT_INDUSTRIES, PARENT, power_plant_set_power_available,
+	[
+		STORE_PERM(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT), PERM_REGISTER_CITY_POWER_AVAILABLE),
+		STORE_PERM(0, PERM_REGISTER_CITY_POWER_DEMAND)
+	])
+{
+	power_plant_produce;
+}
+
+switch(FEAT_INDUSTRIES, SELF, power_plant_switch_produce,
+	[
+	 // retrieve available cargo
+	 STORE_TEMP(incoming_cargo_waiting("COAL"), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 STORE_TEMP(incoming_cargo_waiting("OIL_"), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 // retrieve demand from permanent storage
+	 STORE_TEMP(city_get_power_demand_for_industries()+city_get_power_demand_for_buildings(), TEMP_REGISTER_PRODUCTION_AMOUNT),
+	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT), PERM_REGISTER_PRODUCTION_AMOUNT),
+	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT), PERM_REGISTER_POWER_DEMAND),
+	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT), PERM_REGISTER_PREV_POWER_DEMAND),
+	 // clamp production if not enough supplies are available
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0)+LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT)),TEMP_REGISTER_PRODUCTION_AMOUNT),
+	 
+	 // calculate how much coal / oil to use: always start using the one that has the bigger stockpile
+	 // the logic basically looks like this, and is then reformulated to come up with direct calculations of coal_consumption and oil_consumption
+	 // if (oil_waiting > coal_waiting)
+	 //	    oil_consumption = min(oil_waiting, production_amount)
+	 //     coal_consumption = production_amount - oil_consumption
+	 // else
+	 //	    coal_consumption = min(coal_waiting, production_amount)
+	 //     oil_consumption = production_amount - coal_consumption
+	 // amount of coal := (coal_waiting > oil_waiting) ? min(coal_waiting, production_amount) : max(0, production_amount - oil_waiting)
+	 STORE_TEMP((LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0) > LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1)) ? 
+		min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0),LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT)) : 
+		max(0,LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) - LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1)), 
+		TEMP_REGISTER_PRODUCTION_RAW0),
+     // amount of oil := (oil_waiting >= coal_waiting) ? min(oil_waiting, production_amount) : max(0,production_amount - coal_waiting)	 
+	 STORE_TEMP((LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1) >= LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0)) ? 
+		min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1),LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT)) : 
+		max(0,LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) - LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0)), 
+		TEMP_REGISTER_PRODUCTION_RAW1),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0)+LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1), TEMP_REGISTER_PRODUCTION_AMOUNT),
+	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT),PERM_REGISTER_PRODUCTION_AMOUNT),	 
+	 //city_set_power_available(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT))
+	]) {
+	power_plant_set_power_available;
+}
+
+switch(FEAT_INDUSTRIES, SELF, power_plant_switch_extra_text_fund, 
+	[STORE_TEMP(string(STR_1880), TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	current_year]) {
+	0..1880: return string(STR_INDUSTRY_NOT_AVAILABLE_BEFORE);
+	return string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, power_plant_switch_check_availability, current_year) {
+	0..1879: return CB_RESULT_IND_NO_CONSTRUCTION;  
+	return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+}
+
+switch(FEAT_INDUSTRIES, SELF, power_plant_switch_cargo_subtype_display_info_coal, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("COAL") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	COAL: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, power_plant_switch_cargo_subtype_display_info_oil, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("OIL_") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	OIL_: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
+// getbits(extra_callback_info2, 16, 8) contains the cargo type
+switch(FEAT_INDUSTRIES, SELF, power_plant_switch_cargo_subtype_display_info_cargo, 
+	getbits(extra_callback_info2, 16, 8)) {
+	COAL: power_plant_switch_cargo_subtype_display_info_coal;
+	OIL_: power_plant_switch_cargo_subtype_display_info_oil;
+	return 0x3800 + string(STR_EMPTY);
+}
+
+// getbits(extra_callback_info2, 8, 8) == 1 -> industry window, 0 -> industry buy/prospect window, 2 -> industry directory
+switch(FEAT_INDUSTRIES, SELF, power_plant_switch_cargo_subtype_display_info, getbits(extra_callback_info2, 8, 8))
+{
+	0: return CB_RESULT_IND_NO_TEXT_NO_AMOUNT;
+	1: power_plant_switch_cargo_subtype_display_info_cargo;
+}
+
+switch(FEAT_INDUSTRIES, SELF, power_plant_switch_prod_change_build,
+	[
+	// initialize the permanent registers
+	//city_set_power_demand(2),
+	//STORE_TEMP(1,123),
+	//city_set_power_available(LOAD_TEMP(123)),
+	
+	])
+{
+	return 16; // default production value has to be returned here
+}
+
+switch(FEAT_INDUSTRIES, SELF, power_plant_switch_extra_text, 
+	[
+	 // do this one first, accessing the parent seems to thrash the temp registers 0x100, 0x101 and so on
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PREV_POWER_DEMAND),TEMP_REGISTER_EXTRA_TEXT_ARG1),
+	 
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT),TEMP_REGISTER_EXTRA_TEXT_ARG0)
+	]) {
+	return string(STR_POWER_PLANT_TEXT);
+}
+
+item(FEAT_INDUSTRIES, power_plant, INDUSTRY_ID_POWER_PLANT) {
+	property {
+		substitute: 0;
+		map_colour: 0xB8;
+		life_type: IND_LIFE_TYPE_BLACK_HOLE;
+		min_cargo_distr: 1;
+		layouts: [power_plant_tilelayout_1,power_plant_tilelayout_2,power_plant_tilelayout_3];
+		spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+		conflicting_ind_types: [];
+		random_sound_effects: [];
+		name: TTD_STR_INDUSTRY_NAME_POWER_STATION;
+		prob_map_gen: 5;
+		prob_in_game: 3;
+		prospect_chance: 0.75;
+		fund_cost_multiplier: 15;
+		remove_cost_multiplier: 0;
+		remove_cost_multiplier: 0;
+		cargo_types: [accept_cargo("COAL"),accept_cargo("OIL_")];
+		nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_POWER_PLANT));
+	}
+
+	graphics {
+        construction_probability: power_plant_switch_check_availability;
+        build_prod_change:        power_plant_switch_prod_change_build;
+        produce_cargo_arrival:    empty_produce;
+        produce_256_ticks:        power_plant_switch_produce;
+        monthly_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
+        location_check:           power_plant_switch_location_check;
+        extra_text_fund:          power_plant_switch_extra_text_fund;
+		extra_text_industry:      power_plant_switch_extra_text;
+        cargo_subtype_display:    power_plant_switch_cargo_subtype_display_info;
+    }
+}
+    

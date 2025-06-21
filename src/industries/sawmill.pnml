@@ -1,0 +1,498 @@
+spritelayout sawmill_spritelayout_1 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_MUD_TRACK;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_SAWMILL_SHED1+construction_state;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 16;
+		always_draw: 0;
+		hide_sprite: construction_state == 0;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+
+}
+
+spritelayout sawmill_spritelayout_2 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_MUD_TRACK;
+		hide_sprite: (LOAD_TEMP(13));
+		always_draw: 1;
+	}
+    building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_SAWMILL_SHED3+construction_state;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 16;
+		always_draw: 0;
+		hide_sprite: construction_state == 0;
+	}
+    building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout sawmill_spritelayout_3 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_MUD_TRACK;
+		hide_sprite: (LOAD_TEMP(13));
+		always_draw: 1;
+	}
+    building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_SAWMILL_SHED1+construction_state;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 16;
+		always_draw: 0;
+		hide_sprite: construction_state == 0;
+	}
+    building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout sawmill_spritelayout_4 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_MUD_TRACK;
+		hide_sprite: (LOAD_TEMP(13));
+		always_draw: 1;
+	}
+    building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_SAWMILL_WOOD_STACK1;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 16;
+		always_draw: 0;
+		hide_sprite: construction_state == 0;
+	}
+    building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout sawmill_spritelayout_5 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_MUD_TRACK;
+		hide_sprite: (LOAD_TEMP(13));
+		always_draw: 1;
+	}
+    building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_SAWMILL_WOOD_STACK2;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 16;
+		always_draw: 0;
+		hide_sprite: construction_state == 0;
+	}
+    building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// graphics choice switch chain
+//////////////////////////////////////////////////////////////////////////////
+
+switch(FEAT_INDUSTRYTILES, SELF, sawmill_switch_graphics_layout_1, relative_pos) {
+	relative_coord(0, 0): sawmill_spritelayout_1;
+	relative_coord(0, 1): sawmill_spritelayout_2;
+	relative_coord(0, 2): sawmill_spritelayout_4;
+	relative_coord(1, 0): sawmill_spritelayout_1;
+	relative_coord(1, 1): sawmill_spritelayout_2;
+	relative_coord(1, 2): sawmill_spritelayout_3;
+	relative_coord(2, 0): sawmill_spritelayout_4;
+	relative_coord(2, 1): sawmill_spritelayout_5;
+	return 0;
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, sawmill_switch_graphics,
+	[switch_tile_fences(),
+	 switch_terrain_sprite(),switch_graphics_init_temp_registers()]) {
+    sawmill_switch_graphics_layout_1;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// location checks
+//////////////////////////////////////////////////////////////////////////////
+// This check works as follows: calculate height of the northernmost tile of the industry and add 0, 1 or 2 for flat, slope. steep slope
+// Do the same for the current tile and compare the results. If the result is equal, the terrain is effectively flat
+// and industry can be placed.
+// It just looks weird due to the stacked ternary operators needed here
+switch (FEAT_INDUSTRYTILES, SELF, sawmill_switch_tile_location_check2,
+			(nearby_tile_height(-relative_x, -relative_y) + 
+			(nearby_tile_slope(-relative_x, -relative_y)== SLOPE_FLAT ? 0 : nearby_tile_slope(-relative_x, -relative_y) == bitmask(IS_STEEP_SLOPE) ? 2 : 1)) 
+			== 
+			(nearby_tile_height(0, 0) + (nearby_tile_slope(0, 0) == SLOPE_FLAT ? 0 : nearby_tile_slope(0, 0) == bitmask(IS_STEEP_SLOPE) ? 2 : 1))
+			) {
+	1: return CB_RESULT_LOCATION_ALLOW;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, sawmill_switch_tile_location_check,
+	is_funded_or_prospected() || (not_next_to_industry() && not_next_to_buildings()))
+{
+	1: sawmill_switch_tile_location_check2;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// industry tile and layout definition
+//////////////////////////////////////////////////////////////////////////////
+item(FEAT_INDUSTRYTILES, sawmill_tile_1, INDUSTRY_TILE_ID_SAWMILL_1) {
+	property {
+		substitute:         0;
+		land_shape_flags:   0;
+		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+		animation_triggers: bitmask();
+	}
+	graphics {
+		tile_check: sawmill_switch_tile_location_check;
+		sawmill_switch_graphics;
+	}
+}
+
+tilelayout sawmill_tilelayout_1 {
+	0, 0: sawmill_tile_1;
+    0, 1: sawmill_tile_1;
+    0, 2: sawmill_tile_1;
+    1, 0: sawmill_tile_1;
+    1, 1: sawmill_tile_1;
+    1, 2: sawmill_tile_1;
+    2, 0: sawmill_tile_1;
+    2, 1: sawmill_tile_1;
+
+}
+
+// todo: check against correct industries
+switch(FEAT_INDUSTRIES, SELF, sawmill_switch_location_check_industry_distance,
+       [STORE_TEMP(32, TEMP_REGISTER_TOWN_MIN_DISTANCE),
+	    STORE_TEMP(64, TEMP_REGISTER_TOWN_MAX_DISTANCE),
+	    (distance_from_town() && 
+	    (industry_distance(INDUSTRY_ID_FOREST) >= 32) &&
+	    //(industry_distance(INDUSTRY_ID_COAL_MINE) >= 32) && //TODO
+		//(industry_distance(INDUSTRY_ID_IRON_ORE_MINE) >= 32) && 
+	    (industry_distance(INDUSTRY_ID_SAWMILL) >= 16))]) {
+	   1: return CB_RESULT_LOCATION_ALLOW;
+	   return CB_RESULT_LOCATION_DISALLOW;
+}
+
+// 1 WOOD => 1 WDPR
+produce(sawmill_produce,
+	[WOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
+	[WDPR: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
+	0 // do not run again
+)
+
+// sawmill uses 10% of stockpile for production, if stockpile is big enough
+// if stockpile is < 80t, 8t are produced per 256ticks
+// if stockpile is < 8t, whatever is available is used
+// it stockpile is empty, nothing is produced
+switch(FEAT_INDUSTRIES, SELF, sawmill_switch_produce, 
+	[STORE_TEMP(incoming_cargo_waiting("WOOD"), TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT),
+	 STORE_TEMP(((LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) / 10) > 8) ? LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) / 10 : 
+	 (LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) > 8 ? 8 : LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT)),TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)
+	]) {
+	sawmill_produce;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// cargo subtexts to show how much incoming cargo is waiting
+////////////////////////////////////////////////////////////////////////////////
+switch(FEAT_INDUSTRIES, SELF, sawmill_switch_cargo_subtype_display_info, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("WOOD") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	WOOD: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
+// getbits(extra_callback_info2, 8, 8) == 1 -> industry window, 0 -> industry buy/prospect window, 2 -> industry directory
+switch(FEAT_INDUSTRIES, SELF, sawmill_switch_cargo_subtype, 
+	 getbits(extra_callback_info2, 8, 8)) {
+	0: return CB_RESULT_IND_NO_TEXT_NO_AMOUNT;
+	1: sawmill_switch_cargo_subtype_display_info;
+	return 0x3800 + string(STR_EMPTY);
+}
+
+item(FEAT_INDUSTRIES, sawmill, INDUSTRY_ID_SAWMILL) {
+	property {
+		substitute: 0;
+		map_colour: 0xC2;
+		life_type: IND_LIFE_TYPE_PROCESSING;
+		min_cargo_distr: 1;
+		layouts: [sawmill_tilelayout_1];
+		spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+		conflicting_ind_types: [];
+		random_sound_effects: [];
+		name: TTD_STR_INDUSTRY_NAME_SAWMILL;
+		prob_map_gen: 5;
+		prob_in_game: 3;
+		fund_cost_multiplier: 97;
+		remove_cost_multiplier: 0;
+		remove_cost_multiplier: 0;
+		cargo_types: [accept_cargo("WOOD"),produce_cargo("WDPR",0)];
+		nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_SAWMILL));
+	}
+        
+	graphics {
+		produce_cargo_arrival:    empty_produce; 
+		produce_256_ticks:        sawmill_switch_produce;
+		monthly_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
+		random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+		location_check:           sawmill_switch_location_check_industry_distance;
+		cargo_subtype_display:    sawmill_switch_cargo_subtype;
+	}
+}
+    

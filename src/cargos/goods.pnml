@@ -1,0 +1,30 @@
+spriteset(cargoicon_goods) {
+    [10 + 20 * 5, 10 + 20 * 0, 10, 10, 0, 0,  "graphics/other/cargoicons.png"]
+}
+
+item(FEAT_CARGOS, goods_BASIC_TEMPERATE, CARGO_ID_GOODS) {
+    property {
+        type_name: TTD_STR_CARGO_PLURAL_GOODS;
+        unit_name: TTD_STR_CARGO_SINGULAR_GOODS;
+        type_abbreviation: TTD_STR_ABBREV_GOODS;
+        sprite: NEW_CARGO_SPRITE;
+        weight: 1.0;
+        is_freight: 1;
+        cargo_classes: bitmask(CC_EXPRESS);
+        town_growth_effect: TOWNGROWTH_NONE;
+        town_growth_multiplier: 1.0;
+        units_of_cargo: TTD_STR_TONS;
+        items_of_cargo: string(STR_QUANTITY_GOODS);
+        penalty_lowerbound: 10;
+        single_penalty_length: 56;
+        capacity_multiplier: 2;
+        cargo_payment_list_colour: 194;
+        station_list_colour: 194;
+        price_factor: 163;
+        cargo_label: "GOOD";
+        number: CARGO_ID_GOODS;
+    }
+    graphics {
+        cargoicon_goods;
+    }
+}

@@ -1,0 +1,694 @@
+spriteset(furniture_factory_spriteset_1) {
+	[10, 60, 64, 88, -31, -42, ANIM | NOCROP, "graphics/industries/furniture_factory.png"]
+}
+spriteset(furniture_factory_spriteset_2) {
+	[80, 60, 64, 88, -31, -44, ANIM | NOCROP, "graphics/industries/furniture_factory.png"]
+}
+spriteset(furniture_factory_spriteset_3) {
+	[150, 60, 64, 88, -31, -42, ANIM | NOCROP, "graphics/industries/furniture_factory.png"]
+}
+spriteset(furniture_factory_spriteset_4) {
+	[220, 60, 64, 88, -31, -42, ANIM | NOCROP, "graphics/industries/furniture_factory.png"]
+}
+spriteset(furniture_factory_spriteset_5) {
+	[290, 60, 64, 88, -31, -42, ANIM | NOCROP, "graphics/industries/furniture_factory.png"]
+}
+spriteset(furniture_factory_spriteset_6) {
+	[360, 60, 64, 88, -31, -41, ANIM | NOCROP, "graphics/industries/furniture_factory.png"]
+}
+spriteset(furniture_factory_spriteset_1_snow) {
+	[10, 60, 64, 88, -31, -42, ANIM | NOCROP, "graphics/industries/furniture_factory_snow.png"]
+}
+spriteset(furniture_factory_spriteset_2_snow) {
+	[80, 60, 64, 88, -31, -44, ANIM | NOCROP, "graphics/industries/furniture_factory_snow.png"]
+}
+spriteset(furniture_factory_spriteset_3_snow) {
+	[150, 60, 64, 88, -31, -42, ANIM | NOCROP, "graphics/industries/furniture_factory_snow.png"]
+}
+spriteset(furniture_factory_spriteset_4_snow) {
+	[220, 60, 64, 88, -31, -42, ANIM | NOCROP, "graphics/industries/furniture_factory_snow.png"]
+}
+spriteset(furniture_factory_spriteset_5_snow) {
+	[290, 60, 64, 88, -31, -42, ANIM | NOCROP, "graphics/industries/furniture_factory_snow.png"]
+}
+spriteset(furniture_factory_spriteset_6_snow) {
+	[360, 60, 64, 88, -31, -41, ANIM | NOCROP, "graphics/industries/furniture_factory_snow.png"]
+}
+
+spritelayout furniture_factory_spritelayout_1 {
+	childsprite {
+		sprite: default_spriteset_ground_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: furniture_factory_spriteset_1(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: furniture_factory_spriteset_1_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout furniture_factory_spritelayout_2 {
+	childsprite {
+		sprite: default_spriteset_ground_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	
+	building {
+		sprite: furniture_factory_spriteset_2(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: furniture_factory_spriteset_2_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout furniture_factory_spritelayout_3 {
+	childsprite {
+		sprite: default_spriteset_ground_concrete;
+		hide_sprite: (LOAD_TEMP(13));
+		always_draw: 1;
+	} 
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: furniture_factory_spriteset_3(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: furniture_factory_spriteset_3_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout furniture_factory_spritelayout_4 {
+	childsprite {
+		sprite: default_spriteset_ground_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: furniture_factory_spriteset_4(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: furniture_factory_spriteset_4_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout furniture_factory_spritelayout_5 {
+	childsprite {
+		sprite: default_spriteset_ground_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: furniture_factory_spriteset_5(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: furniture_factory_spriteset_5_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout furniture_factory_spritelayout_6 {
+	childsprite {
+		sprite: default_spriteset_ground_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: furniture_factory_spriteset_6(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: furniture_factory_spriteset_6_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// graphics choice switch chain
+//////////////////////////////////////////////////////////////////////////////
+switch(FEAT_INDUSTRYTILES, SELF, furniture_factory_switch_graphics_layout1, relative_pos) {
+    relative_coord(0, 1): furniture_factory_spritelayout_3;
+    relative_coord(1, 0): furniture_factory_spritelayout_5;
+    relative_coord(1, 1): furniture_factory_spritelayout_2;
+    relative_coord(2, 0): furniture_factory_spritelayout_4;
+    relative_coord(2, 1): furniture_factory_spritelayout_1;
+    return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, furniture_factory_switch_graphics_layout2, relative_pos) {
+	relative_coord(0, 0): furniture_factory_spritelayout_5;
+	relative_coord(0, 1): furniture_factory_spritelayout_3;
+	relative_coord(1, 0): furniture_factory_spritelayout_4;
+	relative_coord(1, 1): furniture_factory_spritelayout_2;
+	relative_coord(2, 0): furniture_factory_spritelayout_6;
+	relative_coord(2, 1): furniture_factory_spritelayout_1;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, furniture_factory_switch_graphics_layout3, relative_pos) {
+	relative_coord(0, 0): furniture_factory_spritelayout_3;
+	relative_coord(0, 1): furniture_factory_spritelayout_6;
+	relative_coord(1, 0): furniture_factory_spritelayout_2;
+	relative_coord(1, 1): furniture_factory_spritelayout_3;
+	relative_coord(2, 0): furniture_factory_spritelayout_1;
+	relative_coord(2, 1): furniture_factory_spritelayout_2;
+	relative_coord(3, 0): furniture_factory_spritelayout_5;
+	relative_coord(3, 1): furniture_factory_spritelayout_1;
+	relative_coord(4, 0): furniture_factory_spritelayout_4;
+	relative_coord(4, 1): furniture_factory_spritelayout_6;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, furniture_factory_switch_graphics_layout4, relative_pos) {
+	relative_coord(0, 0): furniture_factory_spritelayout_5;
+	relative_coord(0, 1): furniture_factory_spritelayout_6;
+	relative_coord(1, 0): furniture_factory_spritelayout_4;
+	relative_coord(1, 1): furniture_factory_spritelayout_6;
+	relative_coord(2, 0): furniture_factory_spritelayout_3;
+	relative_coord(2, 1): furniture_factory_spritelayout_3;
+	relative_coord(3, 0): furniture_factory_spritelayout_2;
+	relative_coord(3, 1): furniture_factory_spritelayout_2;
+	relative_coord(4, 0): furniture_factory_spritelayout_1;
+	relative_coord(4, 1): furniture_factory_spritelayout_1;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, furniture_factory_switch_graphics_layout5, relative_pos) {
+	relative_coord(0, 0): furniture_factory_spritelayout_5;
+	relative_coord(0, 1): furniture_factory_spritelayout_3;
+	relative_coord(0, 2): furniture_factory_spritelayout_3;
+	relative_coord(1, 0): furniture_factory_spritelayout_4;
+	relative_coord(1, 1): furniture_factory_spritelayout_2;
+	relative_coord(1, 2): furniture_factory_spritelayout_2;
+	relative_coord(2, 0): furniture_factory_spritelayout_6;
+	relative_coord(2, 1): furniture_factory_spritelayout_1;
+	relative_coord(2, 2): furniture_factory_spritelayout_1;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, PARENT, furniture_factory_switch_graphics_layouts, layout_num) {
+    1: furniture_factory_switch_graphics_layout1;
+    2: furniture_factory_switch_graphics_layout2;
+    3: furniture_factory_switch_graphics_layout3;
+    4: furniture_factory_switch_graphics_layout4;
+	5: furniture_factory_switch_graphics_layout5;
+    furniture_factory_switch_graphics_layout1; // default
+}
+	
+switch(FEAT_INDUSTRYTILES, SELF, furniture_factory_switch_graphics_construction_state, construction_state) {
+    0..2: spritelayout_default_construction_states;
+    furniture_factory_switch_graphics_layouts; // default
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, furniture_factory_switch_graphics,
+	[switch_tile_fences(),
+	 switch_terrain_sprite(),switch_graphics_init_temp_registers()
+]) {
+    furniture_factory_switch_graphics_construction_state;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// location checks
+//////////////////////////////////////////////////////////////////////////////
+// This check works as follows: calculate height of the northernmost tile of the industry and add 0, 1 or 2 for flat, slope. steep slope
+// Do the same for the current tile and compare the results. If the result is equal, the terrain is effectively flat
+// and industry can be placed.
+// It just looks weird due to the stacked ternary operators needed here
+switch (FEAT_INDUSTRYTILES, SELF, furniture_factory_switch_tile_location_check2,
+			(nearby_tile_height(-relative_x, -relative_y) + 
+			(nearby_tile_slope(-relative_x, -relative_y)== SLOPE_FLAT ? 0 : nearby_tile_slope(-relative_x, -relative_y) == bitmask(IS_STEEP_SLOPE) ? 2 : 1)) 
+			== 
+			(nearby_tile_height(0, 0) + (nearby_tile_slope(0, 0) == SLOPE_FLAT ? 0 : nearby_tile_slope(0, 0) == bitmask(IS_STEEP_SLOPE) ? 2 : 1))
+			) {
+	1: return CB_RESULT_LOCATION_ALLOW;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, furniture_factory_switch_tile_location_check,
+	is_funded_or_prospected() || (not_next_to_industry() && not_next_to_buildings()))
+{
+	1: furniture_factory_switch_tile_location_check2;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// industry tile and layout definition
+//////////////////////////////////////////////////////////////////////////////
+item(FEAT_INDUSTRYTILES, furniture_factory_tile, INDUSTRY_TILE_ID_FURNITURE_FACTORY) {
+    property {
+        substitute:         0;
+        land_shape_flags:   0;
+        special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+        animation_triggers: bitmask();
+    }
+    graphics {
+    	tile_check: furniture_factory_switch_tile_location_check;
+        furniture_factory_switch_graphics;
+    }
+}
+
+tilelayout furniture_factory_tilelayout_1 {
+	0, 1: furniture_factory_tile;
+	1, 0: furniture_factory_tile;
+	1, 1: furniture_factory_tile;
+	2, 0: furniture_factory_tile;
+	2, 1: furniture_factory_tile;
+}
+tilelayout furniture_factory_tilelayout_2 {
+	0, 0: furniture_factory_tile;
+	0, 1: furniture_factory_tile;
+	1, 0: furniture_factory_tile;
+	1, 1: furniture_factory_tile;
+	2, 0: furniture_factory_tile;
+	2, 1: furniture_factory_tile;
+}
+tilelayout furniture_factory_tilelayout_3 {
+	0, 0: furniture_factory_tile;
+	0, 1: furniture_factory_tile;
+	1, 0: furniture_factory_tile;
+	1, 1: furniture_factory_tile;
+	2, 0: furniture_factory_tile;
+	2, 1: furniture_factory_tile;
+	3, 0: furniture_factory_tile;
+	3, 1: furniture_factory_tile;
+	4, 0: furniture_factory_tile;
+	4, 1: furniture_factory_tile;
+}
+tilelayout furniture_factory_tilelayout_4 {
+	0, 0: furniture_factory_tile;
+	0, 1: furniture_factory_tile;
+	1, 0: furniture_factory_tile;
+	1, 1: furniture_factory_tile;
+	2, 0: furniture_factory_tile;
+	2, 1: furniture_factory_tile;
+	3, 0: furniture_factory_tile;
+	3, 1: furniture_factory_tile;
+	4, 0: furniture_factory_tile;
+	4, 1: furniture_factory_tile;
+}
+tilelayout furniture_factory_tilelayout_5 {
+	0, 0: furniture_factory_tile;
+	0, 1: furniture_factory_tile;
+	0, 2: furniture_factory_tile;
+	1, 0: furniture_factory_tile;
+	1, 1: furniture_factory_tile;
+	1, 2: furniture_factory_tile;
+	2, 0: furniture_factory_tile;
+	2, 1: furniture_factory_tile;
+	2, 2: furniture_factory_tile;
+}
+
+// TODO: check correct industries
+switch(FEAT_INDUSTRIES, SELF, furniture_factory_switch_location_check_industry_distance,
+	[STORE_TEMP(32, TEMP_REGISTER_TOWN_MIN_DISTANCE),
+	 STORE_TEMP(64, TEMP_REGISTER_TOWN_MAX_DISTANCE),
+	    (distance_from_town() && 
+        (industry_distance(INDUSTRY_ID_OIL_WELL) >= 32) && 
+	    //(industry_distance(INDUSTRY_ID_OIL_RIG) >= 32) &&
+	     (industry_distance(INDUSTRY_ID_FURNITURE_FACTORY) >= 16))]) {
+	   1: return CB_RESULT_LOCATION_ALLOW;
+	   return CB_RESULT_LOCATION_DISALLOW;
+}
+
+// 1 WDPR + 1 PLAS => 1 GOOD
+produce(furniture_factory_produce,
+	[WDPR: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT); PLAS: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
+	[GOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
+	0 // do not run again
+)
+
+// industry uses 10% of stockpile for production, if stockpile is big enough
+// if stockpile is < 80t, 8t are produced per 256ticks
+// if stockpile is < 8t, whatever is available is used
+// it stockpile is empty, nothing is produced
+switch(FEAT_INDUSTRIES, SELF, furniture_factory_switch_produce, 
+	[STORE_TEMP(min(incoming_cargo_waiting("WDPR"),incoming_cargo_waiting("PLAS")), TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT),
+	 STORE_TEMP(((LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) / 10) > 8) ? LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) / 10 : 
+	 (LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) > 8 ? 8 : LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT)),TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)
+	]) {
+	furniture_factory_produce;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// cargo subtexts to show how much incoming cargo is waiting
+////////////////////////////////////////////////////////////////////////////////
+switch(FEAT_INDUSTRIES, SELF, furniture_factory_switch_cargo_subtype_display_info_plas, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("PLAS") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	PLAS: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, furniture_factory_switch_cargo_subtype_display_info_wdpr, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("WDPR") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	WDPR: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, furniture_factory_switch_cargo_subtype_display_info, 
+	getbits(extra_callback_info2, 16, 8)) {
+	PLAS: furniture_factory_switch_cargo_subtype_display_info_plas;
+	WDPR: furniture_factory_switch_cargo_subtype_display_info_wdpr;
+	return 0x3800 + string(STR_EMPTY);
+}
+
+// getbits(extra_callback_info2, 8, 8) == 1 -> industry window, 0 -> industry buy/prospect window, 2 -> industry directory
+switch(FEAT_INDUSTRIES, SELF, furniture_factory_switch_cargo_subtype, 
+	 getbits(extra_callback_info2, 8, 8)) {
+	0: return CB_RESULT_IND_NO_TEXT_NO_AMOUNT;
+	1: furniture_factory_switch_cargo_subtype_display_info;
+	return 0x3800 + string(STR_EMPTY);
+}
+
+item(FEAT_INDUSTRIES, furniture_factory, INDUSTRY_ID_FURNITURE_FACTORY) {
+	property {
+		substitute: 0;
+		map_colour: 0xAE;
+		life_type: IND_LIFE_TYPE_PROCESSING;
+		min_cargo_distr: 1;
+		layouts: [furniture_factory_tilelayout_1,furniture_factory_tilelayout_2,furniture_factory_tilelayout_3,furniture_factory_tilelayout_4,furniture_factory_tilelayout_5];
+		spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+		conflicting_ind_types: [];
+		random_sound_effects: [];
+		name: string(STR_IND_FURNITURE_FACTORY);
+		prob_map_gen: 5;
+		prob_in_game: 3;
+		fund_cost_multiplier: 200;
+		remove_cost_multiplier: 0;
+		remove_cost_multiplier: 0;
+		cargo_types: [accept_cargo("WDPR"),accept_cargo("PLAS"),produce_cargo("GOOD",0)];
+		nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FURNITURE_FACTORY));
+	}
+        
+	graphics {
+		construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+		produce_cargo_arrival:    empty_produce; 
+		produce_256_ticks:        furniture_factory_switch_produce;
+		monthly_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
+		random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+		location_check:           furniture_factory_switch_location_check_industry_distance;
+		extra_text_fund:          return CB_RESULT_NO_TEXT;
+		cargo_subtype_display:    furniture_factory_switch_cargo_subtype;
+	}
+}
+    

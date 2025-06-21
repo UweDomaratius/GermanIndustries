@@ -1,0 +1,216 @@
+////////////////////////////////////////////////////////////////////////////////
+// Default construction graphics for most industries.
+// Randomly chosen for each tile of an industry, unless the industry comes with
+// it's own construction graphics.
+////////////////////////////////////////////////////////////////////////////////
+spriteset(spriteset_default_construction_states) {
+	[ 10,  10, 64, 64, -31, -33, ANIM|NOCROP, "graphics/other/default_construction_states.png"]
+	[ 80,  10, 64, 64, -31, -33, ANIM|NOCROP, "graphics/other/default_construction_states.png"]
+	[150,  10, 64, 64, -31, -33, ANIM|NOCROP, "graphics/other/default_construction_states.png"]
+	[220,  10, 64, 64, -31, -33, ANIM|NOCROP, "graphics/other/default_construction_states.png"]
+	[290,  10, 64, 64, -31, -33, ANIM|NOCROP, "graphics/other/default_construction_states.png"]
+	[360,  10, 64, 64, -31, -33, ANIM|NOCROP, "graphics/other/default_construction_states.png"]
+	[430,  10, 64, 64, -31, -33, ANIM|NOCROP, "graphics/other/default_construction_states.png"]
+	[500,  10, 64, 64, -31, -33, ANIM|NOCROP, "graphics/other/default_construction_states.png"]
+	[ 10, 100, 64, 64, -31, -33, ANIM|NOCROP, "graphics/other/default_construction_states.png"]
+	[ 80, 100, 64, 64, -31, -33, ANIM|NOCROP, "graphics/other/default_construction_states.png"]
+	[150, 100, 64, 64, -31, -33, ANIM|NOCROP, "graphics/other/default_construction_states.png"]
+	[220, 100, 64, 64, -31, -33, ANIM|NOCROP, "graphics/other/default_construction_states.png"]
+	[290, 100, 64, 64, -31, -33, ANIM|NOCROP, "graphics/other/default_construction_states.png"]
+	[360, 100, 64, 64, -31, -33, ANIM|NOCROP, "graphics/other/default_construction_states.png"]
+	[430, 100, 64, 64, -31, -33, ANIM|NOCROP, "graphics/other/default_construction_states.png"]
+	[500, 100, 64, 64, -31, -33, ANIM|NOCROP, "graphics/other/default_construction_states.png"]
+}
+spritelayout spritelayout_default_construction_states {
+	ground {
+		sprite: spriteset_default_construction_states(random_bits % 16);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Fences around tiles, but only if neighbouring tile is not part of the industry or a station)
+// Store in temp registers which sides of a tile should get a fence.
+// This information is then used in the spritelayouts
+////////////////////////////////////////////////////////////////////////////////
+switch (FEAT_INDUSTRYTILES, SELF, switch_tile_fences_neighbouring_station, [
+    STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_FENCE_NE) * (nearby_tile_class(-1,  0) != TILE_CLASS_STATION), TEMP_REGISTER_FENCE_NE),
+    STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_FENCE_NW) * (nearby_tile_class( 0, -1) != TILE_CLASS_STATION), TEMP_REGISTER_FENCE_NW),
+    STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_FENCE_SE) * (nearby_tile_class( 0,  1) != TILE_CLASS_STATION), TEMP_REGISTER_FENCE_SE),
+    STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_FENCE_SW) * (nearby_tile_class( 1,  0) != TILE_CLASS_STATION), TEMP_REGISTER_FENCE_SW),
+        ]) {
+    return 1;
+}
+switch (FEAT_INDUSTRYTILES, SELF, switch_tile_fences_neighbouring_industry, [
+    STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_FENCE_NE) * !nearby_tile_is_same_industry(-1,  0), TEMP_REGISTER_FENCE_NE),
+    STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_FENCE_NW) * !nearby_tile_is_same_industry( 0, -1), TEMP_REGISTER_FENCE_NW),
+    STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_FENCE_SE) * !nearby_tile_is_same_industry( 0,  1), TEMP_REGISTER_FENCE_SE),
+    STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_FENCE_SW) * !nearby_tile_is_same_industry( 1,  0), TEMP_REGISTER_FENCE_SW),
+        ]) {
+    switch_tile_fences_neighbouring_station;
+}
+switch (FEAT_INDUSTRYTILES, SELF, switch_tile_fences, [
+            STORE_TEMP(1, TEMP_REGISTER_FENCE_NE),
+            STORE_TEMP(1, TEMP_REGISTER_FENCE_NW),
+            STORE_TEMP(1, TEMP_REGISTER_FENCE_SE),
+            STORE_TEMP(1, TEMP_REGISTER_FENCE_SW),
+            ]) {
+    switch_tile_fences_neighbouring_industry;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Various default ground sprites, depending on the underlying tile.
+// Supports all terrains incl. snow and desert.
+// The sprite is stored in TEMP_REGISTER_GROUND_SPRITE, which can be accessed
+// from within industry sprite layouts.
+////////////////////////////////////////////////////////////////////////////////
+switch (FEAT_INDUSTRYTILES, SELF, switch_terrain_sprite_normal, [STORE_TEMP(GROUNDSPRITE_NORMAL, TEMP_REGISTER_GROUND_SPRITE)]) {
+    return 1;
+}
+switch (FEAT_INDUSTRYTILES, SELF, switch_terrain_sprite_arctic_full_snow, [STORE_TEMP(GROUNDSPRITE_SNOW_4_4, TEMP_REGISTER_GROUND_SPRITE)]) {
+    return 1;
+}
+switch (FEAT_INDUSTRYTILES, SELF, switch_terrain_sprite_arctic_three_quarter_snow, [STORE_TEMP(GROUNDSPRITE_SNOW_3_4, TEMP_REGISTER_GROUND_SPRITE)]) {
+    return 1;
+}
+switch (FEAT_INDUSTRYTILES, SELF, switch_terrain_sprite_arctic_half_snow, [STORE_TEMP(GROUNDSPRITE_SNOW_2_4, TEMP_REGISTER_GROUND_SPRITE)]) {
+    return 1;
+}
+switch (FEAT_INDUSTRYTILES, SELF, switch_terrain_sprite_arctic_quarter_snow, [STORE_TEMP(GROUNDSPRITE_SNOW_1_4, TEMP_REGISTER_GROUND_SPRITE)]) {
+    return 1;
+}
+switch (FEAT_INDUSTRYTILES, SELF, switch_terrain_sprite_arctic, [nearby_tile_height(0, 0) - snowline_height]) {
+    2..255: switch_terrain_sprite_arctic_full_snow;
+    1: switch_terrain_sprite_arctic_three_quarter_snow;
+    0: switch_terrain_sprite_arctic_half_snow;
+    -1: switch_terrain_sprite_arctic_quarter_snow;
+    switch_terrain_sprite_normal;
+}
+switch (FEAT_INDUSTRYTILES, SELF, switch_terrain_sprite_tropic_full_desert, [STORE_TEMP(GROUNDSPRITE_DESERT, TEMP_REGISTER_GROUND_SPRITE)]) {
+    return 1;
+}
+switch (FEAT_INDUSTRYTILES, SELF, switch_terrain_sprite_tropic_half_desert, [STORE_TEMP(GROUNDSPRITE_DESERT_1_2, TEMP_REGISTER_GROUND_SPRITE)]) {
+    return 1;
+}
+switch (FEAT_INDUSTRYTILES, SELF, switch_terrain_sprite_tropic_desert,
+		[(nearby_tile_terrain_type(1, 0) != TILETYPE_DESERT)
+		 || (nearby_tile_terrain_type(-1, 0) != TILETYPE_DESERT)
+		 || (nearby_tile_terrain_type(0, 1) != TILETYPE_DESERT)
+		 || (nearby_tile_terrain_type(0, -1) != TILETYPE_DESERT)]) {
+    1: switch_terrain_sprite_tropic_half_desert;
+    switch_terrain_sprite_tropic_full_desert;
+}
+switch (FEAT_INDUSTRYTILES, SELF, switch_terrain_sprite_tropic, nearby_tile_terrain_type(0, 0)) {
+    TILETYPE_DESERT: switch_terrain_sprite_tropic_desert;
+    switch_terrain_sprite_normal;
+}
+switch (FEAT_INDUSTRYTILES, SELF, switch_terrain_sprite, climate) {
+    CLIMATE_ARCTIC: switch_terrain_sprite_arctic;
+    CLIMATE_TROPIC: switch_terrain_sprite_tropic;
+    switch_terrain_sprite_normal; 
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Various ground sprites to be used directly in sprite layouts of industries.
+// Placed here as they are shared among many industries
+////////////////////////////////////////////////////////////////////////////////
+spriteset(default_spriteset_ground_mud) {
+	[10, 10, 64, 31, -31, 0, ANIM, "graphics/other/ground_tiles.png"]
+}
+
+spriteset(default_spriteset_ground_concrete) {
+	[80, 10, 64, 31, -31, 0, ANIM, "graphics/other/ground_tiles.png"]
+}
+
+spriteset(default_spriteset_ground_concrete3) {
+	[80, 10, 64, 31, -31, 0, ANIM, "graphics/other/ground_tiles.png"]
+	[80, 10, 64, 31, -31, 0, ANIM, "graphics/other/ground_tiles.png"]
+	[80, 10, 64, 31, -31, 0, ANIM, "graphics/other/ground_tiles.png"]
+}
+
+spriteset(default_spriteset_ground_cobblestones) {
+	[150, 10, 64, 31, -31, 0, ANIM, "graphics/other/ground_tiles.png"]
+}
+
+spriteset(default_spriteset_ground_cobblestones6) {
+	[150, 10, 64, 31, -31, 0, ANIM, "graphics/other/ground_tiles.png"]
+	[150, 10, 64, 31, -31, 0, ANIM, "graphics/other/ground_tiles.png"]
+	[150, 10, 64, 31, -31, 0, ANIM, "graphics/other/ground_tiles.png"]
+	[150, 10, 64, 31, -31, 0, ANIM, "graphics/other/ground_tiles.png"]
+	[150, 10, 64, 31, -31, 0, ANIM, "graphics/other/ground_tiles.png"]
+	[150, 10, 64, 31, -31, 0, ANIM, "graphics/other/ground_tiles.png"]
+}
+
+spriteset(default_spriteset_ground_snow) {
+	[220, 10, 64, 31, -31, 0, ANIM, "graphics/other/ground_tiles.png"]
+}
+
+spriteset(default_spriteset_ground_slab) {
+	[290, 10, 64, 31, -31, 0, ANIM, "graphics/other/ground_tiles.png"]
+}
+
+spriteset(default_spriteset_ground_dirty_concrete) {
+	[360, 10, 64, 31, -31, 0, ANIM, "graphics/other/ground_tiles.png"]
+}
+
+spriteset(default_spriteset_ground_hard_standing_dirt) {
+	[430, 10, 64, 31, -31, 0, ANIM, "graphics/other/ground_tiles.png"]
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Tree graphics choice based on climate - stores result in TEMP_REGISTERS.
+// Used by the forest industry to decide which trees to show.
+////////////////////////////////////////////////////////////////////////////////
+switch (FEAT_INDUSTRYTILES, SELF, switch_trees_not_default, [
+                climate == CLIMATE_TROPIC
+                ||
+                nearby_tile_height(0, 0) >= snowline_height
+                ||
+                construction_state == 0
+    ]) {
+    1: return 1;
+    return 0;
+}
+switch (FEAT_INDUSTRYTILES, SELF, switch_trees_not_snow, [
+                climate != CLIMATE_ARCTIC
+                ||
+                nearby_tile_height(0, 0) < snowline_height
+                ||
+                construction_state == 0
+    ]) {
+    1: return 1;
+    return 0;
+}
+switch (FEAT_INDUSTRYTILES, SELF, switch_trees_not_tropic, [
+                climate != CLIMATE_TROPIC
+                ||
+                construction_state == 0
+    ]) {
+    1: return 1;
+    return 0;
+}
+switch (FEAT_INDUSTRYTILES, SELF, switch_trees, [
+		STORE_TEMP(switch_trees_not_default(), TEMP_REGISTER_NO_TEMPERATE_TREE),
+		STORE_TEMP(switch_trees_not_snow(), TEMP_REGISTER_NO_SNOW_TREE),
+		STORE_TEMP(switch_trees_not_tropic(), TEMP_REGISTER_NO_TROPIC_TREE),
+	]) {
+    return;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Initialize temporary storage for hiding tiles depending on construction stage
+// and snow line.
+// This information is used by the graphics switch chains.
+////////////////////////////////////////////////////////////////////////////////
+switch(FEAT_INDUSTRYTILES, SELF, switch_graphics_init_temp_registers,
+    [STORE_TEMP(terrain_type == TILETYPE_SNOW, TEMP_REGISTER_IS_SNOW),
+     STORE_TEMP(construction_state != 3 ? 1 : 0, TEMP_REGISTER_IS_CONSTRUCTION),
+     // hide tile if it's terrain != snow || is_construction
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_IS_SNOW) == 0 ? 1 : LOAD_TEMP(TEMP_REGISTER_IS_CONSTRUCTION), TEMP_REGISTER_HIDE_TILE_SNOW),
+	 // hide tile if it's terrain == snow || is_construction
+     STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_IS_SNOW) == 1 ? 1 : LOAD_TEMP(TEMP_REGISTER_IS_CONSTRUCTION), TEMP_REGISTER_HIDE_TILE)
+    ]) {
+    return;
+}
