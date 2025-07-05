@@ -429,7 +429,7 @@ switch(FEAT_INDUSTRIES, SELF, iron_ore_mine_func_calc_max_prod,
 // if nothing has been transported at all, do not change production (industry might just not be serviced)
 switch(FEAT_INDUSTRIES, SELF, iron_ore_mine_switch_prod_change, 
 	[STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
-	 STORE_TEMP(transported_last_month_pct("COAL"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 STORE_TEMP(transported_last_month_pct("IORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
 	 STORE_TEMP(iron_ore_mine_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
 	 LOAD_PERM(PERM_REGISTER_RESOURCES) != 0])
 {
