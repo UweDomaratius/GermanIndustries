@@ -1,0 +1,1245 @@
+spriteset(quarry_spriteset_1) {
+    [440, 90, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+}
+spriteset(quarry_spriteset_3) {
+	[10, 90, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+}
+spriteset(quarry_spriteset_4) {
+	[80, 90, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+}
+spriteset(quarry_spriteset_5) {
+	[150, 90, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+}
+spriteset(quarry_spriteset_6) {
+	[220, 90, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+}
+spriteset(quarry_spriteset_7) {
+	[290, 90, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+}
+spriteset(quarry_spriteset_8) {
+	[10, 50, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+}
+spriteset(quarry_spriteset_9) {
+	[80, 50, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+}
+spriteset(quarry_spriteset_10) {
+	[150, 50, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+}
+spriteset(quarry_spriteset_11) {
+	[220, 50, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+}
+spriteset(quarry_spriteset_12) {
+	[290, 50, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+}
+spriteset(quarry_spriteset_13) {
+	[10, 10, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+}
+spriteset(quarry_spriteset_14) {
+	[80, 10, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+}
+spriteset(quarry_spriteset_15) {
+	[150, 10, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+}
+spriteset(quarry_spriteset_16) {
+	[220, 10, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+}
+spriteset(quarry_spriteset_17) {
+	[290, 10, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+}
+spriteset(quarry_spriteset_18) {
+	[360, 50, 64, 31, -63, -16, ANIM | NOCROP, "graphics/industries/quarry.png"]
+}
+spriteset(quarry_spriteset_19) {
+	[440, 10, 64, 71, -48, -55, ANIM | NOCROP, "graphics/industries/quarry.png"]
+}
+spriteset(quarry_spriteset_20) {
+	[10, 130, 64, 64, -31, -22, ANIM | NOCROP, "graphics/industries/quarry.png"]
+}
+spriteset(quarry_spriteset_21) {
+	[80, 130, 64, 64, -31, -22, ANIM | NOCROP, "graphics/industries/quarry.png"]
+}
+spriteset(quarry_spriteset_22) {
+	[150, 130, 64, 64, -31, -22, ANIM | NOCROP, "graphics/industries/quarry.png"]
+}
+spriteset(quarry_spriteset_23) {
+	[220, 130, 64, 64, -31, -22, ANIM | NOCROP, "graphics/industries/quarry.png"]
+}
+spriteset(quarry_spriteset_24) {
+	[290, 130, 64, 64, -31, -22, ANIM | NOCROP, "graphics/industries/quarry.png"]
+}
+spriteset(quarry_spriteset_25) {
+	[870, 10, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+}
+spriteset(quarry_spriteset_26) {
+	[940, 10, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+}
+spriteset(quarry_spriteset_27) {
+	[1010, 10, 64, 34, -31, -3, ANIM | NOCROP, "graphics/industries/quarry.png"]
+}
+spriteset(quarry_spriteset_28) {
+	[870, 50, 64, 64, -31, -35, ANIM | NOCROP, "graphics/industries/quarry.png"]
+}
+spriteset(quarry_spriteset_29) {
+	[940, 50, 64, 64, -31, -35, ANIM | NOCROP, "graphics/industries/quarry.png"]
+}
+spriteset(quarry_spriteset_30) {
+	[1010, 50, 64, 64, -31, -33, ANIM | NOCROP, "graphics/industries/quarry.png"]
+}
+           
+spritelayout quarry_spritelayout_1 {
+	ground {
+		sprite: LOAD_TEMP(TEMP_REGISTER_GROUND_SPRITE);
+	}
+	childsprite {
+		sprite: quarry_spriteset_3(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout quarry_spritelayout_2 {
+    ground {
+		sprite: LOAD_TEMP(TEMP_REGISTER_GROUND_SPRITE);
+	}
+	childsprite {
+		sprite: quarry_spriteset_4(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: quarry_spriteset_20(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+    building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout quarry_spritelayout_4 {
+    ground {
+		sprite: LOAD_TEMP(TEMP_REGISTER_GROUND_SPRITE);
+	}
+	childsprite {
+		sprite: quarry_spriteset_5(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+    building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+    building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout quarry_spritelayout_animated_crane {
+    ground {
+		sprite: LOAD_TEMP(TEMP_REGISTER_GROUND_SPRITE);
+	}
+	childsprite {
+		sprite: quarry_spriteset_6(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: quarry_spriteset_19(1*(animation_frame > 32) ? (animation_frame % 12) : 0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: quarry_spriteset_18(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+    building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout quarry_spritelayout_6 {
+	ground {
+		sprite: LOAD_TEMP(TEMP_REGISTER_GROUND_SPRITE);
+	}
+	childsprite {
+		sprite: quarry_spriteset_7(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+    building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout quarry_spritelayout_7 {
+	ground {
+		sprite: LOAD_TEMP(TEMP_REGISTER_GROUND_SPRITE);
+	}
+	childsprite {
+		sprite: quarry_spriteset_8(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+			hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+    building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout quarry_spritelayout_animated_dozer {
+	ground {
+		sprite: LOAD_TEMP(TEMP_REGISTER_GROUND_SPRITE);
+	}
+	childsprite {
+		sprite: quarry_spriteset_9(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: 0;
+		always_draw: 1;
+	}            
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: quarry_spriteset_1(1*(animation_frame < 36) ? (animation_frame % 12) : 0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+    building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout quarry_spritelayout_inner_1 {
+	ground {
+		sprite: LOAD_TEMP(TEMP_REGISTER_GROUND_SPRITE);
+	}
+	childsprite {
+		sprite: quarry_spriteset_10(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset: 0;		zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+    building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout quarry_spritelayout_inner_2 {
+	ground {
+		sprite: LOAD_TEMP(TEMP_REGISTER_GROUND_SPRITE);
+	}
+	childsprite {
+		sprite: quarry_spriteset_11(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+    building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout quarry_spritelayout_12 {
+	ground {
+		sprite: LOAD_TEMP(TEMP_REGISTER_GROUND_SPRITE);
+	}
+	childsprite {
+		sprite: quarry_spriteset_12(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: 0;
+		always_draw: 1;
+	}           
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+    building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout quarry_spritelayout_19 {
+	ground {
+		sprite: LOAD_TEMP(TEMP_REGISTER_GROUND_SPRITE);
+	}
+	childsprite {
+		sprite: quarry_spriteset_13(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: 0;
+		always_draw: 1;
+	}           
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+			hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout quarry_spritelayout_20 {
+	ground {
+		sprite: LOAD_TEMP(TEMP_REGISTER_GROUND_SPRITE);
+	}
+	childsprite {
+		sprite: quarry_spriteset_14(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: quarry_spriteset_21(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+    building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout quarry_spritelayout_22 {
+	ground {
+		sprite: LOAD_TEMP(TEMP_REGISTER_GROUND_SPRITE);
+	}
+	childsprite {
+		sprite: quarry_spriteset_15(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: quarry_spriteset_22(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+    building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout quarry_spritelayout_23 {
+	ground {
+		sprite: LOAD_TEMP(TEMP_REGISTER_GROUND_SPRITE);
+	}
+	childsprite {
+		sprite: quarry_spriteset_16(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: 0;
+		always_draw: 1;
+	}            
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: quarry_spriteset_23(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+    building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout quarry_spritelayout_24 {
+	ground {
+		sprite: LOAD_TEMP(TEMP_REGISTER_GROUND_SPRITE);
+	}
+	childsprite {
+		sprite: quarry_spriteset_17(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: 0;
+		always_draw: 1;
+	}            
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: quarry_spriteset_24(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+    building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout quarry_spritelayout_processor_front {
+	ground {
+		sprite: LOAD_TEMP(TEMP_REGISTER_GROUND_SPRITE);
+	}
+	childsprite {
+		sprite: quarry_spriteset_25(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: quarry_spriteset_28(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+    building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout quarry_spritelayout_processor_middle {
+	ground {
+		sprite: LOAD_TEMP(TEMP_REGISTER_GROUND_SPRITE);
+	}
+	childsprite {
+		sprite: quarry_spriteset_26(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: quarry_spriteset_29(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+    building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout quarry_spritelayout_processor_rear {
+	ground {
+		sprite: LOAD_TEMP(TEMP_REGISTER_GROUND_SPRITE);
+	}
+	childsprite {
+		sprite: quarry_spriteset_27(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: 0;
+		always_draw: 1;
+	}            
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: quarry_spriteset_30(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, quarry_layout_1_graphics_switch, relative_pos) {
+	relative_coord(0, 1): quarry_spritelayout_24;
+	relative_coord(0, 2): quarry_spritelayout_12;
+	relative_coord(0, 3): quarry_spritelayout_6;
+	relative_coord(1, 0): quarry_spritelayout_processor_rear;
+	relative_coord(1, 1): quarry_spritelayout_23;
+	relative_coord(1, 2): quarry_spritelayout_inner_2;
+	relative_coord(1, 3): quarry_spritelayout_animated_crane;
+	relative_coord(2, 0): quarry_spritelayout_processor_middle;
+	relative_coord(2, 1): quarry_spritelayout_22;
+	relative_coord(2, 2): quarry_spritelayout_inner_1;
+	relative_coord(2, 3): quarry_spritelayout_4;
+	relative_coord(3, 0): quarry_spritelayout_processor_front;
+	relative_coord(3, 1): quarry_spritelayout_20;
+	relative_coord(3, 2): quarry_spritelayout_animated_dozer;
+	relative_coord(3, 3): quarry_spritelayout_2;
+	relative_coord(4, 1): quarry_spritelayout_19;
+	relative_coord(4, 2): quarry_spritelayout_7;
+	relative_coord(4, 3): quarry_spritelayout_1;
+    return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, quarry_layout_2_graphics_switch, relative_pos) {
+	relative_coord(0, 0): quarry_spritelayout_24;
+	relative_coord(0, 1): quarry_spritelayout_12;
+	relative_coord(0, 2): quarry_spritelayout_6;
+	relative_coord(1, 0): quarry_spritelayout_23;
+	relative_coord(1, 1): quarry_spritelayout_inner_2;
+	relative_coord(1, 2): quarry_spritelayout_animated_crane;
+	relative_coord(1, 3): quarry_spritelayout_processor_rear;
+	relative_coord(2, 0): quarry_spritelayout_22;
+	relative_coord(2, 1): quarry_spritelayout_inner_1;
+	relative_coord(2, 2): quarry_spritelayout_4;
+	relative_coord(2, 3): quarry_spritelayout_processor_middle;
+	relative_coord(3, 0): quarry_spritelayout_20;
+	relative_coord(3, 1): quarry_spritelayout_animated_dozer;
+	relative_coord(3, 2): quarry_spritelayout_2;
+	relative_coord(3, 3): quarry_spritelayout_processor_front;
+	relative_coord(4, 0): quarry_spritelayout_19;
+	relative_coord(4, 1): quarry_spritelayout_7;
+	relative_coord(4, 2): quarry_spritelayout_1;
+    return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, quarry_industry_graphics_switch_layouts, layout_num) {
+    1: quarry_layout_1_graphics_switch;
+    2: quarry_layout_2_graphics_switch;
+    quarry_layout_1_graphics_switch; // default
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, quarry_switch_graphics_construction_state, construction_state) {
+    0..2: spritelayout_default_construction_states;
+    quarry_industry_graphics_switch_layouts; // default
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, quarry_switch_graphics,
+	[switch_terrain_sprite(),switch_graphics_init_temp_registers()
+	]) {
+    quarry_switch_graphics_construction_state;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// location checks
+//////////////////////////////////////////////////////////////////////////////
+switch (FEAT_INDUSTRYTILES, SELF, quarry_switch_tile_location_check2,
+	(nearby_tile_height(-relative_x, -relative_y) + 
+	(nearby_tile_slope(-relative_x, -relative_y)== SLOPE_FLAT ? 0 : nearby_tile_slope(-relative_x, -relative_y) == bitmask(IS_STEEP_SLOPE) ? 2 : 1)) 
+	== 
+	(nearby_tile_height(0, 0) + (nearby_tile_slope(0, 0) == SLOPE_FLAT ? 0 : nearby_tile_slope(0, 0) == bitmask(IS_STEEP_SLOPE) ? 2 : 1))
+	) {
+	1: return CB_RESULT_LOCATION_ALLOW;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+
+switch (FEAT_INDUSTRYTILES, SELF, quarry_switch_tile_location_check,
+	is_funded_or_prospected() || not_next_to_industry())
+{
+	1: quarry_switch_tile_location_check2;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+	
+//////////////////////////////////////////////////////////////////////////////
+// industry tile and layout definition
+//////////////////////////////////////////////////////////////////////////////
+item(FEAT_INDUSTRYTILES, quarry_tile_1, INDUSTRY_TILE_ID_QUARRY_1) {
+	property {
+		substitute:         0;
+		land_shape_flags:   0;
+		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+		animation_triggers: bitmask();
+	}
+	graphics {
+		tile_check: quarry_switch_tile_location_check;
+		quarry_switch_graphics;
+	}
+}
+item(FEAT_INDUSTRYTILES, quarry_tile_2, INDUSTRY_TILE_ID_QUARRY_2) {
+	property {
+		substitute:         0;
+		land_shape_flags:   0;
+		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+		animation_info: [ANIMATION_LOOPING, 56];
+		animation_speed: 4;
+		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
+	}
+	graphics {
+		tile_check: quarry_switch_tile_location_check;
+		//anim_control: quarry_tile_2_industry_anim_control;
+		foundations: return CB_RESULT_NO_FOUNDATIONS;
+		autoslope: return CB_RESULT_NO_AUTOSLOPE;
+		quarry_switch_graphics;
+	}
+}
+
+tilelayout quarry_layout_1_tilelayout {
+	0, 1: quarry_tile_2;
+	0, 2: quarry_tile_2;
+	0, 3: quarry_tile_2;
+	1, 0: quarry_tile_1;
+	1, 1: quarry_tile_2;
+	1, 2: quarry_tile_1;
+	1, 3: quarry_tile_2;
+	2, 0: quarry_tile_1;
+	2, 1: quarry_tile_2;
+	2, 2: quarry_tile_1;
+	2, 3: quarry_tile_2;
+	3, 0: quarry_tile_1;
+	3, 1: quarry_tile_2;
+	3, 2: quarry_tile_2;
+	3, 3: quarry_tile_2;
+	4, 1: quarry_tile_2;
+	4, 2: quarry_tile_2;
+	4, 3: quarry_tile_2;
+}
+tilelayout quarry_layout_2_tilelayout {
+	0, 0: quarry_tile_2;
+	0, 1: quarry_tile_2;
+	0, 2: quarry_tile_2;
+	1, 0: quarry_tile_2;
+	1, 1: quarry_tile_1;
+	1, 2: quarry_tile_2;
+	1, 3: quarry_tile_1;
+	2, 0: quarry_tile_2;
+	2, 1: quarry_tile_1;
+	2, 2: quarry_tile_2;
+	2, 3: quarry_tile_1;
+	3, 0: quarry_tile_2;
+	3, 1: quarry_tile_2;
+	3, 2: quarry_tile_2;
+	3, 3: quarry_tile_1;
+	4, 0: quarry_tile_2;
+	4, 1: quarry_tile_2;
+	4, 2: quarry_tile_2;
+}
+
+switch(FEAT_INDUSTRIES, SELF, quarry_switch_location_check_industry_distance,
+		(industry_distance(INDUSTRY_ID_QUARRY) >= 16) && 
+		(industry_distance(INDUSTRY_ID_CEMENT_PLANT) >= 32) &&
+		(industry_distance(INDUSTRY_ID_BUILDERS_YARD) >= 32)
+		// && (industry_distance(INDUSTRY_ID_GLASS_PLANT) >= 32)
+		) 
+{ 
+	1: return CB_RESULT_LOCATION_ALLOW;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+
+switch(FEAT_INDUSTRIES, SELF, quarry_func_calc_max_prod, 
+	128) {
+	return;
+}
+
+// if nothing has been transported at all, do not change production (industry might just not be serviced)
+switch(FEAT_INDUSTRIES, SELF, quarry_switch_prod_change, 
+	[STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
+	 STORE_TEMP(transported_last_month_pct("SAND"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 STORE_TEMP(quarry_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
+	 LOAD_PERM(PERM_REGISTER_RESOURCES) != 0])
+{
+	1: change_production; // use default rules to adapt production
+	return CB_RESULT_IND_PROD_CLOSE; // resources are depleted - close
+}
+
+// randomize production at build time based on random bits: 96t min, 152t max
+switch(FEAT_INDUSTRIES, SELF, quarry_switch_prod_change_build,
+	[initialize_extractive_resources(),
+	 STORE_TEMP(quarry_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	])
+{
+	randomize_initial_production;
+}
+
+produce(quarry_produce,
+	[],
+	[SAND: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);],
+	0 // do not run again
+)
+
+////////////////////////////////////////////////////////////////////////////////
+// calculate how much to produce, based on remaining reserves, current production level etc.
+////////////////////////////////////////////////////////////////////////////////
+switch(FEAT_INDUSTRIES, SELF, quarry_switch_produce,
+	[init_primary_production()]) {
+	quarry_produce;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// build the industry window text here
+////////////////////////////////////////////////////////////////////////////////
+switch(FEAT_INDUSTRIES, SELF, quarry_switch_extra_text, 
+	[STORE_TEMP(quarry_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
+	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 STORE_TEMP(production_level * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	 STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
+	 STORE_TEMP(
+		LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL) < LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION) ? string(STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION) : string(STR_INDUSTRY_PREREQ_KEEP_PRODUCTION) | 
+		string(STR_EMPTY) << 16,
+		TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_RESOURCES) / 1000,TEMP_REGISTER_EXTRA_TEXT_ARG1),
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_RESOURCES) / (LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT)*8*12),TEMP_REGISTER_EXTRA_TEXT_ARG2)
+	]) {
+	return string(STR_EXTRACTIVE_INDUSTRY_TEXT);
+}
+
+if (param_extension_building_materials) {
+
+item(FEAT_INDUSTRIES, quarry, INDUSTRY_ID_QUARRY) {
+	property {
+		substitute: 0;
+		map_colour: 66;
+		life_type: IND_LIFE_TYPE_EXTRACTIVE;
+		min_cargo_distr: 1;
+		layouts: [quarry_layout_1_tilelayout,quarry_layout_2_tilelayout];
+		spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+		conflicting_ind_types: [];
+		random_sound_effects: [];
+		name: string(STR_IND_QUARRY);
+		prob_map_gen: 7;
+        prob_in_game: 4;
+        prospect_chance: 0.75;
+        fund_cost_multiplier: 210;
+        remove_cost_multiplier: 0;
+        remove_cost_multiplier: 0;
+		cargo_types: [produce_cargo("SAND",0)];
+		nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_QUARRY));
+	}
+
+	graphics {
+		//construction_probability: quarry_switch_check_availability;
+		produce_cargo_arrival:    empty_produce; 
+		produce_256_ticks:        quarry_switch_produce;
+		monthly_prod_change:      quarry_switch_prod_change;
+		random_prod_change:       quarry_switch_prod_change;
+		build_prod_change:        quarry_switch_prod_change_build;
+		location_check:           quarry_switch_location_check_industry_distance;
+		extra_text_industry:      quarry_switch_extra_text;
+		//cargo_subtype_display:    quarry_switch_cargo_subtype;
+	}
+}
+    
+} // if param_extension_building_materials
