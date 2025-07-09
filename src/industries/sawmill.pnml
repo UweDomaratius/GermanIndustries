@@ -448,24 +448,6 @@ switch(FEAT_INDUSTRIES, SELF, sawmill_switch_produce,
 	sawmill_produce;
 }
 
-////////////////////////////////////////////////////////////////////////////////
-// cargo subtexts to show how much incoming cargo is waiting
-////////////////////////////////////////////////////////////////////////////////
-switch(FEAT_INDUSTRIES, SELF, sawmill_switch_cargo_subtype_display_info, 
-	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("WOOD") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
-	 getbits(extra_callback_info2, 16, 8)]) {
-	WOOD: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
-	return 0x3800 + string(STR_EMPTY);
-}
-
-// getbits(extra_callback_info2, 8, 8) == 1 -> industry window, 0 -> industry buy/prospect window, 2 -> industry directory
-switch(FEAT_INDUSTRIES, SELF, sawmill_switch_cargo_subtype, 
-	 getbits(extra_callback_info2, 8, 8)) {
-	0: return CB_RESULT_IND_NO_TEXT_NO_AMOUNT;
-	1: sawmill_switch_cargo_subtype_display_info;
-	return 0x3800 + string(STR_EMPTY);
-}
-
 item(FEAT_INDUSTRIES, sawmill, INDUSTRY_ID_SAWMILL) {
 	property {
 		substitute: 0;
@@ -492,7 +474,7 @@ item(FEAT_INDUSTRIES, sawmill, INDUSTRY_ID_SAWMILL) {
 		monthly_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
 		random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 		location_check:           sawmill_switch_location_check_industry_distance;
-		cargo_subtype_display:    sawmill_switch_cargo_subtype;
+		cargo_subtype_display:    switch_cargo_subtype;
 	}
 }
     

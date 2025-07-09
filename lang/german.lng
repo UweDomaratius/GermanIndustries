@@ -104,5 +104,10 @@ STR_CARGO_SUBTYPE_DISPLAY_CARGO_BOOSTS_PRODUCTION :{WHITE}({CARGO_SHORT} vorrät
 
 # Fehlertexte
 STR_ERR_OPENTTD_VERSION:{ORANGE}E00: {TITLE} benötigt OpenTTD 14.0 oder neuer
+<<<<<<< HEAD
 STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE :muss unterhalb der Schneegrenze platziert werden
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE :kann nicht auf steilen Hängen platziert werden
+=======
+STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE: muss unterhalb der Schneegrenze platziert werden
+STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE: kann nicht auf steilen Hängen platziert werden
+>>>>>>> main
