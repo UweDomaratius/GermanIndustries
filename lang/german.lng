@@ -1,4 +1,5 @@
 ##grflangid 0x02
+##plural 0
 # This is the German language file
 
 # GRF name und Beschreibung
@@ -86,4 +87,4 @@ STR_CARGO_SUBTYPE_DISPLAY_CARGO_BOOSTS_PRODUCTION :{WHITE}({CARGO_SHORT} vorrät
 # Fehlertexte
 STR_ERR_OPENTTD_VERSION:{ORANGE}E00: {TITLE} benötigt OpenTTD 14.0 oder neuer
 STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE: muss unterhalb der Schneegrenze platziert werden
-STR_ERRO_LOCATION_NOT_ON_STEEP_SLOPE: kann nicht auf steilen Hängen platziert werden
+STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE: kann nicht auf steilen Hängen platziert werden

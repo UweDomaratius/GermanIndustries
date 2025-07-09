@@ -473,35 +473,6 @@ switch(FEAT_INDUSTRIES, SELF, power_plant_switch_check_availability, current_yea
 	return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
 }
 
-switch(FEAT_INDUSTRIES, SELF, power_plant_switch_cargo_subtype_display_info_coal, 
-	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("COAL") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
-	 getbits(extra_callback_info2, 16, 8)]) {
-	COAL: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
-	return 0x3800 + string(STR_EMPTY);
-}
-
-switch(FEAT_INDUSTRIES, SELF, power_plant_switch_cargo_subtype_display_info_oil, 
-	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("OIL_") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
-	 getbits(extra_callback_info2, 16, 8)]) {
-	OIL_: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
-	return 0x3800 + string(STR_EMPTY);
-}
-
-// getbits(extra_callback_info2, 16, 8) contains the cargo type
-switch(FEAT_INDUSTRIES, SELF, power_plant_switch_cargo_subtype_display_info_cargo, 
-	getbits(extra_callback_info2, 16, 8)) {
-	COAL: power_plant_switch_cargo_subtype_display_info_coal;
-	OIL_: power_plant_switch_cargo_subtype_display_info_oil;
-	return 0x3800 + string(STR_EMPTY);
-}
-
-// getbits(extra_callback_info2, 8, 8) == 1 -> industry window, 0 -> industry buy/prospect window, 2 -> industry directory
-switch(FEAT_INDUSTRIES, SELF, power_plant_switch_cargo_subtype_display_info, getbits(extra_callback_info2, 8, 8))
-{
-	0: return CB_RESULT_IND_NO_TEXT_NO_AMOUNT;
-	1: power_plant_switch_cargo_subtype_display_info_cargo;
-}
-
 switch(FEAT_INDUSTRIES, SELF, power_plant_switch_prod_change_build,
 	[
 	// initialize the permanent registers
@@ -554,7 +525,7 @@ item(FEAT_INDUSTRIES, power_plant, INDUSTRY_ID_POWER_PLANT) {
         location_check:           power_plant_switch_location_check;
         extra_text_fund:          power_plant_switch_extra_text_fund;
 		extra_text_industry:      power_plant_switch_extra_text;
-        cargo_subtype_display:    power_plant_switch_cargo_subtype_display_info;
+        cargo_subtype_display:    switch_cargo_subtype;
     }
 }
     
