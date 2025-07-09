@@ -473,46 +473,6 @@ switch(FEAT_INDUSTRIES, SELF, food_processor_switch_produce,
 	food_processor_switch_produce_fish;
 }
 
-////////////////////////////////////////////////////////////////////////////////
-// cargo subtexts to show how much incoming cargo is waiting
-////////////////////////////////////////////////////////////////////////////////
-switch(FEAT_INDUSTRIES, SELF, food_processor_switch_cargo_subtype_display_info_lvst, 
-	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("LVST") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
-	 getbits(extra_callback_info2, 16, 8)]) {
-	LVST: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
-	return 0x3800 + string(STR_EMPTY);
-}
-
-switch(FEAT_INDUSTRIES, SELF, food_processor_switch_cargo_subtype_display_info_grai, 
-	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("GRAI") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
-	 getbits(extra_callback_info2, 16, 8)]) {
-	GRAI: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
-	return 0x3800 + string(STR_EMPTY);
-}
-
-switch(FEAT_INDUSTRIES, SELF, food_processor_switch_cargo_subtype_display_info_fish, 
-	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("FISH") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
-	 getbits(extra_callback_info2, 16, 8)]) {
-	FISH: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
-	return 0x3800 + string(STR_EMPTY);
-}
-
-switch(FEAT_INDUSTRIES, SELF, food_processor_switch_cargo_subtype_display_info, 
-	getbits(extra_callback_info2, 16, 8)) {
-	LVST: food_processor_switch_cargo_subtype_display_info_lvst;
-	GRAI: food_processor_switch_cargo_subtype_display_info_grai;
-	FISH: food_processor_switch_cargo_subtype_display_info_fish;
-	return 0x3800 + string(STR_EMPTY);
-}
-
-// getbits(extra_callback_info2, 8, 8) == 1 -> industry window, 0 -> industry buy/prospect window, 2 -> industry directory
-switch(FEAT_INDUSTRIES, SELF, food_processor_switch_cargo_subtype, 
-	 getbits(extra_callback_info2, 8, 8)) {
-	0: return CB_RESULT_IND_NO_TEXT_NO_AMOUNT;
-	1: food_processor_switch_cargo_subtype_display_info;
-	return 0x3800 + string(STR_EMPTY);
-}
-
 item(FEAT_INDUSTRIES, food_processor, INDUSTRY_ID_FOOD_PROCESSOR) {
 	property {
 		substitute: 0;
@@ -540,7 +500,7 @@ item(FEAT_INDUSTRIES, food_processor, INDUSTRY_ID_FOOD_PROCESSOR) {
 		random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 		location_check:           food_processor_switch_location_check_industry_distance;
 		//extra_text_industry:    food_processor_switch_extra_text;
-		cargo_subtype_display:    food_processor_switch_cargo_subtype;
+		cargo_subtype_display:    switch_cargo_subtype;
 	}
 }
     

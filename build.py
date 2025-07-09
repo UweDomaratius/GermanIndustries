@@ -9,6 +9,7 @@ from constants import constants
 
 inputs = [
     "src/german_industries.pnml",
+    "src/cargo_subtype_display.pnml",
     "src/default_graphics.pnml",
     "src/electricity.pnml",
     "src/location_checks.pnml",
