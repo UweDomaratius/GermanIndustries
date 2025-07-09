@@ -1,0 +1,1056 @@
+spriteset(cement_plant_spriteset_2) {
+    [80, 10, 64, 113, -31, -82, ANIM | NOCROP, "graphics/industries/cement_plant.png"]
+}
+spriteset(cement_plant_spriteset_3) {
+	[150, 10, 64, 113, -31, -82, ANIM | NOCROP, "graphics/industries/cement_plant.png"]
+}
+spriteset(cement_plant_spriteset_4) {
+	[220, 10, 64, 113, -31, -82, ANIM | NOCROP, "graphics/industries/cement_plant.png"]
+}
+spriteset(cement_plant_spriteset_5) {
+	[290, 10, 64, 113, -31, -82, ANIM | NOCROP, "graphics/industries/cement_plant.png"]
+}
+spriteset(cement_plant_spriteset_6) {
+	[220, 130, 64, 113, -31, -82, ANIM | NOCROP, "graphics/industries/cement_plant.png"]
+	//[290, 130, 64, 113, -31, -82, ANIM | NOCROP, "graphics/industries/cement_plant.png"]
+	//[360, 130, 64, 113, -31, -82, ANIM | NOCROP, "graphics/industries/cement_plant.png"]
+	//[430, 130, 64, 113, -31, -82, ANIM | NOCROP, "graphics/industries/cement_plant.png"]
+	//[500, 130, 64, 113, -31, -82, ANIM | NOCROP, "graphics/industries/cement_plant.png"]
+	//[570, 130, 64, 113, -31, -82, ANIM | NOCROP, "graphics/industries/cement_plant.png"]
+	//[640, 130, 64, 113, -31, -82, ANIM | NOCROP, "graphics/industries/cement_plant.png"]
+}
+spriteset(cement_plant_spriteset_9) {
+	[430, 10, 64, 113, -31, -82, ANIM | NOCROP, "graphics/industries/cement_plant.png"]
+}
+spriteset(cement_plant_spriteset_10) {
+	[500, 10, 64, 113, -31, -82, ANIM | NOCROP, "graphics/industries/cement_plant.png"]
+}
+spriteset(cement_plant_spriteset_11) {
+	[570, 10, 64, 113, -31, -82, ANIM | NOCROP, "graphics/industries/cement_plant.png"]
+}
+spriteset(cement_plant_spriteset_12) {
+	[640, 10, 64, 113, -31, -82, ANIM | NOCROP, "graphics/industries/cement_plant.png"]
+}
+spriteset(cement_plant_spriteset_13) {
+	[710, 10, 64, 113, -31, -82, ANIM | NOCROP, "graphics/industries/cement_plant.png"]
+}
+spriteset(cement_plant_spriteset_14) {
+	[780, 10, 64, 113, -31, -82, ANIM | NOCROP, "graphics/industries/cement_plant.png"]
+	[780, 10, 64, 113, -31, -82, ANIM | NOCROP, "graphics/industries/cement_plant.png"]
+	[780, 10, 64, 113, -31, -82, ANIM | NOCROP, "graphics/industries/cement_plant.png"]
+	[780, 10, 64, 113, -31, -82, ANIM | NOCROP, "graphics/industries/cement_plant.png"]
+	[780, 10, 64, 113, -31, -82, ANIM | NOCROP, "graphics/industries/cement_plant.png"]
+	[780, 10, 64, 113, -31, -82, ANIM | NOCROP, "graphics/industries/cement_plant.png"]
+	[780, 10, 64, 113, -31, -82, ANIM | NOCROP, "graphics/industries/cement_plant.png"]
+}
+spriteset(cement_plant_spriteset_15) {
+	[80, 130, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/cement_plant.png"]
+}
+spriteset(cement_plant_spriteset_16) {
+	[150, 130, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/cement_plant.png"]
+}
+
+spritelayout cement_plant_spritelayout_1 {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+    building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: cement_plant_spriteset_2(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset: 16;	zoffset: 0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout cement_plant_spritelayout_2 {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset: 0;		yoffset:  0;	zoffset: 0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: cement_plant_spriteset_3(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}            
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset: 16;	zoffset: 0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout cement_plant_spritelayout_3 {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: cement_plant_spriteset_4(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout cement_plant_spritelayout_4 {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: cement_plant_spriteset_5(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout cement_plant_spritelayout_5 {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: cement_plant_spriteset_6(1* (animation_frame));
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout cement_plant_spritelayout_6 {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: cement_plant_spriteset_9(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout cement_plant_spritelayout_7 {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: cement_plant_spriteset_10(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout cement_plant_spritelayout_8 {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: cement_plant_spriteset_11(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout cement_plant_spritelayout_9 {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}	
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: cement_plant_spriteset_12(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout cement_plant_spritelayout_10 {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: cement_plant_spriteset_13(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout cement_plant_spritelayout_11 {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete7;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: cement_plant_spriteset_14(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_SMOKE_SPRITE_WHITE_BIG + ((animation_frame + 0)%8);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 3;		yoffset: 0;		zoffset: 81;
+		xextent: 15;	yextent: 7;		zextent: 7;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: TTD_SMOKE_SPRITE_WHITE_BIG + ((animation_frame + 1)%8);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 81;
+		xextent: 15;	yextent: 7;		zextent: 7;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout cement_plant_spritelayout_clay_staithe {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: cement_plant_spriteset_15(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout cement_plant_spritelayout_stone_staithe {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: cement_plant_spriteset_16(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// graphics choice switch chain
+//////////////////////////////////////////////////////////////////////////////
+switch(FEAT_INDUSTRYTILES, SELF, cement_plant_industry_layout_1_graphics_switch, relative_pos) {
+	relative_coord(0, 1): cement_plant_spritelayout_2;
+	relative_coord(0, 2): cement_plant_spritelayout_3;
+	relative_coord(1, 1): cement_plant_spritelayout_1;
+	relative_coord(1, 2): cement_plant_spritelayout_6;
+	relative_coord(2, 2): cement_plant_spritelayout_5;
+	relative_coord(3, 2): cement_plant_spritelayout_4;
+	relative_coord(4, 0): cement_plant_spritelayout_stone_staithe;
+	relative_coord(4, 1): cement_plant_spritelayout_11;
+	relative_coord(4, 2): cement_plant_spritelayout_8;
+	relative_coord(4, 3): cement_plant_spritelayout_7;
+	relative_coord(5, 0): cement_plant_spritelayout_clay_staithe;
+	relative_coord(5, 1): cement_plant_spritelayout_10;
+	relative_coord(5, 2): cement_plant_spritelayout_9;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, cement_plant_industry_layout_2_graphics_switch, relative_pos) {
+	relative_coord(0, 0): cement_plant_spritelayout_2;
+	relative_coord(0, 1): cement_plant_spritelayout_3;
+	relative_coord(0, 2): cement_plant_spritelayout_1;
+	relative_coord(1, 0): cement_plant_spritelayout_6;
+	relative_coord(1, 1): cement_plant_spritelayout_6;
+	relative_coord(2, 0): cement_plant_spritelayout_5;
+	relative_coord(2, 1): cement_plant_spritelayout_5;
+	relative_coord(2, 2): cement_plant_spritelayout_11;
+	relative_coord(2, 3): cement_plant_spritelayout_8;
+	relative_coord(2, 4): cement_plant_spritelayout_7;
+	relative_coord(3, 0): cement_plant_spritelayout_4;
+	relative_coord(3, 1): cement_plant_spritelayout_4;
+	relative_coord(3, 2): cement_plant_spritelayout_10;
+	relative_coord(3, 3): cement_plant_spritelayout_9;
+	relative_coord(3, 4): cement_plant_spritelayout_stone_staithe;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, cement_plant_industry_layout_3_graphics_switch, relative_pos) {
+	relative_coord(0, 0): cement_plant_spritelayout_2;
+	relative_coord(0, 1): cement_plant_spritelayout_3;
+	relative_coord(0, 2): cement_plant_spritelayout_6;
+	relative_coord(0, 3): cement_plant_spritelayout_6;
+	relative_coord(0, 4): cement_plant_spritelayout_stone_staithe;
+	relative_coord(0, 5): cement_plant_spritelayout_clay_staithe;
+	relative_coord(1, 0): cement_plant_spritelayout_2;
+	relative_coord(1, 1): cement_plant_spritelayout_3;
+	relative_coord(1, 2): cement_plant_spritelayout_5;
+	relative_coord(1, 3): cement_plant_spritelayout_5;
+	relative_coord(1, 4): cement_plant_spritelayout_11;
+	relative_coord(1, 5): cement_plant_spritelayout_8;
+	relative_coord(1, 6): cement_plant_spritelayout_7;
+	relative_coord(2, 0): cement_plant_spritelayout_1;
+	relative_coord(2, 1): cement_plant_spritelayout_1;
+	relative_coord(2, 2): cement_plant_spritelayout_4;
+	relative_coord(2, 3): cement_plant_spritelayout_4;
+	relative_coord(2, 4): cement_plant_spritelayout_10;
+	relative_coord(2, 5): cement_plant_spritelayout_9;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, cement_plant_industry_layout_4_graphics_switch, relative_pos) {
+	relative_coord(0, 0): cement_plant_spritelayout_2;
+	relative_coord(0, 1): cement_plant_spritelayout_3;
+	relative_coord(0, 2): cement_plant_spritelayout_2;
+	relative_coord(0, 3): cement_plant_spritelayout_3;
+	relative_coord(1, 0): cement_plant_spritelayout_6;
+	relative_coord(1, 1): cement_plant_spritelayout_6;
+	relative_coord(1, 2): cement_plant_spritelayout_6;
+	relative_coord(1, 3): cement_plant_spritelayout_1;
+	relative_coord(2, 0): cement_plant_spritelayout_5;
+	relative_coord(2, 1): cement_plant_spritelayout_5;
+	relative_coord(2, 2): cement_plant_spritelayout_5;
+	relative_coord(3, 0): cement_plant_spritelayout_4;
+	relative_coord(3, 1): cement_plant_spritelayout_4;
+	relative_coord(3, 2): cement_plant_spritelayout_4;
+	relative_coord(4, 0): cement_plant_spritelayout_stone_staithe;
+	relative_coord(4, 1): cement_plant_spritelayout_11;
+	relative_coord(4, 2): cement_plant_spritelayout_8;
+	relative_coord(4, 3): cement_plant_spritelayout_7;
+	relative_coord(5, 0): cement_plant_spritelayout_clay_staithe;
+	relative_coord(5, 1): cement_plant_spritelayout_10;
+	relative_coord(5, 2): cement_plant_spritelayout_9;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, cement_plant_industry_layout_5_graphics_switch, relative_pos) {
+	relative_coord(0, 0): cement_plant_spritelayout_1;
+	relative_coord(0, 1): cement_plant_spritelayout_1;
+	relative_coord(1, 0): cement_plant_spritelayout_2;
+	relative_coord(1, 1): cement_plant_spritelayout_3;
+	relative_coord(2, 0): cement_plant_spritelayout_6;
+	relative_coord(2, 1): cement_plant_spritelayout_6;
+	relative_coord(3, 0): cement_plant_spritelayout_5;
+	relative_coord(3, 1): cement_plant_spritelayout_5;
+	relative_coord(4, 0): cement_plant_spritelayout_4;
+	relative_coord(4, 1): cement_plant_spritelayout_4;
+	relative_coord(4, 2): cement_plant_spritelayout_stone_staithe;
+	relative_coord(5, 0): cement_plant_spritelayout_11;
+	relative_coord(5, 1): cement_plant_spritelayout_8;
+	relative_coord(5, 2): cement_plant_spritelayout_7;
+	relative_coord(6, 0): cement_plant_spritelayout_10;
+	relative_coord(6, 1): cement_plant_spritelayout_9;
+	relative_coord(6, 2): cement_plant_spritelayout_clay_staithe;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, PARENT, cement_plant_switch_graphics_layouts, layout_num) {
+	1: cement_plant_industry_layout_1_graphics_switch;
+	2: cement_plant_industry_layout_2_graphics_switch;
+	3: cement_plant_industry_layout_3_graphics_switch;
+	4: cement_plant_industry_layout_4_graphics_switch;
+	5: cement_plant_industry_layout_5_graphics_switch;
+	cement_plant_industry_layout_1_graphics_switch; // default
+}
+	
+switch(FEAT_INDUSTRYTILES, SELF, cement_plant_switch_graphics_construction_state, construction_state) {
+    0..2: spritelayout_default_construction_states;
+    cement_plant_switch_graphics_layouts; // default
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, cement_plant_switch_graphics,
+	[switch_tile_fences(),
+	 switch_terrain_sprite(),switch_graphics_init_temp_registers()
+]) {
+    cement_plant_switch_graphics_construction_state;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// location checks
+//////////////////////////////////////////////////////////////////////////////
+// This check works as follows: calculate height of the northernmost tile of the industry and add 0, 1 or 2 for flat, slope. steep slope
+// Do the same for the current tile and compare the results. If the result is equal, the terrain is effectively flat
+// and industry can be placed.
+// It just looks weird due to the stacked ternary operators needed here
+switch (FEAT_INDUSTRYTILES, SELF, cement_plant_switch_tile_location_check2,
+			(nearby_tile_height(-relative_x, -relative_y) + 
+			(nearby_tile_slope(-relative_x, -relative_y)== SLOPE_FLAT ? 0 : nearby_tile_slope(-relative_x, -relative_y) == bitmask(IS_STEEP_SLOPE) ? 2 : 1)) 
+			== 
+			(nearby_tile_height(0, 0) + (nearby_tile_slope(0, 0) == SLOPE_FLAT ? 0 : nearby_tile_slope(0, 0) == bitmask(IS_STEEP_SLOPE) ? 2 : 1))
+			) {
+	1: return CB_RESULT_LOCATION_ALLOW;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, cement_plant_switch_tile_location_check,
+	is_funded_or_prospected() || (not_next_to_industry() && not_next_to_buildings()))
+{
+	1: cement_plant_switch_tile_location_check2;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// industry tile and layout definition
+//////////////////////////////////////////////////////////////////////////////
+item(FEAT_INDUSTRYTILES, cement_plant_tile, INDUSTRY_TILE_ID_CEMENT_PLANT) {
+    property {
+        substitute:         0;
+        land_shape_flags:   0;
+        special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+        animation_info: [ANIMATION_LOOPING, 7];
+        animation_speed: 3;
+        animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
+    }
+    graphics {
+    	tile_check: cement_plant_switch_tile_location_check;
+        cement_plant_switch_graphics;
+    }
+}
+
+tilelayout cement_plant_tilelayout_1 {
+	0, 1: cement_plant_tile;
+	0, 2: cement_plant_tile;
+	1, 1: cement_plant_tile;
+	1, 2: cement_plant_tile;
+	2, 2: cement_plant_tile;
+	3, 2: cement_plant_tile;
+	4, 0: cement_plant_tile;
+	4, 1: cement_plant_tile;
+	4, 2: cement_plant_tile;
+	4, 3: cement_plant_tile;
+	5, 0: cement_plant_tile;
+	5, 1: cement_plant_tile;
+	5, 2: cement_plant_tile;
+}
+tilelayout cement_plant_tilelayout_2 {
+	0, 0: cement_plant_tile;
+	0, 1: cement_plant_tile;
+	0, 2: cement_plant_tile;
+	1, 0: cement_plant_tile;
+	1, 1: cement_plant_tile;
+	2, 0: cement_plant_tile;
+	2, 1: cement_plant_tile;
+	2, 2: cement_plant_tile;
+	2, 3: cement_plant_tile;
+	2, 4: cement_plant_tile;
+	3, 0: cement_plant_tile;
+	3, 1: cement_plant_tile;
+	3, 2: cement_plant_tile;
+	3, 3: cement_plant_tile;
+	3, 4: cement_plant_tile;
+}
+tilelayout cement_plant_tilelayout_3 {
+	0, 0: cement_plant_tile;
+	0, 1: cement_plant_tile;
+	0, 2: cement_plant_tile;
+	0, 3: cement_plant_tile;
+	0, 4: cement_plant_tile;
+	0, 5: cement_plant_tile;
+	1, 0: cement_plant_tile;
+	1, 1: cement_plant_tile;
+	1, 2: cement_plant_tile;
+	1, 3: cement_plant_tile;
+	1, 4: cement_plant_tile;
+	1, 5: cement_plant_tile;
+	1, 6: cement_plant_tile;
+	2, 0: cement_plant_tile;
+	2, 1: cement_plant_tile;
+	2, 2: cement_plant_tile;
+	2, 3: cement_plant_tile;
+	2, 4: cement_plant_tile;
+	2, 5: cement_plant_tile;
+}
+tilelayout cement_plant_tilelayout_4 {
+	0, 0: cement_plant_tile;
+	0, 1: cement_plant_tile;
+	0, 2: cement_plant_tile;
+	0, 3: cement_plant_tile;
+	1, 0: cement_plant_tile;
+	1, 1: cement_plant_tile;
+	1, 2: cement_plant_tile;
+	1, 3: cement_plant_tile;
+	2, 0: cement_plant_tile;
+	2, 1: cement_plant_tile;
+	2, 2: cement_plant_tile;
+	3, 0: cement_plant_tile;
+	3, 1: cement_plant_tile;
+	3, 2: cement_plant_tile;
+	4, 0: cement_plant_tile;
+	4, 1: cement_plant_tile;
+	4, 2: cement_plant_tile;
+	4, 3: cement_plant_tile;
+	5, 0: cement_plant_tile;
+	5, 1: cement_plant_tile;
+	5, 2: cement_plant_tile;
+}
+tilelayout cement_plant_tilelayout_5 {
+	0, 0: cement_plant_tile;
+	0, 1: cement_plant_tile;
+	1, 0: cement_plant_tile;
+	1, 1: cement_plant_tile;
+	2, 0: cement_plant_tile;
+	2, 1: cement_plant_tile;
+	3, 0: cement_plant_tile;
+	3, 1: cement_plant_tile;
+	4, 0: cement_plant_tile;
+	4, 1: cement_plant_tile;
+	4, 2: cement_plant_tile;
+	5, 0: cement_plant_tile;
+	5, 1: cement_plant_tile;
+	5, 2: cement_plant_tile;
+	6, 0: cement_plant_tile;
+	6, 1: cement_plant_tile;
+	6, 2: cement_plant_tile;
+}
+
+// TODO: check correct industries
+switch(FEAT_INDUSTRIES, SELF, cement_plant_switch_location_check_industry_distance,
+	[STORE_TEMP(32, TEMP_REGISTER_TOWN_MIN_DISTANCE),
+	 STORE_TEMP(64, TEMP_REGISTER_TOWN_MAX_DISTANCE),
+	    (distance_from_town() && 
+        (industry_distance(INDUSTRY_ID_QUARRY) >= 32) && 
+	    (industry_distance(INDUSTRY_ID_LIMESTONE_MINE) >= 32) &&
+		(industry_distance(INDUSTRY_ID_BUILDERS_YARD) >= 32) &&
+	     (industry_distance(INDUSTRY_ID_CEMENT_PLANT) >= 16))]) {
+	   1: return CB_RESULT_LOCATION_ALLOW;
+	   return CB_RESULT_LOCATION_DISALLOW;
+}
+
+// 1 SAND + 1 LIMESTONE => 1 CEMENT
+produce(cement_plant_produce,
+	[SAND: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);
+	 LIME:  LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
+	[CMNT: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
+	0 // do not run again
+)
+
+// industry uses 10% of stockpile for production, if stockpile is big enough
+// if stockpile is < 80t, 8t are produced per 256ticks
+// if stockpile is < 8t, whatever is available is used
+// it stockpile is empty, nothing is produced
+switch(FEAT_INDUSTRIES, SELF, cement_plant_switch_produce, 
+	[STORE_TEMP(min(incoming_cargo_waiting("SAND"),incoming_cargo_waiting("LIME")), TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT),
+	 STORE_TEMP(((LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) / 10) > 8) ? LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) / 10 : 
+	 (LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) > 8 ? 8 : LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT)),TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)
+	]) {
+	cement_plant_produce;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// cargo subtexts to show how much incoming cargo is waiting
+////////////////////////////////////////////////////////////////////////////////
+switch(FEAT_INDUSTRIES, SELF, cement_plant_switch_cargo_subtype_display_info_sand, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("SAND") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	CMNT: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, cement_plant_switch_cargo_subtype_display_info_lime, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("LIME") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	LIME: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, cement_plant_switch_cargo_subtype_display_info, 
+	getbits(extra_callback_info2, 16, 8)) {
+	SAND: cement_plant_switch_cargo_subtype_display_info_sand;
+	LIME: cement_plant_switch_cargo_subtype_display_info_lime;
+	return 0x3800 + string(STR_EMPTY);
+}
+
+// getbits(extra_callback_info2, 8, 8) == 1 -> industry window, 0 -> industry buy/prospect window, 2 -> industry directory
+switch(FEAT_INDUSTRIES, SELF, cement_plant_switch_cargo_subtype, 
+	 getbits(extra_callback_info2, 8, 8)) {
+	0: return CB_RESULT_IND_NO_TEXT_NO_AMOUNT;
+	1: cement_plant_switch_cargo_subtype_display_info;
+	return 0x3800 + string(STR_EMPTY);
+}
+
+if (param_extension_building_materials) {
+
+item(FEAT_INDUSTRIES, cement_plant, INDUSTRY_ID_CEMENT_PLANT) {
+	property {
+		substitute: 0;
+		map_colour: 19;
+		life_type: IND_LIFE_TYPE_PROCESSING;
+		min_cargo_distr: 1;
+		layouts: [cement_plant_tilelayout_1,cement_plant_tilelayout_2,cement_plant_tilelayout_3,cement_plant_tilelayout_4,cement_plant_tilelayout_5];
+		spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+		conflicting_ind_types: [];
+		random_sound_effects: [];
+		name: string(STR_IND_CEMENT_PLANT);
+		prob_map_gen: 5;
+        prob_in_game: 3;
+        fund_cost_multiplier: 203;
+        remove_cost_multiplier: 0;
+        remove_cost_multiplier: 0;
+		cargo_types: [accept_cargo("SAND"),accept_cargo("LIME"),produce_cargo("CMNT",0)];
+		nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_CEMENT_PLANT));
+	}
+        
+	graphics {
+		//construction_probability: cement_plant_switch_check_availability;
+		produce_cargo_arrival:    empty_produce; 
+		produce_256_ticks:        cement_plant_switch_produce;
+		monthly_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
+		random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+		location_check:           cement_plant_switch_location_check_industry_distance;
+		//extra_text_fund:          cement_plant_switch_extra_text_fund;
+		cargo_subtype_display:    cement_plant_switch_cargo_subtype;
+	}
+}
+
+} // param_extension_building_materials
+    
