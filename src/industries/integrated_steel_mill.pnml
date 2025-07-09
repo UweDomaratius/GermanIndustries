@@ -85,7 +85,7 @@ spritelayout steel_mill_spritelayout_greeble {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 }
 spritelayout steel_mill_spritelayout_steel_mill_1 {
@@ -105,7 +105,7 @@ spritelayout steel_mill_spritelayout_steel_mill_1 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 	building {
 		sprite: TTD_SMOKE_SPRITE_WHITE_BIG + ((animation_frame + 0)%8);
@@ -117,7 +117,7 @@ spritelayout steel_mill_spritelayout_steel_mill_1 {
 		xextent: 15;
 		yextent: 7;
 		zextent: 7;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 }
 spritelayout steel_mill_spritelayout_steel_mill_2 {
@@ -137,7 +137,7 @@ spritelayout steel_mill_spritelayout_steel_mill_2 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 }
 spritelayout steel_mill_spritelayout_small_shed {
@@ -157,7 +157,7 @@ spritelayout steel_mill_spritelayout_small_shed {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 }
 spritelayout steel_mill_spritelayout_ladle_transporter {
@@ -177,7 +177,7 @@ spritelayout steel_mill_spritelayout_ladle_transporter {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 }
 spritelayout steel_mill_spritelayout_brick_building {
@@ -197,7 +197,7 @@ spritelayout steel_mill_spritelayout_brick_building {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(18));
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 }
 spritelayout steel_mill_spritelayout_small_tanks {
@@ -217,7 +217,7 @@ spritelayout steel_mill_spritelayout_small_tanks {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 }
 spritelayout steel_mill_spritelayout_large_shed_rear_part {
@@ -237,7 +237,7 @@ spritelayout steel_mill_spritelayout_large_shed_rear_part {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 }
 spritelayout steel_mill_spritelayout_large_shed_front_part {
@@ -257,7 +257,7 @@ spritelayout steel_mill_spritelayout_large_shed_front_part {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 }
 spritelayout steel_mill_spritelayout_casting_shed {
@@ -277,7 +277,7 @@ spritelayout steel_mill_spritelayout_casting_shed {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 }
 
