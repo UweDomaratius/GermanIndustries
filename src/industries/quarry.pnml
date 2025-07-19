@@ -1,5 +1,17 @@
 spriteset(quarry_spriteset_1) {
     [440, 90, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+	[510, 90, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+    [580, 90, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+    [650, 90, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+    [720, 90, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+    [790, 90, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+    [790, 90, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+    [720, 90, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+    [650, 90, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+    [580, 90, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+    [510, 90, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+    [440, 90, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+
 }
 spriteset(quarry_spriteset_3) {
 	[10, 90, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
@@ -12,6 +24,17 @@ spriteset(quarry_spriteset_5) {
 }
 spriteset(quarry_spriteset_6) {
 	[220, 90, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+	[220, 90, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+	[220, 90, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+	[220, 90, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+	[220, 90, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+	[220, 90, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+	[220, 90, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+	[220, 90, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+	[220, 90, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+	[220, 90, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+	[220, 90, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+	[220, 90, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
 }
 spriteset(quarry_spriteset_7) {
 	[290, 90, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
@@ -20,6 +43,17 @@ spriteset(quarry_spriteset_8) {
 	[10, 50, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
 }
 spriteset(quarry_spriteset_9) {
+	[80, 50, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+	[80, 50, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+	[80, 50, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+	[80, 50, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+	[80, 50, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+	[80, 50, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+	[80, 50, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+	[80, 50, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+	[80, 50, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+	[80, 50, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
+	[80, 50, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
 	[80, 50, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/quarry.png"]
 }
 spriteset(quarry_spriteset_10) {
@@ -48,9 +82,31 @@ spriteset(quarry_spriteset_17) {
 }
 spriteset(quarry_spriteset_18) {
 	[360, 50, 64, 31, -63, -16, ANIM | NOCROP, "graphics/industries/quarry.png"]
+	[360, 50, 64, 31, -63, -16, ANIM | NOCROP, "graphics/industries/quarry.png"]
+	[360, 50, 64, 31, -63, -16, ANIM | NOCROP, "graphics/industries/quarry.png"]
+	[360, 50, 64, 31, -63, -16, ANIM | NOCROP, "graphics/industries/quarry.png"]
+	[360, 50, 64, 31, -63, -16, ANIM | NOCROP, "graphics/industries/quarry.png"]
+	[360, 50, 64, 31, -63, -16, ANIM | NOCROP, "graphics/industries/quarry.png"]
+	[360, 50, 64, 31, -63, -16, ANIM | NOCROP, "graphics/industries/quarry.png"]
+	[360, 50, 64, 31, -63, -16, ANIM | NOCROP, "graphics/industries/quarry.png"]
+	[360, 50, 64, 31, -63, -16, ANIM | NOCROP, "graphics/industries/quarry.png"]
+	[360, 50, 64, 31, -63, -16, ANIM | NOCROP, "graphics/industries/quarry.png"]
+	[360, 50, 64, 31, -63, -16, ANIM | NOCROP, "graphics/industries/quarry.png"]
+	[360, 50, 64, 31, -63, -16, ANIM | NOCROP, "graphics/industries/quarry.png"]
 }
 spriteset(quarry_spriteset_19) {
 	[440, 10, 64, 71, -48, -55, ANIM | NOCROP, "graphics/industries/quarry.png"]
+	[440, 10, 64, 71, -48, -55, ANIM | NOCROP, "graphics/industries/quarry.png"]
+    [510, 10, 64, 71, -48, -55, ANIM | NOCROP, "graphics/industries/quarry.png"]
+    [580, 10, 64, 71, -48, -55, ANIM | NOCROP, "graphics/industries/quarry.png"]
+    [650, 10, 64, 71, -48, -55, ANIM | NOCROP, "graphics/industries/quarry.png"]
+    [650, 10, 64, 71, -48, -55, ANIM | NOCROP, "graphics/industries/quarry.png"]
+    [650, 10, 64, 71, -48, -55, ANIM | NOCROP, "graphics/industries/quarry.png"]
+    [580, 10, 64, 71, -48, -55, ANIM | NOCROP, "graphics/industries/quarry.png"]
+    [510, 10, 64, 71, -48, -55, ANIM | NOCROP, "graphics/industries/quarry.png"]
+    [440, 10, 64, 71, -48, -55, ANIM | NOCROP, "graphics/industries/quarry.png"]
+    [440, 10, 64, 71, -48, -55, ANIM | NOCROP, "graphics/industries/quarry.png"]
+    [440, 10, 64, 71, -48, -55, ANIM | NOCROP, "graphics/industries/quarry.png"]
 }
 spriteset(quarry_spriteset_20) {
 	[10, 130, 64, 64, -31, -22, ANIM | NOCROP, "graphics/industries/quarry.png"]
@@ -239,22 +295,6 @@ spritelayout quarry_spritelayout_animated_crane {
 		always_draw: 1;
 	}
 	building {
-		sprite: TTD_FENCE_Y;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
-		xoffset:  0;	yoffset:  0;	zoffset:  0;
-		xextent: 1;		yextent: 16;	zextent: 6;
-		recolour_mode: RECOLOUR_REMAP;
-		palette:       PALETTE_USE_DEFAULT;
-	}
-	building {
-		sprite: TTD_FENCE_X;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
-		xoffset:  0;	yoffset:  0;	zoffset:  0;
-		xextent: 16;	yextent: 1;		zextent: 6;
-		recolour_mode: RECOLOUR_REMAP;
-		palette:       PALETTE_USE_DEFAULT;
-	}
-	building {
 		sprite: quarry_spriteset_19(1*(animation_frame > 32) ? (animation_frame % 12) : 0);
 		recolour_mode: RECOLOUR_REMAP;
 		palette: PALETTE_USE_DEFAULT;
@@ -271,22 +311,6 @@ spritelayout quarry_spritelayout_animated_crane {
 		xextent: 16;	yextent: 16;	zextent: 32;
 		always_draw: 0;
 		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
-	}
-    building {
-		sprite: TTD_FENCE_X;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
-		xoffset: 0;		yoffset:  16;	zoffset:  0;
-		xextent: 16;	yextent: 1;		zextent: 6;
-		recolour_mode: RECOLOUR_REMAP;
-		palette:       PALETTE_USE_DEFAULT;
-	}
-	building {
-		sprite: TTD_FENCE_Y;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
-		xoffset: 16;	yoffset:  0;	zoffset:  0;
-		xextent: 1;		yextent: 16;	zextent: 6;
-		recolour_mode: RECOLOUR_REMAP;
-		palette:       PALETTE_USE_DEFAULT;
 	}
 }
 spritelayout quarry_spritelayout_6 {
@@ -389,22 +413,6 @@ spritelayout quarry_spritelayout_animated_dozer {
 		always_draw: 1;
 	}            
 	building {
-		sprite: TTD_FENCE_Y;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
-		xoffset:  0;	yoffset:  0;	zoffset:  0;
-		xextent: 1;		yextent: 16;	zextent: 6;
-		recolour_mode: RECOLOUR_REMAP;
-		palette:       PALETTE_USE_DEFAULT;
-	}
-	building {
-		sprite: TTD_FENCE_X;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
-		xoffset:  0;	yoffset:  0;	zoffset:  0;
-		xextent: 16;	yextent: 1;		zextent: 6;
-		recolour_mode: RECOLOUR_REMAP;
-		palette:       PALETTE_USE_DEFAULT;
-	}
-	building {
 		sprite: quarry_spriteset_1(1*(animation_frame < 36) ? (animation_frame % 12) : 0);
 		recolour_mode: RECOLOUR_REMAP;
 		palette: PALETTE_USE_DEFAULT;
@@ -412,22 +420,6 @@ spritelayout quarry_spritelayout_animated_dozer {
 		xextent: 16;	yextent: 16;	zextent: 32;
 		always_draw: 0;
 		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
-	}
-    building {
-		sprite: TTD_FENCE_X;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
-		xoffset: 0;		yoffset:  16;	zoffset:  0;
-		xextent: 16;	yextent: 1;		zextent: 6;
-		recolour_mode: RECOLOUR_REMAP;
-		palette:       PALETTE_USE_DEFAULT;
-	}
-	building {
-		sprite: TTD_FENCE_Y;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
-		xoffset: 16;	yoffset:  0;	zoffset:  0;
-		xextent: 1;		yextent: 16;	zextent: 6;
-		recolour_mode: RECOLOUR_REMAP;
-		palette:       PALETTE_USE_DEFAULT;
 	}
 }
 spritelayout quarry_spritelayout_inner_1 {
@@ -1037,7 +1029,7 @@ switch(FEAT_INDUSTRYTILES, SELF, quarry_switch_graphics_construction_state, cons
 }
 
 switch (FEAT_INDUSTRYTILES, SELF, quarry_switch_graphics,
-	[switch_terrain_sprite(),switch_graphics_init_temp_registers()
+	[switch_terrain_sprite(),switch_graphics_init_temp_registers(),switch_tile_fences()
 	]) {
     quarry_switch_graphics_construction_state;
 }

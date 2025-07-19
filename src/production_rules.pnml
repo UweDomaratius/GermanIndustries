@@ -4,10 +4,10 @@
 produce(empty_produce, [], [])
 
 ////////////////////////////////////////////////////////////////////////////////
-// if < 30% of produced goods were transported, half production
+// if < 30% of produced goods were transported, decrease production by 5
 // if < 40% of produced goods were transported, decrease production by 1
 // if > 60% of produced goods were transported, increase production by 1
-// if > 75% of produced goods were transported, double production
+// if > 75% of produced goods were transported, increase production by 5
 // Precondition: Temp storage registers hold the current production level and
 // the maximum possible production.
 // Result is written into temporary storage register 0x100 and returned as 
@@ -17,10 +17,10 @@ produce(empty_produce, [], [])
 // dynamically computed)
 ////////////////////////////////////////////////////////////////////////////////
 switch(FEAT_INDUSTRIES, SELF, set_new_production, 
-	[ LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 30 ? STORE_TEMP(max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL) / 2,4) << 16, TEMP_REGISTER_CB_RESULT_IND_PROD_SET_BY_0x100) : 
+	[ LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 30 ? STORE_TEMP(max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL) - 5,4) << 16, TEMP_REGISTER_CB_RESULT_IND_PROD_SET_BY_0x100) : 
 	  LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 40 ? STORE_TEMP(max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL) - 1,4) << 16, TEMP_REGISTER_CB_RESULT_IND_PROD_SET_BY_0x100) : 
 	  LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 75 ? STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL)+1,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)) << 16, TEMP_REGISTER_CB_RESULT_IND_PROD_SET_BY_0x100) : 
-	STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL)*2,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)) << 16, TEMP_REGISTER_CB_RESULT_IND_PROD_SET_BY_0x100)
+	  STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL)+5,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)) << 16, TEMP_REGISTER_CB_RESULT_IND_PROD_SET_BY_0x100)
 	]) {
 	return CB_RESULT_IND_PROD_SET_BY_0x100;
 }
