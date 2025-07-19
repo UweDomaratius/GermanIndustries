@@ -1,5 +1,6 @@
 ##grflangid 0x02
 ##plural 0
+##gender m w n p
 # This is the German language file
 
 # GRF name und Beschreibung
@@ -14,11 +15,9 @@ STR_PARAM_ECONOMY_MODEL_SIMPLE :Einfache (konstante) Wirtschaft.
 STR_PARAM_ECONOMY_MODEL_REALISTIC :Realistische Wirtschaft
 STR_PARAM_ELECTRICITY_NEEDED :Industrien benötigen elektrische Energie.
 STR_PARAM_ELECTRICITY_NEEDED_DESC :Einige Industrien benötigen Strom um etwas produzieren zu können. Strom wird von Kraftwerken produziert, die wiederum beliefert werden müssen.
-STR_PARAM_EXT_BUILDING_MATERIALS :Erweiterung "Baumaterial"
-STR_PARAM_EXT_BUILDING_MATERIALS_DESC :Fügt Frachten wie Kalkstein und Zement sowie die damit verbundenen Industrien hinzu.
 
 # Frachten
-STR_CARGO_NAME_BUILDING_MATERIALS :Ziegelsteine
+STR_CARGO_NAME_BUILDING_MATERIALS :Ziegel
 STR_CARGO_NAME_CEMENT             :Zement
 STR_CARGO_NAME_FISH               :Fisch
 STR_CARGO_NAME_LIMESTONE          :Kalkstein
@@ -28,7 +27,7 @@ STR_CARGO_NAME_TIMBER             :Schnittholz
 STR_CARGO_NAME_VEHICLES           :Fahrzeuge
 
 # lange Form der Frachtanzeige (x Einheiten Fracht)
-STR_QUANTITY_BUILDING_MATERIALS   :{WEIGHT} Ziegelsteine
+STR_QUANTITY_BUILDING_MATERIALS   :{WEIGHT} Ziegel
 STR_QUANTITY_CEMENT               :{WEIGHT} Zement
 STR_QUANTITY_FISH                 :{WEIGHT} Fisch
 STR_QUANTITY_GOODS                :{WEIGHT} Güter
@@ -40,25 +39,25 @@ STR_QUANTITY_TIMBER               :{WEIGHT} Schnittholz
 STR_QUANTITY_VEHICLES             :{COMMA} Fahrzeug{P "" e}
 
 # Industrien
-STR_IND_BRICK_WORKS          :Ziegelei
+STR_IND_BRICK_WORKS          :{G=w}Ziegelei
 STR_IND_BUILDERS_YARD        :Bauhof
-STR_IND_CEMENT_PLANT         :Zementwerk
-STR_IND_FISHING_GROUNDS      :Fischgründe
-STR_IND_FURNITURE_FACTORY    :Möbelfabrik
-STR_IND_DEPARTMENT_STORE     :Kaufhaus
+STR_IND_CEMENT_PLANT         :{G=w}Zementfabrik
+STR_IND_FISHING_GROUNDS      :{G=w}Fischgründe
+STR_IND_FURNITURE_FACTORY    :{G=w}Möbelfabrik
+STR_IND_DEPARTMENT_STORE     :{G=n}Kaufhaus
 STR_IND_GENERAL_STORE        :Laden
-STR_IND_HOTEL                :Hotel
-STR_IND_INTEGRATED_STEEL_MILL:Integriertes Stahlwerk
-STR_IND_LIMESTONE_MINE       :Kalksteinbergwerk
+STR_IND_HOTEL                :{G=n}Hotel
+STR_IND_INTEGRATED_STEEL_MILL:{G=n}Integriertes Stahlwerk
+STR_IND_LIMESTONE_MINE       :{G=n}Kalksteinbergwerk
 STR_IND_PORT                 :Hafen
-STR_IND_QUARRY               :Sandgrube
-STR_IND_VEHICLE_DISTRIBUTOR  :Autohaus
-STR_IND_VEHICLE_FACTORY      :Autofabrik
+STR_IND_QUARRY               :{G=w}Sandgrube
+STR_IND_VEHICLE_DISTRIBUTOR  :{G=n}Autohaus
+STR_IND_VEHICLE_FACTORY      :{G=w}Autofabrik
 
 # Stationsnamen
 STR_STATION_BRICK_WORKS          :Ziegelei
 STR_STATION_BUILDERS_YARD        :Bauhof
-STR_STATION_CEMENT_PLANT         :Zementwerk
+STR_STATION_CEMENT_PLANT         :Zementfabrik
 STR_STATION_COAL_MINE            :Bergwerk
 STR_STATION_DEPARTMENT_STORE     :Kaufhaus
 STR_STATION_FARM                 :Bauernhof
@@ -70,7 +69,7 @@ STR_STATION_GENERAL_STORE        :Laden
 STR_STATION_HOTEL                :Hotel
 STR_STATION_INTEGRATED_STEEL_MILL:Integriertes Stahlwerk
 STR_STATION_IRON_ORE_MINE        :Bergwerk
-STR_STATION_LIMESTONE_MINE       :Bergwerk
+STR_STATION_LIMESTONE_MINE       :Kalkeinbergwerk
 STR_STATION_OIL_REFINERY         :Raffinerie
 STR_STATION_OIL_RIG              :Bohrplattform
 STR_STATION_OIL_WELL             :Ölquelle
@@ -103,11 +102,6 @@ STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE         :{BLACK}({CARGO_SHORT} vorrät
 STR_CARGO_SUBTYPE_DISPLAY_CARGO_BOOSTS_PRODUCTION :{WHITE}({CARGO_SHORT} vorrätig)
 
 # Fehlertexte
-STR_ERR_OPENTTD_VERSION:{ORANGE}E00: {TITLE} benötigt OpenTTD 14.0 oder neuer
-<<<<<<< HEAD
+STR_ERR_OPENTTD_VERSION             :{ORANGE}E00: {TITLE} benötigt OpenTTD 14.0 oder neuer
 STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE :muss unterhalb der Schneegrenze platziert werden
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE :kann nicht auf steilen Hängen platziert werden
-=======
-STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE: muss unterhalb der Schneegrenze platziert werden
-STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE: kann nicht auf steilen Hängen platziert werden
->>>>>>> main
