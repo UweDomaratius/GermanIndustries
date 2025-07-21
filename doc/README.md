@@ -2,7 +2,7 @@
 
 ## Industries
 
-The set contains 17 industries as listed below.
+The set contains 20 industries as listed below.
 
 ### Builders yard
 
@@ -12,7 +12,7 @@ Description to go here
 
 | Requires | Produces |
 | -- | -- |
-| [Wood products](#wood-products) |  |
+| [Timber](#timber) |  |
 
 ### Coal mine
 
@@ -87,7 +87,7 @@ Description to go here
 
 | Requires | Produces |
 | -- | -- |
-| [Wood products](#wood-products) | [Goods](#goods) |
+| [Timber](#timber) | [Goods](#goods) |
 
 ### General store
 
@@ -181,6 +181,37 @@ Description to go here
 | [Vehicles](#vehicles) | [Iron Ore](#iron-ore) |
 |  | [Oil](#oil) |
 
+### Power plant
+
+<img src="power_plant.png" alt="Power plant">
+
+Description to go here
+
+| Requires | Produces |
+| -- | -- |
+| [Coal](#coal) | [Electricity](#electricity) |
+| [Oil](#oil) |  |
+
+### Sawmill
+
+<img src="sawmill.png" alt="Sawmill">
+
+Description to go here
+
+| Requires | Produces |
+| -- | -- |
+| [Wood](#wood) | [Timber](#timber) |
+
+### Vehicle distributor
+
+<img src="vehicle_distributor.png" alt="Vehicle distributor">
+
+Description to go here
+
+| Requires | Produces |
+| -- | -- |
+| [Vehicles](#vehicles) |  |
+
 ### Vehicle factory
 
 <img src="vehicle_factory.png" alt="Vehicle factory">
@@ -191,25 +222,36 @@ Industry will only spawn after 1910.
 This restriction is also valid for funding the industry.
 | Requires | Produces |
 | -- | -- |
-| [Steel](#steel) | [Vehicles](#vehicles) |
+| [Electricity](#electricity) | [Vehicles](#vehicles) |
+| [Steel](#steel) |  |
 
 ## Cargos
 
-The set contains 14 cargos as listed below.
+The set contains 16 cargos as listed below.
 
 ### Coal
 
 no description yet
 
+Cargo classes: Bulk cargo
 | Produced by | Required by |
 | -- | -- |
 | [Coal mine](#coal-mine) | [Integrated steel mill](#integrated-steel-mill) |
-| [Port](#port) |  |
+| [Port](#port) | [Power plant](#power-plant) |
+
+### Electricity
+
+no description yet
+
+| Produced by | Required by |
+| -- | -- |
+| [Power plant](#power-plant) | [Vehicle factory](#vehicle-factory) |
 
 ### Fish
 
 no description yet
 
+Cargo classes: Express, Refrigerated
 | Produced by | Required by |
 | -- | -- |
 | [Fishing grounds](#fishing-grounds) | [Food processor](#food-processor) |
@@ -218,6 +260,7 @@ no description yet
 
 no description yet
 
+Cargo classes: Express, Refrigerated
 | Produced by | Required by |
 | -- | -- |
 | [Food processor](#food-processor) | [General store](#general-store) |
@@ -227,6 +270,7 @@ no description yet
 
 no description yet
 
+Cargo classes: Express
 | Produced by | Required by |
 | -- | -- |
 | [Furniture factory](#furniture-factory) | [Department store](#department-store) |
@@ -236,6 +280,7 @@ no description yet
 
 no description yet
 
+Cargo classes: Bulk cargo
 | Produced by | Required by |
 | -- | -- |
 | [Farm](#farm) | [Food processor](#food-processor) |
@@ -244,6 +289,7 @@ no description yet
 
 no description yet
 
+Cargo classes: Bulk cargo
 | Produced by | Required by |
 | -- | -- |
 | [Iron ore mine](#iron-ore-mine) | [Integrated steel mill](#integrated-steel-mill) |
@@ -253,24 +299,35 @@ no description yet
 
 no description yet
 
+Cargo classes: Piece goods
 | Produced by | Required by |
 | -- | -- |
 | [Farm](#farm) | [Food processor](#food-processor) |
+
+### Mail
+
+no description yet
+
+Cargo classes: Mail
+| Produced by | Required by |
+| -- | -- |
 
 ### Oil
 
 no description yet
 
+Cargo classes: Liquid
 | Produced by | Required by |
 | -- | -- |
 | [Oil rig](#oil-rig) | [Oil refinery](#oil-refinery) |
-| [Oil well](#oil-well) |  |
+| [Oil well](#oil-well) | [Power plant](#power-plant) |
 | [Port](#port) |  |
 
 ### Passengers
 
 no description yet
 
+Cargo classes: Passengers
 | Produced by | Required by |
 | -- | -- |
 | [Hotel](#hotel) | [Hotel](#hotel) |
@@ -281,6 +338,7 @@ no description yet
 
 no description yet
 
+Cargo classes: Bulk cargo, Piece goods
 | Produced by | Required by |
 | -- | -- |
 | [Oil refinery](#oil-refinery) |  |
@@ -289,32 +347,37 @@ no description yet
 
 no description yet
 
+Cargo classes: Piece goods
 | Produced by | Required by |
 | -- | -- |
 | [Integrated steel mill](#integrated-steel-mill) | [Vehicle factory](#vehicle-factory) |
+
+### Timber
+
+no description yet
+
+Cargo classes: Piece goods
+| Produced by | Required by |
+| -- | -- |
+| [Sawmill](#sawmill) | [Builders yard](#builders-yard) |
+|  | [Furniture factory](#furniture-factory) |
 
 ### Vehicles
 
 no description yet
 
+Cargo classes: Oversized, Piece goods
 | Produced by | Required by |
 | -- | -- |
 | [Vehicle factory](#vehicle-factory) | [Port](#port) |
+|  | [Vehicle distributor](#vehicle-distributor) |
 
 ### Wood
 
 no description yet
 
+Cargo classes: Piece goods
 | Produced by | Required by |
 | -- | -- |
-| [Forest](#forest) |  |
-
-### Wood products
-
-no description yet
-
-| Produced by | Required by |
-| -- | -- |
-|  | [Builders yard](#builders-yard) |
-|  | [Furniture factory](#furniture-factory) |
+| [Forest](#forest) | [Sawmill](#sawmill) |
 
