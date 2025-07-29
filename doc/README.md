@@ -34,7 +34,7 @@ This restriction is also valid for funding the industry.
 
 <img src="department_store.png" alt="Department store">
 
-Description to go here 
+The department store implements the concept of generic stores where you can buy any sort of item in the household, be it clothing, books, household applications like washing machines, toys and whatever else. They are introduced to avoid the problem that small towns typically do not accept goods until they have grown to a certain size and to avoid a fluctuation in accepted cargo for your stations. 
 
 | Requires | Produces |
 | -- | -- |
@@ -44,7 +44,7 @@ Description to go here
 
 <img src="farm.png" alt="Farm">
 
-Description to go here 
+Farms are the main agricultural industry in the set, producing grain and livestock. Both are inputs for the food industry, but also for other branches like textile industry. 
 
 | Requires | Produces |
 | -- | -- |
@@ -55,7 +55,7 @@ Description to go here
 
 <img src="fishing_grounds.png" alt="Fishing grounds">
 
-Description to go here 
+Fish has to be caught out on sea, which provides for an interesting transportation challenge, requiring ships and possibly transfers from ships to other means of transportation at ports. 
 
 | Requires | Produces |
 | -- | -- |
@@ -65,7 +65,9 @@ Description to go here
 
 <img src="food_processor.png" alt="Food processor">
 
-Description to go here 
+The food processor is an abstraction of various food-production related industries. Whether it is bakery products, canned fish or any other sort of food, it is produced here, to be transported to the supermarket shelves. 
+
+Production starts with any of the required materials available. 
 
 | Requires | Produces |
 | -- | -- |
@@ -77,7 +79,7 @@ Description to go here
 
 <img src="forest.png" alt="Forest">
 
-Description to go here 
+Forests have been used as a source for wood since the first humans hunted with spears and built their first houses. With industrial various uses for wood, paper production among them, woods are an important industry in reality as well as in the game. In contrast to mining industries, they are renewable, meaning they cannot run out of materials. 
 
 | Requires | Produces |
 | -- | -- |
@@ -87,7 +89,7 @@ Description to go here
 
 <img src="furniture_factory.png" alt="Furniture factory">
 
-Description to go here 
+The furniture industry is quite big in Germany, with IKEA being the market leader. They mostly require wooden materials and produce, for lack of a more fine-grained model, goods. 
 
 | Requires | Produces |
 | -- | -- |
@@ -97,7 +99,7 @@ Description to go here
 
 <img src="general_store.png" alt="General store">
 
-Description to go here 
+The general store is the location where food is bought in cities. You could also simply say it's the supermarket, but the modern supermarket only evolved in the latter half of the 20th century. 
 
 | Requires | Produces |
 | -- | -- |
@@ -133,7 +135,7 @@ While there are multiple different variants of producing steel out of iron ore, 
 
 <img src="iron_ore_mine.png" alt="Iron ore mine">
 
-Iron ore mining has already been done in ancient times. With the invention of steel and the increasing demand, especially for railways, it became a key industry durign the industrial revolution of the 19th century. 
+Iron ore mining has already been done in ancient times. With the invention of cheap processes to produce steel and the increasing demand, especially for railways, it became a key industry during the industrial revolution of the 19th century. 
 
 Germany did ore mining until the middle of the 20th century, but generally speaking, it always depended on importing the ore from elsewhere. 
 
@@ -157,7 +159,9 @@ This restriction is also valid for funding the industry.
 
 <img src="oil_rig.png" alt="Oil rig">
 
-Description to go here 
+Oil rigs or offshore platforms are used to drill for oil underneath the ocean. Many such resources have been found in the North Sea, and starting in the mid 1980s Germany exploited oil fields as well. However, in general, production is in a steady decline since the 1990s. 
+
+In the set, oil rigs produce a constant number of passengers, which simulates the workers that work on the platform and are  
 
 Industry will only spawn after 1985.
 This restriction is also valid for funding the industry.
@@ -170,14 +174,13 @@ This restriction is also valid for funding the industry.
 
 <img src="oil_well.png" alt="Oil well">
 
-Description to go here 
+It's a little known fact that the first actual deep drilling for oil happened in Germany in the late 1850s, even before an oil boom started in North America. Oil wells are still running in some places in Northern Germany (mainly in Lower Saxony), but many locations have been closed already in the 1960s, with oil imports becoming increasingly cheaper. 
 
 Industry will only spawn from 1860 to 1985.
 This restriction is also valid for funding the industry.
 | Requires | Produces |
 | -- | -- |
 |  | [Oil](#oil) |
-|  | [Passengers](#passengers) |
 
 ### Port
 
@@ -197,7 +200,7 @@ In the set, the maximum production of harbors is constantly increasing as time g
 
 <img src="power_plant.png" alt="Power plant">
 
-Description to go here 
+Power plants create electricity, typically by boiling water and using the resulting steam to turn turbines which are coupled with generators. This basic principle is also used in nuclear power plants, whereas hydroplants use the water directly for the turbines. Since it is a transportation game, the set concentrates on fossil power plants that require a constant delivery of coal and/or oil to be burned in order to create electricity. 
 
 | Requires | Produces |
 | -- | -- |
@@ -208,7 +211,7 @@ Description to go here
 
 <img src="sawmill.png" alt="Sawmill">
 
-Description to go here 
+Sawmills cut wood into normalized sizes and shapes, such that the resulting beams and planks can be used for various industries. As such, they are a necessary step to provide materials used in construction, furniture industries and other applications. 
 
 | Requires | Produces |
 | -- | -- |
@@ -218,7 +221,7 @@ Description to go here
 
 <img src="vehicle_distributor.png" alt="Vehicle distributor">
 
-Description to go here 
+Vehicle distributors, or rather, car dealership sell vehicles in the cities. Typically they also provide services around vehicles such as repairing parts and switching tyres. 
 
 | Requires | Produces |
 | -- | -- |
@@ -243,7 +246,9 @@ The set contains 16 cargos as listed below.
 
 ### Coal
 
-no description yet
+Coal was the main driver of industrializaton in the 19th century, begin required to power steam engines. With the introduction of railway steam engines and later on power plants to produce electricity, the demand for coal rose rapidly. 
+
+Germany had relevant coal deposits, and the areas were coal was mined became industrial centers, such as the Ruhr area. Coal remained important throughout the 20th century, but it was phased out in many areas for environmental reasons. 
 
 Cargo classes: Bulk cargo
 | Produced by | Required by |
@@ -253,7 +258,9 @@ Cargo classes: Bulk cargo
 
 ### Electricity
 
-no description yet
+Electricity is not a cargo in the sense that it needs to be transported. Instead, it is produced by power plants and directly distributed to the town that the power plant is located in. The towns themselves require electricity, with the demand increasing as the town size increases. On top of that, certain industries require electricity for production. That in turn means you need to deliver enough coal/oil to the power plants that the demand of the town and the industries in question can be met. This is also shown in the info window of the industries. 
+
+Serious scientific work to understand the nature of electricity only began in the 17th and 18th century, leading to - among other things - the first batteries. It took until the second half of the 19th century to make breakthrough progress in the field of electrical engineering, with the invention of electric engines, lightbulbs and the necessary infrastructure to produce and distribute electricity. The first power plants were built in the late 19th century, powering street lights. Since then, modern life without electricity became impossible, with many household applications such as fridges requiring a constant power supply. Electricity is used in large scale industrial applications as well, mainly in various electrolytic processes, for example in the production of aluminium or in the production of chlorine. 
 
 | Produced by | Required by |
 | -- | -- |
@@ -261,7 +268,7 @@ no description yet
 
 ### Fish
 
-no description yet
+Mankind has been fishing since ancient times. In the game, fish makes for interesting transport chains from boats via harbors across the land into the cities or production plants. 
 
 Cargo classes: Express, Refrigerated
 | Produced by | Required by |
@@ -270,7 +277,7 @@ Cargo classes: Express, Refrigerated
 
 ### Food
 
-no description yet
+People need to eat, and ever since people started living in cities there was a demand to transport all sorts of food into cities. Even today, fresh fruit and other local food can be bought on market places, while most of the industrially produced food is transported from production plants to supermarkets. 
 
 Cargo classes: Express, Refrigerated
 | Produced by | Required by |
@@ -280,7 +287,7 @@ Cargo classes: Express, Refrigerated
 
 ### Goods
 
-no description yet
+In the game, Goods are an abstraction of basically anything that is produced in various plants to be sold to people living in cities. As such, goods could be anything from furniture, household items, clothing, toys. 
 
 Cargo classes: Express
 | Produced by | Required by |
@@ -290,7 +297,7 @@ Cargo classes: Express
 
 ### Grain
 
-no description yet
+Germany is equally famous for the variety in bread and beer, both of which are produced from grain. It is also one of the biggest producers of grain in Europe, being able to fully cover the domestic demand. A large quantity of grain is simply used for feeding livestock, only about a fifth is actually used to create food, and less than 10% are needed to make beer. On top of that, lots of grain is exported, especially wheat. 
 
 Cargo classes: Bulk cargo
 | Produced by | Required by |
@@ -299,7 +306,11 @@ Cargo classes: Bulk cargo
 
 ### Iron Ore
 
-no description yet
+Mankind has been using iron since the, well, Iron Age, some 3000 years ago. It is almost exclusively used to produce steel, which in turn is one of the single most important materials in global economy. 
+
+Germany has only ever had scarce resources of iron ore, and was always dependent on importing iron ore from e.g. Sweden. 
+
+
 
 Cargo classes: Bulk cargo
 | Produced by | Required by |
@@ -309,7 +320,7 @@ Cargo classes: Bulk cargo
 
 ### Livestock
 
-no description yet
+Meat was and still is an important part of human diet, and as such livestock farming is an important part of the food production. Transporting livestock also provides for specific challenges in the game, often requiring dedicated rolling stock. 
 
 Cargo classes: Piece goods
 | Produced by | Required by |
@@ -318,7 +329,7 @@ Cargo classes: Piece goods
 
 ### Mail
 
-no description yet
+Transporting mail has always been one of the main tasks of any transportation networks. Mail coaches had been in use for hundreds of years, only to be replaced by railway lines and later on by trucks. While the number of letters and postcards being sent has been declining in the 21st century - being replaced by phone calls and message services via Internet - mail carriers are now in more demand than ever to transport packages from online shopping. 
 
 Cargo classes: Mail
 | Produced by | Required by |
@@ -326,7 +337,11 @@ Cargo classes: Mail
 
 ### Oil
 
-no description yet
+Oil was already known in ancient Babylon. During the 19th century it was mainly used to produce petroleum, which in turn was used as lamp oil. It was only with the invention of internal combustion engines and their dependence on fuel that crude oil became the economic and political factor that it is today. 
+
+Apart from being used as fuel and simply being burned, oil of course is the base for for what became known as petrochemicals. This started in the 1920s with synthetic rubber for tyres, in the late 1930s nylon fibers were invented, and today oil based plastics can be found just about everywhere. 
+
+With so many uses, demand was ever increasing, and today the German industry is almost entirely dependent on oil imports, which is not only an economic issue, but also has great political implications. 
 
 Cargo classes: Liquid
 | Produced by | Required by |
@@ -337,18 +352,19 @@ Cargo classes: Liquid
 
 ### Passengers
 
-no description yet
+Whether it's business trips or vacation - people need and want to travel. While for centuries travelling was limited to walking or riding, technical innovations were mainly driven by increasing travel speed. This led to building harbors, road and railway networks, and finally airports. Travel not only became faster, but also cheaper - allowing trips that were unthinkable not so long ago. 
 
 Cargo classes: Passengers
 | Produced by | Required by |
 | -- | -- |
 | [Hotel](#hotel) | [Hotel](#hotel) |
 | [Oil rig](#oil-rig) | [Oil rig](#oil-rig) |
-| [Oil well](#oil-well) |  |
 
 ### Plastics
 
-no description yet
+Plastics are a range of synthetic materials created mainly from crude oil. They were invented in the early 20th century and provided cheap, lightweight and durable materials for just about anything imaginable. Most of it is used for packaging, but it is also used for construction (pipes), in all sorts of machinery from hoovers to cars as well as furniture and toys - Lego bricks for example. 
+
+In the set, this also incorporate synthetic materials that do not have the characteristic plasticity, so it also includes fibers which are relevant for clothing, like nylon and polyester. 
 
 Cargo classes: Bulk cargo, Piece goods
 | Produced by | Required by |
@@ -357,7 +373,9 @@ Cargo classes: Bulk cargo, Piece goods
 
 ### Steel
 
-no description yet
+Steel, which is an alloy of iron and carbon, has already been produced more than 2000 years ago, mainly in Asia. In the 16th and 17th century, industrial steel production began in Europe, especially in the Great Britain. Technical innovations in the 19th century led to a process of converting pig iron to steel, allowing a cheap mass production of high quality steel. Likewise, demand increased exponentially, as steel was needed for railways, replaced wood to build bigger ships, and is also needed for buildings, bridges and many other structures. 
+
+The first steel production plant in Germany was founded in the early 19th in Essen in the middle of the Ruhr area, which later evolved into the Krupp steelworks company. Today, Germany is by far the biggest producer of steel in Europe. Economic pressure has led to many plants being closed or combined into highly integrated plants to reduce energy consumption and make use of byproducts. 
 
 Cargo classes: Piece goods
 | Produced by | Required by |
@@ -366,7 +384,7 @@ Cargo classes: Piece goods
 
 ### Timber
 
-no description yet
+Wood in the form of trees cannot be used directly, it has to be cut into various shapes and forms to be used as building material or for use in the industry, e.g. to create furniture. In the set, timber is encompassing all sorts of wood that has been processed for use in construction, i.e. cut into beams or planks. As such, it is transported from sawmills to builders yards in the cities. 
 
 Cargo classes: Piece goods
 | Produced by | Required by |
@@ -376,7 +394,9 @@ Cargo classes: Piece goods
 
 ### Vehicles
 
-no description yet
+In the broadest sense, a vehicle is a self-propelled land-vehicle used to transport people and/or cargo. In the game, it basically means cars. 
+
+These are produced by vehicle factories and need to be transported to dealerships and to harbours for export. Cars are one of the most important goods to be produced and exported in Germany. From the point of gameplay, they also offer a specific challenge, since they require specific railcars and trucks for transportation. 
 
 Cargo classes: Oversized, Piece goods
 | Produced by | Required by |
@@ -386,7 +406,9 @@ Cargo classes: Oversized, Piece goods
 
 ### Wood
 
-no description yet
+Wood has been used by the first humans already, be it to build hunting spears or to kindle fires. Then buildings were made of wood, ships were built, and it was figured out how to produce paper. Today, wood is still an important resource, gaining new importance due to its regenerative nature. 
+
+Germany always had lots of forests and thus wood always was an economic factor. Today, Germany is the biggest producer of paper in Europe and also has a relevant furniture industry. 
 
 Cargo classes: Piece goods
 | Produced by | Required by |
