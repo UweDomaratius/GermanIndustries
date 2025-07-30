@@ -50,7 +50,7 @@ STR_IND_HOTEL                :{G=n}Hotel
 STR_IND_INTEGRATED_STEEL_MILL:{G=n}Integriertes Stahlwerk
 STR_IND_LIMESTONE_MINE       :{G=n}Kalksteinbergwerk
 STR_IND_PORT                 :Hafen
-STR_IND_QUARRY               :{G=w}Sandgrube
+STR_IND_SANDPIT              :{G=w}Sandgrube
 STR_IND_VEHICLE_DISTRIBUTOR  :{G=n}Autohaus
 STR_IND_VEHICLE_FACTORY      :{G=w}Autofabrik
 
@@ -75,7 +75,7 @@ STR_STATION_OIL_RIG              :Bohrplattform
 STR_STATION_OIL_WELL             :Ölquelle
 STR_STATION_PORT                 :Hafen
 STR_STATION_POWER_PLANT          :Kraftwerk
-STR_STATION_QUARRY               :Sandgrube
+STR_STATION_SANDPIT              :Sandgrube
 STR_STATION_SAWMILL              :Sägewerk
 STR_STATION_VEHICLE_DISTRIBUTOR  :Autohändler
 STR_STATION_VEHICLE_FACTORY      :Autofabrik

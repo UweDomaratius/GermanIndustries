@@ -8,9 +8,15 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_coal,
 switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_fish, 
 	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("FISH") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
 	 getbits(extra_callback_info2, 16, 8)]) {
-	//FISH: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
-	//return 0x3800 + string(STR_EMPTY);
-	return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	FISH: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_food, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("FOOD") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	FOOD: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
 }
 
 switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_grai, 
@@ -87,6 +93,7 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info,
 	getbits(extra_callback_info2, 16, 8)) {
 	COAL: switch_cargo_subtype_display_info_coal;
 	FISH: switch_cargo_subtype_display_info_fish;
+	FOOD: switch_cargo_subtype_display_info_food;
 	GRAI: switch_cargo_subtype_display_info_grai;
 	IORE: switch_cargo_subtype_display_info_iore;
 	LIME: switch_cargo_subtype_display_info_lime;

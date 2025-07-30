@@ -693,6 +693,13 @@ switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_check_availability,
 	return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
 }
 
+// only show stockpile for STEL, PLAS and nothing else
+switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_cargo_subtype, getbits(extra_callback_info2, 16, 8)) {
+	STEL: switch_cargo_subtype;
+	PLAS: switch_cargo_subtype;
+	return 0x3800 + string(STR_EMPTY);
+}
+
 item(FEAT_INDUSTRIES, vehicle_factory, INDUSTRY_ID_VEHICLE_FACTORY) {
 	property {
 		substitute: 0;
@@ -722,7 +729,7 @@ item(FEAT_INDUSTRIES, vehicle_factory, INDUSTRY_ID_VEHICLE_FACTORY) {
 		location_check:           vehicle_factory_switch_location_check_industry_distance;
 		extra_text_fund:          vehicle_factory_switch_extra_text_fund;
 		extra_text_industry:      vehicle_factory_switch_extra_text;
-		cargo_subtype_display:    switch_cargo_subtype;
+		cargo_subtype_display:    vehicle_factory_switch_cargo_subtype;
 	}
 }
     

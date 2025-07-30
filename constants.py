@@ -49,7 +49,7 @@ constants = {
     # Building Material Extension
     "INDUSTRY_ID_BRICK_WORKS": "24",
     "INDUSTRY_ID_LIMESTONE_MINE": "21",
-    "INDUSTRY_ID_QUARRY": "22",
+    "INDUSTRY_ID_SANDPIT": "22",
     "INDUSTRY_ID_CEMENT_PLANT": "23",
     
     
@@ -88,8 +88,8 @@ constants = {
     "INDUSTRY_TILE_ID_LIMESTONE_MINE_1": "27",
     "INDUSTRY_TILE_ID_LIMESTONE_MINE_2": "28",
     "INDUSTRY_TILE_ID_LIMESTONE_MINE_3": "29",
-    "INDUSTRY_TILE_ID_QUARRY_1":"30",
-    "INDUSTRY_TILE_ID_QUARRY_2":"31",
+    "INDUSTRY_TILE_ID_SANDPIT_1":"30",
+    "INDUSTRY_TILE_ID_SANDPIT_2":"31",
     
     
     # TTD sprite IDs

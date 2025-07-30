@@ -77,7 +77,7 @@ STR_IND_HOTEL                :Hotel
 STR_IND_INTEGRATED_STEEL_MILL:Integrated Steel Mill
 STR_IND_LIMESTONE_MINE       :Limestone Mine
 STR_IND_PORT                 :Port
-STR_IND_QUARRY               :Quarry
+STR_IND_SANDPIT              :Sand pit
 STR_IND_VEHICLE_DISTRIBUTOR  :Vehicle Distributor
 STR_IND_VEHICLE_FACTORY      :Vehicle Factory
 
@@ -100,7 +100,7 @@ STR_STATION_LIMESTONE_MINE       :Mining
 STR_STATION_OIL_REFINERY         :Refinery
 STR_STATION_OIL_RIG              :Oil Rig
 STR_STATION_OIL_WELL             :Oil Wells
-STR_STATION_QUARRY               :Quarry
+STR_STATION_SANDPIT              :Sand Pit
 STR_STATION_PORT                 :Port
 STR_STATION_POWER_PLANT          :Powerplant
 STR_STATION_SAWMILL              :Sawmill

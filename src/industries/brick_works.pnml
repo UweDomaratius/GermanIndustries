@@ -580,6 +580,12 @@ switch(FEAT_INDUSTRIES, SELF, brick_works_switch_check_availability, current_yea
 	return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
 }
 
+// only show stockpile for COAL and nothing else
+switch(FEAT_INDUSTRIES, SELF, brick_works_switch_cargo_subtype, getbits(extra_callback_info2, 16, 8)) {
+	COAL: switch_cargo_subtype;
+	return 0x3800 + string(STR_EMPTY);
+}
+
 if (param_extension_building_materials) {
 
 item(FEAT_INDUSTRIES, brick_works, INDUSTRY_ID_BRICK_WORKS) {
@@ -610,7 +616,7 @@ item(FEAT_INDUSTRIES, brick_works, INDUSTRY_ID_BRICK_WORKS) {
 		random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 		location_check:           brick_works_switch_location_check_industry_distance;
 		extra_text_fund:          brick_works_switch_extra_text_fund;
-		cargo_subtype_display:    switch_cargo_subtype;
+		cargo_subtype_display:    brick_works_switch_cargo_subtype;
 	}
 }
 
