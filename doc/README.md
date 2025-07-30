@@ -1,8 +1,47 @@
 # Overview (list of industries and cargos)
 
+## Extensions
+
+The set contains 1 extensions as listed below.
+
+### Building materials
+
+This extension introduces several cargos and industries related to the creation of various building materials. 
+
+#### Cargos
+
+* [Bricks](#bricks)
+* [Cement](#cement)
+* [Limestone](#limestone)
+* [Sand](#sand)
+
+
+#### Industries
+
+* [Builders yard](#builders-yard)
+* [Brick works](#brick-works)
+* [Cement plant](#cement-plant)
+* [Limestone mine](#limestone-mine)
+* [Sand pit](#sand-pit)
+
+
 ## Industries
 
-The set contains 20 industries as listed below.
+The set contains 25 industries as listed below.
+
+### Brick works
+
+<img src="brick_works.png" alt="Brick works">
+
+The effective mass production of bricks began in the 19th century with the onset of the industrial revolution. Many manufacturing plants had to be built, and new railway lines often required huge bridges. 
+
+In the real world, bricks have been produced for millenia, often burning wood as source material for creating the required heat. In the set, the modern variant is present which uses coal instead of wood. 
+
+Part of extension: [Building materials](#building-materials)
+
+| Requires | Produces |
+| -- | -- |
+| [Coal](#coal) | [Bricks](#bricks) |
 
 ### Builders yard
 
@@ -13,6 +52,34 @@ The builders yard provides building supplies to a nearby town.
 | Requires | Produces |
 | -- | -- |
 | [Timber](#timber) |  |
+
+### Builders yard
+
+<img src="builders_yard.png" alt="Builders yard">
+
+The builders yard provides building supplies to a nearby town. When enabling the building materials extension, it accepts a greater variety of cargos. 
+
+Part of extension: [Building materials](#building-materials)
+
+| Requires | Produces |
+| -- | -- |
+| [Bricks](#bricks) |  |
+| [Cement](#cement) |  |
+| [Sand](#sand) |  |
+| [Timber](#timber) |  |
+
+### Cement plant
+
+<img src="cement_plant.png" alt="Cement plant">
+
+The first cement plants in Gemrany date back to the early 19th century. In the second half of the 19th century, the industry saw a lot of standardization in terms of production processes and quality requirements. Today, more than 50 plants operate in Germany, making it the largest producer in Europe. 
+
+Part of extension: [Building materials](#building-materials)
+
+| Requires | Produces |
+| -- | -- |
+| [Limestone](#limestone) | [Cement](#cement) |
+| [Sand](#sand) |  |
 
 ### Coal mine
 
@@ -93,7 +160,8 @@ The furniture industry is quite big in Germany, with IKEA being the market leade
 
 | Requires | Produces |
 | -- | -- |
-| [Timber](#timber) | [Goods](#goods) |
+| [Plastics](#plastics) | [Goods](#goods) |
+| [Timber](#timber) |  |
 
 ### General store
 
@@ -142,6 +210,18 @@ Germany did ore mining until the middle of the 20th century, but generally speak
 | Requires | Produces |
 | -- | -- |
 |  | [Iron Ore](#iron-ore) |
+
+### Limestone mine
+
+<img src="limestone_mine.png" alt="Limestone mine">
+
+Limestone mining dates back centuries in Germany. Nowadays, mining is typically done in quarries or with open pit mining. 
+
+Part of extension: [Building materials](#building-materials)
+
+| Requires | Produces |
+| -- | -- |
+|  | [Limestone](#limestone) |
 
 ### Oil refinery
 
@@ -207,6 +287,18 @@ Power plants create electricity, typically by boiling water and using the result
 | [Coal](#coal) | [Electricity](#electricity) |
 | [Oil](#oil) |  |
 
+### Sand pit
+
+<img src="sand_pit.png" alt="Sand pit">
+
+Sand is mined in open pits. Due to the geological processes that shaped the relief over millions of years, sand pits are mainly found in the plains of Northern Germany, but also near the Alps. 
+
+Part of extension: [Building materials](#building-materials)
+
+| Requires | Produces |
+| -- | -- |
+|  | [Sand](#sand) |
+
 ### Sawmill
 
 <img src="sawmill.png" alt="Sawmill">
@@ -242,7 +334,29 @@ This restriction is also valid for funding the industry.
 
 ## Cargos
 
-The set contains 16 cargos as listed below.
+The set contains 20 cargos as listed below.
+
+### Bricks
+
+Bricks have been used for all sorts of masonry construction since ancient times. With the onset of industrialization in the 19th century, demand arose for mass-produced cheap bricks to build factory buildings, bridges and many other structures. Even today, bricks are still relevant, although they cannot be used for skyscrapers for structural reasons. 
+
+Part of extension: [Building materials](#building-materials)
+
+Cargo classes: Piece goods
+| Produced by | Required by |
+| -- | -- |
+| [Brick works](#brick-works) | [Builders yard](#builders-yard) |
+
+### Cement
+
+Cement is a key ingredient in the production of mortar and concrete, which are the most widely used material in existence and one of the most consumed resources in the world. Without it, none of the modern skyscrapers could be built. 
+
+Part of extension: [Building materials](#building-materials)
+
+Cargo classes: Bulk cargo, Covered, Powderized
+| Produced by | Required by |
+| -- | -- |
+| [Cement plant](#cement-plant) | [Builders yard](#builders-yard) |
 
 ### Coal
 
@@ -253,8 +367,9 @@ Germany had relevant coal deposits, and the areas were coal was mined became ind
 Cargo classes: Bulk cargo
 | Produced by | Required by |
 | -- | -- |
-| [Coal mine](#coal-mine) | [Integrated steel mill](#integrated-steel-mill) |
-| [Port](#port) | [Power plant](#power-plant) |
+| [Coal mine](#coal-mine) | [Brick works](#brick-works) |
+| [Port](#port) | [Integrated steel mill](#integrated-steel-mill) |
+|  | [Power plant](#power-plant) |
 
 ### Electricity
 
@@ -318,6 +433,17 @@ Cargo classes: Bulk cargo
 | [Iron ore mine](#iron-ore-mine) | [Integrated steel mill](#integrated-steel-mill) |
 | [Port](#port) |  |
 
+### Limestone
+
+Limestone is a type of rock that is composed mainly of calcium carbonate. It is relevant for the production of cement, but can also be used as building material directly. Moreover, it has many uses as raw material in the chemical industry and is also essential in the production of steel and glass. 
+
+Part of extension: [Building materials](#building-materials)
+
+Cargo classes: Bulk cargo
+| Produced by | Required by |
+| -- | -- |
+| [Limestone mine](#limestone-mine) | [Cement plant](#cement-plant) |
+
 ### Livestock
 
 Meat was and still is an important part of human diet, and as such livestock farming is an important part of the food production. Transporting livestock also provides for specific challenges in the game, often requiring dedicated rolling stock. 
@@ -369,7 +495,19 @@ In the set, this also incorporate synthetic materials that do not have the chara
 Cargo classes: Bulk cargo, Piece goods
 | Produced by | Required by |
 | -- | -- |
-| [Oil refinery](#oil-refinery) |  |
+| [Oil refinery](#oil-refinery) | [Furniture factory](#furniture-factory) |
+
+### Sand
+
+Sand is a granular material found all over the world. It mainly consists of silica in the form of particles of varying size. Sand is widely used in many industries, especially in the creation of bricks, mortar and concrete, but also as a source for silicon which has widespread uses in electronics. 
+
+Part of extension: [Building materials](#building-materials)
+
+Cargo classes: Bulk cargo
+| Produced by | Required by |
+| -- | -- |
+| [Sand pit](#sand-pit) | [Builders yard](#builders-yard) |
+|  | [Cement plant](#cement-plant) |
 
 ### Steel
 
@@ -390,6 +528,7 @@ Cargo classes: Piece goods
 | Produced by | Required by |
 | -- | -- |
 | [Sawmill](#sawmill) | [Builders yard](#builders-yard) |
+|  | [Builders yard](#builders-yard) |
 |  | [Furniture factory](#furniture-factory) |
 
 ### Vehicles
