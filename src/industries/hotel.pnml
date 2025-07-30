@@ -5,7 +5,7 @@ spritelayout hotel_spritelayout_modern_1_left {
 		always_draw: 1;
 	}
 	building {
-		sprite: 4615+(construction_state-1)*2;
+		sprite: 4615 + (construction_state-1)*2;
 		recolour_mode: RECOLOUR_REMAP;
 		palette: PALETTE_USE_DEFAULT;
 		xoffset: 0;
@@ -25,7 +25,7 @@ spritelayout hotel_spritelayout_modern_1_right {
 		always_draw: 1;
 	}
 	building {
-		sprite: 4614+(construction_state-1)*2;
+		sprite: 4614 + (construction_state-1)*2;
 		recolour_mode: RECOLOUR_REMAP;
 		palette: PALETTE_USE_DEFAULT;
 		xoffset: 0;
@@ -40,12 +40,12 @@ spritelayout hotel_spritelayout_modern_1_right {
 }
 spritelayout hotel_spritelayout_single_tile_1 {
 	childsprite {
-		sprite: default_spriteset_ground_cobblestones;
+		sprite: 4434;
 		hide_sprite: 0;
 		always_draw: 1;
 	}
 	building {
-		sprite: 4434+construction_state;
+		sprite: 4434 + construction_state;
 		recolour_mode: RECOLOUR_REMAP;
 		palette: PALETTE_USE_DEFAULT;
 		xoffset: 0;
@@ -65,7 +65,7 @@ spritelayout hotel_spritelayout_single_tile_2 {
 		always_draw: 1;
 	}
 	building {
-		sprite: 4438+construction_state;
+		sprite: 4438 + construction_state;
 		recolour_mode: RECOLOUR_REMAP;
 		palette: PALETTE_USE_DEFAULT;
 		xoffset: 0;
@@ -86,7 +86,7 @@ spritelayout hotel_spritelayout_modern_2_left {
 		always_draw: 1;
 	}
 	building {
-		sprite: 4488+(construction_state-1)*2;
+		sprite: 4488 + (construction_state-1)*2;
 		recolour_mode: RECOLOUR_REMAP;
 		palette: PALETTE_USE_DEFAULT;
 		xoffset: 0;
@@ -106,7 +106,7 @@ spritelayout hotel_spritelayout_modern_2_right {
 		always_draw: 1;
 	}
 	building {
-		sprite: 4487+(construction_state-1)*2;
+		sprite: 4487 + (construction_state-1)*2;
 		recolour_mode: RECOLOUR_REMAP;
 		palette: PALETTE_USE_DEFAULT;
 		xoffset: 0;
@@ -127,7 +127,7 @@ spritelayout hotel_spritelayout_hotel_with_pool_on_roof_left {
 		always_draw: 1;
 	}
 	building {
-		sprite: 1448+(construction_state-1);
+		sprite: 1448 + (construction_state-1);
 		recolour_mode: RECOLOUR_REMAP;
 		palette: PALETTE_USE_DEFAULT;
 		xoffset: 0;
@@ -147,7 +147,7 @@ spritelayout hotel_spritelayout_hotel_with_pool_on_roof_right {
 		always_draw: 1;
 	}
 	building {
-		sprite: 1451+(construction_state-1);
+		sprite: 1451 + (construction_state-1);
 		recolour_mode: RECOLOUR_REMAP;
 		palette: PALETTE_USE_DEFAULT;
 		xoffset: 0;
@@ -168,7 +168,7 @@ spritelayout hotel_spritelayout_small_bungalow_left {
 		always_draw: 1;
 	}
 	building {
-		sprite: 4471+(construction_state-1)*2;
+		sprite: 4471 + (construction_state-1)*2;
 		recolour_mode: RECOLOUR_REMAP;
 		palette: PALETTE_USE_DEFAULT;
 		xoffset: 0;
@@ -214,7 +214,7 @@ spritelayout hotel_spritelayout_small_bungalow_right {
 		always_draw: 1;
 	}
 	building {
-		sprite: 4472+(construction_state-1)*2;
+		sprite: 4472 + (construction_state-1)*2;
 		recolour_mode: RECOLOUR_REMAP;
 		palette: PALETTE_USE_DEFAULT;
 		xoffset: 0;
