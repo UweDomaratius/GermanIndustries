@@ -153,6 +153,6 @@ switch (FEAT_INDUSTRYTILES, SELF, is_next_to_road,
 // Returns 1 if true, 0 if false
 ////////////////////////////////////////////////////////////////////////////////
 switch(FEAT_INDUSTRIES, SELF, distance_from_town,
-	LOAD_TEMP(TEMP_REGISTER_TOWN_MIN_DISTANCE) < town_euclidean_dist(0,0) && town_euclidean_dist(0,0) < LOAD_TEMP(TEMP_REGISTER_TOWN_MAX_DISTANCE)) {
+	LOAD_TEMP(TEMP_REGISTER_TOWN_MIN_DISTANCE) < town_manhattan_dist(0,0) && town_manhattan_dist(0,0) < LOAD_TEMP(TEMP_REGISTER_TOWN_MAX_DISTANCE)) {
 	return;
 }
