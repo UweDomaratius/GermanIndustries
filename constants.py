@@ -52,7 +52,6 @@ constants = {
     "INDUSTRY_ID_SANDPIT": "22",
     "INDUSTRY_ID_CEMENT_PLANT": "23",
     
-    
     # INDUSTRY TILE IDs for Base Industries
     "INDUSTRY_TILE_ID_BUILDERS_YARD":"22",
     "INDUSTRY_TILE_ID_COAL_MINE_1": "0",
@@ -90,7 +89,6 @@ constants = {
     "INDUSTRY_TILE_ID_LIMESTONE_MINE_3": "29",
     "INDUSTRY_TILE_ID_SANDPIT_1":"30",
     "INDUSTRY_TILE_ID_SANDPIT_2":"31",
-    
     
     # TTD sprite IDs
     "TTD_OILRIG_STATION_TILE": "24",
