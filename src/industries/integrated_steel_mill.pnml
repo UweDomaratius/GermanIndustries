@@ -513,6 +513,12 @@ switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_check_availability,
 	return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
 }
 
+switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_cargo_subtype, getbits(extra_callback_info2, 16, 8)) {
+	COAL: switch_cargo_subtype;
+	IORE: switch_cargo_subtype;
+	return 0x3800 + string(STR_EMPTY);
+}
+
 item(FEAT_INDUSTRIES, steel_mill, INDUSTRY_ID_INTEGRATED_STEEL_MILL) {
 	property {
 		substitute: 0;
@@ -542,7 +548,7 @@ item(FEAT_INDUSTRIES, steel_mill, INDUSTRY_ID_INTEGRATED_STEEL_MILL) {
 		location_check:           steel_mill_switch_location_check_industry_distance;
 		extra_text_fund:          steel_mill_switch_extra_text_fund;
 		//extra_text_industry:    steel_mill_switch_extra_text;
-		cargo_subtype_display:    switch_cargo_subtype;
+		cargo_subtype_display:    steel_mill_switch_cargo_subtype;
 	}
 }
     
