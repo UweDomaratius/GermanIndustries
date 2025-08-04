@@ -732,4 +732,3 @@ item(FEAT_INDUSTRIES, vehicle_factory, INDUSTRY_ID_VEHICLE_FACTORY) {
 		cargo_subtype_display:    vehicle_factory_switch_cargo_subtype;
 	}
 }
-    

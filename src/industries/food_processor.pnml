@@ -477,14 +477,13 @@ switch(FEAT_INDUSTRIES, SELF, food_processor_switch_produce,
 	food_processor_switch_produce_fish;
 }
 
-// only show stockpile for SAND, LIME and nothing else
+// only show stockpile for LVST, GRAI, FISH and nothing else
 switch(FEAT_INDUSTRIES, SELF, food_processor_switch_cargo_subtype, getbits(extra_callback_info2, 16, 8)) {
 	LVST: switch_cargo_subtype;
 	GRAI: switch_cargo_subtype;
 	FISH: switch_cargo_subtype;
 	return 0x3800 + string(STR_EMPTY);
 }
-
 item(FEAT_INDUSTRIES, food_processor, INDUSTRY_ID_FOOD_PROCESSOR) {
 	property {
 		substitute: 0;

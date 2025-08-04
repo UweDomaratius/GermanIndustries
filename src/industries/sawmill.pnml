@@ -484,4 +484,3 @@ item(FEAT_INDUSTRIES, sawmill, INDUSTRY_ID_SAWMILL) {
 		cargo_subtype_display:    sawmill_switch_cargo_subtype;
 	}
 }
-    
