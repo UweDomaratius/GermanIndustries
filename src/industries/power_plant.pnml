@@ -500,6 +500,7 @@ switch(FEAT_INDUSTRIES, SELF, power_plant_switch_cargo_subtype, getbits(extra_ca
 	OIL_: switch_cargo_subtype;
 	return 0x3800 + string(STR_EMPTY);
 }
+
 item(FEAT_INDUSTRIES, power_plant, INDUSTRY_ID_POWER_PLANT) {
 	property {
 		substitute: 0;
@@ -530,6 +531,6 @@ item(FEAT_INDUSTRIES, power_plant, INDUSTRY_ID_POWER_PLANT) {
         location_check:           power_plant_switch_location_check;
         extra_text_fund:          power_plant_switch_extra_text_fund;
         extra_text_industry:      power_plant_switch_extra_text;
-        cargo_subtype_display:    switch_cargo_subtype;
+        cargo_subtype_display:    power_plant_switch_cargo_subtype;
     }
 }
