@@ -622,4 +622,3 @@ item(FEAT_INDUSTRIES, brick_works, INDUSTRY_ID_BRICK_WORKS) {
 }
 
 } // param_extension_building_materials
-    

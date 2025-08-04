@@ -293,7 +293,6 @@ switch(FEAT_INDUSTRIES, SELF, builders_yard_switch_location_check_industry_dista
 }
 
 // take all incoming cargo and produce nothing
-//if (param_extension_building_materials) {
 produce(builders_yard_produce,
 	[WDPR: LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0);
 	 CMNT: LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1);
@@ -303,14 +302,6 @@ produce(builders_yard_produce,
 	[],
 	0 // do not run again
 )
-//}
-//if (!param_extension_building_materials) {
-//produce(builders_yard_produce,
-//	[WDPR: LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0);],
-//	[],
-//	0 // do not run again
-//)
-//}
 
 switch(FEAT_INDUSTRIES, SELF, builders_yard_switch_produce,
 	[STORE_TEMP(incoming_cargo_waiting("WDPR"), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
@@ -323,47 +314,47 @@ switch(FEAT_INDUSTRIES, SELF, builders_yard_switch_produce,
 
 item(FEAT_INDUSTRIES, builders_yard, INDUSTRY_ID_BUILDERS_YARD) {
 	if (param_extension_building_materials) {
-	property {
-		substitute: 0;
-		map_colour: 134;
-		life_type: IND_LIFE_TYPE_BLACK_HOLE;
-		min_cargo_distr: 1;
-		layouts: [builders_yard_tilelayout_1, builders_yard_tilelayout_2, builders_yard_tilelayout_3, builders_yard_tilelayout_4];
-		spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
-		conflicting_ind_types: [];
-		random_sound_effects: [];
-		name: string(STR_IND_BUILDERS_YARD);
-		prob_map_gen: 24;
-		prob_in_game: 12;
-		prospect_chance: 0.75;
-		fund_cost_multiplier: 15;
-		remove_cost_multiplier: 0;
-		remove_cost_multiplier: 0;
-		cargo_types: [accept_cargo("WDPR"),accept_cargo("SAND"),accept_cargo("CMNT"),accept_cargo("BDMT")];
-		nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_BUILDERS_YARD));
-	}
+		property {
+			substitute: 0;
+			map_colour: 134;
+			life_type: IND_LIFE_TYPE_BLACK_HOLE;
+			min_cargo_distr: 1;
+			layouts: [builders_yard_tilelayout_1, builders_yard_tilelayout_2, builders_yard_tilelayout_3, builders_yard_tilelayout_4];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_BUILDERS_YARD);
+			prob_map_gen: 24;
+			prob_in_game: 12;
+			prospect_chance: 0.75;
+			fund_cost_multiplier: 15;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("WDPR"),accept_cargo("SAND"),accept_cargo("CMNT"),accept_cargo("BDMT")];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_BUILDERS_YARD));
+		}
 	} // param_extension_building_materials
 	
 	if (!param_extension_building_materials) {
-	property {
-		substitute: 0;
-		map_colour: 134;
-		life_type: IND_LIFE_TYPE_BLACK_HOLE;
-		min_cargo_distr: 1;
-		layouts: [builders_yard_tilelayout_1, builders_yard_tilelayout_2, builders_yard_tilelayout_3, builders_yard_tilelayout_4];
-		spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
-		conflicting_ind_types: [];
-		random_sound_effects: [];
-		name: string(STR_IND_BUILDERS_YARD);
-		prob_map_gen: 24;
-		prob_in_game: 12;
-		prospect_chance: 0.75;
-		fund_cost_multiplier: 15;
-		remove_cost_multiplier: 0;
-		remove_cost_multiplier: 0;
-		cargo_types: [accept_cargo("WDPR")];
-		nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_BUILDERS_YARD));
-	}
+		property {
+			substitute: 0;
+			map_colour: 134;
+			life_type: IND_LIFE_TYPE_BLACK_HOLE;
+			min_cargo_distr: 1;
+			layouts: [builders_yard_tilelayout_1, builders_yard_tilelayout_2, builders_yard_tilelayout_3, builders_yard_tilelayout_4];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_BUILDERS_YARD);
+			prob_map_gen: 24;
+			prob_in_game: 12;
+			prospect_chance: 0.75;
+			fund_cost_multiplier: 15;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("WDPR")];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_BUILDERS_YARD));
+		}
 	} // !param_extension_building_materials
         
 	graphics {
@@ -378,5 +369,3 @@ item(FEAT_INDUSTRIES, builders_yard, INDUSTRY_ID_BUILDERS_YARD) {
 		cargo_subtype_display:    return CB_RESULT_IND_NO_TEXT_NO_AMOUNT;
 	}
 }
-
-    
