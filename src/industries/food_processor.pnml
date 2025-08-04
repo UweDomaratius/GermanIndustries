@@ -484,6 +484,7 @@ switch(FEAT_INDUSTRIES, SELF, food_processor_switch_cargo_subtype, getbits(extra
 	FISH: switch_cargo_subtype;
 	return 0x3800 + string(STR_EMPTY);
 }
+
 item(FEAT_INDUSTRIES, food_processor, INDUSTRY_ID_FOOD_PROCESSOR) {
 	property {
 		substitute: 0;
