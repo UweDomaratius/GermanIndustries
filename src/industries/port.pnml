@@ -74,145 +74,145 @@ spriteset(port_spriteset_7) {
 	[360, 60, 64, 39, -31, -7, ANIM | NOCROP, "graphics/industries/port.png"]
 }
 spriteset(port_spriteset_7_spriteset_default_construction_state_0) {
-	[360, 60, 64, 39, -31, -7, ANIM | NOCROP, "src/graphics/industries/port_construction_1.png"]
+	[360, 60, 64, 39, -31, -7, ANIM | NOCROP, "graphics/industries/port_construction_1.png"]
 }
 spriteset(port_spriteset_7_spriteset_default_construction_state_1) {
-	[360, 60, 64, 39, -31, -7, ANIM | NOCROP, "src/graphics/industries/port_construction_2.png"]
+	[360, 60, 64, 39, -31, -7, ANIM | NOCROP, "graphics/industries/port_construction_2.png"]
 }
 spriteset(port_spriteset_7_spriteset_default_construction_state_2) {
-	[360, 60, 64, 39, -31, -7, ANIM | NOCROP, "src/graphics/industries/port_construction_3.png"]
+	[360, 60, 64, 39, -31, -7, ANIM | NOCROP, "graphics/industries/port_construction_3.png"]
 }
 spriteset(port_spriteset_8) {
 	[440, 10, 64, 74, -31, -34, ANIM | NOCROP, "graphics/industries/port.png"]
 }
 spriteset(port_spriteset_8_spriteset_default_construction_state_0) {
-	[440, 10, 64, 74, -31, -34, ANIM | NOCROP, "src/graphics/industries/port_construction_1.png"]
+	[440, 10, 64, 74, -31, -34, ANIM | NOCROP, "graphics/industries/port_construction_1.png"]
 }
 spriteset(port_spriteset_8_spriteset_default_construction_state_1) {
-	[440, 10, 64, 74, -31, -34, ANIM | NOCROP, "src/graphics/industries/port_construction_2.png"]
+	[440, 10, 64, 74, -31, -34, ANIM | NOCROP, "graphics/industries/port_construction_2.png"]
 }
 spriteset(port_spriteset_8_spriteset_default_construction_state_2) {
-	[440, 10, 64, 74, -31, -34, ANIM | NOCROP, "src/graphics/industries/port_construction_3.png"]
+	[440, 10, 64, 74, -31, -34, ANIM | NOCROP, "graphics/industries/port_construction_3.png"]
 }
 spriteset(port_spriteset_9) {
 	[150, 10, 64, 39, -31, 0, ANIM | NOCROP, "graphics/industries/port.png"]
 }
 spriteset(port_spriteset_9_spriteset_default_construction_state_0) {
-	[150, 10, 64, 39, -31, 0, ANIM | NOCROP, "src/graphics/industries/port_construction_1.png"]
+	[150, 10, 64, 39, -31, 0, ANIM | NOCROP, "graphics/industries/port_construction_1.png"]
 }
 spriteset(port_spriteset_9_spriteset_default_construction_state_1) {
-	[150, 10, 64, 39, -31, 0, ANIM | NOCROP, "src/graphics/industries/port_construction_2.png"]
+	[150, 10, 64, 39, -31, 0, ANIM | NOCROP, "graphics/industries/port_construction_2.png"]
 }
 spriteset(port_spriteset_9_spriteset_default_construction_state_2) {
-	[150, 10, 64, 39, -31, 0, ANIM | NOCROP, "src/graphics/industries/port_construction_3.png"]
+	[150, 10, 64, 39, -31, 0, ANIM | NOCROP, "graphics/industries/port_construction_3.png"]
 }
 spriteset(port_spriteset_10) {
 	[150, 10, 64, 39, -31, 0, ANIM | NOCROP, "graphics/industries/port.png"]
 }
 spriteset(port_spriteset_10_spriteset_default_construction_state_0) {
-	[150, 10, 64, 39, -31, 0, ANIM | NOCROP, "src/graphics/industries/port_construction_1.png"]
+	[150, 10, 64, 39, -31, 0, ANIM | NOCROP, "graphics/industries/port_construction_1.png"]
 }
 spriteset(port_spriteset_10_spriteset_default_construction_state_1) {
-	[150, 10, 64, 39, -31, 0, ANIM | NOCROP, "src/graphics/industries/port_construction_2.png"]
+	[150, 10, 64, 39, -31, 0, ANIM | NOCROP, "graphics/industries/port_construction_2.png"]
 }
 spriteset(port_spriteset_10_spriteset_default_construction_state_2) {
-	[150, 10, 64, 39, -31, 0, ANIM | NOCROP, "src/graphics/industries/port_construction_3.png"]
+	[150, 10, 64, 39, -31, 0, ANIM | NOCROP, "graphics/industries/port_construction_3.png"]
 }
 spriteset(port_spriteset_11) {
 	[220, 10, 64, 39, -31, -7, ANIM | NOCROP, "graphics/industries/port.png"]
 }        
 spriteset(port_spriteset_11_spriteset_default_construction_state_0) {
-	[220, 10, 64, 39, -31, -7, ANIM | NOCROP, "src/graphics/industries/port_construction_1.png"]
+	[220, 10, 64, 39, -31, -7, ANIM | NOCROP, "graphics/industries/port_construction_1.png"]
 }
 spriteset(port_spriteset_11_spriteset_default_construction_state_1) {
-	[220, 10, 64, 39, -31, -7, ANIM | NOCROP, "src/graphics/industries/port_construction_2.png"]
+	[220, 10, 64, 39, -31, -7, ANIM | NOCROP, "graphics/industries/port_construction_2.png"]
 }
 spriteset(port_spriteset_11_spriteset_default_construction_state_2) {
-	[220, 10, 64, 39, -31, -7, ANIM | NOCROP, "src/graphics/industries/port_construction_3.png"]
+	[220, 10, 64, 39, -31, -7, ANIM | NOCROP, "graphics/industries/port_construction_3.png"]
 }
 spriteset(port_spriteset_12) {
 	[10, 110, 64, 39, -35, -15, ANIM | NOCROP, "graphics/industries/port.png"]
 }
 spriteset(port_spriteset_12_spriteset_default_construction_state_0) {
-	[10, 110, 64, 39, -35, -15, ANIM | NOCROP, "src/graphics/industries/port_construction_1.png"]
+	[10, 110, 64, 39, -35, -15, ANIM | NOCROP, "graphics/industries/port_construction_1.png"]
 }
 spriteset(port_spriteset_12_spriteset_default_construction_state_1) {
-	[10, 110, 64, 39, -35, -15, ANIM | NOCROP, "src/graphics/industries/port_construction_2.png"]
+	[10, 110, 64, 39, -35, -15, ANIM | NOCROP, "graphics/industries/port_construction_2.png"]
 }
 spriteset(port_spriteset_12_spriteset_default_construction_state_2) {
-	[10, 110, 64, 39, -35, -15, ANIM | NOCROP, "src/graphics/industries/port_construction_3.png"]
+	[10, 110, 64, 39, -35, -15, ANIM | NOCROP, "graphics/industries/port_construction_3.png"]
 }
 spriteset(port_spriteset_13) {
 	[80, 110, 64, 39, -31, -14, ANIM | NOCROP, "graphics/industries/port.png"]
 }
 spriteset(port_spriteset_13_spriteset_default_construction_state_0) {
-	[80, 110, 64, 39, -31, -14, ANIM | NOCROP, "src/graphics/industries/port_construction_1.png"]
+	[80, 110, 64, 39, -31, -14, ANIM | NOCROP, "graphics/industries/port_construction_1.png"]
 }
 spriteset(port_spriteset_13_spriteset_default_construction_state_1) {
-	[80, 110, 64, 39, -31, -14, ANIM | NOCROP, "src/graphics/industries/port_construction_2.png"]
+	[80, 110, 64, 39, -31, -14, ANIM | NOCROP, "graphics/industries/port_construction_2.png"]
 }
 spriteset(port_spriteset_13_spriteset_default_construction_state_2) {
-	[80, 110, 64, 39, -31, -14, ANIM | NOCROP, "src/graphics/industries/port_construction_3.png"]
+	[80, 110, 64, 39, -31, -14, ANIM | NOCROP, "graphics/industries/port_construction_3.png"]
 }
 spriteset(port_spriteset_14) {
 	[150, 110, 64, 39, -31, -8, ANIM | NOCROP, "graphics/industries/port.png"]
 }
 spriteset(port_spriteset_14_spriteset_default_construction_state_0) {
-	[150, 110, 64, 39, -31, -8, ANIM | NOCROP, "src/graphics/industries/port_construction_1.png"]
+	[150, 110, 64, 39, -31, -8, ANIM | NOCROP, "graphics/industries/port_construction_1.png"]
 }
 spriteset(port_spriteset_14_spriteset_default_construction_state_1) {
-	[150, 110, 64, 39, -31, -8, ANIM | NOCROP, "src/graphics/industries/port_construction_2.png"]
+	[150, 110, 64, 39, -31, -8, ANIM | NOCROP, "graphics/industries/port_construction_2.png"]
 }
 spriteset(port_spriteset_14_spriteset_default_construction_state_2) {
-	[150, 110, 64, 39, -31, -8, ANIM | NOCROP, "src/graphics/industries/port_construction_3.png"]
+	[150, 110, 64, 39, -31, -8, ANIM | NOCROP, "graphics/industries/port_construction_3.png"]
 }
 spriteset(port_spriteset_15) {
 	[220, 110, 64, 39, -27, -12, ANIM | NOCROP, "graphics/industries/port.png"]
 }
 spriteset(port_spriteset_15_spriteset_default_construction_state_0) {
-	[220, 110, 64, 39, -27, -12, ANIM | NOCROP, "src/graphics/industries/port_construction_1.png"]
+	[220, 110, 64, 39, -27, -12, ANIM | NOCROP, "graphics/industries/port_construction_1.png"]
 }
 spriteset(port_spriteset_15_spriteset_default_construction_state_1) {
-	[220, 110, 64, 39, -27, -12, ANIM | NOCROP, "src/graphics/industries/port_construction_2.png"]
+	[220, 110, 64, 39, -27, -12, ANIM | NOCROP, "graphics/industries/port_construction_2.png"]
 }
 spriteset(port_spriteset_15_spriteset_default_construction_state_2) {
-	[220, 110, 64, 39, -27, -12, ANIM | NOCROP, "src/graphics/industries/port_construction_3.png"]
+	[220, 110, 64, 39, -27, -12, ANIM | NOCROP, "graphics/industries/port_construction_3.png"]
 }
 spriteset(port_spriteset_16) {
 	[290, 110, 64, 39, -15, -11, ANIM | NOCROP, "graphics/industries/port.png"]
 }
 spriteset(port_spriteset_16_spriteset_default_construction_state_0) {
-	[290, 110, 64, 39, -15, -11, ANIM | NOCROP, "src/graphics/industries/port_construction_1.png"]
+	[290, 110, 64, 39, -15, -11, ANIM | NOCROP, "graphics/industries/port_construction_1.png"]
 }
 spriteset(port_spriteset_16_spriteset_default_construction_state_1) {
-	[290, 110, 64, 39, -15, -11, ANIM | NOCROP, "src/graphics/industries/port_construction_2.png"]
+	[290, 110, 64, 39, -15, -11, ANIM | NOCROP, "graphics/industries/port_construction_2.png"]
 }
 spriteset(port_spriteset_16_spriteset_default_construction_state_2) {
-	[290, 110, 64, 39, -15, -11, ANIM | NOCROP, "src/graphics/industries/port_construction_3.png"]
+	[290, 110, 64, 39, -15, -11, ANIM | NOCROP, "graphics/industries/port_construction_3.png"]
 }
 spriteset(port_spriteset_17) {
 	[360, 110, 64, 39, -45, -15, ANIM | NOCROP, "graphics/industries/port.png"]
 }
 spriteset(port_spriteset_17_spriteset_default_construction_state_0) {
-	[360, 110, 64, 39, -45, -15, ANIM | NOCROP, "src/graphics/industries/port_construction_1.png"]
+	[360, 110, 64, 39, -45, -15, ANIM | NOCROP, "graphics/industries/port_construction_1.png"]
 }
 spriteset(port_spriteset_17_spriteset_default_construction_state_1) {
-	[360, 110, 64, 39, -45, -15, ANIM | NOCROP, "src/graphics/industries/port_construction_2.png"]
+	[360, 110, 64, 39, -45, -15, ANIM | NOCROP, "graphics/industries/port_construction_2.png"]
 }
 spriteset(port_spriteset_17_spriteset_default_construction_state_2) {
-	[360, 110, 64, 39, -45, -15, ANIM | NOCROP, "src/graphics/industries/port_construction_3.png"]
+	[360, 110, 64, 39, -45, -15, ANIM | NOCROP, "graphics/industries/port_construction_3.png"]
 }
 spriteset(port_spriteset_18) {
 	[360, 10, 64, 39, -31, 0, ANIM | NOCROP, "graphics/industries/port.png"]
 }
 spriteset(port_spriteset_18_spriteset_default_construction_state_0) {
-	[360, 10, 64, 39, -31, 0, ANIM | NOCROP, "src/graphics/industries/port_construction_1.png"]
+	[360, 10, 64, 39, -31, 0, ANIM | NOCROP, "graphics/industries/port_construction_1.png"]
 }
 spriteset(port_spriteset_18_spriteset_default_construction_state_1) {
-	[360, 10, 64, 39, -31, 0, ANIM | NOCROP, "src/graphics/industries/port_construction_2.png"]
+	[360, 10, 64, 39, -31, 0, ANIM | NOCROP, "graphics/industries/port_construction_2.png"]
 }
 spriteset(port_spriteset_18_spriteset_default_construction_state_2) {
-	[360, 10, 64, 39, -31, 0, ANIM | NOCROP, "src/graphics/industries/port_construction_3.png"]
+	[360, 10, 64, 39, -31, 0, ANIM | NOCROP, "graphics/industries/port_construction_3.png"]
 }
 spritelayout port_spritelayout_2 {
 	building {
@@ -1347,6 +1347,7 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_location_check_industry_distance,
     [STORE_TEMP(32, TEMP_REGISTER_TOWN_MIN_DISTANCE),
 	 STORE_TEMP(128, TEMP_REGISTER_TOWN_MAX_DISTANCE),
 	   (distance_from_town() && 
+	   (is_near_map_edge(32)) &&
 	   (industry_distance(INDUSTRY_ID_OIL_WELL) >= 32) && 
 	   (industry_distance(INDUSTRY_ID_OIL_RIG) >= 32) &&
 	   (industry_distance(INDUSTRY_ID_COAL_MINE) >= 32) &&
