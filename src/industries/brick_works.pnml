@@ -1,0 +1,624 @@
+spriteset(brick_works_spriteset_2_0) {
+	[10, 10, 64, 101, -31, -64, ANIM | NOCROP, "graphics/industries/brick_works.png"]
+}
+spriteset(brick_works_spriteset_3_0) {
+	[80, 10, 64, 101, -31, -59, ANIM | NOCROP, "graphics/industries/brick_works.png"]
+}
+spriteset(brick_works_spriteset_4_0) {
+	[150, 10, 64, 101, -31, -71, ANIM | NOCROP, "graphics/industries/brick_works.png"]
+}
+spriteset(brick_works_spriteset_5_0) {
+	[220, 10, 64, 101, -31, -69, ANIM | NOCROP, "graphics/industries/brick_works.png"]
+}
+spriteset(brick_works_spriteset_6_0) {
+	[290, 10, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/brick_works.png"]
+}
+spriteset(brick_works_spriteset_7_0) {
+	[360, 10, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/brick_works.png"]
+}
+spriteset(brick_works_spriteset_2_0_snow) {
+	[10, 10, 64, 101, -31, -64, ANIM | NOCROP, "graphics/industries/brick_works_snow.png"]
+}
+spriteset(brick_works_spriteset_3_0_snow) {
+	[80, 10, 64, 101, -31, -59, ANIM | NOCROP, "graphics/industries/brick_works_snow.png"]
+}
+spriteset(brick_works_spriteset_4_0_snow) {
+	[150, 10, 64, 101, -31, -71, ANIM | NOCROP, "graphics/industries/brick_works_snow.png"]
+}
+spriteset(brick_works_spriteset_5_0_snow) {
+	[220, 10, 64, 101, -31, -69, ANIM | NOCROP, "graphics/industries/brick_works_snow.png"]
+}
+spriteset(brick_works_spriteset_6_0_snow) {
+	[290, 10, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/brick_works_snow.png"]
+}
+spriteset(brick_works_spriteset_7_0_snow) {
+	[360, 10, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/brick_works_snow.png"]
+}
+
+spritelayout brick_works_spritelayout_1 {
+	childsprite {
+		sprite: default_spriteset_ground_cobblestones;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+    building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: brick_works_spriteset_2_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: brick_works_spriteset_2_0_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+	building {
+		sprite: TTD_SMOKE_SPRITE_WHITE_BIG + (animation_frame%8);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 8;		yoffset: 0;		zoffset: 70;
+		xextent: 15;	yextent: 7;		zextent: 7;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset: 16;	zoffset: 0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout brick_works_spritelayout_2 {
+	childsprite {
+		sprite: default_spriteset_ground_cobblestones;
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset: 0;		yoffset:  0;	zoffset: 0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: brick_works_spriteset_3_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}          
+	building {
+		sprite: brick_works_spriteset_3_0_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	} 
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset: 16;	zoffset: 0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout brick_works_spritelayout_3 {
+	childsprite {
+		sprite: default_spriteset_ground_cobblestones;
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: brick_works_spriteset_4_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: brick_works_spriteset_4_0_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+	building {
+		sprite: TTD_SMOKE_SPRITE_WHITE_BIG + (animation_frame%8);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 8;
+		zoffset: 58;
+		xextent: 15;
+		yextent: 7;
+		zextent: 7;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout brick_works_spritelayout_4 {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: brick_works_spriteset_5_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: brick_works_spriteset_5_0_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout brick_works_spritelayout_sand_staithe {
+	childsprite {
+		sprite: default_spriteset_ground_cobblestones;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: brick_works_spriteset_6_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: brick_works_spriteset_6_0_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout brick_works_spritelayout_clay_staithe {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: brick_works_spriteset_7_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: brick_works_spriteset_7_0_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// graphics choice switch chain
+//////////////////////////////////////////////////////////////////////////////
+switch(FEAT_INDUSTRYTILES, SELF, brick_works_industry_layout_1_graphics_switch, relative_pos) {
+	relative_coord(0, 0): brick_works_spritelayout_4;
+    relative_coord(0, 1): brick_works_spritelayout_4;
+    relative_coord(1, 0): brick_works_spritelayout_3;
+    relative_coord(1, 1): brick_works_spritelayout_3;
+    relative_coord(2, 0): brick_works_spritelayout_2;
+    relative_coord(2, 1): brick_works_spritelayout_1;
+    relative_coord(3, 0): brick_works_spritelayout_clay_staithe;
+    relative_coord(3, 1): brick_works_spritelayout_sand_staithe;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, brick_works_industry_layout_2_graphics_switch, relative_pos) {
+	relative_coord(0, 0): brick_works_spritelayout_4;
+    relative_coord(0, 1): brick_works_spritelayout_4;
+    relative_coord(1, 0): brick_works_spritelayout_3;
+    relative_coord(1, 1): brick_works_spritelayout_3;
+    relative_coord(2, 0): brick_works_spritelayout_2;
+    relative_coord(2, 1): brick_works_spritelayout_clay_staithe;
+    relative_coord(3, 0): brick_works_spritelayout_1;
+    relative_coord(3, 1): brick_works_spritelayout_sand_staithe;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, brick_works_industry_layout_3_graphics_switch, relative_pos) {
+	relative_coord(0, 0): brick_works_spritelayout_4;
+    relative_coord(0, 1): brick_works_spritelayout_4;
+    relative_coord(0, 2): brick_works_spritelayout_1;
+    relative_coord(0, 3): brick_works_spritelayout_clay_staithe;
+    relative_coord(1, 0): brick_works_spritelayout_3;
+    relative_coord(1, 1): brick_works_spritelayout_3;
+    relative_coord(1, 2): brick_works_spritelayout_2;
+    relative_coord(1, 3): brick_works_spritelayout_sand_staithe;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, brick_works_switch_graphics_layouts, layout_num) {
+	1: brick_works_industry_layout_1_graphics_switch;
+	2: brick_works_industry_layout_2_graphics_switch;
+	3: brick_works_industry_layout_3_graphics_switch;
+	brick_works_industry_layout_1_graphics_switch; // default
+}
+	
+switch(FEAT_INDUSTRYTILES, SELF, brick_works_switch_graphics_construction_state, construction_state) {
+    0..2: spritelayout_default_construction_states;
+    brick_works_switch_graphics_layouts; // default
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, brick_works_switch_graphics,
+	[switch_tile_fences(),
+	 switch_terrain_sprite(),switch_graphics_init_temp_registers()
+]) {
+    brick_works_switch_graphics_construction_state;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// location checks
+//////////////////////////////////////////////////////////////////////////////
+// This check works as follows: calculate height of the northernmost tile of the industry and add 0, 1 or 2 for flat, slope. steep slope
+// Do the same for the current tile and compare the results. If the result is equal, the terrain is effectively flat
+// and industry can be placed.
+// It just looks weird due to the stacked ternary operators needed here
+switch (FEAT_INDUSTRYTILES, SELF, brick_works_switch_tile_location_check2,
+			(nearby_tile_height(-relative_x, -relative_y) + 
+			(nearby_tile_slope(-relative_x, -relative_y)== SLOPE_FLAT ? 0 : nearby_tile_slope(-relative_x, -relative_y) == bitmask(IS_STEEP_SLOPE) ? 2 : 1)) 
+			== 
+			(nearby_tile_height(0, 0) + (nearby_tile_slope(0, 0) == SLOPE_FLAT ? 0 : nearby_tile_slope(0, 0) == bitmask(IS_STEEP_SLOPE) ? 2 : 1))
+			) {
+	1: return CB_RESULT_LOCATION_ALLOW;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, brick_works_switch_tile_location_check,
+	is_funded_or_prospected() || (not_next_to_industry() && not_next_to_buildings()))
+{
+	1: brick_works_switch_tile_location_check2;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// industry tile and layout definition
+//////////////////////////////////////////////////////////////////////////////
+item(FEAT_INDUSTRYTILES, brick_works_tile, INDUSTRY_TILE_ID_BRICK_WORKS) {
+    property {
+        substitute:         0;
+        land_shape_flags:   0;
+        special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+        animation_info: [ANIMATION_LOOPING, 7];
+        animation_speed: 3;
+        animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
+    }
+    graphics {
+    	tile_check: brick_works_switch_tile_location_check;
+        brick_works_switch_graphics;
+    }
+}
+
+tilelayout brick_works_tilelayout_1 {
+	0, 0: brick_works_tile;
+	0, 1: brick_works_tile;
+	1, 0: brick_works_tile;
+	1, 1: brick_works_tile;
+	2, 0: brick_works_tile;
+	2, 1: brick_works_tile;
+	3, 0: brick_works_tile;
+	3, 1: brick_works_tile;
+}
+tilelayout brick_works_tilelayout_2 {
+	0, 0: brick_works_tile;
+	0, 1: brick_works_tile;
+	1, 0: brick_works_tile;
+	1, 1: brick_works_tile;
+	2, 0: brick_works_tile;
+	2, 1: brick_works_tile;
+	3, 0: brick_works_tile;
+	3, 1: brick_works_tile;
+}
+tilelayout brick_works_tilelayout_3 {
+	0, 0: brick_works_tile;
+	0, 1: brick_works_tile;
+	0, 2: brick_works_tile;
+	0, 3: brick_works_tile;
+	1, 0: brick_works_tile;
+	1, 1: brick_works_tile;
+	1, 2: brick_works_tile;
+	1, 3: brick_works_tile;
+
+}
+
+// TODO: check correct industries
+switch(FEAT_INDUSTRIES, SELF, brick_works_switch_location_check_industry_distance,
+	[STORE_TEMP(32, TEMP_REGISTER_TOWN_MIN_DISTANCE),
+	 STORE_TEMP(64, TEMP_REGISTER_TOWN_MAX_DISTANCE),
+	    (distance_from_town() && 
+        (industry_distance(INDUSTRY_ID_BRICK_WORKS) >= 16) && 
+		(industry_distance(INDUSTRY_ID_BUILDERS_YARD) >= 32) &&
+		(industry_distance(INDUSTRY_ID_PORT) >= 32) &&
+	     (industry_distance(INDUSTRY_ID_COAL_MINE) >= 32))]) {
+	   1: return CB_RESULT_LOCATION_ALLOW;
+	   return CB_RESULT_LOCATION_DISALLOW;
+}
+
+// 1 COAL => 1 BDMT
+produce(brick_works_produce,
+	[COAL: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
+	[BDMT: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
+	0 // do not run again
+)
+
+// industry uses 10% of stockpile for production, if stockpile is big enough
+// if stockpile is < 80t, 8t are produced per 256ticks
+// if stockpile is < 8t, whatever is available is used
+// it stockpile is empty, nothing is produced
+switch(FEAT_INDUSTRIES, SELF, brick_works_switch_produce, 
+	[STORE_TEMP(incoming_cargo_waiting("COAL"), TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT),
+	 STORE_TEMP(((LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) / 10) > 8) ? LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) / 10 : 
+	 (LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) > 8 ? 8 : LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT)),TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)
+	]) {
+	brick_works_produce;
+}
+
+switch(FEAT_INDUSTRIES, SELF, brick_works_switch_extra_text_fund, 
+    [STORE_TEMP(string(STR_1800), TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	current_year]) {
+	1800..500000: return string(STR_EMPTY);
+	return string(STR_INDUSTRY_NOT_AVAILABLE_BEFORE);
+}
+
+// year < 1800: no creation
+switch(FEAT_INDUSTRIES, SELF, brick_works_switch_check_availability, current_year) {
+	0..1799: return CB_RESULT_IND_NO_CONSTRUCTION;               // no coal mines before 1800
+	return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+}
+
+// only show stockpile for COAL and nothing else
+switch(FEAT_INDUSTRIES, SELF, brick_works_switch_cargo_subtype, getbits(extra_callback_info2, 16, 8)) {
+	COAL: switch_cargo_subtype;
+	return 0x3800 + string(STR_EMPTY);
+}
+
+if (param_extension_building_materials) {
+
+item(FEAT_INDUSTRIES, brick_works, INDUSTRY_ID_BRICK_WORKS) {
+	property {
+		substitute: 0;
+		map_colour: 118;
+		life_type: IND_LIFE_TYPE_PROCESSING;
+		min_cargo_distr: 1;
+		layouts: [brick_works_tilelayout_1,brick_works_tilelayout_2,brick_works_tilelayout_3];
+		spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+		conflicting_ind_types: [];
+		random_sound_effects: [];
+		name: string(STR_IND_BRICK_WORKS);
+		prob_map_gen: 5;
+        prob_in_game: 1;
+        fund_cost_multiplier: 120;
+        remove_cost_multiplier: 0;
+        remove_cost_multiplier: 0;
+		cargo_types: [accept_cargo("COAL"),produce_cargo("BDMT",0)];
+		nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_BRICK_WORKS));
+	}
+        
+	graphics {
+		construction_probability: brick_works_switch_check_availability;
+		produce_cargo_arrival:    empty_produce; 
+		produce_256_ticks:        brick_works_switch_produce;
+		monthly_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
+		random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+		location_check:           brick_works_switch_location_check_industry_distance;
+		extra_text_fund:          brick_works_switch_extra_text_fund;
+		cargo_subtype_display:    brick_works_switch_cargo_subtype;
+	}
+}
+
+} // param_extension_building_materials

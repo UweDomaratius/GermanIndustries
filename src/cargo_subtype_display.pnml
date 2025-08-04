@@ -33,6 +33,13 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_iore,
 	return 0x3800 + string(STR_EMPTY);
 }
 
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_lime, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("LIME") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	LIME: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
 switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_lvst, 
 	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("LVST") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
 	 getbits(extra_callback_info2, 16, 8)]) {
@@ -51,6 +58,13 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_plas,
 	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("PLAS") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
 	 getbits(extra_callback_info2, 16, 8)]) {
 	PLAS: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_sand, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("SAND") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	SAND: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
 	return 0x3800 + string(STR_EMPTY);
 }
 
@@ -82,9 +96,11 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info,
 	FOOD: switch_cargo_subtype_display_info_food;
 	GRAI: switch_cargo_subtype_display_info_grai;
 	IORE: switch_cargo_subtype_display_info_iore;
+	LIME: switch_cargo_subtype_display_info_lime;
 	LVST: switch_cargo_subtype_display_info_lvst;
 	OIL_: switch_cargo_subtype_display_info_oil;
 	PLAS: switch_cargo_subtype_display_info_plas;	
+	SAND: switch_cargo_subtype_display_info_sand;
 	STEL: switch_cargo_subtype_display_info_stel;
 	WDPR: switch_cargo_subtype_display_info_wdpr;
 	WOOD: switch_cargo_subtype_display_info_wood;

@@ -530,7 +530,7 @@ item(FEAT_INDUSTRIES, power_plant, INDUSTRY_ID_POWER_PLANT) {
         monthly_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
         location_check:           power_plant_switch_location_check;
         extra_text_fund:          power_plant_switch_extra_text_fund;
-	extra_text_industry:      power_plant_switch_extra_text;
+        extra_text_industry:      power_plant_switch_extra_text;
         cargo_subtype_display:    power_plant_switch_cargo_subtype;
     }
 }
