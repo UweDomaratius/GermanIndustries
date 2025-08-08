@@ -37,7 +37,7 @@ version = "VERSION:"+version
 
 with open('custom_tags.txt', 'w') as file:
   file.write(version)
-  file.write("\nTITLE: German Industries")
+  file.write("\nTITLE :German Industries")
 
 # create the actual nml file by concatenating all inputs
 with open('build/german_industries.nml','wb') as output:

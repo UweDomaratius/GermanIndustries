@@ -15,6 +15,10 @@ STR_PARAM_ECONOMY_MODEL_SIMPLE :Einfache (konstante) Wirtschaft.
 STR_PARAM_ECONOMY_MODEL_REALISTIC :Realistische Wirtschaft
 STR_PARAM_ELECTRICITY_NEEDED :Industrien benötigen elektrische Energie.
 STR_PARAM_ELECTRICITY_NEEDED_DESC :Einige Industrien benötigen Strom um etwas produzieren zu können. Strom wird von Kraftwerken produziert, die wiederum beliefert werden müssen.
+STR_PARAM_EXT_BUILDING_MATERIALS :Erweiterung "Bauindustrie"
+STR_PARAM_EXT_BUILDING_MATERIALS_DESC :Fügt Frachten wie Kalkstein und Zement und passende Industrien hinzu.
+STR_PARAM_EXT_TEXTILE_INDUSTRIES :Erweiterung "Textilindustrie"
+STR_PARAM_EXT_TEXTILE_INDUSTRIES_DESC :Fügt Frachten wie Wolle und Textilien und passende Industrien hinzu.
 
 # Frachten
 STR_CARGO_NAME_BUILDING_MATERIALS :Ziegel
@@ -23,8 +27,10 @@ STR_CARGO_NAME_FISH               :Fisch
 STR_CARGO_NAME_LIMESTONE          :Kalkstein
 STR_CARGO_NAME_PLASTICS           :Kunststoffe
 STR_CARGO_NAME_SAND               :Sand
+STR_CARGO_NAME_TEXTILES           :Textilien
 STR_CARGO_NAME_TIMBER             :Schnittholz
 STR_CARGO_NAME_VEHICLES           :Fahrzeuge
+STR_CARGO_NAME_WOOL               :Wolle
 
 # lange Form der Frachtanzeige (x Einheiten Fracht)
 STR_QUANTITY_BUILDING_MATERIALS   :{WEIGHT} Ziegel
@@ -35,8 +41,10 @@ STR_QUANTITY_LIMESTONE            :{WEIGHT} Kalkstein
 STR_QUANTITY_OIL                  :{WEIGHT} Öl
 STR_QUANTITY_PLASTICS             :{WEIGHT} Kunststoffe
 STR_QUANTITY_SAND                 :{WEIGHT} Sand
+STR_QUANTITY_TEXTILES             :{WEIGHT} Textilien
 STR_QUANTITY_TIMBER               :{WEIGHT} Schnittholz
 STR_QUANTITY_VEHICLES             :{COMMA} Fahrzeug{P "" e}
+STR_QUANTITY_WOOL                 :{WEIGHT} Wolle
 
 # Industrien
 STR_IND_BRICK_WORKS          :{G=w}Ziegelei
@@ -51,6 +59,7 @@ STR_IND_INTEGRATED_STEEL_MILL:{G=n}Integriertes Stahlwerk
 STR_IND_LIMESTONE_MINE       :{G=n}Kalksteinbergwerk
 STR_IND_PORT                 :Hafen
 STR_IND_SANDPIT              :{G=w}Sandgrube
+STR_IND_TEXTILE_MILL         :{G=w}Textilfabrik
 STR_IND_VEHICLE_DISTRIBUTOR  :{G=n}Autohaus
 STR_IND_VEHICLE_FACTORY      :{G=w}Autofabrik
 
@@ -77,6 +86,7 @@ STR_STATION_PORT                 :Hafen
 STR_STATION_POWER_PLANT          :Kraftwerk
 STR_STATION_SANDPIT              :Sandgrube
 STR_STATION_SAWMILL              :Sägewerk
+STR_STATION_TEXTILE_MILL         :Textilfabrik
 STR_STATION_VEHICLE_DISTRIBUTOR  :Autohändler
 STR_STATION_VEHICLE_FACTORY      :Autofabrik
 
