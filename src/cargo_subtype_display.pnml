@@ -75,6 +75,13 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_stel,
 	return 0x3800 + string(STR_EMPTY);
 }
 
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_text, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("TEXT") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	TEXT: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
 switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_wdpr, 
 	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("WDPR") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
 	 getbits(extra_callback_info2, 16, 8)]) {
@@ -102,6 +109,7 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info,
 	PLAS: switch_cargo_subtype_display_info_plas;	
 	SAND: switch_cargo_subtype_display_info_sand;
 	STEL: switch_cargo_subtype_display_info_stel;
+	TEXT: switch_cargo_subtype_display_info_text;
 	WDPR: switch_cargo_subtype_display_info_wdpr;
 	WOOD: switch_cargo_subtype_display_info_wood;
 	return 0x3800 + string(STR_EMPTY);

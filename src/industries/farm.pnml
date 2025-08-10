@@ -511,9 +511,20 @@ switch(FEAT_INDUSTRIES, SELF, farm_switch_prod_change_build,
 	randomize_initial_production;
 }
 
-produce(farm_produce,
+produce(farm_produce_extension_textile_industry,
 	[],
 	[LVST: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);GRAI: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);WOOL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, farm_switch_produce_extension_textile_industry,
+	[init_primary_production()]) {
+	farm_produce_extension_textile_industry;
+}
+
+produce(farm_produce,
+	[],
+	[LVST: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);GRAI: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);],
 	0 // do not run again
 )
 
@@ -562,7 +573,7 @@ if (param_extension_textile_industries) {
 		graphics {
 			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
 			produce_cargo_arrival:    empty_produce; 
-			produce_256_ticks:        farm_switch_produce;
+			produce_256_ticks:        farm_switch_produce_extension_textile_industry;
 			monthly_prod_change:      farm_switch_prod_change;
 			random_prod_change:       farm_switch_prod_change;
 			build_prod_change:        farm_switch_prod_change_build;
