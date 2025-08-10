@@ -394,6 +394,7 @@ switch(FEAT_INDUSTRIES, SELF, food_processor_switch_location_check_industry_dist
 	   return CB_RESULT_LOCATION_DISALLOW;
 }
 
+// TODO: scale food production down to 50%?
 produce(food_processor_produce,
 	[LVST: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
 	 GRAI: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
