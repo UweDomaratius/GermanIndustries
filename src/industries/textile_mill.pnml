@@ -34,13 +34,6 @@ spritelayout textile_mill_spritelayout_1_anim {
 		hide_sprite: 0;
 		always_draw: 1;
 	}
-    childsprite {
-        sprite: textile_mill_spriteset_2(0);
-        recolour_mode: RECOLOUR_REMAP;
-        palette: PALETTE_USE_DEFAULT;
-        hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
-        always_draw: 1;
-    }
 	building {
 		sprite: TTD_FENCE_Y;
 		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
