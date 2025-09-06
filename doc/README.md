@@ -2,9 +2,9 @@
 
 ## Extensions
 
-The set contains 1 extensions as listed below.
+The set contains 2 extensions as listed below.
 
-### Building materials
+### Building industries
 
 This extension introduces several cargos and industries related to the creation of various building materials. 
 
@@ -25,9 +25,27 @@ This extension introduces several cargos and industries related to the creation 
 * [Sand pit](#sand-pit)
 
 
+### Textile industries
+
+This extension introduces several cargos and industries related to textile and clothing production. 
+
+#### Cargos
+
+* [Wool](#wool)
+* [Textiles](#textiles)
+
+
+#### Industries
+
+* [Farm](#farm)
+* [Textile Mill](#textile-mill)
+* [Clothing Plant](#clothing-plant)
+* [Furniture factory](#furniture-factory)
+
+
 ## Industries
 
-The set contains 25 industries as listed below.
+The set contains 29 industries as listed below.
 
 ### Brick works
 
@@ -37,7 +55,7 @@ The effective mass production of bricks began in the 19th century with the onset
 
 In the real world, bricks have been produced for millenia, often burning wood as source material for creating the required heat. In the set, the modern variant is present which uses coal instead of wood. 
 
-Part of extension: [Building materials](#building-materials)
+Part of extension: [Building industries](#building-industries)
 
 | Requires | Produces |
 | -- | -- |
@@ -59,7 +77,7 @@ The builders yard provides building supplies to a nearby town.
 
 The builders yard provides building supplies to a nearby town. When enabling the building materials extension, it accepts a greater variety of cargos. 
 
-Part of extension: [Building materials](#building-materials)
+Part of extension: [Building industries](#building-industries)
 
 | Requires | Produces |
 | -- | -- |
@@ -74,12 +92,24 @@ Part of extension: [Building materials](#building-materials)
 
 The first cement plants in Gemrany date back to the early 19th century. In the second half of the 19th century, the industry saw a lot of standardization in terms of production processes and quality requirements. Today, more than 50 plants operate in Germany, making it the largest producer in Europe. 
 
-Part of extension: [Building materials](#building-materials)
+Part of extension: [Building industries](#building-industries)
 
 | Requires | Produces |
 | -- | -- |
 | [Limestone](#limestone) | [Cement](#cement) |
 | [Sand](#sand) |  |
+
+### Clothing Plant
+
+<img src="clothing_plant.png" alt="Clothing Plant">
+
+The clothing plant is the place where textiles are turned into clothing by means of tailoring and sewing. Creating clothing has been common since the stone ages, when animal hides were used. Later on, more refined ways using plant fibres were invented, industrialization revolutionized the way how clothing was created cheaply. Historically, there was a rich history of clothing manufacturing in Europe, which has been replaced almost completely by cheaper Asian competitors, although high quality tailors still have their niche. 
+
+Part of extension: [Textile industries](#textile-industries)
+
+| Requires | Produces |
+| -- | -- |
+| [Textiles](#textiles) | [Goods](#goods) |
 
 ### Coal mine
 
@@ -111,12 +141,26 @@ The department store implements the concept of generic stores where you can buy 
 
 <img src="farm.png" alt="Farm">
 
-Farms are the main agricultural industry in the set, producing grain and livestock. Both are inputs for the food industry, but also for other branches like textile industry. 
+Farms are the main agricultural industry in the set, producing grain and livestock. Both are inputs for the food industry. 
 
 | Requires | Produces |
 | -- | -- |
 |  | [Grain](#grain) |
 |  | [Livestock](#livestock) |
+
+### Farm
+
+<img src="farm.png" alt="Farm">
+
+Farms are the main agricultural industry in the set, producing grain and livestock. Both are inputs for the food industry. When enabling the textile industry extension, they also produce wool as input for the textile creation. 
+
+Part of extension: [Textile industries](#textile-industries)
+
+| Requires | Produces |
+| -- | -- |
+|  | [Grain](#grain) |
+|  | [Livestock](#livestock) |
+|  | [Wool](#wool) |
 
 ### Fishing grounds
 
@@ -161,6 +205,22 @@ The furniture industry is quite big in Germany, with IKEA being the market leade
 | Requires | Produces |
 | -- | -- |
 | [Plastics](#plastics) | [Goods](#goods) |
+| [Timber](#timber) |  |
+
+### Furniture factory
+
+<img src="furniture_factory.png" alt="Furniture factory">
+
+The furniture industry is quite big in Germany, with IKEA being the market leader. They mostly require wooden materials and produce, for lack of a more fine-grained model, goods. When enabling the textile industry extension, they also required textiles for production. 
+
+Production starts with any of the required materials available. 
+
+Part of extension: [Textile industries](#textile-industries)
+
+| Requires | Produces |
+| -- | -- |
+| [Plastics](#plastics) | [Goods](#goods) |
+| [Textiles](#textiles) |  |
 | [Timber](#timber) |  |
 
 ### General store
@@ -217,7 +277,7 @@ Germany did ore mining until the middle of the 20th century, but generally speak
 
 Limestone mining dates back centuries in Germany. Nowadays, mining is typically done in quarries or with open pit mining. 
 
-Part of extension: [Building materials](#building-materials)
+Part of extension: [Building industries](#building-industries)
 
 | Requires | Produces |
 | -- | -- |
@@ -293,7 +353,7 @@ Power plants create electricity, typically by boiling water and using the result
 
 Sand is mined in open pits. Due to the geological processes that shaped the relief over millions of years, sand pits are mainly found in the plains of Northern Germany, but also near the Alps. 
 
-Part of extension: [Building materials](#building-materials)
+Part of extension: [Building industries](#building-industries)
 
 | Requires | Produces |
 | -- | -- |
@@ -308,6 +368,18 @@ Sawmills cut wood into normalized sizes and shapes, such that the resulting beam
 | Requires | Produces |
 | -- | -- |
 | [Wood](#wood) | [Timber](#timber) |
+
+### Textile Mill
+
+<img src="textile_mill.png" alt="Textile Mill">
+
+Textile mills are the representation of multiple real world industries that are focused on the creation of yarns and fabrics. This has been done since ancient times in household work before it became mechanized in the 18th and 19th century. In fact, looms were among the first mechanized items to be developed to improve production speed. In the set, this industry combines the steps of preparing cotton and synthetic fibres into yarn (spinning), and then turning them into textiles (e.g. by weaving) in a second step. The resulting textiles are then used by other industries to manufacture goods. 
+
+Part of extension: [Textile industries](#textile-industries)
+
+| Requires | Produces |
+| -- | -- |
+| [Wool](#wool) | [Textiles](#textiles) |
 
 ### Vehicle distributor
 
@@ -334,13 +406,13 @@ This restriction is also valid for funding the industry.
 
 ## Cargos
 
-The set contains 20 cargos as listed below.
+The set contains 22 cargos as listed below.
 
 ### Bricks
 
 Bricks have been used for all sorts of masonry construction since ancient times. With the onset of industrialization in the 19th century, demand arose for mass-produced cheap bricks to build factory buildings, bridges and many other structures. Even today, bricks are still relevant, although they cannot be used for skyscrapers for structural reasons. 
 
-Part of extension: [Building materials](#building-materials)
+Part of extension: [Building industries](#building-industries)
 
 Cargo classes: Piece goods
 | Produced by | Required by |
@@ -351,7 +423,7 @@ Cargo classes: Piece goods
 
 Cement is a key ingredient in the production of mortar and concrete, which are the most widely used material in existence and one of the most consumed resources in the world. Without it, none of the modern skyscrapers could be built. 
 
-Part of extension: [Building materials](#building-materials)
+Part of extension: [Building industries](#building-industries)
 
 Cargo classes: Bulk cargo, Covered, Powderized
 | Produced by | Required by |
@@ -407,8 +479,9 @@ In the game, Goods are an abstraction of basically anything that is produced in 
 Cargo classes: Express
 | Produced by | Required by |
 | -- | -- |
-| [Furniture factory](#furniture-factory) | [Department store](#department-store) |
-|  | [Port](#port) |
+| [Clothing Plant](#clothing-plant) | [Department store](#department-store) |
+| [Furniture factory](#furniture-factory) | [Port](#port) |
+| [Furniture factory](#furniture-factory) |  |
 
 ### Grain
 
@@ -418,6 +491,7 @@ Cargo classes: Bulk cargo
 | Produced by | Required by |
 | -- | -- |
 | [Farm](#farm) | [Food processor](#food-processor) |
+| [Farm](#farm) |  |
 
 ### Iron Ore
 
@@ -437,7 +511,7 @@ Cargo classes: Bulk cargo
 
 Limestone is a type of rock that is composed mainly of calcium carbonate. It is relevant for the production of cement, but can also be used as building material directly. Moreover, it has many uses as raw material in the chemical industry and is also essential in the production of steel and glass. 
 
-Part of extension: [Building materials](#building-materials)
+Part of extension: [Building industries](#building-industries)
 
 Cargo classes: Bulk cargo
 | Produced by | Required by |
@@ -452,6 +526,7 @@ Cargo classes: Piece goods
 | Produced by | Required by |
 | -- | -- |
 | [Farm](#farm) | [Food processor](#food-processor) |
+| [Farm](#farm) |  |
 
 ### Mail
 
@@ -496,12 +571,13 @@ Cargo classes: Bulk cargo, Piece goods
 | Produced by | Required by |
 | -- | -- |
 | [Oil refinery](#oil-refinery) | [Furniture factory](#furniture-factory) |
+|  | [Furniture factory](#furniture-factory) |
 
 ### Sand
 
 Sand is a granular material found all over the world. It mainly consists of silica in the form of particles of varying size. Sand is widely used in many industries, especially in the creation of bricks, mortar and concrete, but also as a source for silicon which has widespread uses in electronics. 
 
-Part of extension: [Building materials](#building-materials)
+Part of extension: [Building industries](#building-industries)
 
 Cargo classes: Bulk cargo
 | Produced by | Required by |
@@ -520,6 +596,18 @@ Cargo classes: Piece goods
 | -- | -- |
 | [Integrated steel mill](#integrated-steel-mill) | [Vehicle factory](#vehicle-factory) |
 
+### Textiles
+
+Textile is an umbrella term for various fiber-based materials such as yarns, threads and various types of fabric. Textiles are mainly used to produce clothing, but they also see use in producing furniture, curtains, carpets and other household items. Additionally, there are industrial textiles used to for e.g. car seatbelts or medical textiles for e.g. bandages, among many other uses. In the set, textiles are used as material for various goods-producing industries. 
+
+Part of extension: [Textile industries](#textile-industries)
+
+Cargo classes: Covered, Piece goods
+| Produced by | Required by |
+| -- | -- |
+| [Textile Mill](#textile-mill) | [Clothing Plant](#clothing-plant) |
+|  | [Furniture factory](#furniture-factory) |
+
 ### Timber
 
 Wood in the form of trees cannot be used directly, it has to be cut into various shapes and forms to be used as building material or for use in the industry, e.g. to create furniture. In the set, timber is encompassing all sorts of wood that has been processed for use in construction, i.e. cut into beams or planks. As such, it is transported from sawmills to builders yards in the cities. 
@@ -529,6 +617,7 @@ Cargo classes: Piece goods
 | -- | -- |
 | [Sawmill](#sawmill) | [Builders yard](#builders-yard) |
 |  | [Builders yard](#builders-yard) |
+|  | [Furniture factory](#furniture-factory) |
 |  | [Furniture factory](#furniture-factory) |
 
 ### Vehicles
@@ -553,4 +642,15 @@ Cargo classes: Piece goods
 | Produced by | Required by |
 | -- | -- |
 | [Forest](#forest) | [Sawmill](#sawmill) |
+
+### Wool
+
+Wool is a textile fiber obtained mainly from sheep and used to produces yarn, out of which textiles are produced. In the set, it is produced by farms and can be transported to textile mills. 
+
+Part of extension: [Textile industries](#textile-industries)
+
+Cargo classes: Covered, Piece goods
+| Produced by | Required by |
+| -- | -- |
+| [Farm](#farm) | [Textile Mill](#textile-mill) |
 

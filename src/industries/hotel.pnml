@@ -369,12 +369,12 @@ tilelayout hotel_tilelayout_single_tile_2 {
     0, 0: hotel_tile;
 }
 
-// todo: check against correct industries
 switch(FEAT_INDUSTRIES, SELF, hotel_switch_location_check_industry_distance,
-       [(//TODO
-	    
+       [(	    
 		(town_euclidean_dist(0,0) < 16) &&
 		(industry_distance(INDUSTRY_ID_GENERAL_STORE) >= 16) &&
+		(industry_distance(INDUSTRY_ID_OIL_RIG) >= 32) &&
+		(industry_distance(INDUSTRY_ID_FOOD_PROCESSOR) >= 32) &&
 		(industry_distance(INDUSTRY_ID_HOTEL) >= 16))]) {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;

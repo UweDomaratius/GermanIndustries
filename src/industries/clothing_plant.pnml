@@ -1,0 +1,389 @@
+spriteset(clothing_plant_spriteset_2) {
+    [10, 10, 64, 80, -31, -49, ANIM | NOCROP, "graphics/industries/assembly_plant.png"]
+}
+spriteset(clothing_plant_spriteset_3) {
+	[150, 10, 64, 80, -31, -49, ANIM | NOCROP, "graphics/industries/assembly_plant.png"]
+}
+spriteset(clothing_plant_spriteset_4) {
+	[220, 10, 64, 80, -31, -49, ANIM | NOCROP, "graphics/industries/assembly_plant.png"]
+}
+spriteset(clothing_plant_spriteset_5) {
+	[290, 10, 64, 80, -31, -49, ANIM | NOCROP, "graphics/industries/assembly_plant.png"]
+}
+spriteset(clothing_plant_spriteset_6) {
+	[360, 10, 64, 80, -31, -49, ANIM | NOCROP, "graphics/industries/assembly_plant.png"]
+}
+spriteset(clothing_plant_spriteset_7) {
+	[430, 10, 64, 80, -31, -49, ANIM | NOCROP, "graphics/industries/assembly_plant.png"]
+}
+spriteset(clothing_plant_spriteset_8) {
+	[500, 10, 64, 80, -31, -49, ANIM | NOCROP, "graphics/industries/assembly_plant.png"]
+}
+spriteset(clothing_plant_spriteset_9) {
+	[570, 10, 64, 80, -31, -49, ANIM | NOCROP, "graphics/industries/assembly_plant.png"]
+}
+spriteset(clothing_plant_spriteset_10) {
+	[640, 10, 64, 80, -31, -49, ANIM | NOCROP, "graphics/industries/assembly_plant.png"]
+}
+spriteset(clothing_plant_spriteset_11) {
+	[710, 10, 64, 80, -31, -49, ANIM | NOCROP, "graphics/industries/assembly_plant.png"]
+}
+spriteset(clothing_plant_spriteset_12) {
+	[640, 100, 64, 80, -31, -49, ANIM | NOCROP, "graphics/industries/assembly_plant.png"]
+}
+
+spritelayout clothing_plant_spritelayout_rear_assembly_hall_windows {
+	childsprite {
+		sprite: default_spriteset_ground_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: clothing_plant_spriteset_2(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout clothing_plant_spritelayout_central_assembly_hall {
+	childsprite {
+		sprite: default_spriteset_ground_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: clothing_plant_spriteset_3(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout clothing_plant_spritelayout_front_assembly_hall_windows {
+	childsprite {
+		sprite: default_spriteset_ground_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: clothing_plant_spriteset_4(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+			hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+			hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+
+spritelayout clothing_plant_spritelayout_offices {
+	childsprite {
+		sprite: default_spriteset_ground_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: clothing_plant_spriteset_8(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// graphics choice switch chain
+//////////////////////////////////////////////////////////////////////////////
+switch(FEAT_INDUSTRYTILES, SELF, clothing_plant_industry_layout_1, relative_pos) {
+	relative_coord(0, 0): clothing_plant_spritelayout_rear_assembly_hall_windows;
+	relative_coord(0, 1): clothing_plant_spritelayout_central_assembly_hall;
+	relative_coord(0, 2): clothing_plant_spritelayout_front_assembly_hall_windows;
+	relative_coord(1, 0): clothing_plant_spritelayout_offices;
+	relative_coord(1, 2): clothing_plant_spritelayout_offices;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, clothing_plant_industry_layout_2, relative_pos) {
+	relative_coord(0, 0): clothing_plant_spritelayout_rear_assembly_hall_windows;
+	relative_coord(0, 1): clothing_plant_spritelayout_central_assembly_hall;
+	relative_coord(0, 2): clothing_plant_spritelayout_central_assembly_hall;
+	relative_coord(0, 3): clothing_plant_spritelayout_front_assembly_hall_windows;
+	relative_coord(1, 1): clothing_plant_spritelayout_offices;
+	relative_coord(1, 2): clothing_plant_spritelayout_offices;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, clothing_plant_switch_graphics_layouts, layout_num) {
+    1: clothing_plant_industry_layout_1;
+    2: clothing_plant_industry_layout_2;
+    clothing_plant_industry_layout_1; // default
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, clothing_plant_switch_graphics_construction_state, construction_state) {
+    0..2: spritelayout_default_construction_states;
+    clothing_plant_switch_graphics_layouts; // default
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, clothing_plant_switch_graphics,
+	[switch_tile_fences(),
+	 switch_terrain_sprite(),switch_graphics_init_temp_registers()]) {
+    clothing_plant_switch_graphics_construction_state;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// location checks
+//////////////////////////////////////////////////////////////////////////////
+// This check works as follows: calculate height of the northernmost tile of the industry and add 0, 1 or 2 for flat, slope. steep slope
+// Do the same for the current tile and compare the results. If the result is equal, the terrain is effectively flat
+// and industry can be placed.
+// It just looks weird due to the stacked ternary operators needed here
+switch (FEAT_INDUSTRYTILES, SELF, clothing_plant_switch_tile_location_check2,
+			(nearby_tile_height(-relative_x, -relative_y) + 
+			(nearby_tile_slope(-relative_x, -relative_y)== SLOPE_FLAT ? 0 : nearby_tile_slope(-relative_x, -relative_y) == bitmask(IS_STEEP_SLOPE) ? 2 : 1)) 
+			== 
+			(nearby_tile_height(0, 0) + (nearby_tile_slope(0, 0) == SLOPE_FLAT ? 0 : nearby_tile_slope(0, 0) == bitmask(IS_STEEP_SLOPE) ? 2 : 1))
+			) {
+	1: return CB_RESULT_LOCATION_ALLOW;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, clothing_plant_switch_tile_location_check,
+	is_funded_or_prospected() || (not_next_to_industry() && not_next_to_buildings()))
+{
+	1: clothing_plant_switch_tile_location_check2;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// industry tile and layout definition
+//////////////////////////////////////////////////////////////////////////////
+item(FEAT_INDUSTRYTILES, clothing_plant_tile, INDUSTRY_TILE_ID_CLOTHING_PLANT) {
+	property {
+		substitute:         0;
+		land_shape_flags:   0;
+		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+	}
+	graphics {
+		tile_check: clothing_plant_switch_tile_location_check;
+		clothing_plant_switch_graphics;
+	}
+}
+
+tilelayout clothing_plant_tilelayout_1 {
+	0, 0: clothing_plant_tile;
+	0, 1: clothing_plant_tile;
+	0, 2: clothing_plant_tile;
+	1, 0: clothing_plant_tile;
+	1, 2: clothing_plant_tile;
+}
+tilelayout clothing_plant_tilelayout_2 {
+	0, 0: clothing_plant_tile;
+	0, 1: clothing_plant_tile;
+	0, 2: clothing_plant_tile;
+	0, 3: clothing_plant_tile;
+	1, 1: clothing_plant_tile;
+	1, 2: clothing_plant_tile;
+}
+
+switch(FEAT_INDUSTRIES, SELF, clothing_plant_switch_location_check_industry_distance,
+       [STORE_TEMP(0, TEMP_REGISTER_TOWN_MIN_DISTANCE),
+	    STORE_TEMP(16, TEMP_REGISTER_TOWN_MAX_DISTANCE),
+	    (distance_from_town() && 
+		(industry_distance(INDUSTRY_ID_CLOTHING_PLANT) >= 16) && 
+		(industry_distance(INDUSTRY_ID_DEPARTMENT_STORE) >= 32) && 
+		(industry_distance(INDUSTRY_ID_PORT) >= 32) && 
+	    (industry_distance(INDUSTRY_ID_TEXTILE_MILL) >= 32))]) {
+	   1: return CB_RESULT_LOCATION_ALLOW;
+	   return CB_RESULT_LOCATION_DISALLOW;
+}
+
+produce(clothing_plant_produce,
+	[TEXT: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
+	[GOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, clothing_plant_switch_produce, 
+	[STORE_TEMP(incoming_cargo_waiting("TEXT"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0), TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT),
+	 STORE_TEMP(((LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) / 10) > 8) ? LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) / 10 : 
+	 (LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) > 8 ? 8 : LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT)),TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 ((LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0) > LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1)) ? 1 : 0)])
+	{
+	clothing_plant_produce;	
+}
+
+switch(FEAT_INDUSTRIES, SELF, clothing_plant_switch_cargo_subtype, getbits(extra_callback_info2, 16, 8)) {
+	TEXT: switch_cargo_subtype;
+	return 0x3800 + string(STR_EMPTY);
+}
+
+if (param_extension_textile_industries) {
+	item(FEAT_INDUSTRIES, clothing_plant, INDUSTRY_ID_CLOTHING_PLANT) {
+		property {
+			substitute: 0;
+			map_colour: 74;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [clothing_plant_tilelayout_1, clothing_plant_tilelayout_2];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_CLOTHING_PLANT);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 120;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("TEXT"),produce_cargo("GOOD",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_CLOTHING_PLANT));
+		}
+			
+		graphics {
+			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        clothing_plant_switch_produce;
+			monthly_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           clothing_plant_switch_location_check_industry_distance;
+			extra_text_fund:          return string(STR_EMPTY);
+			//extra_text_industry:    clothing_plant_switch_extra_text;
+			cargo_subtype_display:    clothing_plant_switch_cargo_subtype;
+		}
+	}
+}
+    

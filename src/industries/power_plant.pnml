@@ -399,8 +399,11 @@ switch(FEAT_INDUSTRIES, SELF, power_plant_switch_location_check,
     is_industry_funded_or_prospected() ||
 	(industry_town_count(INDUSTRY_ID_POWER_PLANT) == 0 &&
 	water_distance < 5 && // power plants require water (steam generation!)
-	((industry_distance(INDUSTRY_ID_POWER_PLANT) >= 16) && 
-	 (industry_distance(INDUSTRY_ID_COAL_MINE) >= 32)))) { // TODO: check for distance to harbor, ...
+	((industry_distance(INDUSTRY_ID_POWER_PLANT) >= 16) &&
+	 (industry_distance(INDUSTRY_ID_PORT) >= 32) &&
+	 (industry_distance(INDUSTRY_ID_OIL_RIG) >= 32) &&
+	 (industry_distance(INDUSTRY_ID_OIL_WELL) >= 32) &&
+	 (industry_distance(INDUSTRY_ID_COAL_MINE) >= 32)))) {
 	1: return CB_RESULT_LOCATION_ALLOW;
 	return CB_RESULT_LOCATION_DISALLOW;
 }

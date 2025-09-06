@@ -4994,9 +4994,9 @@ tilelayout forest_layout_4_tilelayout {
 
 switch(FEAT_INDUSTRIES, SELF, forest_switch_location_check_industry_distance,
        (industry_distance(INDUSTRY_ID_FOREST) >= 16) 
-	   //&& (industry_distance(INDUSTRY_ID_SAW_MILL) >= 32)
+	   && (industry_distance(INDUSTRY_ID_SAWMILL) >= 32)
 		) 
-{ // TODO: check for distance to paper mill, ...
+{
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;
 }

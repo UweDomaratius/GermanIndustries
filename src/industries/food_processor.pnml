@@ -389,6 +389,8 @@ switch(FEAT_INDUSTRIES, SELF, food_processor_switch_location_check_industry_dist
 	    (distance_from_town() && 
 	    (industry_distance(INDUSTRY_ID_FARM) >= 32) && 
 		(industry_distance(INDUSTRY_ID_FISHING_GROUNDS) >= 32) && 
+		(industry_distance(INDUSTRY_ID_HOTEL) >= 32) && 
+		(industry_distance(INDUSTRY_ID_GENERAL_STORE) >= 32) && 
 	    (industry_distance(INDUSTRY_ID_FOOD_PROCESSOR) >= 16))]) {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;

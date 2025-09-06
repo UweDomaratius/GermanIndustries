@@ -536,7 +536,6 @@ tilelayout brick_works_tilelayout_3 {
 
 }
 
-// TODO: check correct industries
 switch(FEAT_INDUSTRIES, SELF, brick_works_switch_location_check_industry_distance,
 	[STORE_TEMP(32, TEMP_REGISTER_TOWN_MIN_DISTANCE),
 	 STORE_TEMP(64, TEMP_REGISTER_TOWN_MAX_DISTANCE),
