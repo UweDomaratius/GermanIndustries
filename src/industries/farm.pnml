@@ -478,6 +478,7 @@ tilelayout farm_industry_layout_3_tilelayout {
 switch(FEAT_INDUSTRIES, SELF, farm_switch_location_check_industry_distance,
 	   (industry_distance(INDUSTRY_ID_FARM) >= 16) &&
 	   (industry_distance(INDUSTRY_ID_FOOD_PROCESSOR) >= 32) &&
+	   (industry_distance(INDUSTRY_ID_TEXTILE_MILL) >= 32) &&
 	   (town_euclidean_dist(0,0) > 32) // should not be near towns
 	   ) 
 {
@@ -511,6 +512,17 @@ switch(FEAT_INDUSTRIES, SELF, farm_switch_prod_change_build,
 	randomize_initial_production;
 }
 
+produce(farm_produce_extension_textile_industry,
+	[],
+	[LVST: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);GRAI: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);WOOL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, farm_switch_produce_extension_textile_industry,
+	[init_primary_production()]) {
+	farm_produce_extension_textile_industry;
+}
+
 produce(farm_produce,
 	[],
 	[LVST: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);GRAI: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);],
@@ -537,38 +549,75 @@ switch(FEAT_INDUSTRIES, SELF, farm_switch_extra_text,
 	]) {
 	return string(STR_ORGANIC_INDUSTRY_TEXT);
 }
-
-item(FEAT_INDUSTRIES, farm, INDUSTRY_ID_FARM) {
-	property {
-		substitute: 0;
-		map_colour: 0x30;
-		life_type: IND_LIFE_TYPE_ORGANIC;
-		min_cargo_distr: 1;
-		layouts: [farm_industry_layout_1_tilelayout,farm_industry_layout_2_tilelayout,farm_industry_layout_3_tilelayout];
-		spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_PLANT_FIELDS_PERIODICALLY,IND_FLAG_PLANT_FIELDS_WHEN_BUILT);
-		conflicting_ind_types: [];
-		random_sound_effects: [];
-		name: TTD_STR_INDUSTRY_NAME_FARM;
-		prob_map_gen: 10;
-		prob_in_game: 10;
-		prospect_chance: 0.75;
-		fund_cost_multiplier: 8;
-		remove_cost_multiplier: 0;
-		remove_cost_multiplier: 0;
-		cargo_types: [produce_cargo("LVST",0), produce_cargo("GRAI",0)];
-		nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FARM));
+if (param_extension_textile_industries) {
+	item(FEAT_INDUSTRIES, farm, INDUSTRY_ID_FARM) {
+		property {
+			substitute: 0;
+			map_colour: 0x30;
+			life_type: IND_LIFE_TYPE_ORGANIC;
+			min_cargo_distr: 1;
+			layouts: [farm_industry_layout_1_tilelayout,farm_industry_layout_2_tilelayout,farm_industry_layout_3_tilelayout];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_PLANT_FIELDS_PERIODICALLY,IND_FLAG_PLANT_FIELDS_WHEN_BUILT);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: TTD_STR_INDUSTRY_NAME_FARM;
+			prob_map_gen: 10;
+			prob_in_game: 10;
+			prospect_chance: 0.75;
+			fund_cost_multiplier: 8;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [produce_cargo("LVST",0), produce_cargo("GRAI",0), produce_cargo("WOOL",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FARM));
+		}
+	
+		graphics {
+			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        farm_switch_produce_extension_textile_industry;
+			monthly_prod_change:      farm_switch_prod_change;
+			random_prod_change:       farm_switch_prod_change;
+			build_prod_change:        farm_switch_prod_change_build;
+			location_check:           farm_switch_location_check_industry_distance;
+			extra_text_fund:          return string(STR_EMPTY);
+			extra_text_industry:      farm_switch_extra_text;
+		}
 	}
-
-	graphics {
-		construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
-		produce_cargo_arrival:    empty_produce; 
-		produce_256_ticks:        farm_switch_produce;
-		monthly_prod_change:      farm_switch_prod_change;
-		random_prod_change:       farm_switch_prod_change;
-		build_prod_change:        farm_switch_prod_change_build;
-		location_check:           farm_switch_location_check_industry_distance;
-		extra_text_fund:          return string(STR_EMPTY);
-		extra_text_industry:      farm_switch_extra_text;
+}
+if (!param_extension_textile_industries) {
+	// default farm
+	item(FEAT_INDUSTRIES, farm, INDUSTRY_ID_FARM) {
+		property {
+			substitute: 0;
+			map_colour: 0x30;
+			life_type: IND_LIFE_TYPE_ORGANIC;
+			min_cargo_distr: 1;
+			layouts: [farm_industry_layout_1_tilelayout,farm_industry_layout_2_tilelayout,farm_industry_layout_3_tilelayout];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_PLANT_FIELDS_PERIODICALLY,IND_FLAG_PLANT_FIELDS_WHEN_BUILT);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: TTD_STR_INDUSTRY_NAME_FARM;
+			prob_map_gen: 10;
+			prob_in_game: 10;
+			prospect_chance: 0.75;
+			fund_cost_multiplier: 8;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [produce_cargo("LVST",0), produce_cargo("GRAI",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FARM));
+		}
+	
+		graphics {
+			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        farm_switch_produce;
+			monthly_prod_change:      farm_switch_prod_change;
+			random_prod_change:       farm_switch_prod_change;
+			build_prod_change:        farm_switch_prod_change_build;
+			location_check:           farm_switch_location_check_industry_distance;
+			extra_text_fund:          return string(STR_EMPTY);
+			extra_text_industry:      farm_switch_extra_text;
+		}
 	}
 }
     

@@ -108,9 +108,8 @@ tilelayout general_store_tilelayout {
 	0, 0: general_store_tile;
 }
 
-// todo: check against correct industries
 switch(FEAT_INDUSTRIES, SELF, general_store_switch_location_check_industry_distance,
-       [(//TODO
+       [(
 	    (industry_distance(INDUSTRY_ID_FOOD_PROCESSOR) >= 32) &&
 		(industry_distance(INDUSTRY_ID_DEPARTMENT_STORE) >= 16) &&
 	    (industry_distance(INDUSTRY_ID_GENERAL_STORE) >= 16))]) {

@@ -362,6 +362,7 @@ switch(FEAT_INDUSTRIES, SELF, oil_rig_switch_location_check_industry_distance,
         (is_near_map_edge(32) && 
 	    (industry_distance(INDUSTRY_ID_OIL_RIG) >= 16) && 
 	    (industry_distance(INDUSTRY_ID_OIL_REFINERY) >= 32) &&
+		(industry_distance(INDUSTRY_ID_HOTEL) >= 32) &&
 		(industry_distance(INDUSTRY_ID_POWER_PLANT) >= 32)
 		)) {
 	   1: return CB_RESULT_LOCATION_ALLOW;

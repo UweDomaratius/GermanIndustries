@@ -1,0 +1,749 @@
+spriteset(textile_mill_spriteset_2) {
+	[10, 60, 64, 103, -31, -74, ANIM | NOCROP, "graphics/industries/textile_mill.png"]
+}
+spriteset(textile_mill_spriteset_2_snow) {
+	[10, 60, 64, 103, -31, -74, ANIM | NOCROP, "graphics/industries/textile_mill_snow.png"]
+}
+spriteset(textile_mill_spriteset_3) {
+	[80, 60, 64, 103, -31, -72, ANIM | NOCROP, "graphics/industries/textile_mill.png"]
+}
+spriteset(textile_mill_spriteset_3_snow) {
+	[80, 60, 64, 103, -31, -72, ANIM | NOCROP, "graphics/industries/textile_mill_snow.png"]
+}
+spriteset(textile_mill_spriteset_4) {
+	[150, 60, 64, 103, -31, -72, ANIM | NOCROP, "graphics/industries/textile_mill.png"]
+}
+spriteset(textile_mill_spriteset_4_snow) {
+	[150, 60, 64, 103, -31, -72, ANIM | NOCROP, "graphics/industries/textile_mill_snow.png"]
+}
+spriteset(textile_mill_spriteset_5) {
+	[220, 60, 64, 103, -31, -72, ANIM | NOCROP, "graphics/industries/textile_mill.png"]
+}
+spriteset(textile_mill_spriteset_5_snow) {
+	[220, 60, 64, 103, -31, -72, ANIM | NOCROP, "graphics/industries/textile_mill_snow.png"]
+}
+spriteset(textile_mill_spriteset_6) {
+	[290, 60, 64, 103, -31, -72, ANIM | NOCROP, "graphics/industries/textile_mill.png"]
+}
+spriteset(textile_mill_spriteset_6_snow) {
+	[290, 60, 64, 103, -31, -72, ANIM | NOCROP, "graphics/industries/textile_mill_snow.png"]
+}
+spritelayout textile_mill_spritelayout_1_anim {
+	childsprite {
+		sprite: default_spriteset_ground_cobblestones;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+    building {
+        sprite: textile_mill_spriteset_2(0);
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+        xoffset: 0;
+        yoffset: 0;
+        zoffset: 0;
+        xextent: 16;
+        yextent: 16;
+        zextent: 32;
+        always_draw: 0;
+        hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+    }
+    building {
+        sprite: textile_mill_spriteset_2_snow(0);
+        recolour_mode: RECOLOUR_REMAP;
+        palette: PALETTE_USE_DEFAULT;
+        xoffset: 0;
+        yoffset: 0;
+        zoffset: 0;
+        xextent: 16;
+        yextent: 16;
+        zextent: 32;
+        always_draw: 0;
+        hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+    }
+	building {
+		sprite: TTD_SMOKE_SPRITE_WHITE_BIG + (animation_frame%8);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 9;
+		zoffset: 78;
+		xextent: 15;
+		yextent: 7;
+		zextent: 7;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout textile_mill_spritelayout_2 {
+	childsprite {
+		sprite: default_spriteset_ground_cobblestones;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: textile_mill_spriteset_3(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: textile_mill_spriteset_3_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout textile_mill_spritelayout_3 {
+	childsprite {
+		sprite: default_spriteset_ground_cobblestones;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: textile_mill_spriteset_4(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: textile_mill_spriteset_4_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout textile_mill_spritelayout_4 {
+	childsprite {
+		sprite: default_spriteset_ground_cobblestones;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: textile_mill_spriteset_5(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: textile_mill_spriteset_5_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout textile_mill_spritelayout_5 {
+	childsprite {
+		sprite: default_spriteset_ground_cobblestones;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: textile_mill_spriteset_6(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: textile_mill_spriteset_6_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout textile_mill_spritelayout_6 {
+	childsprite {
+		sprite: default_spriteset_ground_cobblestones;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// graphics choice switch chain
+//////////////////////////////////////////////////////////////////////////////
+
+switch(FEAT_INDUSTRYTILES, SELF, textile_mill_switch_graphics_layout_1, relative_pos) {
+	relative_coord(0, 0): textile_mill_spritelayout_3;
+	relative_coord(0, 1): textile_mill_spritelayout_1_anim;
+	relative_coord(1, 0): textile_mill_spritelayout_2;
+	relative_coord(1, 1): textile_mill_spritelayout_5;
+	relative_coord(2, 0): textile_mill_spritelayout_3;
+	relative_coord(2, 1): textile_mill_spritelayout_3;
+	relative_coord(3, 0): textile_mill_spritelayout_2;
+	relative_coord(3, 1): textile_mill_spritelayout_2;
+	relative_coord(4, 0): textile_mill_spritelayout_5;
+	relative_coord(4, 1): textile_mill_spritelayout_4;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, textile_mill_switch_graphics_layout_2, relative_pos) {
+	relative_coord(0, 0): textile_mill_spritelayout_3;
+	relative_coord(0, 1): textile_mill_spritelayout_4;
+	relative_coord(0, 2): textile_mill_spritelayout_1_anim;
+	relative_coord(1, 0): textile_mill_spritelayout_2;
+	relative_coord(1, 1): textile_mill_spritelayout_6;
+	relative_coord(1, 2): textile_mill_spritelayout_5;
+	relative_coord(2, 0): textile_mill_spritelayout_5;
+	relative_coord(2, 1): textile_mill_spritelayout_6;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, textile_mill_switch_graphics_layout_3, relative_pos) {
+	relative_coord(0, 0): textile_mill_spritelayout_3;
+	relative_coord(0, 1): textile_mill_spritelayout_5;
+	relative_coord(1, 0): textile_mill_spritelayout_2;
+	relative_coord(1, 1): textile_mill_spritelayout_4;
+	relative_coord(2, 0): textile_mill_spritelayout_1_anim;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, textile_mill_switch_graphics_layout_4, relative_pos) {
+	relative_coord(0, 0): textile_mill_spritelayout_3;
+	relative_coord(0, 1): textile_mill_spritelayout_3;
+	relative_coord(1, 0): textile_mill_spritelayout_2;
+	relative_coord(1, 1): textile_mill_spritelayout_2;
+	relative_coord(2, 0): textile_mill_spritelayout_5;
+	relative_coord(2, 1): textile_mill_spritelayout_4;
+	relative_coord(3, 0): textile_mill_spritelayout_3;
+	relative_coord(3, 1): textile_mill_spritelayout_5;
+	relative_coord(4, 0): textile_mill_spritelayout_2;
+	relative_coord(4, 1): textile_mill_spritelayout_1_anim;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, textile_mill_switch_graphics_layout_5, relative_pos) {
+	relative_coord(0, 0): textile_mill_spritelayout_3;
+	relative_coord(0, 1): textile_mill_spritelayout_3;
+	relative_coord(0, 2): textile_mill_spritelayout_5;
+	relative_coord(0, 3): textile_mill_spritelayout_5;
+	relative_coord(1, 0): textile_mill_spritelayout_2;
+	relative_coord(1, 1): textile_mill_spritelayout_2;
+	relative_coord(1, 2): textile_mill_spritelayout_4;
+	relative_coord(1, 3): textile_mill_spritelayout_1_anim;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, textile_mill_switch_graphics_layout_6, relative_pos) {
+	relative_coord(0, 0): textile_mill_spritelayout_5;
+	relative_coord(0, 1): textile_mill_spritelayout_3;
+	relative_coord(0, 2): textile_mill_spritelayout_3;
+	relative_coord(1, 0): textile_mill_spritelayout_5;
+	relative_coord(1, 1): textile_mill_spritelayout_2;
+	relative_coord(1, 2): textile_mill_spritelayout_2;
+	relative_coord(2, 0): textile_mill_spritelayout_5;
+	relative_coord(2, 1): textile_mill_spritelayout_1_anim;
+	relative_coord(2, 2): textile_mill_spritelayout_4;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, PARENT, textile_mill_switch_graphics_layouts, layout_num) {
+	1: textile_mill_switch_graphics_layout_1;
+	2: textile_mill_switch_graphics_layout_2;
+	3: textile_mill_switch_graphics_layout_3;
+	4: textile_mill_switch_graphics_layout_4;
+	5: textile_mill_switch_graphics_layout_5;
+	6: textile_mill_switch_graphics_layout_6;
+	textile_mill_switch_graphics_layout_1; // default
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, textile_mill_switch_graphics_construction_state, construction_state) {
+    0..2: spritelayout_default_construction_states;
+    textile_mill_switch_graphics_layouts; // default
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, textile_mill_switch_graphics,
+	[switch_tile_fences(),
+	 switch_terrain_sprite(),switch_graphics_init_temp_registers()]) {
+    textile_mill_switch_graphics_construction_state;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// location checks
+//////////////////////////////////////////////////////////////////////////////
+// This check works as follows: calculate height of the northernmost tile of the industry and add 0, 1 or 2 for flat, slope. steep slope
+// Do the same for the current tile and compare the results. If the result is equal, the terrain is effectively flat
+// and industry can be placed.
+// It just looks weird due to the stacked ternary operators needed here
+switch (FEAT_INDUSTRYTILES, SELF, textile_mill_switch_tile_location_check2,
+			(nearby_tile_height(-relative_x, -relative_y) + 
+			(nearby_tile_slope(-relative_x, -relative_y)== SLOPE_FLAT ? 0 : nearby_tile_slope(-relative_x, -relative_y) == bitmask(IS_STEEP_SLOPE) ? 2 : 1)) 
+			== 
+			(nearby_tile_height(0, 0) + (nearby_tile_slope(0, 0) == SLOPE_FLAT ? 0 : nearby_tile_slope(0, 0) == bitmask(IS_STEEP_SLOPE) ? 2 : 1))
+			) {
+	1: return CB_RESULT_LOCATION_ALLOW;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, textile_mill_switch_tile_location_check,
+	is_funded_or_prospected() || (not_next_to_industry() && not_next_to_buildings()))
+{
+	1: textile_mill_switch_tile_location_check2;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// industry tile and layout definition
+//////////////////////////////////////////////////////////////////////////////
+item(FEAT_INDUSTRYTILES, textile_mill_tile, INDUSTRY_TILE_ID_TEXTILE_MILL) {
+	property {
+		substitute:         0;
+		land_shape_flags:   0;
+		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+		animation_info: [ANIMATION_LOOPING, 7];
+		animation_speed: 3;
+		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
+	}
+	graphics {
+		tile_check: textile_mill_switch_tile_location_check;
+		textile_mill_switch_graphics;
+	}
+}
+
+tilelayout textile_mill_tilelayout_1 {
+	0, 0: textile_mill_tile;
+	0, 1: textile_mill_tile;
+	1, 0: textile_mill_tile;
+	1, 1: textile_mill_tile;
+	2, 0: textile_mill_tile;
+	2, 1: textile_mill_tile;
+	3, 0: textile_mill_tile;
+	3, 1: textile_mill_tile;
+	4, 0: textile_mill_tile;
+	4, 1: textile_mill_tile;
+}
+tilelayout textile_mill_tilelayout_2 {
+	0, 0: textile_mill_tile;
+	0, 1: textile_mill_tile;
+	0, 2: textile_mill_tile;
+	1, 0: textile_mill_tile;
+	1, 1: textile_mill_tile;
+	1, 2: textile_mill_tile;
+	2, 0: textile_mill_tile;
+	2, 1: textile_mill_tile;
+}
+tilelayout textile_mill_tilelayout_3 {
+	0, 0: textile_mill_tile;
+	0, 1: textile_mill_tile;
+	1, 0: textile_mill_tile;
+	1, 1: textile_mill_tile;
+	2, 0: textile_mill_tile;
+}
+tilelayout textile_mill_tilelayout_4 {
+	0, 0: textile_mill_tile;
+	0, 1: textile_mill_tile;
+	1, 0: textile_mill_tile;
+	1, 1: textile_mill_tile;
+	2, 0: textile_mill_tile;
+	2, 1: textile_mill_tile;
+	3, 0: textile_mill_tile;
+	3, 1: textile_mill_tile;
+	4, 0: textile_mill_tile;
+	4, 1: textile_mill_tile;
+}
+tilelayout textile_mill_tilelayout_5 {
+	0, 0: textile_mill_tile;
+	0, 1: textile_mill_tile;
+	0, 2: textile_mill_tile;
+	0, 3: textile_mill_tile;
+	1, 0: textile_mill_tile;
+	1, 1: textile_mill_tile;
+	1, 2: textile_mill_tile;
+	1, 3: textile_mill_tile;
+}
+tilelayout textile_mill_tilelayout_6 {
+	0, 0: textile_mill_tile;
+	0, 1: textile_mill_tile;
+	0, 2: textile_mill_tile;
+	1, 0: textile_mill_tile;
+	1, 1: textile_mill_tile;
+	1, 2: textile_mill_tile;
+	2, 0: textile_mill_tile;
+	2, 1: textile_mill_tile;
+	2, 2: textile_mill_tile;
+}
+
+switch(FEAT_INDUSTRIES, SELF, textile_mill_switch_location_check_industry_distance,
+       [STORE_TEMP(0, TEMP_REGISTER_TOWN_MIN_DISTANCE),
+	    STORE_TEMP(16, TEMP_REGISTER_TOWN_MAX_DISTANCE),
+	    (distance_from_town() && 
+	    (industry_distance(INDUSTRY_ID_FARM) >= 32) && 
+		(industry_distance(INDUSTRY_ID_CLOTHING_PLANT) >= 32) && 
+		(industry_distance(INDUSTRY_ID_OIL_REFINERY) >= 32) &&
+		(industry_distance(INDUSTRY_ID_FURNITURE_FACTORY) >= 32) &&
+	    (industry_distance(INDUSTRY_ID_TEXTILE_MILL) >= 16))]) {
+	   1: return CB_RESULT_LOCATION_ALLOW;
+	   return CB_RESULT_LOCATION_DISALLOW;
+}
+
+produce(textile_mill_produce,
+	[WOOL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 PLAS: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);],
+	[TEXT: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100;],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, textile_mill_switch_produce_wool,
+	[
+		STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)), TEMP_REGISTER_PRODUCTION_RAW0),
+		STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1),max(0,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)-LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0))), TEMP_REGISTER_PRODUCTION_RAW1),
+	]
+)
+{
+	textile_mill_produce;
+}
+
+switch(FEAT_INDUSTRIES, SELF, textile_mill_switch_produce_plas,
+	[
+		STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)), TEMP_REGISTER_PRODUCTION_RAW1),
+		STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0),max(0,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)-LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1))), TEMP_REGISTER_PRODUCTION_RAW0),
+	]
+)
+{
+	textile_mill_produce;
+}
+
+switch(FEAT_INDUSTRIES, SELF, textile_mill_switch_produce, 
+	[STORE_TEMP(incoming_cargo_waiting("WOOL"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 STORE_TEMP(incoming_cargo_waiting("PLAS"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1) > 0 ? LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) + 1 : LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS), TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 2 ? 90 : 50, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0)+LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1), TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT),
+	 STORE_TEMP(((LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) / 10) > 8) ? LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) / 10 : 
+	 (LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) > 8 ? 8 : LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT)),TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 ((LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0) > LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1)) ? 1 : 0)])
+	{
+	1: textile_mill_switch_produce_wool;
+	textile_mill_switch_produce_plas;	
+}
+
+switch(FEAT_INDUSTRIES, SELF, textile_mill_switch_cargo_subtype, getbits(extra_callback_info2, 16, 8)) {
+	WOOL: switch_cargo_subtype;
+	PLAS: switch_cargo_subtype;
+	return 0x3800 + string(STR_EMPTY);
+}
+
+if (param_extension_textile_industries) {
+	item(FEAT_INDUSTRIES, textile_mill, INDUSTRY_ID_TEXTILE_MILL) {
+		property {
+			substitute: 0;
+			map_colour: 76;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [textile_mill_tilelayout_1, textile_mill_tilelayout_2, textile_mill_tilelayout_3, textile_mill_tilelayout_4, textile_mill_tilelayout_5, textile_mill_tilelayout_6];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_TEXTILE_MILL);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 120;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("PLAS"),accept_cargo("WOOL"),produce_cargo("TEXT",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_TEXTILE_MILL));
+		}
+			
+		graphics {
+			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        textile_mill_switch_produce;
+			monthly_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           textile_mill_switch_location_check_industry_distance;
+			extra_text_fund:          return string(STR_EMPTY);
+			//extra_text_industry:    textile_mill_switch_extra_text;
+			cargo_subtype_display:    textile_mill_switch_cargo_subtype;
+		}
+	}
+}
+    

@@ -953,7 +953,6 @@ tilelayout cement_plant_tilelayout_5 {
 	6, 2: cement_plant_tile;
 }
 
-// TODO: check correct industries
 switch(FEAT_INDUSTRIES, SELF, cement_plant_switch_location_check_industry_distance,
 	[STORE_TEMP(32, TEMP_REGISTER_TOWN_MIN_DISTANCE),
 	 STORE_TEMP(64, TEMP_REGISTER_TOWN_MAX_DISTANCE),

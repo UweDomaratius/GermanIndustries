@@ -1342,18 +1342,24 @@ tilelayout port_tilelayout_5 {
 	5, 3: 255;
 }
 
-// TODO: port should be near cities
 switch(FEAT_INDUSTRIES, SELF, port_switch_location_check_industry_distance,
-    [STORE_TEMP(32, TEMP_REGISTER_TOWN_MIN_DISTANCE),
-	 STORE_TEMP(128, TEMP_REGISTER_TOWN_MAX_DISTANCE),
+    [STORE_TEMP(16, TEMP_REGISTER_TOWN_MIN_DISTANCE),
+	 STORE_TEMP(64, TEMP_REGISTER_TOWN_MAX_DISTANCE),
 	   (distance_from_town() && 
 	   (is_near_map_edge(32)) &&
 	   (industry_distance(INDUSTRY_ID_OIL_WELL) >= 32) && 
 	   (industry_distance(INDUSTRY_ID_OIL_RIG) >= 32) &&
 	   (industry_distance(INDUSTRY_ID_COAL_MINE) >= 32) &&
 	   (industry_distance(INDUSTRY_ID_IRON_ORE_MINE) >= 32) &&
+	   (industry_distance(INDUSTRY_ID_OIL_REFINERY) >= 32) &&
+	   (industry_distance(INDUSTRY_ID_BRICK_WORKS) >= 32) &&
+	   (industry_distance(INDUSTRY_ID_POWER_PLANT) >= 32) &&
+	   (industry_distance(INDUSTRY_ID_INTEGRATED_STEEL_MILL) >= 32) &&
+	   (industry_distance(INDUSTRY_ID_VEHICLE_FACTORY) >= 32) &&
+	   (industry_distance(INDUSTRY_ID_CLOTHING_PLANT) >= 32) &&
+	   (industry_distance(INDUSTRY_ID_FURNITURE_FACTORY) >= 32) &&
 	   (industry_distance(INDUSTRY_ID_PORT) >= 16))])
-{ // TODO: check for distance of correct industries, ...
+{
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;
 }

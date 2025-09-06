@@ -80,10 +80,10 @@ tilelayout department_store_tilelayout {
 	0, 0: department_store_tile;
 }
 
-// todo: check against correct industries
 switch(FEAT_INDUSTRIES, SELF, department_store_switch_location_check_industry_distance,
-       [(//TODO
+       [(
 	    (industry_distance(INDUSTRY_ID_FURNITURE_FACTORY) >= 32) &&
+		(industry_distance(INDUSTRY_ID_CLOTHING_PLANT) >= 32) &&
 	    (industry_distance(INDUSTRY_ID_GENERAL_STORE) >= 16) &&
 		(industry_distance(INDUSTRY_ID_DEPARTMENT_STORE) >= 16))]) {
 	   1: return CB_RESULT_LOCATION_ALLOW;

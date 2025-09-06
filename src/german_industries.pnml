@@ -43,6 +43,13 @@ grf {
 			desc: string(STR_PARAM_EXT_BUILDING_MATERIALS_DESC);
 		}
 	}
+	param {
+		param_extension_textile_industries {
+			type: bool;
+			name: string(STR_PARAM_EXT_TEXTILE_INDUSTRIES);
+			desc: string(STR_PARAM_EXT_TEXTILE_INDUSTRIES_DESC);
+		}
+	}
 }
 
 if (ttd_platform != PLATFORM_OPENTTD || openttd_version < version_openttd(14, 0)) {
@@ -57,6 +64,7 @@ disable_item(FEAT_INDUSTRIES, 0, 36);
 
 // TODO: build the cargo table from the defined cargos instead of having a fixed list here
 cargotable {
-	PASS, COAL, MAIL, OIL_, LVST, GOOD, GRAI, WOOD, IORE, STEL, FISH, FOOD, PLAS, WDPR, VEHI,
-	LIME, SAND, CMNT, BDMT
+	PASS, COAL, MAIL, OIL_, LVST, GOOD, GRAI, WOOD, IORE, STEL, FISH, FOOD, PLAS, WDPR, VEHI, // default
+	LIME, SAND, CMNT, BDMT, // ext building materials
+	WOOL, TEXT // ext textile industries
 }

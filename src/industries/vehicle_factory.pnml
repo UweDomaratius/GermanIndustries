@@ -585,15 +585,16 @@ tilelayout vehicle_factory_tilelayout_4 {
     6, 2: vehicle_factory_tile;
 }
 
-// todo: check against correct industries
 switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_location_check_industry_distance,
        [STORE_TEMP(24, TEMP_REGISTER_TOWN_MIN_DISTANCE),
 	    STORE_TEMP(128, TEMP_REGISTER_TOWN_MAX_DISTANCE),
 	    (distance_from_town() && 
 		(industry_town_count(INDUSTRY_ID_POWER_PLANT) > 0) && // industry requires a power plant in the city
 		(industry_distance(INDUSTRY_ID_INTEGRATED_STEEL_MILL) >= 32) &&
-	    (industry_distance(INDUSTRY_ID_VEHICLE_FACTORY) >= 16) &&
-		(industry_distance(INDUSTRY_ID_FURNITURE_FACTORY) >= 16)
+		(industry_distance(INDUSTRY_ID_OIL_REFINERY) >= 32) &&
+		(industry_distance(INDUSTRY_ID_PORT) >= 32) &&
+		(industry_distance(INDUSTRY_ID_VEHICLE_DISTRIBUTOR) >= 32) &&
+	    (industry_distance(INDUSTRY_ID_VEHICLE_FACTORY) >= 16)
 		)]) {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;

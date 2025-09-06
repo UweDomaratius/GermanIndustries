@@ -467,14 +467,14 @@ tilelayout steel_mill_tilelayout_2 {
 	3, 5: steel_mill_tile_1;
 }
 
-// todo: check against correct industries
 switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_location_check_industry_distance,
        [STORE_TEMP(32, TEMP_REGISTER_TOWN_MIN_DISTANCE),
 	    STORE_TEMP(64, TEMP_REGISTER_TOWN_MAX_DISTANCE),
 	    (distance_from_town() && 
-	    //(industry_distance(INDUSTRY_ID_FURNITURE_FACTORY) >= 32) &&
 	    (industry_distance(INDUSTRY_ID_COAL_MINE) >= 32) && 
 		(industry_distance(INDUSTRY_ID_IRON_ORE_MINE) >= 32) && 
+		(industry_distance(INDUSTRY_ID_PORT) >= 32) && 
+		(industry_distance(INDUSTRY_ID_VEHICLE_FACTORY) >= 32) && 
 	    (industry_distance(INDUSTRY_ID_INTEGRATED_STEEL_MILL) >= 16))]) {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;
