@@ -1,0 +1,32 @@
+spriteset(cargoicon_bauxite) {
+        [10 + 20 * 13, 10 + 20 * 1, 10, 10, 0, 0, "graphics/other/cargoicons.png"]
+    }
+
+if (param_extension_aluminium) {
+	item(FEAT_CARGOS, bauxite, CARGO_ID_BAUXITE) {
+		property {
+			type_name: string(STR_CARGO_NAME_BAUXITE);
+			unit_name: string(STR_CARGO_NAME_BAUXITE);
+			type_abbreviation: string(STR_CID_BAUXITE);
+			sprite: NEW_CARGO_SPRITE;
+			weight: 1.0;
+			is_freight: 1;
+			cargo_classes: bitmask(CC_BULK);
+			town_growth_effect: TOWNGROWTH_NONE;
+			town_growth_multiplier: 1.0;
+			units_of_cargo: TTD_STR_TONS;
+			items_of_cargo: string(STR_QUANTITY_BAUXITE);
+			penalty_lowerbound: 30;
+			single_penalty_length: 255;
+			capacity_multiplier: 1;
+			cargo_payment_list_colour: 72;
+			station_list_colour: 72;
+			price_factor: 81;
+			cargo_label: "AORE";
+			number: CARGO_ID_BAUXITE;
+		}
+		graphics {
+			cargoicon_bauxite;
+		}
+	}
+}

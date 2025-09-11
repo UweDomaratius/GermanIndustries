@@ -19,8 +19,11 @@ STR_PARAM_EXT_BUILDING_MATERIALS :Erweiterung "Bauindustrie"
 STR_PARAM_EXT_BUILDING_MATERIALS_DESC :Fügt Frachten wie Kalkstein und Zement und passende Industrien hinzu.
 STR_PARAM_EXT_TEXTILE_INDUSTRIES :Erweiterung "Textilindustrie"
 STR_PARAM_EXT_TEXTILE_INDUSTRIES_DESC :Fügt Frachten wie Wolle und Textilien und passende Industrien hinzu.
+STR_PARAM_EXT_ALUMINIUM :Erweiterung "Aluminium"
+STR_PARAM_EXT_ALUMINIUM_DESC :Fügt Aluminiumproduktion aus Bauxit hinzu und erweitert andere Industrien, dass sie Aluminium benötigen.
 
 # Frachten
+STR_CARGO_NAME_BAUXITE            :Bauxit
 STR_CARGO_NAME_BUILDING_MATERIALS :Ziegel
 STR_CARGO_NAME_CEMENT             :Zement
 STR_CARGO_NAME_FISH               :Fisch
@@ -33,6 +36,8 @@ STR_CARGO_NAME_VEHICLES           :Fahrzeuge
 STR_CARGO_NAME_WOOL               :Wolle
 
 # lange Form der Frachtanzeige (x Einheiten Fracht)
+STR_QUANTITY_ALUMINIUM            :{WEIGHT} Aluminium
+STR_QUANTITY_BAUXITE              :{WEIGHT} Bauxit
 STR_QUANTITY_BUILDING_MATERIALS   :{WEIGHT} Ziegel
 STR_QUANTITY_CEMENT               :{WEIGHT} Zement
 STR_QUANTITY_FISH                 :{WEIGHT} Fisch
@@ -47,6 +52,7 @@ STR_QUANTITY_VEHICLES             :{COMMA} Fahrzeug{P "" e}
 STR_QUANTITY_WOOL                 :{WEIGHT} Wolle
 
 # Industrien
+STR_IND_ALUMINIUM_PLANT      :{G=w}Aluhütte
 STR_IND_BRICK_WORKS          :{G=w}Ziegelei
 STR_IND_BUILDERS_YARD        :Bauhof
 STR_IND_CEMENT_PLANT         :{G=w}Zementfabrik
@@ -65,6 +71,7 @@ STR_IND_VEHICLE_DISTRIBUTOR  :{G=n}Autohaus
 STR_IND_VEHICLE_FACTORY      :{G=w}Autofabrik
 
 # Stationsnamen
+STR_STATION_ALUMINIUM_PLANT      :Aluhütte
 STR_STATION_BRICK_WORKS          :Ziegelei
 STR_STATION_BUILDERS_YARD        :Bauhof
 STR_STATION_CEMENT_PLANT         :Zementfabrik
