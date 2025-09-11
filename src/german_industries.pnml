@@ -50,6 +50,13 @@ grf {
 			desc: string(STR_PARAM_EXT_TEXTILE_INDUSTRIES_DESC);
 		}
 	}
+	param {
+		param_extension_aluminium {
+			type: bool;
+			name: string(STR_PARAM_EXT_ALUMINIUM);
+			desc: string(STR_PARAM_EXT_ALUMINIUM_DESC);
+		}
+	}
 }
 
 if (ttd_platform != PLATFORM_OPENTTD || openttd_version < version_openttd(14, 0)) {
@@ -66,5 +73,6 @@ disable_item(FEAT_INDUSTRIES, 0, 36);
 cargotable {
 	PASS, COAL, MAIL, OIL_, LVST, GOOD, GRAI, WOOD, IORE, STEL, FISH, FOOD, PLAS, WDPR, VEHI, // default
 	LIME, SAND, CMNT, BDMT, // ext building materials
-	WOOL, TEXT // ext textile industries
+	WOOL, TEXT, // ext textile industries
+	AORE, ALUM  // ext aluminium
 }

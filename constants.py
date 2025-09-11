@@ -28,6 +28,10 @@ constants = {
     "CARGO_ID_TEXTILES": "20",
     "CARGO_ID_WOOL": "19",
     
+    # CARGO IDs ALUMINIUM EXTENSION
+    "CARGO_ID_ALUMINIUM": "21",
+    "CARGO_ID_BAUXITE": "22",
+    
     # INDUSTRY IDS 0-20 (with gaps): Base Industries
     "INDUSTRY_ID_BUILDERS_YARD":"17",
     "INDUSTRY_ID_COAL_MINE": "0",
@@ -59,6 +63,9 @@ constants = {
     # Textile Industries Extension
     "INDUSTRY_ID_CLOTHING_PLANT": "26",
     "INDUSTRY_ID_TEXTILE_MILL": "25",
+    
+    # Aluminium Extension
+    "INDUSTRY_ID_ALUMINIUM_PLANT": "27",
     
     # INDUSTRY TILE IDs for Base Industries
     "INDUSTRY_TILE_ID_BUILDERS_YARD":"22",
@@ -101,6 +108,9 @@ constants = {
     # TILE IDs for TEXTILE INDUSTRIES EXTENSION
     "INDUSTRY_TILE_ID_TEXTILE_MILL": "34",
     "INDUSTRY_TILE_ID_CLOTHING_PLANT": "35",
+    
+    # TILE IDs for ALUMINIUM EXTENSION
+    "INDUSTRY_TILE_ID_ALUMINIUM_PLANT": "36",
     
     # TTD sprite IDs
     "TTD_OILRIG_STATION_TILE": "24",

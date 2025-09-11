@@ -2,7 +2,23 @@
 
 ## Extensions
 
-The set contains 2 extensions as listed below.
+The set contains 3 extensions as listed below.
+
+### Aluminium
+
+This extension adds aluminium production from bauxite and adapts other industries to require aluminium. 
+
+#### Cargos
+
+* [Bauxite](#bauxite)
+* [Aluminium](#aluminium)
+
+
+#### Industries
+
+* [Vehicle factory](#vehicle-factory)
+* [Aluminium Plant](#aluminium-plant)
+
 
 ### Building industries
 
@@ -45,7 +61,22 @@ This extension introduces several cargos and industries related to textile and c
 
 ## Industries
 
-The set contains 29 industries as listed below.
+The set contains 31 industries as listed below.
+
+### Aluminium Plant
+
+<img src="aluminium_plant.png" alt="Aluminium Plant">
+
+The aluminium plant produces aluminium out of bauxite, an aluminium ore. This process consists of two steps, in the first one the bauxite is split up in a chemical process to get rid of impurities in the ore before creating aluminium oxide. The second step then splits up the aluminium oxide using elektrolysis. This requires lots of electricity and produces huge amounts of carbon dioxide. This makes production only viable in places where cheap electricity is available. 
+
+Part of extension: [Aluminium](#aluminium)
+
+Industry will only spawn after 1900.
+This restriction is also valid for funding the industry.
+| Requires | Produces |
+| -- | -- |
+| [Bauxite](#bauxite) | [Aluminium](#aluminium) |
+| [Electricity](#electricity) |  |
 
 ### Brick works
 
@@ -402,11 +433,51 @@ This restriction is also valid for funding the industry.
 | Requires | Produces |
 | -- | -- |
 | [Electricity](#electricity) | [Vehicles](#vehicles) |
+| [Plastics](#plastics) |  |
+| [Steel](#steel) |  |
+
+### Vehicle factory
+
+<img src="vehicle_factory.png" alt="Vehicle factory">
+
+Germany is renowned for its automotive industry. After all, the key inventions in car development happened in Germany in the late 19th century. Mass motorization in Germany started after World War 2, mainly driven by the Volkswagen Beetle, one of the most mass-produced vehicles ever. Nowadays, cars are one of the key export goods of the German industry. The automotive industry is one of the most important industries, with companies like Mercedes-Benz, BMW, Audi or Porsche being known throughout the world. 
+
+Part of extension: [Aluminium](#aluminium)
+
+Industry will only spawn after 1910.
+This restriction is also valid for funding the industry.
+| Requires | Produces |
+| -- | -- |
+| [Aluminium](#aluminium) | [Vehicles](#vehicles) |
+| [Electricity](#electricity) |  |
+| [Plastics](#plastics) |  |
 | [Steel](#steel) |  |
 
 ## Cargos
 
-The set contains 22 cargos as listed below.
+The set contains 24 cargos as listed below.
+
+### Aluminium
+
+Aluminium is a light metal that is widely used everywhere, where steel is too heavy. It is relevant for building airplanes and cars, but also household items like aluminium foil or cans. Although it is rather ubiquitous on Earth, it is difficult to produce pure aluminium or alloys for technical use. Widespread usage only began in the early 20th century. Germany is one of the largest producers of Aluminium in Europe (and the biggest consumer), even though energy costs are comparably high. Production is nowadays concentrated in only three plants, two in the Ruhr area and one in Hamburg. 
+
+Part of extension: [Aluminium](#aluminium)
+
+Cargo classes: Bulk cargo
+| Produced by | Required by |
+| -- | -- |
+| [Aluminium Plant](#aluminium-plant) | [Vehicle factory](#vehicle-factory) |
+
+### Bauxite
+
+Bauxite is the ore out of which aluminium is produced. Germany does not have any sources of bauxite, it is all imported. However, there are large plants to create aluminium, a process that requires various hazardous chemicals and lots of electricity. 
+
+Part of extension: [Aluminium](#aluminium)
+
+Cargo classes: Bulk cargo
+| Produced by | Required by |
+| -- | -- |
+|  | [Aluminium Plant](#aluminium-plant) |
 
 ### Bricks
 
@@ -451,7 +522,9 @@ Serious scientific work to understand the nature of electricity only began in th
 
 | Produced by | Required by |
 | -- | -- |
-| [Power plant](#power-plant) | [Vehicle factory](#vehicle-factory) |
+| [Power plant](#power-plant) | [Aluminium Plant](#aluminium-plant) |
+|  | [Vehicle factory](#vehicle-factory) |
+|  | [Vehicle factory](#vehicle-factory) |
 
 ### Fish
 
@@ -572,6 +645,8 @@ Cargo classes: Bulk cargo, Piece goods
 | -- | -- |
 | [Oil refinery](#oil-refinery) | [Furniture factory](#furniture-factory) |
 |  | [Furniture factory](#furniture-factory) |
+|  | [Vehicle factory](#vehicle-factory) |
+|  | [Vehicle factory](#vehicle-factory) |
 
 ### Sand
 
@@ -595,6 +670,7 @@ Cargo classes: Piece goods
 | Produced by | Required by |
 | -- | -- |
 | [Integrated steel mill](#integrated-steel-mill) | [Vehicle factory](#vehicle-factory) |
+|  | [Vehicle factory](#vehicle-factory) |
 
 ### Textiles
 
@@ -630,7 +706,7 @@ Cargo classes: Oversized, Piece goods
 | Produced by | Required by |
 | -- | -- |
 | [Vehicle factory](#vehicle-factory) | [Port](#port) |
-|  | [Vehicle distributor](#vehicle-distributor) |
+| [Vehicle factory](#vehicle-factory) | [Vehicle distributor](#vehicle-distributor) |
 
 ### Wood
 
