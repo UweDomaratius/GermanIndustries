@@ -22,7 +22,7 @@ spritelayout forest_wood_stack_spritelayout {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 }
 
