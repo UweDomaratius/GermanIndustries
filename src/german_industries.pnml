@@ -57,6 +57,13 @@ grf {
 			desc: string(STR_PARAM_EXT_ALUMINIUM_DESC);
 		}
 	}
+	param {
+		param_extension_basic_anorganic_chemistry {
+			type: bool;
+			name: string(STR_PARAM_EXT_BASIC_ORGANIC_CHEMISTRY);
+			desc: string(STR_PARAM_EXT_BASIC_ORGANIC_CHEMISTRY_DESC);
+		}
+	}
 }
 
 if (ttd_platform != PLATFORM_OPENTTD || openttd_version < version_openttd(14, 0)) {

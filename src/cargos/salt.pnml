@@ -1,0 +1,31 @@
+spriteset(cargoicon_salt) {
+        [10 + 20 * 3, 10 + 20 * 4, 10, 10, 0, 0,  "graphics/other/cargoicons.png"]
+    }
+if (param_extension_basic_anorganic_chemistry) {
+	item(FEAT_CARGOS, salt, CARGO_ID_SALT) {
+		property {
+			type_name: string(STR_CARGO_NAME_SALT);
+			unit_name: string(STR_CARGO_NAME_SALT);
+			type_abbreviation: string(STR_CID_SALT);
+			sprite: NEW_CARGO_SPRITE;
+			weight: 1.0;
+			is_freight: 1;
+			cargo_classes: bitmask(CC_BULK, CC_COVERED);
+			town_growth_effect: TOWNGROWTH_NONE;
+			town_growth_multiplier: 1.0;
+			units_of_cargo: TTD_STR_TONS;
+			items_of_cargo: string(STR_QUANTITY_SALT);
+			penalty_lowerbound: 0;
+			single_penalty_length: 20;
+			capacity_multiplier: 1;
+			cargo_payment_list_colour: 135;
+			station_list_colour: 135;
+			price_factor: 168;
+			cargo_label: "SALT";
+			number: CARGO_ID_SALT;
+		}
+		graphics {
+			cargoicon_salt;
+		}
+	}
+}
