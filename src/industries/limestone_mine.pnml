@@ -70,7 +70,7 @@ spritelayout limestone_mine_spritelayout_headgear_animated {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 }
 spritelayout limestone_mine_spritelayout_exit_trestle_animated {
@@ -90,7 +90,7 @@ spritelayout limestone_mine_spritelayout_exit_trestle_animated {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 }
 spritelayout limestone_mine_spritelayout_crusher_front_part {
@@ -110,7 +110,7 @@ spritelayout limestone_mine_spritelayout_crusher_front_part {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 
 }
@@ -131,7 +131,7 @@ spritelayout limestone_mine_spritelayout_crusher_rear_part {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 }
 spritelayout limestone_mine_spritelayout_hut_vents {
@@ -151,7 +151,7 @@ spritelayout limestone_mine_spritelayout_hut_vents {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 }
 spritelayout limestone_mine_spritelayout_ore_1 {
@@ -171,7 +171,7 @@ spritelayout limestone_mine_spritelayout_ore_1 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 }
 spritelayout limestone_mine_spritelayout_ore_2 {
@@ -191,7 +191,7 @@ spritelayout limestone_mine_spritelayout_ore_2 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}            
 }
 
@@ -212,7 +212,7 @@ spritelayout limestone_mine_spritelayout_winding_house {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}            
 }
 spritelayout limestone_mine_spritelayout_exit_shed_rear {
@@ -232,7 +232,7 @@ spritelayout limestone_mine_spritelayout_exit_shed_rear {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 }
 

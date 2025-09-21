@@ -48,7 +48,7 @@ spritelayout vehicle_factory_spritelayout_rear_assembly_hall_windows {
 		xoffset: 0;		yoffset: 0;		zoffset: 0;
 		xextent: 16;	yextent: 16;	zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
     building {
 		sprite: TTD_FENCE_X;
@@ -96,7 +96,7 @@ spritelayout vehicle_factory_spritelayout_central_assembly_hall {
 		xoffset: 0;		yoffset: 0;		zoffset: 0;
 		xextent: 16;	yextent: 16;	zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
     building {
 		sprite: TTD_FENCE_X;
@@ -144,7 +144,7 @@ spritelayout vehicle_factory_spritelayout_front_assembly_hall_windows {
 		xoffset: 0;		yoffset: 0;		zoffset: 0;
 		xextent: 16;	yextent: 16;	zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -192,7 +192,7 @@ spritelayout vehicle_factory_spritelayout_front_assembly_hall_doors {
 		xoffset: 0;		yoffset: 0;		zoffset: 0;
 		xextent: 16;	yextent: 16;	zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -240,7 +240,7 @@ spritelayout vehicle_factory_spritelayout_goods_in_1 {
 		xoffset: 0;		yoffset: 0;		zoffset: 0;
 		xextent: 16;	yextent: 16;	zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
     building {
 		sprite: TTD_FENCE_X;
@@ -288,7 +288,7 @@ spritelayout vehicle_factory_spritelayout_offices {
 		xoffset: 0;		yoffset: 0;		zoffset: 0;
 		xextent: 16;	yextent: 16;	zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
     building {
 		sprite: TTD_FENCE_X;
@@ -336,7 +336,7 @@ spritelayout vehicle_factory_spritelayout_tyres {
 		xoffset: 0;		yoffset: 0;		zoffset: 0;
 		xextent: 16;	yextent: 16;	zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
     building {
 		sprite: TTD_FENCE_X;
@@ -719,7 +719,7 @@ switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_extra_text, param_electrici
 }
 
 switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_extra_text_fund, 
-	[STORE_TEMP(string(STR_1800), TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	[STORE_TEMP(string(STR_1910), TEMP_REGISTER_EXTRA_TEXT_ARG0),
 	current_year]) {
 	1910..500000: return string(STR_EMPTY);
 	return string(STR_INDUSTRY_NOT_AVAILABLE_BEFORE);

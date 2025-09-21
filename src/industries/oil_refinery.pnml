@@ -31,7 +31,7 @@ spritelayout oil_refinery_spritelayout_silo {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 }
 spritelayout oil_refinery_spritelayout_tower {
@@ -51,7 +51,7 @@ spritelayout oil_refinery_spritelayout_tower {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 }
 spritelayout oil_refinery_spritelayout_pumps_tanks {
@@ -71,7 +71,7 @@ spritelayout oil_refinery_spritelayout_pumps_tanks {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 }
 spritelayout oil_refinery_spritelayout_large_tanks {
@@ -91,7 +91,7 @@ spritelayout oil_refinery_spritelayout_large_tanks {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 }
 spritelayout oil_refinery_spritelayout_building {
@@ -111,7 +111,7 @@ spritelayout oil_refinery_spritelayout_building {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 }
 
