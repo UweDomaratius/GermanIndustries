@@ -125,6 +125,8 @@ The first cement plants in Gemrany date back to the early 19th century. In the s
 
 Part of extension: [Building industries](#building-industries)
 
+Industry will only spawn after 1800.
+This restriction is also valid for funding the industry.
 | Requires | Produces |
 | -- | -- |
 | [Limestone](#limestone) | [Cement](#cement) |
@@ -314,18 +316,6 @@ Part of extension: [Building industries](#building-industries)
 | -- | -- |
 |  | [Limestone](#limestone) |
 
-### Oil refinery
-
-<img src="oil_refinery.png" alt="Oil refinery">
-
-The chemical industry is one of the most important industries in Germany, with well-known companies like BASF. Oil is one of the key ingredients in the production of (among many other things), plastics. 
-
-Industry will only spawn after 1860.
-This restriction is also valid for funding the industry.
-| Requires | Produces |
-| -- | -- |
-| [Oil](#oil) | [Plastics](#plastics) |
-
 ### Oil rig
 
 <img src="oil_rig.png" alt="Oil rig">
@@ -352,6 +342,18 @@ This restriction is also valid for funding the industry.
 | Requires | Produces |
 | -- | -- |
 |  | [Oil](#oil) |
+
+### Plastics Plant
+
+<img src="plastics_plant.png" alt="Plastics Plant">
+
+The chemical industry is one of the most important industries in Germany, with well-known companies like BASF. Oil is one of the key ingredients in the production of (among many other things), plastics. 
+
+Industry will only spawn after 1930.
+This restriction is also valid for funding the industry.
+| Requires | Produces |
+| -- | -- |
+| [Oil](#oil) | [Plastics](#plastics) |
 
 ### Port
 
@@ -418,6 +420,8 @@ Part of extension: [Textile industries](#textile-industries)
 
 Vehicle distributors, or rather, car dealership sell vehicles in the cities. Typically they also provide services around vehicles such as repairing parts and switching tyres. 
 
+Industry will only spawn after 1910.
+This restriction is also valid for funding the industry.
 | Requires | Produces |
 | -- | -- |
 | [Vehicles](#vehicles) |  |
@@ -620,7 +624,7 @@ With so many uses, demand was ever increasing, and today the German industry is 
 Cargo classes: Liquid
 | Produced by | Required by |
 | -- | -- |
-| [Oil rig](#oil-rig) | [Oil refinery](#oil-refinery) |
+| [Oil rig](#oil-rig) | [Plastics Plant](#plastics-plant) |
 | [Oil well](#oil-well) | [Power plant](#power-plant) |
 | [Port](#port) |  |
 
@@ -643,7 +647,7 @@ In the set, this also incorporate synthetic materials that do not have the chara
 Cargo classes: Bulk cargo, Piece goods
 | Produced by | Required by |
 | -- | -- |
-| [Oil refinery](#oil-refinery) | [Furniture factory](#furniture-factory) |
+| [Plastics Plant](#plastics-plant) | [Furniture factory](#furniture-factory) |
 |  | [Furniture factory](#furniture-factory) |
 |  | [Vehicle factory](#vehicle-factory) |
 |  | [Vehicle factory](#vehicle-factory) |
