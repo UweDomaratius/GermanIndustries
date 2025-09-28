@@ -104,6 +104,10 @@ STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION :Transportiere mehr als 60% der produzie
 STR_INDUSTRY_PREREQ_KEEP_PRODUCTION     :Industrie produziert am Maximum. Transportiere mehr als 60% der produzierten Fracht um diesen Produktionslevel zu halten.
 # Extractive Industrien (Bergwerke) zeigen die Info zum Produktionslevel und die Menge der verbleibenden Rohstoffe.
 STR_EXTRACTIVE_INDUSTRY_TEXT:{STRING}{STRING}{}Etwa {YELLOW}{COMMA} kt {BLACK} verbleibend (ca. {YELLOW}{COMMA} Jahre{BLACK} bei aktuellem Produktionslevel)
+# Secondary industries with optional input requirements
+STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO :Industrie benötigt die in schwarz dargestellten Rohmaterialien zur Produktion. In weiß dargestellte Materialien erhöhen die maximale Produktion.
+STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO_ANY :Industrie benötigt wenigstens eines der in schwarz dargestellten Rohmaterialien zur Produktion. In weiß dargestellte Materialien erhöhen die maximale Produktion. Die maximale Produktion erhöht sich mit der Anzahl der verfügbaren verschiedenen Rohstoffe.
+STR_INDUSTRY_NEEDS_ANY_INPUT :Industrie beginnt Produktion sobald irgendein Rohstoff verfügbar ist. Die maximale Produktion erhöht sich mit der Anzahl der verfügbaren verschiedenen Rohstoffe.
 
 # Texte für Energiewirtschaft, Kraftwerke zeigen die Produktion, Industrien zeigen an wie viel Strom sie benötigen und ob der Bedarf gedeckt ist
 STR_POWER_PLANT_TEXT :Stromproduktion {YELLOW}{COMMA}{BLACK}, Bedarf {YELLOW}{COMMA}{BLACK}
@@ -118,6 +122,7 @@ STR_INDUSTRY_AVAILABLE_TIMEFRAME  :{}{BLACK}Industrie nur zwischen {STRING} und 
 
 # Display für Vorratsanzeige
 STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE: {BLACK}({CARGO_SHORT} vorrätig)
+STR_CARGO_SUBTYPE_DISPLAY_OPTIONAL_CARGO_AVAILABLE :{WHITE}({CARGO_SHORT} vorrätig)
 
 # Fehlertexte
 STR_ERR_OPENTTD_VERSION             :{ORANGE}E00: {TITLE} benötigt OpenTTD 14.0 oder neuer
