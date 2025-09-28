@@ -26,6 +26,7 @@ spritelayout food_processor_spritelayout_1 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 }
 spritelayout food_processor_spritelayout_2 {
@@ -68,6 +69,7 @@ spritelayout food_processor_spritelayout_2 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -135,6 +137,7 @@ spritelayout food_processor_spritelayout_3 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -202,6 +205,7 @@ spritelayout food_processor_spritelayout_4 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 	building {
 		sprite: TTD_FENCE_X;
