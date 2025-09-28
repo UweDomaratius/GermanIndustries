@@ -161,9 +161,8 @@ STR_ORGANIC_INDUSTRY_TEXT:{STRING}{STRING}
 STR_EXTRACTIVE_INDUSTRY_TEXT:{STRING}{STRING}{}About {YELLOW}{COMMA} kt {BLACK} remain (est. {YELLOW}{COMMA} years{BLACK} at current production rate)
 # Secondary industries with optional input requirements
 STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO :Industry requires the raw materials printed in black to produce anything. Raw materials printed in white will increase the maximum production level.
-STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO_ANY_INPUT :Industry requires any of the raw materials printed in black to produce anything. Maximum production level is limited by the number of different raw materials available. Raw materials printed in white will increase the maximum production level.
+STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO_ANY :Industry requires any of the raw materials printed in black to produce anything. Maximum production level is limited by the number of different raw materials available. Raw materials printed in white will increase the maximum production level.
 STR_INDUSTRY_NEEDS_ANY_INPUT :Industry starts producing as soon as any raw material is available. Maximum production level is limited by the number of different raw materials available.
-
 # Text that has to do with energy production, power plant displays how much power is produced and demanded,
 # Industries show much power they need for their current production and if their demand is met
 STR_POWER_PLANT_TEXT:Power produced {YELLOW}{COMMA}{BLACK}, demand {YELLOW}{COMMA}{BLACK}
@@ -178,6 +177,7 @@ STR_INDUSTRY_AVAILABLE_TIMEFRAME  :{}{BLACK}Industry only available between {STR
 
 # Cargo display for stockpile
 STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE          :{BLACK}({CARGO_SHORT} in stock)
+STR_CARGO_SUBTYPE_DISPLAY_OPTIONAL_CARGO_AVAILABLE :{WHITE}({CARGO_SHORT} in stock)
 STR_CARGO_SUBTYPE_DISPLAY_OPTIONAL_CARGO_AVAILABLE :{WHITE}({CARGO_SHORT} in stock)
 
 # Error texts

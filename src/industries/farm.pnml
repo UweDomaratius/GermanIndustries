@@ -72,7 +72,7 @@ spritelayout farm_spritelayout_barn {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 }
 spritelayout farm_spritelayout_silo2 {
@@ -97,7 +97,7 @@ spritelayout farm_spritelayout_silo2 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 }
 spritelayout farm_spritelayout_pigs {
@@ -124,7 +124,7 @@ spritelayout farm_spritelayout_pigs {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(18));
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}	
 }
 spritelayout farm_spritelayout_house2 {
@@ -149,7 +149,7 @@ spritelayout farm_spritelayout_house2 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}            
 }
 spritelayout farm_spritelayout_cows_bw {
@@ -167,7 +167,7 @@ spritelayout farm_spritelayout_cows_bw {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(18));
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}            
 }
 spritelayout farm_spritelayout_cows_brown {
@@ -185,7 +185,7 @@ spritelayout farm_spritelayout_cows_brown {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}		
 }
 spritelayout farm_spritelayout_chickens {
@@ -203,7 +203,7 @@ spritelayout farm_spritelayout_chickens {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 }
 spritelayout farm_spritelayout_pigs2 {
@@ -221,7 +221,7 @@ spritelayout farm_spritelayout_pigs2 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 }
 
@@ -242,7 +242,7 @@ spritelayout farm_spritelayout_shed {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 }
 spritelayout farm_spritelayout_machinery {
@@ -260,7 +260,7 @@ spritelayout farm_spritelayout_machinery {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 }
 spritelayout farm_spritelayout_house {
@@ -278,7 +278,7 @@ spritelayout farm_spritelayout_house {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 }
 spritelayout farm_spritelayout_building {
@@ -298,7 +298,7 @@ spritelayout farm_spritelayout_building {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 }
 spritelayout farm_spritelayout_silo {
@@ -318,7 +318,7 @@ spritelayout farm_spritelayout_silo {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 }
 
