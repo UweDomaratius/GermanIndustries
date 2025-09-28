@@ -592,7 +592,7 @@ switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_location_check_industry_dis
 		(industry_town_count(INDUSTRY_ID_POWER_PLANT) > 0) && // industry requires a power plant in the city
 		(industry_town_count(INDUSTRY_ID_VEHICLE_FACTORY) == 0) && // only allow one factory per city
 		(industry_distance(INDUSTRY_ID_INTEGRATED_STEEL_MILL) >= 32) &&
-		(industry_distance(INDUSTRY_ID_OIL_REFINERY) >= 32) &&
+		(industry_distance(INDUSTRY_ID_PLASTICS_PLANT) >= 32) &&
 		(industry_distance(INDUSTRY_ID_PORT) >= 32) &&
 		(industry_distance(INDUSTRY_ID_VEHICLE_DISTRIBUTOR) >= 32) &&
 		(industry_distance(INDUSTRY_ID_ALUMINIUM_PLANT) >= 32) &&

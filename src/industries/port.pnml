@@ -1351,7 +1351,7 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_location_check_industry_distance,
 	   (industry_distance(INDUSTRY_ID_OIL_RIG) >= 32) &&
 	   (industry_distance(INDUSTRY_ID_COAL_MINE) >= 32) &&
 	   (industry_distance(INDUSTRY_ID_IRON_ORE_MINE) >= 32) &&
-	   (industry_distance(INDUSTRY_ID_OIL_REFINERY) >= 32) &&
+	   (industry_distance(INDUSTRY_ID_PLASTICS_PLANT) >= 32) &&
 	   (industry_distance(INDUSTRY_ID_BRICK_WORKS) >= 32) &&
 	   (industry_distance(INDUSTRY_ID_POWER_PLANT) >= 32) &&
 	   (industry_distance(INDUSTRY_ID_INTEGRATED_STEEL_MILL) >= 32) &&
