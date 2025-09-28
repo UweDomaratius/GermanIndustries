@@ -526,6 +526,7 @@ tilelayout salt_mine_industry_layout_4_tilelayout {
 switch(FEAT_INDUSTRIES, SELF, salt_mine_switch_location_check_industry_distance,
         (water_distance > 16) &&
 		(industry_distance(INDUSTRY_ID_SALT_MINE) >= 16) && 
+		(industry_distance(INDUSTRY_ID_FOOD_PROCESSOR) >= 32) && 
 		(industry_distance(INDUSTRY_ID_CHLOR_ALKALI_PLANT) >= 32)) 
 { 
 	1: return CB_RESULT_LOCATION_ALLOW;
@@ -602,13 +603,6 @@ switch(FEAT_INDUSTRIES, SELF, salt_mine_switch_extra_text_fund,
 	return string(STR_INDUSTRY_NOT_AVAILABLE_BEFORE);
 }
 
-// check creation type (getbits(extra_callback_info2, 0, 8))
-switch(FEAT_INDUSTRIES, SELF, salt_mine_switch_check_availability_map_gen, 
-	getbits(extra_callback_info2, 0, 8) == IND_CREATION_GENERATION) {
-	1: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
-	return CB_RESULT_IND_NO_CONSTRUCTION;
-}
-
 // year < 1800: no creation, 1800 <= year: certain probability
 switch(FEAT_INDUSTRIES, SELF, salt_mine_switch_check_availability, current_year) {
 	0..1799: return CB_RESULT_IND_NO_CONSTRUCTION;               // no salt mines before 1800
@@ -626,7 +620,7 @@ if (param_extension_basic_anorganic_chemistry) {
 			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
-			name: TTD_STR_INDUSTRY_NAME_SALT_MINE;
+			name: string(STR_IND_SALT_MINE);
 			prob_map_gen: 14;
 			prob_in_game: 14;
 			prospect_chance: 0.75;

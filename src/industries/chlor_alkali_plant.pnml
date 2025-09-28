@@ -1,26 +1,26 @@
 spriteset(chlor_alkali_plant_spriteset_2) {
-	[150, 10, 64, 114, -31, -83, ANIM | NOCROP, "src/graphics/industries/chlor_alkali_plant.png"]
+	[150, 10, 64, 114, -31, -83, ANIM | NOCROP, "graphics/industries/chemical_plant.png"]
 }
 spriteset(chlor_alkali_plant_spriteset_3) {
-	[220, 10, 64, 114, -31, -83, ANIM | NOCROP, "src/graphics/industries/chlor_alkali_plant.png"]
+	[220, 10, 64, 114, -31, -83, ANIM | NOCROP, "graphics/industries/chemical_plant.png"]
 }
 spriteset(chlor_alkali_plant_spriteset_4) {
-	[290, 10, 64, 114, -31, -83, ANIM | NOCROP, "src/graphics/industries/chlor_alkali_plant.png"]
+	[290, 10, 64, 114, -31, -83, ANIM | NOCROP, "graphics/industries/chemical_plant.png"]
 }
 spriteset(chlor_alkali_plant_spriteset_5) {
-	[360, 10, 64, 114, -31, -83, ANIM | NOCROP, "src/graphics/industries/chlor_alkali_plant.png"]
+	[360, 10, 64, 114, -31, -83, ANIM | NOCROP, "graphics/industries/chemical_plant.png"]
 }
 spriteset(chlor_alkali_plant_spriteset_6) {
-	[430, 10, 64, 114, -31, -83, ANIM | NOCROP, "src/graphics/industries/chlor_alkali_plant.png"]
+	[430, 10, 64, 114, -31, -83, ANIM | NOCROP, "graphics/industries/chemical_plant.png"]
 }
 spriteset(chlor_alkali_plant_spriteset_7) {
-	[500, 10, 64, 66, -31, -35, ANIM | NOCROP, "src/graphics/industries/chlor_alkali_plant.png"]
+	[500, 10, 64, 66, -31, -35, ANIM | NOCROP, "graphics/industries/chemical_plant.png"]
 }
 spriteset(chlor_alkali_plant_spriteset_8) {
-	[570, 10, 64, 66, -31, -35, ANIM | NOCROP, "src/graphics/industries/chlor_alkali_plant.png"]
+	[570, 10, 64, 66, -31, -35, ANIM | NOCROP, "graphics/industries/chemical_plant.png"]
 }
 spriteset(chlor_alkali_plant_spriteset_9) {
-	[710, 10, 64, 66, -31, -35, ANIM | NOCROP, "src/graphics/industries/chlor_alkali_plant.png"]
+	[710, 10, 64, 66, -31, -35, ANIM | NOCROP, "graphics/industries/chemical_plant.png"]
 }
 
 spritelayout chlor_alkali_plant_spritelayout_horizontal_tanks {
@@ -55,7 +55,7 @@ spritelayout chlor_alkali_plant_spritelayout_horizontal_tanks {
 		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 	building {
-		sprite: chlor_alkali_plant_spriteset_rear_assembly_hall_windows(0);
+		sprite: chlor_alkali_plant_spriteset_2(0);
 		recolour_mode: RECOLOUR_REMAP;
 		palette: PALETTE_USE_DEFAULT;
 		xoffset: 0;		yoffset: 0;		zoffset: 0;
@@ -764,21 +764,23 @@ switch(FEAT_INDUSTRIES, SELF, chlor_alkali_plant_switch_location_check_industry_
 	    (distance_from_town() && 
 		(industry_town_count(INDUSTRY_ID_POWER_PLANT) > 0) && // industry requires a power plant in the city
 		(industry_town_count(INDUSTRY_ID_CHLOR_ALKALI_PLANT) == 0) && // only allow one factory per city
-		(industry_distance(INDUSTRY_ID_PLASTIC_PLANT) >= 32) &&
+		(industry_distance(INDUSTRY_ID_PLASTICS_PLANT) >= 32) &&
 		(industry_distance(INDUSTRY_ID_FOOD_PROCESSOR) >= 32) &&
 		(industry_distance(INDUSTRY_ID_ALUMINIUM_PLANT) >= 32) &&
+		(industry_distance(INDUSTRY_ID_PHARMACEUTICAL_PLANT) >= 32) &&
 		(industry_distance(INDUSTRY_ID_SALT_MINE) >= 32) &&
-		(industry_distance(INDUSTRY_ID_CHLOR_ALKALI_PLANT) >= 16))
+		(industry_distance(INDUSTRY_ID_CHLOR_ALKALI_PLANT) >= 16)
 		)]) {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;
 }
 
-// TODO: make sure that production requires electricity
 
+// values for production are based on molar weights (SALT 58.5g/mol, NaOH 40.5g/mol, Cl2: 35g/mol, H2: 2g/mol
+// 2 NaCl+2H2O -> 2 NaOH + Cl2 + H2
 produce(chlor_alkali_plant_produce,
 	[SALT: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
-	[CHLO: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);LYE_: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);H2__: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
+	[CHLO: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*299/1000;LYE_: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * 692/1000;H2__: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*17/1000;],
 	0 // do not run again
 )
 
@@ -808,7 +810,7 @@ switch(FEAT_INDUSTRIES, SELF, chlor_alkali_plant_update_production_according_to_
 }
 
 switch(FEAT_INDUSTRIES, SELF, chlor_alkali_plant_switch_produce, 
-	[STORE_TEMP(min(incoming_cargo_waiting("STEL"),incoming_cargo_waiting("PLAS")), TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT),
+	[STORE_TEMP(incoming_cargo_waiting("SALT"), TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT),
 	 STORE_TEMP(((LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) / 10) > 8) ? LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) / 10 : 
 	 (LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) > 8 ? 8 : LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT)),TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
 	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT), PERM_REGISTER_PRODUCTION_AMOUNT),
@@ -886,7 +888,7 @@ if (param_extension_basic_anorganic_chemistry) {
 			fund_cost_multiplier: 170;
 			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
-			cargo_types: [accept_cargo("SALT"),produce_cargo("CHLO",0),produce_cargo("LYE_"),produce_cargo("H2__");];
+			cargo_types: [accept_cargo("SALT"),produce_cargo("CHLO",0),produce_cargo("LYE_",0),produce_cargo("H2__",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_CHLOR_ALKALI_PLANT));
 		}
 			
