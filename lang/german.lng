@@ -21,14 +21,20 @@ STR_PARAM_EXT_TEXTILE_INDUSTRIES :Erweiterung "Textilindustrie"
 STR_PARAM_EXT_TEXTILE_INDUSTRIES_DESC :Fügt Frachten wie Wolle und Textilien und passende Industrien hinzu.
 STR_PARAM_EXT_ALUMINIUM :Erweiterung "Aluminium"
 STR_PARAM_EXT_ALUMINIUM_DESC :Fügt Aluminiumproduktion aus Bauxit hinzu und erweitert andere Industrien, dass sie Aluminium benötigen.
+STR_PARAM_EXT_BASIC_ANORGANIC_CHEMISTRY :Erweiterung "Grundlegende Anorganische Chemie"
+STR_PARAM_EXT_BASIC_ANORGANIC_CHEMISTRY_DESC :Fügt Chemikalien wie Natronlauge und Chlor und passende Industrien hinzu.
 
 # Frachten
 STR_CARGO_NAME_BAUXITE            :Bauxit
 STR_CARGO_NAME_BUILDING_MATERIALS :Ziegel
 STR_CARGO_NAME_CEMENT             :Zement
+STR_CARGO_NAME_CHLORINE           :Chlor
 STR_CARGO_NAME_FISH               :Fisch
+STR_CARGO_NAME_HYDROGEN           :Wasserstoff
 STR_CARGO_NAME_LIMESTONE          :Kalkstein
+STR_CARGO_NAME_LYE                :Natronlauge
 STR_CARGO_NAME_PLASTICS           :Kunststoffe
+STR_CARGO_NAME_SALT               :Salz
 STR_CARGO_NAME_SAND               :Sand
 STR_CARGO_NAME_TEXTILES           :Textilien
 STR_CARGO_NAME_TIMBER             :Schnittholz
@@ -40,11 +46,15 @@ STR_QUANTITY_ALUMINIUM            :{WEIGHT} Aluminium
 STR_QUANTITY_BAUXITE              :{WEIGHT} Bauxit
 STR_QUANTITY_BUILDING_MATERIALS   :{WEIGHT} Ziegel
 STR_QUANTITY_CEMENT               :{WEIGHT} Zement
+STR_QUANTITY_CHLORINE             :{WEIGHT} Chlor
 STR_QUANTITY_FISH                 :{WEIGHT} Fisch
 STR_QUANTITY_GOODS                :{WEIGHT} Güter
+STR_QUANTITY_HYDROGEN             :{WEIGHT} Wasserstoff
 STR_QUANTITY_LIMESTONE            :{WEIGHT} Kalkstein
+STR_QUANTITY_LYE                  :{WEIGHT} Natronlauge
 STR_QUANTITY_OIL                  :{WEIGHT} Öl
 STR_QUANTITY_PLASTICS             :{WEIGHT} Kunststoffe
+STR_QUANTITY_SALT                 :{WEIGHT} Salz
 STR_QUANTITY_SAND                 :{WEIGHT} Sand
 STR_QUANTITY_TEXTILES             :{WEIGHT} Textilien
 STR_QUANTITY_TIMBER               :{WEIGHT} Schnittholz
@@ -56,6 +66,7 @@ STR_IND_ALUMINIUM_PLANT      :{G=w}Aluhütte
 STR_IND_BRICK_WORKS          :{G=w}Ziegelei
 STR_IND_BUILDERS_YARD        :Bauhof
 STR_IND_CEMENT_PLANT         :{G=w}Zementfabrik
+STR_IND_CHLOR_ALKALI_PLANT   :{G=w}Chloralkali Elektrolyseanlage
 STR_IND_CLOTHING_PLANT       :{G=w}Bekleidungsfabrik
 STR_IND_FISHING_GROUNDS      :{G=w}Fischgründe
 STR_IND_FURNITURE_FACTORY    :{G=w}Möbelfabrik
@@ -64,7 +75,10 @@ STR_IND_GENERAL_STORE        :Laden
 STR_IND_HOTEL                :{G=n}Hotel
 STR_IND_INTEGRATED_STEEL_MILL:{G=n}Integriertes Stahlwerk
 STR_IND_LIMESTONE_MINE       :{G=n}Kalksteinbergwerk
+STR_IND_PHARMACEUTICAL_PLANT :{G=w}Arzneimittelfabrik
+STR_IND_PLASTICS_PLANT       :Kunststofffabrik
 STR_IND_PORT                 :Hafen
+STR_IND_SALT_MINE            :{G=n}Salzbergwerk
 STR_IND_SANDPIT              :{G=w}Sandgrube
 STR_IND_TEXTILE_MILL         :{G=w}Textilfabrik
 STR_IND_VEHICLE_DISTRIBUTOR  :{G=n}Autohaus
@@ -75,6 +89,7 @@ STR_STATION_ALUMINIUM_PLANT      :Aluhütte
 STR_STATION_BRICK_WORKS          :Ziegelei
 STR_STATION_BUILDERS_YARD        :Bauhof
 STR_STATION_CEMENT_PLANT         :Zementfabrik
+STR_STATION_CHLOR_ALKALI_PLANT   :Chloralkali Elektrolyseanlage
 STR_STATION_CLOTHING_PLANT       :Bekleidungsfabrik
 STR_STATION_COAL_MINE            :Bergwerk
 STR_STATION_DEPARTMENT_STORE     :Kaufhaus
@@ -91,8 +106,11 @@ STR_STATION_LIMESTONE_MINE       :Kalkeinbergwerk
 STR_STATION_OIL_REFINERY         :Raffinerie
 STR_STATION_OIL_RIG              :Bohrplattform
 STR_STATION_OIL_WELL             :Ölquelle
+STR_STATION_PHARMACEUTICAL_PLANT :Arzneimittelfabrik
+STR_STATION_PLASTICS_PLANT       :Kunststofffabrik
 STR_STATION_PORT                 :Hafen
 STR_STATION_POWER_PLANT          :Kraftwerk
+STR_STATION_SALT_MINE            :Salzbergwerk
 STR_STATION_SANDPIT              :Sandgrube
 STR_STATION_SAWMILL              :Sägewerk
 STR_STATION_TEXTILE_MILL         :Textilfabrik
@@ -121,7 +139,7 @@ STR_INDUSTRY_NOT_AVAILABLE_BEFORE :{}{BLACK}Industrie erst ab {STRING} verfügba
 STR_INDUSTRY_AVAILABLE_TIMEFRAME  :{}{BLACK}Industrie nur zwischen {STRING} und {STRING} verfügbar.
 
 # Display für Vorratsanzeige
-STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE: {BLACK}({CARGO_SHORT} vorrätig)
+STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE          :{BLACK}({CARGO_SHORT} vorrätig)
 STR_CARGO_SUBTYPE_DISPLAY_OPTIONAL_CARGO_AVAILABLE :{WHITE}({CARGO_SHORT} vorrätig)
 
 # Fehlertexte

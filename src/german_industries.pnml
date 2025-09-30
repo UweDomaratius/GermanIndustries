@@ -57,6 +57,13 @@ grf {
 			desc: string(STR_PARAM_EXT_ALUMINIUM_DESC);
 		}
 	}
+	param {
+		param_extension_basic_anorganic_chemistry {
+			type: bool;
+			name: string(STR_PARAM_EXT_BASIC_ANORGANIC_CHEMISTRY);
+			desc: string(STR_PARAM_EXT_BASIC_ANORGANIC_CHEMISTRY_DESC);
+		}
+	}
 }
 
 if (ttd_platform != PLATFORM_OPENTTD || openttd_version < version_openttd(14, 0)) {
@@ -74,5 +81,6 @@ cargotable {
 	PASS, COAL, MAIL, OIL_, LVST, GOOD, GRAI, WOOD, IORE, STEL, FISH, FOOD, PLAS, WDPR, VEHI, // default
 	LIME, SAND, CMNT, BDMT, // ext building materials
 	WOOL, TEXT, // ext textile industries
-	AORE, ALUM  // ext aluminium
+	AORE, ALUM,  // ext aluminium
+	SALT, CHLO, LYE_, H2__ // ext basic anorganic chemistry
 }

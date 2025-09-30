@@ -2,7 +2,7 @@
 
 ## Extensions
 
-The set contains 3 extensions as listed below.
+The set contains 4 extensions as listed below.
 
 ### Aluminium
 
@@ -18,6 +18,29 @@ This extension adds aluminium production from bauxite and adapts other industrie
 
 * [Vehicle factory](#vehicle-factory)
 * [Aluminium Plant](#aluminium-plant)
+* [Aluminium Plant](#aluminium-plant)
+
+
+### Basic anorganic chemistry
+
+This extension adds salt and chemical products based on it such as chlorine and lye. 
+
+#### Cargos
+
+* [Salt](#salt)
+* [Chlorine](#chlorine)
+* [Lye](#lye)
+* [Hydrogen](#hydrogen)
+
+
+#### Industries
+
+* [Food processor](#food-processor)
+* [Plastics Plant](#plastics-plant)
+* [Aluminium Plant](#aluminium-plant)
+* [Pharmaceutical Plant](#pharmaceutical-plant)
+* [Salt mine](#salt-mine)
+* [Chloralkali plant](#chloralkali-plant)
 
 
 ### Building industries
@@ -61,7 +84,7 @@ This extension introduces several cargos and industries related to textile and c
 
 ## Industries
 
-The set contains 31 industries as listed below.
+The set contains 37 industries as listed below.
 
 ### Aluminium Plant
 
@@ -77,6 +100,24 @@ This restriction is also valid for funding the industry.
 | -- | -- |
 | [Bauxite](#bauxite) | [Aluminium](#aluminium) |
 | [Electricity](#electricity) |  |
+
+### Aluminium Plant
+
+<img src="aluminium_plant.png" alt="Aluminium Plant">
+
+The aluminium plant produces aluminium out of bauxite, an aluminium ore. This process consists of two steps, in the first one the bauxite is split up in a chemical process to get rid of impurities in the ore before creating aluminium oxide. The second step then splits up the aluminium oxide using elektrolysis. This requires lots of electricity and produces huge amounts of carbon dioxide. This makes production only viable in places where cheap electricity is available. 
+
+Part of extension: [Aluminium](#aluminium)
+
+Part of extension: [Basic anorganic chemistry](#basic-anorganic-chemistry)
+
+Industry will only spawn after 1900.
+This restriction is also valid for funding the industry.
+| Requires | Produces |
+| -- | -- |
+| [Bauxite](#bauxite) | [Aluminium](#aluminium) |
+| [Electricity](#electricity) |  |
+| [Lye](#lye) |  |
 
 ### Brick works
 
@@ -131,6 +172,22 @@ This restriction is also valid for funding the industry.
 | -- | -- |
 | [Limestone](#limestone) | [Cement](#cement) |
 | [Sand](#sand) |  |
+
+### Chloralkali plant
+
+<img src="chloralkali_plant.png" alt="Chloralkali plant">
+
+The chloralkali plant uses electrolysis to split up salt into chlorine and sodium hydroxide. As a byproduct hydrogen is produced. This process was developed in the late 19th century and is one of the most important basic technical processes in the chemical industry. The reaction requires a lot of electric energy. The first plants to implement this process were built around 1890, with multiple plants in Germany, Spain, France and Russia. Today, almost 20 plants are running all over Germany, located mostly in the classic centers of chemical industry such as Ludwigshafen (BASF) and Schkopau (Dow Chemicals), with the biggest plant being located in Stade in northern Germany. 
+
+Part of extension: [Basic anorganic chemistry](#basic-anorganic-chemistry)
+
+Industry will only spawn after 1900.
+This restriction is also valid for funding the industry.
+| Requires | Produces |
+| -- | -- |
+| [Electricity](#electricity) | [Chlorine](#chlorine) |
+| [Salt](#salt) | [Hydrogen](#hydrogen) |
+|  | [Lye](#lye) |
 
 ### Clothing Plant
 
@@ -218,6 +275,24 @@ Production starts with any of the required materials available.
 | [Fish](#fish) | [Food](#food) |
 | [Grain](#grain) |  |
 | [Livestock](#livestock) |  |
+
+### Food processor
+
+<img src="food_processor.png" alt="Food processor">
+
+The food processor is an abstraction of various food-production related industries. Whether it is bakery products, canned fish or any other sort of food, it is produced here, to be transported to the supermarket shelves. 
+
+Production starts with any of fish, grain or livestock available. Lye and salt are only used to boost production levels. 
+
+Part of extension: [Basic anorganic chemistry](#basic-anorganic-chemistry)
+
+| Requires | Produces |
+| -- | -- |
+| [Fish](#fish) | [Food](#food) |
+| [Grain](#grain) |  |
+| [Livestock](#livestock) |  |
+| [Lye](#lye) |  |
+| [Salt](#salt) |  |
 
 ### Forest
 
@@ -343,6 +418,23 @@ This restriction is also valid for funding the industry.
 | -- | -- |
 |  | [Oil](#oil) |
 
+### Pharmaceutical Plant
+
+<img src="pharmaceutical_plant.png" alt="Pharmaceutical Plant">
+
+Pharmaceutical products such as medications and vaccines are a major economic factor in Germany. This goes back to the late 19th century, when breakthroughs in chemistry allowed for the creation of various new drugs. To give just one example: Bayer, a company that had started by producting dyes, developed Aspirin - today the they are one of the largest producers of pharmaceuticals in the world. 
+
+Production starts with any of the required materials available. 
+
+Part of extension: [Basic anorganic chemistry](#basic-anorganic-chemistry)
+
+Industry will only spawn after 1900.
+This restriction is also valid for funding the industry.
+| Requires | Produces |
+| -- | -- |
+| [Hydrogen](#hydrogen) | [Goods](#goods) |
+| [Lye](#lye) |  |
+
 ### Plastics Plant
 
 <img src="plastics_plant.png" alt="Plastics Plant">
@@ -354,6 +446,21 @@ This restriction is also valid for funding the industry.
 | Requires | Produces |
 | -- | -- |
 | [Oil](#oil) | [Plastics](#plastics) |
+
+### Plastics Plant
+
+<img src="plastics_plant.png" alt="Plastics Plant">
+
+The chemical industry is one of the most important industries in Germany, with well-known companies like BASF. Oil is one of the key ingredients in the production of (among many other things), plastics. 
+
+Part of extension: [Basic anorganic chemistry](#basic-anorganic-chemistry)
+
+Industry will only spawn after 1930.
+This restriction is also valid for funding the industry.
+| Requires | Produces |
+| -- | -- |
+| [Chlorine](#chlorine) | [Plastics](#plastics) |
+| [Oil](#oil) |  |
 
 ### Port
 
@@ -379,6 +486,20 @@ Power plants create electricity, typically by boiling water and using the result
 | -- | -- |
 | [Coal](#coal) | [Electricity](#electricity) |
 | [Oil](#oil) |  |
+
+### Salt mine
+
+<img src="salt_mine.png" alt="Salt mine">
+
+Due to the geological history of northern and central Germany, huge amounts of salt are located underground. There are various springs where salt dissolved in water can be found on ground level, which have been used for centuries to produce salt by simply evaporating the water. However, a major change in the production of salt were the first actual mines which were created in the 19th century in what was then Prussia. To this day, Germany is by far the largest producer of salt in Europe, with the salt being a major economic factor due to its relevance for the chemical industry. 
+
+Part of extension: [Basic anorganic chemistry](#basic-anorganic-chemistry)
+
+Industry will only spawn after 1800.
+This restriction is also valid for funding the industry.
+| Requires | Produces |
+| -- | -- |
+|  | [Salt](#salt) |
 
 ### Sand pit
 
@@ -459,7 +580,7 @@ This restriction is also valid for funding the industry.
 
 ## Cargos
 
-The set contains 24 cargos as listed below.
+The set contains 28 cargos as listed below.
 
 ### Aluminium
 
@@ -471,6 +592,7 @@ Cargo classes: Bulk cargo
 | Produced by | Required by |
 | -- | -- |
 | [Aluminium Plant](#aluminium-plant) | [Vehicle factory](#vehicle-factory) |
+| [Aluminium Plant](#aluminium-plant) |  |
 
 ### Bauxite
 
@@ -481,6 +603,7 @@ Part of extension: [Aluminium](#aluminium)
 Cargo classes: Bulk cargo
 | Produced by | Required by |
 | -- | -- |
+|  | [Aluminium Plant](#aluminium-plant) |
 |  | [Aluminium Plant](#aluminium-plant) |
 
 ### Bricks
@@ -505,6 +628,17 @@ Cargo classes: Bulk cargo, Covered, Powderized
 | -- | -- |
 | [Cement plant](#cement-plant) | [Builders yard](#builders-yard) |
 
+### Chlorine
+
+Chlorine is a highly reactive chemical element which is relevant for bleaching (e.g. in the production of paper) and disinfecting. Additionally, it is also required for many processes in the chemical industry in general, most importantly to produce a wide range of plastics such as PVC. In higher concentrations chlorine is highly dangerous and poisonous to most living organisms and has historically been used in chemical warfare. Since the early 20th century chlorine is mainly produced by splitting salt using electrolysis in the so-called chloralkali process. 
+
+Part of extension: [Basic anorganic chemistry](#basic-anorganic-chemistry)
+
+Cargo classes: Hazardous, Liquid
+| Produced by | Required by |
+| -- | -- |
+| [Chloralkali plant](#chloralkali-plant) | [Plastics Plant](#plastics-plant) |
+
 ### Coal
 
 Coal was the main driver of industrializaton in the 19th century, begin required to power steam engines. With the introduction of railway steam engines and later on power plants to produce electricity, the demand for coal rose rapidly. 
@@ -527,6 +661,8 @@ Serious scientific work to understand the nature of electricity only began in th
 | Produced by | Required by |
 | -- | -- |
 | [Power plant](#power-plant) | [Aluminium Plant](#aluminium-plant) |
+|  | [Aluminium Plant](#aluminium-plant) |
+|  | [Chloralkali plant](#chloralkali-plant) |
 |  | [Vehicle factory](#vehicle-factory) |
 |  | [Vehicle factory](#vehicle-factory) |
 
@@ -538,6 +674,7 @@ Cargo classes: Express, Refrigerated
 | Produced by | Required by |
 | -- | -- |
 | [Fishing grounds](#fishing-grounds) | [Food processor](#food-processor) |
+|  | [Food processor](#food-processor) |
 
 ### Food
 
@@ -547,7 +684,7 @@ Cargo classes: Express, Refrigerated
 | Produced by | Required by |
 | -- | -- |
 | [Food processor](#food-processor) | [General store](#general-store) |
-|  | [Hotel](#hotel) |
+| [Food processor](#food-processor) | [Hotel](#hotel) |
 
 ### Goods
 
@@ -559,6 +696,7 @@ Cargo classes: Express
 | [Clothing Plant](#clothing-plant) | [Department store](#department-store) |
 | [Furniture factory](#furniture-factory) | [Port](#port) |
 | [Furniture factory](#furniture-factory) |  |
+| [Pharmaceutical Plant](#pharmaceutical-plant) |  |
 
 ### Grain
 
@@ -568,7 +706,18 @@ Cargo classes: Bulk cargo
 | Produced by | Required by |
 | -- | -- |
 | [Farm](#farm) | [Food processor](#food-processor) |
-| [Farm](#farm) |  |
+| [Farm](#farm) | [Food processor](#food-processor) |
+
+### Hydrogen
+
+Hydrogen is the most basic and most common chemical element in the universe. On Earth, it is mostly found in compounds, most notably water and hydrocarbons such as oil. It sees a wide range of applications in the chemical industry, most importantly in the production of ammonia. Apart from that, it is used as rocket fuel, but also has applications as coolant and in cryogenics. 
+
+Part of extension: [Basic anorganic chemistry](#basic-anorganic-chemistry)
+
+Cargo classes: Hazardous, Liquid
+| Produced by | Required by |
+| -- | -- |
+| [Chloralkali plant](#chloralkali-plant) | [Pharmaceutical Plant](#pharmaceutical-plant) |
 
 ### Iron Ore
 
@@ -603,7 +752,20 @@ Cargo classes: Piece goods
 | Produced by | Required by |
 | -- | -- |
 | [Farm](#farm) | [Food processor](#food-processor) |
-| [Farm](#farm) |  |
+| [Farm](#farm) | [Food processor](#food-processor) |
+
+### Lye
+
+Lye is the common name for various alkaline solutions. They have a wide range of applications in the creation of cleaning agents and soaps, but also in the food industry. A huge percentage of lye is industrially used in the paper industry, but it also sees widespread application in the production of dyes and bleaches. Lye, at least in the form of sodium hydroxide, is produced by splitting salt using electrolysis in the so-called chloralkali process. 
+
+Part of extension: [Basic anorganic chemistry](#basic-anorganic-chemistry)
+
+Cargo classes: Hazardous, Liquid
+| Produced by | Required by |
+| -- | -- |
+| [Chloralkali plant](#chloralkali-plant) | [Aluminium Plant](#aluminium-plant) |
+|  | [Food processor](#food-processor) |
+|  | [Pharmaceutical Plant](#pharmaceutical-plant) |
 
 ### Mail
 
@@ -625,8 +787,8 @@ Cargo classes: Liquid
 | Produced by | Required by |
 | -- | -- |
 | [Oil rig](#oil-rig) | [Plastics Plant](#plastics-plant) |
-| [Oil well](#oil-well) | [Power plant](#power-plant) |
-| [Port](#port) |  |
+| [Oil well](#oil-well) | [Plastics Plant](#plastics-plant) |
+| [Port](#port) | [Power plant](#power-plant) |
 
 ### Passengers
 
@@ -648,9 +810,21 @@ Cargo classes: Bulk cargo, Piece goods
 | Produced by | Required by |
 | -- | -- |
 | [Plastics Plant](#plastics-plant) | [Furniture factory](#furniture-factory) |
-|  | [Furniture factory](#furniture-factory) |
+| [Plastics Plant](#plastics-plant) | [Furniture factory](#furniture-factory) |
 |  | [Vehicle factory](#vehicle-factory) |
 |  | [Vehicle factory](#vehicle-factory) |
+
+### Salt
+
+Salt has been used since ancient times to conserve food. Up until the end of middle ages, salt was treated as white gold and it played a pivotal role in trade, taxes and economy in general. This only changed when mining salt became possible due to improved technical means in the 19th century. Salt mining in Germany began in 1839 in the city of Staßfurt, and even today Germany is by far the biggest producer of salt in Europe. Additionally, with the progress of science and chemistry in the 19th century, salt became an all-important raw material to produce chlorine, lye and soda, which in turn are some of the most important basic chemicals for industrial purposes. Today, about 80% of the salt mined in Germany is used for industrial purposes, less than 5% are used for in the food industry. 
+
+Part of extension: [Basic anorganic chemistry](#basic-anorganic-chemistry)
+
+Cargo classes: Bulk cargo, Covered
+| Produced by | Required by |
+| -- | -- |
+| [Salt mine](#salt-mine) | [Chloralkali plant](#chloralkali-plant) |
+|  | [Food processor](#food-processor) |
 
 ### Sand
 

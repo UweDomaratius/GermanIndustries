@@ -21,6 +21,8 @@ STR_PARAM_EXT_TEXTILE_INDUSTRIES :Extension set "Textile Industries"
 STR_PARAM_EXT_TEXTILE_INDUSTRIES_DESC :Adds cargos related to textile and clothing production, such as wool and textiles, as well as the related industries.
 STR_PARAM_EXT_ALUMINIUM :Extension set "Aluminium"
 STR_PARAM_EXT_ALUMINIUM_DESC :Adds aluminium production from bauxite and extends other industries to require aluminium.
+STR_PARAM_EXT_BASIC_ANORGANIC_CHEMISTRY :Extension set "Basic Anorganic Chemistry"
+STR_PARAM_EXT_BASIC_ANORGANIC_CHEMISTRY_DESC :Adds basic chemistry based on sodium and chlorine, as well as related industries.
 
 STR_TOWN    :{STRING}
 STR_STATION :{STRING} {STRING}
@@ -42,9 +44,13 @@ STR_CARGO_NAME_ALUMINIUM          :Aluminium
 STR_CARGO_NAME_BAUXITE            :Bauxite
 STR_CARGO_NAME_BUILDING_MATERIALS :Bricks
 STR_CARGO_NAME_CEMENT             :Cement
+STR_CARGO_NAME_CHLORINE           :Chlorine
 STR_CARGO_NAME_FISH               :Fish
+STR_CARGO_NAME_HYDROGEN           :Hydrogen
 STR_CARGO_NAME_LIMESTONE          :Limestone
+STR_CARGO_NAME_LYE                :Lye
 STR_CARGO_NAME_PLASTICS           :Plastics
+STR_CARGO_NAME_SALT               :Salt
 STR_CARGO_NAME_SAND               :Sand
 STR_CARGO_NAME_TEXTILES           :Textiles
 STR_CARGO_NAME_TIMBER             :Timber
@@ -56,11 +62,15 @@ STR_QUANTITY_ALUMINIUM            :{WEIGHT} of aluminium
 STR_QUANTITY_BAUXITE              :{WEIGHT} of bauxite
 STR_QUANTITY_BUILDING_MATERIALS   :{WEIGHT} of bricks
 STR_QUANTITY_CEMENT               :{WEIGHT} of cement
+STR_QUANTITY_CHLORINE             :{WEIGHT} of chlorine
 STR_QUANTITY_FISH                 :{WEIGHT} of fish
 STR_QUANTITY_GOODS                :{WEIGHT} of goods
+STR_QUANTITY_HYDROGEN             :{WEIGHT} of hydrogen
 STR_QUANTITY_LIMESTONE            :{WEIGHT} of limestone
+STR_QUANTITY_LYE                  :{WEIGHT} of lye
 STR_QUANTITY_OIL                  :{WEIGHT} of oil
 STR_QUANTITY_PLASTICS             :{WEIGHT} of plastics
+STR_QUANTITY_SALT                 :{WEIGHT} of salt
 STR_QUANTITY_SAND                 :{WEIGHT} of sand
 STR_QUANTITY_TEXTILES             :{WEIGHT} of textiles
 STR_QUANTITY_TIMBER               :{WEIGHT} of timber
@@ -72,10 +82,14 @@ STR_CID_ALUMINIUM                 :{TINYFONT}ALUM
 STR_CID_BAUXITE                   :{TINYFONT}AORE
 STR_CID_BUILDING_MATERIALS:       :{TINYFONT}BDMT
 STR_CID_CEMENT                    :{TINYFONT}CMNT
+STR_CID_CHLORINE                  :{TINYFONT}CHLO
 STR_CID_FISH                      :{TINYFONT}FISH
 STR_CID_FOOD                      :{TINYFONT}FOOD
+STR_CID_HYDROGEN                  :{TINYFONT}H2
 STR_CID_LIMESTONE                 :{TINYFONT}LIME
+STR_CID_LYE                       :{TINYFONT}LYE
 STR_CID_PLASTICS                  :{TINYFONT}PLAS
+STR_CID_SALT                      :{TINYFONT}SALT
 STR_CID_SAND                      :{TINYFONT}SAND
 STR_CID_TEXTILES                  :{TINYFONT}TEXT
 STR_CID_TIMBER                    :{TINYFONT}WDPR
@@ -86,6 +100,7 @@ STR_CID_WOOL                      :{TINYFONT}WOOL
 STR_IND_ALUMINIUM_PLANT      :Aluminium Plant
 STR_IND_BRICK_WORKS          :Brickworks
 STR_IND_BUILDERS_YARD        :Builders Yard
+STR_IND_CHLOR_ALKALI_PLANT   :Chloralkali process plant
 STR_IND_CLOTHING_PLANT       :Clothing Plant
 STR_IND_CEMENT_PLANT         :Cement Plant
 STR_IND_FISHING_GROUNDS      :Fishing Grounds
@@ -95,7 +110,10 @@ STR_IND_GENERAL_STORE        :General Store
 STR_IND_HOTEL                :Hotel
 STR_IND_INTEGRATED_STEEL_MILL:Integrated Steel Mill
 STR_IND_LIMESTONE_MINE       :Limestone Mine
+STR_IND_PHARMACEUTICAL_PLANT :Pharmaceutical Plant
+STR_IND_PLASTICS_PLANT       :Plastics Plant
 STR_IND_PORT                 :Port
+STR_IND_SALT_MINE            :Salt Mine
 STR_IND_SANDPIT              :Sand pit
 STR_IND_TEXTILE_MILL         :Textile Mill
 STR_IND_VEHICLE_DISTRIBUTOR  :Vehicle Distributor
@@ -106,6 +124,7 @@ STR_STATION_ALUMINIUM_PLANT      :Aluminium Plant
 STR_STATION_BRICK_WORKS          :Brickworks
 STR_STATION_BUILDERS_YARD        :Builders Yard
 STR_STATION_CEMENT_PLANT         :Cement Plant
+STR_STATION_CHLOR_ALKALI_PLANT   :Chloralkali process plant
 STR_STATION_CLOTHING_PLANT       :Clothing Plant
 STR_STATION_COAL_MINE            :Mining
 STR_STATION_DEPARTMENT_STORE     :Department Store
@@ -122,6 +141,9 @@ STR_STATION_LIMESTONE_MINE       :Mining
 STR_STATION_OIL_REFINERY         :Refinery
 STR_STATION_OIL_RIG              :Oil Rig
 STR_STATION_OIL_WELL             :Oil Wells
+STR_STATION_PHARMACEUTICAL_PLANT :Pharmaceutical Plant
+STR_STATION_PLASTICS_PLANT       :Plastics Plant
+STR_STATION_SALT_MINE            :Salt Mine
 STR_STATION_SANDPIT              :Sand Pit
 STR_STATION_PORT                 :Port
 STR_STATION_POWER_PLANT          :Powerplant
@@ -141,7 +163,6 @@ STR_EXTRACTIVE_INDUSTRY_TEXT:{STRING}{STRING}{}About {YELLOW}{COMMA} kt {BLACK} 
 STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO :Industry requires the raw materials printed in black to produce anything. Raw materials printed in white will increase the maximum production level.
 STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO_ANY :Industry requires any of the raw materials printed in black to produce anything. Maximum production level is limited by the number of different raw materials available. Raw materials printed in white will increase the maximum production level.
 STR_INDUSTRY_NEEDS_ANY_INPUT :Industry starts producing as soon as any raw material is available. Maximum production level is limited by the number of different raw materials available.
-
 # Text that has to do with energy production, power plant displays how much power is produced and demanded,
 # Industries show much power they need for their current production and if their demand is met
 STR_POWER_PLANT_TEXT:Power produced {YELLOW}{COMMA}{BLACK}, demand {YELLOW}{COMMA}{BLACK}
@@ -155,7 +176,7 @@ STR_INDUSTRY_NOT_AVAILABLE_BEFORE :{}{BLACK}Industry not available before {STRIN
 STR_INDUSTRY_AVAILABLE_TIMEFRAME  :{}{BLACK}Industry only available between {STRING} and {STRING}.
 
 # Cargo display for stockpile
-STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE: {BLACK}({CARGO_SHORT} in stock)
+STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE          :{BLACK}({CARGO_SHORT} in stock)
 STR_CARGO_SUBTYPE_DISPLAY_OPTIONAL_CARGO_AVAILABLE :{WHITE}({CARGO_SHORT} in stock)
 
 # Error texts

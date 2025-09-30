@@ -1,0 +1,31 @@
+spriteset(cargoicon_lye) {
+	[10 + 20 * 4, 10 + 20 * 5, 10, 10, 0, 0,  "graphics/other/cargoicons.png"]
+}
+if (param_extension_basic_anorganic_chemistry) {
+	item(FEAT_CARGOS, lye, CARGO_ID_LYE) {
+		property {
+			type_name: string(STR_CARGO_NAME_LYE);
+			unit_name: string(STR_CARGO_NAME_LYE);
+			type_abbreviation: string(STR_CID_LYE);
+			sprite: NEW_CARGO_SPRITE;
+			weight: 1.0;
+			is_freight: 1;
+			cargo_classes: bitmask(CC_LIQUID, CC_HAZARDOUS);
+			town_growth_effect: TOWNGROWTH_NONE;
+			town_growth_multiplier: 1.0;
+			units_of_cargo: TTD_STR_TONS;
+			items_of_cargo: string(STR_QUANTITY_LYE);
+			penalty_lowerbound: 30;
+			single_penalty_length: 255;
+			capacity_multiplier: 1;
+			cargo_payment_list_colour: 101;
+			station_list_colour: 101;
+			price_factor: 108;
+			cargo_label: "LYE_";
+			number: CARGO_ID_LYE;
+		}
+		graphics {
+			cargoicon_lye;
+		}
+	}
+}
