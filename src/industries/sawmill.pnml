@@ -382,7 +382,7 @@ switch (FEAT_INDUSTRYTILES, SELF, sawmill_switch_tile_location_check2,
 }
 
 switch (FEAT_INDUSTRYTILES, SELF, sawmill_switch_tile_location_check,
-	is_funded_or_prospected() || (not_next_to_industry() && not_next_to_buildings()))
+	is_funded_or_prospected() || (generation_not_forbidden_by_param() && not_next_to_industry() && not_next_to_buildings()))
 {
 	1: sawmill_switch_tile_location_check2;
 	return CB_RESULT_LOCATION_DISALLOW;
@@ -430,19 +430,16 @@ switch(FEAT_INDUSTRIES, SELF, sawmill_switch_location_check_industry_distance,
 
 // 1 WOOD => 1 WDPR
 produce(sawmill_produce,
-	[WOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
-	[WDPR: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
+	[WOOD: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);],
+	[WDPR: max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100);],
 	0 // do not run again
 )
 
-// sawmill uses 10% of stockpile for production, if stockpile is big enough
-// if stockpile is < 80t, 8t are produced per 256ticks
-// if stockpile is < 8t, whatever is available is used
-// it stockpile is empty, nothing is produced
 switch(FEAT_INDUSTRIES, SELF, sawmill_switch_produce, 
-	[STORE_TEMP(incoming_cargo_waiting("WOOD"), TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT),
-	 STORE_TEMP(((LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) / 10) > 8) ? LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) / 10 : 
-	 (LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) > 8 ? 8 : LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT)),TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)
+	[STORE_TEMP(incoming_cargo_waiting("WOOD"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+     calculate_raw_material_usage(),
+	 calculate_total_production()
+	 
 	]) {
 	sawmill_produce;
 }

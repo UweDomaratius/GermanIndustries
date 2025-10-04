@@ -833,7 +833,7 @@ switch (FEAT_INDUSTRYTILES, SELF, cement_plant_switch_tile_location_check2,
 }
 
 switch (FEAT_INDUSTRYTILES, SELF, cement_plant_switch_tile_location_check,
-	is_funded_or_prospected() || (not_next_to_industry() && not_next_to_buildings()))
+	is_funded_or_prospected() || (generation_not_forbidden_by_param() && not_next_to_industry() && not_next_to_buildings()))
 {
 	1: cement_plant_switch_tile_location_check2;
 	return CB_RESULT_LOCATION_DISALLOW;
@@ -965,11 +965,11 @@ switch(FEAT_INDUSTRIES, SELF, cement_plant_switch_location_check_industry_distan
 	   return CB_RESULT_LOCATION_DISALLOW;
 }
 
-// 1 SAND + 1 LIMESTONE => 1 CEMENT
+// 1 SAND + 1 LIMESTONE => 0.63 CEMENT
 produce(cement_plant_produce,
-	[SAND: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);
-	 LIME:  LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
-	[CMNT: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
+	[SAND: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 LIME: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);],
+	[CMNT: max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*63/100,1);],
 	0 // do not run again
 )
 
@@ -978,9 +978,9 @@ produce(cement_plant_produce,
 // if stockpile is < 8t, whatever is available is used
 // it stockpile is empty, nothing is produced
 switch(FEAT_INDUSTRIES, SELF, cement_plant_switch_produce, 
-	[STORE_TEMP(min(incoming_cargo_waiting("SAND"),incoming_cargo_waiting("LIME")), TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT),
-	 STORE_TEMP(((LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) / 10) > 8) ? LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) / 10 : 
-	 (LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) > 8 ? 8 : LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT)),TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)
+	[STORE_TEMP(min(incoming_cargo_waiting("SAND"),incoming_cargo_waiting("LIME")),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+     calculate_raw_material_usage(),
+	 calculate_total_production()	 
 	]) {
 	cement_plant_produce;
 }

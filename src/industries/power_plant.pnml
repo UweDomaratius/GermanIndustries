@@ -342,7 +342,7 @@ switch (FEAT_INDUSTRYTILES, SELF, power_plant_switch_tile_location_check2,
 }
 
 switch (FEAT_INDUSTRYTILES, SELF, power_plant_switch_tile_location_check,
-		is_funded_or_prospected() || not_next_to_industry()
+		is_funded_or_prospected() || (generation_not_forbidden_by_param() && not_next_to_industry())
 	) {
 	1: power_plant_switch_tile_location_check2;
 	return CB_RESULT_LOCATION_DISALLOW;
@@ -458,8 +458,7 @@ switch(FEAT_INDUSTRIES, SELF, power_plant_switch_produce,
 		max(0,LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) - LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0)), 
 		TEMP_REGISTER_PRODUCTION_RAW1),
 	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0)+LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1), TEMP_REGISTER_PRODUCTION_AMOUNT),
-	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT),PERM_REGISTER_PRODUCTION_AMOUNT),	 
-	 //city_set_power_available(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT))
+	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT),PERM_REGISTER_PRODUCTION_AMOUNT)
 	]) {
 	power_plant_set_power_available;
 }

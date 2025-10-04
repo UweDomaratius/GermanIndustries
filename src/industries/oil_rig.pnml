@@ -295,11 +295,18 @@ switch (FEAT_INDUSTRYTILES, SELF, oil_rig_switch_graphics,
 //////////////////////////////////////////////////////////////////////////////
 // location checks
 //////////////////////////////////////////////////////////////////////////////
-switch (FEAT_INDUSTRYTILES, SELF, oil_rig_switch_tile_location_check, 
+switch (FEAT_INDUSTRYTILES, SELF, oil_rig_switch_tile_location_check2, 
 	nearby_tile_slope(0,0) == SLOPE_FLAT && 
 	not_next_to_industry()
 	) {
 	1: return CB_RESULT_LOCATION_ALLOW;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, oil_rig_switch_tile_location_check,
+	is_funded_or_prospected() || generation_not_forbidden_by_param())
+{
+	1: oil_rig_switch_tile_location_check2;
 	return CB_RESULT_LOCATION_DISALLOW;
 }
 

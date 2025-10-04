@@ -376,7 +376,7 @@ switch (FEAT_INDUSTRYTILES, SELF, steel_mill_switch_tile_location_check2,
 }
 
 switch (FEAT_INDUSTRYTILES, SELF, steel_mill_switch_tile_location_check,
-	is_funded_or_prospected() || (not_next_to_industry() && not_next_to_buildings()))
+	is_funded_or_prospected() || (generation_not_forbidden_by_param() && not_next_to_industry() && not_next_to_buildings()))
 {
 	1: steel_mill_switch_tile_location_check2;
 	return CB_RESULT_LOCATION_DISALLOW;
@@ -480,10 +480,11 @@ switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_location_check_industry_distance
 	   return CB_RESULT_LOCATION_DISALLOW;
 }
 
-// 1 COAL + 1 IORE => 1 STEL
+// according to google, about 0.38t coal for 1t steel
 produce(steel_mill_produce,
-	[COAL: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);IORE: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
-	[STEL: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
+	[COAL: max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*40/100,1);
+	 IORE: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
+	[STEL: max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*70/100,1);],
 	0 // do not run again
 )
 
@@ -492,9 +493,11 @@ produce(steel_mill_produce,
 // if stockpile is < 8t, whatever is available is used
 // it stockpile is empty, nothing is produced
 switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_produce, 
-	[STORE_TEMP(min(incoming_cargo_waiting("COAL"),incoming_cargo_waiting("IORE")), TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT),
-	 STORE_TEMP(((LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) / 10) > 8) ? LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) / 10 : 
-	 (LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) > 8 ? 8 : LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT)),TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)
+	[STORE_TEMP(min(incoming_cargo_waiting("COAL"), incoming_cargo_waiting("IORE")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+
 	]) {
 	steel_mill_produce;
 }

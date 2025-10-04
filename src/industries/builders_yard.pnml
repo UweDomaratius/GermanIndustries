@@ -237,6 +237,13 @@ switch (FEAT_INDUSTRYTILES, SELF, builders_yard_switch_graphics, [
     builders_yard_switch_graphics_construction_state;
 }
 
+switch (FEAT_INDUSTRYTILES, SELF, builders_yard_switch_tile_location_check,
+	is_funded_or_prospected() || generation_not_forbidden_by_param())
+{
+	1: return CB_RESULT_LOCATION_ALLOW;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
 //////////////////////////////////////////////////////////////////////////////
 // industry tile and layout definition
 //////////////////////////////////////////////////////////////////////////////
@@ -248,6 +255,7 @@ item(FEAT_INDUSTRYTILES, builders_yard_tile, INDUSTRY_TILE_ID_BUILDERS_YARD) {
 		animation_triggers: bitmask();
 	}
 	graphics {
+		tile_check: builders_yard_switch_tile_location_check;
 		builders_yard_switch_graphics;
 	}
 }

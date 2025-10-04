@@ -282,7 +282,7 @@ switch (FEAT_INDUSTRYTILES, SELF, clothing_plant_switch_tile_location_check2,
 }
 
 switch (FEAT_INDUSTRYTILES, SELF, clothing_plant_switch_tile_location_check,
-	is_funded_or_prospected() || (not_next_to_industry() && not_next_to_buildings()))
+	is_funded_or_prospected() || (generation_not_forbidden_by_param() && not_next_to_industry() && not_next_to_buildings()))
 {
 	1: clothing_plant_switch_tile_location_check2;
 	return CB_RESULT_LOCATION_DISALLOW;
@@ -332,17 +332,16 @@ switch(FEAT_INDUSTRIES, SELF, clothing_plant_switch_location_check_industry_dist
 }
 
 produce(clothing_plant_produce,
-	[TEXT: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
-	[GOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
+	[TEXT: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);],
+	[GOOD: max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100);],
 	0 // do not run again
 )
 
 switch(FEAT_INDUSTRIES, SELF, clothing_plant_switch_produce, 
 	[STORE_TEMP(incoming_cargo_waiting("TEXT"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
-	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0), TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT),
-	 STORE_TEMP(((LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) / 10) > 8) ? LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) / 10 : 
-	 (LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) > 8 ? 8 : LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT)),TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
-	 ((LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0) > LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1)) ? 1 : 0)])
+     calculate_raw_material_usage(),
+	 calculate_total_production()	 
+	 ])
 	{
 	clothing_plant_produce;	
 }

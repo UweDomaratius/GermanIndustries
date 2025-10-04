@@ -159,7 +159,7 @@ switch (FEAT_INDUSTRYTILES, SELF, fishing_grounds_switch_location_check_flat_til
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, fishing_grounds_switch_tile_location_check,
-	is_funded_or_prospected())
+	is_funded_or_prospected() || generation_not_forbidden_by_param())
 {
 	1: fishing_grounds_switch_location_check_flat_tile;
 	return CB_RESULT_LOCATION_DISALLOW;

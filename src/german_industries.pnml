@@ -37,6 +37,14 @@ grf {
 		}
 	}
 	param {
+		param_forbid_industry_generation {
+			type: bool;
+			name: string(STR_PARAM_FORBID_INDUSTRY_GENERATION);
+			desc: string(STR_PARAM_FORBID_INDUSTRY_GENERATION_DESC);
+			def_value: 0;
+		}
+	}
+	param {
 		param_extension_building_materials {
 			type: bool;
 			name: string(STR_PARAM_EXT_BUILDING_MATERIALS);

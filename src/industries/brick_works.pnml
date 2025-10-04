@@ -480,7 +480,7 @@ switch (FEAT_INDUSTRYTILES, SELF, brick_works_switch_tile_location_check2,
 }
 
 switch (FEAT_INDUSTRYTILES, SELF, brick_works_switch_tile_location_check,
-	is_funded_or_prospected() || (not_next_to_industry() && not_next_to_buildings()))
+	is_funded_or_prospected() || (generation_not_forbidden_by_param() && not_next_to_industry() && not_next_to_buildings()))
 {
 	1: brick_works_switch_tile_location_check2;
 	return CB_RESULT_LOCATION_DISALLOW;
@@ -550,19 +550,15 @@ switch(FEAT_INDUSTRIES, SELF, brick_works_switch_location_check_industry_distanc
 
 // 1 COAL => 1 BDMT
 produce(brick_works_produce,
-	[COAL: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
-	[BDMT: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
+	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);],
+	[BDMT:  max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100);],
 	0 // do not run again
 )
 
-// industry uses 10% of stockpile for production, if stockpile is big enough
-// if stockpile is < 80t, 8t are produced per 256ticks
-// if stockpile is < 8t, whatever is available is used
-// it stockpile is empty, nothing is produced
 switch(FEAT_INDUSTRIES, SELF, brick_works_switch_produce, 
-	[STORE_TEMP(incoming_cargo_waiting("COAL"), TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT),
-	 STORE_TEMP(((LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) / 10) > 8) ? LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) / 10 : 
-	 (LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) > 8 ? 8 : LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT)),TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)
+	[STORE_TEMP(incoming_cargo_waiting("COAL"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+     calculate_raw_material_usage(),
+	 calculate_total_production()	 
 	]) {
 	brick_works_produce;
 }
