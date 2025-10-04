@@ -82,7 +82,7 @@ switch (FEAT_INDUSTRYTILES, SELF, general_store_switch_graphics,
 // location checks
 //////////////////////////////////////////////////////////////////////////////
 switch (FEAT_INDUSTRYTILES, SELF, general_store_switch_tile_location_check,
-	is_funded_or_prospected() || is_next_to_road())
+	is_funded_or_prospected() || (generation_not_forbidden_by_param() && is_next_to_road()))
 {
 	1: return CB_RESULT_LOCATION_ALLOW;
 	return CB_RESULT_LOCATION_DISALLOW;

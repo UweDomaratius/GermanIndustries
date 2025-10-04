@@ -315,13 +315,20 @@ switch (FEAT_INDUSTRYTILES, SELF, hotel_switch_graphics,
 // Do the same for the current tile and compare the results. If the result is equal, the terrain is effectively flat
 // and industry can be placed.
 // It just looks weird due to the stacked ternary operators needed here
-switch (FEAT_INDUSTRYTILES, SELF, hotel_switch_tile_location_check,
+switch (FEAT_INDUSTRYTILES, SELF, hotel_switch_tile_location_check2,
 			(nearby_tile_height(-relative_x, -relative_y) + 
 			(nearby_tile_slope(-relative_x, -relative_y)== SLOPE_FLAT ? 0 : nearby_tile_slope(-relative_x, -relative_y) == bitmask(IS_STEEP_SLOPE) ? 2 : 1)) 
 			== 
 			(nearby_tile_height(0, 0) + (nearby_tile_slope(0, 0) == SLOPE_FLAT ? 0 : nearby_tile_slope(0, 0) == bitmask(IS_STEEP_SLOPE) ? 2 : 1))
 			) {
 	1: CB_RESULT_LOCATION_ALLOW;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, hotel_switch_tile_location_check,
+	is_funded_or_prospected() || generation_not_forbidden_by_param())
+{
+	1: hotel_switch_tile_location_check2;
 	return CB_RESULT_LOCATION_DISALLOW;
 }
 

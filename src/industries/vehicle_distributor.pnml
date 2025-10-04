@@ -172,6 +172,13 @@ switch(FEAT_INDUSTRYTILES, PARENT, vehicle_distributor_switch_graphics_layouts, 
     vehicle_distributor_switch_graphics_spritelayout_1; // default
 }
 
+switch (FEAT_INDUSTRYTILES, SELF, vehicle_distributor_switch_tile_location_check,
+	is_funded_or_prospected() || generation_not_forbidden_by_param())
+{
+	1: return CB_RESULT_LOCATION_ALLOW;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
 switch (FEAT_INDUSTRYTILES, SELF, vehicle_distributor_switch_graphics,
 	[switch_terrain_sprite(),
 	 switch_tile_fences(),switch_graphics_init_temp_registers()
@@ -190,6 +197,7 @@ item(FEAT_INDUSTRYTILES, vehicle_distributor_tile, INDUSTRY_TILE_ID_VEHICLE_DIST
 		animation_triggers: bitmask();
 	}
 	graphics {
+		tile_check: vehicle_distributor_switch_tile_location_check;
 		vehicle_distributor_switch_graphics;
 	}
 }

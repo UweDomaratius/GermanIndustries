@@ -32,6 +32,16 @@ switch (FEAT_INDUSTRIES, SELF, is_industry_funded_or_prospected,
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+// Check that industry generation is not forbidden via set parameter
+////////////////////////////////////////////////////////////////////////////////
+switch (FEAT_INDUSTRYTILES, SELF, generation_not_forbidden_by_param, 
+			(getbits(extra_callback_info2, 0, 8) == IND_CREATION_GENERATION) || 
+			(getbits(extra_callback_info2, 0, 8) == IND_CREATION_RANDOM) && !param_forbid_industry_generation)
+{
+		return;
+}
+
+////////////////////////////////////////////////////////////////////////////////
 // Check if next 2 surrounding tiles in any direction belong to an industry.
 // Used to avoid having industries generated almost next to each other.
 // Returns 1 if true, 0 if false.

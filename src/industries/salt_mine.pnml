@@ -400,7 +400,7 @@ switch (FEAT_INDUSTRYTILES, SELF, salt_mine_switch_tile_location_check2,
 
 
 switch (FEAT_INDUSTRYTILES, SELF, salt_mine_switch_tile_location_check,
-	is_funded_or_prospected() || not_next_to_industry())
+	is_funded_or_prospected() || (generation_not_forbidden_by_param() && not_next_to_industry()))
 {
 	1: salt_mine_switch_tile_location_check2;
 	return CB_RESULT_LOCATION_DISALLOW;

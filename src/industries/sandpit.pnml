@@ -1049,7 +1049,7 @@ switch (FEAT_INDUSTRYTILES, SELF, sandpit_switch_tile_location_check2,
 
 
 switch (FEAT_INDUSTRYTILES, SELF, sandpit_switch_tile_location_check,
-	is_funded_or_prospected() || not_next_to_industry())
+	is_funded_or_prospected() || (generation_not_forbidden_by_param() && not_next_to_industry()))
 {
 	1: sandpit_switch_tile_location_check2;
 	return CB_RESULT_LOCATION_DISALLOW;
@@ -1229,7 +1229,6 @@ item(FEAT_INDUSTRIES, sandpit, INDUSTRY_ID_SANDPIT) {
 		build_prod_change:        sandpit_switch_prod_change_build;
 		location_check:           sandpit_switch_location_check_industry_distance;
 		extra_text_industry:      sandpit_switch_extra_text;
-		//cargo_subtype_display:    sandpit_switch_cargo_subtype;
 	}
 }
     

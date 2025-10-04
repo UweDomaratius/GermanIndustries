@@ -406,7 +406,7 @@ switch(FEAT_INDUSTRYTILES, SELF, farm_switch_location_check_below_snowline, UCMP
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, farm_switch_tile_location_check,
-	is_funded_or_prospected() || (not_next_to_desert() && not_next_to_industry() && not_next_to_buildings()))
+	is_funded_or_prospected() || (generation_not_forbidden_by_param() && not_next_to_desert() && not_next_to_industry() && not_next_to_buildings()))
 {
 	1: farm_switch_location_check_below_snowline;
 	return CB_RESULT_LOCATION_DISALLOW;

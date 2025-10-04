@@ -564,7 +564,7 @@ switch (FEAT_INDUSTRYTILES, SELF, textile_mill_switch_tile_location_check2,
 }
 
 switch (FEAT_INDUSTRYTILES, SELF, textile_mill_switch_tile_location_check,
-	is_funded_or_prospected() || (not_next_to_industry() && not_next_to_buildings()))
+	is_funded_or_prospected() || (generation_not_forbidden_by_param() && not_next_to_industry() && not_next_to_buildings()))
 {
 	1: textile_mill_switch_tile_location_check2;
 	return CB_RESULT_LOCATION_DISALLOW;
@@ -671,45 +671,36 @@ produce(textile_mill_produce,
 	0 // do not run again
 )
 
-switch(FEAT_INDUSTRIES, SELF, textile_mill_switch_produce_wool,
-	[
-		STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)), TEMP_REGISTER_PRODUCTION_RAW0),
-		STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1),max(0,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)-LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0))), TEMP_REGISTER_PRODUCTION_RAW1),
-	]
-)
-{
-	textile_mill_produce;
-}
-
-switch(FEAT_INDUSTRIES, SELF, textile_mill_switch_produce_plas,
-	[
-		STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)), TEMP_REGISTER_PRODUCTION_RAW1),
-		STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0),max(0,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)-LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1))), TEMP_REGISTER_PRODUCTION_RAW0),
-	]
-)
-{
-	textile_mill_produce;
-}
-
 switch(FEAT_INDUSTRIES, SELF, textile_mill_switch_produce, 
 	[STORE_TEMP(incoming_cargo_waiting("WOOL"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
 	 STORE_TEMP(incoming_cargo_waiting("PLAS"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
-	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
-	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1) > 0 ? LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) + 1 : LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS), TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
-	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 2 ? 90 : 50, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0)+LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1), TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT),
-	 STORE_TEMP(((LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) / 10) > 8) ? LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) / 10 : 
-	 (LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) > 8 ? 8 : LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT)),TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
-	 ((LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0) > LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1)) ? 1 : 0)])
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 calculate_number_of_waiting_cargos(),
+	 
+	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
+	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
+	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (2-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE)
+	 ])
 	{
-	1: textile_mill_switch_produce_wool;
-	textile_mill_switch_produce_plas;	
+	textile_mill_produce;	
 }
 
 switch(FEAT_INDUSTRIES, SELF, textile_mill_switch_cargo_subtype, getbits(extra_callback_info2, 16, 8)) {
 	WOOL: switch_cargo_subtype;
 	PLAS: switch_cargo_subtype;
 	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, textile_mill_switch_update_last_served_date,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("TEXT") != 0 || last_month_production("TEXT") != 0 || 
+		incoming_cargo_waiting("PLAS") != 0 || incoming_cargo_waiting("WOOL") ||
+		this_month_transported("TEXT") != 0 || last_month_transported("TEXT") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
 }
 
 if (param_extension_textile_industries) {
@@ -737,12 +728,12 @@ if (param_extension_textile_industries) {
 			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        textile_mill_switch_produce;
-			monthly_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
+			monthly_prod_change:      textile_mill_switch_update_last_served_date;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           textile_mill_switch_location_check_industry_distance;
 			extra_text_fund:          return string(STR_EMPTY);
-			//extra_text_industry:    textile_mill_switch_extra_text;
 			cargo_subtype_display:    textile_mill_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
 		}
 	}
 }

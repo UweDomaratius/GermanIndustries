@@ -480,7 +480,7 @@ switch (FEAT_INDUSTRYTILES, SELF, brick_works_switch_tile_location_check2,
 }
 
 switch (FEAT_INDUSTRYTILES, SELF, brick_works_switch_tile_location_check,
-	is_funded_or_prospected() || (not_next_to_industry() && not_next_to_buildings()))
+	is_funded_or_prospected() || (generation_not_forbidden_by_param() && not_next_to_industry() && not_next_to_buildings()))
 {
 	1: brick_works_switch_tile_location_check2;
 	return CB_RESULT_LOCATION_DISALLOW;
@@ -550,19 +550,15 @@ switch(FEAT_INDUSTRIES, SELF, brick_works_switch_location_check_industry_distanc
 
 // 1 COAL => 1 BDMT
 produce(brick_works_produce,
-	[COAL: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
-	[BDMT: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
+	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);],
+	[BDMT:  max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100);],
 	0 // do not run again
 )
 
-// industry uses 10% of stockpile for production, if stockpile is big enough
-// if stockpile is < 80t, 8t are produced per 256ticks
-// if stockpile is < 8t, whatever is available is used
-// it stockpile is empty, nothing is produced
 switch(FEAT_INDUSTRIES, SELF, brick_works_switch_produce, 
-	[STORE_TEMP(incoming_cargo_waiting("COAL"), TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT),
-	 STORE_TEMP(((LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) / 10) > 8) ? LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) / 10 : 
-	 (LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) > 8 ? 8 : LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT)),TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)
+	[STORE_TEMP(incoming_cargo_waiting("COAL"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+     calculate_raw_material_usage(),
+	 calculate_total_production()	 
 	]) {
 	brick_works_produce;
 }
@@ -584,6 +580,14 @@ switch(FEAT_INDUSTRIES, SELF, brick_works_switch_check_availability, current_yea
 switch(FEAT_INDUSTRIES, SELF, brick_works_switch_cargo_subtype, getbits(extra_callback_info2, 16, 8)) {
 	COAL: switch_cargo_subtype;
 	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, brick_works_switch_update_last_served_date,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("BDMT") != 0 || last_month_production("BDMT") != 0 || incoming_cargo_waiting("COAL") != 0 || this_month_transported("BDMT") != 0 || last_month_transported("BDMT") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
 }
 
 if (param_extension_building_materials) {
@@ -612,11 +616,12 @@ item(FEAT_INDUSTRIES, brick_works, INDUSTRY_ID_BRICK_WORKS) {
 		construction_probability: brick_works_switch_check_availability;
 		produce_cargo_arrival:    empty_produce; 
 		produce_256_ticks:        brick_works_switch_produce;
-		monthly_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
+		monthly_prod_change:      brick_works_switch_update_last_served_date;
 		random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 		location_check:           brick_works_switch_location_check_industry_distance;
 		extra_text_fund:          brick_works_switch_extra_text_fund;
 		cargo_subtype_display:    brick_works_switch_cargo_subtype;
+		build_prod_change:        initialize_last_served_date;
 	}
 }
 

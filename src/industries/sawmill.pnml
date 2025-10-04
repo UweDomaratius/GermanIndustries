@@ -382,7 +382,7 @@ switch (FEAT_INDUSTRYTILES, SELF, sawmill_switch_tile_location_check2,
 }
 
 switch (FEAT_INDUSTRYTILES, SELF, sawmill_switch_tile_location_check,
-	is_funded_or_prospected() || (not_next_to_industry() && not_next_to_buildings()))
+	is_funded_or_prospected() || (generation_not_forbidden_by_param() && not_next_to_industry() && not_next_to_buildings()))
 {
 	1: sawmill_switch_tile_location_check2;
 	return CB_RESULT_LOCATION_DISALLOW;
@@ -430,19 +430,16 @@ switch(FEAT_INDUSTRIES, SELF, sawmill_switch_location_check_industry_distance,
 
 // 1 WOOD => 1 WDPR
 produce(sawmill_produce,
-	[WOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
-	[WDPR: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
+	[WOOD: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);],
+	[WDPR: max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100);],
 	0 // do not run again
 )
 
-// sawmill uses 10% of stockpile for production, if stockpile is big enough
-// if stockpile is < 80t, 8t are produced per 256ticks
-// if stockpile is < 8t, whatever is available is used
-// it stockpile is empty, nothing is produced
 switch(FEAT_INDUSTRIES, SELF, sawmill_switch_produce, 
-	[STORE_TEMP(incoming_cargo_waiting("WOOD"), TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT),
-	 STORE_TEMP(((LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) / 10) > 8) ? LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) / 10 : 
-	 (LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) > 8 ? 8 : LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT)),TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)
+	[STORE_TEMP(incoming_cargo_waiting("WOOD"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+     calculate_raw_material_usage(),
+	 calculate_total_production()
+	 
 	]) {
 	sawmill_produce;
 }
@@ -453,6 +450,15 @@ switch(FEAT_INDUSTRIES, SELF, sawmill_switch_cargo_subtype, getbits(extra_callba
 	return 0x3800 + string(STR_EMPTY);
 }
 
+switch(FEAT_INDUSTRIES, SELF, sawmill_switch_update_last_served_date,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("WDPR") != 0 || last_month_production("WDPR") != 0 || 
+		incoming_cargo_waiting("WOOD") != 0 || 
+		this_month_transported("WDPR") != 0 || last_month_transported("WDPR") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
 
 item(FEAT_INDUSTRIES, sawmill, INDUSTRY_ID_SAWMILL) {
 	property {
@@ -477,9 +483,10 @@ item(FEAT_INDUSTRIES, sawmill, INDUSTRY_ID_SAWMILL) {
 	graphics {
 		produce_cargo_arrival:    empty_produce; 
 		produce_256_ticks:        sawmill_switch_produce;
-		monthly_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
+		monthly_prod_change:      sawmill_switch_update_last_served_date;
 		random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 		location_check:           sawmill_switch_location_check_industry_distance;
 		cargo_subtype_display:    sawmill_switch_cargo_subtype;
+		build_prod_change:        initialize_last_served_date;
 	}
 }

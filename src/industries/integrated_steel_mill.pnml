@@ -376,7 +376,7 @@ switch (FEAT_INDUSTRYTILES, SELF, steel_mill_switch_tile_location_check2,
 }
 
 switch (FEAT_INDUSTRYTILES, SELF, steel_mill_switch_tile_location_check,
-	is_funded_or_prospected() || (not_next_to_industry() && not_next_to_buildings()))
+	is_funded_or_prospected() || (generation_not_forbidden_by_param() && not_next_to_industry() && not_next_to_buildings()))
 {
 	1: steel_mill_switch_tile_location_check2;
 	return CB_RESULT_LOCATION_DISALLOW;
@@ -480,10 +480,11 @@ switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_location_check_industry_distance
 	   return CB_RESULT_LOCATION_DISALLOW;
 }
 
-// 1 COAL + 1 IORE => 1 STEL
+// according to google, about 0.38t coal for 1t steel
 produce(steel_mill_produce,
-	[COAL: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);IORE: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
-	[STEL: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
+	[COAL: max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*40/100,1);
+	 IORE: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
+	[STEL: max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*70/100,1);],
 	0 // do not run again
 )
 
@@ -492,9 +493,11 @@ produce(steel_mill_produce,
 // if stockpile is < 8t, whatever is available is used
 // it stockpile is empty, nothing is produced
 switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_produce, 
-	[STORE_TEMP(min(incoming_cargo_waiting("COAL"),incoming_cargo_waiting("IORE")), TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT),
-	 STORE_TEMP(((LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) / 10) > 8) ? LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) / 10 : 
-	 (LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT) > 8 ? 8 : LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING_MIN_AMOUNT)),TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)
+	[STORE_TEMP(min(incoming_cargo_waiting("COAL"), incoming_cargo_waiting("IORE")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+
 	]) {
 	steel_mill_produce;
 }
@@ -517,6 +520,16 @@ switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_cargo_subtype, getbits(extra_cal
 	COAL: switch_cargo_subtype;
 	IORE: switch_cargo_subtype;
 	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_update_last_served_date,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("STEL") != 0 || last_month_production("STEL") != 0 || 
+		incoming_cargo_waiting("COAL") != 0 || incoming_cargo_waiting("IORE") != 0 || 
+		this_month_transported("STEL") != 0 || last_month_transported("STEL") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
 }
 
 item(FEAT_INDUSTRIES, steel_mill, INDUSTRY_ID_INTEGRATED_STEEL_MILL) {
@@ -543,12 +556,12 @@ item(FEAT_INDUSTRIES, steel_mill, INDUSTRY_ID_INTEGRATED_STEEL_MILL) {
 		construction_probability: steel_mill_switch_check_availability;
 		produce_cargo_arrival:    empty_produce; 
 		produce_256_ticks:        steel_mill_switch_produce;
-		monthly_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
+		monthly_prod_change:      steel_mill_switch_update_last_served_date;
 		random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 		location_check:           steel_mill_switch_location_check_industry_distance;
 		extra_text_fund:          steel_mill_switch_extra_text_fund;
-		//extra_text_industry:    steel_mill_switch_extra_text;
 		cargo_subtype_display:    steel_mill_switch_cargo_subtype;
+		build_prod_change:        initialize_last_served_date;
 	}
 }
     

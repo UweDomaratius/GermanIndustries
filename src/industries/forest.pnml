@@ -4883,7 +4883,7 @@ switch (FEAT_INDUSTRYTILES, SELF, forest_switch_graphics,
 // location checks
 //////////////////////////////////////////////////////////////////////////////
 switch (FEAT_INDUSTRYTILES, PARENT, forest_switch_tile_location_check, 
-			(is_funded_or_prospected() || (not_next_to_industry() && not_next_to_desert() && !nearby_tile_is_water(0, 0))))
+			(is_funded_or_prospected() || (generation_not_forbidden_by_param() && not_next_to_industry() && not_next_to_desert() && !nearby_tile_is_water(0, 0))))
 {
 	1: return CB_RESULT_LOCATION_ALLOW;
 	return CB_RESULT_LOCATION_DISALLOW;

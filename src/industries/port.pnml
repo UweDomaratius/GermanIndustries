@@ -1236,6 +1236,13 @@ switch(FEAT_INDUSTRYTILES, SELF, port_tile_location_check_nearby_water, nearby_t
 	return CB_RESULT_LOCATION_DISALLOW;
 }
 
+switch (FEAT_INDUSTRYTILES, SELF, port_switch_tile_location_check,
+	is_funded_or_prospected() || generation_not_forbidden_by_param())
+{
+	1: port_tile_location_check_nearby_water;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
 //////////////////////////////////////////////////////////////////////////////
 // industry tile and layout definition
 //////////////////////////////////////////////////////////////////////////////
@@ -1258,7 +1265,7 @@ item(FEAT_INDUSTRYTILES, port_tile_2, INDUSTRY_TILE_ID_PORT_2) {
 		animation_triggers: bitmask();
 	}
 	graphics {
-		tile_check: port_tile_location_check_nearby_water;
+		tile_check: port_switch_tile_location_check;
 		foundations: return CB_RESULT_NO_FOUNDATIONS;
 		port_switch_graphics;
 	}

@@ -15,6 +15,10 @@ STR_PARAM_ECONOMY_MODEL_SIMPLE :Einfache (konstante) Wirtschaft.
 STR_PARAM_ECONOMY_MODEL_REALISTIC :Realistische Wirtschaft
 STR_PARAM_ELECTRICITY_NEEDED :Industrien benötigen elektrische Energie.
 STR_PARAM_ELECTRICITY_NEEDED_DESC :Einige Industrien benötigen Strom um etwas produzieren zu können. Strom wird von Kraftwerken produziert, die wiederum beliefert werden müssen.
+STR_PARAM_FORBID_INDUSTRY_GENERATION :Verbiete Erzeugung von Industrien
+STR_PARAM_FORBID_INDUSTRY_GENERATION_DESC :Wenn diese Option aktiviert ist, werden Industrien nur noch während des Spielstarts zusammen mit der Karte generiert. Der Spieler kann weiterhin neue Industrien finanzieren.
+STR_PARAM_FORBID_INDUSTRY_CLOSURE :Verbiete das Schließen von Industrien.
+STR_PARAM_FORBID_INDUSTRY_CLOSURE_DESC :Wenn diese Option aktiviert ist, werden Industrien nicht schließen. Minen und ähnliche Industrien werden trotzdem schließen, wenn sie keine Materialien mehr fördern können. Selbst wenn Schließungen erlaubt sind, werden keine Industrien schließen solange sie beliefert werden.
 STR_PARAM_EXT_BUILDING_MATERIALS :Erweiterung "Bauindustrie"
 STR_PARAM_EXT_BUILDING_MATERIALS_DESC :Fügt Frachten wie Kalkstein und Zement und passende Industrien hinzu.
 STR_PARAM_EXT_TEXTILE_INDUSTRIES :Erweiterung "Textilindustrie"
