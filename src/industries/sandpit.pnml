@@ -1229,7 +1229,6 @@ item(FEAT_INDUSTRIES, sandpit, INDUSTRY_ID_SANDPIT) {
 		build_prod_change:        sandpit_switch_prod_change_build;
 		location_check:           sandpit_switch_location_check_industry_distance;
 		extra_text_industry:      sandpit_switch_extra_text;
-		//cargo_subtype_display:    sandpit_switch_cargo_subtype;
 	}
 }
     

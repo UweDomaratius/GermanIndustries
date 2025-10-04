@@ -476,13 +476,7 @@ switch(FEAT_INDUSTRIES, SELF, power_plant_switch_check_availability, current_yea
 }
 
 switch(FEAT_INDUSTRIES, SELF, power_plant_switch_prod_change_build,
-	[
-	// initialize the permanent registers
-	//city_set_power_demand(2),
-	//STORE_TEMP(1,123),
-	//city_set_power_available(LOAD_TEMP(123)),
-	
-	])
+	[])
 {
 	return 16; // default production value has to be returned here
 }

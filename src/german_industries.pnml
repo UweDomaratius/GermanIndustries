@@ -45,6 +45,14 @@ grf {
 		}
 	}
 	param {
+		param_forbid_industry_closure {
+			type: bool;
+			name: string(STR_PARAM_FORBID_INDUSTRY_CLOSURE);
+			desc: string(STR_PARAM_FORBID_INDUSTRY_CLOSURE_DESC);
+			def_value: 1;
+		}
+	}
+	param {
 		param_extension_building_materials {
 			type: bool;
 			name: string(STR_PARAM_EXT_BUILDING_MATERIALS);

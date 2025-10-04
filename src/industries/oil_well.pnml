@@ -490,7 +490,6 @@ item(FEAT_INDUSTRIES, oil_well, INDUSTRY_ID_OIL_WELL) {
 		location_check:           oil_well_switch_location_check_industry_distance;
 		extra_text_fund:          oil_well_switch_extra_text_fund;
 		extra_text_industry:      oil_well_switch_extra_text;
-		//cargo_subtype_display:    oil_well_switch_cargo_subtype;
 	}
 }
     

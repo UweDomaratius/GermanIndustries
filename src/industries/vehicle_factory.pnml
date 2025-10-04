@@ -741,6 +741,26 @@ switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_cargo_subtype, getbits(extr
 	return 0x3800 + string(STR_EMPTY);
 }
 
+switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_update_last_served_date,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("VEHI") != 0 || last_month_production("VEHI") != 0 || 
+		incoming_cargo_waiting("STEL") != 0 || incoming_cargo_waiting("PLAS") != 0 ||
+		this_month_transported("VEHI") != 0 || last_month_transported("VEHI") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_update_last_served_date_ext_aluminium,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("VEHI") != 0 || last_month_production("VEHI") != 0 || 
+		incoming_cargo_waiting("STEL") != 0 || incoming_cargo_waiting("PLAS") || incoming_cargo_waiting("ALUM") != 0 ||
+		this_month_transported("VEHI") != 0 || last_month_transported("VEHI") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
 if (!param_extension_aluminium) {
 	item(FEAT_INDUSTRIES, vehicle_factory, INDUSTRY_ID_VEHICLE_FACTORY) {
 		property {
@@ -766,12 +786,13 @@ if (!param_extension_aluminium) {
 			construction_probability: vehicle_factory_switch_check_availability;
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        vehicle_factory_switch_produce;
-			monthly_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
+			monthly_prod_change:      vehicle_factory_switch_update_last_served_date;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           vehicle_factory_switch_location_check_industry_distance;
 			extra_text_fund:          vehicle_factory_switch_extra_text_fund;
 			extra_text_industry:      vehicle_factory_switch_extra_text;
 			cargo_subtype_display:    vehicle_factory_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
 		}
 	}
 }
@@ -800,12 +821,13 @@ if (param_extension_aluminium) {
 			construction_probability: vehicle_factory_switch_check_availability;
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        vehicle_factory_switch_produce_ext_aluminium;
-			monthly_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
+			monthly_prod_change:      vehicle_factory_switch_update_last_served_date_ext_aluminium;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           vehicle_factory_switch_location_check_industry_distance;
 			extra_text_fund:          vehicle_factory_switch_extra_text_fund;
 			extra_text_industry:      vehicle_factory_switch_extra_text;
 			cargo_subtype_display:    vehicle_factory_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
 		}
 	}
 }
