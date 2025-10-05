@@ -333,7 +333,7 @@ switch(FEAT_INDUSTRIES, SELF, clothing_plant_switch_location_check_industry_dist
 
 produce(clothing_plant_produce,
 	[TEXT: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);],
-	[GOOD: max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100);],
+	[GOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100) : 0;],
 	0 // do not run again
 )
 
