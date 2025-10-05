@@ -1227,7 +1227,7 @@ switch(FEAT_INDUSTRIES, SELF, aluminium_plant_switch_location_check_industry_dis
 // according to google 4-5t bauxite yield 1t of aluminium
 produce(aluminium_plant_produce,
 	[AORE: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
-	[ALUM: max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*25/100,1);],
+	[ALUM: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*25/100,1) : 0;],
 	0 // do not run again
 )
 

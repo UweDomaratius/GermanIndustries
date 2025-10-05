@@ -530,7 +530,6 @@ item(FEAT_INDUSTRIES, iron_ore_mine, INDUSTRY_ID_IRON_ORE_MINE) {
 		location_check:           iron_ore_mine_switch_location_check_industry_distance;
 		extra_text_fund:          iron_ore_mine_switch_extra_text_fund;
 		extra_text_industry:      iron_ore_mine_switch_extra_text;
-		//cargo_subtype_display:    iron_ore_mine_switch_cargo_subtype;
 	}
 }
     
