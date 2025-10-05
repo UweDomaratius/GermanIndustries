@@ -663,16 +663,10 @@ switch(FEAT_INDUSTRIES, SELF, furniture_factory_switch_produce_extension_textile
 	furniture_factory_produce_extension_textile_industry;
 }
 
-switch(FEAT_INDUSTRIES, SELF, furniture_factory_switch_cargo_subtype_extension_textile_industry, getbits(extra_callback_info2, 16, 8)) {
-	WDPR: switch_cargo_subtype;
-	PLAS: switch_cargo_subtype;
-	TEXT: switch_cargo_subtype;
-	return 0x3800 + string(STR_EMPTY);
-}
-
 switch(FEAT_INDUSTRIES, SELF, furniture_factory_switch_cargo_subtype, getbits(extra_callback_info2, 16, 8)) {
 	WDPR: switch_cargo_subtype;
 	PLAS: switch_cargo_subtype;
+	TEXT: switch_cargo_subtype;
 	return 0x3800 + string(STR_EMPTY);
 }
 
@@ -726,7 +720,7 @@ if (param_extension_textile_industries) {
 			location_check:           furniture_factory_switch_location_check_industry_distance;
 			extra_text_industry:      return string(STR_INDUSTRY_NEEDS_ANY_INPUT);
 			extra_text_fund:          return CB_RESULT_NO_TEXT;
-			cargo_subtype_display:    furniture_factory_switch_cargo_subtype_extension_textile_industry;
+			cargo_subtype_display:    furniture_factory_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 		}
 	}

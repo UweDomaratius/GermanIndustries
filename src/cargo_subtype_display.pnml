@@ -33,6 +33,13 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_coal,
 	return 0x3800 + string(STR_EMPTY);
 }
 
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_coat, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("COAT") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	COAT: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
 switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_copr, 
 	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("COPR") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
 	 getbits(extra_callback_info2, 16, 8)]) {
@@ -173,6 +180,7 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info,
 	CBLK: switch_cargo_subtype_display_info_cblk;
 	CHLO: switch_cargo_subtype_display_info_chlor;
 	COAL: switch_cargo_subtype_display_info_coal;
+	COAT: switch_cargo_subtype_display_info_coat;
 	COPR: switch_cargo_subtype_display_info_copr;
 	CORE: switch_cargo_subtype_display_info_core;
 	FISH: switch_cargo_subtype_display_info_fish;
@@ -203,6 +211,13 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype,
 	return 0x3800 + string(STR_EMPTY);
 }
 
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_coat_white, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("COAT") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	COAT: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_OPTIONAL_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
 switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_lye_white, 
 	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("LYE_") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
 	 getbits(extra_callback_info2, 16, 8)]) {
@@ -219,6 +234,7 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_salt_white,
 
 switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_white, 
 	getbits(extra_callback_info2, 16, 8)) {
+	COAT: switch_cargo_subtype_display_info_coat_white;
 	LYE_: switch_cargo_subtype_display_info_lye_white;
 	SALT: switch_cargo_subtype_display_info_salt_white;
 	return 0x3800 + string(STR_EMPTY);

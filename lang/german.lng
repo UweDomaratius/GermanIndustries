@@ -36,13 +36,13 @@ STR_CARGO_NAME_BUILDING_MATERIALS :Ziegel
 STR_CARGO_NAME_CARBON_BLACK       :Ruß
 STR_CARGO_NAME_CEMENT             :Zement
 STR_CARGO_NAME_CHLORINE           :Chlor
-STR_CARGO_NAME_COATS_PAINTS       :Farbe
 STR_CARGO_NAME_COPPER             :Kupfer
 STR_CARGO_NAME_COPPER_ORE         :Kupfererz
 STR_CARGO_NAME_FISH               :Fisch
 STR_CARGO_NAME_HYDROGEN           :Wasserstoff
 STR_CARGO_NAME_LIMESTONE          :Kalkstein
 STR_CARGO_NAME_LYE                :Natronlauge
+STR_CARGO_NAME_PAINT              :Farbe
 STR_CARGO_NAME_PLASTICS           :Kunststoffe
 STR_CARGO_NAME_SALT               :Salz
 STR_CARGO_NAME_SAND               :Sand
@@ -58,7 +58,6 @@ STR_QUANTITY_BUILDING_MATERIALS   :{WEIGHT} Ziegel
 STR_QUANTITY_CARBON_BLACK         :{WEIGHT} Ruß
 STR_QUANTITY_CEMENT               :{WEIGHT} Zement
 STR_QUANTITY_CHLORINE             :{WEIGHT} Chlor
-STR_QUANTITY_COATS_PAINTS         :{WEIGHT} Farbe
 STR_QUANTITY_COPPER               :{WEIGHT} Kupfer
 STR_QUANTITY_COPPER_ORE           :{WEIGHT} Kupfererz
 STR_QUANTITY_FISH                 :{WEIGHT} Fisch
@@ -67,6 +66,7 @@ STR_QUANTITY_HYDROGEN             :{WEIGHT} Wasserstoff
 STR_QUANTITY_LIMESTONE            :{WEIGHT} Kalkstein
 STR_QUANTITY_LYE                  :{WEIGHT} Natronlauge
 STR_QUANTITY_OIL                  :{WEIGHT} Öl
+STR_QUANTITY_PAINT                :{WEIGHT} Farbe
 STR_QUANTITY_PLASTICS             :{WEIGHT} Kunststoffe
 STR_QUANTITY_SALT                 :{WEIGHT} Salz
 STR_QUANTITY_SAND                 :{WEIGHT} Sand

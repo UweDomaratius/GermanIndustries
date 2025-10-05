@@ -1378,11 +1378,6 @@ switch(FEAT_INDUSTRIES, SELF, aluminium_plant_switch_check_availability,
 
 switch(FEAT_INDUSTRIES, SELF, aluminium_plant_switch_cargo_subtype, getbits(extra_callback_info2, 16, 8)) {
 	AORE: switch_cargo_subtype;
-	return 0x3800 + string(STR_EMPTY);
-}
-
-switch(FEAT_INDUSTRIES, SELF, aluminium_plant_switch_cargo_subtype_basic_anorganic_chemistry, getbits(extra_callback_info2, 16, 8)) {
-	AORE: switch_cargo_subtype;
 	LYE_: switch_cargo_subtype;
 	return 0x3800 + string(STR_EMPTY);
 }
@@ -1453,7 +1448,7 @@ if (param_extension_aluminium) {
 				location_check:           aluminium_plant_switch_location_check_industry_distance;
 				extra_text_fund:          aluminium_plant_switch_extra_text_fund;
 				extra_text_industry:      aluminium_plant_switch_extra_text;
-				cargo_subtype_display:    aluminium_plant_switch_cargo_subtype_basic_anorganic_chemistry;
+				cargo_subtype_display:    aluminium_plant_switch_cargo_subtype;
 				build_prod_change:        initialize_last_served_date;
 			}
 		}

@@ -52,13 +52,13 @@ STR_CARGO_NAME_BUILDING_MATERIALS :Bricks
 STR_CARGO_NAME_CARBON_BLACK       :Carbon Black
 STR_CARGO_NAME_CEMENT             :Cement
 STR_CARGO_NAME_CHLORINE           :Chlorine
-STR_CARGO_NAME_COATS_PAINTS       :Paints
 STR_CARGO_NAME_COPPER             :Copper
 STR_CARGO_NAME_COPPER_ORE         :Copper Ore
 STR_CARGO_NAME_FISH               :Fish
 STR_CARGO_NAME_HYDROGEN           :Hydrogen
 STR_CARGO_NAME_LIMESTONE          :Limestone
 STR_CARGO_NAME_LYE                :Lye
+STR_CARGO_NAME_PAINT              :Paint
 STR_CARGO_NAME_PLASTICS           :Plastics
 STR_CARGO_NAME_SALT               :Salt
 STR_CARGO_NAME_SAND               :Sand
@@ -74,7 +74,6 @@ STR_QUANTITY_BUILDING_MATERIALS   :{WEIGHT} of bricks
 STR_QUANTITY_CARBON_BLACK         :{WEIGHT} of carbon black
 STR_QUANTITY_CEMENT               :{WEIGHT} of cement
 STR_QUANTITY_CHLORINE             :{WEIGHT} of chlorine
-STR_QUANTITY_COATS_PAINTS         :{WEIGHT} of paint
 STR_QUANTITY_COPPER               :{WEIGHT} of copper
 STR_QUANTITY_COPPER_ORE           :{WEIGHT} of copper ore
 STR_QUANTITY_FISH                 :{WEIGHT} of fish
@@ -83,6 +82,7 @@ STR_QUANTITY_HYDROGEN             :{WEIGHT} of hydrogen
 STR_QUANTITY_LIMESTONE            :{WEIGHT} of limestone
 STR_QUANTITY_LYE                  :{WEIGHT} of lye
 STR_QUANTITY_OIL                  :{WEIGHT} of oil
+STR_QUANTITY_PAINT                :{WEIGHT} of paint
 STR_QUANTITY_PLASTICS             :{WEIGHT} of plastics
 STR_QUANTITY_SALT                 :{WEIGHT} of salt
 STR_QUANTITY_SAND                 :{WEIGHT} of sand
@@ -98,7 +98,6 @@ STR_CID_BUILDING_MATERIALS        :{TINYFONT}BDMT
 STR_CID_CARBON_BLACK              :{TINYFONT}CBLK
 STR_CID_CEMENT                    :{TINYFONT}CMNT
 STR_CID_CHLORINE                  :{TINYFONT}CHLO
-STR_CID_COATS_PAINTS              :{TINYFONT}COAT
 STR_CID_COPPER                    :{TINYFONT}COPR
 STR_CID_COPPER_ORE                :{TINYFONT}CORE
 STR_CID_FISH                      :{TINYFONT}FISH
@@ -106,6 +105,7 @@ STR_CID_FOOD                      :{TINYFONT}FOOD
 STR_CID_HYDROGEN                  :{TINYFONT}H2
 STR_CID_LIMESTONE                 :{TINYFONT}LIME
 STR_CID_LYE                       :{TINYFONT}LYE
+STR_CID_PAINT                     :{TINYFONT}COAT
 STR_CID_PLASTICS                  :{TINYFONT}PLAS
 STR_CID_SALT                      :{TINYFONT}SALT
 STR_CID_SAND                      :{TINYFONT}SAND

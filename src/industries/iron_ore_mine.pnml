@@ -408,6 +408,7 @@ tilelayout iron_ore_mine_industry_layout_1_tilelayout {
 switch(FEAT_INDUSTRIES, SELF, iron_ore_mine_switch_location_check_industry_distance,
         (water_distance > 16) &&
 		(industry_distance(INDUSTRY_ID_IRON_ORE_MINE) >= 16) && 
+		(industry_distance(INDUSTRY_ID_PAINT_FACTORY) >= 16) && 
 		(industry_distance(INDUSTRY_ID_INTEGRATED_STEEL_MILL) >= 32)) 
 { 
 	1: return CB_RESULT_LOCATION_ALLOW;
