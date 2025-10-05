@@ -528,6 +528,5 @@ item(FEAT_INDUSTRIES, power_plant, INDUSTRY_ID_POWER_PLANT) {
         extra_text_fund:          power_plant_switch_extra_text_fund;
         extra_text_industry:      power_plant_switch_extra_text;
         cargo_subtype_display:    power_plant_switch_cargo_subtype;
-		build_prod_change:        initialize_last_served_date;
     }
 }
