@@ -27,12 +27,18 @@ STR_PARAM_EXT_ALUMINIUM :Erweiterung "Aluminium"
 STR_PARAM_EXT_ALUMINIUM_DESC :Fügt Aluminiumproduktion aus Bauxit hinzu und erweitert andere Industrien, dass sie Aluminium benötigen.
 STR_PARAM_EXT_BASIC_ANORGANIC_CHEMISTRY :Erweiterung "Grundlegende Anorganische Chemie"
 STR_PARAM_EXT_BASIC_ANORGANIC_CHEMISTRY_DESC :Fügt Chemikalien wie Natronlauge und Chlor und passende Industrien hinzu.
+STR_PARAM_EXT_PAINTING_INDUSTRIES :Erweiterung "Farbindustrie"
+STR_PARAM_EXT_PAINTING_INDUSTRIES_DESC :Fügt Chemiebetriebe hinzu, die aus verschiedenen Rohstoffen Farben produzieren.
 
 # Frachten
 STR_CARGO_NAME_BAUXITE            :Bauxit
 STR_CARGO_NAME_BUILDING_MATERIALS :Ziegel
+STR_CARGO_NAME_CARBON_BLACK       :Ruß
 STR_CARGO_NAME_CEMENT             :Zement
 STR_CARGO_NAME_CHLORINE           :Chlor
+STR_CARGO_NAME_COATS_PAINTS       :Farbe
+STR_CARGO_NAME_COPPER             :Kupfer
+STR_CARGO_NAME_COPPER_ORE         :Kupfererz
 STR_CARGO_NAME_FISH               :Fisch
 STR_CARGO_NAME_HYDROGEN           :Wasserstoff
 STR_CARGO_NAME_LIMESTONE          :Kalkstein
@@ -49,8 +55,12 @@ STR_CARGO_NAME_WOOL               :Wolle
 STR_QUANTITY_ALUMINIUM            :{WEIGHT} Aluminium
 STR_QUANTITY_BAUXITE              :{WEIGHT} Bauxit
 STR_QUANTITY_BUILDING_MATERIALS   :{WEIGHT} Ziegel
+STR_QUANTITY_CARBON_BLACK         :{WEIGHT} Ruß
 STR_QUANTITY_CEMENT               :{WEIGHT} Zement
 STR_QUANTITY_CHLORINE             :{WEIGHT} Chlor
+STR_QUANTITY_COATS_PAINTS         :{WEIGHT} Farbe
+STR_QUANTITY_COPPER               :{WEIGHT} Kupfer
+STR_QUANTITY_COPPER_ORE           :{WEIGHT} Kupfererz
 STR_QUANTITY_FISH                 :{WEIGHT} Fisch
 STR_QUANTITY_GOODS                :{WEIGHT} Güter
 STR_QUANTITY_HYDROGEN             :{WEIGHT} Wasserstoff
@@ -69,9 +79,11 @@ STR_QUANTITY_WOOL                 :{WEIGHT} Wolle
 STR_IND_ALUMINIUM_PLANT      :{G=w}Aluhütte
 STR_IND_BRICK_WORKS          :{G=w}Ziegelei
 STR_IND_BUILDERS_YARD        :Bauhof
+STR_IND_CARBON_BLACK_PLANT   :{G=w}Rußfabrik
 STR_IND_CEMENT_PLANT         :{G=w}Zementfabrik
 STR_IND_CHLOR_ALKALI_PLANT   :{G=w}Chloralkali Elektrolyseanlage
 STR_IND_CLOTHING_PLANT       :{G=w}Bekleidungsfabrik
+STR_IND_COPPER_SMELTER       :{G=w}Kupferhütte
 STR_IND_FISHING_GROUNDS      :{G=w}Fischgründe
 STR_IND_FURNITURE_FACTORY    :{G=w}Möbelfabrik
 STR_IND_DEPARTMENT_STORE     :{G=n}Kaufhaus
@@ -79,6 +91,7 @@ STR_IND_GENERAL_STORE        :Laden
 STR_IND_HOTEL                :{G=n}Hotel
 STR_IND_INTEGRATED_STEEL_MILL:{G=n}Integriertes Stahlwerk
 STR_IND_LIMESTONE_MINE       :{G=n}Kalksteinbergwerk
+STR_IND_PAINT_FACTORY        :{G=w}Farbenfabrik
 STR_IND_PHARMACEUTICAL_PLANT :{G=w}Arzneimittelfabrik
 STR_IND_PLASTICS_PLANT       :Kunststofffabrik
 STR_IND_PORT                 :Hafen
@@ -92,10 +105,13 @@ STR_IND_VEHICLE_FACTORY      :{G=w}Autofabrik
 STR_STATION_ALUMINIUM_PLANT      :Aluhütte
 STR_STATION_BRICK_WORKS          :Ziegelei
 STR_STATION_BUILDERS_YARD        :Bauhof
+STR_STATION_CARBON_BLACK_PLANT   :Rußfabrik
 STR_STATION_CEMENT_PLANT         :Zementfabrik
 STR_STATION_CHLOR_ALKALI_PLANT   :Chloralkali Elektrolyseanlage
 STR_STATION_CLOTHING_PLANT       :Bekleidungsfabrik
 STR_STATION_COAL_MINE            :Bergwerk
+STR_STATION_COPPER_ORE_MINE      :Bergwerk
+STR_STATION_COPPER_SMELTER       :Kupferhütte
 STR_STATION_DEPARTMENT_STORE     :Kaufhaus
 STR_STATION_FARM                 :Bauernhof
 STR_STATION_FISHING_GROUNDS      :Fischgründe
@@ -110,6 +126,7 @@ STR_STATION_LIMESTONE_MINE       :Kalkeinbergwerk
 STR_STATION_OIL_REFINERY         :Raffinerie
 STR_STATION_OIL_RIG              :Bohrplattform
 STR_STATION_OIL_WELL             :Ölquelle
+STR_STATION_PAINT_FACTORY        :Farbenfabrik
 STR_STATION_PHARMACEUTICAL_PLANT :Arzneimittelfabrik
 STR_STATION_PLASTICS_PLANT       :Kunststofffabrik
 STR_STATION_PORT                 :Hafen

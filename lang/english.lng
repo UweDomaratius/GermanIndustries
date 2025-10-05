@@ -27,6 +27,8 @@ STR_PARAM_EXT_ALUMINIUM :Extension set "Aluminium"
 STR_PARAM_EXT_ALUMINIUM_DESC :Adds aluminium production from bauxite and extends other industries to require aluminium.
 STR_PARAM_EXT_BASIC_ANORGANIC_CHEMISTRY :Extension set "Basic Anorganic Chemistry"
 STR_PARAM_EXT_BASIC_ANORGANIC_CHEMISTRY_DESC :Adds basic chemistry based on sodium and chlorine, as well as related industries.
+STR_PARAM_EXT_PAINTING_INDUSTRIES :Extension set "Painting Industries"
+STR_PARAM_EXT_PAINTING_INDUSTRIES_DESC :Adds chemical industries producing paints from various raw materials.
 
 STR_TOWN    :{STRING}
 STR_STATION :{STRING} {STRING}
@@ -47,8 +49,12 @@ STR_1985:1985
 STR_CARGO_NAME_ALUMINIUM          :Aluminium
 STR_CARGO_NAME_BAUXITE            :Bauxite
 STR_CARGO_NAME_BUILDING_MATERIALS :Bricks
+STR_CARGO_NAME_CARBON_BLACK       :Carbon Black
 STR_CARGO_NAME_CEMENT             :Cement
 STR_CARGO_NAME_CHLORINE           :Chlorine
+STR_CARGO_NAME_COATS_PAINTS       :Paints
+STR_CARGO_NAME_COPPER             :Copper
+STR_CARGO_NAME_COPPER_ORE         :Copper Ore
 STR_CARGO_NAME_FISH               :Fish
 STR_CARGO_NAME_HYDROGEN           :Hydrogen
 STR_CARGO_NAME_LIMESTONE          :Limestone
@@ -65,8 +71,12 @@ STR_CARGO_NAME_WOOL               :Wool
 STR_QUANTITY_ALUMINIUM            :{WEIGHT} of aluminium
 STR_QUANTITY_BAUXITE              :{WEIGHT} of bauxite
 STR_QUANTITY_BUILDING_MATERIALS   :{WEIGHT} of bricks
+STR_QUANTITY_CARBON_BLACK         :{WEIGHT} of carbon black
 STR_QUANTITY_CEMENT               :{WEIGHT} of cement
 STR_QUANTITY_CHLORINE             :{WEIGHT} of chlorine
+STR_QUANTITY_COATS_PAINTS         :{WEIGHT} of paint
+STR_QUANTITY_COPPER               :{WEIGHT} of copper
+STR_QUANTITY_COPPER_ORE           :{WEIGHT} of copper ore
 STR_QUANTITY_FISH                 :{WEIGHT} of fish
 STR_QUANTITY_GOODS                :{WEIGHT} of goods
 STR_QUANTITY_HYDROGEN             :{WEIGHT} of hydrogen
@@ -84,9 +94,13 @@ STR_QUANTITY_WOOL                 :{WEIGHT} of wool
 # cargo abbreviation (used e.g. in station overview list to denote waiting cargo)
 STR_CID_ALUMINIUM                 :{TINYFONT}ALUM
 STR_CID_BAUXITE                   :{TINYFONT}AORE
-STR_CID_BUILDING_MATERIALS:       :{TINYFONT}BDMT
+STR_CID_BUILDING_MATERIALS        :{TINYFONT}BDMT
+STR_CID_CARBON_BLACK              :{TINYFONT}CBLK
 STR_CID_CEMENT                    :{TINYFONT}CMNT
 STR_CID_CHLORINE                  :{TINYFONT}CHLO
+STR_CID_COATS_PAINTS              :{TINYFONT}COAT
+STR_CID_COPPER                    :{TINYFONT}COPR
+STR_CID_COPPER_ORE                :{TINYFONT}CORE
 STR_CID_FISH                      :{TINYFONT}FISH
 STR_CID_FOOD                      :{TINYFONT}FOOD
 STR_CID_HYDROGEN                  :{TINYFONT}H2
@@ -104,9 +118,11 @@ STR_CID_WOOL                      :{TINYFONT}WOOL
 STR_IND_ALUMINIUM_PLANT      :Aluminium Plant
 STR_IND_BRICK_WORKS          :Brickworks
 STR_IND_BUILDERS_YARD        :Builders Yard
+STR_IND_CARBON_BLACK_PLANT   :Carbon Black Plant
 STR_IND_CHLOR_ALKALI_PLANT   :Chloralkali process plant
 STR_IND_CLOTHING_PLANT       :Clothing Plant
 STR_IND_CEMENT_PLANT         :Cement Plant
+STR_IND_COPPER_SMELTER       :Copper Smelter
 STR_IND_FISHING_GROUNDS      :Fishing Grounds
 STR_IND_FURNITURE_FACTORY    :Furniture Factory
 STR_IND_DEPARTMENT_STORE     :Department Store
@@ -114,6 +130,7 @@ STR_IND_GENERAL_STORE        :General Store
 STR_IND_HOTEL                :Hotel
 STR_IND_INTEGRATED_STEEL_MILL:Integrated Steel Mill
 STR_IND_LIMESTONE_MINE       :Limestone Mine
+STR_IND_PAINT_FACTORY        :Paint Factory
 STR_IND_PHARMACEUTICAL_PLANT :Pharmaceutical Plant
 STR_IND_PLASTICS_PLANT       :Plastics Plant
 STR_IND_PORT                 :Port
@@ -127,10 +144,13 @@ STR_IND_VEHICLE_FACTORY      :Vehicle Factory
 STR_STATION_ALUMINIUM_PLANT      :Aluminium Plant
 STR_STATION_BRICK_WORKS          :Brickworks
 STR_STATION_BUILDERS_YARD        :Builders Yard
+STR_STATION_CARBON_BLACK_PLANT   :Carbon Black Plant
 STR_STATION_CEMENT_PLANT         :Cement Plant
 STR_STATION_CHLOR_ALKALI_PLANT   :Chloralkali process plant
 STR_STATION_CLOTHING_PLANT       :Clothing Plant
 STR_STATION_COAL_MINE            :Mining
+STR_STATION_COPPER_ORE_MINE      :Mining
+STR_STATION_COPPER_SMELTER       :Copper Smelter
 STR_STATION_DEPARTMENT_STORE     :Department Store
 STR_STATION_FARM                 :Farm
 STR_STATION_FISHING_GROUNDS      :Fishing Grounds
@@ -145,6 +165,7 @@ STR_STATION_LIMESTONE_MINE       :Mining
 STR_STATION_OIL_REFINERY         :Refinery
 STR_STATION_OIL_RIG              :Oil Rig
 STR_STATION_OIL_WELL             :Oil Wells
+STR_STATION_PAINT_FACTORY        :Paint Factory
 STR_STATION_PHARMACEUTICAL_PLANT :Pharmaceutical Plant
 STR_STATION_PLASTICS_PLANT       :Plastics Plant
 STR_STATION_SALT_MINE            :Salt Mine
