@@ -891,7 +891,7 @@ Color in the industry chain view: <span style="background-color:#a85c4c;">&nbsp;
 
 ## Industries
 
-<a name="industry_0"
+<a name="industry_0"></a>
 ### Aluminium Plant
 
 <img src="aluminium_plant.png" alt="Aluminium Plant">
@@ -916,7 +916,7 @@ Industry requires electricity to produce anything. See [Electricity](#electricty
 | [Bauxite](#cargo_AORE) | [Aluminium](#cargo_ALUM) |
 
 
-<a name="industry_1"
+<a name="industry_1"></a>
 ### Aluminium Plant
 
 <img src="aluminium_plant.png" alt="Aluminium Plant">
@@ -940,7 +940,7 @@ Industry requires electricity to produce anything. See [Electricity](#electricty
 | [Lye](#cargo_LYE_) |  |
 
 
-<a name="industry_2"
+<a name="industry_2"></a>
 ### Brickworks
 
 <img src="brick_works.png" alt="Brickworks">
@@ -961,7 +961,7 @@ Color in the overview map: <span style="background-color:#cc8060;">&nbsp;&nbsp;&
 | [Coal](#cargo_COAL) | [Bricks](#cargo_BDMT) |
 
 
-<a name="industry_3"
+<a name="industry_3"></a>
 ### Builders Yard
 
 <img src="builders_yard.png" alt="Builders Yard">
@@ -981,7 +981,7 @@ Color in the overview map: <span style="background-color:#acacc0;">&nbsp;&nbsp;&
 | [Timber](#cargo_WDPR) |  |
 
 
-<a name="industry_4"
+<a name="industry_4"></a>
 ### Builders Yard
 
 <img src="builders_yard.png" alt="Builders Yard">
@@ -998,7 +998,7 @@ Color in the overview map: <span style="background-color:#acacc0;">&nbsp;&nbsp;&
 | [Timber](#cargo_WDPR) |  |
 
 
-<a name="industry_5"
+<a name="industry_5"></a>
 ### Carbon Black Plant
 
 <img src="carbon_black_plant.png" alt="Carbon Black Plant">
@@ -1020,7 +1020,7 @@ Industry will start producing as soon as any of the required cargos is available
 | [Oil](#cargo_OIL_) |  |
 
 
-<a name="industry_6"
+<a name="industry_6"></a>
 ### Cement Plant
 
 <img src="cement_plant.png" alt="Cement Plant">
@@ -1040,7 +1040,7 @@ Color in the overview map: <span style="background-color:#6c7484;">&nbsp;&nbsp;&
 | [Sand](#cargo_SAND) |  |
 
 
-<a name="industry_7"
+<a name="industry_7"></a>
 ### Chloralkali process plant
 
 <img src="chloralkali_plant.png" alt="Chloralkali process plant">
@@ -1062,7 +1062,7 @@ Industry requires electricity to produce anything. See [Electricity](#electricty
 |  | [Lye](#cargo_LYE_) |
 
 
-<a name="industry_8"
+<a name="industry_8"></a>
 ### Clothing Plant
 
 <img src="clothing_plant.png" alt="Clothing Plant">
@@ -1079,7 +1079,7 @@ Color in the overview map: <span style="background-color:#803828;">&nbsp;&nbsp;&
 | [Textiles](#cargo_TEXT) | [Goods](#cargo_GOOD) |
 
 
-<a name="industry_9"
+<a name="industry_9"></a>
 ### Coal Mine
 
 <img src="coal_mine.png" alt="Coal Mine">
@@ -1100,7 +1100,7 @@ Industry is generated with limited resources and will close down once these are 
 |  | [Coal](#cargo_COAL) |
 
 
-<a name="industry_10"
+<a name="industry_10"></a>
 ### Copper Ore Mine
 
 <img src="copper_ore_mine.png" alt="Copper Ore Mine">
@@ -1121,7 +1121,7 @@ Industry is generated with limited resources and will close down once these are 
 |  | [Copper Ore](#cargo_CORE) |
 
 
-<a name="industry_11"
+<a name="industry_11"></a>
 ### Copper Smelter
 
 <img src="copper_smelter.png" alt="Copper Smelter">
@@ -1142,7 +1142,7 @@ Industry requires electricity to produce anything. See [Electricity](#electricty
 | [Copper Ore](#cargo_CORE) | [Copper](#cargo_COPR) |
 
 
-<a name="industry_12"
+<a name="industry_12"></a>
 ### Department Store
 
 <img src="department_store.png" alt="Department Store">
@@ -1157,7 +1157,7 @@ Color in the overview map: <span style="background-color:#fcf4ec;">&nbsp;&nbsp;&
 | [Goods](#cargo_GOOD) |  |
 
 
-<a name="industry_13"
+<a name="industry_13"></a>
 ### Farm
 
 <img src="farm.png" alt="Farm">
@@ -1176,7 +1176,7 @@ Color in the overview map: <span style="background-color:#ec9ca4;">&nbsp;&nbsp;&
 |  | [Wool](#cargo_WOOL) |
 
 
-<a name="industry_14"
+<a name="industry_14"></a>
 ### Farm
 
 <img src="farm.png" alt="Farm">
@@ -1194,7 +1194,7 @@ Color in the overview map: <span style="background-color:#ec9ca4;">&nbsp;&nbsp;&
 |  | [Livestock](#cargo_LVST) |
 
 
-<a name="industry_15"
+<a name="industry_15"></a>
 ### Fishing Grounds
 
 <img src="fishing_grounds.png" alt="Fishing Grounds">
@@ -1209,7 +1209,7 @@ Color in the overview map: <span style="background-color:#9cccdc;">&nbsp;&nbsp;&
 |  | [Fish](#cargo_FISH) |
 
 
-<a name="industry_16"
+<a name="industry_16"></a>
 ### Food Processing Plant
 
 <img src="food_processor.png" alt="Food Processing Plant">
@@ -1230,7 +1230,7 @@ Industry will start producing as soon as any of the required cargos is available
 | [Livestock](#cargo_LVST) |  |
 
 
-<a name="industry_17"
+<a name="industry_17"></a>
 ### Food Processing Plant
 
 <img src="food_processor.png" alt="Food Processing Plant">
@@ -1253,7 +1253,7 @@ Industry requires any of the raw materials printed in black to produce anything.
 | [Salt](#cargo_SALT) |  |
 
 
-<a name="industry_18"
+<a name="industry_18"></a>
 ### Forest
 
 <img src="forest.png" alt="Forest">
@@ -1268,7 +1268,7 @@ Color in the overview map: <span style="background-color:#68941c;">&nbsp;&nbsp;&
 |  | [Wood](#cargo_WOOD) |
 
 
-<a name="industry_19"
+<a name="industry_19"></a>
 ### Furniture Factory
 
 <img src="furniture_factory.png" alt="Furniture Factory">
@@ -1289,7 +1289,7 @@ Industry will start producing as soon as any of the required cargos is available
 | [Timber](#cargo_WDPR) |  |
 
 
-<a name="industry_20"
+<a name="industry_20"></a>
 ### Furniture Factory
 
 <img src="furniture_factory.png" alt="Furniture Factory">
@@ -1309,7 +1309,7 @@ Industry will start producing as soon as any of the required cargos is available
 | [Timber](#cargo_WDPR) |  |
 
 
-<a name="industry_21"
+<a name="industry_21"></a>
 ### General Store
 
 <img src="general_store.png" alt="General Store">
@@ -1324,7 +1324,7 @@ Color in the overview map: <span style="background-color:#fcd8c8;">&nbsp;&nbsp;&
 | [Food](#cargo_FOOD) |  |
 
 
-<a name="industry_22"
+<a name="industry_22"></a>
 ### Hotel
 
 <img src="hotel.png" alt="Hotel">
@@ -1342,7 +1342,7 @@ Color in the overview map: <span style="background-color:#508ca0;">&nbsp;&nbsp;&
 | [Passengers](#cargo_PASS) |  |
 
 
-<a name="industry_23"
+<a name="industry_23"></a>
 ### Integrated Steel Mill
 
 <img src="integrated_steel_mill.png" alt="Integrated Steel Mill">
@@ -1362,7 +1362,7 @@ Color in the overview map: <span style="background-color:#949594;">&nbsp;&nbsp;&
 | [Iron Ore](#cargo_IORE) |  |
 
 
-<a name="industry_24"
+<a name="industry_24"></a>
 ### Iron Ore Mine
 
 <img src="iron_ore_mine.png" alt="Iron Ore Mine">
@@ -1383,7 +1383,7 @@ Industry is generated with limited resources and will close down once these are 
 |  | [Iron Ore](#cargo_IORE) |
 
 
-<a name="industry_25"
+<a name="industry_25"></a>
 ### Limestone Mine
 
 <img src="limestone_mine.png" alt="Limestone Mine">
@@ -1404,7 +1404,7 @@ Industry is generated with limited resources and will close down once these are 
 |  | [Limestone](#cargo_LIME) |
 
 
-<a name="industry_26"
+<a name="industry_26"></a>
 ### Oil Rig
 
 <img src="oil_rig.png" alt="Oil Rig">
@@ -1426,7 +1426,7 @@ Industry is generated with limited resources and will close down once these are 
 |  | [Passengers](#cargo_PASS) |
 
 
-<a name="industry_27"
+<a name="industry_27"></a>
 ### Oil Wells
 
 <img src="oil_well.png" alt="Oil Wells">
@@ -1445,7 +1445,7 @@ Industry is generated with limited resources and will close down once these are 
 |  | [Oil](#cargo_OIL_) |
 
 
-<a name="industry_28"
+<a name="industry_28"></a>
 ### Paint Factory
 
 <img src="paint_factory.png" alt="Paint Factory">
@@ -1470,7 +1470,7 @@ Industry will start producing as soon as any of the required cargos is available
 | [Iron Ore](#cargo_IORE) |  |
 
 
-<a name="industry_29"
+<a name="industry_29"></a>
 ### Paint Factory
 
 <img src="paint_factory.png" alt="Paint Factory">
@@ -1494,7 +1494,7 @@ Industry will start producing as soon as any of the required cargos is available
 | [Limestone](#cargo_LIME) |  |
 
 
-<a name="industry_30"
+<a name="industry_30"></a>
 ### Pharmaceutical Plant
 
 <img src="pharmaceutical_plant.png" alt="Pharmaceutical Plant">
@@ -1515,7 +1515,7 @@ Industry will start producing as soon as any of the required cargos is available
 | [Chlorine](#cargo_CHLO) | [Goods](#cargo_GOOD) |
 
 
-<a name="industry_31"
+<a name="industry_31"></a>
 ### Plastics Plant
 
 <img src="plastics_plant.png" alt="Plastics Plant">
@@ -1534,7 +1534,7 @@ Color in the overview map: <span style="background-color:#fcc000;">&nbsp;&nbsp;&
 | [Oil](#cargo_OIL_) | [Plastics](#cargo_PLAS) |
 
 
-<a name="industry_32"
+<a name="industry_32"></a>
 ### Plastics Plant
 
 <img src="plastics_plant.png" alt="Plastics Plant">
@@ -1556,7 +1556,7 @@ Color in the overview map: <span style="background-color:#fcc000;">&nbsp;&nbsp;&
 | [Oil](#cargo_OIL_) |  |
 
 
-<a name="industry_33"
+<a name="industry_33"></a>
 ### Plastics Plant
 
 <img src="plastics_plant.png" alt="Plastics Plant">
@@ -1578,7 +1578,7 @@ Color in the overview map: <span style="background-color:#fcc000;">&nbsp;&nbsp;&
 | [Oil](#cargo_OIL_) |  |
 
 
-<a name="industry_34"
+<a name="industry_34"></a>
 ### Plastics Plant
 
 <img src="plastics_plant.png" alt="Plastics Plant">
@@ -1599,7 +1599,7 @@ Color in the overview map: <span style="background-color:#fcc000;">&nbsp;&nbsp;&
 | [Oil](#cargo_OIL_) |  |
 
 
-<a name="industry_35"
+<a name="industry_35"></a>
 ### Port
 
 <img src="port.png" alt="Port">
@@ -1620,7 +1620,7 @@ Color in the overview map: <span style="background-color:#fc6c00;">&nbsp;&nbsp;&
 |  | [Oil](#cargo_OIL_) |
 
 
-<a name="industry_36"
+<a name="industry_36"></a>
 ### Port
 
 <img src="port.png" alt="Port">
@@ -1644,7 +1644,7 @@ Color in the overview map: <span style="background-color:#fc6c00;">&nbsp;&nbsp;&
 |  | [Oil](#cargo_OIL_) |
 
 
-<a name="industry_37"
+<a name="industry_37"></a>
 ### Port
 
 <img src="port.png" alt="Port">
@@ -1668,7 +1668,7 @@ Color in the overview map: <span style="background-color:#fc6c00;">&nbsp;&nbsp;&
 |  | [Oil](#cargo_OIL_) |
 
 
-<a name="industry_38"
+<a name="industry_38"></a>
 ### Port
 
 <img src="port.png" alt="Port">
@@ -1691,7 +1691,7 @@ Color in the overview map: <span style="background-color:#fc6c00;">&nbsp;&nbsp;&
 |  | [Oil](#cargo_OIL_) |
 
 
-<a name="industry_39"
+<a name="industry_39"></a>
 ### Power Station
 
 <img src="power_plant.png" alt="Power Station">
@@ -1711,7 +1711,7 @@ Industry produces electricity. See [Electricity](#electricty).
 | [Oil](#cargo_OIL_) |  |
 
 
-<a name="industry_40"
+<a name="industry_40"></a>
 ### Salt Mine
 
 <img src="salt_mine.png" alt="Salt Mine">
@@ -1732,7 +1732,7 @@ Industry is generated with limited resources and will close down once these are 
 |  | [Salt](#cargo_SALT) |
 
 
-<a name="industry_41"
+<a name="industry_41"></a>
 ### Sand pit
 
 <img src="sand_pit.png" alt="Sand pit">
@@ -1751,7 +1751,7 @@ Industry is generated with limited resources and will close down once these are 
 |  | [Sand](#cargo_SAND) |
 
 
-<a name="industry_42"
+<a name="industry_42"></a>
 ### Sawmill
 
 <img src="sawmill.png" alt="Sawmill">
@@ -1766,7 +1766,7 @@ Color in the overview map: <span style="background-color:#fc9c00;">&nbsp;&nbsp;&
 | [Wood](#cargo_WOOD) | [Timber](#cargo_WDPR) |
 
 
-<a name="industry_43"
+<a name="industry_43"></a>
 ### Textile Mill
 
 <img src="textile_mill.png" alt="Textile Mill">
@@ -1786,7 +1786,7 @@ Color in the overview map: <span style="background-color:#a85c4c;">&nbsp;&nbsp;&
 | [Wool](#cargo_WOOL) |  |
 
 
-<a name="industry_44"
+<a name="industry_44"></a>
 ### Textile Mill
 
 <img src="textile_mill.png" alt="Textile Mill">
@@ -1807,7 +1807,7 @@ Industry requires the raw materials printed in black to produce anything. Raw ma
 | [Wool](#cargo_WOOL) |  |
 
 
-<a name="industry_45"
+<a name="industry_45"></a>
 ### Vehicle Distributor
 
 <img src="vehicle_distributor.png" alt="Vehicle Distributor">
@@ -1824,7 +1824,7 @@ Color in the overview map: <span style="background-color:#bce0fc;">&nbsp;&nbsp;&
 | [Vehicles](#cargo_VEHI) |  |
 
 
-<a name="industry_46"
+<a name="industry_46"></a>
 ### Vehicle Factory
 
 <img src="vehicle_factory.png" alt="Vehicle Factory">
@@ -1846,7 +1846,7 @@ Industry requires electricity to produce anything. See [Electricity](#electricty
 | [Steel](#cargo_STEL) |  |
 
 
-<a name="industry_47"
+<a name="industry_47"></a>
 ### Vehicle Factory
 
 <img src="vehicle_factory.png" alt="Vehicle Factory">
@@ -1871,7 +1871,7 @@ Industry requires electricity to produce anything. See [Electricity](#electricty
 | [Steel](#cargo_STEL) |  |
 
 
-<a name="industry_48"
+<a name="industry_48"></a>
 ### Vehicle Factory
 
 <img src="vehicle_factory.png" alt="Vehicle Factory">
@@ -1896,7 +1896,7 @@ Industry requires electricity to produce anything. See [Electricity](#electricty
 | [Steel](#cargo_STEL) |  |
 
 
-<a name="industry_49"
+<a name="industry_49"></a>
 ### Vehicle Factory
 
 <img src="vehicle_factory.png" alt="Vehicle Factory">
