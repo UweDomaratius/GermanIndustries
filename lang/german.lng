@@ -25,8 +25,8 @@ STR_PARAM_EXT_TEXTILE_INDUSTRIES :Erweiterung "Textilindustrie"
 STR_PARAM_EXT_TEXTILE_INDUSTRIES_DESC :Fügt Frachten wie Wolle und Textilien und passende Industrien hinzu.
 STR_PARAM_EXT_ALUMINIUM :Erweiterung "Aluminium"
 STR_PARAM_EXT_ALUMINIUM_DESC :Fügt Aluminiumproduktion aus Bauxit hinzu und erweitert andere Industrien, dass sie Aluminium benötigen.
-STR_PARAM_EXT_BASIC_ANORGANIC_CHEMISTRY :Erweiterung "Grundlegende Anorganische Chemie"
-STR_PARAM_EXT_BASIC_ANORGANIC_CHEMISTRY_DESC :Fügt Chemikalien wie Natronlauge und Chlor und passende Industrien hinzu.
+STR_PARAM_EXT_BASIC_INORGANIC_CHEMISTRY :Erweiterung "Grundlegende Anorganische Chemie"
+STR_PARAM_EXT_BASIC_INORGANIC_CHEMISTRY_DESC :Fügt Chemikalien wie Natronlauge und Chlor und passende Industrien hinzu.
 STR_PARAM_EXT_PAINTING_INDUSTRIES :Erweiterung "Farbindustrie"
 STR_PARAM_EXT_PAINTING_INDUSTRIES_DESC :Fügt Chemiebetriebe hinzu, die aus verschiedenen Rohstoffen Farben produzieren.
 
@@ -144,9 +144,9 @@ STR_INDUSTRY_PREREQ_KEEP_PRODUCTION     :Industrie produziert am Maximum. Transp
 # Extractive Industrien (Bergwerke) zeigen die Info zum Produktionslevel und die Menge der verbleibenden Rohstoffe.
 STR_EXTRACTIVE_INDUSTRY_TEXT:{STRING}{STRING}{}Etwa {YELLOW}{COMMA} kt {BLACK} verbleibend (ca. {YELLOW}{COMMA} Jahre{BLACK} bei aktuellem Produktionslevel)
 # Secondary industries with optional input requirements
-STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO :Industrie benötigt die in schwarz dargestellten Rohmaterialien zur Produktion. In weiß dargestellte Materialien erhöhen die maximale Produktion.
-STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO_ANY :Industrie benötigt wenigstens eines der in schwarz dargestellten Rohmaterialien zur Produktion. In weiß dargestellte Materialien erhöhen die maximale Produktion. Die maximale Produktion erhöht sich mit der Anzahl der verfügbaren verschiedenen Rohstoffe.
-STR_INDUSTRY_NEEDS_ANY_INPUT :Industrie beginnt Produktion sobald irgendein Rohstoff verfügbar ist. Die maximale Produktion erhöht sich mit der Anzahl der verfügbaren verschiedenen Rohstoffe.
+STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO :Industrie benötigt die in schwarz dargestellten Rohstoffe zur Produktion. In weiß dargestellte Rohstoffe erhöhen die maximale Produktion.
+STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO_ANY :Industrie benötigt wenigstens einen der in schwarz dargestellten Rohstoffe zur Produktion. Die maximale Produktion erhöht sich mit der Anzahl der verfügbaren verschiedenen Rohstoffe. In weiß dargestellte Rohstoffe erhöhen die maximale Produktion noch weiter.
+STR_INDUSTRY_NEEDS_ANY_INPUT :Industrie beginnt Produktion sobald wenigstens ein Rohstoff verfügbar ist. Die maximale Produktion erhöht sich mit der Anzahl der verfügbaren verschiedenen Rohstoffe.
 
 # Texte für Energiewirtschaft, Kraftwerke zeigen die Produktion, Industrien zeigen an wie viel Strom sie benötigen und ob der Bedarf gedeckt ist
 STR_POWER_PLANT_TEXT :Stromproduktion {YELLOW}{COMMA}{BLACK}, Bedarf {YELLOW}{COMMA}{BLACK}

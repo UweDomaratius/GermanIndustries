@@ -112,7 +112,7 @@ spritelayout copper_mine_spritelayout_3_anim {
 		palette:       PALETTE_USE_DEFAULT;
 	}
 	building {
-		sprite: TTD_COPPER_ORE_MINE_HEADGEAR_CONSTRUCTION + construction_state - 1;
+		sprite: TTD_COPPER_ORE_MINE_HEADGEAR_CONSTRUCTION_1;
 		recolour_mode: RECOLOUR_REMAP;
 		palette: PALETTE_USE_DEFAULT;
 		xoffset: 2;
@@ -122,7 +122,20 @@ spritelayout copper_mine_spritelayout_3_anim {
 		yextent: 12;
 		zextent: 16;
 		always_draw: 0;
-		hide_sprite: construction_state == 0 || construction_state == 3;
+		hide_sprite: construction_state != 1;
+	}
+	building {
+		sprite: TTD_COPPER_ORE_MINE_HEADGEAR_CONSTRUCTION_2;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 2;
+		yoffset: 3;
+		zoffset: 0;
+		xextent: 13;
+		yextent: 12;
+		zextent: 16;
+		always_draw: 0;
+		hide_sprite: construction_state != 2;
 	}
 	building {
 		sprite: TTD_COPPER_ORE_MINE_ANIMATED_HEADGEAR + ((animation_frame < 33) ? (animation_frame %3) : 0);
@@ -177,7 +190,7 @@ spritelayout copper_mine_spritelayout_4 {
 		palette:       PALETTE_USE_DEFAULT;
 	}
 	building {
-		sprite: TTD_COPPER_ORE_MINE_BIG_BUILDING;
+		sprite: TTD_COPPER_ORE_MINE_BIG_BUILDING + construction_state - 1;
 		recolour_mode: RECOLOUR_REMAP;
 		palette: PALETTE_USE_DEFAULT;
 		xoffset: 0;
@@ -229,7 +242,7 @@ spritelayout copper_mine_spritelayout_5 {
 		palette:       PALETTE_USE_DEFAULT;
 	}
 	building {
-		sprite: TTD_COPPER_ORE_MINE_WINCH_BUILDING+ construction_state-1;
+		sprite: TTD_COPPER_ORE_MINE_WINCH_BUILDING_1;
 		recolour_mode: RECOLOUR_REMAP;
 		palette: PALETTE_USE_DEFAULT;
 		xoffset: 0;
@@ -239,7 +252,20 @@ spritelayout copper_mine_spritelayout_5 {
 		yextent: 16;
 		zextent: 16;
 		always_draw: 0;
-		hide_sprite: construction_state == 0 || (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: construction_state != 1 || (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_COPPER_ORE_MINE_WINCH_BUILDING_2 + construction_state-2;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 16;
+		always_draw: 0;
+		hide_sprite: construction_state < 2 || (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
 	}
 	building {
 		sprite: TTD_SMOKE_SPRITE_DARK_SMALL + (animation_frame / 4);

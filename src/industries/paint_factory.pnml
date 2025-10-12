@@ -643,76 +643,73 @@ switch(FEAT_INDUSTRIES, SELF, paint_factory_switch_update_last_served_date_ext_b
 	check_secondary_industry_closure();
 }
 
-if (param_extension_painting_industries) {
-	if (!param_extension_building_materials) {
-		item(FEAT_INDUSTRIES, paint_factory, INDUSTRY_ID_PAINT_FACTORY) {
-			property {
-				substitute: 0;
-				map_colour: 6;
-				life_type: IND_LIFE_TYPE_PROCESSING;
-				min_cargo_distr: 1;
-				layouts: [paint_factory_tilelayout_1,paint_factory_tilelayout_2];
-				spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
-				conflicting_ind_types: [];
-				random_sound_effects: [];
-				name: string(STR_IND_PAINT_FACTORY);
-				prob_map_gen: 5;
-				prob_in_game: 3;
-				fund_cost_multiplier: 120;
-				remove_cost_multiplier: 0;
-				remove_cost_multiplier: 0;
-				cargo_types: [accept_cargo("IORE"),accept_cargo("COPR"),accept_cargo("CBLK"),produce_cargo("COAT",0)];
-				nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PAINT_FACTORY));
-			}
-				
-			graphics {
-				construction_probability: paint_factory_switch_check_availability;
-				produce_cargo_arrival:    empty_produce; 
-				produce_256_ticks:        paint_factory_switch_produce;
-				monthly_prod_change:      paint_factory_switch_update_last_served_date;
-				random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
-				location_check:           paint_factory_switch_location_check_industry_distance;
-				extra_text_industry:      return string(STR_INDUSTRY_NEEDS_ANY_INPUT);
-				extra_text_fund:          paint_factory_switch_extra_text_fund;
-				cargo_subtype_display:    paint_factory_switch_cargo_subtype;
-				build_prod_change:        initialize_last_served_date;
-			}
+if (param_extension_painting_industries && !param_extension_building_materials) {
+	item(FEAT_INDUSTRIES, paint_factory, INDUSTRY_ID_PAINT_FACTORY) {
+		property {
+			substitute: 0;
+			map_colour: 6;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [paint_factory_tilelayout_1,paint_factory_tilelayout_2];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_PAINT_FACTORY);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 120;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("IORE"),accept_cargo("COPR"),accept_cargo("CBLK"),produce_cargo("COAT",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PAINT_FACTORY));
 		}
-	}
-	if (param_extension_building_materials) {
-		item(FEAT_INDUSTRIES, paint_factory, INDUSTRY_ID_PAINT_FACTORY) {
-			property {
-				substitute: 0;
-				map_colour: 6;
-				life_type: IND_LIFE_TYPE_PROCESSING;
-				min_cargo_distr: 1;
-				layouts: [paint_factory_tilelayout_1,paint_factory_tilelayout_2];
-				spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
-				conflicting_ind_types: [];
-				random_sound_effects: [];
-				name: string(STR_IND_PAINT_FACTORY);
-				prob_map_gen: 5;
-				prob_in_game: 3;
-				fund_cost_multiplier: 120;
-				remove_cost_multiplier: 0;
-				remove_cost_multiplier: 0;
-				cargo_types: [accept_cargo("IORE"),accept_cargo("COPR"),accept_cargo("CBLK"),accept_cargo("LIME"),produce_cargo("COAT",0)];
-				nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PAINT_FACTORY));
-			}
-				
-			graphics {
-				construction_probability: paint_factory_switch_check_availability;
-				produce_cargo_arrival:    empty_produce; 
-				produce_256_ticks:        paint_factory_switch_produce_ext_building_industries;
-				monthly_prod_change:      paint_factory_switch_update_last_served_date_ext_building_industries;
-				random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
-				location_check:           paint_factory_switch_location_check_industry_distance;
-				extra_text_industry:      return string(STR_INDUSTRY_NEEDS_ANY_INPUT);
-				extra_text_fund:          paint_factory_switch_extra_text_fund;
-				cargo_subtype_display:    paint_factory_switch_cargo_subtype;
-				build_prod_change:        initialize_last_served_date;
-			}
+			
+		graphics {
+			construction_probability: paint_factory_switch_check_availability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        paint_factory_switch_produce;
+			monthly_prod_change:      paint_factory_switch_update_last_served_date;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           paint_factory_switch_location_check_industry_distance;
+			extra_text_industry:      return string(STR_INDUSTRY_NEEDS_ANY_INPUT);
+			extra_text_fund:          paint_factory_switch_extra_text_fund;
+			cargo_subtype_display:    paint_factory_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
 		}
 	}
 }
-
+if (param_extension_painting_industries && param_extension_building_materials) {
+	item(FEAT_INDUSTRIES, paint_factory, INDUSTRY_ID_PAINT_FACTORY) {
+		property {
+			substitute: 0;
+			map_colour: 6;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [paint_factory_tilelayout_1,paint_factory_tilelayout_2];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_PAINT_FACTORY);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 120;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("IORE"),accept_cargo("COPR"),accept_cargo("CBLK"),accept_cargo("LIME"),produce_cargo("COAT",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PAINT_FACTORY));
+		}
+			
+		graphics {
+			construction_probability: paint_factory_switch_check_availability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        paint_factory_switch_produce_ext_building_industries;
+			monthly_prod_change:      paint_factory_switch_update_last_served_date_ext_building_industries;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           paint_factory_switch_location_check_industry_distance;
+			extra_text_industry:      return string(STR_INDUSTRY_NEEDS_ANY_INPUT);
+			extra_text_fund:          paint_factory_switch_extra_text_fund;
+			cargo_subtype_display:    paint_factory_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}

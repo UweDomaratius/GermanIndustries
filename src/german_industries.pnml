@@ -74,10 +74,10 @@ grf {
 		}
 	}
 	param {
-		param_extension_basic_anorganic_chemistry {
+		param_extension_basic_inorganic_chemistry {
 			type: bool;
-			name: string(STR_PARAM_EXT_BASIC_ANORGANIC_CHEMISTRY);
-			desc: string(STR_PARAM_EXT_BASIC_ANORGANIC_CHEMISTRY_DESC);
+			name: string(STR_PARAM_EXT_BASIC_INORGANIC_CHEMISTRY);
+			desc: string(STR_PARAM_EXT_BASIC_INORGANIC_CHEMISTRY_DESC);
 		}
 	}
 	param {
@@ -105,6 +105,6 @@ cargotable {
 	LIME, SAND, CMNT, BDMT, // ext building materials
 	WOOL, TEXT, // ext textile industries
 	AORE, ALUM,  // ext aluminium
-	SALT, CHLO, LYE_, H2__, // ext basic anorganic chemistry
+	SALT, CHLO, LYE_, H2__, // ext basic inorganic chemistry
 	CORE, COPR, CBLK, COAT // ext painting industries
 }
