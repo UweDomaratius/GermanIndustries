@@ -169,7 +169,7 @@ Color in the industry charts of this documentation: <span style="background-colo
 * [Vehicle Factory](#industry_49)
 
 
-<img src="industry_chain_extension_aluminium.png" alt="industry chain for extension Aluminium">
+<img src="industry_chain_extension_aluminium_en.png" alt="industry chain for extension Aluminium">
 
 <a name="extension_1"></a>
 ### Basic Inorganic Chemistry
@@ -204,7 +204,7 @@ Color in the industry charts of this documentation: <span style="background-colo
 * [Salt Mine](#industry_40)
 
 
-<img src="industry_chain_extension_basic_inorganic_chemistry.png" alt="industry chain for extension Basic Inorganic Chemistry">
+<img src="industry_chain_extension_basic_inorganic_chemistry_en.png" alt="industry chain for extension Basic Inorganic Chemistry">
 
 <a name="extension_2"></a>
 ### Building Industries
@@ -238,7 +238,7 @@ Color in the industry charts of this documentation: <span style="background-colo
 * [Sand pit](#industry_41)
 
 
-<img src="industry_chain_extension_building_industries.png" alt="industry chain for extension Building Industries">
+<img src="industry_chain_extension_building_industries_en.png" alt="industry chain for extension Building Industries">
 
 <a name="extension_3"></a>
 ### Painting Industries
@@ -280,7 +280,7 @@ Color in the industry charts of this documentation: <span style="background-colo
 * [Vehicle Factory](#industry_49)
 
 
-<img src="industry_chain_extension_painting_industries.png" alt="industry chain for extension Painting Industries">
+<img src="industry_chain_extension_painting_industries_en.png" alt="industry chain for extension Painting Industries">
 
 <a name="extension_4"></a>
 ### Textile Industries
@@ -313,7 +313,7 @@ Color in the industry charts of this documentation: <span style="background-colo
 * [Textile Mill](#industry_44)
 
 
-<img src="industry_chain_extension_textile_industries.png" alt="industry chain for extension Textile Industries">
+<img src="industry_chain_extension_textile_industries_en.png" alt="industry chain for extension Textile Industries">
 
 
 ## Cargos
@@ -430,7 +430,7 @@ Color in the industry chain view: <span style="background-color:#b8dcc8;">&nbsp;
 <a name="cargo_COAL"></a>
 ### Coal
 
-Coal was the main driver of industrializaton in the 19th century, begin required to power steam engines. With the introduction of railway steam engines and later on power plants to produce electricity, the demand for coal rose rapidly. 
+Coal was the main driver of industrializaton in the 19th century, being required to power steam engines. With the introduction of railway steam engines and later on power plants to produce electricity, the demand for coal rose rapidly. 
 
 Germany had relevant coal deposits, and the areas were coal was mined became industrial centers, such as the Ruhr area and Silesia. Coal remained important throughout the 20th century, but it was phased out in many areas for environmental reasons. 
 
@@ -1258,7 +1258,7 @@ Industry requires any of the raw materials printed in black to produce anything.
 
 <img src="forest.png" alt="Forest">
 
-Forests have been used as a source for wood since the first humans hunted with spears and built their first houses. With industrial various uses for wood, paper production among them, woods are an important industry in reality as well as in the game. In contrast to mining industries, they are renewable, meaning they cannot run out of materials. 
+Forests have been used as a source for wood since the first humans hunted with spears and built their first houses. With various industrial uses for wood, paper production among them, woods are an important industry in reality as well as in the game. In contrast to mining industries, they are renewable, meaning they cannot run out of materials. 
 
 
 Color in the overview map: <span style="background-color:#68941c;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
