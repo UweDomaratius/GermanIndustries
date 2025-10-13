@@ -886,7 +886,7 @@ switch(FEAT_INDUSTRIES, SELF, chlor_alkali_plant_switch_update_last_served_date,
 	check_secondary_industry_closure();
 }
 
-if (param_extension_basic_anorganic_chemistry) {
+if (param_extension_basic_inorganic_chemistry) {
 	item(FEAT_INDUSTRIES, chlor_alkali_plant, INDUSTRY_ID_CHLOR_ALKALI_PLANT) {
 		property {
 			substitute: 0;

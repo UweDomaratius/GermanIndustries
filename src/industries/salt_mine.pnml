@@ -609,7 +609,7 @@ switch(FEAT_INDUSTRIES, SELF, salt_mine_switch_check_availability, current_year)
 	return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
 }
 
-if (param_extension_basic_anorganic_chemistry) {
+if (param_extension_basic_inorganic_chemistry) {
 	item(FEAT_INDUSTRIES, salt_mine, INDUSTRY_ID_SALT_MINE) {
 		property {
 			substitute: 0;

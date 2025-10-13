@@ -1,7 +1,7 @@
 spriteset(cargoicon_salt) {
         [10 + 20 * 3, 10 + 20 * 4, 10, 10, 0, 0,  "graphics/other/cargoicons.png"]
     }
-if (param_extension_basic_anorganic_chemistry) {
+if (param_extension_basic_inorganic_chemistry) {
 	item(FEAT_CARGOS, salt, CARGO_ID_SALT) {
 		property {
 			type_name: string(STR_CARGO_NAME_SALT);

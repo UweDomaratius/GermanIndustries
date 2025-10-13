@@ -658,6 +658,7 @@ switch(FEAT_INDUSTRIES, SELF, textile_mill_switch_location_check_industry_distan
 	    (industry_distance(INDUSTRY_ID_FARM) >= 32) && 
 		(industry_distance(INDUSTRY_ID_CLOTHING_PLANT) >= 32) && 
 		(industry_distance(INDUSTRY_ID_PLASTICS_PLANT) >= 32) &&
+		(industry_distance(INDUSTRY_ID_PAINT_FACTORY) >= 32) &&
 		(industry_distance(INDUSTRY_ID_FURNITURE_FACTORY) >= 32) &&
 	    (industry_distance(INDUSTRY_ID_TEXTILE_MILL) >= 16))]) {
 	   1: return CB_RESULT_LOCATION_ALLOW;
@@ -687,9 +688,49 @@ switch(FEAT_INDUSTRIES, SELF, textile_mill_switch_produce,
 	textile_mill_produce;	
 }
 
+produce(textile_mill_produce_ext_painting_industries,
+	[WOOL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 PLAS: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 COAT: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
+	 ],
+	[TEXT: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, textile_mill_switch_produce_ext_painting_industries, 
+	[STORE_TEMP(min(incoming_cargo_waiting("WOOL"),incoming_cargo_waiting("PLAS")),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 STORE_TEMP(min(incoming_cargo_waiting("WOOL"),incoming_cargo_waiting("PLAS")),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 calculate_number_of_waiting_cargos(),
+	 
+	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
+	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
+	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (2-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("COAT"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	 
+	 // count number of optional cargos to set production limit
+	STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	// if no optional cargo available, limit production to 128t, with 1 cargo available there is no limit
+	STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 // use 5% of production amount as usage of optional stuff 
+	STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW3),
+	 ])
+	{
+	textile_mill_produce_ext_painting_industries;	
+}
+
 switch(FEAT_INDUSTRIES, SELF, textile_mill_switch_cargo_subtype, getbits(extra_callback_info2, 16, 8)) {
 	WOOL: switch_cargo_subtype;
 	PLAS: switch_cargo_subtype;
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, textile_mill_switch_cargo_subtype_ext_painting_industries, getbits(extra_callback_info2, 16, 8)) {
+	WOOL: switch_cargo_subtype;
+	PLAS: switch_cargo_subtype;
+	COAT: switch_cargo_subtype_white;
 	return 0x3800 + string(STR_EMPTY);
 }
 
@@ -703,7 +744,17 @@ switch(FEAT_INDUSTRIES, SELF, textile_mill_switch_update_last_served_date,
 	check_secondary_industry_closure();
 }
 
-if (param_extension_textile_industries) {
+switch(FEAT_INDUSTRIES, SELF, textile_mill_switch_update_last_served_date_ext_painting_industries,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("TEXT") != 0 || last_month_production("TEXT") != 0 || 
+		incoming_cargo_waiting("PLAS") != 0 || incoming_cargo_waiting("WOOL") || incoming_cargo_waiting("COAT") != 0 ||
+		this_month_transported("TEXT") != 0 || last_month_transported("TEXT") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+if (param_extension_textile_industries && !param_extension_painting_industries) {
 	item(FEAT_INDUSTRIES, textile_mill, INDUSTRY_ID_TEXTILE_MILL) {
 		property {
 			substitute: 0;
@@ -737,4 +788,40 @@ if (param_extension_textile_industries) {
 		}
 	}
 }
+if (param_extension_textile_industries && param_extension_painting_industries) {
+	item(FEAT_INDUSTRIES, textile_mill, INDUSTRY_ID_TEXTILE_MILL) {
+		property {
+			substitute: 0;
+			map_colour: 76;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [textile_mill_tilelayout_1, textile_mill_tilelayout_2, textile_mill_tilelayout_3, textile_mill_tilelayout_4, textile_mill_tilelayout_5, textile_mill_tilelayout_6];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_TEXTILE_MILL);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 120;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("PLAS"),accept_cargo("WOOL"),accept_cargo("COAT"),produce_cargo("TEXT",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_TEXTILE_MILL));
+		}
+			
+		graphics {
+			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        textile_mill_switch_produce_ext_painting_industries;
+			monthly_prod_change:      textile_mill_switch_update_last_served_date_ext_painting_industries;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           textile_mill_switch_location_check_industry_distance;
+			extra_text_fund:          return string(STR_EMPTY);
+			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO);
+			cargo_subtype_display:    textile_mill_switch_cargo_subtype_ext_painting_industries;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+
     

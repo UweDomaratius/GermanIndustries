@@ -348,8 +348,8 @@ switch(FEAT_INDUSTRIES, SELF, builders_yard_switch_update_last_served_date_exten
 	check_secondary_industry_closure();
 }
 
-item(FEAT_INDUSTRIES, builders_yard, INDUSTRY_ID_BUILDERS_YARD) {
-	if (param_extension_building_materials) {
+if (param_extension_building_materials) {
+	item(FEAT_INDUSTRIES, builders_yard, INDUSTRY_ID_BUILDERS_YARD) {
 		property {
 			substitute: 0;
 			map_colour: 134;
@@ -381,9 +381,11 @@ item(FEAT_INDUSTRIES, builders_yard, INDUSTRY_ID_BUILDERS_YARD) {
 			cargo_subtype_display:    return CB_RESULT_IND_NO_TEXT_NO_AMOUNT;
 			build_prod_change:        initialize_last_served_date;
 		}
-	} // param_extension_building_materials
-	
-	if (!param_extension_building_materials) {
+	}
+} // param_extension_building_materials
+
+if (!param_extension_building_materials) {
+	item(FEAT_INDUSTRIES, builders_yard, INDUSTRY_ID_BUILDERS_YARD) {
 		property {
 			substitute: 0;
 			map_colour: 134;
@@ -415,7 +417,5 @@ item(FEAT_INDUSTRIES, builders_yard, INDUSTRY_ID_BUILDERS_YARD) {
 			cargo_subtype_display:    return CB_RESULT_IND_NO_TEXT_NO_AMOUNT;
 			build_prod_change:        initialize_last_served_date;
 		}
-	} // !param_extension_building_materials
-        
-	
-}
+	} 
+} // !param_extension_building_materials

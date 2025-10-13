@@ -1,0 +1,32 @@
+spriteset(cargoicon_copper_ore) {
+        [10 + 20 * 1, 10 + 20 * 2, 10, 10, 0, 0, "graphics/other/cargoicons.png"]
+    }
+
+if (param_extension_painting_industries) {
+	item(FEAT_CARGOS, copper_ore, CARGO_ID_COPPER_ORE) {
+		property {
+			type_name: string(STR_CARGO_NAME_COPPER_ORE);
+			unit_name: string(STR_CARGO_NAME_COPPER_ORE);
+			type_abbreviation: string(STR_CID_COPPER_ORE);
+			sprite: NEW_CARGO_SPRITE;
+			weight: 1.0;
+			is_freight: 1;
+			cargo_classes: bitmask(CC_BULK);
+			town_growth_effect: TOWNGROWTH_NONE;
+			town_growth_multiplier: 1.0;
+			units_of_cargo: TTD_STR_TONS;
+			items_of_cargo: string(STR_QUANTITY_COPPER_ORE);
+			penalty_lowerbound: 30;
+			single_penalty_length: 255;
+			capacity_multiplier: 1;
+			cargo_payment_list_colour: 122;
+			station_list_colour: 122;
+			price_factor: 89;
+			cargo_label: "CORE";
+			number: CARGO_ID_COPPER_ORE;
+		}
+		graphics {
+			cargoicon_copper_ore;
+		}
+	}
+}
