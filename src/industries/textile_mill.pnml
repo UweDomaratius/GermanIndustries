@@ -674,15 +674,19 @@ produce(textile_mill_produce,
 
 switch(FEAT_INDUSTRIES, SELF, textile_mill_switch_produce, 
 	[STORE_TEMP(incoming_cargo_waiting("WOOL"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
-	 STORE_TEMP(incoming_cargo_waiting("PLAS"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
-	 
+	 	 
 	 calculate_raw_material_usage(),
 	 calculate_total_production(),
 	 calculate_number_of_waiting_cargos(),
 	 
 	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
 	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
-	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (2-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE)
+	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (2-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("PLAS"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW1),
 	 ])
 	{
 	textile_mill_produce;	
@@ -698,24 +702,25 @@ produce(textile_mill_produce_ext_painting_industries,
 )
 
 switch(FEAT_INDUSTRIES, SELF, textile_mill_switch_produce_ext_painting_industries, 
-	[STORE_TEMP(min(incoming_cargo_waiting("WOOL"),incoming_cargo_waiting("PLAS")),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
-	 STORE_TEMP(min(incoming_cargo_waiting("WOOL"),incoming_cargo_waiting("PLAS")),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	[STORE_TEMP(incoming_cargo_waiting("WOOL"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 
 	 calculate_raw_material_usage(),
 	 calculate_total_production(),
 	 calculate_number_of_waiting_cargos(),
 	 
-	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
-	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
 	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (2-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 
+
+	 STORE_TEMP(incoming_cargo_waiting("PLAS"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
 	 STORE_TEMP(incoming_cargo_waiting("COAT"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
 	 
 	 // count number of optional cargos to set production limit
-	STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2) > 0 ? LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) + 1 : LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS), TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
 	// if no optional cargo available, limit production to 128t, with 1 cargo available there is no limit
-	STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 2 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
 	 // use 5% of production amount as usage of optional stuff 
-	STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW3),
+	STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW1),
+	STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW2),
 	 ])
 	{
 	textile_mill_produce_ext_painting_industries;	
@@ -723,13 +728,13 @@ switch(FEAT_INDUSTRIES, SELF, textile_mill_switch_produce_ext_painting_industrie
 
 switch(FEAT_INDUSTRIES, SELF, textile_mill_switch_cargo_subtype, getbits(extra_callback_info2, 16, 8)) {
 	WOOL: switch_cargo_subtype;
-	PLAS: switch_cargo_subtype;
+	PLAS: switch_cargo_subtype_white;
 	return 0x3800 + string(STR_EMPTY);
 }
 
 switch(FEAT_INDUSTRIES, SELF, textile_mill_switch_cargo_subtype_ext_painting_industries, getbits(extra_callback_info2, 16, 8)) {
 	WOOL: switch_cargo_subtype;
-	PLAS: switch_cargo_subtype;
+	PLAS: switch_cargo_subtype_white;
 	COAT: switch_cargo_subtype_white;
 	return 0x3800 + string(STR_EMPTY);
 }
@@ -783,6 +788,7 @@ if (param_extension_textile_industries && !param_extension_painting_industries) 
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           textile_mill_switch_location_check_industry_distance;
 			extra_text_fund:          return string(STR_EMPTY);
+			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO);
 			cargo_subtype_display:    textile_mill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 		}
