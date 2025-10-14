@@ -87,6 +87,13 @@ grf {
 			desc: string(STR_PARAM_EXT_PAINTING_INDUSTRIES_DESC);
 		}
 	}
+	param {
+		param_extension_food_industries {
+			type: bool;
+			name: string(STR_PARAM_EXT_FOOD_INDUSTRIES);
+			desc: string(STR_PARAM_EXT_FOOD_INDUSTRIES_DESC);
+		}
+	}
 }
 
 if (ttd_platform != PLATFORM_OPENTTD || openttd_version < version_openttd(14, 0)) {
@@ -106,5 +113,6 @@ cargotable {
 	WOOL, TEXT, // ext textile industries
 	AORE, ALUM,  // ext aluminium
 	SALT, CHLO, LYE_, H2__, // ext basic inorganic chemistry
-	CORE, COPR, CBLK, COAT // ext painting industries
+	CORE, COPR, CBLK, COAT,	// ext painting industries
+	MILK // ext food industries
 }

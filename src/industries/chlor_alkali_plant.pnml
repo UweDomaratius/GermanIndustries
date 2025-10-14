@@ -768,6 +768,7 @@ switch(FEAT_INDUSTRIES, SELF, chlor_alkali_plant_switch_location_check_industry_
 		(industry_distance(INDUSTRY_ID_FOOD_PROCESSOR) >= 32) &&
 		(industry_distance(INDUSTRY_ID_ALUMINIUM_PLANT) >= 32) &&
 		(industry_distance(INDUSTRY_ID_PHARMACEUTICAL_PLANT) >= 32) &&
+		(industry_distance(INDUSTRY_ID_DAIRY) >= 32) &&
 		(industry_distance(INDUSTRY_ID_SALT_MINE) >= 32) &&
 		(industry_distance(INDUSTRY_ID_CHLOR_ALKALI_PLANT) >= 16)
 		)]) {

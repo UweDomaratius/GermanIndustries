@@ -110,6 +110,13 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_lye,
 	return 0x3800 + string(STR_EMPTY);
 }
 
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_milk, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("MILK") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	MILK: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
 switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_oil, 
 	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("OIL_") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
 	 getbits(extra_callback_info2, 16, 8)]) {
@@ -191,6 +198,7 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info,
 	LIME: switch_cargo_subtype_display_info_lime;
 	LVST: switch_cargo_subtype_display_info_lvst;
 	LYE_: switch_cargo_subtype_display_info_lye;
+	MILK: switch_cargo_subtype_display_info_milk;
 	OIL_: switch_cargo_subtype_display_info_oil;
 	PLAS: switch_cargo_subtype_display_info_plas;	
 	SALT: switch_cargo_subtype_display_info_salt;
