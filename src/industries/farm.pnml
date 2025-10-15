@@ -374,6 +374,40 @@ switch(FEAT_INDUSTRYTILES, SELF, farm_switch_graphics_layout_3, relative_pos) {
 	relative_coord(3, 4): farm_spritelayout_cows_brown;
 	return 0; // a default is needed, but should never be reached, layout definitions are explicit
 }
+// the following 3 layouts are only used if animal farms exist as extra industries
+switch(FEAT_INDUSTRYTILES, SELF, farm_switch_graphics_layout_4, relative_pos) {
+	relative_coord(0, 1): farm_spritelayout_silo;
+	relative_coord(0, 2): farm_spritelayout_house;
+	relative_coord(1, 0): farm_spritelayout_shed;
+	relative_coord(1, 1): farm_spritelayout_machinery;
+	relative_coord(2, 1): farm_spritelayout_building;	
+	relative_coord(3, 0): farm_spritelayout_silo2;
+	relative_coord(4, 0): farm_spritelayout_barn;	
+	relative_coord(5, 3): farm_spritelayout_house2;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, farm_switch_graphics_layout_5, relative_pos) {
+	relative_coord(0, 0): farm_spritelayout_silo;
+	relative_coord(0, 1): farm_spritelayout_building;
+	relative_coord(1, 0): farm_spritelayout_shed;
+	relative_coord(1, 1): farm_spritelayout_machinery;
+	relative_coord(2, 0): farm_spritelayout_house;
+	relative_coord(3, 0): farm_spritelayout_house2;	
+	relative_coord(4, 3): farm_spritelayout_barn;
+	relative_coord(2, 2): farm_spritelayout_silo2;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, farm_switch_graphics_layout_6, relative_pos) {
+	relative_coord(0, 0): farm_spritelayout_shed;
+	relative_coord(0, 1): farm_spritelayout_machinery;
+	relative_coord(1, 0): farm_spritelayout_silo;
+	relative_coord(2, 0): farm_spritelayout_building;
+	relative_coord(2, 1): farm_spritelayout_house;	
+	relative_coord(0, 3): farm_spritelayout_barn;	
+	relative_coord(1, 2): farm_spritelayout_silo2;
+	relative_coord(3, 2): farm_spritelayout_house2;	
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
 switch(FEAT_INDUSTRYTILES, PARENT, farm_switch_graphics_layout, layout_num) {
     1: farm_switch_graphics_layout_1;
     2: farm_switch_graphics_layout_2;
@@ -386,10 +420,34 @@ switch(FEAT_INDUSTRYTILES, SELF, farm_switch_graphics_construction_state, constr
     farm_switch_graphics_layout; // default
 }
 
-switch (FEAT_INDUSTRYTILES, SELF, farm_switch_graphics,
+switch (FEAT_INDUSTRYTILES, SELF, farm_switch_graphics_default,
 	[switch_terrain_sprite(),switch_graphics_init_temp_registers()
 	]) {
     farm_switch_graphics_construction_state;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, farm_switch_graphics_layout_no_animals, layout_num) {
+    1: farm_switch_graphics_layout_4;
+    2: farm_switch_graphics_layout_5;
+    3: farm_switch_graphics_layout_6;
+    farm_switch_graphics_layout_1; // default
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, farm_switch_graphics_construction_state_no_animals, construction_state) {
+    0..2: spritelayout_default_construction_states;
+    farm_switch_graphics_layout_no_animals; // default
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, farm_switch_graphics_no_animals,
+	[switch_terrain_sprite(),switch_graphics_init_temp_registers()
+	]) {
+    farm_switch_graphics_construction_state_no_animals;
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, farm_switch_graphics,
+	param_extension_food_industries) {
+    1: farm_switch_graphics_no_animals;
+	farm_switch_graphics_default;
 }
 
 //////////////////////////////////////////////////////////////////////////////
@@ -475,6 +533,38 @@ tilelayout farm_industry_layout_3_tilelayout {
 	3, 4: farm_tile;
 }
 
+tilelayout farm_industry_layout_4_tilelayout {
+	0, 1: farm_tile;
+	0, 2: farm_tile;
+	1, 0: farm_tile;
+	1, 1: farm_tile;
+	2, 1: farm_tile;
+	3, 0: farm_tile;
+	4, 0: farm_tile;
+	5, 3: farm_tile;
+}
+tilelayout farm_industry_layout_5_tilelayout {
+	0, 0: farm_tile;
+	0, 1: farm_tile;
+	1, 0: farm_tile;
+	1, 1: farm_tile;
+	2, 0: farm_tile;
+	3, 0: farm_tile;	
+	4, 3: farm_tile;
+	2, 2: farm_tile;
+}
+
+tilelayout farm_industry_layout_6_tilelayout {
+	0, 0: farm_tile;
+	0, 1: farm_tile;
+	1, 0: farm_tile;
+	2, 0: farm_tile;
+	2, 1: farm_tile;	
+	0, 3: farm_tile;	
+	1, 2: farm_tile;
+	3, 2: farm_tile;	
+}
+
 switch(FEAT_INDUSTRIES, SELF, farm_switch_location_check_industry_distance,
 	   (industry_distance(INDUSTRY_ID_FARM) >= 16) &&
 	   (industry_distance(INDUSTRY_ID_FOOD_PROCESSOR) >= 32) &&
@@ -525,6 +615,17 @@ switch(FEAT_INDUSTRIES, SELF, farm_switch_produce_extension_textile_industry,
 	farm_produce_extension_textile_industry;
 }
 
+produce(farm_produce_extension_food_industry,
+	[],
+	[GRAI: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, farm_switch_produce_extension_food_industry,
+	[init_primary_production()]) {
+	farm_produce_extension_food_industry;
+}
+
 produce(farm_produce,
 	[],
 	[LVST: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);GRAI: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);],
@@ -551,7 +652,7 @@ switch(FEAT_INDUSTRIES, SELF, farm_switch_extra_text,
 	]) {
 	return string(STR_ORGANIC_INDUSTRY_TEXT);
 }
-if (param_extension_textile_industries) {
+if (param_extension_textile_industries && !param_extension_food_industries) {
 	item(FEAT_INDUSTRIES, farm, INDUSTRY_ID_FARM) {
 		property {
 			substitute: 0;
@@ -586,7 +687,7 @@ if (param_extension_textile_industries) {
 		}
 	}
 }
-if (!param_extension_textile_industries) {
+if (!param_extension_textile_industries && !param_extension_food_industries) {
 	// default farm
 	item(FEAT_INDUSTRIES, farm, INDUSTRY_ID_FARM) {
 		property {
@@ -622,4 +723,41 @@ if (!param_extension_textile_industries) {
 		}
 	}
 }
+
+if (param_extension_food_industries) {
+	item(FEAT_INDUSTRIES, farm, INDUSTRY_ID_FARM) {
+		property {
+			substitute: 0;
+			map_colour: 0x30;
+			life_type: IND_LIFE_TYPE_ORGANIC;
+			min_cargo_distr: 1;
+			layouts: [farm_industry_layout_4_tilelayout,farm_industry_layout_5_tilelayout,farm_industry_layout_6_tilelayout];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_PLANT_FIELDS_PERIODICALLY,IND_FLAG_PLANT_FIELDS_WHEN_BUILT);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: TTD_STR_INDUSTRY_NAME_FARM;
+			prob_map_gen: 10;
+			prob_in_game: 10;
+			prospect_chance: 0.75;
+			fund_cost_multiplier: 8;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [produce_cargo("GRAI",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FARM));
+		}
+	
+		graphics {
+			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        farm_switch_produce_extension_food_industry;
+			monthly_prod_change:      farm_switch_prod_change;
+			random_prod_change:       farm_switch_prod_change;
+			build_prod_change:        farm_switch_prod_change_build;
+			location_check:           farm_switch_location_check_industry_distance;
+			extra_text_fund:          return string(STR_EMPTY);
+			extra_text_industry:      farm_switch_extra_text;
+		}
+	}
+}
+
     

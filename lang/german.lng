@@ -81,6 +81,7 @@ STR_QUANTITY_WOOL                 :{WEIGHT} Wolle
 
 # Industrien
 STR_IND_ALUMINIUM_PLANT      :{G=w}Aluhütte
+STR_IND_ANIMAL_FARM          :{G=w}Viehzucht
 STR_IND_BREWERY              :{G=w}Brauerei
 STR_IND_BRICK_WORKS          :{G=w}Ziegelei
 STR_IND_BUILDERS_YARD        :Bauhof
@@ -111,6 +112,7 @@ STR_IND_VEHICLE_FACTORY      :{G=w}Autofabrik
 
 # Stationsnamen
 STR_STATION_ALUMINIUM_PLANT      :Aluhütte
+STR_STATION_ANIMAL_FARM          :Viehzucht
 STR_STATION_BREWERY              :Brauerei
 STR_STATION_BRICK_WORKS          :Ziegelei
 STR_STATION_BUILDERS_YARD        :Bauhof

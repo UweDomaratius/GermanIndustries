@@ -121,6 +121,7 @@ STR_CID_WOOL                      :{TINYFONT}WOOL
 
 # Industries
 STR_IND_ALUMINIUM_PLANT      :Aluminium Plant
+STR_IND_ANIMAL_FARM          :Animal Farm
 STR_IND_BREWERY              :Brewery
 STR_IND_BRICK_WORKS          :Brickworks
 STR_IND_BUILDERS_YARD        :Builders Yard
@@ -132,7 +133,7 @@ STR_IND_COPPER_SMELTER       :Copper Smelter
 STR_IND_DAIRY                :Dairy
 STR_IND_DEPARTMENT_STORE     :Department Store
 STR_IND_FISHING_GROUNDS      :Fishing Grounds
-STR_IND_FLOUR_MILL			 :Flour Mill
+STR_IND_FLOUR_MILL           :Flour Mill
 STR_IND_FURNITURE_FACTORY    :Furniture Factory
 STR_IND_GENERAL_STORE        :General Store
 STR_IND_HOTEL                :Hotel
@@ -151,6 +152,7 @@ STR_IND_VEHICLE_FACTORY      :Vehicle Factory
 
 # station names related to industries
 STR_STATION_ALUMINIUM_PLANT      :Aluminium Plant
+STR_STATION_ANIMAL_FARM          :Animal Farm
 STR_STATION_BREWERY              :Brewery
 STR_STATION_BRICK_WORKS          :Brickworks
 STR_STATION_BUILDERS_YARD        :Builders Yard
