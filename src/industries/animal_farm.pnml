@@ -342,32 +342,6 @@ switch(FEAT_INDUSTRIES, SELF, animal_farm_switch_location_check_industry_distanc
 	   return CB_RESULT_LOCATION_DISALLOW;
 }
 
-// before 1920 no proper fertilizer was available, so maximum production was limited
-switch(FEAT_INDUSTRIES, SELF, animal_farm_func_calc_max_prod, 
-	param_economy_model == 0 ? 128 :
-	  current_year <= 1920 ? 40 : 
-	  128) {
-	return;
-}
-
-// TODO: limit production increase to make it adapt slower (lvst need time to grow)
-switch(FEAT_INDUSTRIES, SELF, animal_farm_switch_prod_change, 
-	[STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
-	 STORE_TEMP(min(transported_last_month_pct("LVST"),transported_last_month_pct("MILK")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
-	 STORE_TEMP(animal_farm_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)])
-{
-	change_production; // use default rules to adapt production
-}
-
-// randomize production at build time based on random bits: 96t min, 152t max
-switch(FEAT_INDUSTRIES, SELF, animal_farm_switch_prod_change_build,
-	[initialize_extractive_resources(),
-	 STORE_TEMP(animal_farm_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
-	])
-{
-	randomize_initial_production;
-}
-
 produce(animal_farm_produce,
 	[],
 	[LVST: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);MILK: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);],
@@ -401,21 +375,29 @@ switch(FEAT_INDUSTRIES, SELF, animal_farm_switch_cargo_subtype, getbits(extra_ca
 	return 0x3800 + string(STR_EMPTY);
 }
 
-////////////////////////////////////////////////////////////////////////////////
-// build the industry window text here
-////////////////////////////////////////////////////////////////////////////////
-switch(FEAT_INDUSTRIES, SELF, animal_farm_switch_extra_text, 
-	[STORE_TEMP(animal_farm_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
-	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 STORE_TEMP(production_level * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
-	 STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
-	 STORE_TEMP(
-		LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL) < LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION) ? string(STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION) : string(STR_INDUSTRY_PREREQ_KEEP_PRODUCTION) | 
-		string(STR_EMPTY) << 16,
-		TEMP_REGISTER_EXTRA_TEXT_ARG0)
-	]) {
-	return string(STR_ORGANIC_INDUSTRY_TEXT);
+switch(FEAT_INDUSTRIES, SELF, animal_farm_switch_update_last_served_date,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("LVST") != 0 || last_month_production("LVST") != 0 ||
+		incoming_cargo_waiting("GRAI") != 0 ||
+		this_month_transported("LVST") != 0 || last_month_transported("LVST") != 0 ||
+		this_month_transported("MILK") != 0 || last_month_transported("MILK") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
 }
+
+switch(FEAT_INDUSTRIES, SELF, animal_farm_switch_update_last_served_date_ext_textile_industries,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("LVST") != 0 || last_month_production("LVST") != 0 ||
+		incoming_cargo_waiting("GRAI") != 0 ||
+		this_month_transported("LVST") != 0 || last_month_transported("LVST") != 0 ||
+		this_month_transported("MILK") != 0 || last_month_transported("MILK") != 0 ||
+		this_month_transported("WOOL") != 0 || last_month_transported("WOOL") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
 
 if (param_extension_food_industries && !param_extension_textile_industries) {
 	// default farm
@@ -423,7 +405,7 @@ if (param_extension_food_industries && !param_extension_textile_industries) {
 		property {
 			substitute: 0;
 			map_colour: 209;
-			life_type: IND_LIFE_TYPE_ORGANIC;
+			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [animal_farm_industry_layout_1_tilelayout,animal_farm_industry_layout_2_tilelayout,animal_farm_industry_layout_3_tilelayout];
 			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
@@ -444,13 +426,12 @@ if (param_extension_food_industries && !param_extension_textile_industries) {
 			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        animal_farm_switch_produce;
-			monthly_prod_change:      animal_farm_switch_prod_change;
-			random_prod_change:       animal_farm_switch_prod_change;
-			build_prod_change:        animal_farm_switch_prod_change_build;
+			monthly_prod_change:      animal_farm_switch_update_last_served_date;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			build_prod_change:        initialize_last_served_date;
 			location_check:           animal_farm_switch_location_check_industry_distance;
 			cargo_subtype_display:    animal_farm_switch_cargo_subtype;
 			extra_text_fund:          return string(STR_EMPTY);
-			extra_text_industry:      animal_farm_switch_extra_text;
 		}
 	}
 }
@@ -461,7 +442,7 @@ if (param_extension_food_industries && param_extension_textile_industries) {
 		property {
 			substitute: 0;
 			map_colour: 209;
-			life_type: IND_LIFE_TYPE_ORGANIC;
+			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [animal_farm_industry_layout_1_tilelayout,animal_farm_industry_layout_2_tilelayout,animal_farm_industry_layout_3_tilelayout];
 			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
@@ -482,13 +463,12 @@ if (param_extension_food_industries && param_extension_textile_industries) {
 			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        animal_farm_switch_produce_ext_textile_industries;
-			monthly_prod_change:      animal_farm_switch_prod_change;
-			random_prod_change:       animal_farm_switch_prod_change;
-			build_prod_change:        animal_farm_switch_prod_change_build;
+			monthly_prod_change:      animal_farm_switch_update_last_served_date_ext_textile_industries;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			build_prod_change:        initialize_last_served_date;
 			location_check:           animal_farm_switch_location_check_industry_distance;
 			cargo_subtype_display:    animal_farm_switch_cargo_subtype;
 			extra_text_fund:          return string(STR_EMPTY);
-			extra_text_industry:      animal_farm_switch_extra_text;
 		}
 	}
 }
