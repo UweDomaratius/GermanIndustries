@@ -44,6 +44,9 @@ constants = {
     "CARGO_ID_COPPER": "28",
     "CARGO_ID_PAINT": "30",
     
+    # CARGO IDs FOOD INDUSTRY
+    "CARGO_ID_MILK": "31",
+    
     # INDUSTRY IDS 0-20 (with gaps): Base Industries
     "INDUSTRY_ID_BUILDERS_YARD":"17",
     "INDUSTRY_ID_COAL_MINE": "0",
@@ -89,6 +92,13 @@ constants = {
     "INDUSTRY_ID_COPPER_ORE_MINE": "31",
     "INDUSTRY_ID_COPPER_SMELTER": "32",
     "INDUSTRY_ID_PAINT_FACTORY": "34",
+    
+    # Food Industries Extension
+    "INDUSTRY_ID_BREWERY" : "35",
+    "INDUSTRY_ID_FLOUR_MILL" : "36",
+    "INDUSTRY_ID_STOCKYARD" : "37",
+    "INDUSTRY_ID_DAIRY" : "38",
+    "INDUSTRY_ID_ANIMAL_FARM" : "39",
     
     # INDUSTRY TILE IDs for Base Industries
     "INDUSTRY_TILE_ID_BUILDERS_YARD":"22",
@@ -149,6 +159,15 @@ constants = {
     "INDUSTRY_TILE_ID_COPPER_ORE_MINE": "44",
     "INDUSTRY_TILE_ID_COPPER_SMELTER": "45",
     "INDUSTRY_TILE_ID_PAINT_FACTORY": "47",
+    
+    # TILE IDs for FOOD_INDUSTRIES_EXTENSION
+    "INDUSTRY_TILE_ID_BREWERY_1" : "48",
+    "INDUSTRY_TILE_ID_BREWERY_2" : "49",
+    "INDUSTRY_TILE_ID_DAIRY_1" : "50",
+    "INDUSTRY_TILE_ID_DAIRY_2" : "51",
+    "INDUSTRY_TILE_ID_FLOUR_MILL" : "52",
+    "INDUSTRY_TILE_ID_STOCKYARD" : "53",
+    "INDUSTRY_TILE_ID_ANIMAL_FARM" : "54",
     
     # TTD sprite IDs
     "TTD_OILRIG_STATION_TILE": "24",

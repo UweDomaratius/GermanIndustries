@@ -1,0 +1,31 @@
+spriteset(cargoicon_milk) {
+    [10 + 20 * 13, 10 + 20 * 0, 10, 10, 0, 0, "graphics/other/cargoicons.png"]
+}
+if (param_extension_food_industries) {
+	item(FEAT_CARGOS, milk, CARGO_ID_MILK) {
+		property {
+			type_name: string(STR_CARGO_NAME_MILK);
+			unit_name: string(STR_CARGO_NAME_MILK);
+			type_abbreviation: string(STR_CID_MILK);
+			sprite: NEW_CARGO_SPRITE;
+			weight: 1.0;
+			is_freight: 1;
+			cargo_classes: bitmask(CC_LIQUID, CC_EXPRESS, CC_REFRIGERATED);
+			town_growth_effect: TOWNGROWTH_NONE;
+			town_growth_multiplier: 1.0;
+			units_of_cargo: TTD_STR_TONS;
+			items_of_cargo: string(STR_QUANTITY_MILK);
+			penalty_lowerbound: 0;
+			single_penalty_length: 16;
+			capacity_multiplier: 1;
+			cargo_payment_list_colour: 210;
+			station_list_colour: 210;
+			price_factor: 131;
+			cargo_label: "MILK";
+			number: CARGO_ID_MILK;
+		}
+		graphics {
+			cargoicon_milk;
+		}
+	}
+}

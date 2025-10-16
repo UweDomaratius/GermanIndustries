@@ -382,6 +382,10 @@ switch(FEAT_INDUSTRIES, SELF, hotel_switch_location_check_industry_distance,
 		(industry_distance(INDUSTRY_ID_GENERAL_STORE) >= 16) &&
 		(industry_distance(INDUSTRY_ID_OIL_RIG) >= 32) &&
 		(industry_distance(INDUSTRY_ID_FOOD_PROCESSOR) >= 32) &&
+		(industry_distance(INDUSTRY_ID_BREWERY) >= 32) &&
+		(industry_distance(INDUSTRY_ID_DAIRY) >= 32) &&
+		(industry_distance(INDUSTRY_ID_STOCKYARD) >= 32) &&
+		(industry_distance(INDUSTRY_ID_FLOUR_MILL) >= 32) &&
 		(industry_distance(INDUSTRY_ID_HOTEL) >= 16))]) {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;

@@ -29,6 +29,8 @@ STR_PARAM_EXT_BASIC_INORGANIC_CHEMISTRY :Erweiterung "Grundlegende Anorganische 
 STR_PARAM_EXT_BASIC_INORGANIC_CHEMISTRY_DESC :Fügt Chemikalien wie Natronlauge und Chlor und passende Industrien hinzu.
 STR_PARAM_EXT_PAINTING_INDUSTRIES :Erweiterung "Farbindustrie"
 STR_PARAM_EXT_PAINTING_INDUSTRIES_DESC :Fügt Chemiebetriebe hinzu, die aus verschiedenen Rohstoffen Farben produzieren.
+STR_PARAM_EXT_FOOD_INDUSTRIES :Erweiterung "Lebensmittelindustrie"
+STR_PARAM_EXT_FOOD_INDUSTRIES_DESC :Fügt eine breitere Palette an Lebensmittelindustrien hinzu.
 
 # Frachten
 STR_CARGO_NAME_BAUXITE            :Bauxit
@@ -42,6 +44,7 @@ STR_CARGO_NAME_FISH               :Fisch
 STR_CARGO_NAME_HYDROGEN           :Wasserstoff
 STR_CARGO_NAME_LIMESTONE          :Kalkstein
 STR_CARGO_NAME_LYE                :Natronlauge
+STR_CARGO_NAME_MILK               :Milch
 STR_CARGO_NAME_PAINT              :Farbe
 STR_CARGO_NAME_PLASTICS           :Kunststoffe
 STR_CARGO_NAME_SALT               :Salz
@@ -65,6 +68,7 @@ STR_QUANTITY_GOODS                :{WEIGHT} Güter
 STR_QUANTITY_HYDROGEN             :{WEIGHT} Wasserstoff
 STR_QUANTITY_LIMESTONE            :{WEIGHT} Kalkstein
 STR_QUANTITY_LYE                  :{WEIGHT} Natronlauge
+STR_QUANTITY_MILK                 :{WEIGHT} Milch
 STR_QUANTITY_OIL                  :{WEIGHT} Öl
 STR_QUANTITY_PAINT                :{WEIGHT} Farbe
 STR_QUANTITY_PLASTICS             :{WEIGHT} Kunststoffe
@@ -77,6 +81,8 @@ STR_QUANTITY_WOOL                 :{WEIGHT} Wolle
 
 # Industrien
 STR_IND_ALUMINIUM_PLANT      :{G=w}Aluhütte
+STR_IND_ANIMAL_FARM          :{G=w}Viehzucht
+STR_IND_BREWERY              :{G=w}Brauerei
 STR_IND_BRICK_WORKS          :{G=w}Ziegelei
 STR_IND_BUILDERS_YARD        :Bauhof
 STR_IND_CARBON_BLACK_PLANT   :{G=w}Rußfabrik
@@ -84,7 +90,9 @@ STR_IND_CEMENT_PLANT         :{G=w}Zementfabrik
 STR_IND_CHLOR_ALKALI_PLANT   :{G=w}Chloralkali Elektrolyseanlage
 STR_IND_CLOTHING_PLANT       :{G=w}Bekleidungsfabrik
 STR_IND_COPPER_SMELTER       :{G=w}Kupferhütte
+STR_IND_DAIRY                :{G=w}Molkerei
 STR_IND_FISHING_GROUNDS      :{G=w}Fischgründe
+STR_IND_FLOUR_MILL           :{G=w}Mühle
 STR_IND_FURNITURE_FACTORY    :{G=w}Möbelfabrik
 STR_IND_DEPARTMENT_STORE     :{G=n}Kaufhaus
 STR_IND_GENERAL_STORE        :Laden
@@ -97,12 +105,15 @@ STR_IND_PLASTICS_PLANT       :Kunststofffabrik
 STR_IND_PORT                 :Hafen
 STR_IND_SALT_MINE            :{G=n}Salzbergwerk
 STR_IND_SANDPIT              :{G=w}Sandgrube
+STR_IND_STOCKYARD            :Schlachthof
 STR_IND_TEXTILE_MILL         :{G=w}Textilfabrik
 STR_IND_VEHICLE_DISTRIBUTOR  :{G=n}Autohaus
 STR_IND_VEHICLE_FACTORY      :{G=w}Autofabrik
 
 # Stationsnamen
 STR_STATION_ALUMINIUM_PLANT      :Aluhütte
+STR_STATION_ANIMAL_FARM          :Viehzucht
+STR_STATION_BREWERY              :Brauerei
 STR_STATION_BRICK_WORKS          :Ziegelei
 STR_STATION_BUILDERS_YARD        :Bauhof
 STR_STATION_CARBON_BLACK_PLANT   :Rußfabrik
@@ -112,9 +123,11 @@ STR_STATION_CLOTHING_PLANT       :Bekleidungsfabrik
 STR_STATION_COAL_MINE            :Bergwerk
 STR_STATION_COPPER_ORE_MINE      :Bergwerk
 STR_STATION_COPPER_SMELTER       :Kupferhütte
+STR_STATION_DAIRY                :Molkerei
 STR_STATION_DEPARTMENT_STORE     :Kaufhaus
 STR_STATION_FARM                 :Bauernhof
 STR_STATION_FISHING_GROUNDS      :Fischgründe
+STR_STATION_FLOUR_MILL           :Mühle
 STR_STATION_FOOD_PROCESSOR       :Lebensmittelfabrik
 STR_STATION_FOREST               :Wald
 STR_STATION_FURNITURE_FACTORY    :Möbelfabrik
@@ -134,6 +147,7 @@ STR_STATION_POWER_PLANT          :Kraftwerk
 STR_STATION_SALT_MINE            :Salzbergwerk
 STR_STATION_SANDPIT              :Sandgrube
 STR_STATION_SAWMILL              :Sägewerk
+STR_STATION_STOCKYARD            :Schlachthof
 STR_STATION_TEXTILE_MILL         :Textilfabrik
 STR_STATION_VEHICLE_DISTRIBUTOR  :Autohändler
 STR_STATION_VEHICLE_FACTORY      :Autofabrik

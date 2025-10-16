@@ -1,0 +1,500 @@
+spriteset(brewery_spriteset_2) {
+	[10, 60, 64, 91, -31, -60, ANIM | NOCROP, "graphics/industries/brewery.png"]
+}
+spriteset(brewery_spriteset_2_snow) {
+	[10, 60, 64, 91, -31, -60, ANIM | NOCROP, "graphics/industries/brewery_snow.png"]
+}
+spriteset(brewery_spriteset_3) {
+	[80, 390, 64, 91, -31, -60, ANIM | NOCROP, "graphics/industries/brewery.png"]
+	[80, 60, 64, 91, -31, -60, ANIM | NOCROP, "graphics/industries/brewery.png"]
+	[80, 170, 64, 91, -31, -60, ANIM | NOCROP, "graphics/industries/brewery.png"]
+	[80, 280, 64, 91, -31, -60, ANIM | NOCROP, "graphics/industries/brewery.png"]
+	[80, 170, 64, 91, -31, -60, ANIM | NOCROP, "graphics/industries/brewery.png"]
+	[80, 60, 64, 91, -31, -60, ANIM | NOCROP, "graphics/industries/brewery.png"]
+}
+spriteset(brewery_spriteset_3_snow) {
+	[80, 390, 64, 91, -31, -60, ANIM | NOCROP, "graphics/industries/brewery_snow.png"]
+	[80, 60, 64, 91, -31, -60, ANIM | NOCROP, "graphics/industries/brewery_snow.png"]
+	[80, 170, 64, 91, -31, -60, ANIM | NOCROP, "graphics/industries/brewery_snow.png"]
+	[80, 280, 64, 91, -31, -60, ANIM | NOCROP, "graphics/industries/brewery_snow.png"]
+	[80, 170, 64, 91, -31, -60, ANIM | NOCROP, "graphics/industries/brewery_snow.png"]
+	[80, 60, 64, 91, -31, -60, ANIM | NOCROP, "graphics/industries/brewery_snow.png"]
+}
+spriteset(brewery_spriteset_6) {
+	[150, 60, 64, 91, -31, -60, ANIM | NOCROP, "graphics/industries/brewery.png"]
+}
+spriteset(brewery_spriteset_6_snow) {
+	[150, 60, 64, 91, -31, -60, ANIM | NOCROP, "graphics/industries/brewery_snow.png"]
+}
+
+spritelayout brewery_spritelayout_1_anim {
+	childsprite {
+		sprite: default_spriteset_ground_cobblestones;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: brewery_spriteset_2(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: brewery_spriteset_2_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+	building {
+		sprite: TTD_SMOKE_SPRITE_WHITE_SMALL + (animation_frame / 4);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 8;
+		yoffset: 0;
+		zoffset: 55+ animation_frame;
+		xextent: 11;
+		yextent: 16;
+		zextent: 7;
+		hide_sprite: animation_frame > 19;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}	
+}
+spritelayout brewery_spritelayout_2 {
+	childsprite {
+		sprite: default_spriteset_ground_cobblestones6;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}	
+	building {
+		sprite: brewery_spriteset_3(1* (animation_frame));
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: brewery_spriteset_3_snow(1* (animation_frame));
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout brewery_spritelayout_3 {
+	childsprite {
+		sprite: default_spriteset_ground_cobblestones;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: brewery_spriteset_6(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: brewery_spriteset_6_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// graphics choice switch chain
+//////////////////////////////////////////////////////////////////////////////
+
+switch(FEAT_INDUSTRYTILES, SELF, brewery_switch_graphics_layout_1, relative_pos) {
+	relative_coord(0, 2): brewery_spritelayout_3;
+    relative_coord(1, 0): brewery_spritelayout_1_anim;
+    relative_coord(1, 2): brewery_spritelayout_2;
+	return 0;
+}
+switch(FEAT_INDUSTRYTILES, SELF, brewery_switch_graphics_layout_2, relative_pos) {
+	relative_coord(0, 0): brewery_spritelayout_3;
+	relative_coord(1, 0): brewery_spritelayout_2;
+	relative_coord(2, 0): brewery_spritelayout_1_anim;
+	return 0;
+}
+switch(FEAT_INDUSTRYTILES, SELF, brewery_switch_graphics_layout_3, relative_pos) {
+	relative_coord(0, 1): brewery_spritelayout_3;
+	relative_coord(1, 0): brewery_spritelayout_1_anim;
+	relative_coord(1, 1): brewery_spritelayout_2;
+	return 0;
+}
+switch(FEAT_INDUSTRYTILES, SELF, brewery_switch_graphics_layout_4, relative_pos) {
+	relative_coord(0, 0): brewery_spritelayout_1_anim;
+	relative_coord(1, 0): brewery_spritelayout_3;
+	relative_coord(2, 0): brewery_spritelayout_2;
+	return 0;
+}
+switch(FEAT_INDUSTRYTILES, SELF, brewery_switch_graphics_layout_5, relative_pos) {
+	relative_coord(0, 0): brewery_spritelayout_3;
+	relative_coord(0, 1): brewery_spritelayout_3;
+	relative_coord(1, 0): brewery_spritelayout_2;
+	relative_coord(1, 1): brewery_spritelayout_2;
+	relative_coord(2, 0): brewery_spritelayout_1_anim;
+	return 0;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, brewery_switch_graphics_layouts, layout_num) {
+	1: brewery_switch_graphics_layout_1;
+	2: brewery_switch_graphics_layout_2;
+	3: brewery_switch_graphics_layout_3;
+	4: brewery_switch_graphics_layout_4;
+	5: brewery_switch_graphics_layout_5;
+    brewery_switch_graphics_layout_1; // default
+}
+switch(FEAT_INDUSTRYTILES, SELF, brewery_switch_graphics_construction_state, construction_state) {
+    0..2: spritelayout_default_construction_states;
+    brewery_switch_graphics_layouts; // default
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, brewery_switch_graphics,
+	[switch_tile_fences(),
+	 switch_terrain_sprite(),switch_graphics_init_temp_registers()]) {
+    brewery_switch_graphics_construction_state;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// location checks
+//////////////////////////////////////////////////////////////////////////////
+// This check works as follows: calculate height of the northernmost tile of the industry and add 0, 1 or 2 for flat, slope. steep slope
+// Do the same for the current tile and compare the results. If the result is equal, the terrain is effectively flat
+// and industry can be placed.
+// It just looks weird due to the stacked ternary operators needed here
+switch (FEAT_INDUSTRYTILES, SELF, brewery_switch_tile_location_check2,
+			(nearby_tile_height(-relative_x, -relative_y) + 
+			(nearby_tile_slope(-relative_x, -relative_y)== SLOPE_FLAT ? 0 : nearby_tile_slope(-relative_x, -relative_y) == bitmask(IS_STEEP_SLOPE) ? 2 : 1)) 
+			== 
+			(nearby_tile_height(0, 0) + (nearby_tile_slope(0, 0) == SLOPE_FLAT ? 0 : nearby_tile_slope(0, 0) == bitmask(IS_STEEP_SLOPE) ? 2 : 1))
+			) {
+	1: return CB_RESULT_LOCATION_ALLOW;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, brewery_switch_tile_location_check,
+	is_funded_or_prospected() || (generation_not_forbidden_by_param() && not_next_to_industry() && not_next_to_buildings()))
+{
+	1: brewery_switch_tile_location_check2;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// industry tile and layout definition
+//////////////////////////////////////////////////////////////////////////////
+item(FEAT_INDUSTRYTILES, brewery_tile_1, INDUSTRY_TILE_ID_BREWERY_1) {
+	property {
+		substitute:         0;
+        land_shape_flags:   0;
+		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+		animation_info: [ANIMATION_LOOPING, 6];
+		animation_speed: 3;
+		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
+	}
+	graphics {
+		tile_check: brewery_switch_tile_location_check;
+		brewery_switch_graphics;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, brewery_tile_2, INDUSTRY_TILE_ID_BREWERY_2) {
+	property {
+		substitute:         0;
+		land_shape_flags:   0;
+		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+		animation_info: [ANIMATION_LOOPING, 71];
+		animation_speed: 2;
+		animation_triggers: bitmask();
+	}
+	graphics {
+		tile_check: brewery_switch_tile_location_check;
+		brewery_switch_graphics;
+	}
+}
+
+tilelayout brewery_tilelayout_1 {
+	0, 2: brewery_tile_1;
+	1, 0: brewery_tile_2;
+	1, 2: brewery_tile_1;
+}
+tilelayout brewery_tilelayout_2 {
+	0, 0: brewery_tile_1;
+	1, 0: brewery_tile_1;
+	2, 0: brewery_tile_2;
+}
+tilelayout brewery_tilelayout_3 {
+	0, 1: brewery_tile_1;
+	1, 0: brewery_tile_2;
+	1, 1: brewery_tile_1;
+}
+tilelayout brewery_tilelayout_4 {
+	0, 0: brewery_tile_2;
+	1, 0: brewery_tile_1;
+	2, 0: brewery_tile_1;
+}
+tilelayout brewery_tilelayout_5 {
+	0, 0: brewery_tile_1;
+	0, 1: brewery_tile_1;
+	1, 0: brewery_tile_1;
+	1, 1: brewery_tile_1;
+	2, 0: brewery_tile_2;
+}
+
+switch(FEAT_INDUSTRIES, SELF, brewery_switch_location_check_industry_distance,
+       [STORE_TEMP(0, TEMP_REGISTER_TOWN_MIN_DISTANCE),
+	    STORE_TEMP(24, TEMP_REGISTER_TOWN_MAX_DISTANCE),
+	    (distance_from_town() && 
+	    (industry_distance(INDUSTRY_ID_FARM) >= 32) &&
+	    (industry_distance(INDUSTRY_ID_GENERAL_STORE) >= 32) &&
+		(industry_distance(INDUSTRY_ID_HOTEL) >= 32) &&
+	    (industry_distance(INDUSTRY_ID_BREWERY) >= 16))]) {
+	   1: return CB_RESULT_LOCATION_ALLOW;
+	   return CB_RESULT_LOCATION_DISALLOW;
+}
+
+produce(brewery_produce,
+	[GRAI: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);],
+	[FOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*50/100) : 0;],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, brewery_switch_produce, 
+	[STORE_TEMP(incoming_cargo_waiting("GRAI"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+     calculate_raw_material_usage(),
+	 calculate_total_production()
+	 
+	]) {
+	brewery_produce;
+}
+
+switch(FEAT_INDUSTRIES, SELF, brewery_switch_cargo_subtype, getbits(extra_callback_info2, 16, 8)) {
+	GRAI: switch_cargo_subtype;
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, brewery_switch_update_last_served_date,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("FOOD") != 0 || last_month_production("FOOD") != 0 || 
+		incoming_cargo_waiting("GRAI") != 0 || 
+		this_month_transported("FOOD") != 0 || last_month_transported("FOOD") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+if (param_extension_food_industries) {
+	item(FEAT_INDUSTRIES, brewery, INDUSTRY_ID_BREWERY) {
+		property {
+			substitute: 0;
+			map_colour: 197;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [brewery_tilelayout_1,brewery_tilelayout_2,brewery_tilelayout_3,brewery_tilelayout_4,brewery_tilelayout_5];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_BREWERY);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 50;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("GRAI"),produce_cargo("FOOD",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_BREWERY));
+		}
+			
+		graphics {
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        brewery_switch_produce;
+			monthly_prod_change:      brewery_switch_update_last_served_date;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           brewery_switch_location_check_industry_distance;
+			cargo_subtype_display:    brewery_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}

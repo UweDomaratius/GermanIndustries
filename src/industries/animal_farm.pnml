@@ -1,0 +1,478 @@
+spriteset(animal_farm_spriteset_barn) {
+    [10, 10, 64, 52, -31, -21, ANIM | NOCROP, "graphics/industries/farm.png"]
+}  
+spriteset(animal_farm_spriteset_barn_ground) {
+	[10, 70, 64, 52, -31, -21, ANIM | NOCROP, "graphics/industries/farm.png"]
+}   
+spriteset(animal_farm_spriteset_silo) {
+	[80, 10, 64, 52, -31, -21, ANIM | NOCROP, "graphics/industries/farm.png"]
+}
+spriteset(animal_farm_spriteset_silo_ground) {
+	[80, 70, 64, 52, -31, -21, ANIM | NOCROP, "graphics/industries/farm.png"]
+}
+spriteset(animal_farm_spriteset_pigs) {
+    [150, 10, 64, 52, -31, -21, ANIM | NOCROP, "graphics/industries/farm.png"]
+}
+spriteset(animal_farm_spriteset_pigs_ground) {
+    [150, 70, 64, 52, -31, -21, ANIM | NOCROP, "graphics/industries/farm.png"]
+}
+spriteset(animal_farm_spriteset_house2) {
+    [220, 10, 64, 52, -31, -21, ANIM | NOCROP, "graphics/industries/farm.png"]
+}
+spriteset(animal_farm_spriteset_house2_ground) {
+     [220, 70, 64, 52, -31, -21, ANIM | NOCROP, "graphics/industries/farm.png"]
+}
+spriteset(animal_farm_spriteset_cows_bw) {
+    [290, 10, 64, 52, -31, -21, ANIM | NOCROP, "graphics/industries/farm.png"]
+}
+spriteset(animal_farm_spriteset_cows_brown) {
+    [360, 10, 64, 52, -31, -21, ANIM | NOCROP, "graphics/industries/farm.png"]
+}
+spriteset(animal_farm_spriteset_chickens) {
+    [430, 10, 64, 52, -31, -21, ANIM | NOCROP, "graphics/industries/farm.png"]
+}
+spriteset(animal_farm_spriteset_pigs2) {
+    [500, 10, 64, 52, -31, -21, ANIM | NOCROP, "graphics/industries/farm.png"]
+}
+spritelayout animal_farm_spritelayout_barn {
+    ground {
+        sprite: (LOAD_TEMP(TEMP_REGISTER_GROUND_SPRITE));
+    }
+	childsprite {
+		sprite: animal_farm_spriteset_barn_ground(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+    building {
+		sprite: animal_farm_spriteset_barn(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+}
+spritelayout animal_farm_spritelayout_pigs {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_BROWN;
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	childsprite {
+		sprite: animal_farm_spriteset_pigs_ground(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: 0;
+		always_draw: 1;
+	}          
+	building {
+		sprite: animal_farm_spriteset_pigs(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}	
+}
+spritelayout animal_farm_spritelayout_house2 {
+	ground {
+		sprite: (LOAD_TEMP(TEMP_REGISTER_GROUND_SPRITE));
+	}
+	childsprite {
+		sprite: animal_farm_spriteset_house2_ground(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: (LOAD_TEMP(13));
+		always_draw: 1;
+	}            
+	building {
+		sprite: animal_farm_spriteset_house2(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}            
+}
+spritelayout animal_farm_spritelayout_cows_bw {
+	ground {
+		sprite: (LOAD_TEMP(TEMP_REGISTER_GROUND_SPRITE));
+	}
+	building {
+		sprite: animal_farm_spriteset_cows_bw(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}            
+}
+spritelayout animal_farm_spritelayout_cows_brown {
+	ground {
+		sprite: (LOAD_TEMP(TEMP_REGISTER_GROUND_SPRITE));
+	}
+	building {
+		sprite: animal_farm_spriteset_cows_brown(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}		
+}
+spritelayout animal_farm_spritelayout_chickens {
+	ground {
+		sprite: (LOAD_TEMP(TEMP_REGISTER_GROUND_SPRITE));
+	}
+	building {
+		sprite: animal_farm_spriteset_chickens(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+}
+spritelayout animal_farm_spritelayout_pigs2 {
+	ground {
+		sprite: (LOAD_TEMP(TEMP_REGISTER_GROUND_SPRITE));
+	}
+	building {
+		sprite: animal_farm_spriteset_pigs2(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+}
+
+spritelayout animal_farm_spritelayout_silo {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_MUD_TRACK;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: animal_farm_spriteset_silo(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// graphics choice switch chain
+//////////////////////////////////////////////////////////////////////////////
+
+switch(FEAT_INDUSTRYTILES, SELF, animal_farm_switch_graphics_layout_1, relative_pos) {
+	relative_coord(0, 1): animal_farm_spritelayout_silo;
+	relative_coord(2, 2): animal_farm_spritelayout_pigs2;
+	relative_coord(2, 3): animal_farm_spritelayout_pigs;
+	relative_coord(4, 0): animal_farm_spritelayout_barn;
+	relative_coord(4, 2): animal_farm_spritelayout_cows_bw;
+	relative_coord(4, 3): animal_farm_spritelayout_chickens;
+	relative_coord(5, 2): animal_farm_spritelayout_cows_brown;
+	relative_coord(5, 3): animal_farm_spritelayout_house2;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, animal_farm_switch_graphics_layout_2, relative_pos) {
+	relative_coord(0, 0): animal_farm_spritelayout_silo;
+	relative_coord(3, 0): animal_farm_spritelayout_house2;
+	relative_coord(3, 2): animal_farm_spritelayout_chickens;
+	relative_coord(3, 3): animal_farm_spritelayout_cows_brown;
+	relative_coord(4, 0): animal_farm_spritelayout_cows_bw;
+	relative_coord(4, 3): animal_farm_spritelayout_barn;
+	relative_coord(3, 1): animal_farm_spritelayout_pigs2;
+	relative_coord(2, 1): animal_farm_spritelayout_pigs;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, animal_farm_switch_graphics_layout_3, relative_pos) {
+	relative_coord(1, 0): animal_farm_spritelayout_silo;
+	relative_coord(0, 2): animal_farm_spritelayout_pigs2;
+	relative_coord(0, 3): animal_farm_spritelayout_barn;
+	relative_coord(0, 4): animal_farm_spritelayout_cows_bw;
+	relative_coord(1, 4): animal_farm_spritelayout_pigs;
+	relative_coord(2, 2): animal_farm_spritelayout_chickens;
+	relative_coord(3, 2): animal_farm_spritelayout_house2;
+	relative_coord(3, 4): animal_farm_spritelayout_cows_brown;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, PARENT, animal_farm_switch_graphics_layout, layout_num) {
+    1: animal_farm_switch_graphics_layout_1;
+    2: animal_farm_switch_graphics_layout_2;
+    3: animal_farm_switch_graphics_layout_3;
+    animal_farm_switch_graphics_layout_1; // default
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, animal_farm_switch_graphics_construction_state, construction_state) {
+    0..2: spritelayout_default_construction_states;
+    animal_farm_switch_graphics_layout; // default
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, animal_farm_switch_graphics,
+	[switch_terrain_sprite(),switch_graphics_init_temp_registers()
+	]) {
+    animal_farm_switch_graphics_construction_state;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// location checks
+//////////////////////////////////////////////////////////////////////////////
+switch (FEAT_INDUSTRYTILES, SELF, animal_farm_switch_location_check_flat_tile, nearby_tile_slope(0,0) == SLOPE_FLAT) {
+	1: return CB_RESULT_LOCATION_ALLOW;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, animal_farm_switch_location_check_below_snowline, UCMP(nearby_tile_height(0, 0) - 0, snowline_height - 0)) {
+	0..1: animal_farm_switch_location_check_flat_tile;
+	return string(STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE);
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, animal_farm_switch_tile_location_check,
+	is_funded_or_prospected() || (generation_not_forbidden_by_param() && not_next_to_desert() && not_next_to_industry() && not_next_to_buildings()))
+{
+	1: animal_farm_switch_location_check_below_snowline;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// industry tile and layout definition
+//////////////////////////////////////////////////////////////////////////////
+item(FEAT_INDUSTRYTILES, animal_farm_tile, INDUSTRY_TILE_ID_ANIMAL_FARM) {
+	property {
+		substitute:         0;
+		land_shape_flags:   0;
+		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+		animation_triggers: bitmask();
+	}
+	graphics {
+		tile_check: animal_farm_switch_tile_location_check;
+		animal_farm_switch_graphics;
+	}
+}
+
+tilelayout animal_farm_industry_layout_1_tilelayout {
+	0, 1: animal_farm_tile;
+	2, 2: animal_farm_tile;
+	2, 3: animal_farm_tile;
+	4, 0: animal_farm_tile;
+	4, 2: animal_farm_tile;
+	4, 3: animal_farm_tile;
+	5, 2: animal_farm_tile;
+	5, 3: animal_farm_tile;
+}
+tilelayout animal_farm_industry_layout_2_tilelayout {
+	0, 0: animal_farm_tile;
+	3, 0: animal_farm_tile;
+	3, 2: animal_farm_tile;
+	3, 3: animal_farm_tile;
+	4, 0: animal_farm_tile;
+	4, 3: animal_farm_tile;
+	3, 1: animal_farm_tile;
+	2, 1: animal_farm_tile;
+}
+
+tilelayout animal_farm_industry_layout_3_tilelayout {
+	1, 0: animal_farm_tile;
+	0, 2: animal_farm_tile;
+	0, 3: animal_farm_tile;
+	0, 4: animal_farm_tile;
+	1, 4: animal_farm_tile;
+	2, 2: animal_farm_tile;
+	3, 2: animal_farm_tile;
+	3, 4: animal_farm_tile;
+}
+
+switch(FEAT_INDUSTRIES, SELF, animal_farm_switch_location_check_industry_distance,
+	   (industry_distance(INDUSTRY_ID_ANIMAL_FARM) >= 16) &&
+	   (industry_distance(INDUSTRY_ID_FOOD_PROCESSOR) >= 32) &&
+	   (industry_distance(INDUSTRY_ID_DAIRY) >= 32) &&
+	   (industry_distance(INDUSTRY_ID_TEXTILE_MILL) >= 32) &&
+	   (industry_distance(INDUSTRY_ID_FARM) >= 32) &&
+	   (industry_distance(INDUSTRY_ID_TEXTILE_MILL) >= 32) &&
+	   (town_euclidean_dist(0,0) > 32) // should not be near towns
+	   ) 
+{
+	   1: return CB_RESULT_LOCATION_ALLOW;
+	   return CB_RESULT_LOCATION_DISALLOW;
+}
+
+produce(animal_farm_produce,
+	[GRAI: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);],
+	[LVST: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*60/100) : 0;
+	 MILK: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*60/100) : 0;],
+	0 // do not run again
+)
+
+produce(animal_farm_produce_ext_textile_industries,
+	[GRAI: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);],
+	[LVST: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*60/100) : 0;
+	 MILK: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*60/100) : 0;
+	 WOOL: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*80/100) : 0;],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, animal_farm_switch_produce,
+	[STORE_TEMP(incoming_cargo_waiting("GRAI"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+     calculate_raw_material_usage(),
+	 calculate_total_production()
+	]) {
+	animal_farm_produce;
+}
+
+switch(FEAT_INDUSTRIES, SELF, animal_farm_switch_produce_ext_textile_industries,
+	[STORE_TEMP(incoming_cargo_waiting("GRAI"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+     calculate_raw_material_usage(),
+	 calculate_total_production()
+	]) {
+	animal_farm_produce_ext_textile_industries;
+}
+
+switch(FEAT_INDUSTRIES, SELF, animal_farm_switch_cargo_subtype, getbits(extra_callback_info2, 16, 8)) {
+	GRAI: switch_cargo_subtype;
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, animal_farm_switch_update_last_served_date,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("LVST") != 0 || last_month_production("LVST") != 0 ||
+		incoming_cargo_waiting("GRAI") != 0 ||
+		this_month_transported("LVST") != 0 || last_month_transported("LVST") != 0 ||
+		this_month_transported("MILK") != 0 || last_month_transported("MILK") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+switch(FEAT_INDUSTRIES, SELF, animal_farm_switch_update_last_served_date_ext_textile_industries,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("LVST") != 0 || last_month_production("LVST") != 0 ||
+		incoming_cargo_waiting("GRAI") != 0 ||
+		this_month_transported("LVST") != 0 || last_month_transported("LVST") != 0 ||
+		this_month_transported("MILK") != 0 || last_month_transported("MILK") != 0 ||
+		this_month_transported("WOOL") != 0 || last_month_transported("WOOL") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+
+if (param_extension_food_industries && !param_extension_textile_industries) {
+	// default farm
+	item(FEAT_INDUSTRIES, animal_farm, INDUSTRY_ID_ANIMAL_FARM) {
+		property {
+			substitute: 0;
+			map_colour: 209;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [animal_farm_industry_layout_1_tilelayout,animal_farm_industry_layout_2_tilelayout,animal_farm_industry_layout_3_tilelayout];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_ANIMAL_FARM);
+			prob_map_gen: 10;
+			prob_in_game: 10;
+			prospect_chance: 0.75;
+			fund_cost_multiplier: 8;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [produce_cargo("LVST",0),produce_cargo("MILK",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_ANIMAL_FARM));
+		}
+	
+		graphics {
+			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        animal_farm_switch_produce;
+			monthly_prod_change:      animal_farm_switch_update_last_served_date;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			build_prod_change:        initialize_last_served_date;
+			location_check:           animal_farm_switch_location_check_industry_distance;
+			cargo_subtype_display:    animal_farm_switch_cargo_subtype;
+			extra_text_fund:          return string(STR_EMPTY);
+		}
+	}
+}
+
+if (param_extension_food_industries && param_extension_textile_industries) {
+	// default farm
+	item(FEAT_INDUSTRIES, animal_farm, INDUSTRY_ID_ANIMAL_FARM) {
+		property {
+			substitute: 0;
+			map_colour: 209;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [animal_farm_industry_layout_1_tilelayout,animal_farm_industry_layout_2_tilelayout,animal_farm_industry_layout_3_tilelayout];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_ANIMAL_FARM);
+			prob_map_gen: 11;
+			prob_in_game: 3;
+			prospect_chance: 0.75;
+			fund_cost_multiplier: 60;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("GRAI"),produce_cargo("LVST",0),produce_cargo("MILK",0),produce_cargo("WOOL",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_ANIMAL_FARM));
+		}
+	
+		graphics {
+			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        animal_farm_switch_produce_ext_textile_industries;
+			monthly_prod_change:      animal_farm_switch_update_last_served_date_ext_textile_industries;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			build_prod_change:        initialize_last_served_date;
+			location_check:           animal_farm_switch_location_check_industry_distance;
+			cargo_subtype_display:    animal_farm_switch_cargo_subtype;
+			extra_text_fund:          return string(STR_EMPTY);
+		}
+	}
+}
+    

@@ -29,6 +29,8 @@ STR_PARAM_EXT_BASIC_INORGANIC_CHEMISTRY :Extension set "Basic Inorganic Chemistr
 STR_PARAM_EXT_BASIC_INORGANIC_CHEMISTRY_DESC :Adds basic chemistry based on sodium and chlorine, as well as related industries.
 STR_PARAM_EXT_PAINTING_INDUSTRIES :Extension set "Painting Industries"
 STR_PARAM_EXT_PAINTING_INDUSTRIES_DESC :Adds chemical industries producing paints from various raw materials.
+STR_PARAM_EXT_FOOD_INDUSTRIES :Extension set "Food Industries"
+STR_PARAM_EXT_FOOD_INDUSTRIES_DESC :Adds more diverse food processing industries.
 
 STR_TOWN    :{STRING}
 STR_STATION :{STRING} {STRING}
@@ -58,6 +60,7 @@ STR_CARGO_NAME_FISH               :Fish
 STR_CARGO_NAME_HYDROGEN           :Hydrogen
 STR_CARGO_NAME_LIMESTONE          :Limestone
 STR_CARGO_NAME_LYE                :Lye
+STR_CARGO_NAME_MILK               :Milk
 STR_CARGO_NAME_PAINT              :Paint
 STR_CARGO_NAME_PLASTICS           :Plastics
 STR_CARGO_NAME_SALT               :Salt
@@ -81,6 +84,7 @@ STR_QUANTITY_GOODS                :{WEIGHT} of goods
 STR_QUANTITY_HYDROGEN             :{WEIGHT} of hydrogen
 STR_QUANTITY_LIMESTONE            :{WEIGHT} of limestone
 STR_QUANTITY_LYE                  :{WEIGHT} of lye
+STR_QUANTITY_MILK                 :{WEIGHT} of milk
 STR_QUANTITY_OIL                  :{WEIGHT} of oil
 STR_QUANTITY_PAINT                :{WEIGHT} of paint
 STR_QUANTITY_PLASTICS             :{WEIGHT} of plastics
@@ -105,6 +109,7 @@ STR_CID_FOOD                      :{TINYFONT}FOOD
 STR_CID_HYDROGEN                  :{TINYFONT}H2
 STR_CID_LIMESTONE                 :{TINYFONT}LIME
 STR_CID_LYE                       :{TINYFONT}LYE
+STR_CID_MILK                      :{TINYFONT}MILK
 STR_CID_PAINT                     :{TINYFONT}COAT
 STR_CID_PLASTICS                  :{TINYFONT}PLAS
 STR_CID_SALT                      :{TINYFONT}SALT
@@ -116,6 +121,8 @@ STR_CID_WOOL                      :{TINYFONT}WOOL
 
 # Industries
 STR_IND_ALUMINIUM_PLANT      :Aluminium Plant
+STR_IND_ANIMAL_FARM          :Animal Farm
+STR_IND_BREWERY              :Brewery
 STR_IND_BRICK_WORKS          :Brickworks
 STR_IND_BUILDERS_YARD        :Builders Yard
 STR_IND_CARBON_BLACK_PLANT   :Carbon Black Plant
@@ -123,8 +130,10 @@ STR_IND_CEMENT_PLANT         :Cement Plant
 STR_IND_CHLOR_ALKALI_PLANT   :Chloralkali process plant
 STR_IND_CLOTHING_PLANT       :Clothing Plant
 STR_IND_COPPER_SMELTER       :Copper Smelter
+STR_IND_DAIRY                :Dairy
 STR_IND_DEPARTMENT_STORE     :Department Store
 STR_IND_FISHING_GROUNDS      :Fishing Grounds
+STR_IND_FLOUR_MILL           :Flour Mill
 STR_IND_FURNITURE_FACTORY    :Furniture Factory
 STR_IND_GENERAL_STORE        :General Store
 STR_IND_HOTEL                :Hotel
@@ -136,12 +145,15 @@ STR_IND_PLASTICS_PLANT       :Plastics Plant
 STR_IND_PORT                 :Port
 STR_IND_SALT_MINE            :Salt Mine
 STR_IND_SANDPIT              :Sand pit
+STR_IND_STOCKYARD            :Stockyard
 STR_IND_TEXTILE_MILL         :Textile Mill
 STR_IND_VEHICLE_DISTRIBUTOR  :Vehicle Distributor
 STR_IND_VEHICLE_FACTORY      :Vehicle Factory
 
 # station names related to industries
 STR_STATION_ALUMINIUM_PLANT      :Aluminium Plant
+STR_STATION_ANIMAL_FARM          :Animal Farm
+STR_STATION_BREWERY              :Brewery
 STR_STATION_BRICK_WORKS          :Brickworks
 STR_STATION_BUILDERS_YARD        :Builders Yard
 STR_STATION_CARBON_BLACK_PLANT   :Carbon Black Plant
@@ -151,9 +163,11 @@ STR_STATION_CLOTHING_PLANT       :Clothing Plant
 STR_STATION_COAL_MINE            :Mining
 STR_STATION_COPPER_ORE_MINE      :Mining
 STR_STATION_COPPER_SMELTER       :Copper Smelter
+STR_STATION_DAIRY                :Dairy
 STR_STATION_DEPARTMENT_STORE     :Department Store
 STR_STATION_FARM                 :Farm
 STR_STATION_FISHING_GROUNDS      :Fishing Grounds
+STR_STATION_FLOUR_MILL           :Flour Mill
 STR_STATION_FOOD_PROCESSOR       :Food Processor
 STR_STATION_FOREST               :Forest
 STR_STATION_FURNITURE_FACTORY    :Furniture Factory
@@ -168,11 +182,12 @@ STR_STATION_OIL_WELL             :Oil Wells
 STR_STATION_PAINT_FACTORY        :Paint Factory
 STR_STATION_PHARMACEUTICAL_PLANT :Pharmaceutical Plant
 STR_STATION_PLASTICS_PLANT       :Plastics Plant
-STR_STATION_SALT_MINE            :Salt Mine
-STR_STATION_SANDPIT              :Sand Pit
 STR_STATION_PORT                 :Port
 STR_STATION_POWER_PLANT          :Powerplant
+STR_STATION_SALT_MINE            :Salt Mine
+STR_STATION_SANDPIT              :Sand Pit
 STR_STATION_SAWMILL              :Sawmill
+STR_STATION_STOCKYARD            :Stockyard
 STR_STATION_TEXTILE_MILL         :Textile Mill
 STR_STATION_VEHICLE_DISTRIBUTOR  :Vehicle Distributor
 STR_STATION_VEHICLE_FACTORY      :Vehicle Factory

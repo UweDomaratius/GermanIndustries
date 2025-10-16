@@ -1,0 +1,1060 @@
+spriteset(flour_mill_spriteset_1) {
+	[10, 10, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+}
+spriteset(flour_mill_spriteset_1_snow) {
+	[10, 10, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+}
+spriteset(flour_mill_spriteset_2) {
+	[80, 10, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+}
+spriteset(flour_mill_spriteset_2_snow) {
+	[80, 10, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+}
+spriteset(flour_mill_spriteset_3) {
+	[150, 10, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+}
+spriteset(flour_mill_spriteset_3_snow) {
+	[150, 10, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+}
+spriteset(flour_mill_spriteset_4) {
+	[220, 10, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+}
+spriteset(flour_mill_spriteset_4_snow) {
+	[220, 10, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+}
+spriteset(flour_mill_spriteset_5) {
+	[10, 10, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+}
+spriteset(flour_mill_spriteset_5_snow) {
+	[10, 10, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+}
+spriteset(flour_mill_spriteset_6) {
+	[80, 10, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+}
+spriteset(flour_mill_spriteset_6_snow) {
+	[80, 10, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+}
+spriteset(flour_mill_spriteset_7) {
+	[150, 60, 64, 82, -31, -51, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+}
+spriteset(flour_mill_spriteset_7_snow) {
+	[150, 60, 64, 82, -31, -51, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+}
+spriteset(flour_mill_spriteset_8) {
+	[220, 60, 64, 82, -31, -51, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+}
+spriteset(flour_mill_spriteset_8_snow) {
+	[220, 60, 64, 82, -31, -51, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+}
+spriteset(flour_mill_spriteset_9) {
+	[10, 200, 64, 82, -31, -52, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+	[80, 200, 64, 82, -31, -52, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+	[150, 200, 64, 82, -31, -52, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+	[220, 200, 64, 82, -31, -52, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+	[290, 200, 64, 82, -31, -52, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+	[360, 200, 64, 82, -31, -52, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+}
+spriteset(flour_mill_spriteset_9_snow) {
+	[10, 200, 64, 82, -31, -52, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+	[80, 200, 64, 82, -31, -52, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+	[150, 200, 64, 82, -31, -52, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+	[220, 200, 64, 82, -31, -52, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+	[290, 200, 64, 82, -31, -52, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+	[360, 200, 64, 82, -31, -52, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+}
+spriteset(flour_mill_spriteset_11) {
+	[150, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+	[150, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+	[150, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+	[150, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+	[150, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+	[150, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+}
+spriteset(flour_mill_spriteset_11_snow) {
+	[150, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+	[150, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+	[150, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+	[150, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+	[150, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+	[150, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+}
+spriteset(flour_mill_spriteset_12) {
+	[80, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+	[80, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+	[80, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+	[80, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+	[80, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+	[80, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+}
+spriteset(flour_mill_spriteset_12_snow) {
+	[80, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+	[80, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+	[80, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+	[80, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+	[80, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+	[80, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+}
+spriteset(flour_mill_spriteset_13) {
+	[80, 60, 64, 82, -31, -52, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+	[80, 60, 64, 82, -31, -52, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+	[80, 60, 64, 82, -31, -52, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+	[80, 60, 64, 82, -31, -52, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+	[80, 60, 64, 82, -31, -52, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+	[80, 60, 64, 82, -31, -52, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+}
+spriteset(flour_mill_spriteset_13_snow) {
+	[80, 60, 64, 82, -31, -52, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+	[80, 60, 64, 82, -31, -52, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+	[80, 60, 64, 82, -31, -52, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+	[80, 60, 64, 82, -31, -52, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+	[80, 60, 64, 82, -31, -52, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+	[80, 60, 64, 82, -31, -52, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+}
+spriteset(flour_mill_spriteset_14) {
+	[10, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+	[10, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+	[10, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+	[10, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+	[10, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+	[10, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+}
+spriteset(flour_mill_spriteset_14_snow) {
+	[10, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+	[10, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+	[10, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+	[10, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+	[10, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+	[10, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+}
+spriteset(flour_mill_spriteset_15) {
+	[10, 60, 64, 82, -31, -52, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+	[10, 60, 64, 82, -31, -52, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+	[10, 60, 64, 82, -31, -52, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+	[10, 60, 64, 82, -31, -52, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+	[10, 60, 64, 82, -31, -52, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+	[10, 60, 64, 82, -31, -52, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+}
+spriteset(flour_mill_spriteset_15_snow) {
+	[10, 60, 64, 82, -31, -52, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+	[10, 60, 64, 82, -31, -52, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+	[10, 60, 64, 82, -31, -52, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+	[10, 60, 64, 82, -31, -52, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+	[10, 60, 64, 82, -31, -52, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+	[10, 60, 64, 82, -31, -52, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+}
+spriteset(flour_mill_spriteset_16) {
+	[220, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+	[220, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+	[220, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+	[220, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+	[220, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+	[220, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill.png"]
+}
+spriteset(flour_mill_spriteset_16_snow) {
+	[220, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+	[220, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+	[220, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+	[220, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+	[220, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+	[220, 160, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/flour_mill_snow.png"]
+}
+
+spritelayout flour_mill_spritelayout_brickbakery_1 {
+	childsprite {
+		sprite: default_spriteset_ground_cobblestones;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	childsprite {
+		sprite: flour_mill_spriteset_1(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		always_draw: 1;
+	}
+	childsprite {
+		sprite: flour_mill_spriteset_1_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: (!LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout flour_mill_spritelayout_brickbakery_2 {
+	childsprite {
+		sprite: default_spriteset_ground_cobblestones;
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	childsprite {
+		sprite: flour_mill_spriteset_2(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		always_draw: 1;
+	}
+	childsprite {
+		sprite: flour_mill_spriteset_2_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout flour_mill_spritelayout_brickbakery_3 {
+	childsprite {
+		sprite: default_spriteset_ground_cobblestones;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	childsprite {
+		sprite: flour_mill_spriteset_3(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		always_draw: 1;
+	}
+	childsprite {
+		sprite: flour_mill_spriteset_3_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: flour_mill_spriteset_7(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: flour_mill_spriteset_7_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout flour_mill_spritelayout_brickbakery_4 {
+	childsprite {
+		sprite: default_spriteset_ground_cobblestones;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	childsprite {
+		sprite: flour_mill_spriteset_4(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		always_draw: 1;
+	}
+	childsprite {
+		sprite: flour_mill_spriteset_4_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: flour_mill_spriteset_8(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: flour_mill_spriteset_8_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout flour_mill_spritelayout_windmill_anim {
+	ground {
+		sprite: (LOAD_TEMP(TEMP_REGISTER_GROUND_SPRITE));
+	}
+	childsprite {
+		sprite: flour_mill_spriteset_11(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		always_draw: 1;
+	}
+	childsprite {
+		sprite: flour_mill_spriteset_11_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: flour_mill_spriteset_9(1* (animation_frame));
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: flour_mill_spriteset_9_snow(1* (animation_frame));
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout flour_mill_spritelayout_windmill_granary {
+	ground {
+		sprite: (LOAD_TEMP(TEMP_REGISTER_GROUND_SPRITE));
+	}
+	childsprite {
+		sprite: flour_mill_spriteset_12(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		always_draw: 1;
+	}
+	childsprite {
+		sprite: flour_mill_spriteset_12_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: flour_mill_spriteset_13(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: flour_mill_spriteset_13_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout flour_mill_spritelayout_windmill_shed {
+	ground {
+		sprite: (LOAD_TEMP(TEMP_REGISTER_GROUND_SPRITE));
+	}
+	childsprite {
+		sprite: flour_mill_spriteset_14(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: flour_mill_spriteset_15(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(18));
+	}
+	building {
+		sprite: flour_mill_spriteset_15_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(19));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout flour_mill_spritelayout_windmill_greeble {
+	ground {
+		sprite: (LOAD_TEMP(TEMP_REGISTER_GROUND_SPRITE));
+	}
+	childsprite {
+		sprite: flour_mill_spriteset_16(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		always_draw: 1;
+	}
+	childsprite {
+		sprite: flour_mill_spriteset_16_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: (!LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// graphics choice switch chain
+//////////////////////////////////////////////////////////////////////////////
+
+switch(FEAT_INDUSTRYTILES, SELF, flour_mill_switch_graphics_layout_1, relative_pos) {
+	relative_coord(0, 0): flour_mill_spritelayout_brickbakery_3;
+	relative_coord(0, 1): flour_mill_spritelayout_brickbakery_4;
+	relative_coord(1, 0): flour_mill_spritelayout_brickbakery_1;
+	relative_coord(1, 1): flour_mill_spritelayout_brickbakery_2;
+	return 0;
+}
+switch(FEAT_INDUSTRYTILES, SELF, flour_mill_switch_graphics_layout_2, relative_pos) {
+	relative_coord(0, 0): flour_mill_spritelayout_brickbakery_3;
+	relative_coord(0, 1): flour_mill_spritelayout_brickbakery_4;
+	relative_coord(1, 0): flour_mill_spritelayout_brickbakery_3;
+	relative_coord(1, 1): flour_mill_spritelayout_brickbakery_4;
+	relative_coord(2, 0): flour_mill_spritelayout_brickbakery_1;
+	relative_coord(2, 1): flour_mill_spritelayout_brickbakery_2;
+	return 0;
+}
+switch(FEAT_INDUSTRYTILES, SELF, flour_mill_switch_graphics_layout_3, relative_pos) {
+	relative_coord(0, 0): flour_mill_spritelayout_brickbakery_3;
+	relative_coord(0, 1): flour_mill_spritelayout_brickbakery_4;
+	relative_coord(0, 2): flour_mill_spritelayout_brickbakery_3;
+	relative_coord(0, 3): flour_mill_spritelayout_brickbakery_4;
+	relative_coord(1, 0): flour_mill_spritelayout_brickbakery_1;
+	relative_coord(1, 1): flour_mill_spritelayout_brickbakery_2;
+	relative_coord(1, 2): flour_mill_spritelayout_brickbakery_1;
+	relative_coord(1, 3): flour_mill_spritelayout_brickbakery_2;
+	return 0;
+}
+switch(FEAT_INDUSTRYTILES, SELF, flour_mill_switch_graphics_layout_4, relative_pos) {
+	relative_coord(0, 0): flour_mill_spritelayout_windmill_shed;
+	relative_coord(0, 1): flour_mill_spritelayout_windmill_granary;
+	relative_coord(1, 0): flour_mill_spritelayout_windmill_anim;
+	relative_coord(1, 1): flour_mill_spritelayout_windmill_greeble;
+	return 0;
+}
+switch(FEAT_INDUSTRYTILES, SELF, flour_mill_switch_graphics_layout_5, relative_pos) {
+	relative_coord(0, 0): flour_mill_spritelayout_windmill_shed;
+	relative_coord(0, 1): flour_mill_spritelayout_windmill_anim;
+	relative_coord(1, 0): flour_mill_spritelayout_windmill_granary;
+	relative_coord(1, 1): flour_mill_spritelayout_windmill_greeble;
+	return 0;
+}
+switch(FEAT_INDUSTRYTILES, SELF, flour_mill_switch_graphics_layout_6, relative_pos) {
+	relative_coord(0, 0): flour_mill_spritelayout_windmill_granary;
+	relative_coord(0, 1): flour_mill_spritelayout_windmill_greeble;
+	relative_coord(1, 0): flour_mill_spritelayout_windmill_anim;
+	relative_coord(1, 1): flour_mill_spritelayout_windmill_shed;
+	return 0;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, flour_mill_switch_graphics_layouts, layout_num) {
+	1: flour_mill_switch_graphics_layout_1;
+	2: flour_mill_switch_graphics_layout_2;
+	3: flour_mill_switch_graphics_layout_3;
+	4: flour_mill_switch_graphics_layout_4;
+	5: flour_mill_switch_graphics_layout_5;
+	6: flour_mill_switch_graphics_layout_6;
+    flour_mill_switch_graphics_layout_1; // default
+}
+switch(FEAT_INDUSTRYTILES, SELF, flour_mill_switch_graphics_construction_state, construction_state) {
+    0..2: spritelayout_default_construction_states;
+    flour_mill_switch_graphics_layouts; // default
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, flour_mill_switch_graphics,
+	[switch_tile_fences(),
+	 switch_terrain_sprite(),switch_graphics_init_temp_registers()]) {
+    flour_mill_switch_graphics_construction_state;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// location checks
+//////////////////////////////////////////////////////////////////////////////
+// This check works as follows: calculate height of the northernmost tile of the industry and add 0, 1 or 2 for flat, slope. steep slope
+// Do the same for the current tile and compare the results. If the result is equal, the terrain is effectively flat
+// and industry can be placed.
+// It just looks weird due to the stacked ternary operators needed here
+switch (FEAT_INDUSTRYTILES, SELF, flour_mill_switch_tile_location_check2,
+			(nearby_tile_height(-relative_x, -relative_y) + 
+			(nearby_tile_slope(-relative_x, -relative_y)== SLOPE_FLAT ? 0 : nearby_tile_slope(-relative_x, -relative_y) == bitmask(IS_STEEP_SLOPE) ? 2 : 1)) 
+			== 
+			(nearby_tile_height(0, 0) + (nearby_tile_slope(0, 0) == SLOPE_FLAT ? 0 : nearby_tile_slope(0, 0) == bitmask(IS_STEEP_SLOPE) ? 2 : 1))
+			) {
+	1: return CB_RESULT_LOCATION_ALLOW;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, flour_mill_switch_tile_location_check,
+	is_funded_or_prospected() || (generation_not_forbidden_by_param() && not_next_to_industry() && not_next_to_buildings()))
+{
+	1: flour_mill_switch_tile_location_check2;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// industry tile and layout definition
+//////////////////////////////////////////////////////////////////////////////
+item(FEAT_INDUSTRYTILES, flour_mill_tile_1, INDUSTRY_TILE_ID_FLOUR_MILL) {
+	property {
+		substitute:         0;
+		land_shape_flags:   0;
+		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+		animation_info: [ANIMATION_LOOPING, 6];
+		animation_speed: 3;
+		animation_triggers: bitmask();
+	}
+	graphics {
+		tile_check: flour_mill_switch_tile_location_check;
+		flour_mill_switch_graphics;
+	}
+}
+
+tilelayout flour_mill_tilelayout_1 {
+	0, 0: flour_mill_tile_1;
+	0, 1: flour_mill_tile_1;
+	1, 0: flour_mill_tile_1;
+	1, 1: flour_mill_tile_1;
+}
+tilelayout flour_mill_tilelayout_2 {
+	0, 0: flour_mill_tile_1;
+	0, 1: flour_mill_tile_1;
+	1, 0: flour_mill_tile_1;
+	1, 1: flour_mill_tile_1;
+	2, 0: flour_mill_tile_1;
+	2, 1: flour_mill_tile_1;
+}
+tilelayout flour_mill_tilelayout_3 {
+	0, 0: flour_mill_tile_1;
+	0, 1: flour_mill_tile_1;
+	0, 2: flour_mill_tile_1;
+	0, 3: flour_mill_tile_1;
+	1, 0: flour_mill_tile_1;
+	1, 1: flour_mill_tile_1;
+	1, 2: flour_mill_tile_1;
+	1, 3: flour_mill_tile_1;
+}
+tilelayout flour_mill_tilelayout_4 {
+	0, 0: flour_mill_tile_1;
+	0, 1: flour_mill_tile_1;
+	1, 0: flour_mill_tile_1;
+	1, 1: flour_mill_tile_1;
+}
+tilelayout flour_mill_tilelayout_5 {
+	0, 0: flour_mill_tile_1;
+	0, 1: flour_mill_tile_1;
+	1, 0: flour_mill_tile_1;
+	1, 1: flour_mill_tile_1;
+}
+tilelayout flour_mill_tilelayout_6 {
+	0, 0: flour_mill_tile_1;
+	0, 1: flour_mill_tile_1;
+	1, 0: flour_mill_tile_1;
+	1, 1: flour_mill_tile_1;
+}
+
+switch(FEAT_INDUSTRIES, SELF, flour_mill_switch_location_check_industry_distance,
+       [STORE_TEMP(0, TEMP_REGISTER_TOWN_MIN_DISTANCE),
+	    STORE_TEMP(24, TEMP_REGISTER_TOWN_MAX_DISTANCE),
+	    (distance_from_town() && 
+	    (industry_distance(INDUSTRY_ID_FARM) >= 32) &&
+	    (industry_distance(INDUSTRY_ID_GENERAL_STORE) >= 32) &&
+	    (industry_distance(INDUSTRY_ID_FLOUR_MILL) >= 16))]) {
+	   1: return CB_RESULT_LOCATION_ALLOW;
+	   return CB_RESULT_LOCATION_DISALLOW;
+}
+
+produce(flour_mill_produce,
+	[GRAI: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);],
+	[FOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*50/100) : 0;],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, flour_mill_switch_produce, 
+	[STORE_TEMP(incoming_cargo_waiting("GRAI"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+     calculate_raw_material_usage(),
+	 calculate_total_production()
+	 
+	]) {
+	flour_mill_produce;
+}
+
+switch(FEAT_INDUSTRIES, SELF, flour_mill_switch_cargo_subtype, getbits(extra_callback_info2, 16, 8)) {
+	GRAI: switch_cargo_subtype;
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, flour_mill_switch_update_last_served_date,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("FOOD") != 0 || last_month_production("FOOD") != 0 || 
+		incoming_cargo_waiting("GRAI") != 0 || 
+		this_month_transported("FOOD") != 0 || last_month_transported("FOOD") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+if (param_extension_food_industries) {
+	item(FEAT_INDUSTRIES, flour_mill, INDUSTRY_ID_FLOUR_MILL) {
+		property {
+			substitute: 0;
+			map_colour: 38;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [flour_mill_tilelayout_1,flour_mill_tilelayout_2,flour_mill_tilelayout_3,flour_mill_tilelayout_4,flour_mill_tilelayout_5];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_FLOUR_MILL);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 50;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("GRAI"),produce_cargo("FOOD",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FLOUR_MILL));
+		}
+			
+		graphics {
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        flour_mill_switch_produce;
+			monthly_prod_change:      flour_mill_switch_update_last_served_date;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           flour_mill_switch_location_check_industry_distance;
+			cargo_subtype_display:    flour_mill_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}

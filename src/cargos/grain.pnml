@@ -21,7 +21,7 @@ item(FEAT_CARGOS, grain, CARGO_ID_GRAIN) {
         station_list_colour: 191;
         price_factor: 114;
         cargo_label: "GRAI";
-        number: 14;
+        number: CARGO_ID_GRAIN;
     }
     graphics {
         cargoicon_grain;

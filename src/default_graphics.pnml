@@ -155,6 +155,15 @@ spriteset(default_spriteset_ground_dirty_concrete) {
 	[360, 10, 64, 31, -31, 0, ANIM, "graphics/other/ground_tiles.png"]
 }
 
+spriteset(default_spriteset_ground_dirty_concrete6) {
+	[360, 10, 64, 31, -31, 0, ANIM, "graphics/other/ground_tiles.png"]
+	[360, 10, 64, 31, -31, 0, ANIM, "graphics/other/ground_tiles.png"]
+	[360, 10, 64, 31, -31, 0, ANIM, "graphics/other/ground_tiles.png"]
+	[360, 10, 64, 31, -31, 0, ANIM, "graphics/other/ground_tiles.png"]
+	[360, 10, 64, 31, -31, 0, ANIM, "graphics/other/ground_tiles.png"]
+	[360, 10, 64, 31, -31, 0, ANIM, "graphics/other/ground_tiles.png"]
+}
+
 spriteset(default_spriteset_ground_dirty_concrete7) {
 	[360, 10, 64, 31, -31, 0, ANIM, "graphics/other/ground_tiles.png"]
 	[360, 10, 64, 31, -31, 0, ANIM, "graphics/other/ground_tiles.png"]
