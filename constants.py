@@ -167,6 +167,7 @@ constants = {
     "INDUSTRY_TILE_ID_DAIRY_2" : "51",
     "INDUSTRY_TILE_ID_FLOUR_MILL" : "52",
     "INDUSTRY_TILE_ID_STOCKYARD" : "53",
+    "INDUSTRY_TILE_ID_ANIMAL_FARM" : "54",
     
     # TTD sprite IDs
     "TTD_OILRIG_STATION_TILE": "24",
