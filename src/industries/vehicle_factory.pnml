@@ -737,6 +737,8 @@ switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_produce,
 	 
 	 calculate_raw_material_usage(),
 	 calculate_total_production(),
+	 
+	 store_debug_production_data(),
 	
 	 param_electricity_needed
 	]) {
@@ -748,7 +750,7 @@ switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_produce_ext_aluminium,
 	[STORE_TEMP(min(incoming_cargo_waiting("STEL"),incoming_cargo_waiting("PLAS"),incoming_cargo_waiting("ALUM")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
 	 calculate_raw_material_usage(),
 	 calculate_total_production(),
-	 
+	 store_debug_production_data(),
 	 param_electricity_needed
 	]) {
 	1: vehicle_factory_update_production_according_to_power_ext_aluminium;

@@ -498,6 +498,7 @@ switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_produce,
 	 calculate_raw_material_usage(),
 	 calculate_total_production(),
 
+	 store_debug_production_data()
 	]) {
 	steel_mill_produce;
 }

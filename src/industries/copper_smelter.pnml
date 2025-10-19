@@ -1045,7 +1045,7 @@ switch(FEAT_INDUSTRIES, SELF, copper_smelter_switch_produce,
 	[STORE_TEMP(incoming_cargo_waiting("CORE"), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
 	 calculate_raw_material_usage(),
 	 calculate_total_production(),
-	
+	 store_debug_production_data(),
 	 param_electricity_needed
 	]) {
 	1: copper_smelter_update_production_according_to_power;

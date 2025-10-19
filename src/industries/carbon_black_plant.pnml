@@ -512,8 +512,9 @@ switch(FEAT_INDUSTRIES, SELF, carbon_black_plant_switch_produce,
 	 
 	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
 	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
-	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (2-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE)
+	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (2-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
 	 
+	 store_debug_production_data()
 	 ])
 {
 	carbon_black_plant_produce;

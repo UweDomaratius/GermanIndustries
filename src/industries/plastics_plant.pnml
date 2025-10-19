@@ -371,8 +371,8 @@ produce(plastics_plant_produce,
 switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_produce, 
 	[STORE_TEMP(incoming_cargo_waiting("OIL_"), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
 	 calculate_raw_material_usage(),
-	 calculate_total_production()
-	 
+	 calculate_total_production(),
+	 store_debug_production_data()	 
 	]) {
 	plastics_plant_produce;
 }
@@ -404,7 +404,8 @@ switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_produce_ext_basic_inorganic_
 	[STORE_TEMP(min(incoming_cargo_waiting("OIL_"),incoming_cargo_waiting("CHLO")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
 	STORE_TEMP(min(incoming_cargo_waiting("OIL_"),incoming_cargo_waiting("CHLO")), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
 	 calculate_raw_material_usage(),
-	 calculate_total_production()	 
+	 calculate_total_production(),
+	 store_debug_production_data()	 
 	]) {
 	plastics_plant_produce_ext_basic_inorganic_chemistry;
 }
@@ -413,7 +414,8 @@ switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_produce_ext_painting_industr
 	[STORE_TEMP(min(incoming_cargo_waiting("OIL_"),incoming_cargo_waiting("COAT")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
 	 STORE_TEMP(min(incoming_cargo_waiting("OIL_"),incoming_cargo_waiting("COAT")), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
 	 calculate_raw_material_usage(),
-	 calculate_total_production()	 
+	 calculate_total_production(),
+	 store_debug_production_data()	 
 	]) {
 	plastics_plant_produce_ext_painting_industries;
 }
@@ -423,7 +425,8 @@ switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_produce_ext_basic_inorganic_
 	STORE_TEMP(min(incoming_cargo_waiting("OIL_"),incoming_cargo_waiting("COAT"),incoming_cargo_waiting("CHLO")), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
 	STORE_TEMP(min(incoming_cargo_waiting("OIL_"),incoming_cargo_waiting("COAT"),incoming_cargo_waiting("CHLO")), TEMP_REGISTER_INCOMING_CARGO_WAITING2),
 	 calculate_raw_material_usage(),
-	 calculate_total_production()	 
+	 calculate_total_production(),
+	 store_debug_production_data()
 	]) {
 	plastics_plant_produce_ext_basic_inorganic_chemistry_ext_painting_industries;
 }

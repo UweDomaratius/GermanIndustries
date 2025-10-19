@@ -176,7 +176,7 @@ spritelayout flour_mill_spritelayout_brickbakery_1 {
 		sprite: flour_mill_spriteset_1_snow(0);
 		recolour_mode: RECOLOUR_REMAP;
 		palette: PALETTE_USE_DEFAULT;
-		hide_sprite: (!LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
 		always_draw: 1;
 	}
 	building {
@@ -991,6 +991,7 @@ switch(FEAT_INDUSTRIES, SELF, flour_mill_switch_location_check_industry_distance
 	    (distance_from_town() && 
 	    (industry_distance(INDUSTRY_ID_FARM) >= 32) &&
 	    (industry_distance(INDUSTRY_ID_GENERAL_STORE) >= 32) &&
+		(industry_distance(INDUSTRY_ID_PACKAGING_PLANT) >= 32) &&
 	    (industry_distance(INDUSTRY_ID_FLOUR_MILL) >= 16))]) {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;
@@ -1005,14 +1006,45 @@ produce(flour_mill_produce,
 switch(FEAT_INDUSTRIES, SELF, flour_mill_switch_produce, 
 	[STORE_TEMP(incoming_cargo_waiting("GRAI"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
      calculate_raw_material_usage(),
-	 calculate_total_production()
+	 calculate_total_production(),
 	 
+	 store_debug_production_data()	 
 	]) {
 	flour_mill_produce;
 }
 
+produce(flour_mill_produce_ext_packaging_industries,
+	[GRAI: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 MNSP: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	],
+	[FOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100) : 0;],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, flour_mill_switch_produce_ext_packaging_industries, 
+	[STORE_TEMP(incoming_cargo_waiting("GRAI"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 calculate_number_of_waiting_cargos(),
+	 
+	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
+	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
+	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (2-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("MNSP"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW1),
+	 
+	 store_debug_production_data()
+	]) {
+	flour_mill_produce_ext_packaging_industries;
+}
+
 switch(FEAT_INDUSTRIES, SELF, flour_mill_switch_cargo_subtype, getbits(extra_callback_info2, 16, 8)) {
 	GRAI: switch_cargo_subtype;
+	MNSP: switch_cargo_subtype_white;
 	return 0x3800 + string(STR_EMPTY);
 }
 
@@ -1026,7 +1058,17 @@ switch(FEAT_INDUSTRIES, SELF, flour_mill_switch_update_last_served_date,
 	check_secondary_industry_closure();
 }
 
-if (param_extension_food_industries) {
+switch(FEAT_INDUSTRIES, SELF, flour_mill_switch_update_last_served_date_ext_packaging_industries,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("FOOD") != 0 || last_month_production("FOOD") != 0 || 
+		incoming_cargo_waiting("GRAI") != 0 || incoming_cargo_waiting("MNSP") != 0 ||
+		this_month_transported("FOOD") != 0 || last_month_transported("FOOD") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+if (param_extension_food_industries && !param_extension_packaging_industries) {
 	item(FEAT_INDUSTRIES, flour_mill, INDUSTRY_ID_FLOUR_MILL) {
 		property {
 			substitute: 0;
@@ -1054,6 +1096,40 @@ if (param_extension_food_industries) {
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           flour_mill_switch_location_check_industry_distance;
 			cargo_subtype_display:    flour_mill_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+
+if (param_extension_food_industries && param_extension_packaging_industries) {
+	item(FEAT_INDUSTRIES, flour_mill, INDUSTRY_ID_FLOUR_MILL) {
+		property {
+			substitute: 0;
+			map_colour: 38;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [flour_mill_tilelayout_1,flour_mill_tilelayout_2,flour_mill_tilelayout_3,flour_mill_tilelayout_4,flour_mill_tilelayout_5];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_FLOUR_MILL);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 50;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("GRAI"),accept_cargo("MNSP"),produce_cargo("FOOD",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FLOUR_MILL));
+		}
+			
+		graphics {
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        flour_mill_switch_produce_ext_packaging_industries;
+			monthly_prod_change:      flour_mill_switch_update_last_served_date_ext_packaging_industries;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           flour_mill_switch_location_check_industry_distance;
+			cargo_subtype_display:    flour_mill_switch_cargo_subtype;
+			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO);
 			build_prod_change:        initialize_last_served_date;
 		}
 	}

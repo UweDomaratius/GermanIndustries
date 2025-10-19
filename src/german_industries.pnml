@@ -94,6 +94,13 @@ grf {
 			desc: string(STR_PARAM_EXT_FOOD_INDUSTRIES_DESC);
 		}
 	}
+	param {
+		param_extension_packaging_industries {
+			type: bool;
+			name: string(STR_PARAM_EXT_PACKAGING_INDUSTRIES);
+			desc: string(STR_PARAM_EXT_PACKAGING_INDUSTRIES_DESC);
+		}
+	}
 }
 
 if (ttd_platform != PLATFORM_OPENTTD || openttd_version < version_openttd(14, 0)) {
@@ -114,5 +121,6 @@ cargotable {
 	AORE, ALUM,  // ext aluminium
 	SALT, CHLO, LYE_, H2__, // ext basic inorganic chemistry
 	CORE, COPR, CBLK, COAT,	// ext painting industries
-	MILK // ext food industries
+	MILK, // ext food industries
+	MNSP  // ext packaging industries
 }

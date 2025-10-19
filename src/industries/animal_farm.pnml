@@ -360,7 +360,9 @@ produce(animal_farm_produce_ext_textile_industries,
 switch(FEAT_INDUSTRIES, SELF, animal_farm_switch_produce,
 	[STORE_TEMP(incoming_cargo_waiting("GRAI"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
      calculate_raw_material_usage(),
-	 calculate_total_production()
+	 calculate_total_production(),
+	 
+	 store_debug_production_data()
 	]) {
 	animal_farm_produce;
 }
@@ -368,7 +370,9 @@ switch(FEAT_INDUSTRIES, SELF, animal_farm_switch_produce,
 switch(FEAT_INDUSTRIES, SELF, animal_farm_switch_produce_ext_textile_industries,
 	[STORE_TEMP(incoming_cargo_waiting("GRAI"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
      calculate_raw_material_usage(),
-	 calculate_total_production()
+	 calculate_total_production(),
+	 
+	 store_debug_production_data()
 	]) {
 	animal_farm_produce_ext_textile_industries;
 }

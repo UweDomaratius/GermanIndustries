@@ -31,6 +31,8 @@ STR_PARAM_EXT_PAINTING_INDUSTRIES :Extension set "Painting Industries"
 STR_PARAM_EXT_PAINTING_INDUSTRIES_DESC :Adds chemical industries producing paints from various raw materials.
 STR_PARAM_EXT_FOOD_INDUSTRIES :Extension set "Food Industries"
 STR_PARAM_EXT_FOOD_INDUSTRIES_DESC :Adds more diverse food processing industries.
+STR_PARAM_EXT_PACKAGING_INDUSTRIES :Extension set "Packaging Industries"
+STR_PARAM_EXT_PACKAGING_INDUSTRIES_DESC :Adds additional packaging cargo to be delivered to industries producting food or goods.
 
 STR_TOWN    :{STRING}
 STR_STATION :{STRING} {STRING}
@@ -61,6 +63,7 @@ STR_CARGO_NAME_HYDROGEN           :Hydrogen
 STR_CARGO_NAME_LIMESTONE          :Limestone
 STR_CARGO_NAME_LYE                :Lye
 STR_CARGO_NAME_MILK               :Milk
+STR_CARGO_NAME_PACKAGING          :Packaging
 STR_CARGO_NAME_PAINT              :Paint
 STR_CARGO_NAME_PLASTICS           :Plastics
 STR_CARGO_NAME_SALT               :Salt
@@ -86,6 +89,7 @@ STR_QUANTITY_LIMESTONE            :{WEIGHT} of limestone
 STR_QUANTITY_LYE                  :{WEIGHT} of lye
 STR_QUANTITY_MILK                 :{WEIGHT} of milk
 STR_QUANTITY_OIL                  :{WEIGHT} of oil
+STR_QUANTITY_PACKAGING            :{WEIGHT} of packaging
 STR_QUANTITY_PAINT                :{WEIGHT} of paint
 STR_QUANTITY_PLASTICS             :{WEIGHT} of plastics
 STR_QUANTITY_SALT                 :{WEIGHT} of salt
@@ -110,6 +114,9 @@ STR_CID_HYDROGEN                  :{TINYFONT}H2
 STR_CID_LIMESTONE                 :{TINYFONT}LIME
 STR_CID_LYE                       :{TINYFONT}LYE
 STR_CID_MILK                      :{TINYFONT}MILK
+# do not use the cargo label MNSP here, MNSP is used to improve compatibility with vehicle sets designed for FIRS/AXIS,
+# introducing another cargo label would make it more complicated for vehicle set developers
+STR_CID_PACKAGING                 :{TINYFONT}PACK
 STR_CID_PAINT                     :{TINYFONT}COAT
 STR_CID_PLASTICS                  :{TINYFONT}PLAS
 STR_CID_SALT                      :{TINYFONT}SALT
@@ -139,6 +146,7 @@ STR_IND_GENERAL_STORE        :General Store
 STR_IND_HOTEL                :Hotel
 STR_IND_INTEGRATED_STEEL_MILL:Integrated Steel Mill
 STR_IND_LIMESTONE_MINE       :Limestone Mine
+STR_IND_PACKAGING_PLANT      :Packaging Plant
 STR_IND_PAINT_FACTORY        :Paint Factory
 STR_IND_PHARMACEUTICAL_PLANT :Pharmaceutical Plant
 STR_IND_PLASTICS_PLANT       :Plastics Plant
@@ -179,6 +187,7 @@ STR_STATION_LIMESTONE_MINE       :Mining
 STR_STATION_OIL_REFINERY         :Refinery
 STR_STATION_OIL_RIG              :Oil Rig
 STR_STATION_OIL_WELL             :Oil Wells
+STR_STATION_PACKAGING_PLANT      :Packaging Plant
 STR_STATION_PAINT_FACTORY        :Paint Factory
 STR_STATION_PHARMACEUTICAL_PLANT :Pharmaceutical Plant
 STR_STATION_PLASTICS_PLANT       :Plastics Plant
