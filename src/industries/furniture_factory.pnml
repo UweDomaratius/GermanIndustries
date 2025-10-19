@@ -632,11 +632,52 @@ switch(FEAT_INDUSTRIES, SELF, furniture_factory_switch_produce,
 	 
 	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
 	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
-	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (2-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE)
+	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (2-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
 	 
+	 store_debug_production_data()
 	 ])
 {
 	furniture_factory_produce;
+}
+
+produce(furniture_factory_produce_ext_packaging_industries,
+	[WDPR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 PLAS: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 MNSP: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
+	 ],
+	[GOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
+	0 // do not run again
+)
+
+// industry uses 10% of stockpile for production, if stockpile is big enough
+// if stockpile is < 80t, 8t are produced per 256ticks
+// if stockpile is < 8t, whatever is available is used
+// it stockpile is empty, nothing is produced
+switch(FEAT_INDUSTRIES, SELF, furniture_factory_switch_produce_ext_packaging_industries, 
+	[STORE_TEMP(incoming_cargo_waiting("WDPR"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+     STORE_TEMP(incoming_cargo_waiting("PLAS"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 calculate_number_of_waiting_cargos(),
+	 
+	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
+	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
+	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (2-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("MNSP"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	 
+	 // count number of optional cargos to set production limit
+	STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	// if no optional cargo available, limit production to 128t, with 1 cargo available it is 192t, with two there is no limit
+	STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 // use 5% of production amount as usage of optional stuff 
+	STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW2),
+	
+	store_debug_production_data()
+	 ])
+{
+	furniture_factory_produce_ext_packaging_industries;
 }
 
 produce(furniture_factory_produce_extension_textile_industry,
@@ -657,16 +698,56 @@ switch(FEAT_INDUSTRIES, SELF, furniture_factory_switch_produce_extension_textile
 	 
 	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
 	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
-	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (3-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE)
+	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (3-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 
+	 store_debug_production_data()
 	])
 {
 	furniture_factory_produce_extension_textile_industry;
+}
+
+produce(furniture_factory_produce_extension_textile_industry_ext_packaging_industries,
+	[WDPR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 PLAS: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 TEXT: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
+	 MNSP: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW3);
+	 ],
+	[GOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100;],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, furniture_factory_switch_produce_extension_textile_industry_ext_packaging_industries, 
+	[STORE_TEMP(incoming_cargo_waiting("WDPR"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	STORE_TEMP(incoming_cargo_waiting("PLAS"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	STORE_TEMP(incoming_cargo_waiting("TEXT"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 calculate_number_of_waiting_cargos(),
+	 
+	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
+	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
+	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (3-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("MNSP"),TEMP_REGISTER_INCOMING_CARGO_WAITING3),
+	 
+	 // count number of optional cargos to set production limit
+	STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING3) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	// if no optional cargo available, limit production to 128t, with 1 cargo available it is 192t, with two there is no limit
+	STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 // use 5% of production amount as usage of optional stuff 
+	STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING3), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW3),
+	
+	store_debug_production_data()
+	])
+{
+	furniture_factory_produce_extension_textile_industry_ext_packaging_industries;
 }
 
 switch(FEAT_INDUSTRIES, SELF, furniture_factory_switch_cargo_subtype, getbits(extra_callback_info2, 16, 8)) {
 	WDPR: switch_cargo_subtype;
 	PLAS: switch_cargo_subtype;
 	TEXT: switch_cargo_subtype;
+	MNSP: switch_cargo_subtype_white;
 	return 0x3800 + string(STR_EMPTY);
 }
 
@@ -690,7 +771,27 @@ switch(FEAT_INDUSTRIES, SELF, furniture_factory_switch_update_last_served_date_e
 	check_secondary_industry_closure();
 }
 
-if (param_extension_textile_industries) {
+switch(FEAT_INDUSTRIES, SELF, furnitury_factory_switch_update_last_served_date_ext_packaging_industries,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("GOOD") != 0 || last_month_production("GOOD") != 0 || 
+		incoming_cargo_waiting("WDPR") != 0 || incoming_cargo_waiting("PLAS") != 0 || incoming_cargo_waiting("MNSP") != 0 ||
+		this_month_transported("GOOD") != 0 || last_month_transported("GOOD") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+switch(FEAT_INDUSTRIES, SELF, furniture_factory_switch_update_last_served_date_ext_textile_industries_ext_packaging_industries,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("GOOD") != 0 || last_month_production("GOOD") != 0 || 
+		incoming_cargo_waiting("WDPR") != 0 || incoming_cargo_waiting("PLAS") != 0 || incoming_cargo_waiting("TEXT") != 0 || incoming_cargo_waiting("MNSP") != 0 ||
+		this_month_transported("GOOD") != 0 || last_month_transported("GOOD") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+if (param_extension_textile_industries && !param_extension_packaging_industries) {
 	item(FEAT_INDUSTRIES, furniture_factory, INDUSTRY_ID_FURNITURE_FACTORY) {
 		property {
 			substitute: 0;
@@ -726,7 +827,7 @@ if (param_extension_textile_industries) {
 	}
 }
 
-if (! param_extension_textile_industries) {
+if (!param_extension_textile_industries && !param_extension_packaging_industries) {
 	item(FEAT_INDUSTRIES, furniture_factory, INDUSTRY_ID_FURNITURE_FACTORY) {
 		property {
 			substitute: 0;
@@ -755,6 +856,78 @@ if (! param_extension_textile_industries) {
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           furniture_factory_switch_location_check_industry_distance;
 			extra_text_industry:      return string(STR_INDUSTRY_NEEDS_ANY_INPUT);
+			extra_text_fund:          return CB_RESULT_NO_TEXT;
+			cargo_subtype_display:    furniture_factory_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+
+if (param_extension_textile_industries && param_extension_packaging_industries) {
+	item(FEAT_INDUSTRIES, furniture_factory, INDUSTRY_ID_FURNITURE_FACTORY) {
+		property {
+			substitute: 0;
+			map_colour: 0xAE;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [furniture_factory_tilelayout_1,furniture_factory_tilelayout_2,furniture_factory_tilelayout_3,furniture_factory_tilelayout_4,furniture_factory_tilelayout_5];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_FURNITURE_FACTORY);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 200;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("WDPR"),accept_cargo("PLAS"),accept_cargo("TEXT"),accept_cargo("MNSP"),produce_cargo("GOOD",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FURNITURE_FACTORY));
+		}
+			
+		graphics {
+			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        furniture_factory_switch_produce_extension_textile_industry_ext_packaging_industries;
+			monthly_prod_change:      furniture_factory_switch_update_last_served_date_ext_textile_industries_ext_packaging_industries;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           furniture_factory_switch_location_check_industry_distance;
+			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO_ANY);
+			extra_text_fund:          return CB_RESULT_NO_TEXT;
+			cargo_subtype_display:    furniture_factory_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+
+if (!param_extension_textile_industries && param_extension_packaging_industries) {
+	item(FEAT_INDUSTRIES, furniture_factory, INDUSTRY_ID_FURNITURE_FACTORY) {
+		property {
+			substitute: 0;
+			map_colour: 0xAE;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [furniture_factory_tilelayout_1,furniture_factory_tilelayout_2,furniture_factory_tilelayout_3,furniture_factory_tilelayout_4,furniture_factory_tilelayout_5];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_FURNITURE_FACTORY);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 200;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("WDPR"),accept_cargo("PLAS"),accept_cargo("MNSP"),produce_cargo("GOOD",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FURNITURE_FACTORY));
+		}
+			
+		graphics {
+			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        furniture_factory_switch_produce_ext_packaging_industries;
+			monthly_prod_change:      furnitury_factory_switch_update_last_served_date_ext_packaging_industries;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           furniture_factory_switch_location_check_industry_distance;
+			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO_ANY);
 			extra_text_fund:          return CB_RESULT_NO_TEXT;
 			cargo_subtype_display:    furniture_factory_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;

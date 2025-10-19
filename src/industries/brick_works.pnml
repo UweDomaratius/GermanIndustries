@@ -558,7 +558,8 @@ produce(brick_works_produce,
 switch(FEAT_INDUSTRIES, SELF, brick_works_switch_produce, 
 	[STORE_TEMP(incoming_cargo_waiting("COAL"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
      calculate_raw_material_usage(),
-	 calculate_total_production()	 
+	 calculate_total_production(),
+     store_debug_production_data()	 
 	]) {
 	brick_works_produce;
 }

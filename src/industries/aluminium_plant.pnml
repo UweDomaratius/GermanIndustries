@@ -1261,6 +1261,7 @@ switch(FEAT_INDUSTRIES, SELF, aluminium_plant_switch_produce,
 	 calculate_raw_material_usage(),
 	 calculate_total_production(),
 	
+	 store_debug_production_data(),
 	 param_electricity_needed
 	]) {
 	1: aluminium_plant_update_production_according_to_power;
@@ -1303,7 +1304,7 @@ switch(FEAT_INDUSTRIES, SELF, aluminium_plant_switch_produce_basic_inorganic_che
 	[STORE_TEMP(min(incoming_cargo_waiting("AORE"),incoming_cargo_waiting("LYE_")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
 	 calculate_raw_material_usage(),
 	 calculate_total_production(),
-	 
+	 store_debug_production_data(),
 	 param_electricity_needed
 	]) {
 	1: aluminium_plant_update_production_according_to_power_basic_inorganic_chemistry;

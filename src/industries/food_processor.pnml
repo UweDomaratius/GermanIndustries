@@ -397,6 +397,7 @@ switch(FEAT_INDUSTRIES, SELF, food_processor_switch_location_check_industry_dist
 		(industry_distance(INDUSTRY_ID_GENERAL_STORE) >= 32) && 
 		(industry_distance(INDUSTRY_ID_CHLOR_ALKALI_PLANT) >= 32) && 
 		(industry_distance(INDUSTRY_ID_SALT_MINE) >= 32) && 
+		(industry_distance(INDUSTRY_ID_PACKAGING_PLANT) >= 32) && 
 	    (industry_distance(INDUSTRY_ID_FOOD_PROCESSOR) >= 16))]) {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;
@@ -422,12 +423,12 @@ switch(FEAT_INDUSTRIES, SELF, food_processor_switch_produce,
 	 calculate_raw_material_usage(),
 	 calculate_total_production(),
 	 calculate_number_of_waiting_cargos(),
-	 
-	 
+	 	 
 	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
 	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
-	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (3-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE)
+	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (3-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
 	
+	 store_debug_production_data()
 	])
 {
 	food_processor_produce;
@@ -448,7 +449,7 @@ switch(FEAT_INDUSTRIES, SELF, food_processor_switch_produce_ext_food_industries,
 	 
 	 calculate_raw_material_usage(),
 	 calculate_total_production(),
-	
+	 store_debug_production_data()
 	])
 {
 	food_processor_produce_ext_food_industries;
@@ -489,9 +490,57 @@ switch(FEAT_INDUSTRIES, SELF, food_processor_switch_produce_ext_basic_inorganic_
 	 // use 5% of production amount as usage of optional stuff 
 	STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING3), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW3),
 	STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING4), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW4),
+	
+	store_debug_production_data()
 	 ])
 {
 	food_processor_produce_ext_basic_inorganic_chemistry;
+}
+
+produce(food_processor_produce_ext_basic_inorganic_chemistry_ext_packaging_industries,
+	[LVST: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 GRAI: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 FISH: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
+	 SALT: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW3);
+	 LYE_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW4);
+	 MNSP: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW5);
+	 ],
+	[FOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, food_processor_switch_produce_ext_basic_inorganic_chemistry_ext_packaging_industries, 
+	[STORE_TEMP(incoming_cargo_waiting("LVST"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	STORE_TEMP(incoming_cargo_waiting("GRAI"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	STORE_TEMP(incoming_cargo_waiting("FISH"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 calculate_number_of_waiting_cargos(),
+	 
+	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
+	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
+	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (3-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	
+	STORE_TEMP(incoming_cargo_waiting("SALT"),TEMP_REGISTER_INCOMING_CARGO_WAITING3),
+	STORE_TEMP(incoming_cargo_waiting("LYE_"),TEMP_REGISTER_INCOMING_CARGO_WAITING4),
+	STORE_TEMP(incoming_cargo_waiting("MNSP"),TEMP_REGISTER_INCOMING_CARGO_WAITING5),
+	
+	// count number of optional cargos to set production limit
+	STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING3) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING4) > 0 ? LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) + 1 : LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS), TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING5) > 0 ? LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) + 1 : LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS), TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	// if no optional cargo available, limit production to 128t, with 1 cargo available it is 192t, with two there is no limit
+	STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 2 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 // use 5% of production amount as usage of optional stuff 
+	STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING3), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW3),
+	STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING4), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW4),
+	STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING5), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW5),
+	
+	store_debug_production_data()
+	 ])
+{
+	food_processor_produce_ext_basic_inorganic_chemistry_ext_packaging_industries;
 }
 
 produce(food_processor_produce_ext_food_industries_ext_basic_inorganic_chemistry,
@@ -523,9 +572,123 @@ switch(FEAT_INDUSTRIES, SELF, food_processor_switch_produce_ext_food_industries_
 	 // use 5% of production amount as usage of optional stuff 
 	STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING3), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW3),
 	STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING4), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW4),
+	
+	store_debug_production_data()
 	 ])
 {
 	food_processor_produce_ext_food_industries_ext_basic_inorganic_chemistry;
+}
+
+produce(food_processor_produce_ext_packaging_industries,
+	[LVST: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 GRAI: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 FISH: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
+	 MNSP: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW3);
+	 ],
+	[FOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, food_processor_switch_produce_ext_packaging_industries, 
+	[STORE_TEMP(incoming_cargo_waiting("LVST"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	STORE_TEMP(incoming_cargo_waiting("GRAI"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	STORE_TEMP(incoming_cargo_waiting("FISH"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 calculate_number_of_waiting_cargos(),
+	 
+	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
+	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
+	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (3-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	
+	STORE_TEMP(incoming_cargo_waiting("MNSP"),TEMP_REGISTER_INCOMING_CARGO_WAITING3),
+	
+	// count number of optional cargos to set production limit
+	STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING3) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	// if no optional cargo available, limit production to 128t, with 1 cargo available it is 192t, with two there is no limit
+	STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 // use 5% of production amount as usage of optional stuff 
+	STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING3), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW3),
+	
+	store_debug_production_data()
+	 ])
+{
+	food_processor_produce_ext_packaging_industries;
+}
+
+produce(food_processor_produce_ext_food_industries_ext_packaging_industries,
+	[FISH: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 MNSP: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 ],
+	[FOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, food_processor_switch_produce_ext_food_industries_ext_packaging_industries, 
+	[STORE_TEMP(incoming_cargo_waiting("FISH"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 calculate_number_of_waiting_cargos(),
+	 
+	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
+	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
+	 STORE_TEMP(80, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	
+	STORE_TEMP(incoming_cargo_waiting("MNSP"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),	
+	
+	// count number of optional cargos to set production limit
+	STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	// if no optional cargo available, limit production to 128t, with 1 cargo available it is 192t, with two there is no limit
+	STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 // use 5% of production amount as usage of optional stuff 
+	STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW3),
+	
+	store_debug_production_data()
+	 ])
+{
+	food_processor_produce_ext_food_industries_ext_packaging_industries;
+}
+
+produce(food_processor_produce_ext_food_industries_ext_basic_inorganic_chemistry_ext_food_industry_ext_packaging_industries,
+	[FISH: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 MNSP: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 SALT: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
+	 LYE_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW3);
+	 ],
+	[FOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, food_processor_switch_produce_ext_basic_inorganic_chemistry_ext_food_industries_ext_packaging_industries, 
+	[STORE_TEMP(incoming_cargo_waiting("FISH"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 calculate_number_of_waiting_cargos(),
+	 
+	 STORE_TEMP(80, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	
+	STORE_TEMP(incoming_cargo_waiting("MNSP"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),	
+	STORE_TEMP(incoming_cargo_waiting("SALT"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),	
+	STORE_TEMP(incoming_cargo_waiting("LYE_"),TEMP_REGISTER_INCOMING_CARGO_WAITING3),	
+	
+	// count number of optional cargos to set production limit
+	STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2) > 0 ? LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) + 1 : LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS), TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING3) > 0 ? LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) + 1 : LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS), TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	// if no optional cargo available, limit production to 128t, with 1 cargo available it is 192t, with two there is no limit
+	STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 3 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 // use 5% of production amount as usage of optional stuff 
+	STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW1),
+	STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW2),
+	STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW3),
+	
+	store_debug_production_data()
+	 ])
+{
+	food_processor_produce_ext_food_industries_ext_basic_inorganic_chemistry_ext_food_industry_ext_packaging_industries;
 }
 
 // only show stockpile for LVST, GRAI, FISH and nothing else
@@ -543,6 +706,7 @@ switch(FEAT_INDUSTRIES, SELF, food_processor_switch_cargo_subtype_ext_basic_inor
 	FISH: switch_cargo_subtype;
 	SALT: switch_cargo_subtype_white; // optional, increase productivity
 	LYE_: switch_cargo_subtype_white; // optional, increase productivity
+	MNSP: switch_cargo_subtype_white; // optional, increase productivity
 	return 0x3800 + string(STR_EMPTY);
 }
 
@@ -560,6 +724,16 @@ switch(FEAT_INDUSTRIES, SELF, food_processor_switch_update_last_served_date_ext_
 	[update_last_served_date(),
 	 STORE_PERM(this_month_production("FOOD") != 0 || last_month_production("FOOD") != 0 || 
 		incoming_cargo_waiting("LVST") != 0 || incoming_cargo_waiting("FISH") != 0 || incoming_cargo_waiting("SALT") != 0 || incoming_cargo_waiting("LYE_") != 0 || 
+		this_month_transported("FOOD") != 0 || last_month_transported("FOOD") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+switch(FEAT_INDUSTRIES, SELF, food_processor_switch_update_last_served_date_ext_basic_inorganic_chemistry_ext_packaging_industries,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("FOOD") != 0 || last_month_production("FOOD") != 0 || 
+		incoming_cargo_waiting("LVST") != 0 || incoming_cargo_waiting("FISH") != 0 || incoming_cargo_waiting("SALT") != 0 || incoming_cargo_waiting("LYE_") != 0 || incoming_cargo_waiting("MNSP") != 0 ||
 		this_month_transported("FOOD") != 0 || last_month_transported("FOOD") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
@@ -586,8 +760,38 @@ switch(FEAT_INDUSTRIES, SELF, food_processor_switch_update_last_served_date_ext_
 	check_secondary_industry_closure();
 }
 
+switch(FEAT_INDUSTRIES, SELF, food_processor_switch_update_last_served_date_ext_packaging_industries,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("FOOD") != 0 || last_month_production("FOOD") != 0 || 
+		incoming_cargo_waiting("FISH") != 0 || incoming_cargo_waiting("MNSP") != 0 ||
+		this_month_transported("FOOD") != 0 || last_month_transported("FOOD") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+switch(FEAT_INDUSTRIES, SELF, food_processor_switch_update_last_served_date_ext_basic_inorganic_chemistry_ext_food_industries_ext_packaging_industries,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("FOOD") != 0 || last_month_production("FOOD") != 0 || 
+		incoming_cargo_waiting("FISH") != 0 || incoming_cargo_waiting("MNSP") != 0 || incoming_cargo_waiting("SALT") != 0 || incoming_cargo_waiting("LYE_") != 0 ||
+		this_month_transported("FOOD") != 0 || last_month_transported("FOOD") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+switch(FEAT_INDUSTRIES, SELF, food_processor_switch_update_last_served_date_ext_food_industries_ext_packaging_industries,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("FOOD") != 0 || last_month_production("FOOD") != 0 || 
+		incoming_cargo_waiting("FISH") != 0 || incoming_cargo_waiting("MNSP") != 0 ||
+		this_month_transported("FOOD") != 0 || last_month_transported("FOOD") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
 // the basic food processor, when no extensions active
-if (!param_extension_basic_inorganic_chemistry && !param_extension_food_industries) {
+if (!param_extension_basic_inorganic_chemistry && !param_extension_food_industries && !param_extension_packaging_industries) {
 	item(FEAT_INDUSTRIES, food_processor, INDUSTRY_ID_FOOD_PROCESSOR) {
 		property {
 			substitute: 0;
@@ -621,7 +825,7 @@ if (!param_extension_basic_inorganic_chemistry && !param_extension_food_industri
 	}
 }
 
-if (param_extension_basic_inorganic_chemistry && !param_extension_food_industries) {
+if (param_extension_basic_inorganic_chemistry && !param_extension_food_industries && !param_extension_packaging_industries) {
 	item(FEAT_INDUSTRIES, food_processor, INDUSTRY_ID_FOOD_PROCESSOR) {
 		property {
 			substitute: 0;
@@ -655,7 +859,7 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_food_industrie
 	}
 }
 
-if (!param_extension_basic_inorganic_chemistry && param_extension_food_industries) {
+if (!param_extension_basic_inorganic_chemistry && param_extension_food_industries && !param_extension_packaging_industries) {
 	item(FEAT_INDUSTRIES, food_processor, INDUSTRY_ID_FOOD_PROCESSOR) {
 		property {
 			substitute: 0;
@@ -689,7 +893,7 @@ if (!param_extension_basic_inorganic_chemistry && param_extension_food_industrie
 	}
 }
 
-if (param_extension_basic_inorganic_chemistry && param_extension_food_industries) {
+if (param_extension_basic_inorganic_chemistry && param_extension_food_industries && !param_extension_packaging_industries) {
 	item(FEAT_INDUSTRIES, food_processor, INDUSTRY_ID_FOOD_PROCESSOR) {
 		property {
 			substitute: 0;
@@ -714,6 +918,141 @@ if (param_extension_basic_inorganic_chemistry && param_extension_food_industries
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        food_processor_switch_produce_ext_food_industries_ext_basic_inorganic_chemistry;
 			monthly_prod_change:      food_processor_switch_update_last_served_date_ext_food_industries_ext_basic_inorganic_chemistry;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           food_processor_switch_location_check_industry_distance;
+			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO);
+			cargo_subtype_display:    food_processor_switch_cargo_subtype_ext_basic_inorganic_chemistry;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+
+if (!param_extension_basic_inorganic_chemistry && !param_extension_food_industries && param_extension_packaging_industries) {
+	item(FEAT_INDUSTRIES, food_processor, INDUSTRY_ID_FOOD_PROCESSOR) {
+		property {
+			substitute: 0;
+			map_colour: 181;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [food_processor_industry_layout_1_tilelayout,food_processor_industry_layout_2_tilelayout,food_processor_industry_layout_3_tilelayout];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: TTD_STR_INDUSTRY_NAME_FOOD_PROCESSING_PLANT;
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 65;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("LVST"),accept_cargo("GRAI"),accept_cargo("FISH"),accept_cargo("MNSP"),produce_cargo("FOOD",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FOOD_PROCESSOR));
+		}
+			
+		graphics {
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        food_processor_switch_produce_ext_packaging_industries;
+			monthly_prod_change:      food_processor_switch_update_last_served_date_ext_packaging_industries;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           food_processor_switch_location_check_industry_distance;
+			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO_ANY);
+			cargo_subtype_display:    food_processor_switch_cargo_subtype_ext_basic_inorganic_chemistry;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+
+if (!param_extension_basic_inorganic_chemistry && param_extension_food_industries && param_extension_packaging_industries) {
+	item(FEAT_INDUSTRIES, food_processor, INDUSTRY_ID_FOOD_PROCESSOR) {
+		property {
+			substitute: 0;
+			map_colour: 181;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [food_processor_industry_layout_1_tilelayout,food_processor_industry_layout_2_tilelayout,food_processor_industry_layout_3_tilelayout];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: TTD_STR_INDUSTRY_NAME_FOOD_PROCESSING_PLANT;
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 65;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("FISH"),accept_cargo("MNSP"),produce_cargo("FOOD",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FOOD_PROCESSOR));
+		}
+			
+		graphics {
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        food_processor_switch_produce_ext_food_industries_ext_packaging_industries;
+			monthly_prod_change:      food_processor_switch_update_last_served_date_ext_food_industries_ext_packaging_industries;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           food_processor_switch_location_check_industry_distance;
+			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO);
+			cargo_subtype_display:    food_processor_switch_cargo_subtype_ext_basic_inorganic_chemistry;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+
+if (param_extension_basic_inorganic_chemistry && !param_extension_food_industries && param_extension_packaging_industries) {
+	item(FEAT_INDUSTRIES, food_processor, INDUSTRY_ID_FOOD_PROCESSOR) {
+		property {
+			substitute: 0;
+			map_colour: 181;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [food_processor_industry_layout_1_tilelayout,food_processor_industry_layout_2_tilelayout,food_processor_industry_layout_3_tilelayout];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: TTD_STR_INDUSTRY_NAME_FOOD_PROCESSING_PLANT;
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 65;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("LVST"),accept_cargo("GRAI"),accept_cargo("FISH"),accept_cargo("SALT"),accept_cargo("LYE_"),accept_cargo("MNSP"),produce_cargo("FOOD",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FOOD_PROCESSOR));
+		}
+			
+		graphics {
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        food_processor_switch_produce_ext_basic_inorganic_chemistry_ext_packaging_industries;
+			monthly_prod_change:      food_processor_switch_update_last_served_date_ext_basic_inorganic_chemistry_ext_packaging_industries;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           food_processor_switch_location_check_industry_distance;
+			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO_ANY);
+			cargo_subtype_display:    food_processor_switch_cargo_subtype_ext_basic_inorganic_chemistry;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+if (param_extension_basic_inorganic_chemistry && param_extension_food_industries && param_extension_packaging_industries) {
+	item(FEAT_INDUSTRIES, food_processor, INDUSTRY_ID_FOOD_PROCESSOR) {
+		property {
+			substitute: 0;
+			map_colour: 181;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [food_processor_industry_layout_1_tilelayout,food_processor_industry_layout_2_tilelayout,food_processor_industry_layout_3_tilelayout];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: TTD_STR_INDUSTRY_NAME_FOOD_PROCESSING_PLANT;
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 65;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("FISH"),accept_cargo("SALT"),accept_cargo("LYE_"),accept_cargo("MNSP"),produce_cargo("FOOD",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FOOD_PROCESSOR));
+		}
+			
+		graphics {
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        food_processor_switch_produce_ext_basic_inorganic_chemistry_ext_food_industries_ext_packaging_industries;
+			monthly_prod_change:      food_processor_switch_update_last_served_date_ext_basic_inorganic_chemistry_ext_food_industries_ext_packaging_industries;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           food_processor_switch_location_check_industry_distance;
 			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO);

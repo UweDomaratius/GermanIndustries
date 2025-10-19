@@ -438,8 +438,8 @@ produce(sawmill_produce,
 switch(FEAT_INDUSTRIES, SELF, sawmill_switch_produce, 
 	[STORE_TEMP(incoming_cargo_waiting("WOOD"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
      calculate_raw_material_usage(),
-	 calculate_total_production()
-	 
+	 calculate_total_production(),
+	 store_debug_production_data()
 	]) {
 	sawmill_produce;
 }

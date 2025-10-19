@@ -31,6 +31,8 @@ STR_PARAM_EXT_PAINTING_INDUSTRIES :Erweiterung "Farbindustrie"
 STR_PARAM_EXT_PAINTING_INDUSTRIES_DESC :Fügt Chemiebetriebe hinzu, die aus verschiedenen Rohstoffen Farben produzieren.
 STR_PARAM_EXT_FOOD_INDUSTRIES :Erweiterung "Lebensmittelindustrie"
 STR_PARAM_EXT_FOOD_INDUSTRIES_DESC :Fügt eine breitere Palette an Lebensmittelindustrien hinzu.
+STR_PARAM_EXT_PACKAGING_INDUSTRIES :Erweiterung "Verpackungsindustrie"
+STR_PARAM_EXT_PACKAGING_INDUSTRIES_DESC :Fügt Verpackungen als Fracht hinzu, die zu Industrien geliefert werden müssen, welche Waren oder Nahrungsmittel herstellen.
 
 # Frachten
 STR_CARGO_NAME_BAUXITE            :Bauxit
@@ -45,6 +47,7 @@ STR_CARGO_NAME_HYDROGEN           :Wasserstoff
 STR_CARGO_NAME_LIMESTONE          :Kalkstein
 STR_CARGO_NAME_LYE                :Natronlauge
 STR_CARGO_NAME_MILK               :Milch
+STR_CARGO_NAME_PACKAGING          :Verpackungen
 STR_CARGO_NAME_PAINT              :Farbe
 STR_CARGO_NAME_PLASTICS           :Kunststoffe
 STR_CARGO_NAME_SALT               :Salz
@@ -70,6 +73,7 @@ STR_QUANTITY_LIMESTONE            :{WEIGHT} Kalkstein
 STR_QUANTITY_LYE                  :{WEIGHT} Natronlauge
 STR_QUANTITY_MILK                 :{WEIGHT} Milch
 STR_QUANTITY_OIL                  :{WEIGHT} Öl
+STR_QUANTITY_PACKAGING            :{WEIGHT} Verpackungen
 STR_QUANTITY_PAINT                :{WEIGHT} Farbe
 STR_QUANTITY_PLASTICS             :{WEIGHT} Kunststoffe
 STR_QUANTITY_SALT                 :{WEIGHT} Salz
@@ -99,6 +103,7 @@ STR_IND_GENERAL_STORE        :Laden
 STR_IND_HOTEL                :{G=n}Hotel
 STR_IND_INTEGRATED_STEEL_MILL:{G=n}Integriertes Stahlwerk
 STR_IND_LIMESTONE_MINE       :{G=n}Kalksteinbergwerk
+STR_IND_PACKAGING_PLANT      :{G=n}Verpackungsmittelfabrik
 STR_IND_PAINT_FACTORY        :{G=w}Farbenfabrik
 STR_IND_PHARMACEUTICAL_PLANT :{G=w}Arzneimittelfabrik
 STR_IND_PLASTICS_PLANT       :Kunststofffabrik
@@ -139,6 +144,7 @@ STR_STATION_LIMESTONE_MINE       :Kalkeinbergwerk
 STR_STATION_OIL_REFINERY         :Raffinerie
 STR_STATION_OIL_RIG              :Bohrplattform
 STR_STATION_OIL_WELL             :Ölquelle
+STR_STATION_PACKAGING_PLANT      :Verpackungsmittelfabrik
 STR_STATION_PAINT_FACTORY        :Farbenfabrik
 STR_STATION_PHARMACEUTICAL_PLANT :Arzneimittelfabrik
 STR_STATION_PLASTICS_PLANT       :Kunststofffabrik
