@@ -220,13 +220,15 @@ STR_INDUSTRY_NO_POWER :{RED}No power available, production stopped!
 STR_INDUSTRY_NOT_ENOUGH_POWER :{YELLOW}Not enough power available, production reduced!
 STR_INDUSTRY_ENOUGH_POWER :{GREEN}Enough power available.
 
+STR_INDUSTRY_ELECTRICITY_OPTIONAL_CARGO_TEXT :Industry can produce {YELLOW}{COMMA}{BLACK} items ({YELLOW}{COMMA}{BLACK}% of maximum production){}Maximum production requires {YELLOW}{COMMA}{BLACK} power.{}{STRING}{}{BLACK}{STRING}
+
 # Funding window text
 STR_INDUSTRY_NOT_AVAILABLE_BEFORE :{}{BLACK}Industry not available before {STRING}.
 STR_INDUSTRY_AVAILABLE_TIMEFRAME  :{}{BLACK}Industry only available between {STRING} and {STRING}.
 
 # Cargo display for stockpile
-STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE          :{BLACK}({CARGO_SHORT} in stock)
-STR_CARGO_SUBTYPE_DISPLAY_OPTIONAL_CARGO_AVAILABLE :{WHITE}({CARGO_SHORT} in stock)
+STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE          :{BLACK} ({CARGO_SHORT} in stock)
+STR_CARGO_SUBTYPE_DISPLAY_OPTIONAL_CARGO_AVAILABLE :{WHITE} ({CARGO_SHORT} in stock)
 
 # Error texts
 STR_ERR_OPENTTD_VERSION:{ORANGE}E00:{TITLE} requires OpenTTD 14.0 or newer

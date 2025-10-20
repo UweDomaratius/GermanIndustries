@@ -1387,7 +1387,7 @@ if (param_extension_aluminium && !param_extension_basic_inorganic_chemistry) {
 	item(FEAT_INDUSTRIES, aluminium_plant, INDUSTRY_ID_ALUMINIUM_PLANT) {
 		property {
 			substitute: 0;
-			map_colour: 9;
+			map_colour: 13;
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [aluminium_plant_tilelayout_1, aluminium_plant_tilelayout_2, aluminium_plant_tilelayout_3];
@@ -1422,7 +1422,7 @@ if (param_extension_aluminium && param_extension_basic_inorganic_chemistry) {
 	item(FEAT_INDUSTRIES, aluminium_plant, INDUSTRY_ID_ALUMINIUM_PLANT) {
 		property {
 			substitute: 0;
-			map_colour: 9;
+			map_colour: 13;
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [aluminium_plant_tilelayout_1, aluminium_plant_tilelayout_2, aluminium_plant_tilelayout_3];
