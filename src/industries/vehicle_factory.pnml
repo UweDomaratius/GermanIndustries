@@ -733,11 +733,16 @@ switch(FEAT_INDUSTRIES, SELF, vehicle_factory_update_production_according_to_pow
 }
 
 switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_produce, 
-	[STORE_TEMP(min(incoming_cargo_waiting("STEL"),incoming_cargo_waiting("PLAS")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	[STORE_TEMP(incoming_cargo_waiting("STEL"), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
 	 
 	 calculate_raw_material_usage(),
 	 calculate_total_production(),
 	 
+	 STORE_TEMP(incoming_cargo_waiting("PLAS"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	// if no optional cargo available, limit production to 128t, with 1 cargo available there is no limit
+	STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+		 
 	 store_debug_production_data(),
 	
 	 param_electricity_needed
@@ -747,9 +752,15 @@ switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_produce,
 }
 
 switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_produce_ext_aluminium, 
-	[STORE_TEMP(min(incoming_cargo_waiting("STEL"),incoming_cargo_waiting("PLAS"),incoming_cargo_waiting("ALUM")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	[STORE_TEMP(min(incoming_cargo_waiting("STEL"),incoming_cargo_waiting("ALUM")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
 	 calculate_raw_material_usage(),
 	 calculate_total_production(),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("PLAS"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	// if no optional cargo available, limit production to 128t, with 1 cargo available there is no limit
+	STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 
 	 store_debug_production_data(),
 	 param_electricity_needed
 	]) {
@@ -758,9 +769,14 @@ switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_produce_ext_aluminium,
 }
 
 switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_produce_ext_painting_industries, 
-	[STORE_TEMP(min(incoming_cargo_waiting("STEL"),incoming_cargo_waiting("PLAS"),incoming_cargo_waiting("COAT")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	[STORE_TEMP(min(incoming_cargo_waiting("STEL"),incoming_cargo_waiting("COAT")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
 	 calculate_raw_material_usage(),
 	 calculate_total_production(),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("PLAS"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	// if no optional cargo available, limit production to 128t, with 1 cargo available there is no limit
+	STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
 	 
 	 param_electricity_needed
 	]) {
@@ -769,9 +785,14 @@ switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_produce_ext_painting_indust
 }
 
 switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_produce_ext_aluminium_ext_painting_industries, 
-	[STORE_TEMP(min(incoming_cargo_waiting("STEL"),incoming_cargo_waiting("PLAS"),incoming_cargo_waiting("ALUM"),incoming_cargo_waiting("COAT")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	[STORE_TEMP(min(incoming_cargo_waiting("STEL"),incoming_cargo_waiting("ALUM"),incoming_cargo_waiting("COAT")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
 	 calculate_raw_material_usage(),
 	 calculate_total_production(),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("PLAS"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	// if no optional cargo available, limit production to 128t, with 1 cargo available there is no limit
+	STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
 	 
 	 param_electricity_needed
 	]) {
@@ -798,10 +819,10 @@ switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_extra_text_electricity,
 	 STORE_TEMP((LOAD_PERM(PERM_REGISTER_PRODUCTION_PERCENTAGE) == 0 && LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT) > 0) ? string(STR_INDUSTRY_NO_POWER) :
 	 ((LOAD_PERM(PERM_REGISTER_PRODUCTION_PERCENTAGE) == 100 && LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT) > 0) ? string(STR_INDUSTRY_ENOUGH_POWER) :
 	 ((LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT) > 0) ? string(STR_INDUSTRY_NOT_ENOUGH_POWER) : string(STR_EMPTY)))
-	 | string(STR_EMPTY) << 16, TEMP_REGISTER_EXTRA_TEXT_ARG3)
+	 | string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO) << 16, TEMP_REGISTER_EXTRA_TEXT_ARG3)
 	])
 {
-	return string(STR_INDUSTRY_ELECTRICITY_TEXT);
+	return string(STR_INDUSTRY_ELECTRICITY_OPTIONAL_CARGO_TEXT);
 }
 
 switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_extra_text, param_electricity_needed)
@@ -828,7 +849,7 @@ switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_cargo_subtype, getbits(extr
 	ALUM: switch_cargo_subtype;
 	COAT: switch_cargo_subtype;
 	STEL: switch_cargo_subtype;
-	PLAS: switch_cargo_subtype;
+	PLAS: switch_cargo_subtype_white;
 	return 0x3800 + string(STR_EMPTY);
 }
 
