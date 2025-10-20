@@ -50,6 +50,10 @@ constants = {
     # CARGO IDs PACKAGING INDUSTRY
     "CARGO_ID_PACKAGING" : "32",
     
+    # CARGO IDs GLASS
+    "CARGO_ID_GLASS": "34",
+    "CARGO_ID_QUICKLIME": "33",
+        
     # INDUSTRY IDS 0-20 (with gaps): Base Industries
     "INDUSTRY_ID_BUILDERS_YARD":"17",
     "INDUSTRY_ID_COAL_MINE": "0",
@@ -105,6 +109,10 @@ constants = {
     
     # Packaging Industries Extension
     "INDUSTRY_ID_PACKAGING_PLANT" : "40",
+    
+    # Glass Extension
+    "INDUSTRY_ID_GLASS_WORKS" : "42",
+    "INDUSTRY_ID_LIME_KILN" : "41",
     
     # INDUSTRY TILE IDs for Base Industries
     "INDUSTRY_TILE_ID_BUILDERS_YARD":"22",
@@ -177,6 +185,10 @@ constants = {
     
     # TILE IDs for PACKAGING INDUSTRIES EXTENSION
     "INDUSTRY_TILE_ID_PACKAGING_PLANT" : "55",
+    
+    # TILE IDs for GLASS
+    "INDUSTRY_TILE_ID_GLASS_WORKS" : "57",
+    "INDUSTRY_TILE_ID_LIME_KILN" : "56",
     
     # TTD sprite IDs
     "TTD_OILRIG_STATION_TILE": "24",

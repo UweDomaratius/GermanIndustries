@@ -68,6 +68,13 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_food,
 	return 0x3800 + string(STR_EMPTY);
 }
 
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_glas, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("GLAS") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	GLAS: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
 switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_grai, 
 	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("GRAI") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
 	 getbits(extra_callback_info2, 16, 8)]) {
@@ -138,6 +145,13 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_plas,
 	return 0x3800 + string(STR_EMPTY);
 }
 
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_qlme, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("QLME") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	QLME: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
 switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_salt, 
 	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("SALT") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
 	 getbits(extra_callback_info2, 16, 8)]) {
@@ -199,6 +213,7 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info,
 	CORE: switch_cargo_subtype_display_info_core;
 	FISH: switch_cargo_subtype_display_info_fish;
 	FOOD: switch_cargo_subtype_display_info_food;
+	GLAS: switch_cargo_subtype_display_info_glas;
 	GRAI: switch_cargo_subtype_display_info_grai;
 	H2__: switch_cargo_subtype_display_info_h2;
 	IORE: switch_cargo_subtype_display_info_iore;
@@ -209,6 +224,7 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info,
 	MNSP: switch_cargo_subtype_display_info_mnsp;
 	OIL_: switch_cargo_subtype_display_info_oil;
 	PLAS: switch_cargo_subtype_display_info_plas;	
+	QLME: switch_cargo_subtype_display_info_qlme;
 	SALT: switch_cargo_subtype_display_info_salt;
 	SAND: switch_cargo_subtype_display_info_sand;
 	STEL: switch_cargo_subtype_display_info_stel;
