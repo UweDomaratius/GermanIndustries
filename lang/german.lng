@@ -180,7 +180,7 @@ STR_INDUSTRY_NEEDS_ANY_INPUT :Industrie beginnt Produktion sobald wenigstens ein
 
 # Texte für Energiewirtschaft, Kraftwerke zeigen die Produktion, Industrien zeigen an wie viel Strom sie benötigen und ob der Bedarf gedeckt ist
 STR_POWER_PLANT_TEXT :Stromproduktion {YELLOW}{COMMA}{BLACK}, Bedarf {YELLOW}{COMMA}{BLACK}
-STR_INDUSTRY_ELECTRICITY_TEXT :Industrie kann {YELLOW}{COMMA}{BLACK} Einheiten produzieren ({YELLOW}{COMMA}{BLACK}% der maximalen Produktion){}Maximale Produktion benötigt {YELLOW}{COMMA}{BLACK} Strom.{}{STRING}
+STR_INDUSTRY_ELECTRICITY_TEXT :Industrie kann {YELLOW}{COMMA}{BLACK} Einheiten produzieren ({YELLOW}{COMMA}{BLACK}% der maximalen Produktion){}Maximale Produktion benötigt {YELLOW}{COMMA}{BLACK} Strom.{}{BLACK}{STRING}
 STR_INDUSTRY_NO_POWER :{RED}Kein Strom verfügbar, Produktion gestoppt!
 STR_INDUSTRY_NOT_ENOUGH_POWER :{YELLOW}Nicht genug Strom verfügbar, Produktion reduziert!
 STR_INDUSTRY_ENOUGH_POWER :{GREEN}Genug Strom verfügbar.
@@ -190,8 +190,8 @@ STR_INDUSTRY_NOT_AVAILABLE_BEFORE :{}{BLACK}Industrie erst ab {STRING} verfügba
 STR_INDUSTRY_AVAILABLE_TIMEFRAME  :{}{BLACK}Industrie nur zwischen {STRING} und {STRING} verfügbar.
 
 # Display für Vorratsanzeige
-STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE          :{BLACK}({CARGO_SHORT} vorrätig)
-STR_CARGO_SUBTYPE_DISPLAY_OPTIONAL_CARGO_AVAILABLE :{WHITE}({CARGO_SHORT} vorrätig)
+STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE          :{BLACK} ({CARGO_SHORT} vorrätig)
+STR_CARGO_SUBTYPE_DISPLAY_OPTIONAL_CARGO_AVAILABLE :{WHITE} ({CARGO_SHORT} vorrätig)
 
 # Fehlertexte
 STR_ERR_OPENTTD_VERSION             :{ORANGE}E00: {TITLE} benötigt OpenTTD 14.0 oder neuer
