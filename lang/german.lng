@@ -33,6 +33,8 @@ STR_PARAM_EXT_FOOD_INDUSTRIES :Erweiterung "Lebensmittelindustrie"
 STR_PARAM_EXT_FOOD_INDUSTRIES_DESC :Fügt eine breitere Palette an Lebensmittelindustrien hinzu.
 STR_PARAM_EXT_PACKAGING_INDUSTRIES :Erweiterung "Verpackungsindustrie"
 STR_PARAM_EXT_PACKAGING_INDUSTRIES_DESC :Fügt Verpackungen als Fracht hinzu, die zu Industrien geliefert werden müssen, welche Waren oder Nahrungsmittel herstellen.
+STR_PARAM_EXT_GLASS :Erweiterung "Glasindustrie"
+STR_PARAM_EXT_GLASS_DESC :Fügt Industrien und Frachten hinzu, die für die Glasproduktion relevant sind. Benötigt die Erweiterung Bauindustrie.
 
 # Frachten
 STR_CARGO_NAME_BAUXITE            :Bauxit
@@ -43,6 +45,7 @@ STR_CARGO_NAME_CHLORINE           :Chlor
 STR_CARGO_NAME_COPPER             :Kupfer
 STR_CARGO_NAME_COPPER_ORE         :Kupfererz
 STR_CARGO_NAME_FISH               :Fisch
+STR_CARGO_NAME_GLASS              :Glas
 STR_CARGO_NAME_HYDROGEN           :Wasserstoff
 STR_CARGO_NAME_LIMESTONE          :Kalkstein
 STR_CARGO_NAME_LYE                :Natronlauge
@@ -50,6 +53,7 @@ STR_CARGO_NAME_MILK               :Milch
 STR_CARGO_NAME_PACKAGING          :Verpackungen
 STR_CARGO_NAME_PAINT              :Farbe
 STR_CARGO_NAME_PLASTICS           :Kunststoffe
+STR_CARGO_NAME_QUICKLIME          :Branntkalk
 STR_CARGO_NAME_SALT               :Salz
 STR_CARGO_NAME_SAND               :Sand
 STR_CARGO_NAME_TEXTILES           :Textilien
@@ -67,6 +71,7 @@ STR_QUANTITY_CHLORINE             :{WEIGHT} Chlor
 STR_QUANTITY_COPPER               :{WEIGHT} Kupfer
 STR_QUANTITY_COPPER_ORE           :{WEIGHT} Kupfererz
 STR_QUANTITY_FISH                 :{WEIGHT} Fisch
+STR_QUANTITY_GLASS                :{WEIGHT} Glas
 STR_QUANTITY_GOODS                :{WEIGHT} Güter
 STR_QUANTITY_HYDROGEN             :{WEIGHT} Wasserstoff
 STR_QUANTITY_LIMESTONE            :{WEIGHT} Kalkstein
@@ -76,6 +81,7 @@ STR_QUANTITY_OIL                  :{WEIGHT} Öl
 STR_QUANTITY_PACKAGING            :{WEIGHT} Verpackungen
 STR_QUANTITY_PAINT                :{WEIGHT} Farbe
 STR_QUANTITY_PLASTICS             :{WEIGHT} Kunststoffe
+STR_QUANTITY_QUICKLIME            :{WEIGHT} Branntkalk
 STR_QUANTITY_SALT                 :{WEIGHT} Salz
 STR_QUANTITY_SAND                 :{WEIGHT} Sand
 STR_QUANTITY_TEXTILES             :{WEIGHT} Textilien
@@ -100,8 +106,10 @@ STR_IND_FLOUR_MILL           :{G=w}Mühle
 STR_IND_FURNITURE_FACTORY    :{G=w}Möbelfabrik
 STR_IND_DEPARTMENT_STORE     :{G=n}Kaufhaus
 STR_IND_GENERAL_STORE        :Laden
+STR_IND_GLASS_WORKS          :{G=w}Glasfabrik
 STR_IND_HOTEL                :{G=n}Hotel
 STR_IND_INTEGRATED_STEEL_MILL:{G=n}Integriertes Stahlwerk
+STR_IND_LIME_KILN            :Kalkofen
 STR_IND_LIMESTONE_MINE       :{G=n}Kalksteinbergwerk
 STR_IND_PACKAGING_PLANT      :{G=n}Verpackungsmittelfabrik
 STR_IND_PAINT_FACTORY        :{G=w}Farbenfabrik
@@ -137,9 +145,11 @@ STR_STATION_FOOD_PROCESSOR       :Lebensmittelfabrik
 STR_STATION_FOREST               :Wald
 STR_STATION_FURNITURE_FACTORY    :Möbelfabrik
 STR_STATION_GENERAL_STORE        :Laden
+STR_STATION_GLASS_WORKS          :Glasfabrik
 STR_STATION_HOTEL                :Hotel
 STR_STATION_INTEGRATED_STEEL_MILL:Integriertes Stahlwerk
 STR_STATION_IRON_ORE_MINE        :Bergwerk
+STR_STATION_LIME_KILN            :Kalkofen
 STR_STATION_LIMESTONE_MINE       :Kalkeinbergwerk
 STR_STATION_OIL_REFINERY         :Raffinerie
 STR_STATION_OIL_RIG              :Bohrplattform
@@ -187,3 +197,4 @@ STR_CARGO_SUBTYPE_DISPLAY_OPTIONAL_CARGO_AVAILABLE :{WHITE} ({CARGO_SHORT} vorr�
 STR_ERR_OPENTTD_VERSION             :{ORANGE}E00: {TITLE} benötigt OpenTTD 14.0 oder neuer
 STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE :muss unterhalb der Schneegrenze platziert werden
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE :kann nicht auf steilen Hängen platziert werden
+STR_ERR_EXTENSION_GLASS_REQUIRES_EXTENSION_BUILDING_INDUSTRIES:Erweiterung "Glas" erfordert Erweiterung "Bauindustrie".

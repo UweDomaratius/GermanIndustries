@@ -101,10 +101,22 @@ grf {
 			desc: string(STR_PARAM_EXT_PACKAGING_INDUSTRIES_DESC);
 		}
 	}
+	param {
+		param_extension_glass {
+			type: bool;
+			name: string(STR_PARAM_EXT_GLASS);
+			desc: string(STR_PARAM_EXT_GLASS_DESC);
+		}
+	}
 }
 
 if (ttd_platform != PLATFORM_OPENTTD || openttd_version < version_openttd(14, 0)) {
 	error(FATAL, REQUIRES_OPENTTD, string(STR_ERR_OPENTTD_VERSION));
+	exit;
+}
+
+if (param_extension_glass && !param_extension_building_materials) {
+	error(FATAL, string(STR_ERR_EXTENSION_GLASS_REQUIRES_EXTENSION_BUILDING_INDUSTRIES));
 	exit;
 }
 
@@ -122,5 +134,6 @@ cargotable {
 	SALT, CHLO, LYE_, H2__, // ext basic inorganic chemistry
 	CORE, COPR, CBLK, COAT,	// ext painting industries
 	MILK, // ext food industries
-	MNSP  // ext packaging industries
+	MNSP, // ext packaging industries
+	QLME, GLAS // ext glass
 }

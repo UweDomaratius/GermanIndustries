@@ -431,6 +431,7 @@ switch(FEAT_INDUSTRIES, SELF, brewery_switch_location_check_industry_distance,
 	    (industry_distance(INDUSTRY_ID_FARM) >= 32) &&
 	    (industry_distance(INDUSTRY_ID_GENERAL_STORE) >= 32) &&
 		(industry_distance(INDUSTRY_ID_HOTEL) >= 32) &&
+		(industry_distance(INDUSTRY_ID_GLASS_WORKS) >= 32) && 
 	    (industry_distance(INDUSTRY_ID_BREWERY) >= 16))]) {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;
@@ -451,8 +452,44 @@ switch(FEAT_INDUSTRIES, SELF, brewery_switch_produce,
 	brewery_produce;
 }
 
+produce(brewery_produce_ext_glass,
+	[GRAI: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 GLAS: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 ],
+	[FOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, brewery_switch_produce_ext_glass, 
+	[STORE_TEMP(incoming_cargo_waiting("GRAI"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 calculate_number_of_waiting_cargos(),
+	 
+	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
+	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
+	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (2-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("GLAS"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 
+	 // count number of optional cargos to set production limit
+	STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	// if no optional cargo available, limit production to 128t, with 1 cargo available it is 192t, with two there is no limit
+	STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 // use 5% of production amount as usage of optional stuff 
+	STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW1),
+	
+	store_debug_production_data()
+	 ])
+{
+	brewery_produce_ext_glass;
+}
+
+
 switch(FEAT_INDUSTRIES, SELF, brewery_switch_cargo_subtype, getbits(extra_callback_info2, 16, 8)) {
 	GRAI: switch_cargo_subtype;
+	GLAS: switch_cargo_subtype_white;
 	return 0x3800 + string(STR_EMPTY);
 }
 
@@ -466,7 +503,17 @@ switch(FEAT_INDUSTRIES, SELF, brewery_switch_update_last_served_date,
 	check_secondary_industry_closure();
 }
 
-if (param_extension_food_industries) {
+switch(FEAT_INDUSTRIES, SELF, brewery_switch_update_last_served_date_ext_glass,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("FOOD") != 0 || last_month_production("FOOD") != 0 || 
+		incoming_cargo_waiting("GRAI") != 0 || incoming_cargo_waiting("GLAS") != 0 ||
+		this_month_transported("FOOD") != 0 || last_month_transported("FOOD") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+if (param_extension_food_industries && !param_extension_glass) {
 	item(FEAT_INDUSTRIES, brewery, INDUSTRY_ID_BREWERY) {
 		property {
 			substitute: 0;
@@ -494,6 +541,40 @@ if (param_extension_food_industries) {
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           brewery_switch_location_check_industry_distance;
 			cargo_subtype_display:    brewery_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+
+if (param_extension_food_industries && param_extension_glass) {
+	item(FEAT_INDUSTRIES, brewery, INDUSTRY_ID_BREWERY) {
+		property {
+			substitute: 0;
+			map_colour: 197;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [brewery_tilelayout_1,brewery_tilelayout_2,brewery_tilelayout_3,brewery_tilelayout_4,brewery_tilelayout_5];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_BREWERY);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 50;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("GRAI"),accept_cargo("GLAS"),produce_cargo("FOOD",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_BREWERY));
+		}
+			
+		graphics {
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        brewery_switch_produce_ext_glass;
+			monthly_prod_change:      brewery_switch_update_last_served_date_ext_glass;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           brewery_switch_location_check_industry_distance;
+			cargo_subtype_display:    brewery_switch_cargo_subtype;
+			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO_ANY);
 			build_prod_change:        initialize_last_served_date;
 		}
 	}

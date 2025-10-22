@@ -33,6 +33,8 @@ STR_PARAM_EXT_FOOD_INDUSTRIES :Extension set "Food Industries"
 STR_PARAM_EXT_FOOD_INDUSTRIES_DESC :Adds more diverse food processing industries.
 STR_PARAM_EXT_PACKAGING_INDUSTRIES :Extension set "Packaging Industries"
 STR_PARAM_EXT_PACKAGING_INDUSTRIES_DESC :Adds additional packaging cargo to be delivered to industries producting food or goods.
+STR_PARAM_EXT_GLASS :Extension set "Glass production"
+STR_PARAM_EXT_GLASS_DESC :Adds industries and cargos related to the production of glass. Requires the extension Building industries to be activated.
 
 STR_TOWN    :{STRING}
 STR_STATION :{STRING} {STRING}
@@ -59,6 +61,7 @@ STR_CARGO_NAME_CHLORINE           :Chlorine
 STR_CARGO_NAME_COPPER             :Copper
 STR_CARGO_NAME_COPPER_ORE         :Copper Ore
 STR_CARGO_NAME_FISH               :Fish
+STR_CARGO_NAME_GLASS              :Glass
 STR_CARGO_NAME_HYDROGEN           :Hydrogen
 STR_CARGO_NAME_LIMESTONE          :Limestone
 STR_CARGO_NAME_LYE                :Lye
@@ -66,6 +69,7 @@ STR_CARGO_NAME_MILK               :Milk
 STR_CARGO_NAME_PACKAGING          :Packaging
 STR_CARGO_NAME_PAINT              :Paint
 STR_CARGO_NAME_PLASTICS           :Plastics
+STR_CARGO_NAME_QUICKLIME          :Quicklime
 STR_CARGO_NAME_SALT               :Salt
 STR_CARGO_NAME_SAND               :Sand
 STR_CARGO_NAME_TEXTILES           :Textiles
@@ -83,6 +87,7 @@ STR_QUANTITY_CHLORINE             :{WEIGHT} of chlorine
 STR_QUANTITY_COPPER               :{WEIGHT} of copper
 STR_QUANTITY_COPPER_ORE           :{WEIGHT} of copper ore
 STR_QUANTITY_FISH                 :{WEIGHT} of fish
+STR_QUANTITY_GLASS                :{WEIGHT} of glass
 STR_QUANTITY_GOODS                :{WEIGHT} of goods
 STR_QUANTITY_HYDROGEN             :{WEIGHT} of hydrogen
 STR_QUANTITY_LIMESTONE            :{WEIGHT} of limestone
@@ -92,6 +97,7 @@ STR_QUANTITY_OIL                  :{WEIGHT} of oil
 STR_QUANTITY_PACKAGING            :{WEIGHT} of packaging
 STR_QUANTITY_PAINT                :{WEIGHT} of paint
 STR_QUANTITY_PLASTICS             :{WEIGHT} of plastics
+STR_QUANTITY_QUICKLIME            :{WEIGHT} of quicklime
 STR_QUANTITY_SALT                 :{WEIGHT} of salt
 STR_QUANTITY_SAND                 :{WEIGHT} of sand
 STR_QUANTITY_TEXTILES             :{WEIGHT} of textiles
@@ -110,6 +116,7 @@ STR_CID_COPPER                    :{TINYFONT}COPR
 STR_CID_COPPER_ORE                :{TINYFONT}CORE
 STR_CID_FISH                      :{TINYFONT}FISH
 STR_CID_FOOD                      :{TINYFONT}FOOD
+STR_CID_GLASS                     :{TINYFONT}GLAS
 STR_CID_HYDROGEN                  :{TINYFONT}H2
 STR_CID_LIMESTONE                 :{TINYFONT}LIME
 STR_CID_LYE                       :{TINYFONT}LYE
@@ -119,6 +126,7 @@ STR_CID_MILK                      :{TINYFONT}MILK
 STR_CID_PACKAGING                 :{TINYFONT}PACK
 STR_CID_PAINT                     :{TINYFONT}COAT
 STR_CID_PLASTICS                  :{TINYFONT}PLAS
+STR_CID_QUICKLIME                 :{TINYFONT}QLME
 STR_CID_SALT                      :{TINYFONT}SALT
 STR_CID_SAND                      :{TINYFONT}SAND
 STR_CID_TEXTILES                  :{TINYFONT}TEXT
@@ -143,8 +151,10 @@ STR_IND_FISHING_GROUNDS      :Fishing Grounds
 STR_IND_FLOUR_MILL           :Flour Mill
 STR_IND_FURNITURE_FACTORY    :Furniture Factory
 STR_IND_GENERAL_STORE        :General Store
+STR_IND_GLASS_WORKS          :Glass Works
 STR_IND_HOTEL                :Hotel
 STR_IND_INTEGRATED_STEEL_MILL:Integrated Steel Mill
+STR_IND_LIME_KILN            :Lime Kiln
 STR_IND_LIMESTONE_MINE       :Limestone Mine
 STR_IND_PACKAGING_PLANT      :Packaging Plant
 STR_IND_PAINT_FACTORY        :Paint Factory
@@ -153,7 +163,7 @@ STR_IND_PLASTICS_PLANT       :Plastics Plant
 STR_IND_PORT                 :Port
 STR_IND_SALT_MINE            :Salt Mine
 STR_IND_SANDPIT              :Sand pit
-STR_IND_STOCKYARD            :Stockyard
+STR_IND_STOCKYARD            :Meatpacking Plant
 STR_IND_TEXTILE_MILL         :Textile Mill
 STR_IND_VEHICLE_DISTRIBUTOR  :Vehicle Distributor
 STR_IND_VEHICLE_FACTORY      :Vehicle Factory
@@ -180,9 +190,11 @@ STR_STATION_FOOD_PROCESSOR       :Food Processor
 STR_STATION_FOREST               :Forest
 STR_STATION_FURNITURE_FACTORY    :Furniture Factory
 STR_STATION_GENERAL_STORE        :General Store
+STR_STATION_GLASS_WORKS          :Glass Works
 STR_STATION_HOTEL                :Hotel
 STR_STATION_INTEGRATED_STEEL_MILL:Integrated Steel Mill
 STR_STATION_IRON_ORE_MINE        :Mining
+STR_STATION_LIME_KILN            :Lime Kiln
 STR_STATION_LIMESTONE_MINE       :Mining
 STR_STATION_OIL_REFINERY         :Refinery
 STR_STATION_OIL_RIG              :Oil Rig
@@ -234,3 +246,4 @@ STR_CARGO_SUBTYPE_DISPLAY_OPTIONAL_CARGO_AVAILABLE :{WHITE} ({CARGO_SHORT} in st
 STR_ERR_OPENTTD_VERSION:{ORANGE}E00:{TITLE} requires OpenTTD 14.0 or newer
 STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE :must be placed below the snow line.
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE :cannot be placed on steep slopes.
+STR_ERR_EXTENSION_GLASS_REQUIRES_EXTENSION_BUILDING_INDUSTRIES:Extension "Glass" requires Extension "Building Industries" to be activated.
