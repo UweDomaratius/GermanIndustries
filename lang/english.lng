@@ -35,6 +35,8 @@ STR_PARAM_EXT_PACKAGING_INDUSTRIES :Extension set "Packaging Industries"
 STR_PARAM_EXT_PACKAGING_INDUSTRIES_DESC :Adds additional packaging cargo to be delivered to industries producting food or goods.
 STR_PARAM_EXT_GLASS :Extension set "Glass production"
 STR_PARAM_EXT_GLASS_DESC :Adds industries and cargos related to the production of glass. Requires the extension Building industries to be activated.
+STR_PARAM_EXT_PAPER :Extension set "Paper production"
+STR_PARAM_EXT_PAPER_DESC :Adds industries that produce or require paper. Requires the extension Basic inorganic chemistry to be activated.
 
 STR_TOWN    :{STRING}
 STR_STATION :{STRING} {STRING}
@@ -201,10 +203,12 @@ STR_STATION_OIL_RIG              :Oil Rig
 STR_STATION_OIL_WELL             :Oil Wells
 STR_STATION_PACKAGING_PLANT      :Packaging Plant
 STR_STATION_PAINT_FACTORY        :Paint Factory
+STR_STATION_PAPER_MILL           :Paper Mill
 STR_STATION_PHARMACEUTICAL_PLANT :Pharmaceutical Plant
 STR_STATION_PLASTICS_PLANT       :Plastics Plant
 STR_STATION_PORT                 :Port
 STR_STATION_POWER_PLANT          :Powerplant
+STR_STATION_PRINTING_WORKS       :Printing Works
 STR_STATION_SALT_MINE            :Salt Mine
 STR_STATION_SANDPIT              :Sand Pit
 STR_STATION_SAWMILL              :Sawmill
@@ -247,3 +251,4 @@ STR_ERR_OPENTTD_VERSION:{ORANGE}E00:{TITLE} requires OpenTTD 14.0 or newer
 STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE :must be placed below the snow line.
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE :cannot be placed on steep slopes.
 STR_ERR_EXTENSION_GLASS_REQUIRES_EXTENSION_BUILDING_INDUSTRIES:Extension "Glass" requires Extension "Building Industries" to be activated.
+STR_ERR_EXTENSION_PAPER_REQUIRES_EXTENSION_BASIC_INORGANIC_CHEMISTRY:Extension "Paper" requires Extension "Basic inorganic chemistry" to be activated.

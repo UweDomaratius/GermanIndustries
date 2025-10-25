@@ -35,6 +35,8 @@ STR_PARAM_EXT_PACKAGING_INDUSTRIES :Erweiterung "Verpackungsindustrie"
 STR_PARAM_EXT_PACKAGING_INDUSTRIES_DESC :Fügt Verpackungen als Fracht hinzu, die zu Industrien geliefert werden müssen, welche Waren oder Nahrungsmittel herstellen.
 STR_PARAM_EXT_GLASS :Erweiterung "Glasindustrie"
 STR_PARAM_EXT_GLASS_DESC :Fügt Industrien und Frachten hinzu, die für die Glasproduktion relevant sind. Benötigt die Erweiterung Bauindustrie.
+STR_PARAM_EXT_PAPER :Erweiterung "Papierindustrie"
+STR_PARAM_EXT_PAPER_DESC :Fügt Industrien hinzu, die Papier produzieren bzw. benötigen. Benötigt die Erweiterung Grundlegende Anorganische Chemie.
 
 # Frachten
 STR_CARGO_NAME_BAUXITE            :Bauxit
@@ -156,10 +158,12 @@ STR_STATION_OIL_RIG              :Bohrplattform
 STR_STATION_OIL_WELL             :Ölquelle
 STR_STATION_PACKAGING_PLANT      :Verpackungsmittelfabrik
 STR_STATION_PAINT_FACTORY        :Farbenfabrik
+STR_STATION_PAPER_MILL           :Papierfabrik
 STR_STATION_PHARMACEUTICAL_PLANT :Arzneimittelfabrik
 STR_STATION_PLASTICS_PLANT       :Kunststofffabrik
 STR_STATION_PORT                 :Hafen
 STR_STATION_POWER_PLANT          :Kraftwerk
+STR_STATION_PRINTING_WORKS       :Druckerei
 STR_STATION_SALT_MINE            :Salzbergwerk
 STR_STATION_SANDPIT              :Sandgrube
 STR_STATION_SAWMILL              :Sägewerk
@@ -198,3 +202,4 @@ STR_ERR_OPENTTD_VERSION             :{ORANGE}E00: {TITLE} benötigt OpenTTD 14.0
 STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE :muss unterhalb der Schneegrenze platziert werden
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE :kann nicht auf steilen Hängen platziert werden
 STR_ERR_EXTENSION_GLASS_REQUIRES_EXTENSION_BUILDING_INDUSTRIES:Erweiterung "Glas" erfordert Erweiterung "Bauindustrie".
+STR_ERR_EXTENSION_PAPER_REQUIRES_EXTENSION_BASIC_INORGANIC_CHEMISTRY:Erweiterung "Papier" erfordert Erweiterung "Grundlegende anorganische Chemie".

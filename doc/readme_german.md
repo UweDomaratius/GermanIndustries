@@ -123,7 +123,7 @@ Das Set enthält einige grundlegende Industrien und Frachten. Diese sind im Folg
 
 [Eisenerz](#cargo_IORE) [Fahrzeuge](#cargo_VEHI) [Fisch](#cargo_FISH) [Getreide](#cargo_GRAI) [Holz](#cargo_WOOD) [Kohle](#cargo_COAL) [Kunststoffe](#cargo_PLAS) [Nahrungsmittel](#cargo_FOOD) [Passagiere](#cargo_PASS) [Post](#cargo_MAIL) [Sand](#cargo_SAND) [Schnittholz](#cargo_WDPR) [Stahl](#cargo_STEL) [Vieh](#cargo_LVST) [Waren](#cargo_GOOD) [Öl](#cargo_OIL_) 
 
-[Autofabrik](#industry_4) [Autohaus](#industry_12) [Bauernhof](#industry_14) [Bauhof](#industry_17) [Eisenerzbergwerk](#industry_23) [Fischgründe](#industry_26) [Hafen](#industry_28) [Hotel](#industry_32) [Integriertes Stahlwerk](#industry_33) [Kaufhaus](#industry_37) [Kohlebergwerk](#industry_38) [Kraftwerk](#industry_39) [Kunststofffabrik](#industry_40) [Laden](#industry_46) [Möbelfabrik](#industry_52) [Nahrungsmittelfabrik](#industry_57) [Sägewerk](#industry_70) [Wald](#industry_79) [Ölbohrinsel](#industry_82) [Ölquellen](#industry_83) 
+[Autofabrik](#industry_4) [Autohaus](#industry_12) [Bauernhof](#industry_14) [Bauhof](#industry_17) [Eisenerzbergwerk](#industry_25) [Fischgründe](#industry_28) [Hafen](#industry_30) [Hotel](#industry_34) [Integriertes Stahlwerk](#industry_35) [Kaufhaus](#industry_39) [Kohlebergwerk](#industry_40) [Kraftwerk](#industry_41) [Kunststofffabrik](#industry_42) [Laden](#industry_48) [Möbelfabrik](#industry_54) [Nahrungsmittelfabrik](#industry_59) [Sägewerk](#industry_73) [Wald](#industry_86) [Ölbohrinsel](#industry_89) [Ölquellen](#industry_90) 
 
 <img src="base_industry_chain_de.png" alt="Die grundlegende Industriekette">
 
@@ -141,7 +141,7 @@ Dieses Bild zeigt die Interaktionen zwischen den unterschiedlichen Erweiterungen
 Eine Fracht in einer farbigen Box ist Teil der Erweiterung der gleichen Farbe, wenn die Erweiterung also nicht aktiv ist, ist auch die Fracht nicht aktiv.
 Für jede Erwtierung gibt es ein zusätzliches Diagramm, welches die Verbindungen zwischen den Frachten und Industrien detailliert zeigt.
 
-Das Set enthält 8 Erweiterungen, die nachfolgend aufgelistet sind.
+Das Set enthält 9 Erweiterungen, die nachfolgend aufgelistet sind.
 
 <a name="extension_0"></a>
 ### Aluminium
@@ -170,11 +170,12 @@ Farbe in Industriediagrammen auf dieser Seite:<span style="background-color:#d8d
 * [Autofabrik](#industry_7)
 * [Autofabrik](#industry_9)
 * [Autofabrik](#industry_11)
-* [Hafen](#industry_29)
 * [Hafen](#industry_31)
-* [Verpackungsmittelfabrik](#industry_74)
-* [Verpackungsmittelfabrik](#industry_76)
-* [Verpackungsmittelfabrik](#industry_76)
+* [Hafen](#industry_33)
+* [Verpackungsmittelfabrik](#industry_77)
+* [Verpackungsmittelfabrik](#industry_79)
+* [Verpackungsmittelfabrik](#industry_81)
+* [Verpackungsmittelfabrik](#industry_83)
 
 
 <img src="industry_chain_extension_aluminium_de.png" alt="Industrieketten für Erweiterung Aluminium">
@@ -195,20 +196,20 @@ Farbe in Industriediagrammen auf dieser Seite:<span style="background-color:#e8b
 
 ### Neue Industrien
 
-* [Kalksteinbergwerk](#industry_36)
-* [Sandgrube](#industry_67)
-* [Zementfabrik](#industry_80)
-* [Ziegelei](#industry_81)
+* [Kalksteinbergwerk](#industry_38)
+* [Sandgrube](#industry_70)
+* [Zementfabrik](#industry_87)
+* [Ziegelei](#industry_88)
 
 
 #### Modifizierte Industrien
 
 * [Bauhof](#industry_16)
-* [Farbenfabrik](#industry_25)
-* [Kalksteinbergwerk](#industry_36)
-* [Sandgrube](#industry_67)
-* [Zementfabrik](#industry_80)
-* [Ziegelei](#industry_81)
+* [Farbenfabrik](#industry_27)
+* [Kalksteinbergwerk](#industry_38)
+* [Sandgrube](#industry_70)
+* [Zementfabrik](#industry_87)
+* [Ziegelei](#industry_88)
 
 
 <img src="industry_chain_extension_building_industries_de.png" alt="Industrieketten für Erweiterung Bauindustrie">
@@ -230,11 +231,11 @@ Farbe in Industriediagrammen auf dieser Seite:<span style="background-color:#bc5
 
 ### Neue Industrien
 
-* [Farbenfabrik](#industry_24)
-* [Farbenfabrik](#industry_25)
-* [Kupfererzbergwerk](#industry_44)
-* [Kupferhütte](#industry_45)
-* [Rußfabrik](#industry_65)
+* [Farbenfabrik](#industry_26)
+* [Farbenfabrik](#industry_27)
+* [Kupfererzbergwerk](#industry_46)
+* [Kupferhütte](#industry_47)
+* [Rußfabrik](#industry_68)
 
 
 #### Modifizierte Industrien
@@ -243,16 +244,16 @@ Farbe in Industriediagrammen auf dieser Seite:<span style="background-color:#bc5
 * [Autofabrik](#industry_7)
 * [Autofabrik](#industry_10)
 * [Autofabrik](#industry_11)
-* [Farbenfabrik](#industry_24)
-* [Farbenfabrik](#industry_25)
-* [Hafen](#industry_30)
-* [Hafen](#industry_31)
-* [Kunststofffabrik](#industry_42)
-* [Kunststofffabrik](#industry_43)
-* [Kupfererzbergwerk](#industry_44)
-* [Kupferhütte](#industry_45)
-* [Rußfabrik](#industry_65)
-* [Textilfabrik](#industry_72)
+* [Farbenfabrik](#industry_26)
+* [Farbenfabrik](#industry_27)
+* [Hafen](#industry_32)
+* [Hafen](#industry_33)
+* [Kunststofffabrik](#industry_44)
+* [Kunststofffabrik](#industry_45)
+* [Kupfererzbergwerk](#industry_46)
+* [Kupferhütte](#industry_47)
+* [Rußfabrik](#industry_68)
+* [Textilfabrik](#industry_75)
 
 
 <img src="industry_chain_extension_painting_industries_de.png" alt="Industrieketten für Erweiterung Farbindustrie">
@@ -272,8 +273,8 @@ Farbe in Industriediagrammen auf dieser Seite:<span style="background-color:#584
 
 ### Neue Industrien
 
-* [Glasfabrik](#industry_27)
-* [Kalkofen](#industry_35)
+* [Glasfabrik](#industry_29)
+* [Kalkofen](#industry_37)
 
 
 #### Modifizierte Industrien
@@ -283,10 +284,13 @@ Farbe in Industriediagrammen auf dieser Seite:<span style="background-color:#584
 * [Autofabrik](#industry_10)
 * [Autofabrik](#industry_11)
 * [Brauerei](#industry_21)
-* [Glasfabrik](#industry_27)
-* [Integriertes Stahlwerk](#industry_34)
-* [Kalkofen](#industry_35)
-* [Verpackungsmittelfabrik](#industry_75)
+* [Glasfabrik](#industry_29)
+* [Integriertes Stahlwerk](#industry_36)
+* [Kalkofen](#industry_37)
+* [Verpackungsmittelfabrik](#industry_78)
+* [Verpackungsmittelfabrik](#industry_79)
+* [Verpackungsmittelfabrik](#industry_82)
+* [Verpackungsmittelfabrik](#industry_83)
 
 
 <img src="industry_chain_extension_glass_de.png" alt="Industrieketten für Erweiterung Glas">
@@ -311,7 +315,7 @@ Farbe in Industriediagrammen auf dieser Seite:<span style="background-color:#b8d
 * [Arzneimittelfabrik](#industry_2)
 * [Arzneimittelfabrik](#industry_3)
 * [Chloralkali Elektrolyseanlage](#industry_22)
-* [Salzbergwerk](#industry_66)
+* [Salzbergwerk](#industry_69)
 
 
 #### Modifizierte Industrien
@@ -320,15 +324,15 @@ Farbe in Industriediagrammen auf dieser Seite:<span style="background-color:#b8d
 * [Arzneimittelfabrik](#industry_2)
 * [Arzneimittelfabrik](#industry_3)
 * [Chloralkali Elektrolyseanlage](#industry_22)
-* [Kunststofffabrik](#industry_41)
 * [Kunststofffabrik](#industry_43)
-* [Molkerei](#industry_48)
+* [Kunststofffabrik](#industry_45)
 * [Molkerei](#industry_50)
-* [Nahrungsmittelfabrik](#industry_58)
+* [Molkerei](#industry_52)
 * [Nahrungsmittelfabrik](#industry_60)
-* [Nahrungsmittelfabrik](#industry_63)
-* [Nahrungsmittelfabrik](#industry_64)
-* [Salzbergwerk](#industry_66)
+* [Nahrungsmittelfabrik](#industry_62)
+* [Nahrungsmittelfabrik](#industry_65)
+* [Nahrungsmittelfabrik](#industry_66)
+* [Salzbergwerk](#industry_69)
 
 
 <img src="industry_chain_extension_basic_inorganic_chemistry_de.png" alt="Industrieketten für Erweiterung Grundlegende Anorganische Chemie">
@@ -349,16 +353,16 @@ Farbe in Industriediagrammen auf dieser Seite:<span style="background-color:#5c9
 
 * [Brauerei](#industry_20)
 * [Brauerei](#industry_21)
-* [Molkerei](#industry_47)
-* [Molkerei](#industry_48)
 * [Molkerei](#industry_49)
 * [Molkerei](#industry_50)
-* [Mühle](#industry_55)
-* [Mühle](#industry_56)
-* [Schlachthof](#industry_68)
-* [Schlachthof](#industry_69)
-* [Viehzucht](#industry_77)
-* [Viehzucht](#industry_78)
+* [Molkerei](#industry_51)
+* [Molkerei](#industry_52)
+* [Mühle](#industry_57)
+* [Mühle](#industry_58)
+* [Schlachthof](#industry_71)
+* [Schlachthof](#industry_72)
+* [Viehzucht](#industry_84)
+* [Viehzucht](#industry_85)
 
 
 #### Modifizierte Industrien
@@ -366,25 +370,57 @@ Farbe in Industriediagrammen auf dieser Seite:<span style="background-color:#5c9
 * [Bauernhof](#industry_15)
 * [Brauerei](#industry_20)
 * [Brauerei](#industry_21)
-* [Molkerei](#industry_47)
-* [Molkerei](#industry_48)
 * [Molkerei](#industry_49)
 * [Molkerei](#industry_50)
-* [Mühle](#industry_55)
-* [Mühle](#industry_56)
-* [Nahrungsmittelfabrik](#industry_59)
-* [Nahrungsmittelfabrik](#industry_60)
+* [Molkerei](#industry_51)
+* [Molkerei](#industry_52)
+* [Mühle](#industry_57)
+* [Mühle](#industry_58)
+* [Nahrungsmittelfabrik](#industry_61)
 * [Nahrungsmittelfabrik](#industry_62)
 * [Nahrungsmittelfabrik](#industry_64)
-* [Schlachthof](#industry_68)
-* [Schlachthof](#industry_69)
-* [Viehzucht](#industry_77)
-* [Viehzucht](#industry_78)
+* [Nahrungsmittelfabrik](#industry_66)
+* [Schlachthof](#industry_71)
+* [Schlachthof](#industry_72)
+* [Viehzucht](#industry_84)
+* [Viehzucht](#industry_85)
 
 
 <img src="industry_chain_extension_food_industries_de.png" alt="Industrieketten für Erweiterung Lebensmittelindustrie">
 
 <a name="extension_6"></a>
+### Papier
+
+Papier ist ein allgegenwärtiges Material im täglichen Leben. Die Erweiterung fügt Frachten und Industrien hinzu, die für die Herstellung von Papier relevant sind und verändert andere Industrien, so dass sie Papier, in erster Linie für Verpackungen, benötigen. 
+
+Farbe in Industriediagrammen auf dieser Seite:<span style="background-color:#fcfcc0;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+#### Frachten
+
+* [Papier](#cargo_PAPR)
+
+
+### Neue Industrien
+
+* [Druckerei](#industry_23)
+* [Druckerei](#industry_24)
+* [Papiermühle](#industry_67)
+
+
+#### Modifizierte Industrien
+
+* [Druckerei](#industry_23)
+* [Druckerei](#industry_24)
+* [Papiermühle](#industry_67)
+* [Verpackungsmittelfabrik](#industry_80)
+* [Verpackungsmittelfabrik](#industry_81)
+* [Verpackungsmittelfabrik](#industry_82)
+* [Verpackungsmittelfabrik](#industry_83)
+
+
+<img src="industry_chain_extension_paper_de.png" alt="Industrieketten für Erweiterung Papier">
+
+<a name="extension_7"></a>
 ### Textilindustrie
 
 Die Produktion von Garnen und Stoffen zur Herstellung von Kleidung war eine der ersten Kulturleistungen der Menscheit. Rohstoffe für die Produktion umfassen Wolle von Schafen und anderen Tieren als auch verschiedenste Pflanzenfasern wie Baumwolle. Innovationen der chemischen Industrie im 20. Jahrhundert brachten zusätzlich Kunstfasern wie polyester hervor. 
@@ -403,8 +439,8 @@ Farbe in Industriediagrammen auf dieser Seite:<span style="background-color:#d49
 
 * [Bekleidungsfabrik](#industry_18)
 * [Bekleidungsfabrik](#industry_19)
-* [Textilfabrik](#industry_71)
-* [Textilfabrik](#industry_72)
+* [Textilfabrik](#industry_74)
+* [Textilfabrik](#industry_75)
 
 
 #### Modifizierte Industrien
@@ -412,16 +448,16 @@ Farbe in Industriediagrammen auf dieser Seite:<span style="background-color:#d49
 * [Bauernhof](#industry_13)
 * [Bekleidungsfabrik](#industry_18)
 * [Bekleidungsfabrik](#industry_19)
-* [Möbelfabrik](#industry_51)
 * [Möbelfabrik](#industry_53)
-* [Textilfabrik](#industry_71)
-* [Textilfabrik](#industry_72)
-* [Viehzucht](#industry_78)
+* [Möbelfabrik](#industry_55)
+* [Textilfabrik](#industry_74)
+* [Textilfabrik](#industry_75)
+* [Viehzucht](#industry_85)
 
 
 <img src="industry_chain_extension_textile_industries_de.png" alt="Industrieketten für Erweiterung Textilindustrie">
 
-<a name="extension_7"></a>
+<a name="extension_8"></a>
 ### Verpackungsmittelindustrie
 
 Die Verpackungsmittelindustrie produziert alle Arten von Behältern und Verpackungen, seien es Kartons oder Getränkedosen. Diese Erweiterung fügt damit ein zusätzliches logistisches Element für die Güter- und Nahrungsmittelproduktion hinzu. 
@@ -435,30 +471,39 @@ Farbe in Industriediagrammen auf dieser Seite:<span style="background-color:#804
 
 ### Neue Industrien
 
-* [Verpackungsmittelfabrik](#industry_73)
-* [Verpackungsmittelfabrik](#industry_74)
-* [Verpackungsmittelfabrik](#industry_75)
 * [Verpackungsmittelfabrik](#industry_76)
+* [Verpackungsmittelfabrik](#industry_77)
+* [Verpackungsmittelfabrik](#industry_78)
+* [Verpackungsmittelfabrik](#industry_79)
+* [Verpackungsmittelfabrik](#industry_80)
+* [Verpackungsmittelfabrik](#industry_81)
+* [Verpackungsmittelfabrik](#industry_82)
+* [Verpackungsmittelfabrik](#industry_83)
 
 
 #### Modifizierte Industrien
 
 * [Arzneimittelfabrik](#industry_3)
 * [Bekleidungsfabrik](#industry_19)
-* [Molkerei](#industry_49)
-* [Molkerei](#industry_50)
-* [Möbelfabrik](#industry_53)
-* [Möbelfabrik](#industry_54)
-* [Mühle](#industry_56)
-* [Nahrungsmittelfabrik](#industry_61)
-* [Nahrungsmittelfabrik](#industry_62)
+* [Druckerei](#industry_24)
+* [Molkerei](#industry_51)
+* [Molkerei](#industry_52)
+* [Möbelfabrik](#industry_55)
+* [Möbelfabrik](#industry_56)
+* [Mühle](#industry_58)
 * [Nahrungsmittelfabrik](#industry_63)
 * [Nahrungsmittelfabrik](#industry_64)
-* [Schlachthof](#industry_69)
-* [Verpackungsmittelfabrik](#industry_73)
-* [Verpackungsmittelfabrik](#industry_74)
-* [Verpackungsmittelfabrik](#industry_75)
+* [Nahrungsmittelfabrik](#industry_65)
+* [Nahrungsmittelfabrik](#industry_66)
+* [Schlachthof](#industry_72)
 * [Verpackungsmittelfabrik](#industry_76)
+* [Verpackungsmittelfabrik](#industry_77)
+* [Verpackungsmittelfabrik](#industry_78)
+* [Verpackungsmittelfabrik](#industry_79)
+* [Verpackungsmittelfabrik](#industry_80)
+* [Verpackungsmittelfabrik](#industry_81)
+* [Verpackungsmittelfabrik](#industry_82)
+* [Verpackungsmittelfabrik](#industry_83)
 
 
 <img src="industry_chain_extension_packaging_industries_de.png" alt="Industrieketten für Erweiterung Verpackungsmittelindustrie">
@@ -466,7 +511,7 @@ Farbe in Industriediagrammen auf dieser Seite:<span style="background-color:#804
 
 ## Cargos
 
-Das Set enthält 35 Frachten, die nachfolgend aufgelistet sind.
+Das Set enthält 36 Frachten, die nachfolgend aufgelistet sind.
 
 <a name="cargo_ALUM"></a>
 ### Aluminium
@@ -487,8 +532,10 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#d8d8d8;
 | [Aluhütte](#industry_1) | [Autofabrik](#industry_7) |
 |  | [Autofabrik](#industry_9) |
 |  | [Autofabrik](#industry_11) |
-|  | [Verpackungsmittelfabrik](#industry_74) |
-|  | [Verpackungsmittelfabrik](#industry_76) |
+|  | [Verpackungsmittelfabrik](#industry_77) |
+|  | [Verpackungsmittelfabrik](#industry_79) |
+|  | [Verpackungsmittelfabrik](#industry_81) |
+|  | [Verpackungsmittelfabrik](#industry_83) |
 
 <a name="cargo_AORE"></a>
 ### Bauxit
@@ -505,8 +552,8 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#541c10;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Hafen](#industry_29) | [Aluhütte](#industry_0) |
-| [Hafen](#industry_31) | [Aluhütte](#industry_1) |
+| [Hafen](#industry_31) | [Aluhütte](#industry_0) |
+| [Hafen](#industry_33) | [Aluhütte](#industry_1) |
 
 <a name="cargo_QLME"></a>
 ### Branntkalk
@@ -523,8 +570,8 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#fcfcc0;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Kalkofen](#industry_35) | [Glasfabrik](#industry_27) |
-|  | [Integriertes Stahlwerk](#industry_34) |
+| [Kalkofen](#industry_37) | [Glasfabrik](#industry_29) |
+|  | [Integriertes Stahlwerk](#industry_36) |
 
 <a name="cargo_CHLO"></a>
 ### Chlor
@@ -543,8 +590,9 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#b8dcc8;
 | -- | -- |
 | [Chloralkali Elektrolyseanlage](#industry_22) | [Arzneimittelfabrik](#industry_2) |
 |  | [Arzneimittelfabrik](#industry_3) |
-|  | [Kunststofffabrik](#industry_41) |
 |  | [Kunststofffabrik](#industry_43) |
+|  | [Kunststofffabrik](#industry_45) |
+|  | [Papiermühle](#industry_67) |
 
 <a name="cargo_IORE"></a>
 ### Eisenerz
@@ -561,11 +609,11 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#fc0000;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Eisenerzbergwerk](#industry_23) | [Farbenfabrik](#industry_24) |
-| [Hafen](#industry_28) | [Farbenfabrik](#industry_25) |
-| [Hafen](#industry_29) | [Integriertes Stahlwerk](#industry_33) |
-| [Hafen](#industry_30) | [Integriertes Stahlwerk](#industry_34) |
-| [Hafen](#industry_31) |  |
+| [Eisenerzbergwerk](#industry_25) | [Farbenfabrik](#industry_26) |
+| [Hafen](#industry_30) | [Farbenfabrik](#industry_27) |
+| [Hafen](#industry_31) | [Integriertes Stahlwerk](#industry_35) |
+| [Hafen](#industry_32) | [Integriertes Stahlwerk](#industry_36) |
+| [Hafen](#industry_33) |  |
 
 <a name="cargo_VEHI"></a>
 ### Fahrzeuge
@@ -583,10 +631,10 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#bc546c;
 | Produziert von | Benötigt von |
 | -- | -- |
 | [Autofabrik](#industry_4) | [Autohaus](#industry_12) |
-| [Autofabrik](#industry_5) | [Hafen](#industry_28) |
-| [Autofabrik](#industry_6) | [Hafen](#industry_29) |
-| [Autofabrik](#industry_7) | [Hafen](#industry_30) |
-| [Autofabrik](#industry_8) | [Hafen](#industry_31) |
+| [Autofabrik](#industry_5) | [Hafen](#industry_30) |
+| [Autofabrik](#industry_6) | [Hafen](#industry_31) |
+| [Autofabrik](#industry_7) | [Hafen](#industry_32) |
+| [Autofabrik](#industry_8) | [Hafen](#industry_33) |
 | [Autofabrik](#industry_9) |  |
 | [Autofabrik](#industry_10) |  |
 | [Autofabrik](#industry_11) |  |
@@ -606,13 +654,13 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#bc546c;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Farbenfabrik](#industry_24) | [Autofabrik](#industry_6) |
-| [Farbenfabrik](#industry_25) | [Autofabrik](#industry_7) |
+| [Farbenfabrik](#industry_26) | [Autofabrik](#industry_6) |
+| [Farbenfabrik](#industry_27) | [Autofabrik](#industry_7) |
 |  | [Autofabrik](#industry_10) |
 |  | [Autofabrik](#industry_11) |
-|  | [Kunststofffabrik](#industry_42) |
-|  | [Kunststofffabrik](#industry_43) |
-|  | [Textilfabrik](#industry_72) |
+|  | [Kunststofffabrik](#industry_44) |
+|  | [Kunststofffabrik](#industry_45) |
+|  | [Textilfabrik](#industry_75) |
 
 <a name="cargo_FISH"></a>
 ### Fisch
@@ -627,14 +675,14 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#8c68fc;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Fischgründe](#industry_26) | [Nahrungsmittelfabrik](#industry_57) |
-|  | [Nahrungsmittelfabrik](#industry_58) |
-|  | [Nahrungsmittelfabrik](#industry_59) |
+| [Fischgründe](#industry_28) | [Nahrungsmittelfabrik](#industry_59) |
 |  | [Nahrungsmittelfabrik](#industry_60) |
 |  | [Nahrungsmittelfabrik](#industry_61) |
 |  | [Nahrungsmittelfabrik](#industry_62) |
 |  | [Nahrungsmittelfabrik](#industry_63) |
 |  | [Nahrungsmittelfabrik](#industry_64) |
+|  | [Nahrungsmittelfabrik](#industry_65) |
+|  | [Nahrungsmittelfabrik](#industry_66) |
 
 <a name="cargo_GRAI"></a>
 ### Getreide
@@ -651,13 +699,13 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#fcfc00;
 | -- | -- |
 | [Bauernhof](#industry_13) | [Brauerei](#industry_20) |
 | [Bauernhof](#industry_14) | [Brauerei](#industry_21) |
-| [Bauernhof](#industry_15) | [Mühle](#industry_55) |
-|  | [Mühle](#industry_56) |
-|  | [Nahrungsmittelfabrik](#industry_57) |
-|  | [Nahrungsmittelfabrik](#industry_58) |
-|  | [Nahrungsmittelfabrik](#industry_61) |
+| [Bauernhof](#industry_15) | [Mühle](#industry_57) |
+|  | [Mühle](#industry_58) |
+|  | [Nahrungsmittelfabrik](#industry_59) |
+|  | [Nahrungsmittelfabrik](#industry_60) |
 |  | [Nahrungsmittelfabrik](#industry_63) |
-|  | [Viehzucht](#industry_78) |
+|  | [Nahrungsmittelfabrik](#industry_65) |
+|  | [Viehzucht](#industry_85) |
 
 <a name="cargo_GLAS"></a>
 ### Glas
@@ -676,11 +724,15 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#5840ac;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Glasfabrik](#industry_27) | [Autofabrik](#industry_8) |
+| [Glasfabrik](#industry_29) | [Autofabrik](#industry_8) |
 |  | [Autofabrik](#industry_9) |
 |  | [Autofabrik](#industry_10) |
 |  | [Autofabrik](#industry_11) |
 |  | [Brauerei](#industry_21) |
+|  | [Verpackungsmittelfabrik](#industry_78) |
+|  | [Verpackungsmittelfabrik](#industry_79) |
+|  | [Verpackungsmittelfabrik](#industry_82) |
+|  | [Verpackungsmittelfabrik](#industry_83) |
 
 <a name="cargo_WOOD"></a>
 ### Holz
@@ -697,7 +749,8 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#74581c;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Wald](#industry_79) | [Sägewerk](#industry_70) |
+| [Wald](#industry_86) | [Papiermühle](#industry_67) |
+|  | [Sägewerk](#industry_73) |
 
 <a name="cargo_LIME"></a>
 ### Kalkstein
@@ -714,9 +767,9 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#7044a8;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Kalksteinbergwerk](#industry_36) | [Farbenfabrik](#industry_25) |
-|  | [Kalkofen](#industry_35) |
-|  | [Zementfabrik](#industry_80) |
+| [Kalksteinbergwerk](#industry_38) | [Farbenfabrik](#industry_27) |
+|  | [Kalkofen](#industry_37) |
+|  | [Zementfabrik](#industry_87) |
 
 <a name="cargo_COAL"></a>
 ### Kohle
@@ -733,11 +786,11 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#626562;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Hafen](#industry_28) | [Integriertes Stahlwerk](#industry_33) |
-| [Hafen](#industry_29) | [Integriertes Stahlwerk](#industry_34) |
-| [Hafen](#industry_30) | [Kraftwerk](#industry_39) |
-| [Hafen](#industry_31) | [Rußfabrik](#industry_65) |
-| [Kohlebergwerk](#industry_38) | [Ziegelei](#industry_81) |
+| [Hafen](#industry_30) | [Integriertes Stahlwerk](#industry_35) |
+| [Hafen](#industry_31) | [Integriertes Stahlwerk](#industry_36) |
+| [Hafen](#industry_32) | [Kraftwerk](#industry_41) |
+| [Hafen](#industry_33) | [Rußfabrik](#industry_68) |
+| [Kohlebergwerk](#industry_40) | [Ziegelei](#industry_88) |
 
 <a name="cargo_PLAS"></a>
 ### Kunststoffe
@@ -754,24 +807,28 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#e8d0fc;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Kunststofffabrik](#industry_40) | [Autofabrik](#industry_4) |
-| [Kunststofffabrik](#industry_41) | [Autofabrik](#industry_5) |
-| [Kunststofffabrik](#industry_42) | [Autofabrik](#industry_6) |
-| [Kunststofffabrik](#industry_43) | [Autofabrik](#industry_7) |
+| [Kunststofffabrik](#industry_42) | [Autofabrik](#industry_4) |
+| [Kunststofffabrik](#industry_43) | [Autofabrik](#industry_5) |
+| [Kunststofffabrik](#industry_44) | [Autofabrik](#industry_6) |
+| [Kunststofffabrik](#industry_45) | [Autofabrik](#industry_7) |
 |  | [Autofabrik](#industry_8) |
 |  | [Autofabrik](#industry_9) |
 |  | [Autofabrik](#industry_10) |
 |  | [Autofabrik](#industry_11) |
-|  | [Möbelfabrik](#industry_51) |
-|  | [Möbelfabrik](#industry_52) |
 |  | [Möbelfabrik](#industry_53) |
 |  | [Möbelfabrik](#industry_54) |
-|  | [Textilfabrik](#industry_71) |
-|  | [Textilfabrik](#industry_72) |
-|  | [Verpackungsmittelfabrik](#industry_73) |
-|  | [Verpackungsmittelfabrik](#industry_74) |
-|  | [Verpackungsmittelfabrik](#industry_75) |
+|  | [Möbelfabrik](#industry_55) |
+|  | [Möbelfabrik](#industry_56) |
+|  | [Textilfabrik](#industry_74) |
+|  | [Textilfabrik](#industry_75) |
 |  | [Verpackungsmittelfabrik](#industry_76) |
+|  | [Verpackungsmittelfabrik](#industry_77) |
+|  | [Verpackungsmittelfabrik](#industry_78) |
+|  | [Verpackungsmittelfabrik](#industry_79) |
+|  | [Verpackungsmittelfabrik](#industry_80) |
+|  | [Verpackungsmittelfabrik](#industry_81) |
+|  | [Verpackungsmittelfabrik](#industry_82) |
+|  | [Verpackungsmittelfabrik](#industry_83) |
 
 <a name="cargo_COPR"></a>
 ### Kupfer
@@ -788,8 +845,8 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#8c4c40;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Kupferhütte](#industry_45) | [Farbenfabrik](#industry_24) |
-|  | [Farbenfabrik](#industry_25) |
+| [Kupferhütte](#industry_47) | [Farbenfabrik](#industry_26) |
+|  | [Farbenfabrik](#industry_27) |
 
 <a name="cargo_CORE"></a>
 ### Kupfererz
@@ -808,9 +865,9 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#501c04;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Hafen](#industry_30) | [Kupferhütte](#industry_45) |
-| [Hafen](#industry_31) |  |
-| [Kupfererzbergwerk](#industry_44) |  |
+| [Hafen](#industry_32) | [Kupferhütte](#industry_47) |
+| [Hafen](#industry_33) |  |
+| [Kupfererzbergwerk](#industry_46) |  |
 
 <a name="cargo_MILK"></a>
 ### Milch
@@ -827,10 +884,10 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#e0f4fc;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Viehzucht](#industry_77) | [Molkerei](#industry_47) |
-| [Viehzucht](#industry_78) | [Molkerei](#industry_48) |
-|  | [Molkerei](#industry_49) |
-|  | [Molkerei](#industry_50) |
+| [Viehzucht](#industry_84) | [Molkerei](#industry_49) |
+| [Viehzucht](#industry_85) | [Molkerei](#industry_50) |
+|  | [Molkerei](#industry_51) |
+|  | [Molkerei](#industry_52) |
 
 <a name="cargo_FOOD"></a>
 ### Nahrungsmittel
@@ -845,24 +902,24 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#a00000;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Brauerei](#industry_20) | [Hotel](#industry_32) |
-| [Brauerei](#industry_21) | [Laden](#industry_46) |
-| [Molkerei](#industry_47) |  |
-| [Molkerei](#industry_48) |  |
+| [Brauerei](#industry_20) | [Hotel](#industry_34) |
+| [Brauerei](#industry_21) | [Laden](#industry_48) |
 | [Molkerei](#industry_49) |  |
 | [Molkerei](#industry_50) |  |
-| [Mühle](#industry_55) |  |
-| [Mühle](#industry_56) |  |
-| [Nahrungsmittelfabrik](#industry_57) |  |
-| [Nahrungsmittelfabrik](#industry_58) |  |
+| [Molkerei](#industry_51) |  |
+| [Molkerei](#industry_52) |  |
+| [Mühle](#industry_57) |  |
+| [Mühle](#industry_58) |  |
 | [Nahrungsmittelfabrik](#industry_59) |  |
 | [Nahrungsmittelfabrik](#industry_60) |  |
 | [Nahrungsmittelfabrik](#industry_61) |  |
 | [Nahrungsmittelfabrik](#industry_62) |  |
 | [Nahrungsmittelfabrik](#industry_63) |  |
 | [Nahrungsmittelfabrik](#industry_64) |  |
-| [Schlachthof](#industry_68) |  |
-| [Schlachthof](#industry_69) |  |
+| [Nahrungsmittelfabrik](#industry_65) |  |
+| [Nahrungsmittelfabrik](#industry_66) |  |
+| [Schlachthof](#industry_71) |  |
+| [Schlachthof](#industry_72) |  |
 
 <a name="cargo_LYE_"></a>
 ### Natronlauge
@@ -880,12 +937,35 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#78a488;
 | Produziert von | Benötigt von |
 | -- | -- |
 | [Chloralkali Elektrolyseanlage](#industry_22) | [Aluhütte](#industry_1) |
-|  | [Molkerei](#industry_48) |
 |  | [Molkerei](#industry_50) |
-|  | [Nahrungsmittelfabrik](#industry_58) |
+|  | [Molkerei](#industry_52) |
 |  | [Nahrungsmittelfabrik](#industry_60) |
-|  | [Nahrungsmittelfabrik](#industry_63) |
-|  | [Nahrungsmittelfabrik](#industry_64) |
+|  | [Nahrungsmittelfabrik](#industry_62) |
+|  | [Nahrungsmittelfabrik](#industry_65) |
+|  | [Nahrungsmittelfabrik](#industry_66) |
+|  | [Papiermühle](#industry_67) |
+
+<a name="cargo_PAPR"></a>
+### Papier
+
+Papier besteht aus getrockneten Zellulosefasern und ist seit dem Altertum bekannt. Damals schrieb man bereits auf Papyrus. Es dauerte jedoch bis zum 19. Jahrhundert, um dank der Fortschritte der chemischen Forschung zu verstehen, wie man Zellulose aus Holzfasern gewinnen kann. Dies erlaubte eine industrielle Massenfertigung von allen möglichen Papiersorten. Heute ist Papier omnipräsent, vom hochwertigem Briefpaper über das weitverbreitete Papier für den Drucker im Büro, dünneres Papier für Zeitungsdruck, stabilere Pappe für Verpackungen bis hin zu Toilettenpapier. 
+
+Eintrag in der Frachttabelle: PAPR
+
+Teil der Erweiterung: [Papier](#extension_6)
+
+Frachtklassen: Stückgut
+
+Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#b8b8b8;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+| Produziert von | Benötigt von |
+| -- | -- |
+| [Papiermühle](#industry_67) | [Druckerei](#industry_23) |
+|  | [Druckerei](#industry_24) |
+|  | [Verpackungsmittelfabrik](#industry_80) |
+|  | [Verpackungsmittelfabrik](#industry_81) |
+|  | [Verpackungsmittelfabrik](#industry_82) |
+|  | [Verpackungsmittelfabrik](#industry_83) |
 
 <a name="cargo_PASS"></a>
 ### Passagiere
@@ -900,8 +980,8 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#80c4fc;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Hotel](#industry_32) | [Hotel](#industry_32) |
-| [Ölbohrinsel](#industry_82) | [Ölbohrinsel](#industry_82) |
+| [Hotel](#industry_34) | [Hotel](#industry_34) |
+| [Ölbohrinsel](#industry_89) | [Ölbohrinsel](#industry_89) |
 
 <a name="cargo_MAIL"></a>
 ### Post
@@ -932,8 +1012,8 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#343c48;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Rußfabrik](#industry_65) | [Farbenfabrik](#industry_24) |
-|  | [Farbenfabrik](#industry_25) |
+| [Rußfabrik](#industry_68) | [Farbenfabrik](#industry_26) |
+|  | [Farbenfabrik](#industry_27) |
 
 <a name="cargo_SALT"></a>
 ### Salz
@@ -950,11 +1030,11 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#d4d4e0;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Salzbergwerk](#industry_66) | [Chloralkali Elektrolyseanlage](#industry_22) |
-|  | [Nahrungsmittelfabrik](#industry_58) |
+| [Salzbergwerk](#industry_69) | [Chloralkali Elektrolyseanlage](#industry_22) |
 |  | [Nahrungsmittelfabrik](#industry_60) |
-|  | [Nahrungsmittelfabrik](#industry_63) |
-|  | [Nahrungsmittelfabrik](#industry_64) |
+|  | [Nahrungsmittelfabrik](#industry_62) |
+|  | [Nahrungsmittelfabrik](#industry_65) |
+|  | [Nahrungsmittelfabrik](#industry_66) |
 
 <a name="cargo_SAND"></a>
 ### Sand
@@ -969,9 +1049,9 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#e8b810;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Sandgrube](#industry_67) | [Bauhof](#industry_16) |
-|  | [Glasfabrik](#industry_27) |
-|  | [Zementfabrik](#industry_80) |
+| [Sandgrube](#industry_70) | [Bauhof](#industry_16) |
+|  | [Glasfabrik](#industry_29) |
+|  | [Zementfabrik](#industry_87) |
 
 <a name="cargo_WDPR"></a>
 ### Schnittholz
@@ -986,12 +1066,12 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#b09c6c;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Sägewerk](#industry_70) | [Bauhof](#industry_16) |
+| [Sägewerk](#industry_73) | [Bauhof](#industry_16) |
 |  | [Bauhof](#industry_17) |
-|  | [Möbelfabrik](#industry_51) |
-|  | [Möbelfabrik](#industry_52) |
 |  | [Möbelfabrik](#industry_53) |
 |  | [Möbelfabrik](#industry_54) |
+|  | [Möbelfabrik](#industry_55) |
+|  | [Möbelfabrik](#industry_56) |
 
 <a name="cargo_STEL"></a>
 ### Stahl
@@ -1008,8 +1088,8 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#a8a8a8;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Integriertes Stahlwerk](#industry_33) | [Autofabrik](#industry_4) |
-| [Integriertes Stahlwerk](#industry_34) | [Autofabrik](#industry_5) |
+| [Integriertes Stahlwerk](#industry_35) | [Autofabrik](#industry_4) |
+| [Integriertes Stahlwerk](#industry_36) | [Autofabrik](#industry_5) |
 |  | [Autofabrik](#industry_6) |
 |  | [Autofabrik](#industry_7) |
 |  | [Autofabrik](#industry_8) |
@@ -1024,7 +1104,7 @@ Textilien sind ein Oberbegriff für alle Arten von faserbasierten Materialien wi
 
 Eintrag in der Frachttabelle: TEXT
 
-Teil der Erweiterung: [Textilindustrie](#extension_6)
+Teil der Erweiterung: [Textilindustrie](#extension_7)
 
 Frachtklassen: Nässeempfindlich, Stückgut
 
@@ -1032,10 +1112,10 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#803828;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Textilfabrik](#industry_71) | [Bekleidungsfabrik](#industry_18) |
-| [Textilfabrik](#industry_72) | [Bekleidungsfabrik](#industry_19) |
-|  | [Möbelfabrik](#industry_51) |
+| [Textilfabrik](#industry_74) | [Bekleidungsfabrik](#industry_18) |
+| [Textilfabrik](#industry_75) | [Bekleidungsfabrik](#industry_19) |
 |  | [Möbelfabrik](#industry_53) |
+|  | [Möbelfabrik](#industry_55) |
 
 <a name="cargo_MNSP"></a>
 ### Verpackungen
@@ -1044,7 +1124,7 @@ Verpackungen sind ein notwendiges Übel für viele Waren und Lebensmittel. Sie s
 
 Eintrag in der Frachttabelle: MNSP
 
-Teil der Erweiterung: [Verpackungsmittelindustrie](#extension_7)
+Teil der Erweiterung: [Verpackungsmittelindustrie](#extension_8)
 
 Frachtklassen: Stückgut
 
@@ -1052,18 +1132,19 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#b87818;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Verpackungsmittelfabrik](#industry_73) | [Arzneimittelfabrik](#industry_3) |
-| [Verpackungsmittelfabrik](#industry_74) | [Bekleidungsfabrik](#industry_19) |
-| [Verpackungsmittelfabrik](#industry_75) | [Molkerei](#industry_49) |
-| [Verpackungsmittelfabrik](#industry_76) | [Molkerei](#industry_50) |
-|  | [Möbelfabrik](#industry_53) |
-|  | [Möbelfabrik](#industry_54) |
-|  | [Mühle](#industry_56) |
-|  | [Nahrungsmittelfabrik](#industry_61) |
-|  | [Nahrungsmittelfabrik](#industry_62) |
+| [Verpackungsmittelfabrik](#industry_76) | [Arzneimittelfabrik](#industry_3) |
+| [Verpackungsmittelfabrik](#industry_77) | [Bekleidungsfabrik](#industry_19) |
+| [Verpackungsmittelfabrik](#industry_78) | [Druckerei](#industry_24) |
+| [Verpackungsmittelfabrik](#industry_79) | [Molkerei](#industry_51) |
+| [Verpackungsmittelfabrik](#industry_80) | [Molkerei](#industry_52) |
+| [Verpackungsmittelfabrik](#industry_81) | [Möbelfabrik](#industry_55) |
+| [Verpackungsmittelfabrik](#industry_82) | [Möbelfabrik](#industry_56) |
+| [Verpackungsmittelfabrik](#industry_83) | [Mühle](#industry_58) |
 |  | [Nahrungsmittelfabrik](#industry_63) |
 |  | [Nahrungsmittelfabrik](#industry_64) |
-|  | [Schlachthof](#industry_69) |
+|  | [Nahrungsmittelfabrik](#industry_65) |
+|  | [Nahrungsmittelfabrik](#industry_66) |
+|  | [Schlachthof](#industry_72) |
 
 <a name="cargo_LVST"></a>
 ### Vieh
@@ -1078,12 +1159,12 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#5c9c34;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Bauernhof](#industry_13) | [Nahrungsmittelfabrik](#industry_57) |
-| [Bauernhof](#industry_14) | [Nahrungsmittelfabrik](#industry_58) |
-| [Viehzucht](#industry_77) | [Nahrungsmittelfabrik](#industry_61) |
-| [Viehzucht](#industry_78) | [Nahrungsmittelfabrik](#industry_63) |
-|  | [Schlachthof](#industry_68) |
-|  | [Schlachthof](#industry_69) |
+| [Bauernhof](#industry_13) | [Nahrungsmittelfabrik](#industry_59) |
+| [Bauernhof](#industry_14) | [Nahrungsmittelfabrik](#industry_60) |
+| [Viehzucht](#industry_84) | [Nahrungsmittelfabrik](#industry_63) |
+| [Viehzucht](#industry_85) | [Nahrungsmittelfabrik](#industry_65) |
+|  | [Schlachthof](#industry_71) |
+|  | [Schlachthof](#industry_72) |
 
 <a name="cargo_GOOD"></a>
 ### Waren
@@ -1098,14 +1179,16 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#fc9c00;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Arzneimittelfabrik](#industry_2) | [Hafen](#industry_28) |
-| [Arzneimittelfabrik](#industry_3) | [Hafen](#industry_29) |
-| [Bekleidungsfabrik](#industry_18) | [Hafen](#industry_30) |
-| [Bekleidungsfabrik](#industry_19) | [Hafen](#industry_31) |
-| [Möbelfabrik](#industry_51) | [Kaufhaus](#industry_37) |
-| [Möbelfabrik](#industry_52) |  |
+| [Arzneimittelfabrik](#industry_2) | [Hafen](#industry_30) |
+| [Arzneimittelfabrik](#industry_3) | [Hafen](#industry_31) |
+| [Bekleidungsfabrik](#industry_18) | [Hafen](#industry_32) |
+| [Bekleidungsfabrik](#industry_19) | [Hafen](#industry_33) |
+| [Druckerei](#industry_23) | [Kaufhaus](#industry_39) |
+| [Druckerei](#industry_24) |  |
 | [Möbelfabrik](#industry_53) |  |
 | [Möbelfabrik](#industry_54) |  |
+| [Möbelfabrik](#industry_55) |  |
+| [Möbelfabrik](#industry_56) |  |
 
 <a name="cargo_H2__"></a>
 ### Wasserstoff
@@ -1130,7 +1213,7 @@ Wolle ist eine Textilfaser, die hauptsächlich von Schafen gewonnen wird und zu 
 
 Eintrag in der Frachttabelle: WOOL
 
-Teil der Erweiterung: [Textilindustrie](#extension_6)
+Teil der Erweiterung: [Textilindustrie](#extension_7)
 
 Frachtklassen: Nässeempfindlich, Stückgut
 
@@ -1138,8 +1221,8 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#a85c4c;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Bauernhof](#industry_13) | [Textilfabrik](#industry_71) |
-| [Viehzucht](#industry_78) | [Textilfabrik](#industry_72) |
+| [Bauernhof](#industry_13) | [Textilfabrik](#industry_74) |
+| [Viehzucht](#industry_85) | [Textilfabrik](#industry_75) |
 
 <a name="cargo_CMNT"></a>
 ### Zement
@@ -1156,7 +1239,7 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#6c7484;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Zementfabrik](#industry_80) | [Bauhof](#industry_16) |
+| [Zementfabrik](#industry_87) | [Bauhof](#industry_16) |
 
 <a name="cargo_BDMT"></a>
 ### Ziegel
@@ -1173,7 +1256,7 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#cc8060;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Ziegelei](#industry_81) | [Bauhof](#industry_16) |
+| [Ziegelei](#industry_88) | [Bauhof](#industry_16) |
 
 <a name="cargo_OIL_"></a>
 ### Öl
@@ -1192,12 +1275,12 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#a888e0;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Hafen](#industry_28) | [Kraftwerk](#industry_39) |
-| [Hafen](#industry_29) | [Kunststofffabrik](#industry_40) |
-| [Hafen](#industry_30) | [Kunststofffabrik](#industry_41) |
+| [Hafen](#industry_30) | [Kraftwerk](#industry_41) |
 | [Hafen](#industry_31) | [Kunststofffabrik](#industry_42) |
-| [Ölbohrinsel](#industry_82) | [Kunststofffabrik](#industry_43) |
-| [Ölquellen](#industry_83) | [Rußfabrik](#industry_65) |
+| [Hafen](#industry_32) | [Kunststofffabrik](#industry_43) |
+| [Hafen](#industry_33) | [Kunststofffabrik](#industry_44) |
+| [Ölbohrinsel](#industry_89) | [Kunststofffabrik](#industry_45) |
+| [Ölquellen](#industry_90) | [Rußfabrik](#industry_68) |
 
 
 ## Industries
@@ -1260,7 +1343,7 @@ Pharmazeutische Produkte wie Arzneimittel und Impfstoffe sind eine wichtiger Bes
 
 Diese Industrie benötigt Extension: [Grundlegende Anorganische Chemie](#extension_4) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Verpackungsmittelindustrie](#extension_7) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Verpackungsmittelindustrie](#extension_8) 
 
 Industry ist erst ab 1900 verfügbar.
 Diese Beschränkung betrifft auch das Finanzieren der Industrie.
@@ -1281,7 +1364,7 @@ Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar is
 
 Pharmazeutische Produkte wie Arzneimittel und Impfstoffe sind eine wichtiger Bestandteil der deutschen Wirtschaft. Das geht auf das 19. Jahrhundert zurück, als Durchbrüche in der Chemieforschung die Herstellung neuartiger Medikamente erlaubte. Eins der bekanntesten Beispiele ist die Firma Bayer, die als Hersteller von Färbemitteln begann und später Aspirin entwickelte und heute einer der größten Pharmahersteller der Welt ist. 
 
-Diese Industrie benötigt Extension: [Grundlegende Anorganische Chemie](#extension_4) [Verpackungsmittelindustrie](#extension_7) 
+Diese Industrie benötigt Extension: [Grundlegende Anorganische Chemie](#extension_4) [Verpackungsmittelindustrie](#extension_8) 
 
 Industry ist erst ab 1900 verfügbar.
 Diese Beschränkung betrifft auch das Finanzieren der Industrie.
@@ -1522,7 +1605,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#bce0fc;">&nbsp;&nbs
 
 Bauernhöfe sind die wichtigste landwirtschaftliche Industrie im Set, denn sie produzieren Getreide und Vieh. Beides sind relevante Rohstoffe für die Lebensmittelindustrie. 
 
-Diese Industrie benötigt Extension: [Textilindustrie](#extension_6) 
+Diese Industrie benötigt Extension: [Textilindustrie](#extension_7) 
 
 Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Lebensmittelindustrie](#extension_5) 
 
@@ -1543,7 +1626,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#ec9ca4;">&nbsp;&nbs
 
 Bauernhöfe sind die wichtigste landwirtschaftliche Industrie im Set, denn sie produzieren Getreide und Vieh. Beides sind relevante Rohstoffe für die Lebensmittelindustrie. 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Textilindustrie](#extension_6) [Lebensmittelindustrie](#extension_5) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Textilindustrie](#extension_7) [Lebensmittelindustrie](#extension_5) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#ec9ca4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -1615,7 +1698,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#acacc0;">&nbsp;&nbs
 
 Die Bekleidungsfabrik ist der Ort, an dem aus Stoffen Kleidungsstücke gefertigt werden. Europa hat eine reichhaltige Geschichte der Bekleidungsindustrie, die allerdings quasi komplett durch billigere asiatische Konkurrenz ersetzt wurde. Spezialgeschäfte für hochwertige Bekleidung haben noch ihre eigene Nische. Deutschland hatte im 19. Jahrhundert eine bedeutende Bekleidungsindustrie, hauptsächlich in Schlesien und Sachsen. Heute existieren zwar noch viele Firmen, teilweise auch international sehr bekannte wie Boss, Triumph oder adidas, aber die Produktion wurde üblicherweise nach Asien verlagert. 
 
-Diese Industrie benötigt Extension: [Textilindustrie](#extension_6) 
+Diese Industrie benötigt Extension: [Textilindustrie](#extension_7) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#803828;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -1632,7 +1715,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#803828;">&nbsp;&nbs
 
 Die Bekleidungsfabrik ist der Ort, an dem aus Stoffen Kleidungsstücke gefertigt werden. Europa hat eine reichhaltige Geschichte der Bekleidungsindustrie, die allerdings quasi komplett durch billigere asiatische Konkurrenz ersetzt wurde. Spezialgeschäfte für hochwertige Bekleidung haben noch ihre eigene Nische. Deutschland hatte im 19. Jahrhundert eine bedeutende Bekleidungsindustrie, hauptsächlich in Schlesien und Sachsen. Heute existieren zwar noch viele Firmen, teilweise auch international sehr bekannte wie Boss, Triumph oder adidas, aber die Produktion wurde üblicherweise nach Asien verlagert. 
 
-Diese Industrie benötigt Extension: [Textilindustrie](#extension_6) [Verpackungsmittelindustrie](#extension_7) 
+Diese Industrie benötigt Extension: [Textilindustrie](#extension_7) [Verpackungsmittelindustrie](#extension_8) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#803828;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -1715,6 +1798,47 @@ Industrie elektrischen Strom zur Production. Siehe [Elektrizität](#electricity)
 
 
 <a name="industry_23"></a>
+### Druckerei
+
+<img src="paper_mill.png" alt="Druckerei">
+
+Der moderne Buchdruck wurde im 16. Jahrhundert in Deutschland erfunden. Im Zuge der Industrialisierung wurden später zahllose Zeitungen gedruckt, das Lesen von Büchern wurde zum Zeitvertreib der gebildeten Bürgerschicht. Heutzutage kann quasi jeder sein eigenes Buch drucken lassen. 
+
+Diese Industrie benötigt Extension: [Papier](#extension_6) 
+
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Verpackungsmittelindustrie](#extension_8) 
+
+Industry ist erst ab 1900 verfügbar.
+Diese Beschränkung betrifft auch das Finanzieren der Industrie.
+
+Farbe in der Übersichtskarte:<span style="background-color:#fc9c00;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+| Benötigt | Produziert |
+| -- | -- |
+| [Papier](#cargo_PAPR) | [Waren](#cargo_GOOD) |
+
+
+<a name="industry_24"></a>
+### Druckerei
+
+<img src="paper_mill.png" alt="Druckerei">
+
+Der moderne Buchdruck wurde im 16. Jahrhundert in Deutschland erfunden. Im Zuge der Industrialisierung wurden später zahllose Zeitungen gedruckt, das Lesen von Büchern wurde zum Zeitvertreib der gebildeten Bürgerschicht. Heutzutage kann quasi jeder sein eigenes Buch drucken lassen. 
+
+Diese Industrie benötigt Extension: [Papier](#extension_6) [Verpackungsmittelindustrie](#extension_8) 
+
+Industry ist erst ab 1900 verfügbar.
+Diese Beschränkung betrifft auch das Finanzieren der Industrie.
+
+Farbe in der Übersichtskarte:<span style="background-color:#fc9c00;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+| Benötigt | Produziert |
+| -- | -- |
+| [Verpackungen](#cargo_MNSP) | [Waren](#cargo_GOOD) |
+| [Papier](#cargo_PAPR) |  |
+
+
+<a name="industry_25"></a>
 ### Eisenerzbergwerk
 
 <img src="iron_ore_mine.png" alt="Eisenerzbergwerk">
@@ -1735,7 +1859,7 @@ Die Industrie wird mit endlichen Ressourcen generiert und schließt sobald diese
 |  | [Eisenerz](#cargo_IORE) |
 
 
-<a name="industry_24"></a>
+<a name="industry_26"></a>
 ### Farbenfabrik
 
 <img src="paint_factory.png" alt="Farbenfabrik">
@@ -1760,7 +1884,7 @@ Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar is
 | [Eisenerz](#cargo_IORE) |  |
 
 
-<a name="industry_25"></a>
+<a name="industry_27"></a>
 ### Farbenfabrik
 
 <img src="paint_factory.png" alt="Farbenfabrik">
@@ -1784,7 +1908,7 @@ Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar is
 | [Kalkstein](#cargo_LIME) |  |
 
 
-<a name="industry_26"></a>
+<a name="industry_28"></a>
 ### Fischgründe
 
 <img src="fishing_grounds.png" alt="Fischgründe">
@@ -1799,7 +1923,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#9cccdc;">&nbsp;&nbs
 |  | [Fisch](#cargo_FISH) |
 
 
-<a name="industry_27"></a>
+<a name="industry_29"></a>
 ### Glasfabrik
 
 <img src="glass_works.png" alt="Glasfabrik">
@@ -1809,7 +1933,7 @@ Glas wird durch das Erzeugen einer flüssigen Mischung verschiedener Materialien
 Diese Industrie benötigt Extension: [Glas](#extension_3) 
 
 
-Farbe in der Übersichtskarte:<span style="background-color:#8c68fc;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+Farbe in der Übersichtskarte:<span style="background-color:#5840ac;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 | Benötigt | Produziert |
 | -- | -- |
@@ -1817,7 +1941,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#8c68fc;">&nbsp;&nbs
 | [Sand](#cargo_SAND) |  |
 
 
-<a name="industry_28"></a>
+<a name="industry_30"></a>
 ### Hafen
 
 <img src="port.png" alt="Hafen">
@@ -1838,7 +1962,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#fc6c00;">&nbsp;&nbs
 |  | [Öl](#cargo_OIL_) |
 
 
-<a name="industry_29"></a>
+<a name="industry_31"></a>
 ### Hafen
 
 <img src="port.png" alt="Hafen">
@@ -1862,7 +1986,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#fc6c00;">&nbsp;&nbs
 |  | [Öl](#cargo_OIL_) |
 
 
-<a name="industry_30"></a>
+<a name="industry_32"></a>
 ### Hafen
 
 <img src="port.png" alt="Hafen">
@@ -1886,7 +2010,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#fc6c00;">&nbsp;&nbs
 |  | [Öl](#cargo_OIL_) |
 
 
-<a name="industry_31"></a>
+<a name="industry_33"></a>
 ### Hafen
 
 <img src="port.png" alt="Hafen">
@@ -1909,7 +2033,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#fc6c00;">&nbsp;&nbs
 |  | [Öl](#cargo_OIL_) |
 
 
-<a name="industry_32"></a>
+<a name="industry_34"></a>
 ### Hotel
 
 <img src="hotel.png" alt="Hotel">
@@ -1927,7 +2051,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#508ca0;">&nbsp;&nbs
 | [Passagiere](#cargo_PASS) |  |
 
 
-<a name="industry_33"></a>
+<a name="industry_35"></a>
 ### Integriertes Stahlwerk
 
 <img src="integrated_steel_mill.png" alt="Integriertes Stahlwerk">
@@ -1949,7 +2073,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#949594;">&nbsp;&nbs
 | [Eisenerz](#cargo_IORE) |  |
 
 
-<a name="industry_34"></a>
+<a name="industry_36"></a>
 ### Integriertes Stahlwerk
 
 <img src="integrated_steel_mill.png" alt="Integriertes Stahlwerk">
@@ -1972,7 +2096,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#949594;">&nbsp;&nbs
 | [Branntkalk](#cargo_QLME) |  |
 
 
-<a name="industry_35"></a>
+<a name="industry_37"></a>
 ### Kalkofen
 
 <img src="lime_kiln.png" alt="Kalkofen">
@@ -1989,7 +2113,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#8c68fc;">&nbsp;&nbs
 | [Kalkstein](#cargo_LIME) | [Branntkalk](#cargo_QLME) |
 
 
-<a name="industry_36"></a>
+<a name="industry_38"></a>
 ### Kalksteinbergwerk
 
 <img src="limestone_mine.png" alt="Kalksteinbergwerk">
@@ -2010,7 +2134,7 @@ Die Industrie wird mit endlichen Ressourcen generiert und schließt sobald diese
 |  | [Kalkstein](#cargo_LIME) |
 
 
-<a name="industry_37"></a>
+<a name="industry_39"></a>
 ### Kaufhaus
 
 <img src="department_store.png" alt="Kaufhaus">
@@ -2025,7 +2149,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#fcf4ec;">&nbsp;&nbs
 | [Waren](#cargo_GOOD) |  |
 
 
-<a name="industry_38"></a>
+<a name="industry_40"></a>
 ### Kohlebergwerk
 
 <img src="coal_mine.png" alt="Kohlebergwerk">
@@ -2046,7 +2170,7 @@ Die Industrie wird mit endlichen Ressourcen generiert und schließt sobald diese
 |  | [Kohle](#cargo_COAL) |
 
 
-<a name="industry_39"></a>
+<a name="industry_41"></a>
 ### Kraftwerk
 
 <img src="power_plant.png" alt="Kraftwerk">
@@ -2066,7 +2190,7 @@ Industrie produziert elektrischen Strom. Siehe [Elektrizität](#electricity).
 | [Öl](#cargo_OIL_) |  |
 
 
-<a name="industry_40"></a>
+<a name="industry_42"></a>
 ### Kunststofffabrik
 
 <img src="plastics_plant.png" alt="Kunststofffabrik">
@@ -2085,7 +2209,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#fcc000;">&nbsp;&nbs
 | [Öl](#cargo_OIL_) | [Kunststoffe](#cargo_PLAS) |
 
 
-<a name="industry_41"></a>
+<a name="industry_43"></a>
 ### Kunststofffabrik
 
 <img src="plastics_plant.png" alt="Kunststofffabrik">
@@ -2107,7 +2231,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#fcc000;">&nbsp;&nbs
 | [Öl](#cargo_OIL_) |  |
 
 
-<a name="industry_42"></a>
+<a name="industry_44"></a>
 ### Kunststofffabrik
 
 <img src="plastics_plant.png" alt="Kunststofffabrik">
@@ -2129,7 +2253,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#fcc000;">&nbsp;&nbs
 | [Öl](#cargo_OIL_) |  |
 
 
-<a name="industry_43"></a>
+<a name="industry_45"></a>
 ### Kunststofffabrik
 
 <img src="plastics_plant.png" alt="Kunststofffabrik">
@@ -2150,7 +2274,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#fcc000;">&nbsp;&nbs
 | [Öl](#cargo_OIL_) |  |
 
 
-<a name="industry_44"></a>
+<a name="industry_46"></a>
 ### Kupfererzbergwerk
 
 <img src="copper_ore_mine.png" alt="Kupfererzbergwerk">
@@ -2171,7 +2295,7 @@ Die Industrie wird mit endlichen Ressourcen generiert und schließt sobald diese
 |  | [Kupfererz](#cargo_CORE) |
 
 
-<a name="industry_45"></a>
+<a name="industry_47"></a>
 ### Kupferhütte
 
 <img src="copper_smelter.png" alt="Kupferhütte">
@@ -2192,7 +2316,7 @@ Industrie elektrischen Strom zur Production. Siehe [Elektrizität](#electricity)
 | [Kupfererz](#cargo_CORE) | [Kupfer](#cargo_COPR) |
 
 
-<a name="industry_46"></a>
+<a name="industry_48"></a>
 ### Laden
 
 <img src="general_store.png" alt="Laden">
@@ -2207,7 +2331,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#fcd8c8;">&nbsp;&nbs
 | [Nahrungsmittel](#cargo_FOOD) |  |
 
 
-<a name="industry_47"></a>
+<a name="industry_49"></a>
 ### Molkerei
 
 <img src="dairy.png" alt="Molkerei">
@@ -2216,7 +2340,7 @@ Eine Molkerei ist ein Betrieb, der Milchprodukte wie Butter und Käse herstellt.
 
 Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_5) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Grundlegende Anorganische Chemie](#extension_4) [Verpackungsmittelindustrie](#extension_7) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Grundlegende Anorganische Chemie](#extension_4) [Verpackungsmittelindustrie](#extension_8) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#fcd898;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2226,7 +2350,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#fcd898;">&nbsp;&nbs
 | [Milch](#cargo_MILK) | [Nahrungsmittel](#cargo_FOOD) |
 
 
-<a name="industry_48"></a>
+<a name="industry_50"></a>
 ### Molkerei
 
 <img src="dairy.png" alt="Molkerei">
@@ -2235,7 +2359,7 @@ Eine Molkerei ist ein Betrieb, der Milchprodukte wie Butter und Käse herstellt.
 
 Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_5) [Grundlegende Anorganische Chemie](#extension_4) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Verpackungsmittelindustrie](#extension_7) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Verpackungsmittelindustrie](#extension_8) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#fcd898;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2248,14 +2372,14 @@ Industrie benötigt die in schwarz dargestellten Rohmaterialien zur Produktion. 
 | [Milch](#cargo_MILK) |  |
 
 
-<a name="industry_49"></a>
+<a name="industry_51"></a>
 ### Molkerei
 
 <img src="dairy.png" alt="Molkerei">
 
 Eine Molkerei ist ein Betrieb, der Milchprodukte wie Butter und Käse herstellt. Die Milch wiederum stammt aus Viehzuchtbetrieben. 
 
-Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_5) [Verpackungsmittelindustrie](#extension_7) 
+Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_5) [Verpackungsmittelindustrie](#extension_8) 
 
 Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Grundlegende Anorganische Chemie](#extension_4) 
 
@@ -2270,14 +2394,14 @@ Industrie benötigt die in schwarz dargestellten Rohmaterialien zur Produktion. 
 | [Verpackungen](#cargo_MNSP) |  |
 
 
-<a name="industry_50"></a>
+<a name="industry_52"></a>
 ### Molkerei
 
 <img src="dairy.png" alt="Molkerei">
 
 Eine Molkerei ist ein Betrieb, der Milchprodukte wie Butter und Käse herstellt. Die Milch wiederum stammt aus Viehzuchtbetrieben. 
 
-Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_5) [Grundlegende Anorganische Chemie](#extension_4) [Verpackungsmittelindustrie](#extension_7) 
+Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_5) [Grundlegende Anorganische Chemie](#extension_4) [Verpackungsmittelindustrie](#extension_8) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#fcd898;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2291,49 +2415,6 @@ Industrie benötigt die in schwarz dargestellten Rohmaterialien zur Produktion. 
 | [Verpackungen](#cargo_MNSP) |  |
 
 
-<a name="industry_51"></a>
-### Möbelfabrik
-
-<img src="furniture_factory.png" alt="Möbelfabrik">
-
-Deutschland hat eine vergleichsweise große Möbelindustrie, wobei IKEA der Marktführer ist. In aller Regel werden Möbel von spezialisierten Händlern vertrieben, die zahllose Möbelgeschäfte im ganzen Land betreiben. Die klassische Möbelherstellung durch Tischler hat hingegen kaum noch eine Relevanz. 
-
-Diese Industrie benötigt Extension: [Textilindustrie](#extension_6) 
-
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Verpackungsmittelindustrie](#extension_7) 
-
-
-Farbe in der Übersichtskarte:<span style="background-color:#a888e0;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-
-Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar ist. Die maximale Produktion erhöht sich mit der Anzahl der verfügbaren verschiedenen Rohstoffe.
-
-| Benötigt | Produziert |
-| -- | -- |
-| [Kunststoffe](#cargo_PLAS) | [Waren](#cargo_GOOD) |
-| [Textilien](#cargo_TEXT) |  |
-| [Schnittholz](#cargo_WDPR) |  |
-
-
-<a name="industry_52"></a>
-### Möbelfabrik
-
-<img src="furniture_factory.png" alt="Möbelfabrik">
-
-Deutschland hat eine vergleichsweise große Möbelindustrie, wobei IKEA der Marktführer ist. In aller Regel werden Möbel von spezialisierten Händlern vertrieben, die zahllose Möbelgeschäfte im ganzen Land betreiben. Die klassische Möbelherstellung durch Tischler hat hingegen kaum noch eine Relevanz. 
-
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Textilindustrie](#extension_6) [Verpackungsmittelindustrie](#extension_7) 
-
-
-Farbe in der Übersichtskarte:<span style="background-color:#a888e0;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-
-Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar ist. Die maximale Produktion erhöht sich mit der Anzahl der verfügbaren verschiedenen Rohstoffe.
-
-| Benötigt | Produziert |
-| -- | -- |
-| [Kunststoffe](#cargo_PLAS) | [Waren](#cargo_GOOD) |
-| [Schnittholz](#cargo_WDPR) |  |
-
-
 <a name="industry_53"></a>
 ### Möbelfabrik
 
@@ -2341,17 +2422,18 @@ Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar is
 
 Deutschland hat eine vergleichsweise große Möbelindustrie, wobei IKEA der Marktführer ist. In aller Regel werden Möbel von spezialisierten Händlern vertrieben, die zahllose Möbelgeschäfte im ganzen Land betreiben. Die klassische Möbelherstellung durch Tischler hat hingegen kaum noch eine Relevanz. 
 
-Diese Industrie benötigt Extension: [Textilindustrie](#extension_6) [Verpackungsmittelindustrie](#extension_7) 
+Diese Industrie benötigt Extension: [Textilindustrie](#extension_7) 
+
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Verpackungsmittelindustrie](#extension_8) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#a888e0;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
-Industrie benötigt wenigstens eine der in schwarz dargestellten Rohmaterialien zur Produktion. In weiß dargestellte Materialien erhöhen die maximale Produktion. Die maximale Produktion erhöht sich mit der Anzahl der verfügbaren verschiedenen Rohstoffe.
+Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar ist. Die maximale Produktion erhöht sich mit der Anzahl der verfügbaren verschiedenen Rohstoffe.
 
 | Benötigt | Produziert |
 | -- | -- |
-| [Verpackungen](#cargo_MNSP) | [Waren](#cargo_GOOD) |
-| [Kunststoffe](#cargo_PLAS) |  |
+| [Kunststoffe](#cargo_PLAS) | [Waren](#cargo_GOOD) |
 | [Textilien](#cargo_TEXT) |  |
 | [Schnittholz](#cargo_WDPR) |  |
 
@@ -2363,9 +2445,51 @@ Industrie benötigt wenigstens eine der in schwarz dargestellten Rohmaterialien 
 
 Deutschland hat eine vergleichsweise große Möbelindustrie, wobei IKEA der Marktführer ist. In aller Regel werden Möbel von spezialisierten Händlern vertrieben, die zahllose Möbelgeschäfte im ganzen Land betreiben. Die klassische Möbelherstellung durch Tischler hat hingegen kaum noch eine Relevanz. 
 
-Diese Industrie benötigt Extension: [Verpackungsmittelindustrie](#extension_7) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Textilindustrie](#extension_7) [Verpackungsmittelindustrie](#extension_8) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Textilindustrie](#extension_6) 
+
+Farbe in der Übersichtskarte:<span style="background-color:#a888e0;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar ist. Die maximale Produktion erhöht sich mit der Anzahl der verfügbaren verschiedenen Rohstoffe.
+
+| Benötigt | Produziert |
+| -- | -- |
+| [Kunststoffe](#cargo_PLAS) | [Waren](#cargo_GOOD) |
+| [Schnittholz](#cargo_WDPR) |  |
+
+
+<a name="industry_55"></a>
+### Möbelfabrik
+
+<img src="furniture_factory.png" alt="Möbelfabrik">
+
+Deutschland hat eine vergleichsweise große Möbelindustrie, wobei IKEA der Marktführer ist. In aller Regel werden Möbel von spezialisierten Händlern vertrieben, die zahllose Möbelgeschäfte im ganzen Land betreiben. Die klassische Möbelherstellung durch Tischler hat hingegen kaum noch eine Relevanz. 
+
+Diese Industrie benötigt Extension: [Textilindustrie](#extension_7) [Verpackungsmittelindustrie](#extension_8) 
+
+
+Farbe in der Übersichtskarte:<span style="background-color:#a888e0;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+Industrie benötigt wenigstens eine der in schwarz dargestellten Rohmaterialien zur Produktion. In weiß dargestellte Materialien erhöhen die maximale Produktion. Die maximale Produktion erhöht sich mit der Anzahl der verfügbaren verschiedenen Rohstoffe.
+
+| Benötigt | Produziert |
+| -- | -- |
+| [Verpackungen](#cargo_MNSP) | [Waren](#cargo_GOOD) |
+| [Kunststoffe](#cargo_PLAS) |  |
+| [Textilien](#cargo_TEXT) |  |
+| [Schnittholz](#cargo_WDPR) |  |
+
+
+<a name="industry_56"></a>
+### Möbelfabrik
+
+<img src="furniture_factory.png" alt="Möbelfabrik">
+
+Deutschland hat eine vergleichsweise große Möbelindustrie, wobei IKEA der Marktführer ist. In aller Regel werden Möbel von spezialisierten Händlern vertrieben, die zahllose Möbelgeschäfte im ganzen Land betreiben. Die klassische Möbelherstellung durch Tischler hat hingegen kaum noch eine Relevanz. 
+
+Diese Industrie benötigt Extension: [Verpackungsmittelindustrie](#extension_8) 
+
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Textilindustrie](#extension_7) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#a888e0;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2379,7 +2503,7 @@ Industrie benötigt wenigstens eine der in schwarz dargestellten Rohmaterialien 
 | [Schnittholz](#cargo_WDPR) |  |
 
 
-<a name="industry_55"></a>
+<a name="industry_57"></a>
 ### Mühle
 
 <img src="flour_mill.png" alt="Mühle">
@@ -2388,7 +2512,7 @@ Getreidemühlen gibt es seit tausenden von Jahren. Sie mahlen Getreide zu Mehl, 
 
 Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_5) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Verpackungsmittelindustrie](#extension_7) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Verpackungsmittelindustrie](#extension_8) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#d4bc94;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2398,14 +2522,14 @@ Farbe in der Übersichtskarte:<span style="background-color:#d4bc94;">&nbsp;&nbs
 | [Getreide](#cargo_GRAI) | [Nahrungsmittel](#cargo_FOOD) |
 
 
-<a name="industry_56"></a>
+<a name="industry_58"></a>
 ### Mühle
 
 <img src="flour_mill.png" alt="Mühle">
 
 Getreidemühlen gibt es seit tausenden von Jahren. Sie mahlen Getreide zu Mehl, was eine überaus wichtige Rolle in der Nahrungsmittelproduktion stellt. Das Mahlen fand traditionell auf einem rotierenden Mahlstein statt, der üblicherweise durch Wasser oder Windkraft bewegt wurde. Mühlen waren überall zu finden, so wie der Familienname Müller aus der Berufsbezeichnung abgeleitet wurde. Die Industrialisierung hat den Prozess der Mehlproduktion erheblich verändert, da mit maschinellem Antrieb viel größere Produktionsmengen möglich wurden. 
 
-Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_5) [Verpackungsmittelindustrie](#extension_7) 
+Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_5) [Verpackungsmittelindustrie](#extension_8) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#d4bc94;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2418,14 +2542,14 @@ Industrie benötigt die in schwarz dargestellten Rohmaterialien zur Produktion. 
 | [Verpackungen](#cargo_MNSP) |  |
 
 
-<a name="industry_57"></a>
+<a name="industry_59"></a>
 ### Nahrungsmittelfabrik
 
 <img src="food_processor.png" alt="Nahrungsmittelfabrik">
 
 Die Nahrungsmittelfabrik fasst verschiedenste Industrien zusammen, die Lebensmittel herstellen. Ob es nun eine Bäckereiprodukte sind, Dosenfisch oder Fleisch, alles wird hier hergestellt, um in die Supermarktregale transportiert zu werden. 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Grundlegende Anorganische Chemie](#extension_4) [Lebensmittelindustrie](#extension_5) [Verpackungsmittelindustrie](#extension_7) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Grundlegende Anorganische Chemie](#extension_4) [Lebensmittelindustrie](#extension_5) [Verpackungsmittelindustrie](#extension_8) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#a00000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2439,7 +2563,7 @@ Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar is
 | [Vieh](#cargo_LVST) |  |
 
 
-<a name="industry_58"></a>
+<a name="industry_60"></a>
 ### Nahrungsmittelfabrik
 
 <img src="food_processor.png" alt="Nahrungsmittelfabrik">
@@ -2448,7 +2572,7 @@ Die Nahrungsmittelfabrik fasst verschiedenste Industrien zusammen, die Lebensmit
 
 Diese Industrie benötigt Extension: [Grundlegende Anorganische Chemie](#extension_4) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Lebensmittelindustrie](#extension_5) [Verpackungsmittelindustrie](#extension_7) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Lebensmittelindustrie](#extension_5) [Verpackungsmittelindustrie](#extension_8) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#a00000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2464,7 +2588,7 @@ Industrie benötigt wenigstens eine der in schwarz dargestellten Rohmaterialien 
 | [Salz](#cargo_SALT) |  |
 
 
-<a name="industry_59"></a>
+<a name="industry_61"></a>
 ### Nahrungsmittelfabrik
 
 <img src="food_processor.png" alt="Nahrungsmittelfabrik">
@@ -2473,7 +2597,7 @@ Die Nahrungsmittelfabrik fasst verschiedenste Industrien zusammen, die Lebensmit
 
 Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_5) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Grundlegende Anorganische Chemie](#extension_4) [Verpackungsmittelindustrie](#extension_7) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Grundlegende Anorganische Chemie](#extension_4) [Verpackungsmittelindustrie](#extension_8) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#a00000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2485,7 +2609,7 @@ Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar is
 | [Fisch](#cargo_FISH) | [Nahrungsmittel](#cargo_FOOD) |
 
 
-<a name="industry_60"></a>
+<a name="industry_62"></a>
 ### Nahrungsmittelfabrik
 
 <img src="food_processor.png" alt="Nahrungsmittelfabrik">
@@ -2494,7 +2618,7 @@ Die Nahrungsmittelfabrik fasst verschiedenste Industrien zusammen, die Lebensmit
 
 Diese Industrie benötigt Extension: [Grundlegende Anorganische Chemie](#extension_4) [Lebensmittelindustrie](#extension_5) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Verpackungsmittelindustrie](#extension_7) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Verpackungsmittelindustrie](#extension_8) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#a00000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2508,14 +2632,14 @@ Industrie benötigt die in schwarz dargestellten Rohmaterialien zur Produktion. 
 | [Salz](#cargo_SALT) |  |
 
 
-<a name="industry_61"></a>
+<a name="industry_63"></a>
 ### Nahrungsmittelfabrik
 
 <img src="food_processor.png" alt="Nahrungsmittelfabrik">
 
 Die Nahrungsmittelfabrik fasst verschiedenste Industrien zusammen, die Lebensmittel herstellen. Ob es nun eine Bäckereiprodukte sind, Dosenfisch oder Fleisch, alles wird hier hergestellt, um in die Supermarktregale transportiert zu werden. 
 
-Diese Industrie benötigt Extension: [Verpackungsmittelindustrie](#extension_7) 
+Diese Industrie benötigt Extension: [Verpackungsmittelindustrie](#extension_8) 
 
 Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Grundlegende Anorganische Chemie](#extension_4) [Lebensmittelindustrie](#extension_5) 
 
@@ -2532,14 +2656,14 @@ Industrie benötigt wenigstens eine der in schwarz dargestellten Rohmaterialien 
 | [Verpackungen](#cargo_MNSP) |  |
 
 
-<a name="industry_62"></a>
+<a name="industry_64"></a>
 ### Nahrungsmittelfabrik
 
 <img src="food_processor.png" alt="Nahrungsmittelfabrik">
 
 Die Nahrungsmittelfabrik fasst verschiedenste Industrien zusammen, die Lebensmittel herstellen. Ob es nun eine Bäckereiprodukte sind, Dosenfisch oder Fleisch, alles wird hier hergestellt, um in die Supermarktregale transportiert zu werden. 
 
-Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_5) [Verpackungsmittelindustrie](#extension_7) 
+Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_5) [Verpackungsmittelindustrie](#extension_8) 
 
 Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Grundlegende Anorganische Chemie](#extension_4) 
 
@@ -2554,14 +2678,14 @@ Industrie benötigt die in schwarz dargestellten Rohmaterialien zur Produktion. 
 | [Verpackungen](#cargo_MNSP) |  |
 
 
-<a name="industry_63"></a>
+<a name="industry_65"></a>
 ### Nahrungsmittelfabrik
 
 <img src="food_processor.png" alt="Nahrungsmittelfabrik">
 
 Die Nahrungsmittelfabrik fasst verschiedenste Industrien zusammen, die Lebensmittel herstellen. Ob es nun eine Bäckereiprodukte sind, Dosenfisch oder Fleisch, alles wird hier hergestellt, um in die Supermarktregale transportiert zu werden. 
 
-Diese Industrie benötigt Extension: [Grundlegende Anorganische Chemie](#extension_4) [Verpackungsmittelindustrie](#extension_7) 
+Diese Industrie benötigt Extension: [Grundlegende Anorganische Chemie](#extension_4) [Verpackungsmittelindustrie](#extension_8) 
 
 Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Lebensmittelindustrie](#extension_5) 
 
@@ -2580,14 +2704,14 @@ Industrie benötigt wenigstens eine der in schwarz dargestellten Rohmaterialien 
 | [Salz](#cargo_SALT) |  |
 
 
-<a name="industry_64"></a>
+<a name="industry_66"></a>
 ### Nahrungsmittelfabrik
 
 <img src="food_processor.png" alt="Nahrungsmittelfabrik">
 
 Die Nahrungsmittelfabrik fasst verschiedenste Industrien zusammen, die Lebensmittel herstellen. Ob es nun eine Bäckereiprodukte sind, Dosenfisch oder Fleisch, alles wird hier hergestellt, um in die Supermarktregale transportiert zu werden. 
 
-Diese Industrie benötigt Extension: [Grundlegende Anorganische Chemie](#extension_4) [Lebensmittelindustrie](#extension_5) [Verpackungsmittelindustrie](#extension_7) 
+Diese Industrie benötigt Extension: [Grundlegende Anorganische Chemie](#extension_4) [Lebensmittelindustrie](#extension_5) [Verpackungsmittelindustrie](#extension_8) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#a00000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2602,7 +2726,28 @@ Industrie benötigt die in schwarz dargestellten Rohmaterialien zur Produktion. 
 | [Salz](#cargo_SALT) |  |
 
 
-<a name="industry_65"></a>
+<a name="industry_67"></a>
+### Papiermühle
+
+<img src="paper_mill.png" alt="Papiermühle">
+
+Die Papiermühle spaltet Holz durch Chemikalien auf um Zellulosefasern herauszulösen, die wiederum die Basis für die Papierproduktion sind. Der Prozess der Papierherstellung ist seit Tausenden Jahren bekannt, aber die moderne Produktion begann erst im späten 19. Jahrhundert durch verschiedene Fortschritte in der Chemie. Deutschland ist einer der größten Papierproduzenten der Welt, und der größte in Europa. Die Papiermühle im Set ist eine solche moderne Anlage, die Holz auf chemischem Weg spaltet und das Papier später bleicht. 
+
+Diese Industrie benötigt Extension: [Papier](#extension_6) 
+
+Industry ist erst ab 1900 verfügbar.
+Diese Beschränkung betrifft auch das Finanzieren der Industrie.
+
+Farbe in der Übersichtskarte:<span style="background-color:#9ca0ac;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+| Benötigt | Produziert |
+| -- | -- |
+| [Chlor](#cargo_CHLO) | [Papier](#cargo_PAPR) |
+| [Natronlauge](#cargo_LYE_) |  |
+| [Holz](#cargo_WOOD) |  |
+
+
+<a name="industry_68"></a>
 ### Rußfabrik
 
 <img src="carbon_black_plant.png" alt="Rußfabrik">
@@ -2624,7 +2769,7 @@ Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar is
 | [Öl](#cargo_OIL_) |  |
 
 
-<a name="industry_66"></a>
+<a name="industry_69"></a>
 ### Salzbergwerk
 
 <img src="salt_mine.png" alt="Salzbergwerk">
@@ -2645,7 +2790,7 @@ Die Industrie wird mit endlichen Ressourcen generiert und schließt sobald diese
 |  | [Salz](#cargo_SALT) |
 
 
-<a name="industry_67"></a>
+<a name="industry_70"></a>
 ### Sandgrube
 
 <img src="sand_pit.png" alt="Sandgrube">
@@ -2664,7 +2809,7 @@ Die Industrie wird mit endlichen Ressourcen generiert und schließt sobald diese
 |  | [Sand](#cargo_SAND) |
 
 
-<a name="industry_68"></a>
+<a name="industry_71"></a>
 ### Schlachthof
 
 <img src="sand_pit.png" alt="Schlachthof">
@@ -2673,7 +2818,7 @@ Schlachthöfe sind Industrien, in denen Vieh geschlachtet und verarbeitet wird, 
 
 Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_5) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Verpackungsmittelindustrie](#extension_7) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Verpackungsmittelindustrie](#extension_8) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#b09c6c;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2683,14 +2828,14 @@ Farbe in der Übersichtskarte:<span style="background-color:#b09c6c;">&nbsp;&nbs
 | [Vieh](#cargo_LVST) | [Nahrungsmittel](#cargo_FOOD) |
 
 
-<a name="industry_69"></a>
+<a name="industry_72"></a>
 ### Schlachthof
 
 <img src="sand_pit.png" alt="Schlachthof">
 
 Schlachthöfe sind Industrien, in denen Vieh geschlachtet und verarbeitet wird, in erster Linie zu Fleisch für den Verzehr. Obwohl das Schlachten von Tieren seit tausenden Jahren üblich ist, explodierte die Menge des produzierten Fleisches im Zuge der Industrialisierung geradezu. Die Einführung effizienter Kühlung erlaubte den Fleischtransport über lange Strecken, was wiederum zu einer Zentralisierung der Industrien in wenige große Schlachthöfe zur Folge hatte. 
 
-Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_5) [Verpackungsmittelindustrie](#extension_7) 
+Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_5) [Verpackungsmittelindustrie](#extension_8) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#b09c6c;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2703,7 +2848,7 @@ Industrie benötigt die in schwarz dargestellten Rohmaterialien zur Produktion. 
 | [Verpackungen](#cargo_MNSP) |  |
 
 
-<a name="industry_70"></a>
+<a name="industry_73"></a>
 ### Sägewerk
 
 <img src="sawmill.png" alt="Sägewerk">
@@ -2718,14 +2863,14 @@ Farbe in der Übersichtskarte:<span style="background-color:#fc9c00;">&nbsp;&nbs
 | [Holz](#cargo_WOOD) | [Schnittholz](#cargo_WDPR) |
 
 
-<a name="industry_71"></a>
+<a name="industry_74"></a>
 ### Textilfabrik
 
 <img src="textile_mill.png" alt="Textilfabrik">
 
 Die Textilfabrik fasst mehrere Industrien zusammen, die sich mit der Herstellung von Garn und Stoffen beschäftigen. Diese Arbeiten fanden jahrhundertelang hauptsächlich kleingewerblich statt, bevor die Mechanisierung im 18. und 19. Jahrhundert Einzug hielt. Webstühle gehörten damals zu den ersten Geräten, die mechanisch betrieben wurden, um die Produktionszeiten zu verkürzen. Im Set kombiniert diese Industrie sämtliche Schritte der Verarbeitung von Wolle und synthetischen Fasern zu Garn (spinnen), bevor sie z.B. durch Weben zu Stoffen verarbeitet werden. Diese Stoffe werden dann von anderen Industrien verwendet, um verschiedenste Waren zu produzieren. 
 
-Diese Industrie benötigt Extension: [Textilindustrie](#extension_6) 
+Diese Industrie benötigt Extension: [Textilindustrie](#extension_7) 
 
 Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Farbindustrie](#extension_2) 
 
@@ -2740,14 +2885,14 @@ Industrie benötigt die in schwarz dargestellten Rohmaterialien zur Produktion. 
 | [Wolle](#cargo_WOOL) |  |
 
 
-<a name="industry_72"></a>
+<a name="industry_75"></a>
 ### Textilfabrik
 
 <img src="textile_mill.png" alt="Textilfabrik">
 
 Die Textilfabrik fasst mehrere Industrien zusammen, die sich mit der Herstellung von Garn und Stoffen beschäftigen. Diese Arbeiten fanden jahrhundertelang hauptsächlich kleingewerblich statt, bevor die Mechanisierung im 18. und 19. Jahrhundert Einzug hielt. Webstühle gehörten damals zu den ersten Geräten, die mechanisch betrieben wurden, um die Produktionszeiten zu verkürzen. Im Set kombiniert diese Industrie sämtliche Schritte der Verarbeitung von Wolle und synthetischen Fasern zu Garn (spinnen), bevor sie z.B. durch Weben zu Stoffen verarbeitet werden. Diese Stoffe werden dann von anderen Industrien verwendet, um verschiedenste Waren zu produzieren. 
 
-Diese Industrie benötigt Extension: [Textilindustrie](#extension_6) [Farbindustrie](#extension_2) 
+Diese Industrie benötigt Extension: [Textilindustrie](#extension_7) [Farbindustrie](#extension_2) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#a85c4c;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2761,14 +2906,110 @@ Industrie benötigt die in schwarz dargestellten Rohmaterialien zur Produktion. 
 | [Wolle](#cargo_WOOL) |  |
 
 
-<a name="industry_73"></a>
+<a name="industry_76"></a>
 ### Verpackungsmittelfabrik
 
 <img src="packaging_plant.png" alt="Verpackungsmittelfabrik">
 
 Die Verpackungsfabrik produziert alle Arten von Verpackungen aus verschiedensten Materialien, seien es Kunststoffe oder Aluminium. Damit ist diese Anlage ein elementarer Bestandteil der Transportkette, denn ohne Verpackungen reduziert sich die Produktion vieler anderer Industrien. 
 
-Diese Industrie benötigt Extension: [Verpackungsmittelindustrie](#extension_7) 
+Diese Industrie benötigt Extension: [Verpackungsmittelindustrie](#extension_8) 
+
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Aluminium](#extension_0) [Glas](#extension_3) [Papier](#extension_6) 
+
+Industry ist erst ab 1930 verfügbar.
+Diese Beschränkung betrifft auch das Finanzieren der Industrie.
+
+Farbe in der Übersichtskarte:<span style="background-color:#804408;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar ist. Die maximale Produktion erhöht sich mit der Anzahl der verfügbaren verschiedenen Rohstoffe.
+
+| Benötigt | Produziert |
+| -- | -- |
+| [Kunststoffe](#cargo_PLAS) | [Verpackungen](#cargo_MNSP) |
+
+
+<a name="industry_77"></a>
+### Verpackungsmittelfabrik
+
+<img src="packaging_plant.png" alt="Verpackungsmittelfabrik">
+
+Die Verpackungsfabrik produziert alle Arten von Verpackungen aus verschiedensten Materialien, seien es Kunststoffe oder Aluminium. Damit ist diese Anlage ein elementarer Bestandteil der Transportkette, denn ohne Verpackungen reduziert sich die Produktion vieler anderer Industrien. 
+
+Diese Industrie benötigt Extension: [Verpackungsmittelindustrie](#extension_8) [Aluminium](#extension_0) 
+
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Glas](#extension_3) [Papier](#extension_6) 
+
+Industry ist erst ab 1930 verfügbar.
+Diese Beschränkung betrifft auch das Finanzieren der Industrie.
+
+Farbe in der Übersichtskarte:<span style="background-color:#804408;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar ist. Die maximale Produktion erhöht sich mit der Anzahl der verfügbaren verschiedenen Rohstoffe.
+
+| Benötigt | Produziert |
+| -- | -- |
+| [Aluminium](#cargo_ALUM) | [Verpackungen](#cargo_MNSP) |
+| [Kunststoffe](#cargo_PLAS) |  |
+
+
+<a name="industry_78"></a>
+### Verpackungsmittelfabrik
+
+<img src="packaging_plant.png" alt="Verpackungsmittelfabrik">
+
+Die Verpackungsfabrik produziert alle Arten von Verpackungen aus verschiedensten Materialien, seien es Kunststoffe oder Aluminium. Damit ist diese Anlage ein elementarer Bestandteil der Transportkette, denn ohne Verpackungen reduziert sich die Produktion vieler anderer Industrien. 
+
+Diese Industrie benötigt Extension: [Verpackungsmittelindustrie](#extension_8) [Glas](#extension_3) 
+
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Aluminium](#extension_0) [Papier](#extension_6) 
+
+Industry ist erst ab 1930 verfügbar.
+Diese Beschränkung betrifft auch das Finanzieren der Industrie.
+
+Farbe in der Übersichtskarte:<span style="background-color:#804408;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar ist. Die maximale Produktion erhöht sich mit der Anzahl der verfügbaren verschiedenen Rohstoffe.
+
+| Benötigt | Produziert |
+| -- | -- |
+| [Glas](#cargo_GLAS) | [Verpackungen](#cargo_MNSP) |
+| [Kunststoffe](#cargo_PLAS) |  |
+
+
+<a name="industry_79"></a>
+### Verpackungsmittelfabrik
+
+<img src="packaging_plant.png" alt="Verpackungsmittelfabrik">
+
+Die Verpackungsfabrik produziert alle Arten von Verpackungen aus verschiedensten Materialien, seien es Kunststoffe oder Aluminium. Damit ist diese Anlage ein elementarer Bestandteil der Transportkette, denn ohne Verpackungen reduziert sich die Produktion vieler anderer Industrien. 
+
+Diese Industrie benötigt Extension: [Verpackungsmittelindustrie](#extension_8) [Aluminium](#extension_0) [Glas](#extension_3) 
+
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Papier](#extension_6) 
+
+Industry ist erst ab 1930 verfügbar.
+Diese Beschränkung betrifft auch das Finanzieren der Industrie.
+
+Farbe in der Übersichtskarte:<span style="background-color:#804408;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar ist. Die maximale Produktion erhöht sich mit der Anzahl der verfügbaren verschiedenen Rohstoffe.
+
+| Benötigt | Produziert |
+| -- | -- |
+| [Aluminium](#cargo_ALUM) | [Verpackungen](#cargo_MNSP) |
+| [Glas](#cargo_GLAS) |  |
+| [Kunststoffe](#cargo_PLAS) |  |
+
+
+<a name="industry_80"></a>
+### Verpackungsmittelfabrik
+
+<img src="packaging_plant.png" alt="Verpackungsmittelfabrik">
+
+Die Verpackungsfabrik produziert alle Arten von Verpackungen aus verschiedensten Materialien, seien es Kunststoffe oder Aluminium. Damit ist diese Anlage ein elementarer Bestandteil der Transportkette, denn ohne Verpackungen reduziert sich die Produktion vieler anderer Industrien. 
+
+Diese Industrie benötigt Extension: [Verpackungsmittelindustrie](#extension_8) [Papier](#extension_6) 
 
 Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Aluminium](#extension_0) [Glas](#extension_3) 
 
@@ -2781,17 +3022,43 @@ Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar is
 
 | Benötigt | Produziert |
 | -- | -- |
-| [Kunststoffe](#cargo_PLAS) | [Verpackungen](#cargo_MNSP) |
+| [Papier](#cargo_PAPR) | [Verpackungen](#cargo_MNSP) |
+| [Kunststoffe](#cargo_PLAS) |  |
 
 
-<a name="industry_74"></a>
+<a name="industry_81"></a>
 ### Verpackungsmittelfabrik
 
 <img src="packaging_plant.png" alt="Verpackungsmittelfabrik">
 
 Die Verpackungsfabrik produziert alle Arten von Verpackungen aus verschiedensten Materialien, seien es Kunststoffe oder Aluminium. Damit ist diese Anlage ein elementarer Bestandteil der Transportkette, denn ohne Verpackungen reduziert sich die Produktion vieler anderer Industrien. 
 
-Diese Industrie benötigt Extension: [Verpackungsmittelindustrie](#extension_7) [Aluminium](#extension_0) 
+Diese Industrie benötigt Extension: [Verpackungsmittelindustrie](#extension_8) [Aluminium](#extension_0) [Papier](#extension_6) 
+
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Glas](#extension_3) 
+
+Industry ist erst ab 1930 verfügbar.
+Diese Beschränkung betrifft auch das Finanzieren der Industrie.
+
+Farbe in der Übersichtskarte:<span style="background-color:#804408;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar ist. Die maximale Produktion erhöht sich mit der Anzahl der verfügbaren verschiedenen Rohstoffe.
+
+| Benötigt | Produziert |
+| -- | -- |
+| [Aluminium](#cargo_ALUM) | [Verpackungen](#cargo_MNSP) |
+| [Papier](#cargo_PAPR) |  |
+| [Kunststoffe](#cargo_PLAS) |  |
+
+
+<a name="industry_82"></a>
+### Verpackungsmittelfabrik
+
+<img src="packaging_plant.png" alt="Verpackungsmittelfabrik">
+
+Die Verpackungsfabrik produziert alle Arten von Verpackungen aus verschiedensten Materialien, seien es Kunststoffe oder Aluminium. Damit ist diese Anlage ein elementarer Bestandteil der Transportkette, denn ohne Verpackungen reduziert sich die Produktion vieler anderer Industrien. 
+
+Diese Industrie benötigt Extension: [Verpackungsmittelindustrie](#extension_8) [Glas](#extension_3) [Papier](#extension_6) 
 
 Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Aluminium](#extension_0) 
 
@@ -2804,41 +3071,19 @@ Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar is
 
 | Benötigt | Produziert |
 | -- | -- |
-| [Aluminium](#cargo_ALUM) | [Verpackungen](#cargo_MNSP) |
+| [Glas](#cargo_GLAS) | [Verpackungen](#cargo_MNSP) |
+| [Papier](#cargo_PAPR) |  |
 | [Kunststoffe](#cargo_PLAS) |  |
 
 
-<a name="industry_75"></a>
+<a name="industry_83"></a>
 ### Verpackungsmittelfabrik
 
 <img src="packaging_plant.png" alt="Verpackungsmittelfabrik">
 
 Die Verpackungsfabrik produziert alle Arten von Verpackungen aus verschiedensten Materialien, seien es Kunststoffe oder Aluminium. Damit ist diese Anlage ein elementarer Bestandteil der Transportkette, denn ohne Verpackungen reduziert sich die Produktion vieler anderer Industrien. 
 
-Diese Industrie benötigt Extension: [Verpackungsmittelindustrie](#extension_7) [Glas](#extension_3) 
-
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Aluminium](#extension_0) 
-
-Industry ist erst ab 1930 verfügbar.
-Diese Beschränkung betrifft auch das Finanzieren der Industrie.
-
-Farbe in der Übersichtskarte:<span style="background-color:#804408;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-
-Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar ist. Die maximale Produktion erhöht sich mit der Anzahl der verfügbaren verschiedenen Rohstoffe.
-
-| Benötigt | Produziert |
-| -- | -- |
-| [Kunststoffe](#cargo_PLAS) | [Verpackungen](#cargo_MNSP) |
-
-
-<a name="industry_76"></a>
-### Verpackungsmittelfabrik
-
-<img src="packaging_plant.png" alt="Verpackungsmittelfabrik">
-
-Die Verpackungsfabrik produziert alle Arten von Verpackungen aus verschiedensten Materialien, seien es Kunststoffe oder Aluminium. Damit ist diese Anlage ein elementarer Bestandteil der Transportkette, denn ohne Verpackungen reduziert sich die Produktion vieler anderer Industrien. 
-
-Diese Industrie benötigt Extension: [Verpackungsmittelindustrie](#extension_7) [Aluminium](#extension_0) [Aluminium](#extension_0) 
+Diese Industrie benötigt Extension: [Verpackungsmittelindustrie](#extension_8) [Aluminium](#extension_0) [Glas](#extension_3) [Papier](#extension_6) 
 
 Industry ist erst ab 1930 verfügbar.
 Diese Beschränkung betrifft auch das Finanzieren der Industrie.
@@ -2850,10 +3095,12 @@ Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar is
 | Benötigt | Produziert |
 | -- | -- |
 | [Aluminium](#cargo_ALUM) | [Verpackungen](#cargo_MNSP) |
+| [Glas](#cargo_GLAS) |  |
+| [Papier](#cargo_PAPR) |  |
 | [Kunststoffe](#cargo_PLAS) |  |
 
 
-<a name="industry_77"></a>
+<a name="industry_84"></a>
 ### Viehzucht
 
 <img src="animal_farm.png" alt="Viehzucht">
@@ -2862,7 +3109,7 @@ Viehzuchtbetriebe sind Teil der Landwirtschaft. Sie züchten Vieh und liefern da
 
 Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_5) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Textilindustrie](#extension_6) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Textilindustrie](#extension_7) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#90e05c;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2873,14 +3120,14 @@ Farbe in der Übersichtskarte:<span style="background-color:#90e05c;">&nbsp;&nbs
 |  | [Milch](#cargo_MILK) |
 
 
-<a name="industry_78"></a>
+<a name="industry_85"></a>
 ### Viehzucht
 
 <img src="animal_farm.png" alt="Viehzucht">
 
 Viehzuchtbetriebe sind Teil der Landwirtschaft. Sie züchten Vieh und liefern dazugehörige Produkte wie Milch und Wolle. In der Realität sind diese Betriebe heutzutage auf bestimmte Tiere spezialisiert, so dass es Hühnerfarmen oder Schweinemastbetriebe gibt, im Set ist das alles in eine Industrie zusammengefasst. 
 
-Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_5) [Textilindustrie](#extension_6) 
+Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_5) [Textilindustrie](#extension_7) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#90e05c;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2892,7 +3139,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#90e05c;">&nbsp;&nbs
 |  | [Wolle](#cargo_WOOL) |
 
 
-<a name="industry_79"></a>
+<a name="industry_86"></a>
 ### Wald
 
 <img src="forest.png" alt="Wald">
@@ -2907,7 +3154,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#68941c;">&nbsp;&nbs
 |  | [Holz](#cargo_WOOD) |
 
 
-<a name="industry_80"></a>
+<a name="industry_87"></a>
 ### Zementfabrik
 
 <img src="cement_plant.png" alt="Zementfabrik">
@@ -2927,7 +3174,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#6c7484;">&nbsp;&nbs
 | [Sand](#cargo_SAND) |  |
 
 
-<a name="industry_81"></a>
+<a name="industry_88"></a>
 ### Ziegelei
 
 <img src="brick_works.png" alt="Ziegelei">
@@ -2948,7 +3195,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#cc8060;">&nbsp;&nbs
 | [Kohle](#cargo_COAL) | [Ziegel](#cargo_BDMT) |
 
 
-<a name="industry_82"></a>
+<a name="industry_89"></a>
 ### Ölbohrinsel
 
 <img src="oil_rig.png" alt="Ölbohrinsel">
@@ -2970,7 +3217,7 @@ Die Industrie wird mit endlichen Ressourcen generiert und schließt sobald diese
 |  | [Passagiere](#cargo_PASS) |
 
 
-<a name="industry_83"></a>
+<a name="industry_90"></a>
 ### Ölquellen
 
 <img src="oil_well.png" alt="Ölquellen">
