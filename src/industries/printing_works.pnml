@@ -1,0 +1,302 @@
+spritelayout printing_works_spritelayout_1 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_CONCRETE;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_PRINTING_WORKS_TOP_LEFT;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 16;
+		always_draw: 0;
+		hide_sprite: construction_state == 0;
+	}
+}
+
+spritelayout printing_works_spritelayout_2 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_CONCRETE;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_PRINTING_WORKS_TOP_RIGHT;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 16;
+		always_draw: 0;
+		hide_sprite: construction_state == 0;
+	}
+}
+spritelayout printing_works_spritelayout_3 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_CONCRETE;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_PRINTING_WORKS_BOTTOM_LEFT;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 16;
+		always_draw: 0;
+		hide_sprite: construction_state == 0;
+	}
+}
+spritelayout printing_works_spritelayout_4 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_CONCRETE;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_PRINTING_WORKS_BOTTOM_RIGHT;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 16;
+		always_draw: 0;
+		hide_sprite: construction_state == 0;
+	}
+}
+
+
+//////////////////////////////////////////////////////////////////////////////
+// graphics choice switch chain
+//////////////////////////////////////////////////////////////////////////////
+
+switch(FEAT_INDUSTRYTILES, SELF, printing_works_switch_graphics_layout_1, relative_pos) {
+	relative_coord(0, 0): printing_works_spritelayout_1;
+	relative_coord(0, 1): printing_works_spritelayout_2;
+	relative_coord(1, 0): printing_works_spritelayout_3;
+	relative_coord(1, 1): printing_works_spritelayout_4;
+	return 0;
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, printing_works_switch_graphics,
+	[switch_tile_fences(),
+	 switch_terrain_sprite(),switch_graphics_init_temp_registers()]) {
+    printing_works_switch_graphics_layout_1;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// location checks
+//////////////////////////////////////////////////////////////////////////////
+// This check works as follows: calculate height of the northernmost tile of the industry and add 0, 1 or 2 for flat, slope. steep slope
+// Do the same for the current tile and compare the results. If the result is equal, the terrain is effectively flat
+// and industry can be placed.
+// It just looks weird due to the stacked ternary operators needed here
+switch (FEAT_INDUSTRYTILES, SELF, printing_works_switch_tile_location_check2,
+			(nearby_tile_height(-relative_x, -relative_y) + 
+			(nearby_tile_slope(-relative_x, -relative_y)== SLOPE_FLAT ? 0 : nearby_tile_slope(-relative_x, -relative_y) == bitmask(IS_STEEP_SLOPE) ? 2 : 1)) 
+			== 
+			(nearby_tile_height(0, 0) + (nearby_tile_slope(0, 0) == SLOPE_FLAT ? 0 : nearby_tile_slope(0, 0) == bitmask(IS_STEEP_SLOPE) ? 2 : 1))
+			) {
+	1: return CB_RESULT_LOCATION_ALLOW;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, printing_works_switch_tile_location_check,
+	is_funded_or_prospected() || (generation_not_forbidden_by_param() && not_next_to_industry() && not_next_to_buildings()))
+{
+	1: printing_works_switch_tile_location_check2;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// industry tile and layout definition
+//////////////////////////////////////////////////////////////////////////////
+item(FEAT_INDUSTRYTILES, printing_works_tile, INDUSTRY_TILE_ID_PRINTING_WORKS) {
+	property {
+		substitute:         0;
+		land_shape_flags:   0;
+		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+		animation_triggers: bitmask();
+	}
+	graphics {
+		tile_check: printing_works_switch_tile_location_check;
+		printing_works_switch_graphics;
+	}
+}
+
+tilelayout printing_works_tilelayout_1 {
+	0, 0: printing_works_tile;
+    0, 1: printing_works_tile;
+    1, 0: printing_works_tile;
+    1, 1: printing_works_tile;
+}
+
+switch(FEAT_INDUSTRIES, SELF, printing_works_switch_location_check_industry_distance,
+       [STORE_TEMP(0, TEMP_REGISTER_TOWN_MIN_DISTANCE),
+	    STORE_TEMP(32, TEMP_REGISTER_TOWN_MAX_DISTANCE),
+	    (distance_from_town() && 
+	    (industry_distance(INDUSTRY_ID_PAPER_MILL) >= 32) &&
+		(industry_distance(INDUSTRY_ID_DEPARTMENT_STORE) >= 32) && 
+		(industry_distance(INDUSTRY_ID_PACKAGING_PLANT) >= 32) && 
+	    (industry_distance(INDUSTRY_ID_PRINTING_WORKS) >= 16))]) {
+	   1: return CB_RESULT_LOCATION_ALLOW;
+	   return CB_RESULT_LOCATION_DISALLOW;
+}
+
+produce(printing_works_produce,
+	[PAPR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);],
+	[GOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100) : 0;],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, printing_works_switch_produce, 
+	[STORE_TEMP(incoming_cargo_waiting("WOOD"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+     calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 store_debug_production_data()
+	]) {
+	printing_works_produce;
+}
+
+produce(printing_works_produce_ext_packaging,
+	[PAPR: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)) : 0;
+	 MNSP: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*25/100) : 0;
+	],
+	[GOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100) : 0;],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, printing_works_switch_produce_ext_packaging, 
+	[STORE_TEMP(min(incoming_cargo_waiting("WOOD"),incoming_cargo_waiting("MNSP")),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+     calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 store_debug_production_data()
+	]) {
+	printing_works_produce_ext_packaging;
+}
+
+// only show stockpile for WOOD and nothing else
+switch(FEAT_INDUSTRIES, SELF, printing_works_switch_cargo_subtype, getbits(extra_callback_info2, 16, 8)) {
+	PAPR: switch_cargo_subtype;
+	MNSP: switch_cargo_subtype;
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, printing_works_switch_extra_text_fund, 
+	[STORE_TEMP(string(STR_1900), TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	current_year]) {
+	1900..500000: return string(STR_EMPTY);
+	return string(STR_INDUSTRY_NOT_AVAILABLE_BEFORE);
+}
+
+// year < 1900: no creation, 1900 <= year: certain probability
+switch(FEAT_INDUSTRIES, SELF, printing_works_switch_check_availability, 
+	current_year) {
+	0..1899: return CB_RESULT_IND_NO_CONSTRUCTION;
+	return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+}
+
+switch(FEAT_INDUSTRIES, SELF, printing_works_switch_update_last_served_date,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("GOOD") != 0 || last_month_production("GOOD") != 0 || 
+		incoming_cargo_waiting("PAPR") != 0 || 
+		this_month_transported("GOOD") != 0 || last_month_transported("GOOD") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+switch(FEAT_INDUSTRIES, SELF, printing_works_switch_update_last_served_date_ext_packaging,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("GOOD") != 0 || last_month_production("GOOD") != 0 || 
+		incoming_cargo_waiting("PAPR") != 0 || incoming_cargo_waiting("MNSP") != 0 ||
+		this_month_transported("GOOD") != 0 || last_month_transported("GOOD") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+if (param_extension_paper && !param_extension_packaging_industries) {
+	item(FEAT_INDUSTRIES, printing_works, INDUSTRY_ID_PRINTING_WORKS) {
+		property {
+			substitute: 0;
+			map_colour: 0xC2;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [printing_works_tilelayout_1];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: TTD_STR_INDUSTRY_NAME_PRINTING_WORKS;
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 97;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("PAPR"),produce_cargo("GOOD",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PRINTING_WORKS));
+		}
+			
+		graphics {
+			construction_probability: printing_works_switch_check_availability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        printing_works_switch_produce;
+			monthly_prod_change:      printing_works_switch_update_last_served_date;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           printing_works_switch_location_check_industry_distance;
+			extra_text_fund: 		  printing_works_switch_extra_text_fund;
+			cargo_subtype_display:    printing_works_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+
+if (param_extension_paper && param_extension_packaging_industries) {
+	item(FEAT_INDUSTRIES, printing_works, INDUSTRY_ID_PRINTING_WORKS) {
+		property {
+			substitute: 0;
+			map_colour: 0xC2;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [printing_works_tilelayout_1];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: TTD_STR_INDUSTRY_NAME_PRINTING_WORKS;
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 97;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("PAPR"),accept_cargo("MNSP"),produce_cargo("GOOD",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PRINTING_WORKS));
+		}
+			
+		graphics {
+			construction_probability: printing_works_switch_check_availability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        printing_works_switch_produce_ext_packaging;
+			monthly_prod_change:      printing_works_switch_update_last_served_date_ext_packaging;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           printing_works_switch_location_check_industry_distance;
+			extra_text_fund: 		  printing_works_switch_extra_text_fund;
+			cargo_subtype_display:    printing_works_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}

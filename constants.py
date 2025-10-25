@@ -53,6 +53,9 @@ constants = {
     # CARGO IDs GLASS
     "CARGO_ID_GLASS": "34",
     "CARGO_ID_QUICKLIME": "33",
+    
+    # CARGO IDs PAPER
+    "CARGO_ID_PAPER": "35",
         
     # INDUSTRY IDS 0-20 (with gaps): Base Industries
     "INDUSTRY_ID_BUILDERS_YARD":"17",
@@ -113,6 +116,10 @@ constants = {
     # Glass Extension
     "INDUSTRY_ID_GLASS_WORKS" : "42",
     "INDUSTRY_ID_LIME_KILN" : "41",
+    
+    # Paper Extension
+    "INDUSTRY_ID_PAPER_MILL" : "43",
+    "INDUSTRY_ID_PRINTING_WORKS" : "7", # original ID of the builtin printing works
     
     # INDUSTRY TILE IDs for Base Industries
     "INDUSTRY_TILE_ID_BUILDERS_YARD":"22",
@@ -190,6 +197,10 @@ constants = {
     "INDUSTRY_TILE_ID_GLASS_WORKS" : "57",
     "INDUSTRY_TILE_ID_LIME_KILN" : "56",
     
+    # TILE IDs for PAPER
+    "INDUSTRY_TILE_ID_PAPER_MILL" : "58",
+    "INDUSTRY_TILE_ID_PRINTING_WORKS" : "59",
+    
     # TTD sprite IDs
     "TTD_OILRIG_STATION_TILE": "24",
     "TTD_COPPER_ORE_MINE_ANIMATED_HEADGEAR":"2028",
@@ -224,10 +235,10 @@ constants = {
     "TTD_POWER_PLANT_BUILDING":"2048",
     "TTD_POWER_PLANT_SMALL_BUILDING":"2051",
     "TTD_POWER_PLANT_SUBSTATION":"2054",
-    "TTD_PRINTING_WORKS_TOP_LEFT":"2161",
-    "TTD_PRINTING_WORKS_TOP_RIGHT":"2162",
-    "TTD_PRINTING_WORKS_BOTTOM_LEFT":"2163",
-    "TTD_PRINTING_WORKS_BOTTOM_RIGHT":"2164",
+    "TTD_PRINTING_WORKS_TOP_LEFT":"2169",# building stages would be 2061,2065, but they have a different size
+    "TTD_PRINTING_WORKS_TOP_RIGHT":"2170",# building stages would be 2062,2066, but they have a different size
+    "TTD_PRINTING_WORKS_BOTTOM_LEFT":"2171",# building stages would be 2063,2067, but they have a different size
+    "TTD_PRINTING_WORKS_BOTTOM_RIGHT":"2172",# building stages would be 2064,2068, but they have a different size
     "TTD_SAWMILL_SHED1":"2066", # building stages 2067-2069
     "TTD_SAWMILL_SHED2":"2060", # building stages 2061-2063
     "TTD_SAWMILL_SHED3":"2063", # building stages 2064-2066

@@ -71,7 +71,7 @@ spritelayout sawmill_spritelayout_1 {
 spritelayout sawmill_spritelayout_2 {
 	childsprite {
 		sprite: TTD_GROUND_SPRITE_MUD_TRACK;
-		hide_sprite: (LOAD_TEMP(13));
+		hide_sprite: 0;
 		always_draw: 1;
 	}
     building {
@@ -139,7 +139,7 @@ spritelayout sawmill_spritelayout_2 {
 spritelayout sawmill_spritelayout_3 {
 	childsprite {
 		sprite: TTD_GROUND_SPRITE_MUD_TRACK;
-		hide_sprite: (LOAD_TEMP(13));
+		hide_sprite: 0;
 		always_draw: 1;
 	}
     building {
@@ -207,7 +207,7 @@ spritelayout sawmill_spritelayout_3 {
 spritelayout sawmill_spritelayout_4 {
 	childsprite {
 		sprite: TTD_GROUND_SPRITE_MUD_TRACK;
-		hide_sprite: (LOAD_TEMP(13));
+		hide_sprite: 0;
 		always_draw: 1;
 	}
     building {
@@ -275,7 +275,7 @@ spritelayout sawmill_spritelayout_4 {
 spritelayout sawmill_spritelayout_5 {
 	childsprite {
 		sprite: TTD_GROUND_SPRITE_MUD_TRACK;
-		hide_sprite: (LOAD_TEMP(13));
+		hide_sprite: 0;
 		always_draw: 1;
 	}
     building {

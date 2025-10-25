@@ -108,6 +108,13 @@ grf {
 			desc: string(STR_PARAM_EXT_GLASS_DESC);
 		}
 	}
+	param {
+		param_extension_paper {
+			type: bool;
+			name: string(STR_PARAM_EXT_PAPER);
+			desc: string(STR_PARAM_EXT_PAPER_DESC);
+		}
+	}
 }
 
 if (ttd_platform != PLATFORM_OPENTTD || openttd_version < version_openttd(14, 0)) {
@@ -117,6 +124,11 @@ if (ttd_platform != PLATFORM_OPENTTD || openttd_version < version_openttd(14, 0)
 
 if (param_extension_glass && !param_extension_building_materials) {
 	error(FATAL, string(STR_ERR_EXTENSION_GLASS_REQUIRES_EXTENSION_BUILDING_INDUSTRIES));
+	exit;
+}
+
+if (param_extension_paper && !param_extension_basic_inorganic_chemistry) {
+	error(FATAL, string(STR_ERR_EXTENSION_PAPER_REQUIRES_EXTENSION_BASIC_INORGANIC_CHEMISTRY));
 	exit;
 }
 
@@ -135,5 +147,6 @@ cargotable {
 	CORE, COPR, CBLK, COAT,	// ext painting industries
 	MILK, // ext food industries
 	MNSP, // ext packaging industries
-	QLME, GLAS // ext glass
+	QLME, GLAS, // ext glass
+	PAPR // ext paper
 }
