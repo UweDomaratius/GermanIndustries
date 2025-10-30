@@ -1,0 +1,32 @@
+spriteset(cargoicon_ethylene) {
+        [10 + 20 * 2, 10 + 20 * 4, 10, 10, 0, 0, "graphics/other/cargoicons.png"]
+    }
+
+if (param_extension_organic_chemistry) {
+	item(FEAT_CARGOS, ethylene, CARGO_ID_ETHYLENE) {
+		property {
+			type_name: string(STR_CARGO_NAME_ETHYLENE);
+			unit_name: string(STR_CARGO_NAME_ETHYLENE);
+			type_abbreviation: string(STR_CID_ETHYLENE);
+			sprite: NEW_CARGO_SPRITE;
+			weight: 1.0;
+			is_freight: 1;
+			cargo_classes: bitmask(CC_LIQUID, CC_HAZARDOUS);
+			town_growth_effect: TOWNGROWTH_NONE;
+			town_growth_multiplier: 1.0;
+			units_of_cargo: TTD_STR_TONS;
+			items_of_cargo: string(STR_QUANTITY_ETHYLENE);
+			penalty_lowerbound: 20;
+			single_penalty_length: 40;
+			capacity_multiplier: 1;
+			cargo_payment_list_colour: 28;
+			station_list_colour: 28;
+			price_factor: 157;
+			cargo_label: "C2H4";
+			number: CARGO_ID_ETHYLENE;
+		}
+		graphics {
+			cargoicon_ethylene;
+		}
+	}
+}

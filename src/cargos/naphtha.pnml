@@ -1,0 +1,32 @@
+spriteset(cargoicon_naphtha) {
+        [10 + 20 * 10, 10 + 20 * 1, 10, 10, 0, 0, "graphics/other/cargoicons.png"]
+    }
+
+if (param_extension_organic_chemistry) {
+	item(FEAT_CARGOS, naphtha, CARGO_ID_NAPHTHA) {
+		property {
+			type_name: string(STR_CARGO_NAME_NAPHTHA);
+			unit_name: string(STR_CARGO_NAME_NAPHTHA);
+			type_abbreviation: string(STR_CID_NAPHTHA);
+			sprite: NEW_CARGO_SPRITE;
+			weight: 1.0;
+			is_freight: 1;
+			cargo_classes: bitmask(CC_LIQUID, CC_HAZARDOUS);
+			town_growth_effect: TOWNGROWTH_NONE;
+			town_growth_multiplier: 1.0;
+			units_of_cargo: TTD_STR_TONS;
+			items_of_cargo: string(STR_QUANTITY_NAPHTHA);
+			penalty_lowerbound: 20;
+			single_penalty_length: 255;
+			capacity_multiplier: 1;
+			cargo_payment_list_colour: 25;
+			station_list_colour: 25;
+			price_factor: 115;
+			cargo_label: "RFPR";
+			number: CARGO_ID_NAPHTHA;
+		}
+		graphics {
+			cargoicon_naphtha;
+		}
+	}
+}

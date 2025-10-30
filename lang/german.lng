@@ -37,6 +37,8 @@ STR_PARAM_EXT_GLASS :Erweiterung "Glasindustrie"
 STR_PARAM_EXT_GLASS_DESC :Fügt Industrien und Frachten hinzu, die für die Glasproduktion relevant sind. Benötigt die Erweiterung Bauindustrie.
 STR_PARAM_EXT_PAPER :Erweiterung "Papierindustrie"
 STR_PARAM_EXT_PAPER_DESC :Fügt Industrien hinzu, die Papier produzieren bzw. benötigen. Benötigt die Erweiterung Grundlegende Anorganische Chemie.
+STR_PARAM_EXT_ORGANIC_CHEMISTRY :Erweiterung "Organische Chemie"
+STR_PARAM_EXT_ORGANIC_CHEMISTRY_DESC :Fügt Industrien und Frachten hinzu, die sich mit der Verarbeitung von Erdöl beschäftigen. Benötigt die Erweiterung Grundlegende Anorganische Chemie.
 
 # Frachten
 STR_CARGO_NAME_BAUXITE            :Bauxit
@@ -46,14 +48,17 @@ STR_CARGO_NAME_CEMENT             :Zement
 STR_CARGO_NAME_CHLORINE           :Chlor
 STR_CARGO_NAME_COPPER             :Kupfer
 STR_CARGO_NAME_COPPER_ORE         :Kupfererz
+STR_CARGO_NAME_ETHYLENE           :Ethylen
 STR_CARGO_NAME_FISH               :Fisch
 STR_CARGO_NAME_GLASS              :Glas
 STR_CARGO_NAME_HYDROGEN           :Wasserstoff
 STR_CARGO_NAME_LIMESTONE          :Kalkstein
 STR_CARGO_NAME_LYE                :Natronlauge
 STR_CARGO_NAME_MILK               :Milch
+STR_CARGO_NAME_NAPHTHA            :Naphtha
 STR_CARGO_NAME_PACKAGING          :Verpackungen
 STR_CARGO_NAME_PAINT              :Farbe
+STR_CARGO_NAME_PETROL             :Treibstoff
 STR_CARGO_NAME_PLASTICS           :Kunststoffe
 STR_CARGO_NAME_QUICKLIME          :Branntkalk
 STR_CARGO_NAME_SALT               :Salz
@@ -72,6 +77,7 @@ STR_QUANTITY_CEMENT               :{WEIGHT} Zement
 STR_QUANTITY_CHLORINE             :{WEIGHT} Chlor
 STR_QUANTITY_COPPER               :{WEIGHT} Kupfer
 STR_QUANTITY_COPPER_ORE           :{WEIGHT} Kupfererz
+STR_QUANTITY_ETHYLENE             :{WEIGHT} Ethylen
 STR_QUANTITY_FISH                 :{WEIGHT} Fisch
 STR_QUANTITY_GLASS                :{WEIGHT} Glas
 STR_QUANTITY_GOODS                :{WEIGHT} Güter
@@ -79,9 +85,11 @@ STR_QUANTITY_HYDROGEN             :{WEIGHT} Wasserstoff
 STR_QUANTITY_LIMESTONE            :{WEIGHT} Kalkstein
 STR_QUANTITY_LYE                  :{WEIGHT} Natronlauge
 STR_QUANTITY_MILK                 :{WEIGHT} Milch
+STR_QUANTITY_NAPHTHA              :{WEIGHT} Naphtha
 STR_QUANTITY_OIL                  :{WEIGHT} Öl
 STR_QUANTITY_PACKAGING            :{WEIGHT} Verpackungen
 STR_QUANTITY_PAINT                :{WEIGHT} Farbe
+STR_QUANTITY_PETROL               :{WEIGHT} Treibstoff
 STR_QUANTITY_PLASTICS             :{WEIGHT} Kunststoffe
 STR_QUANTITY_QUICKLIME            :{WEIGHT} Branntkalk
 STR_QUANTITY_SALT                 :{WEIGHT} Salz
@@ -92,85 +100,93 @@ STR_QUANTITY_VEHICLES             :{COMMA} Fahrzeug{P "" e}
 STR_QUANTITY_WOOL                 :{WEIGHT} Wolle
 
 # Industrien
-STR_IND_ALUMINIUM_PLANT      :{G=w}Aluhütte
-STR_IND_ANIMAL_FARM          :{G=w}Viehzucht
-STR_IND_BREWERY              :{G=w}Brauerei
-STR_IND_BRICK_WORKS          :{G=w}Ziegelei
-STR_IND_BUILDERS_YARD        :Bauhof
-STR_IND_CARBON_BLACK_PLANT   :{G=w}Rußfabrik
-STR_IND_CEMENT_PLANT         :{G=w}Zementfabrik
-STR_IND_CHLOR_ALKALI_PLANT   :{G=w}Chloralkali Elektrolyseanlage
-STR_IND_CLOTHING_PLANT       :{G=w}Bekleidungsfabrik
-STR_IND_COPPER_SMELTER       :{G=w}Kupferhütte
-STR_IND_DAIRY                :{G=w}Molkerei
-STR_IND_FISHING_GROUNDS      :{G=w}Fischgründe
-STR_IND_FLOUR_MILL           :{G=w}Mühle
-STR_IND_FURNITURE_FACTORY    :{G=w}Möbelfabrik
-STR_IND_DEPARTMENT_STORE     :{G=n}Kaufhaus
-STR_IND_GENERAL_STORE        :Laden
-STR_IND_GLASS_WORKS          :{G=w}Glasfabrik
-STR_IND_HOTEL                :{G=n}Hotel
-STR_IND_INTEGRATED_STEEL_MILL:{G=n}Integriertes Stahlwerk
-STR_IND_LIME_KILN            :Kalkofen
-STR_IND_LIMESTONE_MINE       :{G=n}Kalksteinbergwerk
-STR_IND_PACKAGING_PLANT      :{G=n}Verpackungsmittelfabrik
-STR_IND_PAINT_FACTORY        :{G=w}Farbenfabrik
-STR_IND_PHARMACEUTICAL_PLANT :{G=w}Arzneimittelfabrik
-STR_IND_PLASTICS_PLANT       :Kunststofffabrik
-STR_IND_PORT                 :Hafen
-STR_IND_SALT_MINE            :{G=n}Salzbergwerk
-STR_IND_SANDPIT              :{G=w}Sandgrube
-STR_IND_STOCKYARD            :Schlachthof
-STR_IND_TEXTILE_MILL         :{G=w}Textilfabrik
-STR_IND_VEHICLE_DISTRIBUTOR  :{G=n}Autohaus
-STR_IND_VEHICLE_FACTORY      :{G=w}Autofabrik
+STR_IND_ALUMINIUM_PLANT        :{G=w}Aluhütte
+STR_IND_ANIMAL_FARM            :{G=w}Viehzucht
+STR_IND_BREWERY                :{G=w}Brauerei
+STR_IND_BRICK_WORKS            :{G=w}Ziegelei
+STR_IND_BUILDERS_YARD          :Bauhof
+STR_IND_CARBON_BLACK_PLANT     :{G=w}Rußfabrik
+STR_IND_CEMENT_PLANT           :{G=w}Zementfabrik
+STR_IND_CHLOR_ALKALI_PLANT     :{G=w}Chloralkali Elektrolyseanlage
+STR_IND_CLOTHING_PLANT         :{G=w}Bekleidungsfabrik
+STR_IND_COAL_LIQUEFACTION_PLANT:{G=n}Hydrierwerk
+STR_IND_COPPER_SMELTER         :{G=w}Kupferhütte
+STR_IND_DAIRY                  :{G=w}Molkerei
+STR_IND_FISHING_GROUNDS        :{G=w}Fischgründe
+STR_IND_FLOUR_MILL             :{G=w}Mühle
+STR_IND_FURNITURE_FACTORY      :{G=w}Möbelfabrik
+STR_IND_DEPARTMENT_STORE       :{G=n}Kaufhaus
+STR_IND_GENERAL_STORE          :Laden
+STR_IND_GLASS_WORKS            :{G=w}Glasfabrik
+STR_IND_HOTEL                  :{G=n}Hotel
+STR_IND_INTEGRATED_STEEL_MILL  :{G=n}Integriertes Stahlwerk
+STR_IND_LIME_KILN              :Kalkofen
+STR_IND_LIMESTONE_MINE         :{G=n}Kalksteinbergwerk
+STR_IND_PACKAGING_PLANT        :{G=n}Verpackungsmittelfabrik
+STR_IND_PAINT_FACTORY          :{G=w}Farbenfabrik
+STR_IND_PETROL_STATION         :{G=w}Tankstelle
+STR_IND_PHARMACEUTICAL_PLANT   :{G=w}Arzneimittelfabrik
+STR_IND_PLASTICS_PLANT         :Kunststofffabrik
+STR_IND_PORT                   :Hafen
+STR_IND_SALT_MINE              :{G=n}Salzbergwerk
+STR_IND_SANDPIT                :{G=w}Sandgrube
+STR_IND_STEAMCRACKER           :Steamcracker
+STR_IND_STEAMREFORMER          :Dampfreformierer
+STR_IND_STOCKYARD              :Schlachthof
+STR_IND_TEXTILE_MILL           :{G=w}Textilfabrik
+STR_IND_VEHICLE_DISTRIBUTOR    :{G=n}Autohaus
+STR_IND_VEHICLE_FACTORY        :{G=w}Autofabrik
 
 # Stationsnamen
-STR_STATION_ALUMINIUM_PLANT      :Aluhütte
-STR_STATION_ANIMAL_FARM          :Viehzucht
-STR_STATION_BREWERY              :Brauerei
-STR_STATION_BRICK_WORKS          :Ziegelei
-STR_STATION_BUILDERS_YARD        :Bauhof
-STR_STATION_CARBON_BLACK_PLANT   :Rußfabrik
-STR_STATION_CEMENT_PLANT         :Zementfabrik
-STR_STATION_CHLOR_ALKALI_PLANT   :Chloralkali Elektrolyseanlage
-STR_STATION_CLOTHING_PLANT       :Bekleidungsfabrik
-STR_STATION_COAL_MINE            :Bergwerk
-STR_STATION_COPPER_ORE_MINE      :Bergwerk
-STR_STATION_COPPER_SMELTER       :Kupferhütte
-STR_STATION_DAIRY                :Molkerei
-STR_STATION_DEPARTMENT_STORE     :Kaufhaus
-STR_STATION_FARM                 :Bauernhof
-STR_STATION_FISHING_GROUNDS      :Fischgründe
-STR_STATION_FLOUR_MILL           :Mühle
-STR_STATION_FOOD_PROCESSOR       :Lebensmittelfabrik
-STR_STATION_FOREST               :Wald
-STR_STATION_FURNITURE_FACTORY    :Möbelfabrik
-STR_STATION_GENERAL_STORE        :Laden
-STR_STATION_GLASS_WORKS          :Glasfabrik
-STR_STATION_HOTEL                :Hotel
-STR_STATION_INTEGRATED_STEEL_MILL:Integriertes Stahlwerk
-STR_STATION_IRON_ORE_MINE        :Bergwerk
-STR_STATION_LIME_KILN            :Kalkofen
-STR_STATION_LIMESTONE_MINE       :Kalkeinbergwerk
-STR_STATION_OIL_REFINERY         :Raffinerie
-STR_STATION_OIL_RIG              :Bohrplattform
-STR_STATION_OIL_WELL             :Ölquelle
-STR_STATION_PACKAGING_PLANT      :Verpackungsmittelfabrik
-STR_STATION_PAINT_FACTORY        :Farbenfabrik
-STR_STATION_PAPER_MILL           :Papierfabrik
-STR_STATION_PHARMACEUTICAL_PLANT :Arzneimittelfabrik
-STR_STATION_PLASTICS_PLANT       :Kunststofffabrik
-STR_STATION_PORT                 :Hafen
-STR_STATION_POWER_PLANT          :Kraftwerk
-STR_STATION_PRINTING_WORKS       :Druckerei
-STR_STATION_SALT_MINE            :Salzbergwerk
-STR_STATION_SANDPIT              :Sandgrube
-STR_STATION_SAWMILL              :Sägewerk
-STR_STATION_STOCKYARD            :Schlachthof
-STR_STATION_TEXTILE_MILL         :Textilfabrik
-STR_STATION_VEHICLE_DISTRIBUTOR  :Autohändler
-STR_STATION_VEHICLE_FACTORY      :Autofabrik
+STR_STATION_ALUMINIUM_PLANT        :Aluhütte
+STR_STATION_ANIMAL_FARM            :Viehzucht
+STR_STATION_BREWERY                :Brauerei
+STR_STATION_BRICK_WORKS            :Ziegelei
+STR_STATION_BUILDERS_YARD          :Bauhof
+STR_STATION_CARBON_BLACK_PLANT     :Rußfabrik
+STR_STATION_CEMENT_PLANT           :Zementfabrik
+STR_STATION_CHLOR_ALKALI_PLANT     :Chloralkali Elektrolyseanlage
+STR_STATION_CLOTHING_PLANT         :Bekleidungsfabrik
+STR_STATION_COAL_LIQUEFACTION_PLANT:Hydrierwerk
+STR_STATION_COAL_MINE              :Bergwerk
+STR_STATION_COPPER_ORE_MINE        :Bergwerk
+STR_STATION_COPPER_SMELTER         :Kupferhütte
+STR_STATION_DAIRY                  :Molkerei
+STR_STATION_DEPARTMENT_STORE       :Kaufhaus
+STR_STATION_FARM                   :Bauernhof
+STR_STATION_FISHING_GROUNDS        :Fischgründe
+STR_STATION_FLOUR_MILL             :Mühle
+STR_STATION_FOOD_PROCESSOR         :Lebensmittelfabrik
+STR_STATION_FOREST                 :Wald
+STR_STATION_FURNITURE_FACTORY      :Möbelfabrik
+STR_STATION_GENERAL_STORE          :Laden
+STR_STATION_GLASS_WORKS            :Glasfabrik
+STR_STATION_HOTEL                  :Hotel
+STR_STATION_INTEGRATED_STEEL_MILL  :Integriertes Stahlwerk
+STR_STATION_IRON_ORE_MINE          :Bergwerk
+STR_STATION_LIME_KILN              :Kalkofen
+STR_STATION_LIMESTONE_MINE         :Kalkeinbergwerk
+STR_STATION_OIL_REFINERY           :Raffinerie
+STR_STATION_OIL_RIG                :Bohrplattform
+STR_STATION_OIL_WELL               :Ölquelle
+STR_STATION_PACKAGING_PLANT        :Verpackungsmittelfabrik
+STR_STATION_PAINT_FACTORY          :Farbenfabrik
+STR_STATION_PAPER_MILL             :Papierfabrik
+STR_STATION_PETROL_STATION         :Tankstelle
+STR_STATION_PHARMACEUTICAL_PLANT   :Arzneimittelfabrik
+STR_STATION_PLASTICS_PLANT         :Kunststofffabrik
+STR_STATION_PORT                   :Hafen
+STR_STATION_POWER_PLANT            :Kraftwerk
+STR_STATION_PRINTING_WORKS         :Druckerei
+STR_STATION_SALT_MINE              :Salzbergwerk
+STR_STATION_SANDPIT                :Sandgrube
+STR_STATION_SAWMILL                :Sägewerk
+STR_STATION_STEAMCRACKER           :Steamcracker
+STR_STATION_STEAMREFORMER          :Dampfreformierer
+STR_STATION_STOCKYARD              :Schlachthof
+STR_STATION_TEXTILE_MILL           :Textilfabrik
+STR_STATION_VEHICLE_DISTRIBUTOR    :Autohändler
+STR_STATION_VEHICLE_FACTORY        :Autofabrik
 
 # Industriefenster
 STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION :Transportiere mehr als 60% der produzierten Fracht um die Produktion zu erhöhen.
@@ -203,3 +219,4 @@ STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE :muss unterhalb der Schneegrenze platziert w
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE :kann nicht auf steilen Hängen platziert werden
 STR_ERR_EXTENSION_GLASS_REQUIRES_EXTENSION_BUILDING_INDUSTRIES:Erweiterung "Glas" erfordert Erweiterung "Bauindustrie".
 STR_ERR_EXTENSION_PAPER_REQUIRES_EXTENSION_BASIC_INORGANIC_CHEMISTRY:Erweiterung "Papier" erfordert Erweiterung "Grundlegende anorganische Chemie".
+STR_ERR_EXTENSION_ORGANIC_CHEMISTRY_REQUIRES_EXTENSION_BASIC_INORGANIC_CHEMISTRY:Erweiterung "Organische Chemie" erfordert Erweiterung "Grundlegende anorganische Chemie".
