@@ -1,27 +1,66 @@
-spriteset(plastics_plant_spriteset_silo) {
-	[10, 10, 64, 66, -31, -35, ANIM | NOCROP, "graphics/industries/oil_refinery.png"]
+spriteset(plastics_plant_spriteset_2_0) {
+	[80, 10, 64, 114, -31, -88, ANIM | NOCROP, "graphics/industries/polyethylene_plant_1.png"]
 }
-spriteset(plastics_plant_spriteset_tower) {
-	[80, 10, 64, 128, -31, -96, ANIM | NOCROP, "graphics/industries/oil_refinery.png"]
+spriteset(plastics_plant_spriteset_3_0) {
+	[150, 10, 64, 114, -31, -83, ANIM | NOCROP, "graphics/industries/polyethylene_plant_1.png"]
 }
-spriteset(plastics_plant_spriteset_pumps_tanks) {
-	[150, 10, 64, 128, -31, -96, ANIM | NOCROP, "graphics/industries/oil_refinery.png"]
+spriteset(plastics_plant_spriteset_4_0) {
+	[220, 10, 64, 114, -31, -83, ANIM | NOCROP, "graphics/industries/polyethylene_plant_1.png"]
 }
-spriteset(plastics_plant_spriteset_large_tanks) {
-	[220, 10, 64, 128, -31, -96, ANIM | NOCROP, "graphics/industries/oil_refinery.png"]
+spriteset(plastics_plant_spriteset_5_0) {
+	[290, 10, 64, 114, -31, -83, ANIM | NOCROP, "graphics/industries/polyethylene_plant_1.png"]
 }
-spriteset(plastics_plant_spriteset_building) {
-	[290, 10, 64, 66, -31, -35, ANIM | NOCROP, "graphics/industries/oil_refinery.png"]
+spriteset(plastics_plant_spriteset_6_0) {
+	[360, 10, 64, 66, -31, -35, ANIM | NOCROP, "graphics/industries/polyethylene_plant_1.png"]
+}
+spriteset(plastics_plant_spriteset_7_0) {
+	[430, 10, 64, 66, -31, -35, ANIM | NOCROP, "graphics/industries/polyethylene_plant_1.png"]
+}
+spriteset(plastics_plant_spriteset_8_0) {
+	[500, 10, 64, 66, -31, -35, ANIM | NOCROP, "graphics/industries/polyethylene_plant_1.png"]
+}
+spriteset(plastics_plant_spriteset_9_0) {
+	[570, 10, 64, 66, -31, -35, ANIM | NOCROP, "graphics/industries/polyethylene_plant_1.png"]
+}
+spriteset(plastics_plant_spriteset_10_0) {
+	[640, 10, 64, 66, -31, -35, ANIM | NOCROP, "graphics/industries/polyethylene_plant_1.png"]
+}
+spriteset(plastics_plant_spriteset_11_0) {
+	[710, 10, 64, 66, -31, -35, ANIM | NOCROP, "graphics/industries/polyethylene_plant_1.png"]
 }
 
-spritelayout plastics_plant_spritelayout_silo {
+spritelayout plastics_plant_spritelayout_1 {
 	childsprite {
-		sprite: default_spriteset_ground_concrete;
+		sprite: default_spriteset_ground_dirty_concrete;
 		hide_sprite: 0;
 		always_draw: 1;
 	}
 	building {
-		sprite: plastics_plant_spriteset_silo(0);
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: plastics_plant_spriteset_2_0(0);
 		recolour_mode: RECOLOUR_REMAP;
 		palette: PALETTE_USE_DEFAULT;
 		xoffset: 0;
@@ -31,17 +70,65 @@ spritelayout plastics_plant_spritelayout_silo {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
 	}
 }
-spritelayout plastics_plant_spritelayout_tower {
+spritelayout plastics_plant_spritelayout_2 {
 	childsprite {
-		sprite: default_spriteset_ground_concrete;
+		sprite: default_spriteset_ground_dirty_concrete;
 		hide_sprite: 0;
 		always_draw: 1;
-	}                    
+	}
 	building {
-		sprite: plastics_plant_spriteset_tower(0);
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: plastics_plant_spriteset_3_0(0);
 		recolour_mode: RECOLOUR_REMAP;
 		palette: PALETTE_USE_DEFAULT;
 		xoffset: 0;
@@ -51,17 +138,65 @@ spritelayout plastics_plant_spritelayout_tower {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
 	}
 }
-spritelayout plastics_plant_spritelayout_pumps_tanks {
+spritelayout plastics_plant_spritelayout_3 {
 	childsprite {
-		sprite: default_spriteset_ground_concrete;
-		hide_sprite: (LOAD_TEMP(13));
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
 		always_draw: 1;
-	}                    
+	}
 	building {
-		sprite: plastics_plant_spriteset_pumps_tanks(0);
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: plastics_plant_spriteset_4_0(0);
 		recolour_mode: RECOLOUR_REMAP;
 		palette: PALETTE_USE_DEFAULT;
 		xoffset: 0;
@@ -71,17 +206,65 @@ spritelayout plastics_plant_spritelayout_pumps_tanks {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
 	}
 }
-spritelayout plastics_plant_spritelayout_large_tanks {
+spritelayout plastics_plant_spritelayout_4 {
 	childsprite {
-		sprite: default_spriteset_ground_concrete;
+		sprite: default_spriteset_ground_dirty_concrete;
 		hide_sprite: 0;
 		always_draw: 1;
 	}
 	building {
-		sprite: plastics_plant_spriteset_large_tanks(0);
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: plastics_plant_spriteset_5_0(0);
 		recolour_mode: RECOLOUR_REMAP;
 		palette: PALETTE_USE_DEFAULT;
 		xoffset: 0;
@@ -91,17 +274,65 @@ spritelayout plastics_plant_spritelayout_large_tanks {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
 	}
 }
-spritelayout plastics_plant_spritelayout_building {
+spritelayout plastics_plant_spritelayout_5 {
 	childsprite {
-		sprite: default_spriteset_ground_concrete;
+		sprite: default_spriteset_ground_dirty_concrete;
 		hide_sprite: 0;
 		always_draw: 1;
 	}
 	building {
-		sprite: plastics_plant_spriteset_building(0);
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: plastics_plant_spriteset_6_0(0);
 		recolour_mode: RECOLOUR_REMAP;
 		palette: PALETTE_USE_DEFAULT;
 		xoffset: 0;
@@ -111,7 +342,426 @@ spritelayout plastics_plant_spritelayout_building {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout plastics_plant_spritelayout_6 {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
 		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: plastics_plant_spriteset_7_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout plastics_plant_spritelayout_7 {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: plastics_plant_spriteset_8_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout plastics_plant_spritelayout_8 {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: plastics_plant_spriteset_9_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout plastics_plant_spritelayout_9 {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: plastics_plant_spriteset_10_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout plastics_plant_spritelayout_10 {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: plastics_plant_spriteset_11_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout plastics_plant_spritelayout_concrete {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
 	}
 }
 
@@ -119,96 +769,119 @@ spritelayout plastics_plant_spritelayout_building {
 // graphics choice switch chain
 //////////////////////////////////////////////////////////////////////////////
 switch(FEAT_INDUSTRYTILES, SELF, plastics_plant_switch_graphics_layout1, relative_pos) {
-    relative_coord(0, 0): plastics_plant_spritelayout_silo;
-    relative_coord(0, 1): plastics_plant_spritelayout_silo;
-    relative_coord(0, 2): plastics_plant_spritelayout_pumps_tanks;
-    relative_coord(0, 3): plastics_plant_spritelayout_pumps_tanks;
-    relative_coord(0, 4): plastics_plant_spritelayout_tower;
-    relative_coord(1, 0): plastics_plant_spritelayout_silo;
-    relative_coord(1, 1): plastics_plant_spritelayout_silo;
-    relative_coord(1, 2): plastics_plant_spritelayout_large_tanks;
-    relative_coord(1, 3): plastics_plant_spritelayout_tower;
-    relative_coord(1, 4): plastics_plant_spritelayout_building;
-    relative_coord(2, 0): plastics_plant_spritelayout_silo;
-    relative_coord(2, 1): plastics_plant_spritelayout_silo;
-    relative_coord(2, 2): plastics_plant_spritelayout_large_tanks;
-    relative_coord(2, 3): plastics_plant_spritelayout_pumps_tanks;
-    relative_coord(2, 4): plastics_plant_spritelayout_building;
+    relative_coord(0, 0): plastics_plant_spritelayout_1;
+	relative_coord(0, 1): plastics_plant_spritelayout_4;
+	relative_coord(0, 2): plastics_plant_spritelayout_8;
+	relative_coord(1, 0): plastics_plant_spritelayout_6;
+	relative_coord(1, 1): plastics_plant_spritelayout_3;
+	relative_coord(1, 2): plastics_plant_spritelayout_9;
+	relative_coord(2, 0): plastics_plant_spritelayout_5;
+	relative_coord(2, 1): plastics_plant_spritelayout_2;
+	relative_coord(2, 2): plastics_plant_spritelayout_7;
+	relative_coord(3, 0): plastics_plant_spritelayout_10;
+	relative_coord(3, 1): plastics_plant_spritelayout_concrete;
+	relative_coord(3, 2): plastics_plant_spritelayout_7;
     return 0; // a default is needed, but should never be reached, layout definitions are explicit
 }
 switch(FEAT_INDUSTRYTILES, SELF, plastics_plant_switch_graphics_layout2, relative_pos) {
-	relative_coord(0, 0): plastics_plant_spritelayout_tower;
-	relative_coord(0, 1): plastics_plant_spritelayout_pumps_tanks;
-	relative_coord(0, 2): plastics_plant_spritelayout_pumps_tanks;
-	relative_coord(0, 3): plastics_plant_spritelayout_large_tanks;
-	relative_coord(1, 0): plastics_plant_spritelayout_tower;
-	relative_coord(1, 1): plastics_plant_spritelayout_large_tanks;
-	relative_coord(1, 2): plastics_plant_spritelayout_pumps_tanks;
-	relative_coord(1, 3): plastics_plant_spritelayout_tower;
-	relative_coord(2, 0): plastics_plant_spritelayout_building;
-	relative_coord(2, 1): plastics_plant_spritelayout_silo;
-	relative_coord(2, 2): plastics_plant_spritelayout_silo;
-	relative_coord(2, 3): plastics_plant_spritelayout_silo;
-	relative_coord(3, 1): plastics_plant_spritelayout_building;
-	relative_coord(3, 2): plastics_plant_spritelayout_silo;
-	relative_coord(3, 3): plastics_plant_spritelayout_silo;
+	relative_coord(0, 0): plastics_plant_spritelayout_1;
+	relative_coord(0, 1): plastics_plant_spritelayout_6;
+	relative_coord(1, 0): plastics_plant_spritelayout_4;
+	relative_coord(1, 1): plastics_plant_spritelayout_5;
+	relative_coord(2, 0): plastics_plant_spritelayout_3;
+	relative_coord(2, 1): plastics_plant_spritelayout_10;
+	relative_coord(3, 0): plastics_plant_spritelayout_2;
+	relative_coord(3, 1): plastics_plant_spritelayout_7;
+	relative_coord(4, 0): plastics_plant_spritelayout_8;
+	relative_coord(4, 1): plastics_plant_spritelayout_9;
 	return 0; // a default is needed, but should never be reached, layout definitions are explicit
 }
 switch(FEAT_INDUSTRYTILES, SELF, plastics_plant_switch_graphics_layout3, relative_pos) {
-	relative_coord(0, 0): plastics_plant_spritelayout_tower;
-	relative_coord(0, 1): plastics_plant_spritelayout_pumps_tanks;
-	relative_coord(0, 2): plastics_plant_spritelayout_pumps_tanks;
-	relative_coord(0, 3): plastics_plant_spritelayout_large_tanks;
-	relative_coord(0, 4): plastics_plant_spritelayout_silo;
-	relative_coord(0, 5): plastics_plant_spritelayout_silo;
-	relative_coord(1, 0): plastics_plant_spritelayout_pumps_tanks;
-	relative_coord(1, 1): plastics_plant_spritelayout_large_tanks;
-	relative_coord(1, 2): plastics_plant_spritelayout_pumps_tanks;
-	relative_coord(1, 3): plastics_plant_spritelayout_tower;
-	relative_coord(1, 4): plastics_plant_spritelayout_building;
-	relative_coord(1, 5): plastics_plant_spritelayout_silo;
-	relative_coord(2, 0): plastics_plant_spritelayout_large_tanks;
-	relative_coord(2, 1): plastics_plant_spritelayout_pumps_tanks;
-	relative_coord(2, 2): plastics_plant_spritelayout_silo;
-	relative_coord(2, 3): plastics_plant_spritelayout_silo;
-	relative_coord(2, 4): plastics_plant_spritelayout_silo;
-	relative_coord(2, 5): plastics_plant_spritelayout_silo;
-	relative_coord(3, 1): plastics_plant_spritelayout_building;
-	relative_coord(3, 2): plastics_plant_spritelayout_silo;
-	relative_coord(3, 3): plastics_plant_spritelayout_silo;
-	relative_coord(3, 4): plastics_plant_spritelayout_silo;
-	relative_coord(3, 5): plastics_plant_spritelayout_silo;
+	relative_coord(0, 1): plastics_plant_spritelayout_4;
+	relative_coord(1, 0): plastics_plant_spritelayout_8;
+	relative_coord(1, 1): plastics_plant_spritelayout_3;
+	relative_coord(1, 2): plastics_plant_spritelayout_7;
+	relative_coord(1, 3): plastics_plant_spritelayout_6;
+	relative_coord(2, 0): plastics_plant_spritelayout_9;
+	relative_coord(2, 1): plastics_plant_spritelayout_2;
+	relative_coord(2, 2): plastics_plant_spritelayout_1;
+	relative_coord(2, 3): plastics_plant_spritelayout_5;
 	return 0; // a default is needed, but should never be reached, layout definitions are explicit
 }
 switch(FEAT_INDUSTRYTILES, SELF, plastics_plant_switch_graphics_layout4, relative_pos) {
-	relative_coord(0, 0): plastics_plant_spritelayout_silo;
-	relative_coord(0, 1): plastics_plant_spritelayout_silo;
-	relative_coord(0, 2): plastics_plant_spritelayout_silo;
-	relative_coord(1, 0): plastics_plant_spritelayout_silo;
-	relative_coord(1, 1): plastics_plant_spritelayout_silo;
-	relative_coord(1, 2): plastics_plant_spritelayout_silo;
-	relative_coord(2, 0): plastics_plant_spritelayout_silo;
-	relative_coord(2, 1): plastics_plant_spritelayout_silo;
-	relative_coord(2, 2): plastics_plant_spritelayout_silo;
-	relative_coord(3, 0): plastics_plant_spritelayout_large_tanks;
-	relative_coord(3, 1): plastics_plant_spritelayout_silo;
-	relative_coord(3, 2): plastics_plant_spritelayout_building;
-	relative_coord(4, 0): plastics_plant_spritelayout_large_tanks;
-	relative_coord(4, 1): plastics_plant_spritelayout_pumps_tanks;
-	relative_coord(4, 2): plastics_plant_spritelayout_building;
-	relative_coord(5, 0): plastics_plant_spritelayout_tower;
-	relative_coord(5, 1): plastics_plant_spritelayout_pumps_tanks;
-	relative_coord(5, 2): plastics_plant_spritelayout_large_tanks;
-	relative_coord(6, 0): plastics_plant_spritelayout_building;
-	relative_coord(6, 1): plastics_plant_spritelayout_pumps_tanks;
-	relative_coord(6, 2): plastics_plant_spritelayout_tower;
+	relative_coord(0, 1): plastics_plant_spritelayout_4;
+	relative_coord(1, 0): plastics_plant_spritelayout_1;
+	relative_coord(1, 1): plastics_plant_spritelayout_3;
+	relative_coord(1, 2): plastics_plant_spritelayout_6;
+	relative_coord(1, 3): plastics_plant_spritelayout_8;
+	relative_coord(2, 0): plastics_plant_spritelayout_7;
+	relative_coord(2, 1): plastics_plant_spritelayout_2;
+	relative_coord(2, 2): plastics_plant_spritelayout_5;
+	relative_coord(2, 3): plastics_plant_spritelayout_9;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, plastics_plant_switch_graphics_layout5, relative_pos) {
+	relative_coord(0, 0): plastics_plant_spritelayout_4;
+	relative_coord(0, 1): plastics_plant_spritelayout_7;
+	relative_coord(1, 0): plastics_plant_spritelayout_3;
+	relative_coord(1, 1): plastics_plant_spritelayout_7;
+	relative_coord(2, 0): plastics_plant_spritelayout_2;
+	relative_coord(2, 1): plastics_plant_spritelayout_6;
+	relative_coord(3, 0): plastics_plant_spritelayout_1;
+	relative_coord(3, 1): plastics_plant_spritelayout_5;
+	relative_coord(4, 0): plastics_plant_spritelayout_8;
+	relative_coord(4, 1): plastics_plant_spritelayout_6;
+	relative_coord(5, 0): plastics_plant_spritelayout_8;
+	relative_coord(5, 1): plastics_plant_spritelayout_5;
+	relative_coord(6, 0): plastics_plant_spritelayout_9;
+	relative_coord(6, 1): plastics_plant_spritelayout_10;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, plastics_plant_switch_graphics_layout6, relative_pos) {
+	relative_coord(0, 0): plastics_plant_spritelayout_4;
+	relative_coord(0, 1): plastics_plant_spritelayout_8;
+	relative_coord(0, 2): plastics_plant_spritelayout_8;
+	relative_coord(1, 0): plastics_plant_spritelayout_3;
+	relative_coord(1, 1): plastics_plant_spritelayout_6;
+	relative_coord(1, 2): plastics_plant_spritelayout_6;
+	relative_coord(2, 0): plastics_plant_spritelayout_2;
+	relative_coord(2, 1): plastics_plant_spritelayout_5;
+	relative_coord(2, 2): plastics_plant_spritelayout_5;
+	relative_coord(3, 0): plastics_plant_spritelayout_1;
+	relative_coord(3, 1): plastics_plant_spritelayout_10;
+	relative_coord(3, 2): plastics_plant_spritelayout_concrete;
+	relative_coord(4, 0): plastics_plant_spritelayout_7;
+	relative_coord(4, 1): plastics_plant_spritelayout_7;
+	relative_coord(4, 2): plastics_plant_spritelayout_9;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, plastics_plant_switch_graphics_layout7, relative_pos) {
+	relative_coord(0, 0): plastics_plant_spritelayout_4;
+	relative_coord(0, 1): plastics_plant_spritelayout_1;
+	relative_coord(0, 2): plastics_plant_spritelayout_8;
+	relative_coord(0, 3): plastics_plant_spritelayout_10;
+	relative_coord(1, 0): plastics_plant_spritelayout_3;
+	relative_coord(1, 1): plastics_plant_spritelayout_6;
+	relative_coord(1, 2): plastics_plant_spritelayout_8;
+	relative_coord(1, 3): plastics_plant_spritelayout_6;
+	relative_coord(2, 0): plastics_plant_spritelayout_2;
+	relative_coord(2, 1): plastics_plant_spritelayout_5;
+	relative_coord(2, 2): plastics_plant_spritelayout_9;
+	relative_coord(2, 3): plastics_plant_spritelayout_5;
+	relative_coord(3, 0): plastics_plant_spritelayout_7;
+	relative_coord(3, 1): plastics_plant_spritelayout_7;
+	relative_coord(3, 2): plastics_plant_spritelayout_9;
+	relative_coord(3, 3): plastics_plant_spritelayout_10;
 	return 0; // a default is needed, but should never be reached, layout definitions are explicit
 }
 switch(FEAT_INDUSTRYTILES, PARENT, plastics_plant_switch_graphics_layouts, layout_num) {
     1: plastics_plant_switch_graphics_layout1;
     2: plastics_plant_switch_graphics_layout2;
     3: plastics_plant_switch_graphics_layout3;
-    4: plastics_plant_switch_graphics_layout4;
+	4: plastics_plant_switch_graphics_layout4;
+	5: plastics_plant_switch_graphics_layout5;
+	6: plastics_plant_switch_graphics_layout6;
+	7: plastics_plant_switch_graphics_layout7;
     plastics_plant_switch_graphics_layout1; // default
 }
 	
@@ -254,9 +927,11 @@ switch (FEAT_INDUSTRYTILES, SELF, plastics_plant_switch_tile_location_check,
 item(FEAT_INDUSTRYTILES, plastics_plant_tile, INDUSTRY_TILE_ID_PLASTICS_PLANT) {
     property {
         substitute:         0;
-        land_shape_flags:   0;
-        special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
-        animation_triggers: bitmask();
+		land_shape_flags:   0;
+		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+		animation_info: [ANIMATION_LOOPING, 7];
+		animation_speed: 3;
+		animation_triggers: bitmask();
     }
     graphics {
     	tile_check: plastics_plant_switch_tile_location_check;
@@ -268,62 +943,67 @@ tilelayout plastics_plant_tilelayout_1 {
 	0, 0: plastics_plant_tile;
 	0, 1: plastics_plant_tile;
 	0, 2: plastics_plant_tile;
-	0, 3: plastics_plant_tile;
-	0, 4: plastics_plant_tile;
 	1, 0: plastics_plant_tile;
 	1, 1: plastics_plant_tile;
 	1, 2: plastics_plant_tile;
-	1, 3: plastics_plant_tile;
-	1, 4: plastics_plant_tile;
 	2, 0: plastics_plant_tile;
 	2, 1: plastics_plant_tile;
 	2, 2: plastics_plant_tile;
-	2, 3: plastics_plant_tile;
-	2, 4: plastics_plant_tile;
+	3, 0: plastics_plant_tile;
+	3, 1: plastics_plant_tile;
+	3, 2: plastics_plant_tile;
 }
 tilelayout plastics_plant_tilelayout_2 {
 	0, 0: plastics_plant_tile;
 	0, 1: plastics_plant_tile;
-	0, 2: plastics_plant_tile;
-	0, 3: plastics_plant_tile;
 	1, 0: plastics_plant_tile;
 	1, 1: plastics_plant_tile;
-	1, 2: plastics_plant_tile;
-	1, 3: plastics_plant_tile;
 	2, 0: plastics_plant_tile;
 	2, 1: plastics_plant_tile;
-	2, 2: plastics_plant_tile;
-	2, 3: plastics_plant_tile;
+	3, 0: plastics_plant_tile;
 	3, 1: plastics_plant_tile;
-	3, 2: plastics_plant_tile;
-	3, 3: plastics_plant_tile;
+	4, 0: plastics_plant_tile;
+	4, 1: plastics_plant_tile;
 }
 tilelayout plastics_plant_tilelayout_3 {
-	0, 0: plastics_plant_tile;
 	0, 1: plastics_plant_tile;
-	0, 2: plastics_plant_tile;
-	0, 3: plastics_plant_tile;
-	0, 4: plastics_plant_tile;
-	0, 5: plastics_plant_tile;
 	1, 0: plastics_plant_tile;
 	1, 1: plastics_plant_tile;
 	1, 2: plastics_plant_tile;
 	1, 3: plastics_plant_tile;
-	1, 4: plastics_plant_tile;
-	1, 5: plastics_plant_tile;
 	2, 0: plastics_plant_tile;
 	2, 1: plastics_plant_tile;
 	2, 2: plastics_plant_tile;
 	2, 3: plastics_plant_tile;
-	2, 4: plastics_plant_tile;
-	2, 5: plastics_plant_tile;
-	3, 1: plastics_plant_tile;
-	3, 2: plastics_plant_tile;
-	3, 3: plastics_plant_tile;
-	3, 4: plastics_plant_tile;
-	3, 5: plastics_plant_tile;
 }
 tilelayout plastics_plant_tilelayout_4 {
+	0, 1: plastics_plant_tile;
+	1, 0: plastics_plant_tile;
+	1, 1: plastics_plant_tile;
+	1, 2: plastics_plant_tile;
+	1, 3: plastics_plant_tile;
+	2, 0: plastics_plant_tile;
+	2, 1: plastics_plant_tile;
+	2, 2: plastics_plant_tile;
+	2, 3: plastics_plant_tile;
+}
+tilelayout plastics_plant_tilelayout_5 {
+	0, 0: plastics_plant_tile;
+	0, 1: plastics_plant_tile;
+	1, 0: plastics_plant_tile;
+	1, 1: plastics_plant_tile;
+	2, 0: plastics_plant_tile;
+	2, 1: plastics_plant_tile;
+	3, 0: plastics_plant_tile;
+	3, 1: plastics_plant_tile;
+	4, 0: plastics_plant_tile;
+	4, 1: plastics_plant_tile;
+	5, 0: plastics_plant_tile;
+	5, 1: plastics_plant_tile;
+	6, 0: plastics_plant_tile;
+	6, 1: plastics_plant_tile;
+}
+tilelayout plastics_plant_tilelayout_6 {
 	0, 0: plastics_plant_tile;
 	0, 1: plastics_plant_tile;
 	0, 2: plastics_plant_tile;
@@ -339,12 +1019,24 @@ tilelayout plastics_plant_tilelayout_4 {
 	4, 0: plastics_plant_tile;
 	4, 1: plastics_plant_tile;
 	4, 2: plastics_plant_tile;
-	5, 0: plastics_plant_tile;
-	5, 1: plastics_plant_tile;
-	5, 2: plastics_plant_tile;
-	6, 0: plastics_plant_tile;
-	6, 1: plastics_plant_tile;
-	6, 2: plastics_plant_tile;
+}
+tilelayout plastics_plant_tilelayout_7 {
+	0, 0: plastics_plant_tile;
+	0, 1: plastics_plant_tile;
+	0, 2: plastics_plant_tile;
+	0, 3: plastics_plant_tile;
+	1, 0: plastics_plant_tile;
+	1, 1: plastics_plant_tile;
+	1, 2: plastics_plant_tile;
+	1, 3: plastics_plant_tile;
+	2, 0: plastics_plant_tile;
+	2, 1: plastics_plant_tile;
+	2, 2: plastics_plant_tile;
+	2, 3: plastics_plant_tile;
+	3, 0: plastics_plant_tile;
+	3, 1: plastics_plant_tile;
+	3, 2: plastics_plant_tile;
+	3, 3: plastics_plant_tile;
 }
 
 switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_location_check_industry_distance,
@@ -354,6 +1046,7 @@ switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_location_check_industry_dist
         (industry_distance(INDUSTRY_ID_OIL_WELL) >= 32) && 
 		(industry_distance(INDUSTRY_ID_PORT) >= 32) && 
 		(industry_distance(INDUSTRY_ID_OIL_RIG) >= 32) && 
+		(industry_distance(INDUSTRY_ID_STEAMCRACKER) >= 32) && 
 		(industry_distance(INDUSTRY_ID_FURNITURE_FACTORY) >= 32) && 
 		(industry_distance(INDUSTRY_ID_VEHICLE_FACTORY) >= 32) && 
 	    (industry_distance(INDUSTRY_ID_TEXTILE_MILL) >= 32) &&
@@ -375,6 +1068,21 @@ switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_produce,
 	 store_debug_production_data()	 
 	]) {
 	plastics_plant_produce;
+}
+
+produce(plastics_plant_produce_ext_organic_chemistry,
+	[C2H4: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);],
+	[PLAS: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100,1) : 0;],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_produce_ext_organic_chemistry, 
+	[STORE_TEMP(incoming_cargo_waiting("C2H4"), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 store_debug_production_data()	 
+	]) {
+	plastics_plant_produce_ext_organic_chemistry;
 }
 
 produce(plastics_plant_produce_ext_basic_inorganic_chemistry,
@@ -431,6 +1139,60 @@ switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_produce_ext_basic_inorganic_
 	plastics_plant_produce_ext_basic_inorganic_chemistry_ext_painting_industries;
 }
 
+produce(plastics_plant_produce_ext_basic_inorganic_chemistry_ext_organic_chemistry,
+	[C2H4: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 CHLO: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);],
+	[PLAS: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100,1) : 0;],
+	0 // do not run again
+)
+
+produce(plastics_plant_produce_ext_painting_industries_ext_organic_chemistry,
+	[C2H4: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 COAT: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);],
+	[PLAS: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100,1) : 0;],
+	0 // do not run again
+)
+
+produce(plastics_plant_produce_ext_basic_inorganic_chemistry_ext_painting_industries_ext_organic_chemistry,
+	[C2H4: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 CHLO: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 COAT: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2) != 0 ? max(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0)*30/100,1) : 0;
+	 ],
+	[PLAS: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100,1) : 0;],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_produce_ext_basic_inorganic_chemistry_ext_organic_chemistry, 
+	[STORE_TEMP(min(incoming_cargo_waiting("C2H4"),incoming_cargo_waiting("CHLO")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	STORE_TEMP(min(incoming_cargo_waiting("C2H4"),incoming_cargo_waiting("CHLO")), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 store_debug_production_data()	 
+	]) {
+	plastics_plant_produce_ext_basic_inorganic_chemistry_ext_organic_chemistry;
+}
+
+switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_produce_ext_painting_industries_ext_organic_chemistry, 
+	[STORE_TEMP(min(incoming_cargo_waiting("C2H4"),incoming_cargo_waiting("COAT")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 STORE_TEMP(min(incoming_cargo_waiting("C2H4"),incoming_cargo_waiting("COAT")), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 store_debug_production_data()	 
+	]) {
+	plastics_plant_produce_ext_painting_industries_ext_organic_chemistry;
+}
+
+switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_produce_ext_basic_inorganic_chemistry_ext_painting_industries_ext_organic_chemistry, 
+	[STORE_TEMP(min(incoming_cargo_waiting("C2H4"),incoming_cargo_waiting("COAT"),incoming_cargo_waiting("CHLO")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	STORE_TEMP(min(incoming_cargo_waiting("C2H4"),incoming_cargo_waiting("COAT"),incoming_cargo_waiting("CHLO")), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	STORE_TEMP(min(incoming_cargo_waiting("C2H4"),incoming_cargo_waiting("COAT"),incoming_cargo_waiting("CHLO")), TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 store_debug_production_data()
+	]) {
+	plastics_plant_produce_ext_basic_inorganic_chemistry_ext_painting_industries_ext_organic_chemistry;
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // cargo subtexts to show how much incoming cargo is waiting
 ////////////////////////////////////////////////////////////////////////////////
@@ -452,6 +1214,7 @@ switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_cargo_subtype, getbits(extra
 	OIL_: switch_cargo_subtype;
 	CHLO: switch_cargo_subtype;
 	COAT: switch_cargo_subtype;
+	C2H4: switch_cargo_subtype;
 	return 0x3800 + string(STR_EMPTY);
 }
 
@@ -495,14 +1258,54 @@ switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_update_last_served_date_ext_
 	check_secondary_industry_closure();
 }
 
-if (!param_extension_basic_inorganic_chemistry && !param_extension_painting_industries) {
+switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_update_last_served_date_ext_organic_chemistry,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("PLAS") != 0 || last_month_production("PLAS") != 0 || 
+		incoming_cargo_waiting("C2H4") != 0 || 
+		this_month_transported("PLAS") != 0 || last_month_transported("PLAS") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_update_last_served_date_ext_basic_inorganic_chemistry_ext_organic_chemistry,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("PLAS") != 0 || last_month_production("PLAS") != 0 || 
+		incoming_cargo_waiting("C2H4") != 0 || incoming_cargo_waiting("CHLO") != 0||
+		this_month_transported("PLAS") != 0 || last_month_transported("PLAS") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_update_last_served_date_ext_painting_industries_ext_organic_chemistry,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("PLAS") != 0 || last_month_production("PLAS") != 0 || 
+		incoming_cargo_waiting("C2H4") != 0 || incoming_cargo_waiting("COAT") != 0||
+		this_month_transported("PLAS") != 0 || last_month_transported("PLAS") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_update_last_served_date_ext_basic_inorganic_chemistry_ext_painting_industries_ext_organic_chemistry,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("PLAS") != 0 || last_month_production("PLAS") != 0 || 
+		incoming_cargo_waiting("C2H4") != 0 || incoming_cargo_waiting("COAT") != 0 || incoming_cargo_waiting("CHLO") != 0 ||
+		this_month_transported("PLAS") != 0 || last_month_transported("PLAS") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+if (!param_extension_basic_inorganic_chemistry && !param_extension_painting_industries && !param_extension_organic_chemistry) {
 	item(FEAT_INDUSTRIES, plastics_plant, INDUSTRY_ID_PLASTICS_PLANT) {
 		property {
 			substitute: 0;
 			map_colour: 0xBD;
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
-			layouts: [plastics_plant_tilelayout_1,plastics_plant_tilelayout_2,plastics_plant_tilelayout_3,plastics_plant_tilelayout_4];
+			layouts: [plastics_plant_tilelayout_1,plastics_plant_tilelayout_2,plastics_plant_tilelayout_3,plastics_plant_tilelayout_4,plastics_plant_tilelayout_5,plastics_plant_tilelayout_6,plastics_plant_tilelayout_7];
 			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
@@ -530,14 +1333,14 @@ if (!param_extension_basic_inorganic_chemistry && !param_extension_painting_indu
 	}
 }
 
-if (param_extension_basic_inorganic_chemistry && !param_extension_painting_industries) {
+if (param_extension_basic_inorganic_chemistry && !param_extension_painting_industries && !param_extension_organic_chemistry) {
 	item(FEAT_INDUSTRIES, plastics_plant, INDUSTRY_ID_PLASTICS_PLANT) {
 		property {
 			substitute: 0;
 			map_colour: 50;
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
-			layouts: [plastics_plant_tilelayout_1,plastics_plant_tilelayout_2,plastics_plant_tilelayout_3,plastics_plant_tilelayout_4];
+			layouts: [plastics_plant_tilelayout_1,plastics_plant_tilelayout_2,plastics_plant_tilelayout_3,plastics_plant_tilelayout_4,plastics_plant_tilelayout_5,plastics_plant_tilelayout_6,plastics_plant_tilelayout_7];
 			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
@@ -565,14 +1368,14 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_painting_indus
 	}
 }
 
-if (!param_extension_basic_inorganic_chemistry && param_extension_painting_industries) {
+if (!param_extension_basic_inorganic_chemistry && param_extension_painting_industries && !param_extension_organic_chemistry) {
 	item(FEAT_INDUSTRIES, plastics_plant, INDUSTRY_ID_PLASTICS_PLANT) {
 		property {
 			substitute: 0;
 			map_colour: 0xBD;
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
-			layouts: [plastics_plant_tilelayout_1,plastics_plant_tilelayout_2,plastics_plant_tilelayout_3,plastics_plant_tilelayout_4];
+			layouts: [plastics_plant_tilelayout_1,plastics_plant_tilelayout_2,plastics_plant_tilelayout_3,plastics_plant_tilelayout_4,plastics_plant_tilelayout_5,plastics_plant_tilelayout_6,plastics_plant_tilelayout_7];
 			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
@@ -600,14 +1403,14 @@ if (!param_extension_basic_inorganic_chemistry && param_extension_painting_indus
 	}
 }
 
-if (param_extension_basic_inorganic_chemistry && param_extension_painting_industries) {
+if (param_extension_basic_inorganic_chemistry && param_extension_painting_industries && !param_extension_organic_chemistry) {
 	item(FEAT_INDUSTRIES, plastics_plant, INDUSTRY_ID_PLASTICS_PLANT) {
 		property {
 			substitute: 0;
 			map_colour: 50;
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
-			layouts: [plastics_plant_tilelayout_1,plastics_plant_tilelayout_2,plastics_plant_tilelayout_3,plastics_plant_tilelayout_4];
+			layouts: [plastics_plant_tilelayout_1,plastics_plant_tilelayout_2,plastics_plant_tilelayout_3,plastics_plant_tilelayout_4,plastics_plant_tilelayout_5,plastics_plant_tilelayout_6,plastics_plant_tilelayout_7];
 			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
@@ -634,4 +1437,143 @@ if (param_extension_basic_inorganic_chemistry && param_extension_painting_indust
 		}
 	}
 }
-    
+
+if (!param_extension_basic_inorganic_chemistry && !param_extension_painting_industries && param_extension_organic_chemistry) {
+	item(FEAT_INDUSTRIES, plastics_plant, INDUSTRY_ID_PLASTICS_PLANT) {
+		property {
+			substitute: 0;
+			map_colour: 0xBD;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [plastics_plant_tilelayout_1,plastics_plant_tilelayout_2,plastics_plant_tilelayout_3,plastics_plant_tilelayout_4,plastics_plant_tilelayout_5,plastics_plant_tilelayout_6,plastics_plant_tilelayout_7];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_PLASTICS_PLANT);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 200;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("C2H4"),produce_cargo("PLAS",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PLASTICS_PLANT));
+		}
+			
+		graphics {
+			construction_probability: plastics_plant_switch_check_availability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        plastics_plant_switch_produce_ext_organic_chemistry;
+			monthly_prod_change:      plastics_plant_switch_update_last_served_date_ext_organic_chemistry;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           plastics_plant_switch_location_check_industry_distance;
+			extra_text_fund:          plastics_plant_switch_extra_text_fund;
+			cargo_subtype_display:    plastics_plant_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+
+if (param_extension_basic_inorganic_chemistry && !param_extension_painting_industries && param_extension_organic_chemistry) {
+	item(FEAT_INDUSTRIES, plastics_plant, INDUSTRY_ID_PLASTICS_PLANT) {
+		property {
+			substitute: 0;
+			map_colour: 50;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [plastics_plant_tilelayout_1,plastics_plant_tilelayout_2,plastics_plant_tilelayout_3,plastics_plant_tilelayout_4,plastics_plant_tilelayout_5,plastics_plant_tilelayout_6,plastics_plant_tilelayout_7];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_PLASTICS_PLANT);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 200;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("C2H4"),accept_cargo("CHLO"),produce_cargo("PLAS",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PLASTICS_PLANT));
+		}
+			
+		graphics {
+			construction_probability: plastics_plant_switch_check_availability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        plastics_plant_switch_produce_ext_basic_inorganic_chemistry_ext_organic_chemistry;
+			monthly_prod_change:      plastics_plant_switch_update_last_served_date_ext_basic_inorganic_chemistry_ext_organic_chemistry;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           plastics_plant_switch_location_check_industry_distance;
+			extra_text_fund:          plastics_plant_switch_extra_text_fund;
+			cargo_subtype_display:    plastics_plant_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+
+if (!param_extension_basic_inorganic_chemistry && param_extension_painting_industries && param_extension_organic_chemistry) {
+	item(FEAT_INDUSTRIES, plastics_plant, INDUSTRY_ID_PLASTICS_PLANT) {
+		property {
+			substitute: 0;
+			map_colour: 0xBD;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [plastics_plant_tilelayout_1,plastics_plant_tilelayout_2,plastics_plant_tilelayout_3,plastics_plant_tilelayout_4,plastics_plant_tilelayout_5,plastics_plant_tilelayout_6,plastics_plant_tilelayout_7];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_PLASTICS_PLANT);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 200;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("C2H4"),accept_cargo("COAT"),produce_cargo("PLAS",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PLASTICS_PLANT));
+		}
+			
+		graphics {
+			construction_probability: plastics_plant_switch_check_availability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        plastics_plant_switch_produce_ext_painting_industries_ext_organic_chemistry;
+			monthly_prod_change:      plastics_plant_switch_update_last_served_date_ext_painting_industries_ext_organic_chemistry;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           plastics_plant_switch_location_check_industry_distance;
+			extra_text_fund:          plastics_plant_switch_extra_text_fund;
+			cargo_subtype_display:    plastics_plant_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+
+if (param_extension_basic_inorganic_chemistry && param_extension_painting_industries && param_extension_organic_chemistry) {
+	item(FEAT_INDUSTRIES, plastics_plant, INDUSTRY_ID_PLASTICS_PLANT) {
+		property {
+			substitute: 0;
+			map_colour: 50;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [plastics_plant_tilelayout_1,plastics_plant_tilelayout_2,plastics_plant_tilelayout_3,plastics_plant_tilelayout_4,plastics_plant_tilelayout_5,plastics_plant_tilelayout_6,plastics_plant_tilelayout_7];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_PLASTICS_PLANT);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 200;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("C2H4"),accept_cargo("CHLO"),accept_cargo("COAT"),produce_cargo("PLAS",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PLASTICS_PLANT));
+		}
+			
+		graphics {
+			construction_probability: plastics_plant_switch_check_availability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        plastics_plant_switch_produce_ext_basic_inorganic_chemistry_ext_painting_industries_ext_organic_chemistry;
+			monthly_prod_change:      plastics_plant_switch_update_last_served_date_ext_basic_inorganic_chemistry_ext_painting_industries_ext_organic_chemistry;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           plastics_plant_switch_location_check_industry_distance;
+			extra_text_fund:          plastics_plant_switch_extra_text_fund;
+			cargo_subtype_display:    plastics_plant_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}

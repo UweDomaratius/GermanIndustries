@@ -56,6 +56,11 @@ constants = {
     
     # CARGO IDs PAPER
     "CARGO_ID_PAPER": "35",
+    
+    # CARGO IDs ORGANIC CHEMISTRY
+    "CARGO_ID_ETHYLENE": "37",
+    "CARGO_ID_NAPHTHA" : "36",    
+    "CARGO_ID_PETROL" : "38",
         
     # INDUSTRY IDS 0-20 (with gaps): Base Industries
     "INDUSTRY_ID_BUILDERS_YARD":"17",
@@ -120,6 +125,13 @@ constants = {
     # Paper Extension
     "INDUSTRY_ID_PAPER_MILL" : "43",
     "INDUSTRY_ID_PRINTING_WORKS" : "7", # original ID of the builtin printing works
+    
+    # Organic Chemistry Extension
+    "INDUSTRY_ID_COAL_LIQUEFACTION_PLANT" : "47",
+    "INDUSTRY_ID_OIL_REFINERY" : "44",
+    "INDUSTRY_ID_PETROL_STATION" : "48",
+    "INDUSTRY_ID_STEAMCRACKER" : "46",
+    "INDUSTRY_ID_STEAMREFORMER" : "45",    
     
     # INDUSTRY TILE IDs for Base Industries
     "INDUSTRY_TILE_ID_BUILDERS_YARD":"22",
@@ -201,6 +213,14 @@ constants = {
     "INDUSTRY_TILE_ID_PAPER_MILL" : "58",
     "INDUSTRY_TILE_ID_PRINTING_WORKS" : "59",
     
+    # TILE IDs for ORGANIC CHEMISTRY
+    "INDUSTRY_TILE_ID_COAL_LIQUEFACTION_PLANT" : "63",
+    "INDUSTRY_TILE_ID_OIL_REFINERY" : "60",
+    "INDUSTRY_TILE_ID_PETROL_STATION" : "64",
+    "INDUSTRY_TILE_ID_STEAMCRACKER_1" : "61",
+    "INDUSTRY_TILE_ID_STEAMCRACKER_2" : "62",
+    "INDUSTRY_TILE_ID_STEAMREFORMER" : "65",
+        
     # TTD sprite IDs
     "TTD_OILRIG_STATION_TILE": "24",
     "TTD_COPPER_ORE_MINE_ANIMATED_HEADGEAR":"2028",

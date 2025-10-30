@@ -115,6 +115,13 @@ grf {
 			desc: string(STR_PARAM_EXT_PAPER_DESC);
 		}
 	}
+	param {
+		param_extension_organic_chemistry {
+			type: bool;
+			name: string(STR_PARAM_EXT_ORGANIC_CHEMISTRY);
+			desc: string(STR_PARAM_EXT_ORGANIC_CHEMISTRY_DESC);
+		}
+	}
 }
 
 if (ttd_platform != PLATFORM_OPENTTD || openttd_version < version_openttd(14, 0)) {
@@ -129,6 +136,11 @@ if (param_extension_glass && !param_extension_building_materials) {
 
 if (param_extension_paper && !param_extension_basic_inorganic_chemistry) {
 	error(FATAL, string(STR_ERR_EXTENSION_PAPER_REQUIRES_EXTENSION_BASIC_INORGANIC_CHEMISTRY));
+	exit;
+}
+
+if (param_extension_organic_chemistry && !param_extension_basic_inorganic_chemistry) {
+	error(FATAL, string(STR_ERR_EXTENSION_ORGANIC_CHEMISTRY_REQUIRES_EXTENSION_BASIC_INORGANIC_CHEMISTRY));
 	exit;
 }
 
@@ -148,5 +160,6 @@ cargotable {
 	MILK, // ext food industries
 	MNSP, // ext packaging industries
 	QLME, GLAS, // ext glass
-	PAPR // ext paper
+	PAPR, // ext paper
+	RFPR, C2H4, PETR // ext organic chemistry
 }

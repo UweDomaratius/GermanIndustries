@@ -1,0 +1,977 @@
+spriteset(steamcracker_spriteset_2_0) {
+	[150, 10, 64, 114, -31, -83, ANIM | NOCROP, "graphics/industries/ethylene_cracker_1.png"]
+}
+spriteset(steamcracker_spriteset_3_0) {
+	[220, 10, 64, 114, -31, -83, ANIM | NOCROP, "graphics/industries/ethylene_cracker_1.png"]
+}
+spriteset(steamcracker_spriteset_4_0) {
+	[290, 10, 64, 114, -31, -83, ANIM | NOCROP, "graphics/industries/ethylene_cracker_1.png"]
+}
+spriteset(steamcracker_spriteset_5_0) {
+	[360, 10, 64, 114, -31, -83, ANIM | NOCROP, "graphics/industries/ethylene_cracker_1.png"]
+}
+spriteset(steamcracker_spriteset_6_0) {
+	[430, 10, 64, 114, -31, -83, ANIM | NOCROP, "graphics/industries/ethylene_cracker_1.png"]
+}
+spriteset(steamcracker_spriteset_7_0) {
+	[500, 10, 64, 66, -31, -35, ANIM | NOCROP, "graphics/industries/ethylene_cracker_1.png"]
+}
+spriteset(steamcracker_spriteset_8_0) {
+	[570, 10, 64, 66, -31, -35, ANIM | NOCROP, "graphics/industries/ethylene_cracker_1.png"]
+}
+spriteset(steamcracker_spriteset_9_0) {
+	[710, 10, 64, 66, -31, -35, ANIM | NOCROP, "graphics/industries/ethylene_cracker_1.png"]
+}
+
+spritelayout steamcracker_spritelayout_horizontal_tanks {
+	childsprite {
+		sprite: default_spriteset_ground_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: steamcracker_spriteset_2_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout steamcracker_spritelayout_frac_columns {
+	childsprite {
+		sprite: default_spriteset_ground_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: steamcracker_spriteset_3_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout steamcracker_spritelayout_drop_tower_and_thin_chimney {
+	childsprite {
+		sprite: default_spriteset_ground_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: steamcracker_spriteset_4_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_SMOKE_SPRITE_WHITE_BIG + ((animation_frame + 0)%8);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 81;
+		xextent: 15;
+		yextent: 7;
+		zextent: 7;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout steamcracker_spritelayout_large_building {
+	childsprite {
+		sprite: default_spriteset_ground_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: steamcracker_spriteset_5_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout steamcracker_spritelayout_fat_chimney {
+	childsprite {
+		sprite: default_spriteset_ground_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: steamcracker_spriteset_6_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout steamcracker_spritelayout_spherical_tanks {
+	childsprite {
+		sprite: default_spriteset_ground_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: steamcracker_spriteset_7_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout steamcracker_spritelayout_vertical_tanks {
+	childsprite {
+		sprite: default_spriteset_ground_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: steamcracker_spriteset_8_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout steamcracker_spritelayout_barrels {
+	childsprite {
+		sprite: default_spriteset_ground_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: steamcracker_spriteset_9_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// graphics choice switch chain
+//////////////////////////////////////////////////////////////////////////////
+
+switch(FEAT_INDUSTRYTILES, SELF, steamcracker_switch_graphics_layout_1, relative_pos) {
+	relative_coord(0, 0): steamcracker_spritelayout_fat_chimney;
+	relative_coord(0, 1): steamcracker_spritelayout_fat_chimney;
+	relative_coord(0, 2): steamcracker_spritelayout_spherical_tanks;
+	relative_coord(1, 0): steamcracker_spritelayout_large_building;
+	relative_coord(1, 1): steamcracker_spritelayout_large_building;
+	relative_coord(1, 2): steamcracker_spritelayout_barrels;
+	relative_coord(2, 0): steamcracker_spritelayout_horizontal_tanks;
+	relative_coord(2, 1): steamcracker_spritelayout_horizontal_tanks;
+	relative_coord(2, 2): steamcracker_spritelayout_barrels;
+	relative_coord(3, 0): steamcracker_spritelayout_frac_columns;
+	relative_coord(3, 1): steamcracker_spritelayout_frac_columns;
+	relative_coord(3, 2): steamcracker_spritelayout_vertical_tanks;
+	relative_coord(4, 0): steamcracker_spritelayout_drop_tower_and_thin_chimney;
+	relative_coord(4, 1): steamcracker_spritelayout_horizontal_tanks;
+	relative_coord(4, 2): steamcracker_spritelayout_vertical_tanks;
+	return 0;
+}
+switch(FEAT_INDUSTRYTILES, SELF, steamcracker_switch_graphics_layout_2, relative_pos) {
+	relative_coord(0, 1): steamcracker_spritelayout_drop_tower_and_thin_chimney;
+	relative_coord(0, 2): steamcracker_spritelayout_horizontal_tanks;
+	relative_coord(0, 3): steamcracker_spritelayout_fat_chimney;
+	relative_coord(0, 4): steamcracker_spritelayout_fat_chimney;
+	relative_coord(1, 0): steamcracker_spritelayout_horizontal_tanks;
+	relative_coord(1, 1): steamcracker_spritelayout_frac_columns;
+	relative_coord(1, 2): steamcracker_spritelayout_horizontal_tanks;
+	relative_coord(1, 3): steamcracker_spritelayout_large_building;
+	relative_coord(1, 4): steamcracker_spritelayout_large_building;
+	relative_coord(2, 0): steamcracker_spritelayout_vertical_tanks;
+	relative_coord(2, 1): steamcracker_spritelayout_vertical_tanks;
+	relative_coord(2, 2): steamcracker_spritelayout_barrels;
+	relative_coord(2, 3): steamcracker_spritelayout_spherical_tanks;
+	relative_coord(2, 4): steamcracker_spritelayout_spherical_tanks;
+	return 0;
+}
+switch(FEAT_INDUSTRYTILES, SELF, steamcracker_switch_graphics_layout_3, relative_pos) {
+	relative_coord(0, 0): steamcracker_spritelayout_fat_chimney;
+	relative_coord(0, 1): steamcracker_spritelayout_fat_chimney;
+	relative_coord(0, 2): steamcracker_spritelayout_horizontal_tanks;
+	relative_coord(0, 3): steamcracker_spritelayout_frac_columns;
+	relative_coord(0, 4): steamcracker_spritelayout_horizontal_tanks;
+	relative_coord(1, 0): steamcracker_spritelayout_large_building;
+	relative_coord(1, 1): steamcracker_spritelayout_large_building;
+	relative_coord(1, 2): steamcracker_spritelayout_horizontal_tanks;
+	relative_coord(1, 3): steamcracker_spritelayout_frac_columns;
+	relative_coord(1, 4): steamcracker_spritelayout_drop_tower_and_thin_chimney;
+	relative_coord(2, 0): steamcracker_spritelayout_spherical_tanks;
+	relative_coord(2, 1): steamcracker_spritelayout_barrels;
+	relative_coord(2, 2): steamcracker_spritelayout_barrels;
+	relative_coord(2, 3): steamcracker_spritelayout_vertical_tanks;
+	relative_coord(2, 4): steamcracker_spritelayout_vertical_tanks;
+	return 0;
+}
+switch(FEAT_INDUSTRYTILES, SELF, steamcracker_switch_graphics_layout_4, relative_pos) {
+	relative_coord(0, 0): steamcracker_spritelayout_vertical_tanks;
+	relative_coord(0, 1): steamcracker_spritelayout_vertical_tanks;
+	relative_coord(1, 0): steamcracker_spritelayout_frac_columns;
+	relative_coord(1, 1): steamcracker_spritelayout_frac_columns;
+	relative_coord(2, 0): steamcracker_spritelayout_horizontal_tanks;
+	relative_coord(2, 1): steamcracker_spritelayout_horizontal_tanks;
+	relative_coord(3, 0): steamcracker_spritelayout_fat_chimney;
+	relative_coord(3, 1): steamcracker_spritelayout_fat_chimney;
+	relative_coord(4, 0): steamcracker_spritelayout_large_building;
+	relative_coord(4, 1): steamcracker_spritelayout_large_building;
+	relative_coord(5, 0): steamcracker_spritelayout_drop_tower_and_thin_chimney;
+	relative_coord(5, 1): steamcracker_spritelayout_barrels;
+	relative_coord(6, 0): steamcracker_spritelayout_spherical_tanks;
+	relative_coord(6, 1): steamcracker_spritelayout_spherical_tanks;
+	return 0;
+}
+switch(FEAT_INDUSTRYTILES, SELF, steamcracker_switch_graphics_layout_5, relative_pos) {
+	relative_coord(0, 0): steamcracker_spritelayout_horizontal_tanks;
+	relative_coord(0, 1): steamcracker_spritelayout_horizontal_tanks;
+	relative_coord(0, 2): steamcracker_spritelayout_fat_chimney;
+	relative_coord(0, 3): steamcracker_spritelayout_fat_chimney;
+	relative_coord(1, 0): steamcracker_spritelayout_drop_tower_and_thin_chimney;
+	relative_coord(1, 1): steamcracker_spritelayout_frac_columns;
+	relative_coord(1, 2): steamcracker_spritelayout_large_building;
+	relative_coord(1, 3): steamcracker_spritelayout_large_building;
+	relative_coord(2, 0): steamcracker_spritelayout_horizontal_tanks;
+	relative_coord(2, 1): steamcracker_spritelayout_horizontal_tanks;
+	relative_coord(2, 2): steamcracker_spritelayout_barrels;
+	relative_coord(2, 3): steamcracker_spritelayout_spherical_tanks;
+	relative_coord(3, 0): steamcracker_spritelayout_vertical_tanks;
+	relative_coord(3, 1): steamcracker_spritelayout_vertical_tanks;
+	relative_coord(3, 2): steamcracker_spritelayout_barrels;
+	relative_coord(3, 3): steamcracker_spritelayout_spherical_tanks;
+	return 0;
+}
+switch(FEAT_INDUSTRYTILES, SELF, steamcracker_switch_graphics_layout_6, relative_pos) {
+	relative_coord(0, 0): steamcracker_spritelayout_fat_chimney;
+	relative_coord(0, 1): steamcracker_spritelayout_frac_columns;
+	relative_coord(0, 2): steamcracker_spritelayout_vertical_tanks;
+	relative_coord(0, 3): steamcracker_spritelayout_vertical_tanks;
+	relative_coord(1, 0): steamcracker_spritelayout_large_building;
+	relative_coord(1, 1): steamcracker_spritelayout_horizontal_tanks;
+	relative_coord(1, 2): steamcracker_spritelayout_drop_tower_and_thin_chimney;
+	relative_coord(1, 3): steamcracker_spritelayout_horizontal_tanks;
+	relative_coord(2, 0): steamcracker_spritelayout_fat_chimney;
+	relative_coord(2, 1): steamcracker_spritelayout_horizontal_tanks;
+	relative_coord(2, 2): steamcracker_spritelayout_frac_columns;
+	relative_coord(2, 3): steamcracker_spritelayout_horizontal_tanks;
+	relative_coord(3, 0): steamcracker_spritelayout_large_building;
+	relative_coord(3, 1): steamcracker_spritelayout_barrels;
+	relative_coord(3, 2): steamcracker_spritelayout_spherical_tanks;
+	relative_coord(3, 3): steamcracker_spritelayout_spherical_tanks;
+	return 0;
+}
+switch(FEAT_INDUSTRYTILES, PARENT, steamcracker_industry_graphics_switch_layouts, layout_num) {
+    1: steamcracker_switch_graphics_layout_1;
+    2: steamcracker_switch_graphics_layout_2;
+	3: steamcracker_switch_graphics_layout_3;
+	4: steamcracker_switch_graphics_layout_4;
+	5: steamcracker_switch_graphics_layout_5;
+	6: steamcracker_switch_graphics_layout_6;
+    steamcracker_switch_graphics_layout_1; // default
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, steamcracker_switch_graphics_construction_state, construction_state) {
+    0..2: spritelayout_default_construction_states;
+    steamcracker_industry_graphics_switch_layouts; // default
+}
+
+
+switch (FEAT_INDUSTRYTILES, SELF, steamcracker_switch_graphics,
+	[switch_tile_fences(),
+	 switch_terrain_sprite(),switch_graphics_init_temp_registers()
+]) {
+    steamcracker_switch_graphics_construction_state;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// location checks
+//////////////////////////////////////////////////////////////////////////////
+// This check works as follows: calculate height of the northernmost tile of the industry and add 0, 1 or 2 for flat, slope. steep slope
+// Do the same for the current tile and compare the results. If the result is equal, the terrain is effectively flat
+// and industry can be placed.
+// It just looks weird due to the stacked ternary operators needed here
+switch (FEAT_INDUSTRYTILES, SELF, steamcracker_switch_tile_location_check2,
+			(nearby_tile_height(-relative_x, -relative_y) + 
+			(nearby_tile_slope(-relative_x, -relative_y)== SLOPE_FLAT ? 0 : nearby_tile_slope(-relative_x, -relative_y) == bitmask(IS_STEEP_SLOPE) ? 2 : 1)) 
+			== 
+			(nearby_tile_height(0, 0) + (nearby_tile_slope(0, 0) == SLOPE_FLAT ? 0 : nearby_tile_slope(0, 0) == bitmask(IS_STEEP_SLOPE) ? 2 : 1))
+			) {
+	1: return CB_RESULT_LOCATION_ALLOW;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, steamcracker_switch_tile_location_check,
+	is_funded_or_prospected() || (generation_not_forbidden_by_param() && not_next_to_industry() && not_next_to_buildings()))
+{
+	1: steamcracker_switch_tile_location_check2;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// industry tile and layout definition
+//////////////////////////////////////////////////////////////////////////////
+item(FEAT_INDUSTRYTILES, steamcracker_tile_1, INDUSTRY_TILE_ID_STEAMCRACKER_1) {
+	property {
+		substitute:         0;
+        land_shape_flags:   0;
+        special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+        animation_info: [ANIMATION_LOOPING, 7];
+        animation_speed: 3;
+        animation_triggers: bitmask();
+	}
+	graphics {
+		tile_check: steamcracker_switch_tile_location_check;
+		steamcracker_switch_graphics;
+	}
+}
+item(FEAT_INDUSTRYTILES, steamcracker_tile_2, INDUSTRY_TILE_ID_STEAMCRACKER_2) {
+	property {
+		substitute:         0;
+        land_shape_flags:   0;
+        special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+        animation_info: [ANIMATION_LOOPING, 47];
+        animation_speed: 2;
+        animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
+	}
+	graphics {
+		tile_check: steamcracker_switch_tile_location_check;
+		steamcracker_switch_graphics;
+	}
+}
+
+tilelayout steamcracker_tilelayout_1 {
+	0, 0: steamcracker_tile_2;
+	0, 1: steamcracker_tile_2;
+	0, 2: steamcracker_tile_1;
+	1, 0: steamcracker_tile_2;
+	1, 1: steamcracker_tile_2;
+	1, 2: steamcracker_tile_1;
+	2, 0: steamcracker_tile_1;
+	2, 1: steamcracker_tile_1;
+	2, 2: steamcracker_tile_1;
+	3, 0: steamcracker_tile_1;
+	3, 1: steamcracker_tile_1;
+	3, 2: steamcracker_tile_1;
+	4, 0: steamcracker_tile_1;
+	4, 1: steamcracker_tile_1;
+	4, 2: steamcracker_tile_1;
+}
+tilelayout steamcracker_tilelayout_2 {
+	0, 1: steamcracker_tile_1;
+	0, 2: steamcracker_tile_1;
+	0, 3: steamcracker_tile_2;
+	0, 4: steamcracker_tile_2;
+	1, 0: steamcracker_tile_1;
+	1, 1: steamcracker_tile_1;
+	1, 2: steamcracker_tile_1;
+	1, 3: steamcracker_tile_2;
+	1, 4: steamcracker_tile_2;
+	2, 0: steamcracker_tile_1;
+	2, 1: steamcracker_tile_1;
+	2, 2: steamcracker_tile_1;
+	2, 3: steamcracker_tile_1;
+	2, 4: steamcracker_tile_1;
+}
+tilelayout steamcracker_tilelayout_3 {
+	0, 0: steamcracker_tile_2;
+	0, 1: steamcracker_tile_2;
+	0, 2: steamcracker_tile_1;
+	0, 3: steamcracker_tile_1;
+	0, 4: steamcracker_tile_1;
+	1, 0: steamcracker_tile_2;
+	1, 1: steamcracker_tile_2;
+	1, 2: steamcracker_tile_1;
+	1, 3: steamcracker_tile_1;
+	1, 4: steamcracker_tile_1;
+	2, 0: steamcracker_tile_2;
+	2, 1: steamcracker_tile_2;
+	2, 2: steamcracker_tile_2;
+	2, 3: steamcracker_tile_2;
+	2, 4: steamcracker_tile_2;
+}
+
+tilelayout steamcracker_tilelayout_4 {
+	0, 0: steamcracker_tile_1;
+	0, 1: steamcracker_tile_1;
+	1, 0: steamcracker_tile_1;
+	1, 1: steamcracker_tile_1;
+	2, 0: steamcracker_tile_1;
+	2, 1: steamcracker_tile_1;
+	3, 0: steamcracker_tile_2;
+	3, 1: steamcracker_tile_2;
+	4, 0: steamcracker_tile_2;
+	4, 1: steamcracker_tile_2;
+	5, 0: steamcracker_tile_1;
+	5, 1: steamcracker_tile_1;
+	6, 0: steamcracker_tile_1;
+	6, 1: steamcracker_tile_1;
+}
+
+tilelayout steamcracker_tilelayout_5 {
+	0, 0: steamcracker_tile_1;
+	0, 1: steamcracker_tile_1;
+	0, 2: steamcracker_tile_2;
+	0, 3: steamcracker_tile_2;
+	1, 0: steamcracker_tile_1;
+	1, 1: steamcracker_tile_1;
+	1, 2: steamcracker_tile_2;
+	1, 3: steamcracker_tile_2;
+	2, 0: steamcracker_tile_1;
+	2, 1: steamcracker_tile_1;
+	2, 2: steamcracker_tile_1;
+	2, 3: steamcracker_tile_1;
+	3, 0: steamcracker_tile_1;
+	3, 1: steamcracker_tile_1;
+	3, 2: steamcracker_tile_1;
+	3, 3: steamcracker_tile_1;
+}
+
+tilelayout steamcracker_tilelayout_6 {
+	0, 0: steamcracker_tile_2;
+	0, 1: steamcracker_tile_1;
+	0, 2: steamcracker_tile_1;
+	0, 3: steamcracker_tile_1;
+	1, 0: steamcracker_tile_2;
+	1, 1: steamcracker_tile_1;
+	1, 2: steamcracker_tile_1;
+	1, 3: steamcracker_tile_1;
+	2, 0: steamcracker_tile_2;
+	2, 1: steamcracker_tile_1;
+	2, 2: steamcracker_tile_1;
+	2, 3: steamcracker_tile_1;
+	3, 0: steamcracker_tile_2;
+	3, 1: steamcracker_tile_1;
+	3, 2: steamcracker_tile_1;
+	3, 3: steamcracker_tile_1;
+}
+
+switch(FEAT_INDUSTRIES, SELF, steamcracker_switch_location_check_industry_distance,
+       [STORE_TEMP(32, TEMP_REGISTER_TOWN_MIN_DISTANCE),
+	    STORE_TEMP(64, TEMP_REGISTER_TOWN_MAX_DISTANCE),
+	    (distance_from_town() && 
+	    (industry_distance(INDUSTRY_ID_PLASTICS_PLANT) >= 32) && 
+		(industry_distance(INDUSTRY_ID_PHARMACEUTICAL_PLANT) >= 32) && 
+		(industry_distance(INDUSTRY_ID_PETROL_STATION) >= 32) && 
+		(industry_distance(INDUSTRY_ID_OIL_REFINERY) >= 32) && 
+	    (industry_distance(INDUSTRY_ID_STEAMCRACKER) >= 16))]) {
+	   1: return CB_RESULT_LOCATION_ALLOW;
+	   return CB_RESULT_LOCATION_DISALLOW;
+}
+
+// acording to google, one needs 1.8t lime to produce 1t of quicklime
+produce(steamcracker_produce,
+	[RFPR: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),1) : 0;
+	 ],
+	[C2H4: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*65/100,1) : 0;
+	PETR: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*25/100,1) : 0;],
+	0 // do not run again
+)
+
+// steel_mill uses 10% of stockpile for production, if stockpile is big enough
+// if stockpile is < 80t, 8t are produced per 256ticks
+// if stockpile is < 8t, whatever is available is used
+// it stockpile is empty, nothing is produced
+switch(FEAT_INDUSTRIES, SELF, steamcracker_switch_produce, 
+	[STORE_TEMP(incoming_cargo_waiting("RFPR"), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+
+	 store_debug_production_data()
+	]) {
+	steamcracker_produce;
+}
+
+switch(FEAT_INDUSTRIES, SELF, steamcracker_switch_cargo_subtype, getbits(extra_callback_info2, 16, 8)) {
+	RFPR: switch_cargo_subtype;
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, steamcracker_switch_extra_text_fund, 
+	[STORE_TEMP(string(STR_1900), TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	current_year]) {
+	1900..500000: return string(STR_EMPTY);
+	return string(STR_INDUSTRY_NOT_AVAILABLE_BEFORE);
+}
+
+switch(FEAT_INDUSTRIES, SELF, steamcracker_switch_check_availability, 
+	current_year) {
+	0..1899: return CB_RESULT_IND_NO_CONSTRUCTION;
+	return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+}
+
+switch(FEAT_INDUSTRIES, SELF, steamcracker_switch_update_last_served_date,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("C2H4") != 0 || last_month_production("C2H4") != 0 || 
+		incoming_cargo_waiting("RFPR") != 0 ||
+		this_month_transported("C2H4") != 0 || last_month_transported("C2H4") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+if (param_extension_organic_chemistry) {
+	item(FEAT_INDUSTRIES, steamcracker, INDUSTRY_ID_STEAMCRACKER) {
+		property {
+			substitute: 0;
+			map_colour: 28;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [steamcracker_tilelayout_1, steamcracker_tilelayout_2, steamcracker_tilelayout_3, steamcracker_tilelayout_4, steamcracker_tilelayout_5, steamcracker_tilelayout_6];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_STEAMCRACKER);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 190;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("RFPR"),produce_cargo("PETR",0),produce_cargo("C2H4",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_STEAMCRACKER));
+		}
+			
+		graphics {
+			construction_probability: steamcracker_switch_check_availability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        steamcracker_switch_produce;
+			monthly_prod_change:      steamcracker_switch_update_last_served_date;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           steamcracker_switch_location_check_industry_distance;
+			cargo_subtype_display:    steamcracker_switch_cargo_subtype;
+			extra_text_fund:          steamcracker_switch_extra_text_fund;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}

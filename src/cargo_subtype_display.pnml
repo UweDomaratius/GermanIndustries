@@ -12,6 +12,13 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_alum,
 	return 0x3800 + string(STR_EMPTY);
 }
 
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_c2h4, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("C2H4") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	C2H4: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
 switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_cblk, 
 	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("CBLK") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
 	 getbits(extra_callback_info2, 16, 8)]) {
@@ -159,6 +166,13 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_qlme,
 	return 0x3800 + string(STR_EMPTY);
 }
 
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_rfpr, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("RFPR") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	RFPR: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
 switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_salt, 
 	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("SALT") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
 	 getbits(extra_callback_info2, 16, 8)]) {
@@ -212,6 +226,7 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info,
 	getbits(extra_callback_info2, 16, 8)) {
 	AORE: switch_cargo_subtype_display_info_aore;
 	ALUM: switch_cargo_subtype_display_info_alum;
+	C2H4: switch_cargo_subtype_display_info_c2h4;
 	CBLK: switch_cargo_subtype_display_info_cblk;
 	CHLO: switch_cargo_subtype_display_info_chlor;
 	COAL: switch_cargo_subtype_display_info_coal;
@@ -233,6 +248,7 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info,
 	PAPR: switch_cargo_subtype_display_info_papr;
 	PLAS: switch_cargo_subtype_display_info_plas;	
 	QLME: switch_cargo_subtype_display_info_qlme;
+	RFPR: switch_cargo_subtype_display_info_rfpr;
 	SALT: switch_cargo_subtype_display_info_salt;
 	SAND: switch_cargo_subtype_display_info_sand;
 	STEL: switch_cargo_subtype_display_info_stel;
