@@ -15,3 +15,14 @@ switch(FEAT_INDUSTRIES, PARENT, city_get_power_available,
 {
 	return;
 }
+
+switch(FEAT_INDUSTRIES, SELF, city_get_electric_industries_town_count,
+	[
+	industry_town_count(INDUSTRY_ID_ALUMINIUM_PLANT)+
+	industry_town_count(INDUSTRY_ID_CHLOR_ALKALI_PLANT) +
+	industry_town_count(INDUSTRY_ID_COPPER_SMELTER) +
+	industry_town_count(INDUSTRY_ID_VEHICLE_FACTORY)
+	])
+{
+	return;
+}

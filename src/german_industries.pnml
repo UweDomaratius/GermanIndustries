@@ -122,6 +122,13 @@ grf {
 			desc: string(STR_PARAM_EXT_ORGANIC_CHEMISTRY_DESC);
 		}
 	}
+	param {
+		param_extension_coke_sulphur {
+			type: bool;
+			name: string(STR_PARAM_EXT_COKE_SULPHUR);
+			desc: string(STR_PARAM_EXT_COKE_SULPHUR_DESC);
+		}
+	}
 }
 
 if (ttd_platform != PLATFORM_OPENTTD || openttd_version < version_openttd(14, 0)) {
@@ -144,6 +151,12 @@ if (param_extension_organic_chemistry && !param_extension_basic_inorganic_chemis
 	exit;
 }
 
+// TODO: also check for extensions that are still to be implemented
+if (param_extension_coke_sulphur && !param_extension_basic_inorganic_chemistry && !param_extension_painting_industries) {
+	error(FATAL, string(STR_ERR_EXTENSION_SULPHUR_COKE_REQUIRES_OTHER_EXTENSIONS));
+	exit;
+}
+
 // TODO: check for incompatible grfs
 
 // disable all default industries
@@ -161,5 +174,6 @@ cargotable {
 	MNSP, // ext packaging industries
 	QLME, GLAS, // ext glass
 	PAPR, // ext paper
-	RFPR, C2H4, PETR // ext organic chemistry
+	RFPR, C2H4, PETR, // ext organic chemistry
+	ACID, SULP, PORE, COKE // ext coke sulphur
 }

@@ -17,7 +17,7 @@
     <node id="n0">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="50.0" width="150.0" x="-139.9999999999975" y="345.0"/>
+          <y:Geometry height="50.0" width="150.0" x="-639.9999999999975" y="345.0"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="84.044921875" x="32.9775390625" xml:space="preserve" y="8.298828125">Kohlebergwerk
@@ -41,10 +41,10 @@
     <node id="n2">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="50.0" width="150.0" x="3860.0000000000005" y="315.0"/>
+          <y:Geometry height="60.0" width="150.0" x="3860.0000000000005" y="305.0"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="36.021484375" x="56.9892578125" xml:space="preserve" y="15.6494140625">Hafen<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="36.021484375" x="56.9892578125" xml:space="preserve" y="20.6494140625">Hafen<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
       </data>
@@ -52,7 +52,7 @@
     <node id="n3">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="50.0" width="150.0" x="-139.9999999999975" y="285.0"/>
+          <y:Geometry height="50.0" width="150.0" x="-639.9999999999975" y="285.0"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="100.041015625" x="24.9794921875" xml:space="preserve" y="8.298828125">Eisenerzbergwerk
@@ -64,10 +64,10 @@
     <node id="n4">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="50.0" width="150.0" x="1360.0000000000023" y="285.0"/>
+          <y:Geometry height="70.0" width="150.0" x="1360.0000000000023" y="265.0"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="128.0546875" x="10.97265625" xml:space="preserve" y="8.298828125">Integriertes Hüttenwerk
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="128.0546875" x="10.97265625" xml:space="preserve" y="18.298828125">Integriertes Hüttenwerk
 1800<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
@@ -76,7 +76,7 @@
     <node id="n5">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="150.0" x="110.00000000000242" y="295.0"/>
+          <y:Geometry height="30.0" width="150.0" x="1110.0000000000027" y="295.0"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="50.6875" x="49.65625" xml:space="preserve" y="5.6494140625">Eisenerz<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
@@ -87,7 +87,7 @@
     <node id="n6">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="150.0" x="110.00000000000242" y="355.0"/>
+          <y:Geometry height="30.0" width="150.0" x="-389.9999999999976" y="355.0"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="34.69140625" x="57.654296875" xml:space="preserve" y="5.6494140625">Kohle<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
@@ -98,7 +98,7 @@
     <node id="n7">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="50.0" width="150.0" x="-139.9999999999975" y="465.0"/>
+          <y:Geometry height="50.0" width="150.0" x="-639.9999999999975" y="465.0"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="61.38671875" x="44.306640625" xml:space="preserve" y="8.298828125">Ölquellen
@@ -110,7 +110,7 @@
     <node id="n8">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="50.0" width="150.0" x="-139.9999999999975" y="405.0"/>
+          <y:Geometry height="50.0" width="150.0" x="-639.9999999999975" y="405.0"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="64.697265625" x="42.6513671875" xml:space="preserve" y="8.298828125">Ölbohrinsel
@@ -122,7 +122,7 @@
     <node id="n9">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="150.0" x="110.00000000000244" y="475.0"/>
+          <y:Geometry height="30.0" width="150.0" x="-389.99999999999756" y="475.0"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="16.0" x="67.0" xml:space="preserve" y="5.6494140625">Öl<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
@@ -145,7 +145,7 @@
     <node id="n11">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="50.0" width="150.0" x="-139.9999999999975" y="605.0"/>
+          <y:Geometry height="50.0" width="150.0" x="-639.9999999999975" y="605.0"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="59.376953125" x="45.3115234375" xml:space="preserve" y="15.6494140625">Bauernhof<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
@@ -156,7 +156,7 @@
     <node id="n12">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="150.0" x="110.00000000000244" y="615.0"/>
+          <y:Geometry height="30.0" width="150.0" x="-389.99999999999756" y="615.0"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="50.025390625" x="49.9873046875" xml:space="preserve" y="5.6494140625">Getreide<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
@@ -181,7 +181,7 @@ optional<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:M
     <node id="n14">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="150.0" x="110.00000000000247" y="655.0"/>
+          <y:Geometry height="30.0" width="150.0" x="-389.9999999999975" y="655.0"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="28.017578125" x="60.9912109375" xml:space="preserve" y="5.6494140625">Vieh<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
@@ -192,7 +192,7 @@ optional<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:M
     <node id="n15">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="50.0" width="150.0" x="-139.9999999999975" y="525.0"/>
+          <y:Geometry height="50.0" width="150.0" x="-639.9999999999975" y="525.0"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="31.33984375" x="59.330078125" xml:space="preserve" y="15.6494140625">Wald<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
@@ -203,7 +203,7 @@ optional<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:M
     <node id="n16">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="150.0" x="110.00000000000243" y="535.0"/>
+          <y:Geometry height="30.0" width="150.0" x="-389.99999999999756" y="535.0"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="28.005859375" x="60.997070312500014" xml:space="preserve" y="5.6494140625">Holz<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
@@ -404,7 +404,7 @@ Verpackungen sind optional<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/><
     <node id="n34">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="150.0" x="110.0000000000025" y="695.0"/>
+          <y:Geometry height="30.0" width="150.0" x="-389.9999999999975" y="695.0"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="32.669921875" x="58.6650390625" xml:space="preserve" y="5.6494140625">Fisch<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
@@ -415,7 +415,7 @@ Verpackungen sind optional<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/><
     <node id="n35">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="50.0" width="150.0" x="-139.9999999999975" y="685.0"/>
+          <y:Geometry height="50.0" width="150.0" x="-639.9999999999975" y="685.0"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="70.03515625" x="39.982421875" xml:space="preserve" y="15.6494140625">Fischgründe<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
@@ -437,7 +437,7 @@ Verpackungen sind optional<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/><
     <node id="n37">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="70.0" width="150.0" x="360.0000000000023" y="725.0"/>
+          <y:Geometry height="70.0" width="150.0" x="-139.99999999999773" y="725.0"/>
           <y:Fill color="#E8B810" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="138.07421875" x="5.962890625" xml:space="preserve" y="25.6494140625">Erweiterung Bauindustrie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
@@ -448,7 +448,7 @@ Verpackungen sind optional<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/><
     <node id="n38">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="150.0" x="610.0000000000025" y="795.0"/>
+          <y:Geometry height="30.0" width="150.0" x="110.0000000000025" y="795.0"/>
           <y:Fill color="#E8B810" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="32.025390625" x="58.9873046875" xml:space="preserve" y="5.6494140625">Sand<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
@@ -459,7 +459,7 @@ Verpackungen sind optional<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/><
     <node id="n39">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="150.0" x="610.0000000000025" y="715.0"/>
+          <y:Geometry height="30.0" width="150.0" x="110.0000000000025" y="715.0"/>
           <y:Fill color="#E8B810" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="36.68359375" x="56.658203125" xml:space="preserve" y="5.6494140625">Ziegel<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
@@ -470,7 +470,7 @@ Verpackungen sind optional<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/><
     <node id="n40">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="150.0" x="610.0000000000025" y="755.0"/>
+          <y:Geometry height="30.0" width="150.0" x="110.0000000000025" y="755.0"/>
           <y:Fill color="#E8B810" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="44.681640625" x="52.6591796875" xml:space="preserve" y="5.6494140625">Zement<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
@@ -525,7 +525,7 @@ Verpackungen sind optional<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/><
     <node id="n45">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="150.0" x="110.0000000000025" y="575.0"/>
+          <y:Geometry height="30.0" width="150.0" x="-389.9999999999975" y="575.0"/>
           <y:Fill color="#D49480" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="34.005859375" x="57.9970703125" xml:space="preserve" y="5.6494140625">Wolle<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
@@ -581,10 +581,10 @@ Anorganische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:Labe
     <node id="n50">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="130.0" width="150.0" x="1860.0000000000018" y="485.0"/>
+          <y:Geometry height="150.0" width="150.0" x="1860.0000000000018" y="485.0"/>
           <y:Fill color="#BC546C" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="74.03125" x="37.984375" xml:space="preserve" y="48.298828125">Erweiterung
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="74.03125" x="37.984375" xml:space="preserve" y="58.298828125">Erweiterung
 Farbindustrie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
@@ -604,7 +604,7 @@ Farbindustrie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel
     <node id="n52">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="150.0" x="610.0000000000025" y="625.0"/>
+          <y:Geometry height="30.0" width="150.0" x="110.0000000000025" y="625.0"/>
           <y:Fill color="#E8B810" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="52.69140625" x="48.654296875" xml:space="preserve" y="5.6494140625">Kalkstein<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
@@ -716,7 +716,7 @@ Verpackungsmittelindustrie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/><
     <node id="n62">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="50.0" width="150.0" x="360.0000000000023" y="435.0"/>
+          <y:Geometry height="50.0" width="150.0" x="-139.99999999999773" y="435.0"/>
           <y:Fill color="#787840" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#FFFFFF" verticalTextPosition="bottom" visible="true" width="110.048828125" x="19.9755859375" xml:space="preserve" y="8.298828125">Erweiterung
@@ -728,7 +728,7 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
     <node id="n63">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="150.0" x="610.0000000000025" y="495.0"/>
+          <y:Geometry height="30.0" width="150.0" x="110.0000000000025" y="495.0"/>
           <y:Fill color="#787840" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#FFFFFF" verticalTextPosition="bottom" visible="true" width="49.369140625" x="50.3154296875" xml:space="preserve" y="5.6494140625">Naphtha<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
@@ -739,7 +739,7 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
     <node id="n64">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="150.0" x="610.0000000000025" y="455.0"/>
+          <y:Geometry height="30.0" width="150.0" x="110.0000000000025" y="455.0"/>
           <y:Fill color="#787840" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#FFFFFF" verticalTextPosition="bottom" visible="true" width="44.025390625" x="52.9873046875" xml:space="preserve" y="5.6494140625">Ethylen<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
@@ -754,6 +754,62 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
           <y:Fill color="#B8DCC8" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="67.345703125" x="41.3271484375" xml:space="preserve" y="5.6494140625">Wasserstoff<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n66">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="70.0" width="150.0" x="360.00000000000273" y="355.0"/>
+          <y:Fill color="#444C5C" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#FFFFFF" verticalTextPosition="bottom" visible="true" width="106.05859375" x="21.970703125" xml:space="preserve" y="18.298828125">Erweiterung
+Koks und Schwefel<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n67">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="30.0" width="150.0" x="110.00000000000239" y="315.0"/>
+          <y:Fill color="#444C5C" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#FFFFFF" verticalTextPosition="bottom" visible="true" width="60.6953125" x="44.65234375" xml:space="preserve" y="5.6494140625">Kupferkies<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n68">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="30.0" width="150.0" x="610.000000000003" y="515.0"/>
+          <y:Fill color="#444C5C" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#FFFFFF" verticalTextPosition="bottom" visible="true" width="30.677734375" x="59.6611328125" xml:space="preserve" y="5.6494140625">Koks<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n69">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="30.0" width="150.0" x="110.0000000000025" y="385.0"/>
+          <y:Fill color="#444C5C" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#FFFFFF" verticalTextPosition="bottom" visible="true" width="52.69140625" x="48.654296875" xml:space="preserve" y="5.6494140625">Schwefel<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n70">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="30.0" width="150.0" x="1110.0000000000027" y="385.0"/>
+          <y:Fill color="#444C5C" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#FFFFFF" verticalTextPosition="bottom" visible="true" width="36.021484375" x="56.9892578125" xml:space="preserve" y="5.6494140625">Säure<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
           <y:Shape type="roundrectangle"/>
         </y:ShapeNode>
       </data>
@@ -786,8 +842,8 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="1.728235911224509" sy="10.0" tx="0.0" ty="0.0">
-            <y:Point x="50.0000000000025" y="440.0"/>
-            <y:Point x="50.0000000000025" y="490.0"/>
+            <y:Point x="-449.9999999999975" y="440.0"/>
+            <y:Point x="-449.9999999999975" y="490.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -837,8 +893,8 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="3.297063209683202" sy="10.0" tx="0.0" ty="0.0">
-            <y:Point x="60.0000000000025" y="640.0"/>
-            <y:Point x="60.0000000000025" y="670.0"/>
+            <y:Point x="-439.9999999999975" y="640.0"/>
+            <y:Point x="-439.9999999999975" y="670.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -876,8 +932,8 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="-8.036889074355713" ty="-10.0">
-            <y:Point x="310.0" y="630.0"/>
-            <y:Point x="310.0" y="670.0"/>
+            <y:Point x="-190.0" y="630.0"/>
+            <y:Point x="-190.0" y="670.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -891,8 +947,8 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="-12.59985668242507" ty="10.0">
-            <y:Point x="290.0" y="670.0"/>
-            <y:Point x="290.0" y="690.0"/>
+            <y:Point x="-210.0" y="670.0"/>
+            <y:Point x="-210.0" y="690.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -906,7 +962,7 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="-26.859130457641186" ty="30.0">
-            <y:Point x="310.0000000000025" y="710.0"/>
+            <y:Point x="-189.9999999999975" y="710.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -979,7 +1035,7 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
     <edge id="e17" source="n4" target="n18">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:Path sx="0.8576808693799194" sy="10.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
           <y:StyleProperties>
@@ -1075,7 +1131,7 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
     <edge id="e24" source="n27" target="n2">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-2.8639177529148583" ty="-20.0">
+          <y:Path sx="0.0" sy="0.0" tx="-1.0771414902919787" ty="-15.0">
             <y:Point x="3820.0000000000005" y="320.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
@@ -1089,7 +1145,7 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
     <edge id="e25" source="n21" target="n2">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+          <y:Path sx="0.0" sy="0.0" tx="0.5619006491892833" ty="5.0">
             <y:Point x="3810.0000000000005" y="490.0"/>
             <y:Point x="3810.0000000000005" y="340.0"/>
           </y:Path>
@@ -1165,8 +1221,8 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="70.00000000000068" ty="20.0">
-            <y:Point x="1790.0000000000023" y="550.0"/>
-            <y:Point x="1790.0000000000023" y="440.0"/>
+            <y:Point x="1780.0" y="550.0"/>
+            <y:Point x="1780.0" y="440.0"/>
             <y:Point x="3330.0000000000014" y="440.0"/>
             <y:Point x="3330.0000000000014" y="510.0"/>
           </y:Path>
@@ -1182,8 +1238,8 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="-14.289949008415078" ty="-30.0">
-            <y:Point x="1790.0000000000023" y="550.0"/>
-            <y:Point x="1790.0000000000023" y="440.0"/>
+            <y:Point x="1780.0" y="550.0"/>
+            <y:Point x="1780.0" y="440.0"/>
             <y:Point x="3770.0000000000005" y="440.0"/>
             <y:Point x="3770.0000000000005" y="500.0"/>
           </y:Path>
@@ -1198,7 +1254,11 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
     <edge id="e32" source="n6" target="n1">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:Path sx="0.0" sy="0.0" tx="-9.165628902397657" ty="-20.0">
+            <y:Point x="-200.0" y="370.0"/>
+            <y:Point x="-200.0" y="350.0"/>
+            <y:Point x="1318.2722306941464" y="350.0"/>
+          </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
           <y:StyleProperties>
@@ -1210,7 +1270,7 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
     <edge id="e33" source="n5" target="n4">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:Path sx="0.0" sy="0.0" tx="-0.8906307460667904" ty="10.0"/>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
           <y:StyleProperties>
@@ -1222,11 +1282,13 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
     <edge id="e34" source="n6" target="n4">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="1.1339660691504605" ty="20.0">
-            <y:Point x="1300.0000000000025" y="370.0"/>
+          <y:Path sx="0.0" sy="0.0" tx="1.2947587732414831" ty="30.0">
+            <y:Point x="-200.0" y="370.0"/>
+            <y:Point x="-200.0" y="350.0"/>
+            <y:Point x="1300.0000000000025" y="350.0"/>
             <y:Point x="1300.0000000000025" y="330.0"/>
           </y:Path>
-          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:LineStyle color="#444C5C" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
           <y:StyleProperties>
             <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#646464"/>
@@ -1267,11 +1329,11 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
     <edge id="e37" source="n2" target="n9">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="-1.5763952555403193" sy="20.0" tx="0.0" ty="0.0">
+          <y:Path sx="26.240227501062236" sy="25.0" tx="0.0" ty="0.0">
             <y:Point x="4080.0000000000014" y="360.0"/>
-            <y:Point x="4080.0000000000014" y="190.0"/>
-            <y:Point x="50.0000000000025" y="190.0"/>
-            <y:Point x="50.0000000000025" y="490.0"/>
+            <y:Point x="4080.0000000000014" y="170.0"/>
+            <y:Point x="-449.9999999999975" y="170.0"/>
+            <y:Point x="-449.9999999999975" y="490.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -1284,11 +1346,11 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
     <edge id="e38" source="n2" target="n6">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="6.27492586842618" sy="10.0" tx="0.0" ty="0.0">
+          <y:Path sx="26.240227501062236" sy="15.0" tx="0.0" ty="0.0">
             <y:Point x="4070.0000000000014" y="350.0"/>
-            <y:Point x="4070.0000000000014" y="200.0"/>
-            <y:Point x="60.0000000000025" y="200.0"/>
-            <y:Point x="60.0000000000025" y="370.0"/>
+            <y:Point x="4070.0000000000014" y="180.0"/>
+            <y:Point x="-439.9999999999975" y="180.0"/>
+            <y:Point x="-439.9999999999975" y="370.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -1301,11 +1363,11 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
     <edge id="e39" source="n2" target="n5">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="13.471970232062631" sy="0.0" tx="0.0" ty="0.0">
+          <y:Path sx="28.97196440019752" sy="5.0" tx="0.0" ty="0.0">
             <y:Point x="4060.0000000000014" y="340.0"/>
-            <y:Point x="4060.0000000000014" y="210.0"/>
-            <y:Point x="70.0000000000025" y="210.0"/>
-            <y:Point x="70.0000000000025" y="310.0"/>
+            <y:Point x="4060.0000000000014" y="190.0"/>
+            <y:Point x="-429.9999999999975" y="190.0"/>
+            <y:Point x="-429.9999999999975" y="310.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -1416,8 +1478,8 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
             <y:Point x="4310.0" y="690.0"/>
             <y:Point x="4310.0" y="850.0"/>
-            <y:Point x="-189.9999999999975" y="850.0"/>
-            <y:Point x="-189.9999999999975" y="430.0"/>
+            <y:Point x="-689.9999999999975" y="850.0"/>
+            <y:Point x="-689.9999999999975" y="430.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -1446,8 +1508,8 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="-4.935113271085243" ty="0.0">
-            <y:Point x="300.0" y="370.0"/>
-            <y:Point x="300.0" y="760.0"/>
+            <y:Point x="-200.0" y="370.0"/>
+            <y:Point x="-200.0" y="760.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -1473,8 +1535,8 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="21.347580151393004" sy="-10.0" tx="0.0" ty="0.0">
-            <y:Point x="560.0000000000025" y="750.0"/>
-            <y:Point x="559.7608407611933" y="730.0"/>
+            <y:Point x="60.0000000000025" y="750.0"/>
+            <y:Point x="59.76084076119332" y="730.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -1488,8 +1550,8 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="8.206233440153824" sy="30.0" tx="0.0" ty="0.0">
-            <y:Point x="560.0000000000025" y="790.0"/>
-            <y:Point x="560.0000000000025" y="810.0"/>
+            <y:Point x="60.0000000000025" y="790.0"/>
+            <y:Point x="60.0000000000025" y="810.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -1570,10 +1632,10 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
     <edge id="e56" source="n2" target="n42">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="7.507301880268642" sy="-20.0" tx="0.0" ty="0.0">
+          <y:Path sx="23.50849060192695" sy="-15.0" tx="0.0" ty="0.0">
             <y:Point x="4040.0000000000005" y="320.0"/>
-            <y:Point x="4040.0000000000005" y="230.0"/>
-            <y:Point x="1560.0000000000025" y="230.0"/>
+            <y:Point x="4040.0000000000005" y="210.0"/>
+            <y:Point x="1560.0000000000025" y="210.0"/>
             <y:Point x="1560.0000000000025" y="270.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
@@ -1616,8 +1678,8 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
           <y:Path sx="0.0" sy="0.0" tx="-3.226834271661346" ty="-20.0">
             <y:Point x="1830.0000000000023" y="370.0"/>
             <y:Point x="1830.0000000000023" y="330.0"/>
-            <y:Point x="2290.0000000000023" y="330.0"/>
-            <y:Point x="2290.0000000000023" y="250.0"/>
+            <y:Point x="2280.0" y="330.0"/>
+            <y:Point x="2280.0" y="250.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -1631,9 +1693,10 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="-2.4065285902029245" ty="30.0">
-            <y:Point x="310.0000000000025" y="590.0"/>
-            <y:Point x="310.0000000000025" y="620.0"/>
-            <y:Point x="3320.0" y="620.0"/>
+            <y:Point x="-180.0" y="590.0"/>
+            <y:Point x="-180.0" y="660.0"/>
+            <y:Point x="2270.0" y="660.0"/>
+            <y:Point x="2270.0" y="610.0"/>
             <y:Point x="3320.0" y="610.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
@@ -1648,8 +1711,8 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="-0.2772726442267981" sy="-10.0" tx="0.0" ty="0.0">
-            <y:Point x="59.58934637594862" y="620.0"/>
-            <y:Point x="60.0000000000025" y="590.0"/>
+            <y:Point x="-440.4106536240514" y="620.0"/>
+            <y:Point x="-439.9999999999975" y="590.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -1813,7 +1876,7 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
     <edge id="e72" source="n50" target="n51">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="5.83706410299385" sy="40.0" tx="0.0" ty="0.0"/>
+          <y:Path sx="14.623321688952956" sy="30.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
           <y:StyleProperties>
@@ -1869,11 +1932,11 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
     <edge id="e76" source="n5" target="n50">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-4.211856759466173" ty="-20.0">
+          <y:Path sx="0.0" sy="0.0" tx="-5.011037273583042" ty="-10.0">
             <y:Point x="1310.0" y="310.0"/>
             <y:Point x="1310.0" y="480.0"/>
-            <y:Point x="1810.0000000000023" y="480.0"/>
-            <y:Point x="1810.0000000000023" y="530.0"/>
+            <y:Point x="1800.0" y="480.0"/>
+            <y:Point x="1800.0" y="550.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -1886,7 +1949,7 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
     <edge id="e77" source="n33" target="n50">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-12.079259028976367" ty="-60.0">
+          <y:Path sx="0.0" sy="0.0" tx="-25.345540403367295" ty="-70.0">
             <y:Point x="1830.0000000000023" y="370.0"/>
             <y:Point x="1830.0000000000023" y="490.0"/>
           </y:Path>
@@ -1901,9 +1964,9 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
     <edge id="e78" source="n52" target="n50">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-4.211856759466173" ty="60.0">
+          <y:Path sx="0.0" sy="0.0" tx="-20.37705733121993" ty="70.0">
             <y:Point x="1790.0000000000023" y="640.0"/>
-            <y:Point x="1790.0000000000023" y="610.0"/>
+            <y:Point x="1790.0000000000023" y="630.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -1917,8 +1980,8 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="7.111121214217235" sy="-30.0" tx="0.0" ty="0.0">
-            <y:Point x="550.0000000000025" y="730.0"/>
-            <y:Point x="550.0000000000025" y="640.0"/>
+            <y:Point x="50.0000000000025" y="730.0"/>
+            <y:Point x="50.0000000000025" y="640.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -1931,7 +1994,7 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
     <edge id="e80" source="n9" target="n50">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-4.648934663327964" ty="-40.0">
+          <y:Path sx="0.0" sy="0.0" tx="-19.947628290675766" ty="-50.0">
             <y:Point x="1310.0000000000025" y="490.0"/>
             <y:Point x="1820.0000000000023" y="490.0"/>
             <y:Point x="1820.0000000000023" y="510.0"/>
@@ -1947,10 +2010,12 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
     <edge id="e81" source="n6" target="n50">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-0.7152335285729805" ty="40.0">
-            <y:Point x="1300.0000000000025" y="370.0"/>
-            <y:Point x="1300.0" y="590.0"/>
-            <y:Point x="1791.6881003365586" y="590.0"/>
+          <y:Path sx="0.0" sy="0.0" tx="-20.37705733121993" ty="50.0">
+            <y:Point x="-200.0" y="370.0"/>
+            <y:Point x="-200.0" y="350.0"/>
+            <y:Point x="1300.0000000000025" y="350.0"/>
+            <y:Point x="1300.0" y="610.0"/>
+            <y:Point x="1791.6881003365586" y="610.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -1963,9 +2028,9 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
     <edge id="e82" source="n53" target="n50">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
-            <y:Point x="1800.0000000000023" y="510.0"/>
-            <y:Point x="1800.0000000000023" y="550.0"/>
+          <y:Path sx="0.0" sy="0.0" tx="-10.133043959462157" ty="10.0">
+            <y:Point x="1790.0" y="510.0"/>
+            <y:Point x="1790.0" y="570.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -1978,13 +2043,13 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
     <edge id="e83" source="n2" target="n53">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="8.237756149418146" sy="-10.0" tx="0.0" ty="0.0">
+          <y:Path sx="34.981785578295785" sy="-5.0" tx="0.0" ty="0.0">
             <y:Point x="4050.0000000000014" y="330.0"/>
-            <y:Point x="4050.0000000000014" y="220.0"/>
-            <y:Point x="1550.0000000000025" y="220.0"/>
+            <y:Point x="4050.0000000000014" y="200.0"/>
+            <y:Point x="1550.0000000000025" y="200.0"/>
             <y:Point x="1550.0000000000025" y="510.0"/>
           </y:Path>
-          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:LineStyle color="#444C5C" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
           <y:StyleProperties>
             <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#501c04"/>
@@ -2011,8 +2076,8 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="-7.267336958761007" ty="-10.0">
-            <y:Point x="310.0" y="630.0"/>
-            <y:Point x="310.0" y="670.0"/>
+            <y:Point x="-190.0" y="630.0"/>
+            <y:Point x="-190.0" y="670.0"/>
             <y:Point x="2290.0000000000023" y="670.0"/>
             <y:Point x="2290.0000000000023" y="770.0"/>
           </y:Path>
@@ -2163,11 +2228,11 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
     <edge id="e95" source="n56" target="n46">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-2.20036754812827" ty="10.0">
+          <y:Path sx="0.0" sy="0.0" tx="-25.601504150815344" ty="-30.0">
             <y:Point x="3300.0" y="400.0"/>
             <y:Point x="3300.0" y="240.0"/>
             <y:Point x="1820.0" y="240.0"/>
-            <y:Point x="1820.0" y="390.0"/>
+            <y:Point x="1820.0" y="350.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -2237,7 +2302,7 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
     <edge id="e100" source="n58" target="n4">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-5.155703191241173" ty="-20.0">
+          <y:Path sx="0.0" sy="0.0" tx="-3.950176073098646" ty="-10.0">
             <y:Point x="1290.0" y="520.0"/>
             <y:Point x="1290.0" y="290.0"/>
           </y:Path>
@@ -2406,12 +2471,11 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
       </data>
     </edge>
     <edge id="e111" source="n9" target="n62">
-      <data key="d9"/>
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
-            <y:Point x="310.0" y="490.0"/>
-            <y:Point x="310.0" y="460.0"/>
+            <y:Point x="-190.0" y="490.0"/>
+            <y:Point x="-190.0" y="460.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -2422,12 +2486,11 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
       </data>
     </edge>
     <edge id="e112" source="n62" target="n64">
-      <data key="d9"/>
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
-            <y:Point x="560.0" y="460.0"/>
-            <y:Point x="560.0" y="470.0"/>
+            <y:Point x="60.0" y="460.0"/>
+            <y:Point x="60.0" y="470.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -2438,12 +2501,11 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
       </data>
     </edge>
     <edge id="e113" source="n62" target="n63">
-      <data key="d9"/>
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="5.571030024164827" sy="10.0" tx="0.0" ty="0.0">
-            <y:Point x="550.0" y="470.0"/>
-            <y:Point x="550.0" y="510.0"/>
+            <y:Point x="50.0" y="470.0"/>
+            <y:Point x="50.0" y="510.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -2454,7 +2516,6 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
       </data>
     </edge>
     <edge id="e114" source="n46" target="n65">
-      <data key="d9"/>
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="9.272927428240564" sy="-20.0" tx="0.0" ty="0.0">
@@ -2470,14 +2531,13 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
       </data>
     </edge>
     <edge id="e115" source="n65" target="n62">
-      <data key="d9"/>
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="-25.564831588085497" ty="-20.0">
             <y:Point x="2270.0" y="400.0"/>
             <y:Point x="2270.0" y="250.0"/>
-            <y:Point x="310.0" y="250.0"/>
-            <y:Point x="310.0" y="440.0"/>
+            <y:Point x="-190.0" y="250.0"/>
+            <y:Point x="-190.0" y="440.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -2488,14 +2548,13 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
       </data>
     </edge>
     <edge id="e116" source="n63" target="n50">
-      <data key="d9"/>
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-0.16888614874596897" ty="20.0">
+          <y:Path sx="0.0" sy="0.0" tx="-3.3037017116234892" ty="30.0">
             <y:Point x="800.0" y="510.0"/>
             <y:Point x="800.0" y="500.0"/>
             <y:Point x="1540.0" y="500.0"/>
-            <y:Point x="1540.0" y="570.0"/>
+            <y:Point x="1540.0" y="590.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -2506,7 +2565,6 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
       </data>
     </edge>
     <edge id="e117" source="n64" target="n10">
-      <data key="d9"/>
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="0.8274017061653467" ty="10.0">
@@ -2524,7 +2582,6 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
       </data>
     </edge>
     <edge id="e118" source="n62" target="n65">
-      <data key="d9"/>
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="13.702215637996801" sy="-10.0" tx="0.0" ty="0.0">
@@ -2536,6 +2593,277 @@ Organische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelM
           <y:Arrows source="none" target="delta"/>
           <y:StyleProperties>
             <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#ccd0dc"/>
+          </y:StyleProperties>
+        </y:GenericEdge>
+      </data>
+    </edge>
+    <edge id="e119" source="n66" target="n53">
+      <data key="d9"/>
+      <data key="d10">
+        <y:GenericEdge configuration="com.yworks.edge.framed">
+          <y:Path sx="11.0286388001972" sy="20.0" tx="0.0" ty="0.0">
+            <y:Point x="580.0" y="410.0"/>
+            <y:Point x="580.0" y="440.0"/>
+            <y:Point x="1550.0" y="439.4358927660411"/>
+            <y:Point x="1550.0" y="510.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:Arrows source="none" target="delta"/>
+          <y:StyleProperties>
+            <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#501c04"/>
+          </y:StyleProperties>
+        </y:GenericEdge>
+      </data>
+    </edge>
+    <edge id="e120" source="n67" target="n66">
+      <data key="d9"/>
+      <data key="d10">
+        <y:GenericEdge configuration="com.yworks.edge.framed">
+          <y:Path sx="0.0" sy="0.0" tx="-13.637888873960605" ty="10.0">
+            <y:Point x="300.0" y="330.0"/>
+            <y:Point x="300.0" y="400.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:Arrows source="none" target="delta"/>
+          <y:StyleProperties>
+            <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#fcf880"/>
+          </y:StyleProperties>
+        </y:GenericEdge>
+      </data>
+    </edge>
+    <edge id="e121" source="n2" target="n67">
+      <data key="d9"/>
+      <data key="d10">
+        <y:GenericEdge configuration="com.yworks.edge.framed">
+          <y:Path sx="31.157353919506022" sy="-25.0" tx="0.0" ty="0.0">
+            <y:Point x="4030.0" y="310.0"/>
+            <y:Point x="4030.0" y="220.0"/>
+            <y:Point x="60.0" y="220.0"/>
+            <y:Point x="60.0" y="330.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:Arrows source="none" target="delta"/>
+          <y:StyleProperties>
+            <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#fcf880"/>
+          </y:StyleProperties>
+        </y:GenericEdge>
+      </data>
+    </edge>
+    <edge id="e122" source="n66" target="n5">
+      <data key="d9"/>
+      <data key="d10">
+        <y:GenericEdge configuration="com.yworks.edge.framed">
+          <y:Path sx="27.41906019500908" sy="-30.0" tx="0.0" ty="0.0">
+            <y:Point x="570.0" y="360.0"/>
+            <y:Point x="570.0" y="310.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:Arrows source="none" target="delta"/>
+          <y:StyleProperties>
+            <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#fc0000"/>
+          </y:StyleProperties>
+        </y:GenericEdge>
+      </data>
+    </edge>
+    <edge id="e123" source="n66" target="n68">
+      <data key="d9"/>
+      <data key="d10">
+        <y:GenericEdge configuration="com.yworks.edge.framed">
+          <y:Path sx="9.389596660715938" sy="30.0" tx="0.0" ty="0.0">
+            <y:Point x="570.0" y="420.0"/>
+            <y:Point x="570.0" y="530.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:Arrows source="none" target="delta"/>
+          <y:StyleProperties>
+            <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#444c5c"/>
+          </y:StyleProperties>
+        </y:GenericEdge>
+      </data>
+    </edge>
+    <edge id="e124" source="n50" target="n67">
+      <data key="d9"/>
+      <data key="d10">
+        <y:GenericEdge configuration="com.yworks.edge.framed">
+          <y:Path sx="5.676883344288171" sy="-10.0" tx="0.0" ty="0.0">
+            <y:Point x="2018.53138496965" y="550.0"/>
+            <y:Point x="2020.0" y="220.0"/>
+            <y:Point x="60.0" y="220.0"/>
+            <y:Point x="60.0" y="330.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:Arrows source="none" target="delta"/>
+          <y:StyleProperties>
+            <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#fcf880"/>
+          </y:StyleProperties>
+        </y:GenericEdge>
+      </data>
+    </edge>
+    <edge id="e125" source="n69" target="n66">
+      <data key="d9"/>
+      <data key="d10">
+        <y:GenericEdge configuration="com.yworks.edge.framed">
+          <y:Path sx="0.0" sy="0.0" tx="-23.028234464738716" ty="30.0">
+            <y:Point x="290.0" y="400.0"/>
+            <y:Point x="290.0" y="420.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:Arrows source="none" target="delta"/>
+          <y:StyleProperties>
+            <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#fcd400"/>
+          </y:StyleProperties>
+        </y:GenericEdge>
+      </data>
+    </edge>
+    <edge id="e126" source="n1" target="n69">
+      <data key="d9"/>
+      <data key="d10">
+        <y:GenericEdge configuration="com.yworks.edge.framed">
+          <y:Path sx="21.269218979718744" sy="-10.0" tx="0.0" ty="0.0">
+            <y:Point x="1540.0" y="360.0"/>
+            <y:Point x="1540.0" y="200.0"/>
+            <y:Point x="50.0" y="200.0"/>
+            <y:Point x="50.0" y="400.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:Arrows source="none" target="delta"/>
+          <y:StyleProperties>
+            <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#fcd400"/>
+          </y:StyleProperties>
+        </y:GenericEdge>
+      </data>
+    </edge>
+    <edge id="e127" source="n62" target="n69">
+      <data key="d9"/>
+      <data key="d10">
+        <y:GenericEdge configuration="com.yworks.edge.framed">
+          <y:Path sx="29.29286720030842" sy="-20.0" tx="0.0" ty="0.0">
+            <y:Point x="50.0" y="440.0"/>
+            <y:Point x="50.0" y="400.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:Arrows source="none" target="delta"/>
+          <y:StyleProperties>
+            <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#fcd400"/>
+          </y:StyleProperties>
+        </y:GenericEdge>
+      </data>
+    </edge>
+    <edge id="e128" source="n66" target="n70">
+      <data key="d9"/>
+      <data key="d10">
+        <y:GenericEdge configuration="com.yworks.edge.framed">
+          <y:Path sx="6.657859761579687" sy="10.0" tx="0.0" ty="0.0">
+            <y:Point x="1020.0" y="400.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:Arrows source="none" target="delta"/>
+          <y:StyleProperties>
+            <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#b4cc7c"/>
+          </y:StyleProperties>
+        </y:GenericEdge>
+      </data>
+    </edge>
+    <edge id="e129" source="n70" target="n50">
+      <data key="d9"/>
+      <data key="d10">
+        <y:GenericEdge configuration="com.yworks.edge.framed">
+          <y:Path sx="0.0" sy="0.0" tx="-33.05996540652586" ty="-30.0">
+            <y:Point x="1280.3819281120104" y="400.0"/>
+            <y:Point x="1280.0" y="420.0"/>
+            <y:Point x="1810.0" y="420.0"/>
+            <y:Point x="1810.0" y="530.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:Arrows source="none" target="delta"/>
+          <y:StyleProperties>
+            <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#b4cc7c"/>
+          </y:StyleProperties>
+        </y:GenericEdge>
+      </data>
+    </edge>
+    <edge id="e130" source="n70" target="n46">
+      <data key="d9"/>
+      <data key="d10">
+        <y:GenericEdge configuration="com.yworks.edge.framed">
+          <y:Path sx="0.0" sy="0.0" tx="-9.38181631219868" ty="10.0">
+            <y:Point x="1280.0" y="400.0"/>
+            <y:Point x="1280.0" y="420.0"/>
+            <y:Point x="1810.0" y="420.0"/>
+            <y:Point x="1810.0" y="390.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:Arrows source="none" target="delta"/>
+          <y:StyleProperties>
+            <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#b4cc7c"/>
+          </y:StyleProperties>
+        </y:GenericEdge>
+      </data>
+    </edge>
+    <edge id="e131" source="n48" target="n66">
+      <data key="d9"/>
+      <data key="d10">
+        <y:GenericEdge configuration="com.yworks.edge.framed">
+          <y:Path sx="0.0" sy="0.0" tx="-18.149725953693405" ty="-30.0">
+            <y:Point x="2290.0" y="360.0"/>
+            <y:Point x="2290.0" y="230.0"/>
+            <y:Point x="320.0" y="230.0"/>
+            <y:Point x="320.0" y="360.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:Arrows source="none" target="delta"/>
+          <y:StyleProperties>
+            <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#b8dcc8"/>
+          </y:StyleProperties>
+        </y:GenericEdge>
+      </data>
+    </edge>
+    <edge id="e132" source="n65" target="n66">
+      <data key="d9"/>
+      <data key="d10">
+        <y:GenericEdge configuration="com.yworks.edge.framed">
+          <y:Path sx="0.0" sy="0.0" tx="-34.125915617476494" ty="-10.0">
+            <y:Point x="2270.0" y="400.0"/>
+            <y:Point x="2270.0" y="250.0"/>
+            <y:Point x="310.0" y="250.0"/>
+            <y:Point x="310.0" y="380.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:Arrows source="none" target="delta"/>
+          <y:StyleProperties>
+            <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#ccd0dc"/>
+          </y:StyleProperties>
+        </y:GenericEdge>
+      </data>
+    </edge>
+    <edge id="e133" source="n68" target="n4">
+      <data key="d9"/>
+      <data key="d10">
+        <y:GenericEdge configuration="com.yworks.edge.framed">
+          <y:Path sx="0.0" sy="0.0" tx="-31.6431588880846" ty="-30.0">
+            <y:Point x="1030.0" y="530.0"/>
+            <y:Point x="1030.0" y="270.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:Arrows source="none" target="delta"/>
+          <y:StyleProperties>
+            <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#444c5c"/>
+          </y:StyleProperties>
+        </y:GenericEdge>
+      </data>
+    </edge>
+    <edge id="e134" source="n68" target="n57">
+      <data key="d9"/>
+      <data key="d10">
+        <y:GenericEdge configuration="com.yworks.edge.framed">
+          <y:Path sx="0.0" sy="0.0" tx="-16.052556767363967" ty="-20.0">
+            <y:Point x="800.0" y="530.0"/>
+            <y:Point x="800.0" y="560.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:Arrows source="none" target="delta"/>
+          <y:StyleProperties>
+            <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#444c5c"/>
           </y:StyleProperties>
         </y:GenericEdge>
       </data>

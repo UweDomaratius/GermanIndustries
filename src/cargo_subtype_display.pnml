@@ -1,3 +1,10 @@
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_acid, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("ACID") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	ACID: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
 switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_aore, 
 	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("AORE") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
 	 getbits(extra_callback_info2, 16, 8)]) {
@@ -44,6 +51,13 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_coat,
 	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("COAT") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
 	 getbits(extra_callback_info2, 16, 8)]) {
 	COAT: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_coke, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("COKE") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	COKE: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
 	return 0x3800 + string(STR_EMPTY);
 }
 
@@ -159,6 +173,13 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_plas,
 	return 0x3800 + string(STR_EMPTY);
 }
 
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_pore, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("PORE") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	PORE: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
 switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_qlme, 
 	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("QLME") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
 	 getbits(extra_callback_info2, 16, 8)]) {
@@ -194,6 +215,13 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_stel,
 	return 0x3800 + string(STR_EMPTY);
 }
 
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_sulp, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("SULP") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	SULP: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
 switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_text, 
 	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("TEXT") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
 	 getbits(extra_callback_info2, 16, 8)]) {
@@ -224,6 +252,7 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_wool,
 
 switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info, 
 	getbits(extra_callback_info2, 16, 8)) {
+	ACID: switch_cargo_subtype_display_info_acid;
 	AORE: switch_cargo_subtype_display_info_aore;
 	ALUM: switch_cargo_subtype_display_info_alum;
 	C2H4: switch_cargo_subtype_display_info_c2h4;
@@ -231,6 +260,7 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info,
 	CHLO: switch_cargo_subtype_display_info_chlor;
 	COAL: switch_cargo_subtype_display_info_coal;
 	COAT: switch_cargo_subtype_display_info_coat;
+	COKE: switch_cargo_subtype_display_info_coke;
 	COPR: switch_cargo_subtype_display_info_copr;
 	CORE: switch_cargo_subtype_display_info_core;
 	FISH: switch_cargo_subtype_display_info_fish;
@@ -247,11 +277,13 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info,
 	OIL_: switch_cargo_subtype_display_info_oil;
 	PAPR: switch_cargo_subtype_display_info_papr;
 	PLAS: switch_cargo_subtype_display_info_plas;	
+	PORE: switch_cargo_subtype_display_info_pore;
 	QLME: switch_cargo_subtype_display_info_qlme;
 	RFPR: switch_cargo_subtype_display_info_rfpr;
 	SALT: switch_cargo_subtype_display_info_salt;
 	SAND: switch_cargo_subtype_display_info_sand;
 	STEL: switch_cargo_subtype_display_info_stel;
+	SULP: switch_cargo_subtype_display_info_sulp;
 	TEXT: switch_cargo_subtype_display_info_text;
 	WDPR: switch_cargo_subtype_display_info_wdpr;
 	WOOD: switch_cargo_subtype_display_info_wood;

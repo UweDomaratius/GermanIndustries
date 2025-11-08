@@ -1,0 +1,31 @@
+spriteset(cargoicon_coke) {
+    [10 + 20 * 1, 10 + 20 * 3, 10, 10, 0, 0, "graphics/other/cargoicons.png"]
+}
+if (param_extension_coke_sulphur) {
+	item(FEAT_CARGOS, coke, CARGO_ID_COKE) {
+		property {
+			type_name: string(STR_CARGO_NAME_COKE);
+			unit_name: string(STR_CARGO_NAME_COKE);
+			type_abbreviation: string(STR_CID_COKE);
+			sprite: NEW_CARGO_SPRITE;
+			weight: 1.0;
+			is_freight: 1;
+			cargo_classes: bitmask(CC_BULK);
+			town_growth_effect: TOWNGROWTH_NONE;
+			town_growth_multiplier: 1.0;
+			units_of_cargo: TTD_STR_TONS;
+			items_of_cargo: string(STR_QUANTITY_COKE);
+			penalty_lowerbound: 30;
+			single_penalty_length: 255;
+			capacity_multiplier: 1;
+			cargo_payment_list_colour: 17;
+			station_list_colour: 17;
+			price_factor: 97;
+			cargo_label: "COKE";
+			number: CARGO_ID_COKE;
+		}
+		graphics {
+			cargoicon_coke;
+		}
+	}
+}

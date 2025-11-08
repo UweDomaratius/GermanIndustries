@@ -39,13 +39,17 @@ STR_PARAM_EXT_PAPER :Erweiterung "Papierindustrie"
 STR_PARAM_EXT_PAPER_DESC :Fügt Industrien hinzu, die Papier produzieren bzw. benötigen. Benötigt die Erweiterung Grundlegende Anorganische Chemie.
 STR_PARAM_EXT_ORGANIC_CHEMISTRY :Erweiterung "Organische Chemie"
 STR_PARAM_EXT_ORGANIC_CHEMISTRY_DESC :Fügt Industrien und Frachten hinzu, die sich mit der Verarbeitung von Erdöl beschäftigen. Benötigt die Erweiterung Grundlegende Anorganische Chemie.
+STR_PARAM_EXT_COKE_SULPHUR :Erweiterung "Koks und Schwefel"
+STR_PARAM_EXT_COKE_SULPHUR_DESC :Fügt Industrien und Frachten hinzu, die sich mit der Förderung und Verarbeitung von schwefelhaltigen Erzen beschäftigen.
 
 # Frachten
+STR_CARGO_NAME_ACID               :Säure
 STR_CARGO_NAME_BAUXITE            :Bauxit
 STR_CARGO_NAME_BUILDING_MATERIALS :Ziegel
 STR_CARGO_NAME_CARBON_BLACK       :Ruß
 STR_CARGO_NAME_CEMENT             :Zement
 STR_CARGO_NAME_CHLORINE           :Chlor
+STR_CARGO_NAME_COKE               :Koks
 STR_CARGO_NAME_COPPER             :Kupfer
 STR_CARGO_NAME_COPPER_ORE         :Kupfererz
 STR_CARGO_NAME_ETHYLENE           :Ethylen
@@ -60,21 +64,25 @@ STR_CARGO_NAME_PACKAGING          :Verpackungen
 STR_CARGO_NAME_PAINT              :Farbe
 STR_CARGO_NAME_PETROL             :Treibstoff
 STR_CARGO_NAME_PLASTICS           :Kunststoffe
+STR_CARGO_NAME_PYRITE_ORE         :Kupferkies
 STR_CARGO_NAME_QUICKLIME          :Branntkalk
 STR_CARGO_NAME_SALT               :Salz
 STR_CARGO_NAME_SAND               :Sand
+STR_CARGO_NAME_SULPHUR            :Schwefel
 STR_CARGO_NAME_TEXTILES           :Textilien
 STR_CARGO_NAME_TIMBER             :Schnittholz
 STR_CARGO_NAME_VEHICLES           :Fahrzeuge
 STR_CARGO_NAME_WOOL               :Wolle
 
 # lange Form der Frachtanzeige (x Einheiten Fracht)
+STR_QUANTITY_ACID                 :{WEIGHT} Säure
 STR_QUANTITY_ALUMINIUM            :{WEIGHT} Aluminium
 STR_QUANTITY_BAUXITE              :{WEIGHT} Bauxit
 STR_QUANTITY_BUILDING_MATERIALS   :{WEIGHT} Ziegel
 STR_QUANTITY_CARBON_BLACK         :{WEIGHT} Ruß
 STR_QUANTITY_CEMENT               :{WEIGHT} Zement
 STR_QUANTITY_CHLORINE             :{WEIGHT} Chlor
+STR_QUANTITY_COKE                 :{WEIGHT} Koks
 STR_QUANTITY_COPPER               :{WEIGHT} Kupfer
 STR_QUANTITY_COPPER_ORE           :{WEIGHT} Kupfererz
 STR_QUANTITY_ETHYLENE             :{WEIGHT} Ethylen
@@ -91,15 +99,18 @@ STR_QUANTITY_PACKAGING            :{WEIGHT} Verpackungen
 STR_QUANTITY_PAINT                :{WEIGHT} Farbe
 STR_QUANTITY_PETROL               :{WEIGHT} Treibstoff
 STR_QUANTITY_PLASTICS             :{WEIGHT} Kunststoffe
+STR_QUANTITY_PYRITE_ORE           :{WEIGHT} Kupferkies
 STR_QUANTITY_QUICKLIME            :{WEIGHT} Branntkalk
 STR_QUANTITY_SALT                 :{WEIGHT} Salz
 STR_QUANTITY_SAND                 :{WEIGHT} Sand
+STR_QUANTITY_SULPHUR              :{WEIGHT} Schwefel
 STR_QUANTITY_TEXTILES             :{WEIGHT} Textilien
 STR_QUANTITY_TIMBER               :{WEIGHT} Schnittholz
 STR_QUANTITY_VEHICLES             :{COMMA} Fahrzeug{P "" e}
 STR_QUANTITY_WOOL                 :{WEIGHT} Wolle
 
 # Industrien
+STR_IND_ACID_PLANT             :{G=w}Säurefabrik
 STR_IND_ALUMINIUM_PLANT        :{G=w}Aluhütte
 STR_IND_ANIMAL_FARM            :{G=w}Viehzucht
 STR_IND_BREWERY                :{G=w}Brauerei
@@ -110,6 +121,7 @@ STR_IND_CEMENT_PLANT           :{G=w}Zementfabrik
 STR_IND_CHLOR_ALKALI_PLANT     :{G=w}Chloralkali Elektrolyseanlage
 STR_IND_CLOTHING_PLANT         :{G=w}Bekleidungsfabrik
 STR_IND_COAL_LIQUEFACTION_PLANT:{G=n}Hydrierwerk
+STR_IND_COKE_OVEN              :{G=w}Kokerei
 STR_IND_COPPER_SMELTER         :{G=w}Kupferhütte
 STR_IND_DAIRY                  :{G=w}Molkerei
 STR_IND_FISHING_GROUNDS        :{G=w}Fischgründe
@@ -120,14 +132,16 @@ STR_IND_GENERAL_STORE          :Laden
 STR_IND_GLASS_WORKS            :{G=w}Glasfabrik
 STR_IND_HOTEL                  :{G=n}Hotel
 STR_IND_INTEGRATED_STEEL_MILL  :{G=n}Integriertes Stahlwerk
-STR_IND_LIME_KILN              :Kalkofen
+STR_IND_LIME_KILN              :Kalkbrennerei
 STR_IND_LIMESTONE_MINE         :{G=n}Kalksteinbergwerk
+STR_IND_ORE_SMELTER            :{G=w}Erzschmelze
 STR_IND_PACKAGING_PLANT        :{G=n}Verpackungsmittelfabrik
 STR_IND_PAINT_FACTORY          :{G=w}Farbenfabrik
 STR_IND_PETROL_STATION         :{G=w}Tankstelle
 STR_IND_PHARMACEUTICAL_PLANT   :{G=w}Arzneimittelfabrik
 STR_IND_PLASTICS_PLANT         :Kunststofffabrik
 STR_IND_PORT                   :Hafen
+STR_IND_PYRITE_MINE            :{G=n}Kupferkiesbergwerk
 STR_IND_SALT_MINE              :{G=n}Salzbergwerk
 STR_IND_SANDPIT                :{G=w}Sandgrube
 STR_IND_STEAMCRACKER           :Steamcracker
@@ -149,6 +163,7 @@ STR_STATION_CHLOR_ALKALI_PLANT     :Chloralkali Elektrolyseanlage
 STR_STATION_CLOTHING_PLANT         :Bekleidungsfabrik
 STR_STATION_COAL_LIQUEFACTION_PLANT:Hydrierwerk
 STR_STATION_COAL_MINE              :Bergwerk
+STR_STATION_COKE_OVEN              :Kokerei
 STR_STATION_COPPER_ORE_MINE        :Bergwerk
 STR_STATION_COPPER_SMELTER         :Kupferhütte
 STR_STATION_DAIRY                  :Molkerei
@@ -169,6 +184,7 @@ STR_STATION_LIMESTONE_MINE         :Kalkeinbergwerk
 STR_STATION_OIL_REFINERY           :Raffinerie
 STR_STATION_OIL_RIG                :Bohrplattform
 STR_STATION_OIL_WELL               :Ölquelle
+STR_STATION_ORE_SMELTER            :Erzschmelze
 STR_STATION_PACKAGING_PLANT        :Verpackungsmittelfabrik
 STR_STATION_PAINT_FACTORY          :Farbenfabrik
 STR_STATION_PAPER_MILL             :Papierfabrik
@@ -178,6 +194,7 @@ STR_STATION_PLASTICS_PLANT         :Kunststofffabrik
 STR_STATION_PORT                   :Hafen
 STR_STATION_POWER_PLANT            :Kraftwerk
 STR_STATION_PRINTING_WORKS         :Druckerei
+STR_STATION_PYRITE_MINE            :Bergwerk
 STR_STATION_SALT_MINE              :Salzbergwerk
 STR_STATION_SANDPIT                :Sandgrube
 STR_STATION_SAWMILL                :Sägewerk
@@ -204,6 +221,8 @@ STR_INDUSTRY_ELECTRICITY_TEXT :Industrie kann {YELLOW}{COMMA}{BLACK} Einheiten p
 STR_INDUSTRY_NO_POWER :{RED}Kein Strom verfügbar, Produktion gestoppt!
 STR_INDUSTRY_NOT_ENOUGH_POWER :{YELLOW}Nicht genug Strom verfügbar, Produktion reduziert!
 STR_INDUSTRY_ENOUGH_POWER :{GREEN}Genug Strom verfügbar.
+# Texte für spezifische Industrien
+STR_ACID_PLANT_HCL_SULP :Industrie benötigt entweder Schwefel oder sowohl Wasserstoff als auch Chlor zur Produktion. Die maximale Produktion erhöht sich, wenn alle drei Rohstoffe verfügbar sind.
 
 # Texte für Industriefinanzierung
 STR_INDUSTRY_NOT_AVAILABLE_BEFORE :{}{BLACK}Industrie erst ab {STRING} verfügbar.
@@ -220,3 +239,4 @@ STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE :kann nicht auf steilen Hängen platziert we
 STR_ERR_EXTENSION_GLASS_REQUIRES_EXTENSION_BUILDING_INDUSTRIES:Erweiterung "Glas" erfordert Erweiterung "Bauindustrie".
 STR_ERR_EXTENSION_PAPER_REQUIRES_EXTENSION_BASIC_INORGANIC_CHEMISTRY:Erweiterung "Papier" erfordert Erweiterung "Grundlegende anorganische Chemie".
 STR_ERR_EXTENSION_ORGANIC_CHEMISTRY_REQUIRES_EXTENSION_BASIC_INORGANIC_CHEMISTRY:Erweiterung "Organische Chemie" erfordert Erweiterung "Grundlegende anorganische Chemie".
+STR_ERR_EXTENSION_SULPHUR_COKE_REQUIRES_OTHER_EXTENSIONS:Erweiterung "Koks und Schwefel" erfordert mindestens eine der folgenden Erweiterungen: "Grundlegende anorganische Chemie", "Farbindustrie"
