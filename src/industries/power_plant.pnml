@@ -419,7 +419,7 @@ produce(power_plant_produce,
 
 switch(FEAT_INDUSTRIES, PARENT, power_plant_set_power_available,
 	[
-		STORE_PERM(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT), PERM_REGISTER_CITY_POWER_AVAILABLE),
+		STORE_PERM(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT)*10, PERM_REGISTER_CITY_POWER_AVAILABLE),
 		STORE_PERM(0, PERM_REGISTER_CITY_POWER_DEMAND)
 	])
 {
@@ -432,10 +432,11 @@ switch(FEAT_INDUSTRIES, SELF, power_plant_switch_produce,
 	 STORE_TEMP(incoming_cargo_waiting("COAL"), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
 	 STORE_TEMP(incoming_cargo_waiting("OIL_"), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
 	 // retrieve demand from permanent storage
-	 STORE_TEMP(city_get_power_demand_for_industries()+city_get_power_demand_for_buildings(), TEMP_REGISTER_PRODUCTION_AMOUNT),
-	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT), PERM_REGISTER_PRODUCTION_AMOUNT),
-	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT), PERM_REGISTER_POWER_DEMAND),
-	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT), PERM_REGISTER_PREV_POWER_DEMAND),
+	 STORE_TEMP((city_get_power_demand_for_industries()+city_get_power_demand_for_buildings()), TEMP_REGISTER_PRODUCTION_AMOUNT),
+	 STORE_TEMP((LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 10)+1, TEMP_REGISTER_PRODUCTION_AMOUNT), // 1t raw material produces 10 mwH
+	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT)*10, PERM_REGISTER_PRODUCTION_AMOUNT),
+	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT)*10, PERM_REGISTER_POWER_DEMAND),
+	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT)*10, PERM_REGISTER_PREV_POWER_DEMAND),
 	 // clamp production if not enough supplies are available
 	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0)+LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT)),TEMP_REGISTER_PRODUCTION_AMOUNT),
 	 
@@ -458,9 +459,65 @@ switch(FEAT_INDUSTRIES, SELF, power_plant_switch_produce,
 		max(0,LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) - LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0)), 
 		TEMP_REGISTER_PRODUCTION_RAW1),
 	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0)+LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1), TEMP_REGISTER_PRODUCTION_AMOUNT),
-	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT),PERM_REGISTER_PRODUCTION_AMOUNT)
+	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT)*10,PERM_REGISTER_PRODUCTION_AMOUNT)
 	]) {
 	power_plant_set_power_available;
+}
+
+// about 1% sulphur from burning coal/oil
+produce(power_plant_produce_ext_coke_sulphur,
+	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	],
+	[SULP: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT)*1/100,1) : 0;],
+	0
+)
+
+switch(FEAT_INDUSTRIES, PARENT, power_plant_set_power_available_ext_coke_sulphur,
+	[
+		STORE_PERM(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT)*10, PERM_REGISTER_CITY_POWER_AVAILABLE),
+		STORE_PERM(0, PERM_REGISTER_CITY_POWER_DEMAND)
+	])
+{
+	power_plant_produce_ext_coke_sulphur;
+}
+
+switch(FEAT_INDUSTRIES, SELF, power_plant_switch_produce_ext_coke_sulphur,
+	[
+	 // retrieve available cargo
+	 STORE_TEMP(incoming_cargo_waiting("COAL"), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 STORE_TEMP(incoming_cargo_waiting("OIL_"), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 // retrieve demand from permanent storage
+	 STORE_TEMP((city_get_power_demand_for_industries()+city_get_power_demand_for_buildings()), TEMP_REGISTER_PRODUCTION_AMOUNT),
+	 STORE_TEMP((LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 10)+1, TEMP_REGISTER_PRODUCTION_AMOUNT), // 1t raw material produces 10 mwH
+	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT)*10, PERM_REGISTER_PRODUCTION_AMOUNT),
+	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT)*10, PERM_REGISTER_POWER_DEMAND),
+	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT)*10, PERM_REGISTER_PREV_POWER_DEMAND),
+	 // clamp production if not enough supplies are available
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0)+LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT)),TEMP_REGISTER_PRODUCTION_AMOUNT),
+	 
+	 // calculate how much coal / oil to use: always start using the one that has the bigger stockpile
+	 // the logic basically looks like this, and is then reformulated to come up with direct calculations of coal_consumption and oil_consumption
+	 // if (oil_waiting > coal_waiting)
+	 //	    oil_consumption = min(oil_waiting, production_amount)
+	 //     coal_consumption = production_amount - oil_consumption
+	 // else
+	 //	    coal_consumption = min(coal_waiting, production_amount)
+	 //     oil_consumption = production_amount - coal_consumption
+	 // amount of coal := (coal_waiting > oil_waiting) ? min(coal_waiting, production_amount) : max(0, production_amount - oil_waiting)
+	 STORE_TEMP((LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0) > LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1)) ? 
+		min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0),LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT)) : 
+		max(0,LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) - LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1)), 
+		TEMP_REGISTER_PRODUCTION_RAW0),
+     // amount of oil := (oil_waiting >= coal_waiting) ? min(oil_waiting, production_amount) : max(0,production_amount - coal_waiting)	 
+	 STORE_TEMP((LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1) >= LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0)) ? 
+		min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1),LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT)) : 
+		max(0,LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) - LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0)), 
+		TEMP_REGISTER_PRODUCTION_RAW1),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0)+LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1), TEMP_REGISTER_PRODUCTION_AMOUNT),
+	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT)*10,PERM_REGISTER_PRODUCTION_AMOUNT)
+	]) {
+	power_plant_set_power_available_ext_coke_sulphur;
 }
 
 switch(FEAT_INDUSTRIES, SELF, power_plant_switch_extra_text_fund, 
@@ -497,36 +554,74 @@ switch(FEAT_INDUSTRIES, SELF, power_plant_switch_cargo_subtype, getbits(extra_ca
 	return 0x3800 + string(STR_EMPTY);
 }
 
-item(FEAT_INDUSTRIES, power_plant, INDUSTRY_ID_POWER_PLANT) {
-	property {
-		substitute: 0;
-		map_colour: 0xB8;
-		life_type: IND_LIFE_TYPE_BLACK_HOLE;
-		min_cargo_distr: 1;
-		layouts: [power_plant_tilelayout_1,power_plant_tilelayout_2,power_plant_tilelayout_3];
-		spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
-		conflicting_ind_types: [];
-		random_sound_effects: [];
-		name: TTD_STR_INDUSTRY_NAME_POWER_STATION;
-		prob_map_gen: 5;
-		prob_in_game: 3;
-		prospect_chance: 0.75;
-		fund_cost_multiplier: 15;
-		remove_cost_multiplier: 0;
-		remove_cost_multiplier: 0;
-		cargo_types: [accept_cargo("COAL"),accept_cargo("OIL_")];
-		nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_POWER_PLANT));
-	}
+if (!param_extension_coke_sulphur) {
+	item(FEAT_INDUSTRIES, power_plant, INDUSTRY_ID_POWER_PLANT) {
+		property {
+			substitute: 0;
+			map_colour: 0xB8;
+			life_type: IND_LIFE_TYPE_BLACK_HOLE;
+			min_cargo_distr: 1;
+			layouts: [power_plant_tilelayout_1,power_plant_tilelayout_2,power_plant_tilelayout_3];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: TTD_STR_INDUSTRY_NAME_POWER_STATION;
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			prospect_chance: 0.75;
+			fund_cost_multiplier: 15;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("COAL"),accept_cargo("OIL_")];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_POWER_PLANT));
+		}
 
-	graphics {
-        construction_probability: power_plant_switch_check_availability;
-        build_prod_change:        power_plant_switch_prod_change_build;
-        produce_cargo_arrival:    empty_produce;
-        produce_256_ticks:        power_plant_switch_produce;
-        monthly_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
-        location_check:           power_plant_switch_location_check;
-        extra_text_fund:          power_plant_switch_extra_text_fund;
-        extra_text_industry:      power_plant_switch_extra_text;
-        cargo_subtype_display:    power_plant_switch_cargo_subtype;
-    }
+		graphics {
+			construction_probability: power_plant_switch_check_availability;
+			build_prod_change:        power_plant_switch_prod_change_build;
+			produce_cargo_arrival:    empty_produce;
+			produce_256_ticks:        power_plant_switch_produce;
+			monthly_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           power_plant_switch_location_check;
+			extra_text_fund:          power_plant_switch_extra_text_fund;
+			extra_text_industry:      power_plant_switch_extra_text;
+			cargo_subtype_display:    power_plant_switch_cargo_subtype;
+		}
+	}
+}
+
+if (param_extension_coke_sulphur) {
+	item(FEAT_INDUSTRIES, power_plant, INDUSTRY_ID_POWER_PLANT) {
+		property {
+			substitute: 0;
+			map_colour: 0xB8;
+			life_type: IND_LIFE_TYPE_BLACK_HOLE;
+			min_cargo_distr: 1;
+			layouts: [power_plant_tilelayout_1,power_plant_tilelayout_2,power_plant_tilelayout_3];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: TTD_STR_INDUSTRY_NAME_POWER_STATION;
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			prospect_chance: 0.75;
+			fund_cost_multiplier: 15;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("COAL"),accept_cargo("OIL_"),produce_cargo("SULP",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_POWER_PLANT));
+		}
+
+		graphics {
+			construction_probability: power_plant_switch_check_availability;
+			build_prod_change:        power_plant_switch_prod_change_build;
+			produce_cargo_arrival:    empty_produce;
+			produce_256_ticks:        power_plant_switch_produce_ext_coke_sulphur;
+			monthly_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           power_plant_switch_location_check;
+			extra_text_fund:          power_plant_switch_extra_text_fund;
+			extra_text_industry:      power_plant_switch_extra_text;
+			cargo_subtype_display:    power_plant_switch_cargo_subtype;
+		}
+	}
 }

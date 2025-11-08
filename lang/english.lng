@@ -39,6 +39,8 @@ STR_PARAM_EXT_PAPER :Extension set "Paper production"
 STR_PARAM_EXT_PAPER_DESC :Adds industries that produce or require paper. Requires the extension Basic inorganic chemistry to be activated.
 STR_PARAM_EXT_ORGANIC_CHEMISTRY :Extension set "Organic Chemistry"
 STR_PARAM_EXT_ORGANIC_CHEMISTRY_DESC :Adds industries and cargos related to the processing of crude oil. Requires the extension Basic inorganic chemistry to be activated.
+STR_PARAM_EXT_COKE_SULPHUR :Extension set "Coke and Sulphur"
+STR_PARAM_EXT_COKE_SULPHUR_DESC :Adds industries and cargos related to the processing of ores containing sulphur.
 
 STR_TOWN    :{STRING}
 STR_STATION :{STRING} {STRING}
@@ -56,12 +58,14 @@ STR_1950:1950
 STR_1985:1985
 
 # cargo type name
+STR_CARGO_NAME_ACID               :Acid
 STR_CARGO_NAME_ALUMINIUM          :Aluminium
 STR_CARGO_NAME_BAUXITE            :Bauxite
 STR_CARGO_NAME_BUILDING_MATERIALS :Bricks
 STR_CARGO_NAME_CARBON_BLACK       :Carbon Black
 STR_CARGO_NAME_CEMENT             :Cement
 STR_CARGO_NAME_CHLORINE           :Chlorine
+STR_CARGO_NAME_COKE               :Coke
 STR_CARGO_NAME_COPPER             :Copper
 STR_CARGO_NAME_COPPER_ORE         :Copper Ore
 STR_CARGO_NAME_ETHYLENE           :Ethylene
@@ -76,21 +80,25 @@ STR_CARGO_NAME_PACKAGING          :Packaging
 STR_CARGO_NAME_PAINT              :Paint
 STR_CARGO_NAME_PETROL             :Petrol
 STR_CARGO_NAME_PLASTICS           :Plastics
+STR_CARGO_NAME_PYRITE_ORE         :Pyrite Ore
 STR_CARGO_NAME_QUICKLIME          :Quicklime
 STR_CARGO_NAME_SALT               :Salt
 STR_CARGO_NAME_SAND               :Sand
+STR_CARGO_NAME_SULPHUR            :Schwefel
 STR_CARGO_NAME_TEXTILES           :Textiles
 STR_CARGO_NAME_TIMBER             :Timber
 STR_CARGO_NAME_VEHICLES           :Vehicles
 STR_CARGO_NAME_WOOL               :Wool
 
 # cargo long form ("x units of cargo")
+STR_QUANTITY_ACID                 :{WEIGHT} of acid
 STR_QUANTITY_ALUMINIUM            :{WEIGHT} of aluminium
 STR_QUANTITY_BAUXITE              :{WEIGHT} of bauxite
 STR_QUANTITY_BUILDING_MATERIALS   :{WEIGHT} of bricks
 STR_QUANTITY_CARBON_BLACK         :{WEIGHT} of carbon black
 STR_QUANTITY_CEMENT               :{WEIGHT} of cement
 STR_QUANTITY_CHLORINE             :{WEIGHT} of chlorine
+STR_QUANTITY_COKE                 :{WEIGHT} of coke
 STR_QUANTITY_COPPER               :{WEIGHT} of copper
 STR_QUANTITY_COPPER_ORE           :{WEIGHT} of copper ore
 STR_QUANTITY_ETHYLENE             :{WEIGHT} of ethylene
@@ -107,21 +115,25 @@ STR_QUANTITY_PACKAGING            :{WEIGHT} of packaging
 STR_QUANTITY_PAINT                :{WEIGHT} of paint
 STR_QUANTITY_PETROL               :{WEIGHT} of petrol
 STR_QUANTITY_PLASTICS             :{WEIGHT} of plastics
+STR_QUANTITY_PYRITE_ORE           :{WEIGHT} of pyrite ore
 STR_QUANTITY_QUICKLIME            :{WEIGHT} of quicklime
 STR_QUANTITY_SALT                 :{WEIGHT} of salt
 STR_QUANTITY_SAND                 :{WEIGHT} of sand
+STR_QUANTITY_SULPHUR              :{WEIGHT} of sulphur
 STR_QUANTITY_TEXTILES             :{WEIGHT} of textiles
 STR_QUANTITY_TIMBER               :{WEIGHT} of timber
 STR_QUANTITY_VEHICLES             :{COMMA} vehicle{P "" s}
 STR_QUANTITY_WOOL                 :{WEIGHT} of wool
 
 # cargo abbreviation (used e.g. in station overview list to denote waiting cargo)
+STR_CID_ACID                      :{TINYFONT}ACID
 STR_CID_ALUMINIUM                 :{TINYFONT}ALUM
 STR_CID_BAUXITE                   :{TINYFONT}AORE
 STR_CID_BUILDING_MATERIALS        :{TINYFONT}BDMT
 STR_CID_CARBON_BLACK              :{TINYFONT}CBLK
 STR_CID_CEMENT                    :{TINYFONT}CMNT
 STR_CID_CHLORINE                  :{TINYFONT}CHLO
+STR_CID_COKE                      :{TINYFONT}COKE
 STR_CID_COPPER                    :{TINYFONT}COPR
 STR_CID_COPPER_ORE                :{TINYFONT}CORE
 STR_CID_ETHYLENE                  :{TINYFONT}C2H4
@@ -139,15 +151,18 @@ STR_CID_PACKAGING                 :{TINYFONT}PACK
 STR_CID_PAINT                     :{TINYFONT}COAT
 STR_CID_PETROL                    :{TINYFONT}PETR
 STR_CID_PLASTICS                  :{TINYFONT}PLAS
+STR_CID_PYRITE_ORE                :{TINYFONT}PORE
 STR_CID_QUICKLIME                 :{TINYFONT}QLME
 STR_CID_SALT                      :{TINYFONT}SALT
 STR_CID_SAND                      :{TINYFONT}SAND
+STR_CID_SULPHUR                   :{TINYFONT}SULP
 STR_CID_TEXTILES                  :{TINYFONT}TEXT
 STR_CID_TIMBER                    :{TINYFONT}WDPR
 STR_CID_VEHICLES                  :{TINYFONT}VEHI
 STR_CID_WOOL                      :{TINYFONT}WOOL
 
 # Industries
+STR_IND_ACID_PLANT             :Acid Plant
 STR_IND_ALUMINIUM_PLANT        :Aluminium Plant
 STR_IND_ANIMAL_FARM            :Animal Farm
 STR_IND_BREWERY                :Brewery
@@ -158,6 +173,7 @@ STR_IND_CEMENT_PLANT           :Cement Plant
 STR_IND_CHLOR_ALKALI_PLANT     :Chloralkali process plant
 STR_IND_CLOTHING_PLANT         :Clothing Plant
 STR_IND_COAL_LIQUEFACTION_PLANT:Coal Liquefaction Plant
+STR_IND_COKE_OVEN              :Coke Oven
 STR_IND_COPPER_SMELTER         :Copper Smelter
 STR_IND_DAIRY                  :Dairy
 STR_IND_DEPARTMENT_STORE       :Department Store
@@ -170,12 +186,14 @@ STR_IND_HOTEL                  :Hotel
 STR_IND_INTEGRATED_STEEL_MILL  :Integrated Steel Mill
 STR_IND_LIME_KILN              :Lime Kiln
 STR_IND_LIMESTONE_MINE         :Limestone Mine
+STR_IND_ORE_SMELTER            :Ore Smelter
 STR_IND_PACKAGING_PLANT        :Packaging Plant
 STR_IND_PAINT_FACTORY          :Paint Factory
 STR_IND_PETROL_STATION         :Petrol Station
 STR_IND_PHARMACEUTICAL_PLANT   :Pharmaceutical Plant
 STR_IND_PLASTICS_PLANT         :Plastics Plant
 STR_IND_PORT                   :Port
+STR_IND_PYRITE_MINE            :Pyrite Mine
 STR_IND_SALT_MINE              :Salt Mine
 STR_IND_SANDPIT                :Sand pit
 STR_IND_STEAMCRACKER           :Steamcracker
@@ -197,6 +215,7 @@ STR_STATION_CHLOR_ALKALI_PLANT     :Chloralkali process Plant
 STR_STATION_CLOTHING_PLANT         :Clothing Plant
 STR_STATION_COAL_LIQUEFACTION_PLANT:Coal Liquefaction Plant
 STR_STATION_COAL_MINE              :Mining
+STR_STATION_COKE_OVEN              :Coke Oven
 STR_STATION_COPPER_ORE_MINE        :Mining
 STR_STATION_COPPER_SMELTER         :Copper Smelter
 STR_STATION_DAIRY                  :Dairy
@@ -217,6 +236,7 @@ STR_STATION_LIMESTONE_MINE         :Mining
 STR_STATION_OIL_REFINERY           :Refinery
 STR_STATION_OIL_RIG                :Oil Rig
 STR_STATION_OIL_WELL               :Oil Wells
+STR_STATION_ORE_SMELTER            :Ore Smelter
 STR_STATION_PACKAGING_PLANT        :Packaging Plant
 STR_STATION_PAINT_FACTORY          :Paint Factory
 STR_STATION_PAPER_MILL             :Paper Mill
@@ -225,6 +245,7 @@ STR_STATION_PHARMACEUTICAL_PLANT   :Pharmaceutical Plant
 STR_STATION_PLASTICS_PLANT         :Plastics Plant
 STR_STATION_PORT                   :Port
 STR_STATION_POWER_PLANT            :Powerplant
+STR_STATION_PYRITE_MINE            :Mining
 STR_STATION_PRINTING_WORKS         :Printing Works
 STR_STATION_SALT_MINE              :Salt Mine
 STR_STATION_SANDPIT                :Sand Pit
@@ -254,6 +275,8 @@ STR_INDUSTRY_ELECTRICITY_TEXT :Industry can produce {YELLOW}{COMMA}{BLACK} items
 STR_INDUSTRY_NO_POWER :{RED}No power available, production stopped!
 STR_INDUSTRY_NOT_ENOUGH_POWER :{YELLOW}Not enough power available, production reduced!
 STR_INDUSTRY_ENOUGH_POWER :{GREEN}Enough power available.
+# Custom texts for industries
+STR_ACID_PLANT_HCL_SULP :Industry requires either sulphur or both hydrogen and chlorine to produce anything. Production level will increase if all three are available.
 
 STR_INDUSTRY_ELECTRICITY_OPTIONAL_CARGO_TEXT :Industry can produce {YELLOW}{COMMA}{BLACK} items ({YELLOW}{COMMA}{BLACK}% of maximum production){}Maximum production requires {YELLOW}{COMMA}{BLACK} power.{}{STRING}{}{BLACK}{STRING}
 
@@ -272,3 +295,4 @@ STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE :cannot be placed on steep slopes.
 STR_ERR_EXTENSION_GLASS_REQUIRES_EXTENSION_BUILDING_INDUSTRIES:Extension "Glass" requires Extension "Building Industries" to be activated.
 STR_ERR_EXTENSION_PAPER_REQUIRES_EXTENSION_BASIC_INORGANIC_CHEMISTRY:Extension "Paper" requires Extension "Basic inorganic chemistry" to be activated.
 STR_ERR_EXTENSION_ORGANIC_CHEMISTRY_REQUIRES_EXTENSION_BASIC_INORGANIC_CHEMISTRY:Extension "Organic Chemistry" requires Extension "Basic inorganic chemistry" to be activated.
+STR_ERR_EXTENSION_SULPHUR_COKE_REQUIRES_OTHER_EXTENSIONS:Extension "Coke and Sulphur" requires at least one of the following extensions to be activated: "Basic inorganic chemistry", "Painting Industries"

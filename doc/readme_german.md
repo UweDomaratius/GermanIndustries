@@ -123,7 +123,7 @@ Das Set enthält einige grundlegende Industrien und Frachten. Diese sind im Folg
 
 [Eisenerz](#cargo_IORE) [Fahrzeuge](#cargo_VEHI) [Fisch](#cargo_FISH) [Getreide](#cargo_GRAI) [Holz](#cargo_WOOD) [Kohle](#cargo_COAL) [Kunststoffe](#cargo_PLAS) [Nahrungsmittel](#cargo_FOOD) [Passagiere](#cargo_PASS) [Post](#cargo_MAIL) [Sand](#cargo_SAND) [Schnittholz](#cargo_WDPR) [Stahl](#cargo_STEL) [Vieh](#cargo_LVST) [Waren](#cargo_GOOD) [Öl](#cargo_OIL_) 
 
-[Autofabrik](#industry_6) [Autohaus](#industry_14) [Bauernhof](#industry_16) [Bauhof](#industry_19) [Eisenerzbergwerk](#industry_28) [Fischgründe](#industry_31) [Hafen](#industry_33) [Hotel](#industry_37) [Integriertes Stahlwerk](#industry_39) [Kaufhaus](#industry_43) [Kohlebergwerk](#industry_44) [Kraftwerk](#industry_45) [Kunststofffabrik](#industry_46) [Laden](#industry_56) [Möbelfabrik](#industry_62) [Nahrungsmittelfabrik](#industry_67) [Sägewerk](#industry_83) [Tankstelle](#industry_84) [Wald](#industry_97) [Ölbohrinsel](#industry_100) [Ölquellen](#industry_101) 
+[Autofabrik](#industry_10) [Autohaus](#industry_18) [Bauernhof](#industry_20) [Bauhof](#industry_23) [Eisenerzbergwerk](#industry_32) [Fischgründe](#industry_39) [Hafen](#industry_41) [Hotel](#industry_49) [Integriertes Stahlwerk](#industry_51) [Kaufhaus](#industry_58) [Kohlebergwerk](#industry_59) [Kraftwerk](#industry_61) [Kunststofffabrik](#industry_63) [Laden](#industry_75) [Möbelfabrik](#industry_81) [Nahrungsmittelfabrik](#industry_86) [Sägewerk](#industry_102) [Tankstelle](#industry_105) [Wald](#industry_118) [Ölbohrinsel](#industry_121) [Ölquellen](#industry_122) 
 
 <img src="base_industry_chain_de.png" alt="Die grundlegende Industriekette">
 
@@ -141,7 +141,7 @@ Dieses Bild zeigt die Interaktionen zwischen den unterschiedlichen Erweiterungen
 Eine Fracht in einer farbigen Box ist Teil der Erweiterung der gleichen Farbe, wenn die Erweiterung also nicht aktiv ist, ist auch die Fracht nicht aktiv.
 Für jede Erwtierung gibt es ein zusätzliches Diagramm, welches die Verbindungen zwischen den Frachten und Industrien detailliert zeigt.
 
-Das Set enthält 10 Erweiterungen, die nachfolgend aufgelistet sind.
+Das Set enthält 11 Erweiterungen, die nachfolgend aufgelistet sind.
 
 <a name="extension_0"></a>
 ### Aluminium
@@ -166,16 +166,18 @@ Farbe in Industriediagrammen auf dieser Seite:<span style="background-color:#d8d
 
 * [Aluhütte](#industry_0)
 * [Aluhütte](#industry_1)
-* [Autofabrik](#industry_7)
-* [Autofabrik](#industry_9)
 * [Autofabrik](#industry_11)
 * [Autofabrik](#industry_13)
-* [Hafen](#industry_34)
-* [Hafen](#industry_36)
-* [Verpackungsmittelfabrik](#industry_88)
-* [Verpackungsmittelfabrik](#industry_90)
-* [Verpackungsmittelfabrik](#industry_92)
-* [Verpackungsmittelfabrik](#industry_94)
+* [Autofabrik](#industry_15)
+* [Autofabrik](#industry_17)
+* [Hafen](#industry_42)
+* [Hafen](#industry_44)
+* [Hafen](#industry_46)
+* [Hafen](#industry_48)
+* [Verpackungsmittelfabrik](#industry_109)
+* [Verpackungsmittelfabrik](#industry_111)
+* [Verpackungsmittelfabrik](#industry_113)
+* [Verpackungsmittelfabrik](#industry_115)
 
 
 <img src="industry_chain_extension_aluminium_de.png" alt="Industrieketten für Erweiterung Aluminium">
@@ -196,20 +198,21 @@ Farbe in Industriediagrammen auf dieser Seite:<span style="background-color:#e8b
 
 ### Neue Industrien
 
-* [Kalksteinbergwerk](#industry_42)
-* [Sandgrube](#industry_79)
-* [Zementfabrik](#industry_98)
-* [Ziegelei](#industry_99)
+* [Kalksteinbergwerk](#industry_57)
+* [Sandgrube](#industry_98)
+* [Zementfabrik](#industry_119)
+* [Ziegelei](#industry_120)
 
 
 #### Modifizierte Industrien
 
-* [Bauhof](#industry_18)
-* [Farbenfabrik](#industry_30)
-* [Kalksteinbergwerk](#industry_42)
-* [Sandgrube](#industry_79)
-* [Zementfabrik](#industry_98)
-* [Ziegelei](#industry_99)
+* [Bauhof](#industry_22)
+* [Farbenfabrik](#industry_36)
+* [Farbenfabrik](#industry_38)
+* [Kalksteinbergwerk](#industry_57)
+* [Sandgrube](#industry_98)
+* [Zementfabrik](#industry_119)
+* [Ziegelei](#industry_120)
 
 
 <img src="industry_chain_extension_building_industries_de.png" alt="Industrieketten für Erweiterung Bauindustrie">
@@ -231,33 +234,44 @@ Farbe in Industriediagrammen auf dieser Seite:<span style="background-color:#bc5
 
 ### Neue Industrien
 
-* [Farbenfabrik](#industry_29)
-* [Farbenfabrik](#industry_30)
-* [Kupfererzbergwerk](#industry_54)
-* [Kupferhütte](#industry_55)
-* [Rußfabrik](#industry_76)
-* [Rußfabrik](#industry_77)
+* [Farbenfabrik](#industry_35)
+* [Farbenfabrik](#industry_36)
+* [Farbenfabrik](#industry_37)
+* [Farbenfabrik](#industry_38)
+* [Kupfererzbergwerk](#industry_71)
+* [Kupfererzbergwerk](#industry_72)
+* [Kupferhütte](#industry_73)
+* [Kupferhütte](#industry_74)
+* [Rußfabrik](#industry_95)
+* [Rußfabrik](#industry_96)
 
 
 #### Modifizierte Industrien
 
-* [Autofabrik](#industry_8)
-* [Autofabrik](#industry_9)
 * [Autofabrik](#industry_12)
 * [Autofabrik](#industry_13)
-* [Farbenfabrik](#industry_29)
-* [Farbenfabrik](#industry_30)
-* [Hafen](#industry_35)
-* [Hafen](#industry_36)
-* [Kunststofffabrik](#industry_48)
-* [Kunststofffabrik](#industry_49)
-* [Kunststofffabrik](#industry_52)
-* [Kunststofffabrik](#industry_53)
-* [Kupfererzbergwerk](#industry_54)
-* [Kupferhütte](#industry_55)
-* [Rußfabrik](#industry_76)
-* [Rußfabrik](#industry_77)
-* [Textilfabrik](#industry_86)
+* [Autofabrik](#industry_16)
+* [Autofabrik](#industry_17)
+* [Erzschmelze](#industry_34)
+* [Farbenfabrik](#industry_35)
+* [Farbenfabrik](#industry_36)
+* [Farbenfabrik](#industry_37)
+* [Farbenfabrik](#industry_38)
+* [Hafen](#industry_43)
+* [Hafen](#industry_44)
+* [Hafen](#industry_47)
+* [Hafen](#industry_48)
+* [Kunststofffabrik](#industry_65)
+* [Kunststofffabrik](#industry_66)
+* [Kunststofffabrik](#industry_69)
+* [Kunststofffabrik](#industry_70)
+* [Kupfererzbergwerk](#industry_71)
+* [Kupfererzbergwerk](#industry_72)
+* [Kupferhütte](#industry_73)
+* [Kupferhütte](#industry_74)
+* [Rußfabrik](#industry_95)
+* [Rußfabrik](#industry_96)
+* [Textilfabrik](#industry_107)
 
 
 <img src="industry_chain_extension_painting_industries_de.png" alt="Industrieketten für Erweiterung Farbindustrie">
@@ -277,24 +291,27 @@ Farbe in Industriediagrammen auf dieser Seite:<span style="background-color:#584
 
 ### Neue Industrien
 
-* [Glasfabrik](#industry_32)
-* [Kalkofen](#industry_41)
+* [Glasfabrik](#industry_40)
+* [Kalkbrennerei](#industry_55)
+* [Kalkbrennerei](#industry_56)
 
 
 #### Modifizierte Industrien
 
-* [Autofabrik](#industry_10)
-* [Autofabrik](#industry_11)
-* [Autofabrik](#industry_12)
-* [Autofabrik](#industry_13)
-* [Brauerei](#industry_23)
-* [Glasfabrik](#industry_32)
-* [Integriertes Stahlwerk](#industry_40)
-* [Kalkofen](#industry_41)
-* [Verpackungsmittelfabrik](#industry_89)
-* [Verpackungsmittelfabrik](#industry_90)
-* [Verpackungsmittelfabrik](#industry_93)
-* [Verpackungsmittelfabrik](#industry_94)
+* [Autofabrik](#industry_14)
+* [Autofabrik](#industry_15)
+* [Autofabrik](#industry_16)
+* [Autofabrik](#industry_17)
+* [Brauerei](#industry_27)
+* [Glasfabrik](#industry_40)
+* [Integriertes Stahlwerk](#industry_52)
+* [Integriertes Stahlwerk](#industry_54)
+* [Kalkbrennerei](#industry_55)
+* [Kalkbrennerei](#industry_56)
+* [Verpackungsmittelfabrik](#industry_110)
+* [Verpackungsmittelfabrik](#industry_111)
+* [Verpackungsmittelfabrik](#industry_114)
+* [Verpackungsmittelfabrik](#industry_115)
 
 
 <img src="industry_chain_extension_glass_de.png" alt="Industrieketten für Erweiterung Glas">
@@ -320,8 +337,12 @@ Farbe in Industriediagrammen auf dieser Seite:<span style="background-color:#b8d
 * [Arzneimittelfabrik](#industry_3)
 * [Arzneimittelfabrik](#industry_4)
 * [Arzneimittelfabrik](#industry_5)
-* [Chloralkali Elektrolyseanlage](#industry_24)
-* [Salzbergwerk](#industry_78)
+* [Arzneimittelfabrik](#industry_6)
+* [Arzneimittelfabrik](#industry_7)
+* [Arzneimittelfabrik](#industry_8)
+* [Arzneimittelfabrik](#industry_9)
+* [Chloralkali Elektrolyseanlage](#industry_28)
+* [Salzbergwerk](#industry_97)
 
 
 #### Modifizierte Industrien
@@ -331,23 +352,80 @@ Farbe in Industriediagrammen auf dieser Seite:<span style="background-color:#b8d
 * [Arzneimittelfabrik](#industry_3)
 * [Arzneimittelfabrik](#industry_4)
 * [Arzneimittelfabrik](#industry_5)
-* [Chloralkali Elektrolyseanlage](#industry_24)
-* [Kunststofffabrik](#industry_47)
-* [Kunststofffabrik](#industry_49)
-* [Kunststofffabrik](#industry_51)
-* [Kunststofffabrik](#industry_53)
-* [Molkerei](#industry_58)
-* [Molkerei](#industry_60)
-* [Nahrungsmittelfabrik](#industry_68)
-* [Nahrungsmittelfabrik](#industry_70)
-* [Nahrungsmittelfabrik](#industry_73)
-* [Nahrungsmittelfabrik](#industry_74)
-* [Salzbergwerk](#industry_78)
+* [Arzneimittelfabrik](#industry_6)
+* [Arzneimittelfabrik](#industry_7)
+* [Arzneimittelfabrik](#industry_8)
+* [Arzneimittelfabrik](#industry_9)
+* [Chloralkali Elektrolyseanlage](#industry_28)
+* [Kunststofffabrik](#industry_64)
+* [Kunststofffabrik](#industry_66)
+* [Kunststofffabrik](#industry_68)
+* [Kunststofffabrik](#industry_70)
+* [Molkerei](#industry_77)
+* [Molkerei](#industry_79)
+* [Nahrungsmittelfabrik](#industry_87)
+* [Nahrungsmittelfabrik](#industry_89)
+* [Nahrungsmittelfabrik](#industry_92)
+* [Nahrungsmittelfabrik](#industry_93)
+* [Salzbergwerk](#industry_97)
+* [Säurefabrik](#industry_104)
 
 
 <img src="industry_chain_extension_basic_inorganic_chemistry_de.png" alt="Industrieketten für Erweiterung Grundlegende Anorganische Chemie">
 
 <a name="extension_5"></a>
+### Koks und Schwefel
+
+Koks und Schwefel sind wichtige Chemikalien für die Industrie. Ohne Koks ist keine großtechnische Metallherstellung möglich, und Schwefel bzw. Schwefelsäure ist das Rückgrat zahlloser Industrien. 
+
+Farbe in Industriediagrammen auf dieser Seite:<span style="background-color:#444c5c;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+#### Frachten
+
+* [Koks](#cargo_COKE)
+* [Kupferkies](#cargo_PORE)
+* [Schwefel](#cargo_SULP)
+* [Säure](#cargo_ACID)
+
+
+### Neue Industrien
+
+* [Erzschmelze](#industry_33)
+* [Erzschmelze](#industry_34)
+* [Kokerei](#industry_60)
+* [Säurefabrik](#industry_103)
+* [Säurefabrik](#industry_104)
+
+
+#### Modifizierte Industrien
+
+* [Arzneimittelfabrik](#industry_6)
+* [Arzneimittelfabrik](#industry_7)
+* [Arzneimittelfabrik](#industry_8)
+* [Arzneimittelfabrik](#industry_9)
+* [Erzschmelze](#industry_33)
+* [Erzschmelze](#industry_34)
+* [Farbenfabrik](#industry_37)
+* [Farbenfabrik](#industry_38)
+* [Hafen](#industry_45)
+* [Hafen](#industry_46)
+* [Hafen](#industry_47)
+* [Hafen](#industry_48)
+* [Integriertes Stahlwerk](#industry_53)
+* [Integriertes Stahlwerk](#industry_54)
+* [Kalkbrennerei](#industry_56)
+* [Kokerei](#industry_60)
+* [Kraftwerk](#industry_62)
+* [Kupfererzbergwerk](#industry_72)
+* [Kupferhütte](#industry_74)
+* [Säurefabrik](#industry_103)
+* [Säurefabrik](#industry_104)
+* [Ölraffinerie](#industry_124)
+
+
+<img src="industry_chain_extension_coke_sulphur_de.png" alt="Industrieketten für Erweiterung Koks und Schwefel">
+
+<a name="extension_6"></a>
 ### Lebensmittelindustrie
 
 Die Lebensmittelindustrie sorgt dafür, dass die Supermärkte volle Regale haben. Deutschland ist bekannt für seine große Anzahl von Brotsorten und die hohe Dichte an Brauereien. Die Erweiterung ersetzt die generische Lebensmittelfabrik durch spezialisierte Betriebe, so dass die Transportaufgaben etwas komplexer werden. 
@@ -361,44 +439,44 @@ Farbe in Industriediagrammen auf dieser Seite:<span style="background-color:#5c9
 
 ### Neue Industrien
 
-* [Brauerei](#industry_22)
-* [Brauerei](#industry_23)
-* [Molkerei](#industry_57)
-* [Molkerei](#industry_58)
-* [Molkerei](#industry_59)
-* [Molkerei](#industry_60)
-* [Mühle](#industry_65)
-* [Mühle](#industry_66)
-* [Schlachthof](#industry_80)
-* [Schlachthof](#industry_81)
-* [Viehzucht](#industry_95)
-* [Viehzucht](#industry_96)
+* [Brauerei](#industry_26)
+* [Brauerei](#industry_27)
+* [Molkerei](#industry_76)
+* [Molkerei](#industry_77)
+* [Molkerei](#industry_78)
+* [Molkerei](#industry_79)
+* [Mühle](#industry_84)
+* [Mühle](#industry_85)
+* [Schlachthof](#industry_99)
+* [Schlachthof](#industry_100)
+* [Viehzucht](#industry_116)
+* [Viehzucht](#industry_117)
 
 
 #### Modifizierte Industrien
 
-* [Bauernhof](#industry_17)
-* [Brauerei](#industry_22)
-* [Brauerei](#industry_23)
-* [Molkerei](#industry_57)
-* [Molkerei](#industry_58)
-* [Molkerei](#industry_59)
-* [Molkerei](#industry_60)
-* [Mühle](#industry_65)
-* [Mühle](#industry_66)
-* [Nahrungsmittelfabrik](#industry_69)
-* [Nahrungsmittelfabrik](#industry_70)
-* [Nahrungsmittelfabrik](#industry_72)
-* [Nahrungsmittelfabrik](#industry_74)
-* [Schlachthof](#industry_80)
-* [Schlachthof](#industry_81)
-* [Viehzucht](#industry_95)
-* [Viehzucht](#industry_96)
+* [Bauernhof](#industry_21)
+* [Brauerei](#industry_26)
+* [Brauerei](#industry_27)
+* [Molkerei](#industry_76)
+* [Molkerei](#industry_77)
+* [Molkerei](#industry_78)
+* [Molkerei](#industry_79)
+* [Mühle](#industry_84)
+* [Mühle](#industry_85)
+* [Nahrungsmittelfabrik](#industry_88)
+* [Nahrungsmittelfabrik](#industry_89)
+* [Nahrungsmittelfabrik](#industry_91)
+* [Nahrungsmittelfabrik](#industry_93)
+* [Schlachthof](#industry_99)
+* [Schlachthof](#industry_100)
+* [Viehzucht](#industry_116)
+* [Viehzucht](#industry_117)
 
 
 <img src="industry_chain_extension_food_industries_de.png" alt="Industrieketten für Erweiterung Lebensmittelindustrie">
 
-<a name="extension_6"></a>
+<a name="extension_7"></a>
 ### Organische Chemie
 
 Die organische Chemie beschäftigt sich mit Kohlenwasserstoffen, also Verbindungen aus Kohlenstoff und Wasserstoff. Die Ausgangsstoffe (Kohle und vor allem Erdöl) sind durch Umwandlung organischer Stoffe (z.B. Pflanzen) über Jahrmillionen entstanden. Im 20. Jahrhundert wurde Erdöl zu einem der wichtigsten Rohstoffe der Menschheit, da es für die Produktion von Treibstoffen und Kunststoffen unverzichtbar ist. So werden täglich mehrere Milliarden Liter Erdöl verbraucht. 
@@ -414,30 +492,34 @@ Farbe in Industriediagrammen auf dieser Seite:<span style="background-color:#787
 
 ### Neue Industrien
 
-* [Dampfreformierer](#industry_25)
-* [Hydrierwerk](#industry_38)
-* [Steamcracker](#industry_82)
-* [Ölraffinerie](#industry_102)
+* [Dampfreformierer](#industry_29)
+* [Hydrierwerk](#industry_50)
+* [Steamcracker](#industry_101)
+* [Ölraffinerie](#industry_123)
+* [Ölraffinerie](#industry_124)
 
 
 #### Modifizierte Industrien
 
 * [Arzneimittelfabrik](#industry_4)
 * [Arzneimittelfabrik](#industry_5)
-* [Dampfreformierer](#industry_25)
-* [Hydrierwerk](#industry_38)
-* [Kunststofffabrik](#industry_50)
-* [Kunststofffabrik](#industry_51)
-* [Kunststofffabrik](#industry_52)
-* [Kunststofffabrik](#industry_53)
-* [Rußfabrik](#industry_77)
-* [Steamcracker](#industry_82)
-* [Ölraffinerie](#industry_102)
+* [Arzneimittelfabrik](#industry_8)
+* [Arzneimittelfabrik](#industry_9)
+* [Dampfreformierer](#industry_29)
+* [Hydrierwerk](#industry_50)
+* [Kunststofffabrik](#industry_67)
+* [Kunststofffabrik](#industry_68)
+* [Kunststofffabrik](#industry_69)
+* [Kunststofffabrik](#industry_70)
+* [Rußfabrik](#industry_96)
+* [Steamcracker](#industry_101)
+* [Ölraffinerie](#industry_123)
+* [Ölraffinerie](#industry_124)
 
 
 <img src="industry_chain_extension_organic_chemistry_de.png" alt="Industrieketten für Erweiterung Organische Chemie">
 
-<a name="extension_7"></a>
+<a name="extension_8"></a>
 ### Papier
 
 Papier ist ein allgegenwärtiges Material im täglichen Leben. Die Erweiterung fügt Frachten und Industrien hinzu, die für die Herstellung von Papier relevant sind und verändert andere Industrien, so dass sie Papier, in erster Linie für Verpackungen, benötigen. 
@@ -451,25 +533,25 @@ Farbe in Industriediagrammen auf dieser Seite:<span style="background-color:#fcf
 
 ### Neue Industrien
 
-* [Druckerei](#industry_26)
-* [Druckerei](#industry_27)
-* [Papiermühle](#industry_75)
+* [Druckerei](#industry_30)
+* [Druckerei](#industry_31)
+* [Papiermühle](#industry_94)
 
 
 #### Modifizierte Industrien
 
-* [Druckerei](#industry_26)
-* [Druckerei](#industry_27)
-* [Papiermühle](#industry_75)
-* [Verpackungsmittelfabrik](#industry_91)
-* [Verpackungsmittelfabrik](#industry_92)
-* [Verpackungsmittelfabrik](#industry_93)
-* [Verpackungsmittelfabrik](#industry_94)
+* [Druckerei](#industry_30)
+* [Druckerei](#industry_31)
+* [Papiermühle](#industry_94)
+* [Verpackungsmittelfabrik](#industry_112)
+* [Verpackungsmittelfabrik](#industry_113)
+* [Verpackungsmittelfabrik](#industry_114)
+* [Verpackungsmittelfabrik](#industry_115)
 
 
 <img src="industry_chain_extension_paper_de.png" alt="Industrieketten für Erweiterung Papier">
 
-<a name="extension_8"></a>
+<a name="extension_9"></a>
 ### Textilindustrie
 
 Die Produktion von Garnen und Stoffen zur Herstellung von Kleidung war eine der ersten Kulturleistungen der Menscheit. Rohstoffe für die Produktion umfassen Wolle von Schafen und anderen Tieren als auch verschiedenste Pflanzenfasern wie Baumwolle. Innovationen der chemischen Industrie im 20. Jahrhundert brachten zusätzlich Kunstfasern wie polyester hervor. 
@@ -486,27 +568,27 @@ Farbe in Industriediagrammen auf dieser Seite:<span style="background-color:#d49
 
 ### Neue Industrien
 
-* [Bekleidungsfabrik](#industry_20)
-* [Bekleidungsfabrik](#industry_21)
-* [Textilfabrik](#industry_85)
-* [Textilfabrik](#industry_86)
+* [Bekleidungsfabrik](#industry_24)
+* [Bekleidungsfabrik](#industry_25)
+* [Textilfabrik](#industry_106)
+* [Textilfabrik](#industry_107)
 
 
 #### Modifizierte Industrien
 
-* [Bauernhof](#industry_15)
-* [Bekleidungsfabrik](#industry_20)
-* [Bekleidungsfabrik](#industry_21)
-* [Möbelfabrik](#industry_61)
-* [Möbelfabrik](#industry_63)
-* [Textilfabrik](#industry_85)
-* [Textilfabrik](#industry_86)
-* [Viehzucht](#industry_96)
+* [Bauernhof](#industry_19)
+* [Bekleidungsfabrik](#industry_24)
+* [Bekleidungsfabrik](#industry_25)
+* [Möbelfabrik](#industry_80)
+* [Möbelfabrik](#industry_82)
+* [Textilfabrik](#industry_106)
+* [Textilfabrik](#industry_107)
+* [Viehzucht](#industry_117)
 
 
 <img src="industry_chain_extension_textile_industries_de.png" alt="Industrieketten für Erweiterung Textilindustrie">
 
-<a name="extension_9"></a>
+<a name="extension_10"></a>
 ### Verpackungsmittelindustrie
 
 Die Verpackungsmittelindustrie produziert alle Arten von Behältern und Verpackungen, seien es Kartons oder Getränkedosen. Diese Erweiterung fügt damit ein zusätzliches logistisches Element für die Güter- und Nahrungsmittelproduktion hinzu. 
@@ -520,40 +602,42 @@ Farbe in Industriediagrammen auf dieser Seite:<span style="background-color:#804
 
 ### Neue Industrien
 
-* [Verpackungsmittelfabrik](#industry_87)
-* [Verpackungsmittelfabrik](#industry_88)
-* [Verpackungsmittelfabrik](#industry_89)
-* [Verpackungsmittelfabrik](#industry_90)
-* [Verpackungsmittelfabrik](#industry_91)
-* [Verpackungsmittelfabrik](#industry_92)
-* [Verpackungsmittelfabrik](#industry_93)
-* [Verpackungsmittelfabrik](#industry_94)
+* [Verpackungsmittelfabrik](#industry_108)
+* [Verpackungsmittelfabrik](#industry_109)
+* [Verpackungsmittelfabrik](#industry_110)
+* [Verpackungsmittelfabrik](#industry_111)
+* [Verpackungsmittelfabrik](#industry_112)
+* [Verpackungsmittelfabrik](#industry_113)
+* [Verpackungsmittelfabrik](#industry_114)
+* [Verpackungsmittelfabrik](#industry_115)
 
 
 #### Modifizierte Industrien
 
 * [Arzneimittelfabrik](#industry_3)
 * [Arzneimittelfabrik](#industry_5)
-* [Bekleidungsfabrik](#industry_21)
-* [Druckerei](#industry_27)
-* [Molkerei](#industry_59)
-* [Molkerei](#industry_60)
-* [Möbelfabrik](#industry_63)
-* [Möbelfabrik](#industry_64)
-* [Mühle](#industry_66)
-* [Nahrungsmittelfabrik](#industry_71)
-* [Nahrungsmittelfabrik](#industry_72)
-* [Nahrungsmittelfabrik](#industry_73)
-* [Nahrungsmittelfabrik](#industry_74)
-* [Schlachthof](#industry_81)
-* [Verpackungsmittelfabrik](#industry_87)
-* [Verpackungsmittelfabrik](#industry_88)
-* [Verpackungsmittelfabrik](#industry_89)
-* [Verpackungsmittelfabrik](#industry_90)
-* [Verpackungsmittelfabrik](#industry_91)
-* [Verpackungsmittelfabrik](#industry_92)
-* [Verpackungsmittelfabrik](#industry_93)
-* [Verpackungsmittelfabrik](#industry_94)
+* [Arzneimittelfabrik](#industry_7)
+* [Arzneimittelfabrik](#industry_9)
+* [Bekleidungsfabrik](#industry_25)
+* [Druckerei](#industry_31)
+* [Molkerei](#industry_78)
+* [Molkerei](#industry_79)
+* [Möbelfabrik](#industry_82)
+* [Möbelfabrik](#industry_83)
+* [Mühle](#industry_85)
+* [Nahrungsmittelfabrik](#industry_90)
+* [Nahrungsmittelfabrik](#industry_91)
+* [Nahrungsmittelfabrik](#industry_92)
+* [Nahrungsmittelfabrik](#industry_93)
+* [Schlachthof](#industry_100)
+* [Verpackungsmittelfabrik](#industry_108)
+* [Verpackungsmittelfabrik](#industry_109)
+* [Verpackungsmittelfabrik](#industry_110)
+* [Verpackungsmittelfabrik](#industry_111)
+* [Verpackungsmittelfabrik](#industry_112)
+* [Verpackungsmittelfabrik](#industry_113)
+* [Verpackungsmittelfabrik](#industry_114)
+* [Verpackungsmittelfabrik](#industry_115)
 
 
 <img src="industry_chain_extension_packaging_industries_de.png" alt="Industrieketten für Erweiterung Verpackungsmittelindustrie">
@@ -561,7 +645,7 @@ Farbe in Industriediagrammen auf dieser Seite:<span style="background-color:#804
 
 ## Cargos
 
-Das Set enthält 39 Frachten, die nachfolgend aufgelistet sind.
+Das Set enthält 43 Frachten, die nachfolgend aufgelistet sind.
 
 <a name="cargo_ALUM"></a>
 ### Aluminium
@@ -578,14 +662,14 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#d8d8d8;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Aluhütte](#industry_0) | [Autofabrik](#industry_7) |
-| [Aluhütte](#industry_1) | [Autofabrik](#industry_9) |
-|  | [Autofabrik](#industry_11) |
-|  | [Autofabrik](#industry_13) |
-|  | [Verpackungsmittelfabrik](#industry_88) |
-|  | [Verpackungsmittelfabrik](#industry_90) |
-|  | [Verpackungsmittelfabrik](#industry_92) |
-|  | [Verpackungsmittelfabrik](#industry_94) |
+| [Aluhütte](#industry_0) | [Autofabrik](#industry_11) |
+| [Aluhütte](#industry_1) | [Autofabrik](#industry_13) |
+|  | [Autofabrik](#industry_15) |
+|  | [Autofabrik](#industry_17) |
+|  | [Verpackungsmittelfabrik](#industry_109) |
+|  | [Verpackungsmittelfabrik](#industry_111) |
+|  | [Verpackungsmittelfabrik](#industry_113) |
+|  | [Verpackungsmittelfabrik](#industry_115) |
 
 <a name="cargo_AORE"></a>
 ### Bauxit
@@ -602,8 +686,10 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#541c10;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Hafen](#industry_34) | [Aluhütte](#industry_0) |
-| [Hafen](#industry_36) | [Aluhütte](#industry_1) |
+| [Hafen](#industry_42) | [Aluhütte](#industry_0) |
+| [Hafen](#industry_44) | [Aluhütte](#industry_1) |
+| [Hafen](#industry_46) |  |
+| [Hafen](#industry_48) |  |
 
 <a name="cargo_QLME"></a>
 ### Branntkalk
@@ -620,8 +706,9 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#fcfcc0;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Kalkofen](#industry_41) | [Glasfabrik](#industry_32) |
-|  | [Integriertes Stahlwerk](#industry_40) |
+| [Kalkbrennerei](#industry_55) | [Glasfabrik](#industry_40) |
+| [Kalkbrennerei](#industry_56) | [Integriertes Stahlwerk](#industry_52) |
+|  | [Integriertes Stahlwerk](#industry_54) |
 
 <a name="cargo_CHLO"></a>
 ### Chlor
@@ -638,15 +725,20 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#b8dcc8;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Chloralkali Elektrolyseanlage](#industry_24) | [Arzneimittelfabrik](#industry_2) |
+| [Chloralkali Elektrolyseanlage](#industry_28) | [Arzneimittelfabrik](#industry_2) |
 |  | [Arzneimittelfabrik](#industry_3) |
 |  | [Arzneimittelfabrik](#industry_4) |
 |  | [Arzneimittelfabrik](#industry_5) |
-|  | [Kunststofffabrik](#industry_47) |
-|  | [Kunststofffabrik](#industry_49) |
-|  | [Kunststofffabrik](#industry_51) |
-|  | [Kunststofffabrik](#industry_53) |
-|  | [Papiermühle](#industry_75) |
+|  | [Arzneimittelfabrik](#industry_6) |
+|  | [Arzneimittelfabrik](#industry_7) |
+|  | [Arzneimittelfabrik](#industry_8) |
+|  | [Arzneimittelfabrik](#industry_9) |
+|  | [Kunststofffabrik](#industry_64) |
+|  | [Kunststofffabrik](#industry_66) |
+|  | [Kunststofffabrik](#industry_68) |
+|  | [Kunststofffabrik](#industry_70) |
+|  | [Papiermühle](#industry_94) |
+|  | [Säurefabrik](#industry_104) |
 
 <a name="cargo_IORE"></a>
 ### Eisenerz
@@ -663,11 +755,17 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#fc0000;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Eisenerzbergwerk](#industry_28) | [Farbenfabrik](#industry_29) |
-| [Hafen](#industry_33) | [Farbenfabrik](#industry_30) |
-| [Hafen](#industry_34) | [Integriertes Stahlwerk](#industry_39) |
-| [Hafen](#industry_35) | [Integriertes Stahlwerk](#industry_40) |
-| [Hafen](#industry_36) |  |
+| [Eisenerzbergwerk](#industry_32) | [Farbenfabrik](#industry_35) |
+| [Erzschmelze](#industry_33) | [Farbenfabrik](#industry_36) |
+| [Erzschmelze](#industry_34) | [Farbenfabrik](#industry_37) |
+| [Hafen](#industry_41) | [Farbenfabrik](#industry_38) |
+| [Hafen](#industry_42) | [Integriertes Stahlwerk](#industry_51) |
+| [Hafen](#industry_43) | [Integriertes Stahlwerk](#industry_52) |
+| [Hafen](#industry_44) | [Integriertes Stahlwerk](#industry_53) |
+| [Hafen](#industry_45) | [Integriertes Stahlwerk](#industry_54) |
+| [Hafen](#industry_46) |  |
+| [Hafen](#industry_47) |  |
+| [Hafen](#industry_48) |  |
 
 <a name="cargo_C2H4"></a>
 ### Ethylen
@@ -678,7 +776,7 @@ Während Ethylen in der Realität in verschiedenen Fällen durch Pipelines (z.B.
 
 Eintrag in der Frachttabelle: C2H4
 
-Teil der Erweiterung: [Organische Chemie](#extension_6)
+Teil der Erweiterung: [Organische Chemie](#extension_7)
 
 Frachtklassen: Flüssiggut, Gefahrgut
 
@@ -702,14 +800,15 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#bc546c;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Autofabrik](#industry_6) | [Autohaus](#industry_14) |
-| [Autofabrik](#industry_7) | [Hafen](#industry_33) |
-| [Autofabrik](#industry_8) | [Hafen](#industry_34) |
-| [Autofabrik](#industry_9) | [Hafen](#industry_35) |
-| [Autofabrik](#industry_10) | [Hafen](#industry_36) |
-| [Autofabrik](#industry_11) |  |
-| [Autofabrik](#industry_12) |  |
-| [Autofabrik](#industry_13) |  |
+| [Autofabrik](#industry_10) | [Autohaus](#industry_18) |
+| [Autofabrik](#industry_11) | [Hafen](#industry_41) |
+| [Autofabrik](#industry_12) | [Hafen](#industry_42) |
+| [Autofabrik](#industry_13) | [Hafen](#industry_43) |
+| [Autofabrik](#industry_14) | [Hafen](#industry_44) |
+| [Autofabrik](#industry_15) | [Hafen](#industry_45) |
+| [Autofabrik](#industry_16) | [Hafen](#industry_46) |
+| [Autofabrik](#industry_17) | [Hafen](#industry_47) |
+|  | [Hafen](#industry_48) |
 
 <a name="cargo_COAT"></a>
 ### Farbe
@@ -726,15 +825,15 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#bc546c;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Farbenfabrik](#industry_29) | [Autofabrik](#industry_8) |
-| [Farbenfabrik](#industry_30) | [Autofabrik](#industry_9) |
-|  | [Autofabrik](#industry_12) |
-|  | [Autofabrik](#industry_13) |
-|  | [Kunststofffabrik](#industry_48) |
-|  | [Kunststofffabrik](#industry_49) |
-|  | [Kunststofffabrik](#industry_52) |
-|  | [Kunststofffabrik](#industry_53) |
-|  | [Textilfabrik](#industry_86) |
+| [Farbenfabrik](#industry_35) | [Autofabrik](#industry_12) |
+| [Farbenfabrik](#industry_36) | [Autofabrik](#industry_13) |
+| [Farbenfabrik](#industry_37) | [Autofabrik](#industry_16) |
+| [Farbenfabrik](#industry_38) | [Autofabrik](#industry_17) |
+|  | [Kunststofffabrik](#industry_65) |
+|  | [Kunststofffabrik](#industry_66) |
+|  | [Kunststofffabrik](#industry_69) |
+|  | [Kunststofffabrik](#industry_70) |
+|  | [Textilfabrik](#industry_107) |
 
 <a name="cargo_FISH"></a>
 ### Fisch
@@ -749,14 +848,14 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#8c68fc;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Fischgründe](#industry_31) | [Nahrungsmittelfabrik](#industry_67) |
-|  | [Nahrungsmittelfabrik](#industry_68) |
-|  | [Nahrungsmittelfabrik](#industry_69) |
-|  | [Nahrungsmittelfabrik](#industry_70) |
-|  | [Nahrungsmittelfabrik](#industry_71) |
-|  | [Nahrungsmittelfabrik](#industry_72) |
-|  | [Nahrungsmittelfabrik](#industry_73) |
-|  | [Nahrungsmittelfabrik](#industry_74) |
+| [Fischgründe](#industry_39) | [Nahrungsmittelfabrik](#industry_86) |
+|  | [Nahrungsmittelfabrik](#industry_87) |
+|  | [Nahrungsmittelfabrik](#industry_88) |
+|  | [Nahrungsmittelfabrik](#industry_89) |
+|  | [Nahrungsmittelfabrik](#industry_90) |
+|  | [Nahrungsmittelfabrik](#industry_91) |
+|  | [Nahrungsmittelfabrik](#industry_92) |
+|  | [Nahrungsmittelfabrik](#industry_93) |
 
 <a name="cargo_GRAI"></a>
 ### Getreide
@@ -771,15 +870,15 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#fcfc00;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Bauernhof](#industry_15) | [Brauerei](#industry_22) |
-| [Bauernhof](#industry_16) | [Brauerei](#industry_23) |
-| [Bauernhof](#industry_17) | [Mühle](#industry_65) |
-|  | [Mühle](#industry_66) |
-|  | [Nahrungsmittelfabrik](#industry_67) |
-|  | [Nahrungsmittelfabrik](#industry_68) |
-|  | [Nahrungsmittelfabrik](#industry_71) |
-|  | [Nahrungsmittelfabrik](#industry_73) |
-|  | [Viehzucht](#industry_96) |
+| [Bauernhof](#industry_19) | [Brauerei](#industry_26) |
+| [Bauernhof](#industry_20) | [Brauerei](#industry_27) |
+| [Bauernhof](#industry_21) | [Mühle](#industry_84) |
+|  | [Mühle](#industry_85) |
+|  | [Nahrungsmittelfabrik](#industry_86) |
+|  | [Nahrungsmittelfabrik](#industry_87) |
+|  | [Nahrungsmittelfabrik](#industry_90) |
+|  | [Nahrungsmittelfabrik](#industry_92) |
+|  | [Viehzucht](#industry_117) |
 
 <a name="cargo_GLAS"></a>
 ### Glas
@@ -798,15 +897,15 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#5840ac;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Glasfabrik](#industry_32) | [Autofabrik](#industry_10) |
-|  | [Autofabrik](#industry_11) |
-|  | [Autofabrik](#industry_12) |
-|  | [Autofabrik](#industry_13) |
-|  | [Brauerei](#industry_23) |
-|  | [Verpackungsmittelfabrik](#industry_89) |
-|  | [Verpackungsmittelfabrik](#industry_90) |
-|  | [Verpackungsmittelfabrik](#industry_93) |
-|  | [Verpackungsmittelfabrik](#industry_94) |
+| [Glasfabrik](#industry_40) | [Autofabrik](#industry_14) |
+|  | [Autofabrik](#industry_15) |
+|  | [Autofabrik](#industry_16) |
+|  | [Autofabrik](#industry_17) |
+|  | [Brauerei](#industry_27) |
+|  | [Verpackungsmittelfabrik](#industry_110) |
+|  | [Verpackungsmittelfabrik](#industry_111) |
+|  | [Verpackungsmittelfabrik](#industry_114) |
+|  | [Verpackungsmittelfabrik](#industry_115) |
 
 <a name="cargo_WOOD"></a>
 ### Holz
@@ -823,8 +922,8 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#74581c;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Wald](#industry_97) | [Papiermühle](#industry_75) |
-|  | [Sägewerk](#industry_83) |
+| [Wald](#industry_118) | [Papiermühle](#industry_94) |
+|  | [Sägewerk](#industry_102) |
 
 <a name="cargo_LIME"></a>
 ### Kalkstein
@@ -841,9 +940,11 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#7044a8;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Kalksteinbergwerk](#industry_42) | [Farbenfabrik](#industry_30) |
-|  | [Kalkofen](#industry_41) |
-|  | [Zementfabrik](#industry_98) |
+| [Kalksteinbergwerk](#industry_57) | [Farbenfabrik](#industry_36) |
+|  | [Farbenfabrik](#industry_38) |
+|  | [Kalkbrennerei](#industry_55) |
+|  | [Kalkbrennerei](#industry_56) |
+|  | [Zementfabrik](#industry_119) |
 
 <a name="cargo_COAL"></a>
 ### Kohle
@@ -860,13 +961,36 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#626562;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Hafen](#industry_33) | [Hydrierwerk](#industry_38) |
-| [Hafen](#industry_34) | [Integriertes Stahlwerk](#industry_39) |
-| [Hafen](#industry_35) | [Integriertes Stahlwerk](#industry_40) |
-| [Hafen](#industry_36) | [Kraftwerk](#industry_45) |
-| [Kohlebergwerk](#industry_44) | [Rußfabrik](#industry_76) |
-|  | [Rußfabrik](#industry_77) |
-|  | [Ziegelei](#industry_99) |
+| [Hafen](#industry_41) | [Hydrierwerk](#industry_50) |
+| [Hafen](#industry_42) | [Integriertes Stahlwerk](#industry_51) |
+| [Hafen](#industry_43) | [Integriertes Stahlwerk](#industry_52) |
+| [Hafen](#industry_44) | [Kokerei](#industry_60) |
+| [Hafen](#industry_45) | [Kraftwerk](#industry_61) |
+| [Hafen](#industry_46) | [Kraftwerk](#industry_62) |
+| [Hafen](#industry_47) | [Rußfabrik](#industry_95) |
+| [Hafen](#industry_48) | [Rußfabrik](#industry_96) |
+| [Kohlebergwerk](#industry_59) | [Ziegelei](#industry_120) |
+
+<a name="cargo_COKE"></a>
+### Koks
+
+Koks ist hochreiner Kohlenstoff, der durch Pyrolyse aus Kohle gewonnen wird. Dabei wird die Kohle unter Sauerstoffabschluss großer Wärme ausgesetzt, wodurch die Kohle nicht verbrennen kann. Dabei werden diverse Verunreinigungen wie Schwefel und verschiedene Kohlenwasserstoffe abgeschieden. Koks wurde erstmals Anfang des 18. Jahrhunderts in England produziert und löste im 19. Jahrhundert die bisher verwendete Holzkohle als Befeuerung von Hochöfen ab. Erst damit war eine effiziente Eisenproduktion im Hochofen in großem Maßstab möglich. 
+
+Eintrag in der Frachttabelle: COKE
+
+Teil der Erweiterung: [Koks und Schwefel](#extension_5)
+
+Frachtklassen: Schüttgut
+
+Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#444c5c;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+| Produziert von | Benötigt von |
+| -- | -- |
+| [Kokerei](#industry_60) | [Erzschmelze](#industry_33) |
+|  | [Erzschmelze](#industry_34) |
+|  | [Integriertes Stahlwerk](#industry_53) |
+|  | [Integriertes Stahlwerk](#industry_54) |
+|  | [Kalkbrennerei](#industry_56) |
 
 <a name="cargo_PLAS"></a>
 ### Kunststoffe
@@ -883,28 +1007,28 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#e8d0fc;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Kunststofffabrik](#industry_46) | [Autofabrik](#industry_6) |
-| [Kunststofffabrik](#industry_47) | [Autofabrik](#industry_7) |
-| [Kunststofffabrik](#industry_48) | [Autofabrik](#industry_8) |
-| [Kunststofffabrik](#industry_49) | [Autofabrik](#industry_9) |
-| [Kunststofffabrik](#industry_50) | [Autofabrik](#industry_10) |
-| [Kunststofffabrik](#industry_51) | [Autofabrik](#industry_11) |
-| [Kunststofffabrik](#industry_52) | [Autofabrik](#industry_12) |
-| [Kunststofffabrik](#industry_53) | [Autofabrik](#industry_13) |
-|  | [Möbelfabrik](#industry_61) |
-|  | [Möbelfabrik](#industry_62) |
-|  | [Möbelfabrik](#industry_63) |
-|  | [Möbelfabrik](#industry_64) |
-|  | [Textilfabrik](#industry_85) |
-|  | [Textilfabrik](#industry_86) |
-|  | [Verpackungsmittelfabrik](#industry_87) |
-|  | [Verpackungsmittelfabrik](#industry_88) |
-|  | [Verpackungsmittelfabrik](#industry_89) |
-|  | [Verpackungsmittelfabrik](#industry_90) |
-|  | [Verpackungsmittelfabrik](#industry_91) |
-|  | [Verpackungsmittelfabrik](#industry_92) |
-|  | [Verpackungsmittelfabrik](#industry_93) |
-|  | [Verpackungsmittelfabrik](#industry_94) |
+| [Kunststofffabrik](#industry_63) | [Autofabrik](#industry_10) |
+| [Kunststofffabrik](#industry_64) | [Autofabrik](#industry_11) |
+| [Kunststofffabrik](#industry_65) | [Autofabrik](#industry_12) |
+| [Kunststofffabrik](#industry_66) | [Autofabrik](#industry_13) |
+| [Kunststofffabrik](#industry_67) | [Autofabrik](#industry_14) |
+| [Kunststofffabrik](#industry_68) | [Autofabrik](#industry_15) |
+| [Kunststofffabrik](#industry_69) | [Autofabrik](#industry_16) |
+| [Kunststofffabrik](#industry_70) | [Autofabrik](#industry_17) |
+|  | [Möbelfabrik](#industry_80) |
+|  | [Möbelfabrik](#industry_81) |
+|  | [Möbelfabrik](#industry_82) |
+|  | [Möbelfabrik](#industry_83) |
+|  | [Textilfabrik](#industry_106) |
+|  | [Textilfabrik](#industry_107) |
+|  | [Verpackungsmittelfabrik](#industry_108) |
+|  | [Verpackungsmittelfabrik](#industry_109) |
+|  | [Verpackungsmittelfabrik](#industry_110) |
+|  | [Verpackungsmittelfabrik](#industry_111) |
+|  | [Verpackungsmittelfabrik](#industry_112) |
+|  | [Verpackungsmittelfabrik](#industry_113) |
+|  | [Verpackungsmittelfabrik](#industry_114) |
+|  | [Verpackungsmittelfabrik](#industry_115) |
 
 <a name="cargo_COPR"></a>
 ### Kupfer
@@ -921,8 +1045,10 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#8c4c40;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Kupferhütte](#industry_55) | [Farbenfabrik](#industry_29) |
-|  | [Farbenfabrik](#industry_30) |
+| [Kupferhütte](#industry_73) | [Farbenfabrik](#industry_35) |
+| [Kupferhütte](#industry_74) | [Farbenfabrik](#industry_36) |
+|  | [Farbenfabrik](#industry_37) |
+|  | [Farbenfabrik](#industry_38) |
 
 <a name="cargo_CORE"></a>
 ### Kupfererz
@@ -941,9 +1067,31 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#501c04;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Hafen](#industry_35) | [Kupferhütte](#industry_55) |
-| [Hafen](#industry_36) |  |
-| [Kupfererzbergwerk](#industry_54) |  |
+| [Erzschmelze](#industry_34) | [Kupferhütte](#industry_73) |
+| [Hafen](#industry_43) | [Kupferhütte](#industry_74) |
+| [Hafen](#industry_44) |  |
+| [Kupfererzbergwerk](#industry_71) |  |
+
+<a name="cargo_PORE"></a>
+### Kupferkies
+
+Kupfer kommt in der Natur quasi nur in Verbindungen mit anderen Stoffen vor. Eine häufige Verbindung ist das Mineral Chalkopyrit, auch als Kupferkies bezeichnet. Das ist eine Verbindung aus Kupfer, Eisen und Schwefel. Es ist aufgrund seines häufigen Vorkommens eines der wirtschaftlich bedeutsamsten Mineralien für die Produktion von Kupfer. 
+
+Eintrag in der Frachttabelle: PORE
+
+Teil der Erweiterung: [Koks und Schwefel](#extension_5)
+
+Frachtklassen: Schüttgut
+
+Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#fcf880;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+| Produziert von | Benötigt von |
+| -- | -- |
+| [Hafen](#industry_45) | [Erzschmelze](#industry_33) |
+| [Hafen](#industry_46) | [Erzschmelze](#industry_34) |
+| [Hafen](#industry_47) |  |
+| [Hafen](#industry_48) |  |
+| [Kupfererzbergwerk](#industry_72) |  |
 
 <a name="cargo_MILK"></a>
 ### Milch
@@ -952,7 +1100,7 @@ Milch von Kühen und anderen Tieren wird seit Jahrtausenden als Nahrungsmittel g
 
 Eintrag in der Frachttabelle: MILK
 
-Teil der Erweiterung: [Lebensmittelindustrie](#extension_5)
+Teil der Erweiterung: [Lebensmittelindustrie](#extension_6)
 
 Frachtklassen: Expressgut, Flüssiggut, Kühlfracht
 
@@ -960,10 +1108,10 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#e0f4fc;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Viehzucht](#industry_95) | [Molkerei](#industry_57) |
-| [Viehzucht](#industry_96) | [Molkerei](#industry_58) |
-|  | [Molkerei](#industry_59) |
-|  | [Molkerei](#industry_60) |
+| [Viehzucht](#industry_116) | [Molkerei](#industry_76) |
+| [Viehzucht](#industry_117) | [Molkerei](#industry_77) |
+|  | [Molkerei](#industry_78) |
+|  | [Molkerei](#industry_79) |
 
 <a name="cargo_FOOD"></a>
 ### Nahrungsmittel
@@ -978,24 +1126,24 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#a00000;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Brauerei](#industry_22) | [Hotel](#industry_37) |
-| [Brauerei](#industry_23) | [Laden](#industry_56) |
-| [Molkerei](#industry_57) |  |
-| [Molkerei](#industry_58) |  |
-| [Molkerei](#industry_59) |  |
-| [Molkerei](#industry_60) |  |
-| [Mühle](#industry_65) |  |
-| [Mühle](#industry_66) |  |
-| [Nahrungsmittelfabrik](#industry_67) |  |
-| [Nahrungsmittelfabrik](#industry_68) |  |
-| [Nahrungsmittelfabrik](#industry_69) |  |
-| [Nahrungsmittelfabrik](#industry_70) |  |
-| [Nahrungsmittelfabrik](#industry_71) |  |
-| [Nahrungsmittelfabrik](#industry_72) |  |
-| [Nahrungsmittelfabrik](#industry_73) |  |
-| [Nahrungsmittelfabrik](#industry_74) |  |
-| [Schlachthof](#industry_80) |  |
-| [Schlachthof](#industry_81) |  |
+| [Brauerei](#industry_26) | [Hotel](#industry_49) |
+| [Brauerei](#industry_27) | [Laden](#industry_75) |
+| [Molkerei](#industry_76) |  |
+| [Molkerei](#industry_77) |  |
+| [Molkerei](#industry_78) |  |
+| [Molkerei](#industry_79) |  |
+| [Mühle](#industry_84) |  |
+| [Mühle](#industry_85) |  |
+| [Nahrungsmittelfabrik](#industry_86) |  |
+| [Nahrungsmittelfabrik](#industry_87) |  |
+| [Nahrungsmittelfabrik](#industry_88) |  |
+| [Nahrungsmittelfabrik](#industry_89) |  |
+| [Nahrungsmittelfabrik](#industry_90) |  |
+| [Nahrungsmittelfabrik](#industry_91) |  |
+| [Nahrungsmittelfabrik](#industry_92) |  |
+| [Nahrungsmittelfabrik](#industry_93) |  |
+| [Schlachthof](#industry_99) |  |
+| [Schlachthof](#industry_100) |  |
 
 <a name="cargo_RFPR"></a>
 ### Naphtha
@@ -1004,7 +1152,7 @@ Naphtha, auch Rohbenzin genannt, ist ein Produkt aus der Destillation von Erdöl
 
 Eintrag in der Frachttabelle: RFPR
 
-Teil der Erweiterung: [Organische Chemie](#extension_6)
+Teil der Erweiterung: [Organische Chemie](#extension_7)
 
 Frachtklassen: Flüssiggut, Gefahrgut
 
@@ -1012,11 +1160,13 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#403c0c;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Ölraffinerie](#industry_102) | [Arzneimittelfabrik](#industry_4) |
-|  | [Arzneimittelfabrik](#industry_5) |
-|  | [Dampfreformierer](#industry_25) |
-|  | [Rußfabrik](#industry_77) |
-|  | [Steamcracker](#industry_82) |
+| [Ölraffinerie](#industry_123) | [Arzneimittelfabrik](#industry_4) |
+| [Ölraffinerie](#industry_124) | [Arzneimittelfabrik](#industry_5) |
+|  | [Arzneimittelfabrik](#industry_8) |
+|  | [Arzneimittelfabrik](#industry_9) |
+|  | [Dampfreformierer](#industry_29) |
+|  | [Rußfabrik](#industry_96) |
+|  | [Steamcracker](#industry_101) |
 
 <a name="cargo_LYE_"></a>
 ### Natronlauge
@@ -1033,14 +1183,14 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#78a488;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Chloralkali Elektrolyseanlage](#industry_24) | [Aluhütte](#industry_1) |
-|  | [Molkerei](#industry_58) |
-|  | [Molkerei](#industry_60) |
-|  | [Nahrungsmittelfabrik](#industry_68) |
-|  | [Nahrungsmittelfabrik](#industry_70) |
-|  | [Nahrungsmittelfabrik](#industry_73) |
-|  | [Nahrungsmittelfabrik](#industry_74) |
-|  | [Papiermühle](#industry_75) |
+| [Chloralkali Elektrolyseanlage](#industry_28) | [Aluhütte](#industry_1) |
+|  | [Molkerei](#industry_77) |
+|  | [Molkerei](#industry_79) |
+|  | [Nahrungsmittelfabrik](#industry_87) |
+|  | [Nahrungsmittelfabrik](#industry_89) |
+|  | [Nahrungsmittelfabrik](#industry_92) |
+|  | [Nahrungsmittelfabrik](#industry_93) |
+|  | [Papiermühle](#industry_94) |
 
 <a name="cargo_PAPR"></a>
 ### Papier
@@ -1049,7 +1199,7 @@ Papier besteht aus getrockneten Zellulosefasern und ist seit dem Altertum bekann
 
 Eintrag in der Frachttabelle: PAPR
 
-Teil der Erweiterung: [Papier](#extension_7)
+Teil der Erweiterung: [Papier](#extension_8)
 
 Frachtklassen: Stückgut
 
@@ -1057,12 +1207,12 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#b8b8b8;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Papiermühle](#industry_75) | [Druckerei](#industry_26) |
-|  | [Druckerei](#industry_27) |
-|  | [Verpackungsmittelfabrik](#industry_91) |
-|  | [Verpackungsmittelfabrik](#industry_92) |
-|  | [Verpackungsmittelfabrik](#industry_93) |
-|  | [Verpackungsmittelfabrik](#industry_94) |
+| [Papiermühle](#industry_94) | [Druckerei](#industry_30) |
+|  | [Druckerei](#industry_31) |
+|  | [Verpackungsmittelfabrik](#industry_112) |
+|  | [Verpackungsmittelfabrik](#industry_113) |
+|  | [Verpackungsmittelfabrik](#industry_114) |
+|  | [Verpackungsmittelfabrik](#industry_115) |
 
 <a name="cargo_PASS"></a>
 ### Passagiere
@@ -1077,8 +1227,8 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#80c4fc;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Hotel](#industry_37) | [Hotel](#industry_37) |
-| [Ölbohrinsel](#industry_100) | [Ölbohrinsel](#industry_100) |
+| [Hotel](#industry_49) | [Hotel](#industry_49) |
+| [Ölbohrinsel](#industry_121) | [Ölbohrinsel](#industry_121) |
 
 <a name="cargo_MAIL"></a>
 ### Post
@@ -1109,8 +1259,10 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#343c48;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Rußfabrik](#industry_76) | [Farbenfabrik](#industry_29) |
-| [Rußfabrik](#industry_77) | [Farbenfabrik](#industry_30) |
+| [Rußfabrik](#industry_95) | [Farbenfabrik](#industry_35) |
+| [Rußfabrik](#industry_96) | [Farbenfabrik](#industry_36) |
+|  | [Farbenfabrik](#industry_37) |
+|  | [Farbenfabrik](#industry_38) |
 
 <a name="cargo_SALT"></a>
 ### Salz
@@ -1127,11 +1279,11 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#d4d4e0;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Salzbergwerk](#industry_78) | [Chloralkali Elektrolyseanlage](#industry_24) |
-|  | [Nahrungsmittelfabrik](#industry_68) |
-|  | [Nahrungsmittelfabrik](#industry_70) |
-|  | [Nahrungsmittelfabrik](#industry_73) |
-|  | [Nahrungsmittelfabrik](#industry_74) |
+| [Salzbergwerk](#industry_97) | [Chloralkali Elektrolyseanlage](#industry_28) |
+|  | [Nahrungsmittelfabrik](#industry_87) |
+|  | [Nahrungsmittelfabrik](#industry_89) |
+|  | [Nahrungsmittelfabrik](#industry_92) |
+|  | [Nahrungsmittelfabrik](#industry_93) |
 
 <a name="cargo_SAND"></a>
 ### Sand
@@ -1146,9 +1298,9 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#e8b810;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Sandgrube](#industry_79) | [Bauhof](#industry_18) |
-|  | [Glasfabrik](#industry_32) |
-|  | [Zementfabrik](#industry_98) |
+| [Sandgrube](#industry_98) | [Bauhof](#industry_22) |
+|  | [Glasfabrik](#industry_40) |
+|  | [Zementfabrik](#industry_119) |
 
 <a name="cargo_WDPR"></a>
 ### Schnittholz
@@ -1163,12 +1315,33 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#b09c6c;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Sägewerk](#industry_83) | [Bauhof](#industry_18) |
-|  | [Bauhof](#industry_19) |
-|  | [Möbelfabrik](#industry_61) |
-|  | [Möbelfabrik](#industry_62) |
-|  | [Möbelfabrik](#industry_63) |
-|  | [Möbelfabrik](#industry_64) |
+| [Sägewerk](#industry_102) | [Bauhof](#industry_22) |
+|  | [Bauhof](#industry_23) |
+|  | [Möbelfabrik](#industry_80) |
+|  | [Möbelfabrik](#industry_81) |
+|  | [Möbelfabrik](#industry_82) |
+|  | [Möbelfabrik](#industry_83) |
+
+<a name="cargo_SULP"></a>
+### Schwefel
+
+Schwefel ist bereits seit dem Altertum bekannt. Schon in der Antike wurde es als Brandwaffe verwendet, aber auch zur Desinfektion und zum Schwefeln von Wein. Schwefel ist Teil von Schwarzpulver und spielte ein große Rolle in der Alchemie. Im frühen 19. Jahrhundert wurde mit dem Fortschreiten der Wissenschaft schließlich erkannt, dass Schwefel ein chemisches Element ist. Schwefel ist - wenig überraschend - in Schwefelsäure enthalten, die zahllose Anwendungen in der Industrie hat. Elementarer Schwefel wird heute hauptsächlich für die Vulkanisierung von Kautschuk im Zusammenhang mit der Reifenproduktion verwendet. 
+
+Eintrag in der Frachttabelle: SULP
+
+Teil der Erweiterung: [Koks und Schwefel](#extension_5)
+
+Frachtklassen: Flüssiggut, Nässeempfindlich, Schüttgut
+
+Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#fcd400;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+| Produziert von | Benötigt von |
+| -- | -- |
+| [Erzschmelze](#industry_33) | [Säurefabrik](#industry_103) |
+| [Erzschmelze](#industry_34) | [Säurefabrik](#industry_104) |
+| [Kokerei](#industry_60) |  |
+| [Kraftwerk](#industry_62) |  |
+| [Ölraffinerie](#industry_124) |  |
 
 <a name="cargo_STEL"></a>
 ### Stahl
@@ -1185,14 +1358,37 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#a8a8a8;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Integriertes Stahlwerk](#industry_39) | [Autofabrik](#industry_6) |
-| [Integriertes Stahlwerk](#industry_40) | [Autofabrik](#industry_7) |
-|  | [Autofabrik](#industry_8) |
-|  | [Autofabrik](#industry_9) |
-|  | [Autofabrik](#industry_10) |
-|  | [Autofabrik](#industry_11) |
-|  | [Autofabrik](#industry_12) |
-|  | [Autofabrik](#industry_13) |
+| [Integriertes Stahlwerk](#industry_51) | [Autofabrik](#industry_10) |
+| [Integriertes Stahlwerk](#industry_52) | [Autofabrik](#industry_11) |
+| [Integriertes Stahlwerk](#industry_53) | [Autofabrik](#industry_12) |
+| [Integriertes Stahlwerk](#industry_54) | [Autofabrik](#industry_13) |
+|  | [Autofabrik](#industry_14) |
+|  | [Autofabrik](#industry_15) |
+|  | [Autofabrik](#industry_16) |
+|  | [Autofabrik](#industry_17) |
+
+<a name="cargo_ACID"></a>
+### Säure
+
+Säuren sind eine Klasse von chemischen Verbindungen, die sich in erster Linie dadurch auszeichen, dass sie andere chemische Verbindungen angreifen und zerstören können. Das bedeutet auch, dass sie für den Menschen gefährlich und ggfs. tödlich giftig sein können. So wurde Chlor als Giftgas eingesetzt, welches beim Einatmen zu Salzsäure umgesetzt wird, die die Lunge verätzt. Die starke Ätzwirkung ist in der Industrie jedoch in zahllosen Anwendungen notwendig, zum Beispiel bei der Herstellung von Düngemitteln, Farbstoffen und beim Auflösen von Erzen in der Metallproduktion. Die wichtigste Säure für industrielle Anwendungen ist Schwefelsäure, aber im täglichen Gebrauch trifft man zum Beispiel aber auch Kohlensäure (in diversen Getränken und Mineralwasser) an. 
+
+Eintrag in der Frachttabelle: ACID
+
+Teil der Erweiterung: [Koks und Schwefel](#extension_5)
+
+Frachtklassen: Flüssiggut, Gefahrgut
+
+Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#b4cc7c;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+| Produziert von | Benötigt von |
+| -- | -- |
+| [Säurefabrik](#industry_103) | [Arzneimittelfabrik](#industry_6) |
+| [Säurefabrik](#industry_104) | [Arzneimittelfabrik](#industry_7) |
+|  | [Arzneimittelfabrik](#industry_8) |
+|  | [Arzneimittelfabrik](#industry_9) |
+|  | [Farbenfabrik](#industry_37) |
+|  | [Farbenfabrik](#industry_38) |
+|  | [Kupferhütte](#industry_74) |
 
 <a name="cargo_TEXT"></a>
 ### Textilien
@@ -1201,7 +1397,7 @@ Textilien sind ein Oberbegriff für alle Arten von faserbasierten Materialien wi
 
 Eintrag in der Frachttabelle: TEXT
 
-Teil der Erweiterung: [Textilindustrie](#extension_8)
+Teil der Erweiterung: [Textilindustrie](#extension_9)
 
 Frachtklassen: Nässeempfindlich, Stückgut
 
@@ -1209,10 +1405,10 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#803828;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Textilfabrik](#industry_85) | [Bekleidungsfabrik](#industry_20) |
-| [Textilfabrik](#industry_86) | [Bekleidungsfabrik](#industry_21) |
-|  | [Möbelfabrik](#industry_61) |
-|  | [Möbelfabrik](#industry_63) |
+| [Textilfabrik](#industry_106) | [Bekleidungsfabrik](#industry_24) |
+| [Textilfabrik](#industry_107) | [Bekleidungsfabrik](#industry_25) |
+|  | [Möbelfabrik](#industry_80) |
+|  | [Möbelfabrik](#industry_82) |
 
 <a name="cargo_PETR"></a>
 ### Treibstoff
@@ -1221,7 +1417,7 @@ Treibstoff ist im Set der Oberbegriff für alles ist, was man zum Betreiben von 
 
 Eintrag in der Frachttabelle: PETR
 
-Teil der Erweiterung: [Organische Chemie](#extension_6)
+Teil der Erweiterung: [Organische Chemie](#extension_7)
 
 Frachtklassen: Flüssiggut, Gefahrgut
 
@@ -1229,9 +1425,10 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#cccca8;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Hydrierwerk](#industry_38) | [Tankstelle](#industry_84) |
-| [Steamcracker](#industry_82) |  |
-| [Ölraffinerie](#industry_102) |  |
+| [Hydrierwerk](#industry_50) | [Tankstelle](#industry_105) |
+| [Steamcracker](#industry_101) |  |
+| [Ölraffinerie](#industry_123) |  |
+| [Ölraffinerie](#industry_124) |  |
 
 <a name="cargo_MNSP"></a>
 ### Verpackungen
@@ -1240,7 +1437,7 @@ Verpackungen sind ein notwendiges Übel für viele Waren und Lebensmittel. Sie s
 
 Eintrag in der Frachttabelle: MNSP
 
-Teil der Erweiterung: [Verpackungsmittelindustrie](#extension_9)
+Teil der Erweiterung: [Verpackungsmittelindustrie](#extension_10)
 
 Frachtklassen: Stückgut
 
@@ -1248,20 +1445,22 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#b87818;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Verpackungsmittelfabrik](#industry_87) | [Arzneimittelfabrik](#industry_3) |
-| [Verpackungsmittelfabrik](#industry_88) | [Arzneimittelfabrik](#industry_5) |
-| [Verpackungsmittelfabrik](#industry_89) | [Bekleidungsfabrik](#industry_21) |
-| [Verpackungsmittelfabrik](#industry_90) | [Druckerei](#industry_27) |
-| [Verpackungsmittelfabrik](#industry_91) | [Molkerei](#industry_59) |
-| [Verpackungsmittelfabrik](#industry_92) | [Molkerei](#industry_60) |
-| [Verpackungsmittelfabrik](#industry_93) | [Möbelfabrik](#industry_63) |
-| [Verpackungsmittelfabrik](#industry_94) | [Möbelfabrik](#industry_64) |
-|  | [Mühle](#industry_66) |
-|  | [Nahrungsmittelfabrik](#industry_71) |
-|  | [Nahrungsmittelfabrik](#industry_72) |
-|  | [Nahrungsmittelfabrik](#industry_73) |
-|  | [Nahrungsmittelfabrik](#industry_74) |
-|  | [Schlachthof](#industry_81) |
+| [Verpackungsmittelfabrik](#industry_108) | [Arzneimittelfabrik](#industry_3) |
+| [Verpackungsmittelfabrik](#industry_109) | [Arzneimittelfabrik](#industry_5) |
+| [Verpackungsmittelfabrik](#industry_110) | [Arzneimittelfabrik](#industry_7) |
+| [Verpackungsmittelfabrik](#industry_111) | [Arzneimittelfabrik](#industry_9) |
+| [Verpackungsmittelfabrik](#industry_112) | [Bekleidungsfabrik](#industry_25) |
+| [Verpackungsmittelfabrik](#industry_113) | [Druckerei](#industry_31) |
+| [Verpackungsmittelfabrik](#industry_114) | [Molkerei](#industry_78) |
+| [Verpackungsmittelfabrik](#industry_115) | [Molkerei](#industry_79) |
+|  | [Möbelfabrik](#industry_82) |
+|  | [Möbelfabrik](#industry_83) |
+|  | [Mühle](#industry_85) |
+|  | [Nahrungsmittelfabrik](#industry_90) |
+|  | [Nahrungsmittelfabrik](#industry_91) |
+|  | [Nahrungsmittelfabrik](#industry_92) |
+|  | [Nahrungsmittelfabrik](#industry_93) |
+|  | [Schlachthof](#industry_100) |
 
 <a name="cargo_LVST"></a>
 ### Vieh
@@ -1276,12 +1475,12 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#5c9c34;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Bauernhof](#industry_15) | [Nahrungsmittelfabrik](#industry_67) |
-| [Bauernhof](#industry_16) | [Nahrungsmittelfabrik](#industry_68) |
-| [Viehzucht](#industry_95) | [Nahrungsmittelfabrik](#industry_71) |
-| [Viehzucht](#industry_96) | [Nahrungsmittelfabrik](#industry_73) |
-|  | [Schlachthof](#industry_80) |
-|  | [Schlachthof](#industry_81) |
+| [Bauernhof](#industry_19) | [Nahrungsmittelfabrik](#industry_86) |
+| [Bauernhof](#industry_20) | [Nahrungsmittelfabrik](#industry_87) |
+| [Viehzucht](#industry_116) | [Nahrungsmittelfabrik](#industry_90) |
+| [Viehzucht](#industry_117) | [Nahrungsmittelfabrik](#industry_92) |
+|  | [Schlachthof](#industry_99) |
+|  | [Schlachthof](#industry_100) |
 
 <a name="cargo_GOOD"></a>
 ### Waren
@@ -1296,18 +1495,22 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#fc9c00;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Arzneimittelfabrik](#industry_2) | [Hafen](#industry_33) |
-| [Arzneimittelfabrik](#industry_3) | [Hafen](#industry_34) |
-| [Arzneimittelfabrik](#industry_4) | [Hafen](#industry_35) |
-| [Arzneimittelfabrik](#industry_5) | [Hafen](#industry_36) |
-| [Bekleidungsfabrik](#industry_20) | [Kaufhaus](#industry_43) |
-| [Bekleidungsfabrik](#industry_21) |  |
-| [Druckerei](#industry_26) |  |
-| [Druckerei](#industry_27) |  |
-| [Möbelfabrik](#industry_61) |  |
-| [Möbelfabrik](#industry_62) |  |
-| [Möbelfabrik](#industry_63) |  |
-| [Möbelfabrik](#industry_64) |  |
+| [Arzneimittelfabrik](#industry_2) | [Hafen](#industry_41) |
+| [Arzneimittelfabrik](#industry_3) | [Hafen](#industry_42) |
+| [Arzneimittelfabrik](#industry_4) | [Hafen](#industry_43) |
+| [Arzneimittelfabrik](#industry_5) | [Hafen](#industry_44) |
+| [Arzneimittelfabrik](#industry_6) | [Hafen](#industry_45) |
+| [Arzneimittelfabrik](#industry_7) | [Hafen](#industry_46) |
+| [Arzneimittelfabrik](#industry_8) | [Hafen](#industry_47) |
+| [Arzneimittelfabrik](#industry_9) | [Hafen](#industry_48) |
+| [Bekleidungsfabrik](#industry_24) | [Kaufhaus](#industry_58) |
+| [Bekleidungsfabrik](#industry_25) |  |
+| [Druckerei](#industry_30) |  |
+| [Druckerei](#industry_31) |  |
+| [Möbelfabrik](#industry_80) |  |
+| [Möbelfabrik](#industry_81) |  |
+| [Möbelfabrik](#industry_82) |  |
+| [Möbelfabrik](#industry_83) |  |
 
 <a name="cargo_H2__"></a>
 ### Wasserstoff
@@ -1332,7 +1535,7 @@ Wolle ist eine Textilfaser, die hauptsächlich von Schafen gewonnen wird und zu 
 
 Eintrag in der Frachttabelle: WOOL
 
-Teil der Erweiterung: [Textilindustrie](#extension_8)
+Teil der Erweiterung: [Textilindustrie](#extension_9)
 
 Frachtklassen: Nässeempfindlich, Stückgut
 
@@ -1340,8 +1543,8 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#a85c4c;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Bauernhof](#industry_15) | [Textilfabrik](#industry_85) |
-| [Viehzucht](#industry_96) | [Textilfabrik](#industry_86) |
+| [Bauernhof](#industry_19) | [Textilfabrik](#industry_106) |
+| [Viehzucht](#industry_117) | [Textilfabrik](#industry_107) |
 
 <a name="cargo_CMNT"></a>
 ### Zement
@@ -1358,7 +1561,7 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#6c7484;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Zementfabrik](#industry_98) | [Bauhof](#industry_18) |
+| [Zementfabrik](#industry_119) | [Bauhof](#industry_22) |
 
 <a name="cargo_BDMT"></a>
 ### Ziegel
@@ -1375,7 +1578,7 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#cc8060;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Ziegelei](#industry_99) | [Bauhof](#industry_18) |
+| [Ziegelei](#industry_120) | [Bauhof](#industry_22) |
 
 <a name="cargo_OIL_"></a>
 ### Öl
@@ -1394,13 +1597,16 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#a888e0;
 
 | Produziert von | Benötigt von |
 | -- | -- |
-| [Hafen](#industry_33) | [Kraftwerk](#industry_45) |
-| [Hafen](#industry_34) | [Kunststofffabrik](#industry_46) |
-| [Hafen](#industry_35) | [Kunststofffabrik](#industry_47) |
-| [Hafen](#industry_36) | [Kunststofffabrik](#industry_48) |
-| [Ölbohrinsel](#industry_100) | [Kunststofffabrik](#industry_49) |
-| [Ölquellen](#industry_101) | [Rußfabrik](#industry_76) |
-|  | [Ölraffinerie](#industry_102) |
+| [Hafen](#industry_41) | [Kraftwerk](#industry_61) |
+| [Hafen](#industry_42) | [Kraftwerk](#industry_62) |
+| [Hafen](#industry_43) | [Kunststofffabrik](#industry_63) |
+| [Hafen](#industry_44) | [Kunststofffabrik](#industry_64) |
+| [Hafen](#industry_45) | [Kunststofffabrik](#industry_65) |
+| [Hafen](#industry_46) | [Kunststofffabrik](#industry_66) |
+| [Hafen](#industry_47) | [Rußfabrik](#industry_95) |
+| [Hafen](#industry_48) | [Ölraffinerie](#industry_123) |
+| [Ölbohrinsel](#industry_121) | [Ölraffinerie](#industry_124) |
+| [Ölquellen](#industry_122) |  |
 
 
 ## Industries
@@ -1463,7 +1669,7 @@ Pharmazeutische Produkte wie Arzneimittel und Impfstoffe sind eine wichtiger Bes
 
 Diese Industrie benötigt Extension: [Grundlegende Anorganische Chemie](#extension_4) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Verpackungsmittelindustrie](#extension_9) [Organische Chemie](#extension_6) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Verpackungsmittelindustrie](#extension_10) [Organische Chemie](#extension_7) [Koks und Schwefel](#extension_5) 
 
 Industry ist erst ab 1900 verfügbar.
 Diese Beschränkung betrifft auch das Finanzieren der Industrie.
@@ -1484,9 +1690,9 @@ Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar is
 
 Pharmazeutische Produkte wie Arzneimittel und Impfstoffe sind eine wichtiger Bestandteil der deutschen Wirtschaft. Das geht auf das 19. Jahrhundert zurück, als Durchbrüche in der Chemieforschung die Herstellung neuartiger Medikamente erlaubte. Eins der bekanntesten Beispiele ist die Firma Bayer, die als Hersteller von Färbemitteln begann und später Aspirin entwickelte und heute einer der größten Pharmahersteller der Welt ist. 
 
-Diese Industrie benötigt Extension: [Grundlegende Anorganische Chemie](#extension_4) [Verpackungsmittelindustrie](#extension_9) 
+Diese Industrie benötigt Extension: [Grundlegende Anorganische Chemie](#extension_4) [Verpackungsmittelindustrie](#extension_10) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Organische Chemie](#extension_6) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Organische Chemie](#extension_7) [Koks und Schwefel](#extension_5) 
 
 Industry ist erst ab 1900 verfügbar.
 Diese Beschränkung betrifft auch das Finanzieren der Industrie.
@@ -1508,9 +1714,9 @@ Industrie benötigt wenigstens eine der in schwarz dargestellten Rohmaterialien 
 
 Pharmazeutische Produkte wie Arzneimittel und Impfstoffe sind eine wichtiger Bestandteil der deutschen Wirtschaft. Das geht auf das 19. Jahrhundert zurück, als Durchbrüche in der Chemieforschung die Herstellung neuartiger Medikamente erlaubte. Eins der bekanntesten Beispiele ist die Firma Bayer, die als Hersteller von Färbemitteln begann und später Aspirin entwickelte und heute einer der größten Pharmahersteller der Welt ist. 
 
-Diese Industrie benötigt Extension: [Grundlegende Anorganische Chemie](#extension_4) [Organische Chemie](#extension_6) 
+Diese Industrie benötigt Extension: [Grundlegende Anorganische Chemie](#extension_4) [Organische Chemie](#extension_7) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Verpackungsmittelindustrie](#extension_9) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Verpackungsmittelindustrie](#extension_10) [Koks und Schwefel](#extension_5) 
 
 Industry ist erst ab 1900 verfügbar.
 Diese Beschränkung betrifft auch das Finanzieren der Industrie.
@@ -1532,7 +1738,9 @@ Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar is
 
 Pharmazeutische Produkte wie Arzneimittel und Impfstoffe sind eine wichtiger Bestandteil der deutschen Wirtschaft. Das geht auf das 19. Jahrhundert zurück, als Durchbrüche in der Chemieforschung die Herstellung neuartiger Medikamente erlaubte. Eins der bekanntesten Beispiele ist die Firma Bayer, die als Hersteller von Färbemitteln begann und später Aspirin entwickelte und heute einer der größten Pharmahersteller der Welt ist. 
 
-Diese Industrie benötigt Extension: [Grundlegende Anorganische Chemie](#extension_4) [Verpackungsmittelindustrie](#extension_9) [Organische Chemie](#extension_6) 
+Diese Industrie benötigt Extension: [Grundlegende Anorganische Chemie](#extension_4) [Verpackungsmittelindustrie](#extension_10) [Organische Chemie](#extension_7) 
+
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Koks und Schwefel](#extension_5) 
 
 Industry ist erst ab 1900 verfügbar.
 Diese Beschränkung betrifft auch das Finanzieren der Industrie.
@@ -1549,6 +1757,104 @@ Industrie benötigt wenigstens eine der in schwarz dargestellten Rohmaterialien 
 
 
 <a name="industry_6"></a>
+### Arzneimittelfabrik
+
+<img src="pharmaceutical_plant.png" alt="Arzneimittelfabrik">
+
+Pharmazeutische Produkte wie Arzneimittel und Impfstoffe sind eine wichtiger Bestandteil der deutschen Wirtschaft. Das geht auf das 19. Jahrhundert zurück, als Durchbrüche in der Chemieforschung die Herstellung neuartiger Medikamente erlaubte. Eins der bekanntesten Beispiele ist die Firma Bayer, die als Hersteller von Färbemitteln begann und später Aspirin entwickelte und heute einer der größten Pharmahersteller der Welt ist. 
+
+Diese Industrie benötigt Extension: [Grundlegende Anorganische Chemie](#extension_4) [Koks und Schwefel](#extension_5) 
+
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Verpackungsmittelindustrie](#extension_10) [Organische Chemie](#extension_7) 
+
+Industry ist erst ab 1900 verfügbar.
+Diese Beschränkung betrifft auch das Finanzieren der Industrie.
+
+Farbe in der Übersichtskarte:<span style="background-color:#e8d0fc;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar ist. Die maximale Produktion erhöht sich mit der Anzahl der verfügbaren verschiedenen Rohstoffe.
+
+| Benötigt | Produziert |
+| -- | -- |
+| [Säure](#cargo_ACID) | [Waren](#cargo_GOOD) |
+| [Chlor](#cargo_CHLO) |  |
+
+
+<a name="industry_7"></a>
+### Arzneimittelfabrik
+
+<img src="pharmaceutical_plant.png" alt="Arzneimittelfabrik">
+
+Pharmazeutische Produkte wie Arzneimittel und Impfstoffe sind eine wichtiger Bestandteil der deutschen Wirtschaft. Das geht auf das 19. Jahrhundert zurück, als Durchbrüche in der Chemieforschung die Herstellung neuartiger Medikamente erlaubte. Eins der bekanntesten Beispiele ist die Firma Bayer, die als Hersteller von Färbemitteln begann und später Aspirin entwickelte und heute einer der größten Pharmahersteller der Welt ist. 
+
+Diese Industrie benötigt Extension: [Grundlegende Anorganische Chemie](#extension_4) [Verpackungsmittelindustrie](#extension_10) [Koks und Schwefel](#extension_5) 
+
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Organische Chemie](#extension_7) 
+
+Industry ist erst ab 1900 verfügbar.
+Diese Beschränkung betrifft auch das Finanzieren der Industrie.
+
+Farbe in der Übersichtskarte:<span style="background-color:#e8d0fc;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+Industrie benötigt wenigstens eine der in schwarz dargestellten Rohmaterialien zur Produktion. In weiß dargestellte Materialien erhöhen die maximale Produktion. Die maximale Produktion erhöht sich mit der Anzahl der verfügbaren verschiedenen Rohstoffe.
+
+| Benötigt | Produziert |
+| -- | -- |
+| [Säure](#cargo_ACID) | [Waren](#cargo_GOOD) |
+| [Chlor](#cargo_CHLO) |  |
+| [Verpackungen](#cargo_MNSP) |  |
+
+
+<a name="industry_8"></a>
+### Arzneimittelfabrik
+
+<img src="pharmaceutical_plant.png" alt="Arzneimittelfabrik">
+
+Pharmazeutische Produkte wie Arzneimittel und Impfstoffe sind eine wichtiger Bestandteil der deutschen Wirtschaft. Das geht auf das 19. Jahrhundert zurück, als Durchbrüche in der Chemieforschung die Herstellung neuartiger Medikamente erlaubte. Eins der bekanntesten Beispiele ist die Firma Bayer, die als Hersteller von Färbemitteln begann und später Aspirin entwickelte und heute einer der größten Pharmahersteller der Welt ist. 
+
+Diese Industrie benötigt Extension: [Grundlegende Anorganische Chemie](#extension_4) [Organische Chemie](#extension_7) [Koks und Schwefel](#extension_5) 
+
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Verpackungsmittelindustrie](#extension_10) 
+
+Industry ist erst ab 1900 verfügbar.
+Diese Beschränkung betrifft auch das Finanzieren der Industrie.
+
+Farbe in der Übersichtskarte:<span style="background-color:#e8d0fc;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar ist. Die maximale Produktion erhöht sich mit der Anzahl der verfügbaren verschiedenen Rohstoffe.
+
+| Benötigt | Produziert |
+| -- | -- |
+| [Säure](#cargo_ACID) | [Waren](#cargo_GOOD) |
+| [Chlor](#cargo_CHLO) |  |
+| [Naphtha](#cargo_RFPR) |  |
+
+
+<a name="industry_9"></a>
+### Arzneimittelfabrik
+
+<img src="pharmaceutical_plant.png" alt="Arzneimittelfabrik">
+
+Pharmazeutische Produkte wie Arzneimittel und Impfstoffe sind eine wichtiger Bestandteil der deutschen Wirtschaft. Das geht auf das 19. Jahrhundert zurück, als Durchbrüche in der Chemieforschung die Herstellung neuartiger Medikamente erlaubte. Eins der bekanntesten Beispiele ist die Firma Bayer, die als Hersteller von Färbemitteln begann und später Aspirin entwickelte und heute einer der größten Pharmahersteller der Welt ist. 
+
+Diese Industrie benötigt Extension: [Grundlegende Anorganische Chemie](#extension_4) [Verpackungsmittelindustrie](#extension_10) [Organische Chemie](#extension_7) [Koks und Schwefel](#extension_5) 
+
+Industry ist erst ab 1900 verfügbar.
+Diese Beschränkung betrifft auch das Finanzieren der Industrie.
+
+Farbe in der Übersichtskarte:<span style="background-color:#e8d0fc;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+Industrie benötigt wenigstens eine der in schwarz dargestellten Rohmaterialien zur Produktion. In weiß dargestellte Materialien erhöhen die maximale Produktion. Die maximale Produktion erhöht sich mit der Anzahl der verfügbaren verschiedenen Rohstoffe.
+
+| Benötigt | Produziert |
+| -- | -- |
+| [Säure](#cargo_ACID) | [Waren](#cargo_GOOD) |
+| [Chlor](#cargo_CHLO) |  |
+| [Verpackungen](#cargo_MNSP) |  |
+| [Naphtha](#cargo_RFPR) |  |
+
+
+<a name="industry_10"></a>
 ### Autofabrik
 
 <img src="vehicle_factory.png" alt="Autofabrik">
@@ -1572,7 +1878,7 @@ Industrie elektrischen Strom zur Production. Siehe [Elektrizität](#electricity)
 | [Stahl](#cargo_STEL) |  |
 
 
-<a name="industry_7"></a>
+<a name="industry_11"></a>
 ### Autofabrik
 
 <img src="vehicle_factory.png" alt="Autofabrik">
@@ -1597,7 +1903,7 @@ Industrie elektrischen Strom zur Production. Siehe [Elektrizität](#electricity)
 | [Stahl](#cargo_STEL) |  |
 
 
-<a name="industry_8"></a>
+<a name="industry_12"></a>
 ### Autofabrik
 
 <img src="vehicle_factory.png" alt="Autofabrik">
@@ -1622,7 +1928,7 @@ Industrie elektrischen Strom zur Production. Siehe [Elektrizität](#electricity)
 | [Stahl](#cargo_STEL) |  |
 
 
-<a name="industry_9"></a>
+<a name="industry_13"></a>
 ### Autofabrik
 
 <img src="vehicle_factory.png" alt="Autofabrik">
@@ -1648,7 +1954,7 @@ Industrie elektrischen Strom zur Production. Siehe [Elektrizität](#electricity)
 | [Stahl](#cargo_STEL) |  |
 
 
-<a name="industry_10"></a>
+<a name="industry_14"></a>
 ### Autofabrik
 
 <img src="vehicle_factory.png" alt="Autofabrik">
@@ -1673,7 +1979,7 @@ Industrie elektrischen Strom zur Production. Siehe [Elektrizität](#electricity)
 | [Stahl](#cargo_STEL) |  |
 
 
-<a name="industry_11"></a>
+<a name="industry_15"></a>
 ### Autofabrik
 
 <img src="vehicle_factory.png" alt="Autofabrik">
@@ -1699,7 +2005,7 @@ Industrie elektrischen Strom zur Production. Siehe [Elektrizität](#electricity)
 | [Stahl](#cargo_STEL) |  |
 
 
-<a name="industry_12"></a>
+<a name="industry_16"></a>
 ### Autofabrik
 
 <img src="vehicle_factory.png" alt="Autofabrik">
@@ -1725,7 +2031,7 @@ Industrie elektrischen Strom zur Production. Siehe [Elektrizität](#electricity)
 | [Stahl](#cargo_STEL) |  |
 
 
-<a name="industry_13"></a>
+<a name="industry_17"></a>
 ### Autofabrik
 
 <img src="vehicle_factory.png" alt="Autofabrik">
@@ -1750,7 +2056,7 @@ Industrie elektrischen Strom zur Production. Siehe [Elektrizität](#electricity)
 | [Stahl](#cargo_STEL) |  |
 
 
-<a name="industry_14"></a>
+<a name="industry_18"></a>
 ### Autohaus
 
 <img src="vehicle_distributor.png" alt="Autohaus">
@@ -1767,16 +2073,16 @@ Farbe in der Übersichtskarte:<span style="background-color:#bce0fc;">&nbsp;&nbs
 | [Fahrzeuge](#cargo_VEHI) |  |
 
 
-<a name="industry_15"></a>
+<a name="industry_19"></a>
 ### Bauernhof
 
 <img src="farm.png" alt="Bauernhof">
 
 Bauernhöfe sind die wichtigste landwirtschaftliche Industrie im Set, denn sie produzieren Getreide und Vieh. Beides sind relevante Rohstoffe für die Lebensmittelindustrie. 
 
-Diese Industrie benötigt Extension: [Textilindustrie](#extension_8) 
+Diese Industrie benötigt Extension: [Textilindustrie](#extension_9) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Lebensmittelindustrie](#extension_5) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Lebensmittelindustrie](#extension_6) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#ec9ca4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -1788,14 +2094,14 @@ Farbe in der Übersichtskarte:<span style="background-color:#ec9ca4;">&nbsp;&nbs
 |  | [Wolle](#cargo_WOOL) |
 
 
-<a name="industry_16"></a>
+<a name="industry_20"></a>
 ### Bauernhof
 
 <img src="farm.png" alt="Bauernhof">
 
 Bauernhöfe sind die wichtigste landwirtschaftliche Industrie im Set, denn sie produzieren Getreide und Vieh. Beides sind relevante Rohstoffe für die Lebensmittelindustrie. 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Textilindustrie](#extension_8) [Lebensmittelindustrie](#extension_5) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Textilindustrie](#extension_9) [Lebensmittelindustrie](#extension_6) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#ec9ca4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -1806,14 +2112,14 @@ Farbe in der Übersichtskarte:<span style="background-color:#ec9ca4;">&nbsp;&nbs
 |  | [Vieh](#cargo_LVST) |
 
 
-<a name="industry_17"></a>
+<a name="industry_21"></a>
 ### Bauernhof
 
 <img src="farm.png" alt="Bauernhof">
 
 Bauernhöfe sind die wichtigste landwirtschaftliche Industrie im Set, denn sie produzieren Getreide und Vieh. Beides sind relevante Rohstoffe für die Lebensmittelindustrie. 
 
-Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_5) 
+Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_6) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#ec9ca4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -1823,7 +2129,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#ec9ca4;">&nbsp;&nbs
 |  | [Getreide](#cargo_GRAI) |
 
 
-<a name="industry_18"></a>
+<a name="industry_22"></a>
 ### Bauhof
 
 <img src="builders_yard.png" alt="Bauhof">
@@ -1843,7 +2149,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#acacc0;">&nbsp;&nbs
 | [Schnittholz](#cargo_WDPR) |  |
 
 
-<a name="industry_19"></a>
+<a name="industry_23"></a>
 ### Bauhof
 
 <img src="builders_yard.png" alt="Bauhof">
@@ -1860,14 +2166,14 @@ Farbe in der Übersichtskarte:<span style="background-color:#acacc0;">&nbsp;&nbs
 | [Schnittholz](#cargo_WDPR) |  |
 
 
-<a name="industry_20"></a>
+<a name="industry_24"></a>
 ### Bekleidungsfabrik
 
 <img src="clothing_plant.png" alt="Bekleidungsfabrik">
 
 Die Bekleidungsfabrik ist der Ort, an dem aus Stoffen Kleidungsstücke gefertigt werden. Europa hat eine reichhaltige Geschichte der Bekleidungsindustrie, die allerdings quasi komplett durch billigere asiatische Konkurrenz ersetzt wurde. Spezialgeschäfte für hochwertige Bekleidung haben noch ihre eigene Nische. Deutschland hatte im 19. Jahrhundert eine bedeutende Bekleidungsindustrie, hauptsächlich in Schlesien und Sachsen. Heute existieren zwar noch viele Firmen, teilweise auch international sehr bekannte wie Boss, Triumph oder adidas, aber die Produktion wurde üblicherweise nach Asien verlagert. 
 
-Diese Industrie benötigt Extension: [Textilindustrie](#extension_8) 
+Diese Industrie benötigt Extension: [Textilindustrie](#extension_9) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#803828;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -1877,14 +2183,14 @@ Farbe in der Übersichtskarte:<span style="background-color:#803828;">&nbsp;&nbs
 | [Textilien](#cargo_TEXT) | [Waren](#cargo_GOOD) |
 
 
-<a name="industry_21"></a>
+<a name="industry_25"></a>
 ### Bekleidungsfabrik
 
 <img src="clothing_plant.png" alt="Bekleidungsfabrik">
 
 Die Bekleidungsfabrik ist der Ort, an dem aus Stoffen Kleidungsstücke gefertigt werden. Europa hat eine reichhaltige Geschichte der Bekleidungsindustrie, die allerdings quasi komplett durch billigere asiatische Konkurrenz ersetzt wurde. Spezialgeschäfte für hochwertige Bekleidung haben noch ihre eigene Nische. Deutschland hatte im 19. Jahrhundert eine bedeutende Bekleidungsindustrie, hauptsächlich in Schlesien und Sachsen. Heute existieren zwar noch viele Firmen, teilweise auch international sehr bekannte wie Boss, Triumph oder adidas, aber die Produktion wurde üblicherweise nach Asien verlagert. 
 
-Diese Industrie benötigt Extension: [Textilindustrie](#extension_8) [Verpackungsmittelindustrie](#extension_9) 
+Diese Industrie benötigt Extension: [Textilindustrie](#extension_9) [Verpackungsmittelindustrie](#extension_10) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#803828;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -1897,7 +2203,7 @@ Industrie benötigt die in schwarz dargestellten Rohmaterialien zur Produktion. 
 | [Textilien](#cargo_TEXT) |  |
 
 
-<a name="industry_22"></a>
+<a name="industry_26"></a>
 ### Brauerei
 
 <img src="brewery.png" alt="Brauerei">
@@ -1908,7 +2214,7 @@ Deutschland hat eine lange Tradition in der Bierbrauerei, und Bier ist ein bekan
 
 Im Set ist Bier trotzdem keine eigene Fracht, sondern zählt einfach als Nahrungsmitel. 
 
-Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_5) 
+Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_6) 
 
 Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Glas](#extension_3) 
 
@@ -1920,7 +2226,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#fcd898;">&nbsp;&nbs
 | [Getreide](#cargo_GRAI) | [Nahrungsmittel](#cargo_FOOD) |
 
 
-<a name="industry_23"></a>
+<a name="industry_27"></a>
 ### Brauerei
 
 <img src="brewery.png" alt="Brauerei">
@@ -1931,7 +2237,7 @@ Deutschland hat eine lange Tradition in der Bierbrauerei, und Bier ist ein bekan
 
 Im Set ist Bier trotzdem keine eigene Fracht, sondern zählt einfach als Nahrungsmitel. 
 
-Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_5) [Glas](#extension_3) 
+Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_6) [Glas](#extension_3) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#fcd898;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -1944,7 +2250,7 @@ Industrie benötigt wenigstens eine der in schwarz dargestellten Rohmaterialien 
 | [Getreide](#cargo_GRAI) |  |
 
 
-<a name="industry_24"></a>
+<a name="industry_28"></a>
 ### Chloralkali Elektrolyseanlage
 
 <img src="chloralkali_plant.png" alt="Chloralkali Elektrolyseanlage">
@@ -1966,7 +2272,7 @@ Industrie elektrischen Strom zur Production. Siehe [Elektrizität](#electricity)
 |  | [Natronlauge](#cargo_LYE_) |
 
 
-<a name="industry_25"></a>
+<a name="industry_29"></a>
 ### Dampfreformierer
 
 <img src="steamreformer.png" alt="Dampfreformierer">
@@ -1975,7 +2281,7 @@ Die Dampfreformierung geht auf eine Idee von Carl Bosch zurück, der eine preisw
 
 Da im Set Erdgas keine Rolle spielt, wird stattdessen Rohbenzin, sogenanntes Naphtha, als Ausgansstoff verwendet. 
 
-Diese Industrie benötigt Extension: [Organische Chemie](#extension_6) 
+Diese Industrie benötigt Extension: [Organische Chemie](#extension_7) 
 
 Industry ist erst ab 1900 verfügbar.
 Diese Beschränkung betrifft auch das Finanzieren der Industrie.
@@ -1987,16 +2293,16 @@ Farbe in der Übersichtskarte:<span style="background-color:#403c0c;">&nbsp;&nbs
 | [Naphtha](#cargo_RFPR) |  |
 
 
-<a name="industry_26"></a>
+<a name="industry_30"></a>
 ### Druckerei
 
 <img src="paper_mill.png" alt="Druckerei">
 
 Der moderne Buchdruck wurde im 16. Jahrhundert in Deutschland erfunden. Im Zuge der Industrialisierung wurden später zahllose Zeitungen gedruckt, das Lesen von Büchern wurde zum Zeitvertreib der gebildeten Bürgerschicht. Heutzutage kann quasi jeder sein eigenes Buch drucken lassen. 
 
-Diese Industrie benötigt Extension: [Papier](#extension_7) 
+Diese Industrie benötigt Extension: [Papier](#extension_8) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Verpackungsmittelindustrie](#extension_9) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Verpackungsmittelindustrie](#extension_10) 
 
 Industry ist erst ab 1900 verfügbar.
 Diese Beschränkung betrifft auch das Finanzieren der Industrie.
@@ -2008,14 +2314,14 @@ Farbe in der Übersichtskarte:<span style="background-color:#fc9c00;">&nbsp;&nbs
 | [Papier](#cargo_PAPR) | [Waren](#cargo_GOOD) |
 
 
-<a name="industry_27"></a>
+<a name="industry_31"></a>
 ### Druckerei
 
 <img src="paper_mill.png" alt="Druckerei">
 
 Der moderne Buchdruck wurde im 16. Jahrhundert in Deutschland erfunden. Im Zuge der Industrialisierung wurden später zahllose Zeitungen gedruckt, das Lesen von Büchern wurde zum Zeitvertreib der gebildeten Bürgerschicht. Heutzutage kann quasi jeder sein eigenes Buch drucken lassen. 
 
-Diese Industrie benötigt Extension: [Papier](#extension_7) [Verpackungsmittelindustrie](#extension_9) 
+Diese Industrie benötigt Extension: [Papier](#extension_8) [Verpackungsmittelindustrie](#extension_10) 
 
 Industry ist erst ab 1900 verfügbar.
 Diese Beschränkung betrifft auch das Finanzieren der Industrie.
@@ -2028,7 +2334,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#fc9c00;">&nbsp;&nbs
 | [Papier](#cargo_PAPR) |  |
 
 
-<a name="industry_28"></a>
+<a name="industry_32"></a>
 ### Eisenerzbergwerk
 
 <img src="iron_ore_mine.png" alt="Eisenerzbergwerk">
@@ -2049,7 +2355,50 @@ Die Industrie wird mit endlichen Ressourcen generiert und schließt sobald diese
 |  | [Eisenerz](#cargo_IORE) |
 
 
-<a name="industry_29"></a>
+<a name="industry_33"></a>
+### Erzschmelze
+
+<img src="ore_smelter.png" alt="Erzschmelze">
+
+Kupfererze enthalten Beimengungen anderer Stoffe wie Schwefel und Eisen, die abgetrennt werden müssen, um reines Kupfer zu erzeugen. Dies geschieht durch Schmelzen und Rösten des Erzes. Dabei wird das Erz in seine Bestandteile aufgetrennt, übrig bleiben Eisen-Schwefel-Verbindungen und Rohkupfer, welches in einem weiteren Schritt durch Elektrolyse zu reinem Kupfer weiterverarbeitet wird. In der echten Kupferherstellung sind beide Schritte in einer Anlage zusammengefasst, um möglichst energiesparend arbeiten zu können. Im Spiel sind die Schritte in einzelne Industrien aufgeteilt, um die verschiedenen Transportaufgaben darstellen zu können. 
+
+Diese Industrie benötigt Extension: [Koks und Schwefel](#extension_5) 
+
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Farbindustrie](#extension_2) 
+
+Industry ist erst ab 1800 verfügbar.
+Diese Beschränkung betrifft auch das Finanzieren der Industrie.
+
+Farbe in der Übersichtskarte:<span style="background-color:#444c5c;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+| Benötigt | Produziert |
+| -- | -- |
+| [Koks](#cargo_COKE) | [Eisenerz](#cargo_IORE) |
+| [Kupferkies](#cargo_PORE) | [Schwefel](#cargo_SULP) |
+
+
+<a name="industry_34"></a>
+### Erzschmelze
+
+<img src="ore_smelter.png" alt="Erzschmelze">
+
+Kupfererze enthalten Beimengungen anderer Stoffe wie Schwefel und Eisen, die abgetrennt werden müssen, um reines Kupfer zu erzeugen. Dies geschieht durch Schmelzen und Rösten des Erzes. Dabei wird das Erz in seine Bestandteile aufgetrennt, übrig bleiben Eisen-Schwefel-Verbindungen und Rohkupfer, welches in einem weiteren Schritt durch Elektrolyse zu reinem Kupfer weiterverarbeitet wird. In der echten Kupferherstellung sind beide Schritte in einer Anlage zusammengefasst, um möglichst energiesparend arbeiten zu können. Im Spiel sind die Schritte in einzelne Industrien aufgeteilt, um die verschiedenen Transportaufgaben darstellen zu können. 
+
+Diese Industrie benötigt Extension: [Koks und Schwefel](#extension_5) [Farbindustrie](#extension_2) 
+
+Industry ist erst ab 1800 verfügbar.
+Diese Beschränkung betrifft auch das Finanzieren der Industrie.
+
+Farbe in der Übersichtskarte:<span style="background-color:#444c5c;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+| Benötigt | Produziert |
+| -- | -- |
+| [Koks](#cargo_COKE) | [Kupfererz](#cargo_CORE) |
+| [Kupferkies](#cargo_PORE) | [Eisenerz](#cargo_IORE) |
+|  | [Schwefel](#cargo_SULP) |
+
+
+<a name="industry_35"></a>
 ### Farbenfabrik
 
 <img src="paint_factory.png" alt="Farbenfabrik">
@@ -2058,7 +2407,7 @@ Die Herstellung von Farben, Pigmenten, Färbemitteln und ähnlichen Produkten wa
 
 Diese Industrie benötigt Extension: [Farbindustrie](#extension_2) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Bauindustrie](#extension_1) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Bauindustrie](#extension_1) [Koks und Schwefel](#extension_5) 
 
 Industry ist erst ab 1850 verfügbar.
 Diese Beschränkung betrifft auch das Finanzieren der Industrie.
@@ -2074,7 +2423,7 @@ Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar is
 | [Eisenerz](#cargo_IORE) |  |
 
 
-<a name="industry_30"></a>
+<a name="industry_36"></a>
 ### Farbenfabrik
 
 <img src="paint_factory.png" alt="Farbenfabrik">
@@ -2082,6 +2431,8 @@ Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar is
 Die Herstellung von Farben, Pigmenten, Färbemitteln und ähnlichen Produkten waren schon immer ein wichtiger Teil der deutschen Chemieindustrie. Einige der bekanntesten deutschen Chemiefirmen (z.B. Agfa, BASF, Bayer, Hoechst) begannen als Produzenten von Farben oder haben zumindest ein großes Sortiment an entsprechenden Produkten im Angebot. Diese Firmen gehör(t)en auch zu den größten Chemiefirmen der Welt und sind entsprechend relevant für die deutsche Wirtschaft. Dementsprechend musste eine Farbenfabrik im Set enthalten sein. 
 
 Diese Industrie benötigt Extension: [Farbindustrie](#extension_2) [Bauindustrie](#extension_1) 
+
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Koks und Schwefel](#extension_5) 
 
 Industry ist erst ab 1850 verfügbar.
 Diese Beschränkung betrifft auch das Finanzieren der Industrie.
@@ -2098,7 +2449,58 @@ Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar is
 | [Kalkstein](#cargo_LIME) |  |
 
 
-<a name="industry_31"></a>
+<a name="industry_37"></a>
+### Farbenfabrik
+
+<img src="paint_factory.png" alt="Farbenfabrik">
+
+Die Herstellung von Farben, Pigmenten, Färbemitteln und ähnlichen Produkten waren schon immer ein wichtiger Teil der deutschen Chemieindustrie. Einige der bekanntesten deutschen Chemiefirmen (z.B. Agfa, BASF, Bayer, Hoechst) begannen als Produzenten von Farben oder haben zumindest ein großes Sortiment an entsprechenden Produkten im Angebot. Diese Firmen gehör(t)en auch zu den größten Chemiefirmen der Welt und sind entsprechend relevant für die deutsche Wirtschaft. Dementsprechend musste eine Farbenfabrik im Set enthalten sein. 
+
+Diese Industrie benötigt Extension: [Farbindustrie](#extension_2) [Koks und Schwefel](#extension_5) 
+
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Bauindustrie](#extension_1) 
+
+Industry ist erst ab 1850 verfügbar.
+Diese Beschränkung betrifft auch das Finanzieren der Industrie.
+
+Farbe in der Übersichtskarte:<span style="background-color:#626562;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar ist. Die maximale Produktion erhöht sich mit der Anzahl der verfügbaren verschiedenen Rohstoffe.
+
+| Benötigt | Produziert |
+| -- | -- |
+| [Säure](#cargo_ACID) | [Farbe](#cargo_COAT) |
+| [Ruß](#cargo_CBLK) |  |
+| [Kupfer](#cargo_COPR) |  |
+| [Eisenerz](#cargo_IORE) |  |
+
+
+<a name="industry_38"></a>
+### Farbenfabrik
+
+<img src="paint_factory.png" alt="Farbenfabrik">
+
+Die Herstellung von Farben, Pigmenten, Färbemitteln und ähnlichen Produkten waren schon immer ein wichtiger Teil der deutschen Chemieindustrie. Einige der bekanntesten deutschen Chemiefirmen (z.B. Agfa, BASF, Bayer, Hoechst) begannen als Produzenten von Farben oder haben zumindest ein großes Sortiment an entsprechenden Produkten im Angebot. Diese Firmen gehör(t)en auch zu den größten Chemiefirmen der Welt und sind entsprechend relevant für die deutsche Wirtschaft. Dementsprechend musste eine Farbenfabrik im Set enthalten sein. 
+
+Diese Industrie benötigt Extension: [Farbindustrie](#extension_2) [Bauindustrie](#extension_1) [Koks und Schwefel](#extension_5) 
+
+Industry ist erst ab 1850 verfügbar.
+Diese Beschränkung betrifft auch das Finanzieren der Industrie.
+
+Farbe in der Übersichtskarte:<span style="background-color:#626562;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar ist. Die maximale Produktion erhöht sich mit der Anzahl der verfügbaren verschiedenen Rohstoffe.
+
+| Benötigt | Produziert |
+| -- | -- |
+| [Säure](#cargo_ACID) | [Farbe](#cargo_COAT) |
+| [Ruß](#cargo_CBLK) |  |
+| [Kupfer](#cargo_COPR) |  |
+| [Eisenerz](#cargo_IORE) |  |
+| [Kalkstein](#cargo_LIME) |  |
+
+
+<a name="industry_39"></a>
 ### Fischgründe
 
 <img src="fishing_grounds.png" alt="Fischgründe">
@@ -2113,7 +2515,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#9cccdc;">&nbsp;&nbs
 |  | [Fisch](#cargo_FISH) |
 
 
-<a name="industry_32"></a>
+<a name="industry_40"></a>
 ### Glasfabrik
 
 <img src="glass_works.png" alt="Glasfabrik">
@@ -2131,7 +2533,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#5840ac;">&nbsp;&nbs
 | [Sand](#cargo_SAND) |  |
 
 
-<a name="industry_33"></a>
+<a name="industry_41"></a>
 ### Hafen
 
 <img src="port.png" alt="Hafen">
@@ -2140,7 +2542,7 @@ Häfen sind Handelszentren, und da die deutsche Wirtschaft schon immer Rohstoffe
 
 Im Set steigt die maximale Produktion von Häfen nach und nach immer weiter. Das simuliert die Tatsache, dass Schiffe immer größere werden und Innovationen wie die Einführugn von Containern die Menge der umgeschlagenen Güter verfielfachten. 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Aluminium](#extension_0) [Farbindustrie](#extension_2) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Aluminium](#extension_0) [Farbindustrie](#extension_2) [Koks und Schwefel](#extension_5) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#fc6c00;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2152,7 +2554,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#fc6c00;">&nbsp;&nbs
 |  | [Öl](#cargo_OIL_) |
 
 
-<a name="industry_34"></a>
+<a name="industry_42"></a>
 ### Hafen
 
 <img src="port.png" alt="Hafen">
@@ -2163,7 +2565,7 @@ Im Set steigt die maximale Produktion von Häfen nach und nach immer weiter. Das
 
 Diese Industrie benötigt Extension: [Aluminium](#extension_0) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Farbindustrie](#extension_2) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Farbindustrie](#extension_2) [Koks und Schwefel](#extension_5) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#fc6c00;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2176,7 +2578,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#fc6c00;">&nbsp;&nbs
 |  | [Öl](#cargo_OIL_) |
 
 
-<a name="industry_35"></a>
+<a name="industry_43"></a>
 ### Hafen
 
 <img src="port.png" alt="Hafen">
@@ -2187,7 +2589,7 @@ Im Set steigt die maximale Produktion von Häfen nach und nach immer weiter. Das
 
 Diese Industrie benötigt Extension: [Farbindustrie](#extension_2) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Aluminium](#extension_0) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Aluminium](#extension_0) [Koks und Schwefel](#extension_5) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#fc6c00;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2200,7 +2602,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#fc6c00;">&nbsp;&nbs
 |  | [Öl](#cargo_OIL_) |
 
 
-<a name="industry_36"></a>
+<a name="industry_44"></a>
 ### Hafen
 
 <img src="port.png" alt="Hafen">
@@ -2210,6 +2612,8 @@ Häfen sind Handelszentren, und da die deutsche Wirtschaft schon immer Rohstoffe
 Im Set steigt die maximale Produktion von Häfen nach und nach immer weiter. Das simuliert die Tatsache, dass Schiffe immer größere werden und Innovationen wie die Einführugn von Containern die Menge der umgeschlagenen Güter verfielfachten. 
 
 Diese Industrie benötigt Extension: [Aluminium](#extension_0) [Farbindustrie](#extension_2) 
+
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Koks und Schwefel](#extension_5) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#fc6c00;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2223,7 +2627,103 @@ Farbe in der Übersichtskarte:<span style="background-color:#fc6c00;">&nbsp;&nbs
 |  | [Öl](#cargo_OIL_) |
 
 
-<a name="industry_37"></a>
+<a name="industry_45"></a>
+### Hafen
+
+<img src="port.png" alt="Hafen">
+
+Häfen sind Handelszentren, und da die deutsche Wirtschaft schon immer Rohstoffe importiert und zahlreiche Güter exportiert, sind Häfen natürlich auch in diesem Set vertreten. Die deutschen Häfen an Nord- und Ostsee spielten schon im Mittelalter eine wichtige Rolle, als Städte wie Hamburg und Lübeck über die Hanse wirtschaftliche und politische Macht besaßen. Heutzutage ist Hamburg noch immer der geschäftigste Hafen Deutschlands. 
+
+Im Set steigt die maximale Produktion von Häfen nach und nach immer weiter. Das simuliert die Tatsache, dass Schiffe immer größere werden und Innovationen wie die Einführugn von Containern die Menge der umgeschlagenen Güter verfielfachten. 
+
+Diese Industrie benötigt Extension: [Koks und Schwefel](#extension_5) 
+
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Aluminium](#extension_0) [Farbindustrie](#extension_2) 
+
+
+Farbe in der Übersichtskarte:<span style="background-color:#fc6c00;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+| Benötigt | Produziert |
+| -- | -- |
+| [Waren](#cargo_GOOD) | [Kohle](#cargo_COAL) |
+| [Fahrzeuge](#cargo_VEHI) | [Eisenerz](#cargo_IORE) |
+|  | [Öl](#cargo_OIL_) |
+|  | [Kupferkies](#cargo_PORE) |
+
+
+<a name="industry_46"></a>
+### Hafen
+
+<img src="port.png" alt="Hafen">
+
+Häfen sind Handelszentren, und da die deutsche Wirtschaft schon immer Rohstoffe importiert und zahlreiche Güter exportiert, sind Häfen natürlich auch in diesem Set vertreten. Die deutschen Häfen an Nord- und Ostsee spielten schon im Mittelalter eine wichtige Rolle, als Städte wie Hamburg und Lübeck über die Hanse wirtschaftliche und politische Macht besaßen. Heutzutage ist Hamburg noch immer der geschäftigste Hafen Deutschlands. 
+
+Im Set steigt die maximale Produktion von Häfen nach und nach immer weiter. Das simuliert die Tatsache, dass Schiffe immer größere werden und Innovationen wie die Einführugn von Containern die Menge der umgeschlagenen Güter verfielfachten. 
+
+Diese Industrie benötigt Extension: [Aluminium](#extension_0) [Koks und Schwefel](#extension_5) 
+
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Farbindustrie](#extension_2) 
+
+
+Farbe in der Übersichtskarte:<span style="background-color:#fc6c00;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+| Benötigt | Produziert |
+| -- | -- |
+| [Waren](#cargo_GOOD) | [Bauxit](#cargo_AORE) |
+| [Fahrzeuge](#cargo_VEHI) | [Kohle](#cargo_COAL) |
+|  | [Eisenerz](#cargo_IORE) |
+|  | [Öl](#cargo_OIL_) |
+|  | [Kupferkies](#cargo_PORE) |
+
+
+<a name="industry_47"></a>
+### Hafen
+
+<img src="port.png" alt="Hafen">
+
+Häfen sind Handelszentren, und da die deutsche Wirtschaft schon immer Rohstoffe importiert und zahlreiche Güter exportiert, sind Häfen natürlich auch in diesem Set vertreten. Die deutschen Häfen an Nord- und Ostsee spielten schon im Mittelalter eine wichtige Rolle, als Städte wie Hamburg und Lübeck über die Hanse wirtschaftliche und politische Macht besaßen. Heutzutage ist Hamburg noch immer der geschäftigste Hafen Deutschlands. 
+
+Im Set steigt die maximale Produktion von Häfen nach und nach immer weiter. Das simuliert die Tatsache, dass Schiffe immer größere werden und Innovationen wie die Einführugn von Containern die Menge der umgeschlagenen Güter verfielfachten. 
+
+Diese Industrie benötigt Extension: [Farbindustrie](#extension_2) [Koks und Schwefel](#extension_5) 
+
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Aluminium](#extension_0) 
+
+
+Farbe in der Übersichtskarte:<span style="background-color:#fc6c00;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+| Benötigt | Produziert |
+| -- | -- |
+| [Waren](#cargo_GOOD) | [Kohle](#cargo_COAL) |
+| [Fahrzeuge](#cargo_VEHI) | [Eisenerz](#cargo_IORE) |
+|  | [Öl](#cargo_OIL_) |
+|  | [Kupferkies](#cargo_PORE) |
+
+
+<a name="industry_48"></a>
+### Hafen
+
+<img src="port.png" alt="Hafen">
+
+Häfen sind Handelszentren, und da die deutsche Wirtschaft schon immer Rohstoffe importiert und zahlreiche Güter exportiert, sind Häfen natürlich auch in diesem Set vertreten. Die deutschen Häfen an Nord- und Ostsee spielten schon im Mittelalter eine wichtige Rolle, als Städte wie Hamburg und Lübeck über die Hanse wirtschaftliche und politische Macht besaßen. Heutzutage ist Hamburg noch immer der geschäftigste Hafen Deutschlands. 
+
+Im Set steigt die maximale Produktion von Häfen nach und nach immer weiter. Das simuliert die Tatsache, dass Schiffe immer größere werden und Innovationen wie die Einführugn von Containern die Menge der umgeschlagenen Güter verfielfachten. 
+
+Diese Industrie benötigt Extension: [Aluminium](#extension_0) [Farbindustrie](#extension_2) [Koks und Schwefel](#extension_5) 
+
+
+Farbe in der Übersichtskarte:<span style="background-color:#fc6c00;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+| Benötigt | Produziert |
+| -- | -- |
+| [Waren](#cargo_GOOD) | [Bauxit](#cargo_AORE) |
+| [Fahrzeuge](#cargo_VEHI) | [Kohle](#cargo_COAL) |
+|  | [Eisenerz](#cargo_IORE) |
+|  | [Öl](#cargo_OIL_) |
+|  | [Kupferkies](#cargo_PORE) |
+
+
+<a name="industry_49"></a>
 ### Hotel
 
 <img src="hotel.png" alt="Hotel">
@@ -2241,14 +2741,14 @@ Farbe in der Übersichtskarte:<span style="background-color:#508ca0;">&nbsp;&nbs
 | [Passagiere](#cargo_PASS) |  |
 
 
-<a name="industry_38"></a>
+<a name="industry_50"></a>
 ### Hydrierwerk
 
 <img src="coal_liquefaction_plant.png" alt="Hydrierwerk">
 
 Die Herstellung von Treibstoffen durch die Hydrierung von Kohle war eine Spezialität der deutschen Chemiegeschichte. Da Deutschland keine eigenen Ölvorkommen in relevanter Größe besitzt, war man nach dem ersten Weltkrieg bestrebt, Treibstoffe aus heimischer Kohle zu erzeugen. Der erste derartig erzeugte Kraftstoff war das sogenannte Leuna-Benzin, benannt nach dem Standort der Anlage. Für Nazideutschland waren die Anlagen kriegswichtig und wurden entsprechend staatlich gefördert. Nach Kriegsende schwand die Bedeutung des Verfahrens, da Treibstoffe einfacher und billiger aus verfügbarem Erdöl gewonnen werden können. Allerdings steigt im 21. Jahrhundert die Bedeutung des Verfahrens in vielen Ländern wieder, um der Abhängigkeit von importiertem Erdöl entgegenzuwirken. 
 
-Diese Industrie benötigt Extension: [Organische Chemie](#extension_6) 
+Diese Industrie benötigt Extension: [Organische Chemie](#extension_7) 
 
 Industry ist erst ab 1930 verfügbar.
 Diese Beschränkung betrifft auch das Finanzieren der Industrie.
@@ -2260,7 +2760,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#cccca8;">&nbsp;&nbs
 | [Kohle](#cargo_COAL) | [Treibstoff](#cargo_PETR) |
 
 
-<a name="industry_39"></a>
+<a name="industry_51"></a>
 ### Integriertes Stahlwerk
 
 <img src="integrated_steel_mill.png" alt="Integriertes Stahlwerk">
@@ -2269,7 +2769,7 @@ Die Stahlproduktion war einer der Kernfaktoren der Industrialisierung im 19. Jah
 
 Es gibt verschiedene Varianten von Stahlwerken auf Basis unterschiedlicher Prozesse, das Set modelliert aber nur ein modernes hochintegriertes Hüttenwerk. Die verschiedenen Schritte der Stahlerzeugung aus Eisenerz, angefangen mit geschmolzenem Roheisen aus dem Hochofen, finden alle innerhalb des Stahlwerks statt und sind daher für ein Transportspiel nicht relevant. 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Glas](#extension_3) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Glas](#extension_3) [Koks und Schwefel](#extension_5) 
 
 Industry ist erst ab 1800 verfügbar.
 Diese Beschränkung betrifft auch das Finanzieren der Industrie.
@@ -2282,7 +2782,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#949594;">&nbsp;&nbs
 | [Eisenerz](#cargo_IORE) |  |
 
 
-<a name="industry_40"></a>
+<a name="industry_52"></a>
 ### Integriertes Stahlwerk
 
 <img src="integrated_steel_mill.png" alt="Integriertes Stahlwerk">
@@ -2292,6 +2792,8 @@ Die Stahlproduktion war einer der Kernfaktoren der Industrialisierung im 19. Jah
 Es gibt verschiedene Varianten von Stahlwerken auf Basis unterschiedlicher Prozesse, das Set modelliert aber nur ein modernes hochintegriertes Hüttenwerk. Die verschiedenen Schritte der Stahlerzeugung aus Eisenerz, angefangen mit geschmolzenem Roheisen aus dem Hochofen, finden alle innerhalb des Stahlwerks statt und sind daher für ein Transportspiel nicht relevant. 
 
 Diese Industrie benötigt Extension: [Glas](#extension_3) 
+
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Koks und Schwefel](#extension_5) 
 
 Industry ist erst ab 1800 verfügbar.
 Diese Beschränkung betrifft auch das Finanzieren der Industrie.
@@ -2305,14 +2807,63 @@ Farbe in der Übersichtskarte:<span style="background-color:#949594;">&nbsp;&nbs
 | [Branntkalk](#cargo_QLME) |  |
 
 
-<a name="industry_41"></a>
-### Kalkofen
+<a name="industry_53"></a>
+### Integriertes Stahlwerk
 
-<img src="lime_kiln.png" alt="Kalkofen">
+<img src="integrated_steel_mill.png" alt="Integriertes Stahlwerk">
+
+Die Stahlproduktion war einer der Kernfaktoren der Industrialisierung im 19. Jahrhundert, insbesondere im Zusammenhang mit der Entwicklung der Eisenbahn. In Deutschland hatte die Stahlindustrie ihre Zentren im Ruhrgebiet und im Saarland, wo ausreichend Kohle verfügbar war, während das Eisenerz importiert wurde. Heutzutage ist die Stahlproduktion noch immer relevant, das Eisenerz wird von den Häfen an der Nordsee zu den Stahlwerken im Ruhrgebiet und in Niedersachsen transportiert. 
+
+Es gibt verschiedene Varianten von Stahlwerken auf Basis unterschiedlicher Prozesse, das Set modelliert aber nur ein modernes hochintegriertes Hüttenwerk. Die verschiedenen Schritte der Stahlerzeugung aus Eisenerz, angefangen mit geschmolzenem Roheisen aus dem Hochofen, finden alle innerhalb des Stahlwerks statt und sind daher für ein Transportspiel nicht relevant. 
+
+Diese Industrie benötigt Extension: [Koks und Schwefel](#extension_5) 
+
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Glas](#extension_3) 
+
+Industry ist erst ab 1800 verfügbar.
+Diese Beschränkung betrifft auch das Finanzieren der Industrie.
+
+Farbe in der Übersichtskarte:<span style="background-color:#949594;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+| Benötigt | Produziert |
+| -- | -- |
+| [Koks](#cargo_COKE) | [Stahl](#cargo_STEL) |
+| [Eisenerz](#cargo_IORE) |  |
+
+
+<a name="industry_54"></a>
+### Integriertes Stahlwerk
+
+<img src="integrated_steel_mill.png" alt="Integriertes Stahlwerk">
+
+Die Stahlproduktion war einer der Kernfaktoren der Industrialisierung im 19. Jahrhundert, insbesondere im Zusammenhang mit der Entwicklung der Eisenbahn. In Deutschland hatte die Stahlindustrie ihre Zentren im Ruhrgebiet und im Saarland, wo ausreichend Kohle verfügbar war, während das Eisenerz importiert wurde. Heutzutage ist die Stahlproduktion noch immer relevant, das Eisenerz wird von den Häfen an der Nordsee zu den Stahlwerken im Ruhrgebiet und in Niedersachsen transportiert. 
+
+Es gibt verschiedene Varianten von Stahlwerken auf Basis unterschiedlicher Prozesse, das Set modelliert aber nur ein modernes hochintegriertes Hüttenwerk. Die verschiedenen Schritte der Stahlerzeugung aus Eisenerz, angefangen mit geschmolzenem Roheisen aus dem Hochofen, finden alle innerhalb des Stahlwerks statt und sind daher für ein Transportspiel nicht relevant. 
+
+Diese Industrie benötigt Extension: [Glas](#extension_3) [Koks und Schwefel](#extension_5) 
+
+Industry ist erst ab 1800 verfügbar.
+Diese Beschränkung betrifft auch das Finanzieren der Industrie.
+
+Farbe in der Übersichtskarte:<span style="background-color:#949594;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+| Benötigt | Produziert |
+| -- | -- |
+| [Koks](#cargo_COKE) | [Stahl](#cargo_STEL) |
+| [Eisenerz](#cargo_IORE) |  |
+| [Branntkalk](#cargo_QLME) |  |
+
+
+<a name="industry_55"></a>
+### Kalkbrennerei
+
+<img src="lime_kiln.png" alt="Kalkbrennerei">
 
 In Kalkofen wird für den Prozess der Kalzinierung von Kalkstein genutzt. Diese Reaktion erzeugt Branntkalk, chemisch gesehen wird Calciumcarbonat zu Calciumoxid umgesetzt. Dabei wird der Kalkstein nicht verbrannt, sondern lediglich großer Hitze ausgesetzt. Der Prozess ist seit Jahrtausenden bekannt, und Branntkalk wird seit Ewigkeiten zur Herstellung von Zement verwendet. Der Ofen wird üblicherweise durch das Verbrennen fossiler Brennstoffe erhitzt, was den ohnehin unvermeidlichen Kohlendioxidausstoß weiter erhöht. 
 
 Diese Industrie benötigt Extension: [Glas](#extension_3) 
+
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Koks und Schwefel](#extension_5) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#8c68fc;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2322,7 +2873,25 @@ Farbe in der Übersichtskarte:<span style="background-color:#8c68fc;">&nbsp;&nbs
 | [Kalkstein](#cargo_LIME) | [Branntkalk](#cargo_QLME) |
 
 
-<a name="industry_42"></a>
+<a name="industry_56"></a>
+### Kalkbrennerei
+
+<img src="lime_kiln.png" alt="Kalkbrennerei">
+
+In Kalkofen wird für den Prozess der Kalzinierung von Kalkstein genutzt. Diese Reaktion erzeugt Branntkalk, chemisch gesehen wird Calciumcarbonat zu Calciumoxid umgesetzt. Dabei wird der Kalkstein nicht verbrannt, sondern lediglich großer Hitze ausgesetzt. Der Prozess ist seit Jahrtausenden bekannt, und Branntkalk wird seit Ewigkeiten zur Herstellung von Zement verwendet. Der Ofen wird üblicherweise durch das Verbrennen fossiler Brennstoffe erhitzt, was den ohnehin unvermeidlichen Kohlendioxidausstoß weiter erhöht. 
+
+Diese Industrie benötigt Extension: [Glas](#extension_3) [Koks und Schwefel](#extension_5) 
+
+
+Farbe in der Übersichtskarte:<span style="background-color:#8c68fc;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+| Benötigt | Produziert |
+| -- | -- |
+| [Koks](#cargo_COKE) | [Branntkalk](#cargo_QLME) |
+| [Kalkstein](#cargo_LIME) |  |
+
+
+<a name="industry_57"></a>
 ### Kalksteinbergwerk
 
 <img src="limestone_mine.png" alt="Kalksteinbergwerk">
@@ -2343,7 +2912,7 @@ Die Industrie wird mit endlichen Ressourcen generiert und schließt sobald diese
 |  | [Kalkstein](#cargo_LIME) |
 
 
-<a name="industry_43"></a>
+<a name="industry_58"></a>
 ### Kaufhaus
 
 <img src="department_store.png" alt="Kaufhaus">
@@ -2358,7 +2927,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#fcf4ec;">&nbsp;&nbs
 | [Waren](#cargo_GOOD) |  |
 
 
-<a name="industry_44"></a>
+<a name="industry_59"></a>
 ### Kohlebergwerk
 
 <img src="coal_mine.png" alt="Kohlebergwerk">
@@ -2379,12 +2948,34 @@ Die Industrie wird mit endlichen Ressourcen generiert und schließt sobald diese
 |  | [Kohle](#cargo_COAL) |
 
 
-<a name="industry_45"></a>
+<a name="industry_60"></a>
+### Kokerei
+
+<img src="coke_oven.png" alt="Kokerei">
+
+Kohle enthält einen gewissen Anteil an Schwefel, der beim Verbrennen frei wird und dann, je nach Verwendungszweck, Probleme verursachen kann. So hat er negativen Einfluss auf die Qualität von Roheisen im Rahmen der Stahlproduktion. Die Lösung ist die Aufwertung von Kohle zu Koks, bei der der Schwefel entfernt wird und hochreiner Kohlenstoff über bleibt. Früher gab es in Deutschland eine ganze Reiher Kokereien, die nicht nur Koks herstellten, sondern als Nebenprodukte auch Schwefel und andere Chemikalien produzieren. Heutzutage sind aufgrund des Strukturwandels seit den 70er Jahren nur noch eine Handvoll Kokereien im Ruhrgebiet in Betrieb. 
+
+Diese Industrie benötigt Extension: [Koks und Schwefel](#extension_5) 
+
+Industry ist erst ab 1800 verfügbar.
+Diese Beschränkung betrifft auch das Finanzieren der Industrie.
+
+Farbe in der Übersichtskarte:<span style="background-color:#444c5c;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+| Benötigt | Produziert |
+| -- | -- |
+| [Kohle](#cargo_COAL) | [Koks](#cargo_COKE) |
+|  | [Schwefel](#cargo_SULP) |
+
+
+<a name="industry_61"></a>
 ### Kraftwerk
 
 <img src="power_plant.png" alt="Kraftwerk">
 
 Kraftwerke erzeugen elektrischen Strom, üblicherweise indem sie Wasser kochen und mit dem Wasserdampf Turbinen antreiben, die wiederum mit Generatoren gekuppelt sind. Das gleiche Prinzip wird auch in Atomkraftwerken angewandt, während Wasserkraftwerke das Wasser direkt auf die Turbinen leiten. Da es im Spiel um den Transport von Frachten geht, konzentriert sich das Set auf fossile Energien und den Transport von Kohle und Öl. 
+
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Koks und Schwefel](#extension_5) 
 
 Industry ist erst ab 1880 verfügbar.
 Diese Beschränkung betrifft auch das Finanzieren der Industrie.
@@ -2399,14 +2990,36 @@ Industrie produziert elektrischen Strom. Siehe [Elektrizität](#electricity).
 | [Öl](#cargo_OIL_) |  |
 
 
-<a name="industry_46"></a>
+<a name="industry_62"></a>
+### Kraftwerk
+
+<img src="power_plant.png" alt="Kraftwerk">
+
+Kraftwerke erzeugen elektrischen Strom, üblicherweise indem sie Wasser kochen und mit dem Wasserdampf Turbinen antreiben, die wiederum mit Generatoren gekuppelt sind. Das gleiche Prinzip wird auch in Atomkraftwerken angewandt, während Wasserkraftwerke das Wasser direkt auf die Turbinen leiten. Da es im Spiel um den Transport von Frachten geht, konzentriert sich das Set auf fossile Energien und den Transport von Kohle und Öl. 
+
+Diese Industrie benötigt Extension: [Koks und Schwefel](#extension_5) 
+
+Industry ist erst ab 1880 verfügbar.
+Diese Beschränkung betrifft auch das Finanzieren der Industrie.
+
+Farbe in der Übersichtskarte:<span style="background-color:#fc0000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+Industrie produziert elektrischen Strom. Siehe [Elektrizität](#electricity).
+
+| Benötigt | Produziert |
+| -- | -- |
+| [Kohle](#cargo_COAL) | [Schwefel](#cargo_SULP) |
+| [Öl](#cargo_OIL_) |  |
+
+
+<a name="industry_63"></a>
 ### Kunststofffabrik
 
 <img src="plastics_plant.png" alt="Kunststofffabrik">
 
 Kunststoffe umfassen alle Arten von künstlich hergestellten Materialien wie PVC oder Polyethylen. In Deutschland begann die Kunststoffproduktion mit künstlichem Kautschuk unter dem Namen Buna in den 1930er Jahren. Die Buna-Werke in Schkopau existieren noch heute und produzieren nach wie vor, gehören allerdings inzwischen zu Dow Chemical. BASF, einer der größten Chemiekonzerne der Welt, entwickelte im Verlauf des 20. Jahrhunderts ebenfalls verschiedene Arten von Kunststoffen. 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Grundlegende Anorganische Chemie](#extension_4) [Farbindustrie](#extension_2) [Organische Chemie](#extension_6) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Grundlegende Anorganische Chemie](#extension_4) [Farbindustrie](#extension_2) [Organische Chemie](#extension_7) 
 
 Industry ist erst ab 1930 verfügbar.
 Diese Beschränkung betrifft auch das Finanzieren der Industrie.
@@ -2418,7 +3031,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#fcc000;">&nbsp;&nbs
 | [Öl](#cargo_OIL_) | [Kunststoffe](#cargo_PLAS) |
 
 
-<a name="industry_47"></a>
+<a name="industry_64"></a>
 ### Kunststofffabrik
 
 <img src="plastics_plant.png" alt="Kunststofffabrik">
@@ -2427,7 +3040,7 @@ Kunststoffe umfassen alle Arten von künstlich hergestellten Materialien wie PVC
 
 Diese Industrie benötigt Extension: [Grundlegende Anorganische Chemie](#extension_4) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Farbindustrie](#extension_2) [Organische Chemie](#extension_6) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Farbindustrie](#extension_2) [Organische Chemie](#extension_7) 
 
 Industry ist erst ab 1930 verfügbar.
 Diese Beschränkung betrifft auch das Finanzieren der Industrie.
@@ -2440,7 +3053,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#fcc000;">&nbsp;&nbs
 | [Öl](#cargo_OIL_) |  |
 
 
-<a name="industry_48"></a>
+<a name="industry_65"></a>
 ### Kunststofffabrik
 
 <img src="plastics_plant.png" alt="Kunststofffabrik">
@@ -2449,7 +3062,7 @@ Kunststoffe umfassen alle Arten von künstlich hergestellten Materialien wie PVC
 
 Diese Industrie benötigt Extension: [Farbindustrie](#extension_2) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Grundlegende Anorganische Chemie](#extension_4) [Organische Chemie](#extension_6) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Grundlegende Anorganische Chemie](#extension_4) [Organische Chemie](#extension_7) 
 
 Industry ist erst ab 1930 verfügbar.
 Diese Beschränkung betrifft auch das Finanzieren der Industrie.
@@ -2462,7 +3075,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#fcc000;">&nbsp;&nbs
 | [Öl](#cargo_OIL_) |  |
 
 
-<a name="industry_49"></a>
+<a name="industry_66"></a>
 ### Kunststofffabrik
 
 <img src="plastics_plant.png" alt="Kunststofffabrik">
@@ -2471,7 +3084,7 @@ Kunststoffe umfassen alle Arten von künstlich hergestellten Materialien wie PVC
 
 Diese Industrie benötigt Extension: [Grundlegende Anorganische Chemie](#extension_4) [Farbindustrie](#extension_2) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Organische Chemie](#extension_6) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Organische Chemie](#extension_7) 
 
 Industry ist erst ab 1930 verfügbar.
 Diese Beschränkung betrifft auch das Finanzieren der Industrie.
@@ -2485,14 +3098,14 @@ Farbe in der Übersichtskarte:<span style="background-color:#fcc000;">&nbsp;&nbs
 | [Öl](#cargo_OIL_) |  |
 
 
-<a name="industry_50"></a>
+<a name="industry_67"></a>
 ### Kunststofffabrik
 
 <img src="plastics_plant.png" alt="Kunststofffabrik">
 
 Kunststoffe umfassen alle Arten von künstlich hergestellten Materialien wie PVC oder Polyethylen. In Deutschland begann die Kunststoffproduktion mit künstlichem Kautschuk unter dem Namen Buna in den 1930er Jahren. Die Buna-Werke in Schkopau existieren noch heute und produzieren nach wie vor, gehören allerdings inzwischen zu Dow Chemical. BASF, einer der größten Chemiekonzerne der Welt, entwickelte im Verlauf des 20. Jahrhunderts ebenfalls verschiedene Arten von Kunststoffen. 
 
-Diese Industrie benötigt Extension: [Organische Chemie](#extension_6) 
+Diese Industrie benötigt Extension: [Organische Chemie](#extension_7) 
 
 Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Grundlegende Anorganische Chemie](#extension_4) [Farbindustrie](#extension_2) 
 
@@ -2506,14 +3119,14 @@ Farbe in der Übersichtskarte:<span style="background-color:#fcc000;">&nbsp;&nbs
 |  | [Kunststoffe](#cargo_PLAS) |
 
 
-<a name="industry_51"></a>
+<a name="industry_68"></a>
 ### Kunststofffabrik
 
 <img src="plastics_plant.png" alt="Kunststofffabrik">
 
 Kunststoffe umfassen alle Arten von künstlich hergestellten Materialien wie PVC oder Polyethylen. In Deutschland begann die Kunststoffproduktion mit künstlichem Kautschuk unter dem Namen Buna in den 1930er Jahren. Die Buna-Werke in Schkopau existieren noch heute und produzieren nach wie vor, gehören allerdings inzwischen zu Dow Chemical. BASF, einer der größten Chemiekonzerne der Welt, entwickelte im Verlauf des 20. Jahrhunderts ebenfalls verschiedene Arten von Kunststoffen. 
 
-Diese Industrie benötigt Extension: [Grundlegende Anorganische Chemie](#extension_4) [Organische Chemie](#extension_6) 
+Diese Industrie benötigt Extension: [Grundlegende Anorganische Chemie](#extension_4) [Organische Chemie](#extension_7) 
 
 Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Farbindustrie](#extension_2) 
 
@@ -2527,14 +3140,14 @@ Farbe in der Übersichtskarte:<span style="background-color:#fcc000;">&nbsp;&nbs
 | [Chlor](#cargo_CHLO) | [Kunststoffe](#cargo_PLAS) |
 
 
-<a name="industry_52"></a>
+<a name="industry_69"></a>
 ### Kunststofffabrik
 
 <img src="plastics_plant.png" alt="Kunststofffabrik">
 
 Kunststoffe umfassen alle Arten von künstlich hergestellten Materialien wie PVC oder Polyethylen. In Deutschland begann die Kunststoffproduktion mit künstlichem Kautschuk unter dem Namen Buna in den 1930er Jahren. Die Buna-Werke in Schkopau existieren noch heute und produzieren nach wie vor, gehören allerdings inzwischen zu Dow Chemical. BASF, einer der größten Chemiekonzerne der Welt, entwickelte im Verlauf des 20. Jahrhunderts ebenfalls verschiedene Arten von Kunststoffen. 
 
-Diese Industrie benötigt Extension: [Farbindustrie](#extension_2) [Organische Chemie](#extension_6) 
+Diese Industrie benötigt Extension: [Farbindustrie](#extension_2) [Organische Chemie](#extension_7) 
 
 Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Grundlegende Anorganische Chemie](#extension_4) 
 
@@ -2548,14 +3161,14 @@ Farbe in der Übersichtskarte:<span style="background-color:#fcc000;">&nbsp;&nbs
 | [Farbe](#cargo_COAT) | [Kunststoffe](#cargo_PLAS) |
 
 
-<a name="industry_53"></a>
+<a name="industry_70"></a>
 ### Kunststofffabrik
 
 <img src="plastics_plant.png" alt="Kunststofffabrik">
 
 Kunststoffe umfassen alle Arten von künstlich hergestellten Materialien wie PVC oder Polyethylen. In Deutschland begann die Kunststoffproduktion mit künstlichem Kautschuk unter dem Namen Buna in den 1930er Jahren. Die Buna-Werke in Schkopau existieren noch heute und produzieren nach wie vor, gehören allerdings inzwischen zu Dow Chemical. BASF, einer der größten Chemiekonzerne der Welt, entwickelte im Verlauf des 20. Jahrhunderts ebenfalls verschiedene Arten von Kunststoffen. 
 
-Diese Industrie benötigt Extension: [Grundlegende Anorganische Chemie](#extension_4) [Farbindustrie](#extension_2) [Organische Chemie](#extension_6) 
+Diese Industrie benötigt Extension: [Grundlegende Anorganische Chemie](#extension_4) [Farbindustrie](#extension_2) [Organische Chemie](#extension_7) 
 
 Industry ist erst ab 1930 verfügbar.
 Diese Beschränkung betrifft auch das Finanzieren der Industrie.
@@ -2568,7 +3181,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#fcc000;">&nbsp;&nbs
 | [Farbe](#cargo_COAT) |  |
 
 
-<a name="industry_54"></a>
+<a name="industry_71"></a>
 ### Kupfererzbergwerk
 
 <img src="copper_ore_mine.png" alt="Kupfererzbergwerk">
@@ -2576,6 +3189,8 @@ Farbe in der Übersichtskarte:<span style="background-color:#fcc000;">&nbsp;&nbs
 Kupfererze wurden schon seit dem Altertum abgebaut. Im Set sind die Bergwerke, wie alle anderen Bergwerke auch, erst später verfügbar, da man ohne mechanische Unterstützung nicht im großen Maßstab Bergbau betreiben kann. In Europa gab es nur wenige Erzlagerstäten. Kupfererz wurde in Mitteldeutschland abgebaut, aber die Vorräte waren bereits vor Beginn der industriellen Revolution erschöpft. Die letzten Kupfererzbergwerke waren noch bis Mitte des 20. Jahrhunderts in Betrieb, was jedoch gerade in Ostdeutschland politische Gründe hatte, denn man hatte keinen Zugang zum Kupferweltmarkt. Heute wird Kupfererz importiert, während das Recycling von Kupferschrott eine wachsende Bedeutung hat. 
 
 Diese Industrie benötigt Extension: [Farbindustrie](#extension_2) 
+
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Koks und Schwefel](#extension_5) 
 
 Industry ist nur von 1800 bis 1930 verfügbar.
 Diese Beschränkung betrifft auch das Finanzieren der Industrie.
@@ -2589,7 +3204,28 @@ Die Industrie wird mit endlichen Ressourcen generiert und schließt sobald diese
 |  | [Kupfererz](#cargo_CORE) |
 
 
-<a name="industry_55"></a>
+<a name="industry_72"></a>
+### Kupfererzbergwerk
+
+<img src="copper_ore_mine.png" alt="Kupfererzbergwerk">
+
+Kupfererze wurden schon seit dem Altertum abgebaut. Im Set sind die Bergwerke, wie alle anderen Bergwerke auch, erst später verfügbar, da man ohne mechanische Unterstützung nicht im großen Maßstab Bergbau betreiben kann. In Europa gab es nur wenige Erzlagerstäten. Kupfererz wurde in Mitteldeutschland abgebaut, aber die Vorräte waren bereits vor Beginn der industriellen Revolution erschöpft. Die letzten Kupfererzbergwerke waren noch bis Mitte des 20. Jahrhunderts in Betrieb, was jedoch gerade in Ostdeutschland politische Gründe hatte, denn man hatte keinen Zugang zum Kupferweltmarkt. Heute wird Kupfererz importiert, während das Recycling von Kupferschrott eine wachsende Bedeutung hat. 
+
+Diese Industrie benötigt Extension: [Farbindustrie](#extension_2) [Koks und Schwefel](#extension_5) 
+
+Industry ist nur von 1800 bis 1930 verfügbar.
+Diese Beschränkung betrifft auch das Finanzieren der Industrie.
+
+Farbe in der Übersichtskarte:<span style="background-color:#501c04;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+Die Industrie wird mit endlichen Ressourcen generiert und schließt sobald diese erschöpft sind. Siehe [Ressourcen](#resource_depletion).
+
+| Benötigt | Produziert |
+| -- | -- |
+|  | [Kupferkies](#cargo_PORE) |
+
+
+<a name="industry_73"></a>
 ### Kupferhütte
 
 <img src="copper_smelter.png" alt="Kupferhütte">
@@ -2597,6 +3233,8 @@ Die Industrie wird mit endlichen Ressourcen generiert und schließt sobald diese
 Die Erzeugung von Kupfer aus Kupfererz ist ein energieintensiver Prozess auf Basis von Elektrolyse. Nebenprodukte sind weitere Metallerze sowie Schwefel, je nach Qualität des verwendeten Kupfererzes. Im Set wird davon ausgegangen, dass Kupfererz hoher Qualität verwendet wird, während schwefelreiche Erze Teil einer anderen Erweiterung sind. Der größte Kupferproduzent Europas ist in Hamburg ansässig und erzeugt dort Kupfer aus importiertem Erz und aus Metallschrott. 
 
 Diese Industrie benötigt Extension: [Farbindustrie](#extension_2) 
+
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Koks und Schwefel](#extension_5) 
 
 Industry ist erst ab 1900 verfügbar.
 Diese Beschränkung betrifft auch das Finanzieren der Industrie.
@@ -2610,7 +3248,29 @@ Industrie elektrischen Strom zur Production. Siehe [Elektrizität](#electricity)
 | [Kupfererz](#cargo_CORE) | [Kupfer](#cargo_COPR) |
 
 
-<a name="industry_56"></a>
+<a name="industry_74"></a>
+### Kupferhütte
+
+<img src="copper_smelter.png" alt="Kupferhütte">
+
+Die Erzeugung von Kupfer aus Kupfererz ist ein energieintensiver Prozess auf Basis von Elektrolyse. Nebenprodukte sind weitere Metallerze sowie Schwefel, je nach Qualität des verwendeten Kupfererzes. Im Set wird davon ausgegangen, dass Kupfererz hoher Qualität verwendet wird, während schwefelreiche Erze Teil einer anderen Erweiterung sind. Der größte Kupferproduzent Europas ist in Hamburg ansässig und erzeugt dort Kupfer aus importiertem Erz und aus Metallschrott. 
+
+Diese Industrie benötigt Extension: [Farbindustrie](#extension_2) [Koks und Schwefel](#extension_5) 
+
+Industry ist erst ab 1900 verfügbar.
+Diese Beschränkung betrifft auch das Finanzieren der Industrie.
+
+Farbe in der Übersichtskarte:<span style="background-color:#8c4c40;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+Industrie elektrischen Strom zur Production. Siehe [Elektrizität](#electricity).
+
+| Benötigt | Produziert |
+| -- | -- |
+| [Säure](#cargo_ACID) | [Kupfer](#cargo_COPR) |
+| [Kupfererz](#cargo_CORE) |  |
+
+
+<a name="industry_75"></a>
 ### Laden
 
 <img src="general_store.png" alt="Laden">
@@ -2625,16 +3285,16 @@ Farbe in der Übersichtskarte:<span style="background-color:#fcd8c8;">&nbsp;&nbs
 | [Nahrungsmittel](#cargo_FOOD) |  |
 
 
-<a name="industry_57"></a>
+<a name="industry_76"></a>
 ### Molkerei
 
 <img src="dairy.png" alt="Molkerei">
 
 Eine Molkerei ist ein Betrieb, der Milchprodukte wie Butter und Käse herstellt. Die Milch wiederum stammt aus Viehzuchtbetrieben. 
 
-Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_5) 
+Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_6) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Grundlegende Anorganische Chemie](#extension_4) [Verpackungsmittelindustrie](#extension_9) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Grundlegende Anorganische Chemie](#extension_4) [Verpackungsmittelindustrie](#extension_10) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#fcd898;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2644,16 +3304,16 @@ Farbe in der Übersichtskarte:<span style="background-color:#fcd898;">&nbsp;&nbs
 | [Milch](#cargo_MILK) | [Nahrungsmittel](#cargo_FOOD) |
 
 
-<a name="industry_58"></a>
+<a name="industry_77"></a>
 ### Molkerei
 
 <img src="dairy.png" alt="Molkerei">
 
 Eine Molkerei ist ein Betrieb, der Milchprodukte wie Butter und Käse herstellt. Die Milch wiederum stammt aus Viehzuchtbetrieben. 
 
-Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_5) [Grundlegende Anorganische Chemie](#extension_4) 
+Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_6) [Grundlegende Anorganische Chemie](#extension_4) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Verpackungsmittelindustrie](#extension_9) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Verpackungsmittelindustrie](#extension_10) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#fcd898;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2666,14 +3326,14 @@ Industrie benötigt die in schwarz dargestellten Rohmaterialien zur Produktion. 
 | [Milch](#cargo_MILK) |  |
 
 
-<a name="industry_59"></a>
+<a name="industry_78"></a>
 ### Molkerei
 
 <img src="dairy.png" alt="Molkerei">
 
 Eine Molkerei ist ein Betrieb, der Milchprodukte wie Butter und Käse herstellt. Die Milch wiederum stammt aus Viehzuchtbetrieben. 
 
-Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_5) [Verpackungsmittelindustrie](#extension_9) 
+Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_6) [Verpackungsmittelindustrie](#extension_10) 
 
 Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Grundlegende Anorganische Chemie](#extension_4) 
 
@@ -2688,14 +3348,14 @@ Industrie benötigt die in schwarz dargestellten Rohmaterialien zur Produktion. 
 | [Verpackungen](#cargo_MNSP) |  |
 
 
-<a name="industry_60"></a>
+<a name="industry_79"></a>
 ### Molkerei
 
 <img src="dairy.png" alt="Molkerei">
 
 Eine Molkerei ist ein Betrieb, der Milchprodukte wie Butter und Käse herstellt. Die Milch wiederum stammt aus Viehzuchtbetrieben. 
 
-Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_5) [Grundlegende Anorganische Chemie](#extension_4) [Verpackungsmittelindustrie](#extension_9) 
+Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_6) [Grundlegende Anorganische Chemie](#extension_4) [Verpackungsmittelindustrie](#extension_10) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#fcd898;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2709,16 +3369,16 @@ Industrie benötigt die in schwarz dargestellten Rohmaterialien zur Produktion. 
 | [Verpackungen](#cargo_MNSP) |  |
 
 
-<a name="industry_61"></a>
+<a name="industry_80"></a>
 ### Möbelfabrik
 
 <img src="furniture_factory.png" alt="Möbelfabrik">
 
 Deutschland hat eine vergleichsweise große Möbelindustrie, wobei IKEA der Marktführer ist. In aller Regel werden Möbel von spezialisierten Händlern vertrieben, die zahllose Möbelgeschäfte im ganzen Land betreiben. Die klassische Möbelherstellung durch Tischler hat hingegen kaum noch eine Relevanz. 
 
-Diese Industrie benötigt Extension: [Textilindustrie](#extension_8) 
+Diese Industrie benötigt Extension: [Textilindustrie](#extension_9) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Verpackungsmittelindustrie](#extension_9) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Verpackungsmittelindustrie](#extension_10) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#a888e0;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2732,14 +3392,14 @@ Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar is
 | [Schnittholz](#cargo_WDPR) |  |
 
 
-<a name="industry_62"></a>
+<a name="industry_81"></a>
 ### Möbelfabrik
 
 <img src="furniture_factory.png" alt="Möbelfabrik">
 
 Deutschland hat eine vergleichsweise große Möbelindustrie, wobei IKEA der Marktführer ist. In aller Regel werden Möbel von spezialisierten Händlern vertrieben, die zahllose Möbelgeschäfte im ganzen Land betreiben. Die klassische Möbelherstellung durch Tischler hat hingegen kaum noch eine Relevanz. 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Textilindustrie](#extension_8) [Verpackungsmittelindustrie](#extension_9) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Textilindustrie](#extension_9) [Verpackungsmittelindustrie](#extension_10) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#a888e0;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2752,14 +3412,14 @@ Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar is
 | [Schnittholz](#cargo_WDPR) |  |
 
 
-<a name="industry_63"></a>
+<a name="industry_82"></a>
 ### Möbelfabrik
 
 <img src="furniture_factory.png" alt="Möbelfabrik">
 
 Deutschland hat eine vergleichsweise große Möbelindustrie, wobei IKEA der Marktführer ist. In aller Regel werden Möbel von spezialisierten Händlern vertrieben, die zahllose Möbelgeschäfte im ganzen Land betreiben. Die klassische Möbelherstellung durch Tischler hat hingegen kaum noch eine Relevanz. 
 
-Diese Industrie benötigt Extension: [Textilindustrie](#extension_8) [Verpackungsmittelindustrie](#extension_9) 
+Diese Industrie benötigt Extension: [Textilindustrie](#extension_9) [Verpackungsmittelindustrie](#extension_10) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#a888e0;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2774,16 +3434,16 @@ Industrie benötigt wenigstens eine der in schwarz dargestellten Rohmaterialien 
 | [Schnittholz](#cargo_WDPR) |  |
 
 
-<a name="industry_64"></a>
+<a name="industry_83"></a>
 ### Möbelfabrik
 
 <img src="furniture_factory.png" alt="Möbelfabrik">
 
 Deutschland hat eine vergleichsweise große Möbelindustrie, wobei IKEA der Marktführer ist. In aller Regel werden Möbel von spezialisierten Händlern vertrieben, die zahllose Möbelgeschäfte im ganzen Land betreiben. Die klassische Möbelherstellung durch Tischler hat hingegen kaum noch eine Relevanz. 
 
-Diese Industrie benötigt Extension: [Verpackungsmittelindustrie](#extension_9) 
+Diese Industrie benötigt Extension: [Verpackungsmittelindustrie](#extension_10) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Textilindustrie](#extension_8) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Textilindustrie](#extension_9) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#a888e0;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2797,16 +3457,16 @@ Industrie benötigt wenigstens eine der in schwarz dargestellten Rohmaterialien 
 | [Schnittholz](#cargo_WDPR) |  |
 
 
-<a name="industry_65"></a>
+<a name="industry_84"></a>
 ### Mühle
 
 <img src="flour_mill.png" alt="Mühle">
 
 Getreidemühlen gibt es seit tausenden von Jahren. Sie mahlen Getreide zu Mehl, was eine überaus wichtige Rolle in der Nahrungsmittelproduktion stellt. Das Mahlen fand traditionell auf einem rotierenden Mahlstein statt, der üblicherweise durch Wasser oder Windkraft bewegt wurde. Mühlen waren überall zu finden, so wie der Familienname Müller aus der Berufsbezeichnung abgeleitet wurde. Die Industrialisierung hat den Prozess der Mehlproduktion erheblich verändert, da mit maschinellem Antrieb viel größere Produktionsmengen möglich wurden. 
 
-Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_5) 
+Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_6) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Verpackungsmittelindustrie](#extension_9) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Verpackungsmittelindustrie](#extension_10) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#d4bc94;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2816,14 +3476,14 @@ Farbe in der Übersichtskarte:<span style="background-color:#d4bc94;">&nbsp;&nbs
 | [Getreide](#cargo_GRAI) | [Nahrungsmittel](#cargo_FOOD) |
 
 
-<a name="industry_66"></a>
+<a name="industry_85"></a>
 ### Mühle
 
 <img src="flour_mill.png" alt="Mühle">
 
 Getreidemühlen gibt es seit tausenden von Jahren. Sie mahlen Getreide zu Mehl, was eine überaus wichtige Rolle in der Nahrungsmittelproduktion stellt. Das Mahlen fand traditionell auf einem rotierenden Mahlstein statt, der üblicherweise durch Wasser oder Windkraft bewegt wurde. Mühlen waren überall zu finden, so wie der Familienname Müller aus der Berufsbezeichnung abgeleitet wurde. Die Industrialisierung hat den Prozess der Mehlproduktion erheblich verändert, da mit maschinellem Antrieb viel größere Produktionsmengen möglich wurden. 
 
-Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_5) [Verpackungsmittelindustrie](#extension_9) 
+Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_6) [Verpackungsmittelindustrie](#extension_10) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#d4bc94;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2836,14 +3496,14 @@ Industrie benötigt die in schwarz dargestellten Rohmaterialien zur Produktion. 
 | [Verpackungen](#cargo_MNSP) |  |
 
 
-<a name="industry_67"></a>
+<a name="industry_86"></a>
 ### Nahrungsmittelfabrik
 
 <img src="food_processor.png" alt="Nahrungsmittelfabrik">
 
 Die Nahrungsmittelfabrik fasst verschiedenste Industrien zusammen, die Lebensmittel herstellen. Ob es nun eine Bäckereiprodukte sind, Dosenfisch oder Fleisch, alles wird hier hergestellt, um in die Supermarktregale transportiert zu werden. 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Grundlegende Anorganische Chemie](#extension_4) [Lebensmittelindustrie](#extension_5) [Verpackungsmittelindustrie](#extension_9) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Grundlegende Anorganische Chemie](#extension_4) [Lebensmittelindustrie](#extension_6) [Verpackungsmittelindustrie](#extension_10) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#a00000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2857,7 +3517,7 @@ Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar is
 | [Vieh](#cargo_LVST) |  |
 
 
-<a name="industry_68"></a>
+<a name="industry_87"></a>
 ### Nahrungsmittelfabrik
 
 <img src="food_processor.png" alt="Nahrungsmittelfabrik">
@@ -2866,7 +3526,7 @@ Die Nahrungsmittelfabrik fasst verschiedenste Industrien zusammen, die Lebensmit
 
 Diese Industrie benötigt Extension: [Grundlegende Anorganische Chemie](#extension_4) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Lebensmittelindustrie](#extension_5) [Verpackungsmittelindustrie](#extension_9) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Lebensmittelindustrie](#extension_6) [Verpackungsmittelindustrie](#extension_10) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#a00000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2882,16 +3542,16 @@ Industrie benötigt wenigstens eine der in schwarz dargestellten Rohmaterialien 
 | [Salz](#cargo_SALT) |  |
 
 
-<a name="industry_69"></a>
+<a name="industry_88"></a>
 ### Nahrungsmittelfabrik
 
 <img src="food_processor.png" alt="Nahrungsmittelfabrik">
 
 Die Nahrungsmittelfabrik fasst verschiedenste Industrien zusammen, die Lebensmittel herstellen. Ob es nun eine Bäckereiprodukte sind, Dosenfisch oder Fleisch, alles wird hier hergestellt, um in die Supermarktregale transportiert zu werden. 
 
-Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_5) 
+Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_6) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Grundlegende Anorganische Chemie](#extension_4) [Verpackungsmittelindustrie](#extension_9) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Grundlegende Anorganische Chemie](#extension_4) [Verpackungsmittelindustrie](#extension_10) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#a00000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2903,16 +3563,16 @@ Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar is
 | [Fisch](#cargo_FISH) | [Nahrungsmittel](#cargo_FOOD) |
 
 
-<a name="industry_70"></a>
+<a name="industry_89"></a>
 ### Nahrungsmittelfabrik
 
 <img src="food_processor.png" alt="Nahrungsmittelfabrik">
 
 Die Nahrungsmittelfabrik fasst verschiedenste Industrien zusammen, die Lebensmittel herstellen. Ob es nun eine Bäckereiprodukte sind, Dosenfisch oder Fleisch, alles wird hier hergestellt, um in die Supermarktregale transportiert zu werden. 
 
-Diese Industrie benötigt Extension: [Grundlegende Anorganische Chemie](#extension_4) [Lebensmittelindustrie](#extension_5) 
+Diese Industrie benötigt Extension: [Grundlegende Anorganische Chemie](#extension_4) [Lebensmittelindustrie](#extension_6) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Verpackungsmittelindustrie](#extension_9) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Verpackungsmittelindustrie](#extension_10) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#a00000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2926,16 +3586,16 @@ Industrie benötigt die in schwarz dargestellten Rohmaterialien zur Produktion. 
 | [Salz](#cargo_SALT) |  |
 
 
-<a name="industry_71"></a>
+<a name="industry_90"></a>
 ### Nahrungsmittelfabrik
 
 <img src="food_processor.png" alt="Nahrungsmittelfabrik">
 
 Die Nahrungsmittelfabrik fasst verschiedenste Industrien zusammen, die Lebensmittel herstellen. Ob es nun eine Bäckereiprodukte sind, Dosenfisch oder Fleisch, alles wird hier hergestellt, um in die Supermarktregale transportiert zu werden. 
 
-Diese Industrie benötigt Extension: [Verpackungsmittelindustrie](#extension_9) 
+Diese Industrie benötigt Extension: [Verpackungsmittelindustrie](#extension_10) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Grundlegende Anorganische Chemie](#extension_4) [Lebensmittelindustrie](#extension_5) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Grundlegende Anorganische Chemie](#extension_4) [Lebensmittelindustrie](#extension_6) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#a00000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2950,14 +3610,14 @@ Industrie benötigt wenigstens eine der in schwarz dargestellten Rohmaterialien 
 | [Verpackungen](#cargo_MNSP) |  |
 
 
-<a name="industry_72"></a>
+<a name="industry_91"></a>
 ### Nahrungsmittelfabrik
 
 <img src="food_processor.png" alt="Nahrungsmittelfabrik">
 
 Die Nahrungsmittelfabrik fasst verschiedenste Industrien zusammen, die Lebensmittel herstellen. Ob es nun eine Bäckereiprodukte sind, Dosenfisch oder Fleisch, alles wird hier hergestellt, um in die Supermarktregale transportiert zu werden. 
 
-Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_5) [Verpackungsmittelindustrie](#extension_9) 
+Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_6) [Verpackungsmittelindustrie](#extension_10) 
 
 Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Grundlegende Anorganische Chemie](#extension_4) 
 
@@ -2972,16 +3632,16 @@ Industrie benötigt die in schwarz dargestellten Rohmaterialien zur Produktion. 
 | [Verpackungen](#cargo_MNSP) |  |
 
 
-<a name="industry_73"></a>
+<a name="industry_92"></a>
 ### Nahrungsmittelfabrik
 
 <img src="food_processor.png" alt="Nahrungsmittelfabrik">
 
 Die Nahrungsmittelfabrik fasst verschiedenste Industrien zusammen, die Lebensmittel herstellen. Ob es nun eine Bäckereiprodukte sind, Dosenfisch oder Fleisch, alles wird hier hergestellt, um in die Supermarktregale transportiert zu werden. 
 
-Diese Industrie benötigt Extension: [Grundlegende Anorganische Chemie](#extension_4) [Verpackungsmittelindustrie](#extension_9) 
+Diese Industrie benötigt Extension: [Grundlegende Anorganische Chemie](#extension_4) [Verpackungsmittelindustrie](#extension_10) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Lebensmittelindustrie](#extension_5) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Lebensmittelindustrie](#extension_6) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#a00000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2998,14 +3658,14 @@ Industrie benötigt wenigstens eine der in schwarz dargestellten Rohmaterialien 
 | [Salz](#cargo_SALT) |  |
 
 
-<a name="industry_74"></a>
+<a name="industry_93"></a>
 ### Nahrungsmittelfabrik
 
 <img src="food_processor.png" alt="Nahrungsmittelfabrik">
 
 Die Nahrungsmittelfabrik fasst verschiedenste Industrien zusammen, die Lebensmittel herstellen. Ob es nun eine Bäckereiprodukte sind, Dosenfisch oder Fleisch, alles wird hier hergestellt, um in die Supermarktregale transportiert zu werden. 
 
-Diese Industrie benötigt Extension: [Grundlegende Anorganische Chemie](#extension_4) [Lebensmittelindustrie](#extension_5) [Verpackungsmittelindustrie](#extension_9) 
+Diese Industrie benötigt Extension: [Grundlegende Anorganische Chemie](#extension_4) [Lebensmittelindustrie](#extension_6) [Verpackungsmittelindustrie](#extension_10) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#a00000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -3020,14 +3680,14 @@ Industrie benötigt die in schwarz dargestellten Rohmaterialien zur Produktion. 
 | [Salz](#cargo_SALT) |  |
 
 
-<a name="industry_75"></a>
+<a name="industry_94"></a>
 ### Papiermühle
 
 <img src="paper_mill.png" alt="Papiermühle">
 
 Die Papiermühle spaltet Holz durch Chemikalien auf um Zellulosefasern herauszulösen, die wiederum die Basis für die Papierproduktion sind. Der Prozess der Papierherstellung ist seit Tausenden Jahren bekannt, aber die moderne Produktion begann erst im späten 19. Jahrhundert durch verschiedene Fortschritte in der Chemie. Deutschland ist einer der größten Papierproduzenten der Welt, und der größte in Europa. Die Papiermühle im Set ist eine solche moderne Anlage, die Holz auf chemischem Weg spaltet und das Papier später bleicht. 
 
-Diese Industrie benötigt Extension: [Papier](#extension_7) 
+Diese Industrie benötigt Extension: [Papier](#extension_8) 
 
 Industry ist erst ab 1900 verfügbar.
 Diese Beschränkung betrifft auch das Finanzieren der Industrie.
@@ -3041,7 +3701,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#9ca0ac;">&nbsp;&nbs
 | [Holz](#cargo_WOOD) |  |
 
 
-<a name="industry_76"></a>
+<a name="industry_95"></a>
 ### Rußfabrik
 
 <img src="carbon_black_plant.png" alt="Rußfabrik">
@@ -3050,7 +3710,7 @@ Die Rußfabrik spaltet Kohlenstoffverbindungen wie Kohle oder Öl auf und erzeug
 
 Diese Industrie benötigt Extension: [Farbindustrie](#extension_2) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Organische Chemie](#extension_6) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Organische Chemie](#extension_7) 
 
 Industry ist erst ab 1850 verfügbar.
 Diese Beschränkung betrifft auch das Finanzieren der Industrie.
@@ -3065,14 +3725,14 @@ Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar is
 | [Öl](#cargo_OIL_) |  |
 
 
-<a name="industry_77"></a>
+<a name="industry_96"></a>
 ### Rußfabrik
 
 <img src="carbon_black_plant.png" alt="Rußfabrik">
 
 Die Rußfabrik spaltet Kohlenstoffverbindungen wie Kohle oder Öl auf und erzeugt daraus quasi reines Kohlenstoffpulver. Üblicherweise werden dafür die schweren Fraktionen der Erdöldestillation, Schweröle als, genutzt, die anderweitig kaum Verwendung haben. Je nach eingesetztem Prozess entsteht bei diesem Prozess eine erhebliche Menge Kohlendioxid. Forschungen in jüngster Zeit haben jedoch zu neuen Ansätzen geführt, bei denen Kohlenwasserstoffe komplett in Kohlenstoff und Wasserstoff zerlegt werden, was den ökologischen Fußabdruck massiv reduziert. 
 
-Diese Industrie benötigt Extension: [Farbindustrie](#extension_2) [Organische Chemie](#extension_6) 
+Diese Industrie benötigt Extension: [Farbindustrie](#extension_2) [Organische Chemie](#extension_7) 
 
 Industry ist erst ab 1850 verfügbar.
 Diese Beschränkung betrifft auch das Finanzieren der Industrie.
@@ -3087,7 +3747,7 @@ Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar is
 | [Naphtha](#cargo_RFPR) |  |
 
 
-<a name="industry_78"></a>
+<a name="industry_97"></a>
 ### Salzbergwerk
 
 <img src="salt_mine.png" alt="Salzbergwerk">
@@ -3108,7 +3768,7 @@ Die Industrie wird mit endlichen Ressourcen generiert und schließt sobald diese
 |  | [Salz](#cargo_SALT) |
 
 
-<a name="industry_79"></a>
+<a name="industry_98"></a>
 ### Sandgrube
 
 <img src="sand_pit.png" alt="Sandgrube">
@@ -3127,16 +3787,16 @@ Die Industrie wird mit endlichen Ressourcen generiert und schließt sobald diese
 |  | [Sand](#cargo_SAND) |
 
 
-<a name="industry_80"></a>
+<a name="industry_99"></a>
 ### Schlachthof
 
 <img src="sand_pit.png" alt="Schlachthof">
 
 Schlachthöfe sind Industrien, in denen Vieh geschlachtet und verarbeitet wird, in erster Linie zu Fleisch für den Verzehr. Obwohl das Schlachten von Tieren seit tausenden Jahren üblich ist, explodierte die Menge des produzierten Fleisches im Zuge der Industrialisierung geradezu. Die Einführung effizienter Kühlung erlaubte den Fleischtransport über lange Strecken, was wiederum zu einer Zentralisierung der Industrien in wenige große Schlachthöfe zur Folge hatte. 
 
-Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_5) 
+Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_6) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Verpackungsmittelindustrie](#extension_9) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Verpackungsmittelindustrie](#extension_10) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#b09c6c;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -3146,14 +3806,14 @@ Farbe in der Übersichtskarte:<span style="background-color:#b09c6c;">&nbsp;&nbs
 | [Vieh](#cargo_LVST) | [Nahrungsmittel](#cargo_FOOD) |
 
 
-<a name="industry_81"></a>
+<a name="industry_100"></a>
 ### Schlachthof
 
 <img src="sand_pit.png" alt="Schlachthof">
 
 Schlachthöfe sind Industrien, in denen Vieh geschlachtet und verarbeitet wird, in erster Linie zu Fleisch für den Verzehr. Obwohl das Schlachten von Tieren seit tausenden Jahren üblich ist, explodierte die Menge des produzierten Fleisches im Zuge der Industrialisierung geradezu. Die Einführung effizienter Kühlung erlaubte den Fleischtransport über lange Strecken, was wiederum zu einer Zentralisierung der Industrien in wenige große Schlachthöfe zur Folge hatte. 
 
-Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_5) [Verpackungsmittelindustrie](#extension_9) 
+Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_6) [Verpackungsmittelindustrie](#extension_10) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#b09c6c;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -3166,14 +3826,14 @@ Industrie benötigt die in schwarz dargestellten Rohmaterialien zur Produktion. 
 | [Verpackungen](#cargo_MNSP) |  |
 
 
-<a name="industry_82"></a>
+<a name="industry_101"></a>
 ### Steamcracker
 
 <img src="steamcracker.png" alt="Steamcracker">
 
 In Ölraffinerien fällt in großer Menge Rohbenzin, sogenanntes Naphtha, an. Die chemische Industrie benötigt jedoch Kohlenwasserstoffe, die sich durch Spaltung aus Naphtha erzeugen lassen. Dazu muss das Naphtha auf über 800°C erhitzt werden, so dass es als Gas vorliegt, woher der Name des Prozesses rührt. Als Produkte entstehen verschiedene leichte Kohlenwasserstoffe, die zum Beispiel für die Produktion von Kunststoffen notwendig sind. 
 
-Diese Industrie benötigt Extension: [Organische Chemie](#extension_6) 
+Diese Industrie benötigt Extension: [Organische Chemie](#extension_7) 
 
 Industry ist erst ab 1900 verfügbar.
 Diese Beschränkung betrifft auch das Finanzieren der Industrie.
@@ -3185,7 +3845,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#787840;">&nbsp;&nbs
 | [Naphtha](#cargo_RFPR) | [Treibstoff](#cargo_PETR) |
 
 
-<a name="industry_83"></a>
+<a name="industry_102"></a>
 ### Sägewerk
 
 <img src="sawmill.png" alt="Sägewerk">
@@ -3200,7 +3860,48 @@ Farbe in der Übersichtskarte:<span style="background-color:#fc9c00;">&nbsp;&nbs
 | [Holz](#cargo_WOOD) | [Schnittholz](#cargo_WDPR) |
 
 
-<a name="industry_84"></a>
+<a name="industry_103"></a>
+### Säurefabrik
+
+<img src="acid_plant.png" alt="Säurefabrik">
+
+Schwefelsäure wird in Deutschland in Größenordnungen von mehreren Millionen Tonnen pro Jahr hergestellt und ist damit einer der wichtigsten Grundstoffe der chemischen Industrie. In echten Chemieanlagen werden die Säuren möglichst direkt für weitere Reaktionen verbraucht, um Transporte der gefährlichen Stoffe zu vermeiden. Im Set produziert die Säurefabrik verschiedene Säuren, um dem Spieler mehrere Varianten zu ermöglichen. Aus den akzeptierten Rohstoffen kann man Schwefelsäure produzieren, aber auch Salzsäure. 
+
+Diese Industrie benötigt Extension: [Koks und Schwefel](#extension_5) 
+
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Grundlegende Anorganische Chemie](#extension_4) 
+
+Industry ist erst ab 1800 verfügbar.
+Diese Beschränkung betrifft auch das Finanzieren der Industrie.
+
+Farbe in der Übersichtskarte:<span style="background-color:#b4cc7c;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+| Benötigt | Produziert |
+| -- | -- |
+| [Schwefel](#cargo_SULP) | [Säure](#cargo_ACID) |
+
+
+<a name="industry_104"></a>
+### Säurefabrik
+
+<img src="acid_plant.png" alt="Säurefabrik">
+
+Schwefelsäure wird in Deutschland in Größenordnungen von mehreren Millionen Tonnen pro Jahr hergestellt und ist damit einer der wichtigsten Grundstoffe der chemischen Industrie. In echten Chemieanlagen werden die Säuren möglichst direkt für weitere Reaktionen verbraucht, um Transporte der gefährlichen Stoffe zu vermeiden. Im Set produziert die Säurefabrik verschiedene Säuren, um dem Spieler mehrere Varianten zu ermöglichen. Aus den akzeptierten Rohstoffen kann man Schwefelsäure produzieren, aber auch Salzsäure. 
+
+Diese Industrie benötigt Extension: [Koks und Schwefel](#extension_5) [Grundlegende Anorganische Chemie](#extension_4) 
+
+Industry ist erst ab 1800 verfügbar.
+Diese Beschränkung betrifft auch das Finanzieren der Industrie.
+
+Farbe in der Übersichtskarte:<span style="background-color:#b4cc7c;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+| Benötigt | Produziert |
+| -- | -- |
+| [Chlor](#cargo_CHLO) | [Säure](#cargo_ACID) |
+| [Schwefel](#cargo_SULP) |  |
+
+
+<a name="industry_105"></a>
 ### Tankstelle
 
 <img src="petrol_station.png" alt="Tankstelle">
@@ -3217,14 +3918,14 @@ Farbe in der Übersichtskarte:<span style="background-color:#78a488;">&nbsp;&nbs
 | [Treibstoff](#cargo_PETR) |  |
 
 
-<a name="industry_85"></a>
+<a name="industry_106"></a>
 ### Textilfabrik
 
 <img src="textile_mill.png" alt="Textilfabrik">
 
 Die Textilfabrik fasst mehrere Industrien zusammen, die sich mit der Herstellung von Garn und Stoffen beschäftigen. Diese Arbeiten fanden jahrhundertelang hauptsächlich kleingewerblich statt, bevor die Mechanisierung im 18. und 19. Jahrhundert Einzug hielt. Webstühle gehörten damals zu den ersten Geräten, die mechanisch betrieben wurden, um die Produktionszeiten zu verkürzen. Im Set kombiniert diese Industrie sämtliche Schritte der Verarbeitung von Wolle und synthetischen Fasern zu Garn (spinnen), bevor sie z.B. durch Weben zu Stoffen verarbeitet werden. Diese Stoffe werden dann von anderen Industrien verwendet, um verschiedenste Waren zu produzieren. 
 
-Diese Industrie benötigt Extension: [Textilindustrie](#extension_8) 
+Diese Industrie benötigt Extension: [Textilindustrie](#extension_9) 
 
 Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Farbindustrie](#extension_2) 
 
@@ -3239,14 +3940,14 @@ Industrie benötigt die in schwarz dargestellten Rohmaterialien zur Produktion. 
 | [Wolle](#cargo_WOOL) |  |
 
 
-<a name="industry_86"></a>
+<a name="industry_107"></a>
 ### Textilfabrik
 
 <img src="textile_mill.png" alt="Textilfabrik">
 
 Die Textilfabrik fasst mehrere Industrien zusammen, die sich mit der Herstellung von Garn und Stoffen beschäftigen. Diese Arbeiten fanden jahrhundertelang hauptsächlich kleingewerblich statt, bevor die Mechanisierung im 18. und 19. Jahrhundert Einzug hielt. Webstühle gehörten damals zu den ersten Geräten, die mechanisch betrieben wurden, um die Produktionszeiten zu verkürzen. Im Set kombiniert diese Industrie sämtliche Schritte der Verarbeitung von Wolle und synthetischen Fasern zu Garn (spinnen), bevor sie z.B. durch Weben zu Stoffen verarbeitet werden. Diese Stoffe werden dann von anderen Industrien verwendet, um verschiedenste Waren zu produzieren. 
 
-Diese Industrie benötigt Extension: [Textilindustrie](#extension_8) [Farbindustrie](#extension_2) 
+Diese Industrie benötigt Extension: [Textilindustrie](#extension_9) [Farbindustrie](#extension_2) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#a85c4c;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -3260,16 +3961,16 @@ Industrie benötigt die in schwarz dargestellten Rohmaterialien zur Produktion. 
 | [Wolle](#cargo_WOOL) |  |
 
 
-<a name="industry_87"></a>
+<a name="industry_108"></a>
 ### Verpackungsmittelfabrik
 
 <img src="packaging_plant.png" alt="Verpackungsmittelfabrik">
 
 Die Verpackungsfabrik produziert alle Arten von Verpackungen aus verschiedensten Materialien, seien es Kunststoffe oder Aluminium. Damit ist diese Anlage ein elementarer Bestandteil der Transportkette, denn ohne Verpackungen reduziert sich die Produktion vieler anderer Industrien. 
 
-Diese Industrie benötigt Extension: [Verpackungsmittelindustrie](#extension_9) 
+Diese Industrie benötigt Extension: [Verpackungsmittelindustrie](#extension_10) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Aluminium](#extension_0) [Glas](#extension_3) [Papier](#extension_7) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Aluminium](#extension_0) [Glas](#extension_3) [Papier](#extension_8) 
 
 Industry ist erst ab 1930 verfügbar.
 Diese Beschränkung betrifft auch das Finanzieren der Industrie.
@@ -3283,16 +3984,16 @@ Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar is
 | [Kunststoffe](#cargo_PLAS) | [Verpackungen](#cargo_MNSP) |
 
 
-<a name="industry_88"></a>
+<a name="industry_109"></a>
 ### Verpackungsmittelfabrik
 
 <img src="packaging_plant.png" alt="Verpackungsmittelfabrik">
 
 Die Verpackungsfabrik produziert alle Arten von Verpackungen aus verschiedensten Materialien, seien es Kunststoffe oder Aluminium. Damit ist diese Anlage ein elementarer Bestandteil der Transportkette, denn ohne Verpackungen reduziert sich die Produktion vieler anderer Industrien. 
 
-Diese Industrie benötigt Extension: [Verpackungsmittelindustrie](#extension_9) [Aluminium](#extension_0) 
+Diese Industrie benötigt Extension: [Verpackungsmittelindustrie](#extension_10) [Aluminium](#extension_0) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Glas](#extension_3) [Papier](#extension_7) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Glas](#extension_3) [Papier](#extension_8) 
 
 Industry ist erst ab 1930 verfügbar.
 Diese Beschränkung betrifft auch das Finanzieren der Industrie.
@@ -3307,16 +4008,16 @@ Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar is
 | [Kunststoffe](#cargo_PLAS) |  |
 
 
-<a name="industry_89"></a>
+<a name="industry_110"></a>
 ### Verpackungsmittelfabrik
 
 <img src="packaging_plant.png" alt="Verpackungsmittelfabrik">
 
 Die Verpackungsfabrik produziert alle Arten von Verpackungen aus verschiedensten Materialien, seien es Kunststoffe oder Aluminium. Damit ist diese Anlage ein elementarer Bestandteil der Transportkette, denn ohne Verpackungen reduziert sich die Produktion vieler anderer Industrien. 
 
-Diese Industrie benötigt Extension: [Verpackungsmittelindustrie](#extension_9) [Glas](#extension_3) 
+Diese Industrie benötigt Extension: [Verpackungsmittelindustrie](#extension_10) [Glas](#extension_3) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Aluminium](#extension_0) [Papier](#extension_7) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Aluminium](#extension_0) [Papier](#extension_8) 
 
 Industry ist erst ab 1930 verfügbar.
 Diese Beschränkung betrifft auch das Finanzieren der Industrie.
@@ -3331,16 +4032,16 @@ Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar is
 | [Kunststoffe](#cargo_PLAS) |  |
 
 
-<a name="industry_90"></a>
+<a name="industry_111"></a>
 ### Verpackungsmittelfabrik
 
 <img src="packaging_plant.png" alt="Verpackungsmittelfabrik">
 
 Die Verpackungsfabrik produziert alle Arten von Verpackungen aus verschiedensten Materialien, seien es Kunststoffe oder Aluminium. Damit ist diese Anlage ein elementarer Bestandteil der Transportkette, denn ohne Verpackungen reduziert sich die Produktion vieler anderer Industrien. 
 
-Diese Industrie benötigt Extension: [Verpackungsmittelindustrie](#extension_9) [Aluminium](#extension_0) [Glas](#extension_3) 
+Diese Industrie benötigt Extension: [Verpackungsmittelindustrie](#extension_10) [Aluminium](#extension_0) [Glas](#extension_3) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Papier](#extension_7) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Papier](#extension_8) 
 
 Industry ist erst ab 1930 verfügbar.
 Diese Beschränkung betrifft auch das Finanzieren der Industrie.
@@ -3356,14 +4057,14 @@ Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar is
 | [Kunststoffe](#cargo_PLAS) |  |
 
 
-<a name="industry_91"></a>
+<a name="industry_112"></a>
 ### Verpackungsmittelfabrik
 
 <img src="packaging_plant.png" alt="Verpackungsmittelfabrik">
 
 Die Verpackungsfabrik produziert alle Arten von Verpackungen aus verschiedensten Materialien, seien es Kunststoffe oder Aluminium. Damit ist diese Anlage ein elementarer Bestandteil der Transportkette, denn ohne Verpackungen reduziert sich die Produktion vieler anderer Industrien. 
 
-Diese Industrie benötigt Extension: [Verpackungsmittelindustrie](#extension_9) [Papier](#extension_7) 
+Diese Industrie benötigt Extension: [Verpackungsmittelindustrie](#extension_10) [Papier](#extension_8) 
 
 Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Aluminium](#extension_0) [Glas](#extension_3) 
 
@@ -3380,14 +4081,14 @@ Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar is
 | [Kunststoffe](#cargo_PLAS) |  |
 
 
-<a name="industry_92"></a>
+<a name="industry_113"></a>
 ### Verpackungsmittelfabrik
 
 <img src="packaging_plant.png" alt="Verpackungsmittelfabrik">
 
 Die Verpackungsfabrik produziert alle Arten von Verpackungen aus verschiedensten Materialien, seien es Kunststoffe oder Aluminium. Damit ist diese Anlage ein elementarer Bestandteil der Transportkette, denn ohne Verpackungen reduziert sich die Produktion vieler anderer Industrien. 
 
-Diese Industrie benötigt Extension: [Verpackungsmittelindustrie](#extension_9) [Aluminium](#extension_0) [Papier](#extension_7) 
+Diese Industrie benötigt Extension: [Verpackungsmittelindustrie](#extension_10) [Aluminium](#extension_0) [Papier](#extension_8) 
 
 Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Glas](#extension_3) 
 
@@ -3405,14 +4106,14 @@ Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar is
 | [Kunststoffe](#cargo_PLAS) |  |
 
 
-<a name="industry_93"></a>
+<a name="industry_114"></a>
 ### Verpackungsmittelfabrik
 
 <img src="packaging_plant.png" alt="Verpackungsmittelfabrik">
 
 Die Verpackungsfabrik produziert alle Arten von Verpackungen aus verschiedensten Materialien, seien es Kunststoffe oder Aluminium. Damit ist diese Anlage ein elementarer Bestandteil der Transportkette, denn ohne Verpackungen reduziert sich die Produktion vieler anderer Industrien. 
 
-Diese Industrie benötigt Extension: [Verpackungsmittelindustrie](#extension_9) [Glas](#extension_3) [Papier](#extension_7) 
+Diese Industrie benötigt Extension: [Verpackungsmittelindustrie](#extension_10) [Glas](#extension_3) [Papier](#extension_8) 
 
 Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Aluminium](#extension_0) 
 
@@ -3430,14 +4131,14 @@ Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar is
 | [Kunststoffe](#cargo_PLAS) |  |
 
 
-<a name="industry_94"></a>
+<a name="industry_115"></a>
 ### Verpackungsmittelfabrik
 
 <img src="packaging_plant.png" alt="Verpackungsmittelfabrik">
 
 Die Verpackungsfabrik produziert alle Arten von Verpackungen aus verschiedensten Materialien, seien es Kunststoffe oder Aluminium. Damit ist diese Anlage ein elementarer Bestandteil der Transportkette, denn ohne Verpackungen reduziert sich die Produktion vieler anderer Industrien. 
 
-Diese Industrie benötigt Extension: [Verpackungsmittelindustrie](#extension_9) [Aluminium](#extension_0) [Glas](#extension_3) [Papier](#extension_7) 
+Diese Industrie benötigt Extension: [Verpackungsmittelindustrie](#extension_10) [Aluminium](#extension_0) [Glas](#extension_3) [Papier](#extension_8) 
 
 Industry ist erst ab 1930 verfügbar.
 Diese Beschränkung betrifft auch das Finanzieren der Industrie.
@@ -3454,16 +4155,16 @@ Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar is
 | [Kunststoffe](#cargo_PLAS) |  |
 
 
-<a name="industry_95"></a>
+<a name="industry_116"></a>
 ### Viehzucht
 
 <img src="animal_farm.png" alt="Viehzucht">
 
 Viehzuchtbetriebe sind Teil der Landwirtschaft. Sie züchten Vieh und liefern dazugehörige Produkte wie Milch und Wolle. In der Realität sind diese Betriebe heutzutage auf bestimmte Tiere spezialisiert, so dass es Hühnerfarmen oder Schweinemastbetriebe gibt, im Set ist das alles in eine Industrie zusammengefasst. 
 
-Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_5) 
+Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_6) 
 
-Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Textilindustrie](#extension_8) 
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Textilindustrie](#extension_9) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#90e05c;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -3474,14 +4175,14 @@ Farbe in der Übersichtskarte:<span style="background-color:#90e05c;">&nbsp;&nbs
 |  | [Milch](#cargo_MILK) |
 
 
-<a name="industry_96"></a>
+<a name="industry_117"></a>
 ### Viehzucht
 
 <img src="animal_farm.png" alt="Viehzucht">
 
 Viehzuchtbetriebe sind Teil der Landwirtschaft. Sie züchten Vieh und liefern dazugehörige Produkte wie Milch und Wolle. In der Realität sind diese Betriebe heutzutage auf bestimmte Tiere spezialisiert, so dass es Hühnerfarmen oder Schweinemastbetriebe gibt, im Set ist das alles in eine Industrie zusammengefasst. 
 
-Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_5) [Textilindustrie](#extension_8) 
+Diese Industrie benötigt Extension: [Lebensmittelindustrie](#extension_6) [Textilindustrie](#extension_9) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#90e05c;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -3493,7 +4194,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#90e05c;">&nbsp;&nbs
 |  | [Wolle](#cargo_WOOL) |
 
 
-<a name="industry_97"></a>
+<a name="industry_118"></a>
 ### Wald
 
 <img src="forest.png" alt="Wald">
@@ -3508,7 +4209,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#68941c;">&nbsp;&nbs
 |  | [Holz](#cargo_WOOD) |
 
 
-<a name="industry_98"></a>
+<a name="industry_119"></a>
 ### Zementfabrik
 
 <img src="cement_plant.png" alt="Zementfabrik">
@@ -3528,7 +4229,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#6c7484;">&nbsp;&nbs
 | [Sand](#cargo_SAND) |  |
 
 
-<a name="industry_99"></a>
+<a name="industry_120"></a>
 ### Ziegelei
 
 <img src="brick_works.png" alt="Ziegelei">
@@ -3549,7 +4250,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#cc8060;">&nbsp;&nbs
 | [Kohle](#cargo_COAL) | [Ziegel](#cargo_BDMT) |
 
 
-<a name="industry_100"></a>
+<a name="industry_121"></a>
 ### Ölbohrinsel
 
 <img src="oil_rig.png" alt="Ölbohrinsel">
@@ -3571,7 +4272,7 @@ Die Industrie wird mit endlichen Ressourcen generiert und schließt sobald diese
 |  | [Passagiere](#cargo_PASS) |
 
 
-<a name="industry_101"></a>
+<a name="industry_122"></a>
 ### Ölquellen
 
 <img src="oil_well.png" alt="Ölquellen">
@@ -3590,14 +4291,16 @@ Die Industrie wird mit endlichen Ressourcen generiert und schließt sobald diese
 |  | [Öl](#cargo_OIL_) |
 
 
-<a name="industry_102"></a>
+<a name="industry_123"></a>
 ### Ölraffinerie
 
 <img src="oil_refinery.png" alt="Ölraffinerie">
 
 Ölraffinerien spalten Erdöl in verschiedene Bestandteile auf, die wiederum Grundstoffe für die gesamte chemische Industrie darstellen. So erhält man neben diversen Treibstoffen auch diverse Schmierstoffe, Flüssiggase und Heizöl. Darüber hinaus wird das Erdöl auch entschwefelt und von sonstigen Verunreinigungen befreit. In echten Raffinerien sind weitere Produktions- und Veredelungsschritte nachgeschaltet, so dass eine Raffinerie eine ganze Reihe von Produktion erzeugen kann. Im Set sind diese Schritte in eigene Industrien (Dampfreformierer und Steamcracker) ausgelagert, so dass der Spieler selbst die Kontrolle darüber hat, wie viel Treibstoff, Wasserstoff und Ethylen er erzeugen will. 
 
-Diese Industrie benötigt Extension: [Organische Chemie](#extension_6) 
+Diese Industrie benötigt Extension: [Organische Chemie](#extension_7) 
+
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Koks und Schwefel](#extension_5) 
 
 Industry ist erst ab 1860 verfügbar.
 Diese Beschränkung betrifft auch das Finanzieren der Industrie.
@@ -3608,5 +4311,26 @@ Farbe in der Übersichtskarte:<span style="background-color:#fcfc00;">&nbsp;&nbs
 | -- | -- |
 | [Öl](#cargo_OIL_) | [Treibstoff](#cargo_PETR) |
 |  | [Naphtha](#cargo_RFPR) |
+
+
+<a name="industry_124"></a>
+### Ölraffinerie
+
+<img src="oil_refinery.png" alt="Ölraffinerie">
+
+Ölraffinerien spalten Erdöl in verschiedene Bestandteile auf, die wiederum Grundstoffe für die gesamte chemische Industrie darstellen. So erhält man neben diversen Treibstoffen auch diverse Schmierstoffe, Flüssiggase und Heizöl. Darüber hinaus wird das Erdöl auch entschwefelt und von sonstigen Verunreinigungen befreit. In echten Raffinerien sind weitere Produktions- und Veredelungsschritte nachgeschaltet, so dass eine Raffinerie eine ganze Reihe von Produktion erzeugen kann. Im Set sind diese Schritte in eigene Industrien (Dampfreformierer und Steamcracker) ausgelagert, so dass der Spieler selbst die Kontrolle darüber hat, wie viel Treibstoff, Wasserstoff und Ethylen er erzeugen will. 
+
+Diese Industrie benötigt Extension: [Organische Chemie](#extension_7) [Koks und Schwefel](#extension_5) 
+
+Industry ist erst ab 1860 verfügbar.
+Diese Beschränkung betrifft auch das Finanzieren der Industrie.
+
+Farbe in der Übersichtskarte:<span style="background-color:#fcfc00;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+| Benötigt | Produziert |
+| -- | -- |
+| [Öl](#cargo_OIL_) | [Treibstoff](#cargo_PETR) |
+|  | [Naphtha](#cargo_RFPR) |
+|  | [Schwefel](#cargo_SULP) |
 
 

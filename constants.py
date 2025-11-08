@@ -61,6 +61,12 @@ constants = {
     "CARGO_ID_ETHYLENE": "37",
     "CARGO_ID_NAPHTHA" : "36",    
     "CARGO_ID_PETROL" : "38",
+    
+    # CARGO IDs COKE SULPHUR
+    "CARGO_ID_ACID" : "42",
+    "CARGO_ID_COKE" : "39",
+    "CARGO_ID_PYRITE_ORE" : "40",
+    "CARGO_ID_SULPHUR" : "41",
         
     # INDUSTRY IDS 0-20 (with gaps): Base Industries
     "INDUSTRY_ID_BUILDERS_YARD":"17",
@@ -131,7 +137,12 @@ constants = {
     "INDUSTRY_ID_OIL_REFINERY" : "44",
     "INDUSTRY_ID_PETROL_STATION" : "48",
     "INDUSTRY_ID_STEAMCRACKER" : "46",
-    "INDUSTRY_ID_STEAMREFORMER" : "45",    
+    "INDUSTRY_ID_STEAMREFORMER" : "45",  
+
+    # Coke Sulphur Extension
+    "INDUSTRY_ID_ACID_PLANT": "50",
+    "INDUSTRY_ID_COKE_OVEN": "49",
+    "INDUSTRY_ID_ORE_SMELTER": "51",
     
     # INDUSTRY TILE IDs for Base Industries
     "INDUSTRY_TILE_ID_BUILDERS_YARD":"22",
@@ -220,6 +231,13 @@ constants = {
     "INDUSTRY_TILE_ID_STEAMCRACKER_1" : "61",
     "INDUSTRY_TILE_ID_STEAMCRACKER_2" : "62",
     "INDUSTRY_TILE_ID_STEAMREFORMER" : "65",
+    
+    # TILE IDs for COKE SULPHUR
+    "INDUSTRY_TILE_ID_COKE_OVEN_1" : "66",
+    "INDUSTRY_TILE_ID_COKE_OVEN_2" : "67",
+    "INDUSTRY_TILE_ID_ORE_SMELTER" : "68",
+    "INDUSTRY_TILE_ID_ACID_PLANT_1" : "69",
+    "INDUSTRY_TILE_ID_ACID_PLANT_2" : "70",
         
     # TTD sprite IDs
     "TTD_OILRIG_STATION_TILE": "24",
