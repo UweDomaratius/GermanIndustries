@@ -135,6 +135,17 @@
         </y:ShapeNode>
       </data>
     </node>
+    <node id="n11">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="30.0" width="150.0" x="430.0" y="565.0"/>
+          <y:Fill color="#508CA0" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="56.037109375" x="46.9814453125" xml:space="preserve" y="5.6494140625">Soda Ash<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
     <edge id="e0" source="n0" target="n1">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
@@ -243,9 +254,10 @@
     <edge id="e8" source="n9" target="n0">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-5.338616714697423" ty="20.0">
+          <y:Path sx="0.0" sy="0.0" tx="-19.020461095101155" ty="0.0">
             <y:Point x="620.0" y="540.0"/>
             <y:Point x="620.0" y="540.0"/>
+            <y:Point x="620.0" y="520.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -256,7 +268,6 @@
       </data>
     </edge>
     <edge id="e9" source="n10" target="n2">
-      <data key="d9"/>
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="-6.195965417867399" ty="20.0"/>
@@ -264,6 +275,22 @@
           <y:Arrows source="none" target="delta"/>
           <y:StyleProperties>
             <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#444c5c"/>
+          </y:StyleProperties>
+        </y:GenericEdge>
+      </data>
+    </edge>
+    <edge id="e10" source="n11" target="n0">
+      <data key="d9"/>
+      <data key="d10">
+        <y:GenericEdge configuration="com.yworks.edge.framed">
+          <y:Path sx="0.0" sy="0.0" tx="-6.492507204611229" ty="20.0">
+            <y:Point x="630.0" y="580.0"/>
+            <y:Point x="630.0" y="540.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:Arrows source="none" target="delta"/>
+          <y:StyleProperties>
+            <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#104060"/>
           </y:StyleProperties>
         </y:GenericEdge>
       </data>

@@ -29,7 +29,7 @@
     <node id="n1">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="150.0" x="630.0" y="315.0"/>
+          <y:Geometry height="30.0" width="150.0" x="630.0" y="335.0"/>
           <y:Fill color="#444C5C" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#FFFFFF" verticalTextPosition="bottom" visible="true" width="60.6953125" x="44.65234375" xml:space="preserve" y="5.6494140625">Kupferkies<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
@@ -51,10 +51,10 @@
     <node id="n3">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="50.0" width="150.0" x="1380.0" y="255.0"/>
+          <y:Geometry height="90.0" width="150.0" x="1380.0" y="215.0"/>
           <y:Fill color="#444C5C" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#FFFFFF" verticalTextPosition="bottom" visible="true" width="65.365234375" x="42.3173828125" xml:space="preserve" y="8.298828125">Säurefabrik
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#FFFFFF" verticalTextPosition="bottom" visible="true" width="65.365234375" x="42.3173828125" xml:space="preserve" y="28.298828125">Säurefabrik
 1800<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
@@ -249,10 +249,35 @@
         </y:ShapeNode>
       </data>
     </node>
+    <node id="n21">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="30.0" width="150.0" x="1130.0" y="185.0"/>
+          <y:Fill color="#508CA0" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="52.6796875" x="48.66015625" xml:space="preserve" y="5.6494140625">Stickstoff<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n22">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="30.0" width="150.0" x="630.0" y="165.0"/>
+          <y:Fill color="#508CA0" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="58.697265625" x="45.6513671875" xml:space="preserve" y="5.6494140625">Sauerstoff<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
     <edge id="e0" source="n0" target="n1">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="580.0" y="330.0"/>
+            <y:Point x="580.0" y="350.0"/>
+          </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
           <y:StyleProperties>
@@ -264,7 +289,7 @@
     <edge id="e1" source="n2" target="n3">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-22.771296829971106" ty="20.0">
+          <y:Path sx="0.0" sy="0.0" tx="-22.870893371758484" ty="40.0">
             <y:Point x="1330.0" y="320.0"/>
             <y:Point x="1330.0" y="300.0"/>
           </y:Path>
@@ -308,9 +333,9 @@
     <edge id="e4" source="n5" target="n6">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-28.348131412103157" ty="-20.0">
+          <y:Path sx="0.0" sy="0.0" tx="-30.149279538904693" ty="0.0">
             <y:Point x="830.0" y="290.0"/>
-            <y:Point x="830.0" y="310.0"/>
+            <y:Point x="830.0" y="330.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -337,7 +362,7 @@
     <edge id="e6" source="n3" target="n7">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="8.87989333333735" sy="1.2733600000000251" tx="0.0" ty="0.0"/>
+          <y:Path sx="10.41648414985525" sy="20.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
           <y:StyleProperties>
@@ -361,8 +386,8 @@
     <edge id="e8" source="n1" target="n6">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-13.390058789624732" ty="0.0">
-            <y:Point x="830.0" y="330.0"/>
+          <y:Path sx="0.0" sy="0.0" tx="-13.32853025936572" ty="20.0">
+            <y:Point x="830.0" y="350.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -390,7 +415,7 @@
     <edge id="e10" source="n10" target="n3">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:Path sx="0.0" sy="0.0" tx="-0.20714697406401683" ty="20.0"/>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
           <y:StyleProperties>
@@ -402,9 +427,9 @@
     <edge id="e11" source="n11" target="n3">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-2.3739250720459495" ty="-20.0">
-            <y:Point x="1330.0" y="240.0"/>
-            <y:Point x="1330.0" y="260.0"/>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="1320.0" y="240.0"/>
+            <y:Point x="1320.0" y="260.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -478,7 +503,7 @@
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
             <y:Point x="580.0" y="390.0"/>
-            <y:Point x="580.0" y="330.0"/>
+            <y:Point x="580.0" y="350.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -544,6 +569,54 @@
           <y:Arrows source="none" target="delta"/>
           <y:StyleProperties>
             <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#444c5c"/>
+          </y:StyleProperties>
+        </y:GenericEdge>
+      </data>
+    </edge>
+    <edge id="e21" source="n21" target="n3">
+      <data key="d9"/>
+      <data key="d10">
+        <y:GenericEdge configuration="com.yworks.edge.framed">
+          <y:Path sx="0.0" sy="0.0" tx="-1.6236311239199495" ty="-20.0">
+            <y:Point x="1330.0" y="200.0"/>
+            <y:Point x="1330.0" y="240.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:Arrows source="none" target="delta"/>
+          <y:StyleProperties>
+            <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#3890e8"/>
+          </y:StyleProperties>
+        </y:GenericEdge>
+      </data>
+    </edge>
+    <edge id="e22" source="n22" target="n3">
+      <data key="d9"/>
+      <data key="d10">
+        <y:GenericEdge configuration="com.yworks.edge.framed">
+          <y:Path sx="0.0" sy="0.0" tx="-17.204956772334754" ty="-40.0">
+            <y:Point x="1340.0" y="180.0"/>
+            <y:Point x="1340.0" y="220.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:Arrows source="none" target="delta"/>
+          <y:StyleProperties>
+            <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#0060d4"/>
+          </y:StyleProperties>
+        </y:GenericEdge>
+      </data>
+    </edge>
+    <edge id="e23" source="n22" target="n6">
+      <data key="d9"/>
+      <data key="d10">
+        <y:GenericEdge configuration="com.yworks.edge.framed">
+          <y:Path sx="0.0" sy="0.0" tx="-17.75504322766551" ty="-20.0">
+            <y:Point x="840.0" y="180.0"/>
+            <y:Point x="840.0" y="310.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:Arrows source="none" target="delta"/>
+          <y:StyleProperties>
+            <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#0060d4"/>
           </y:StyleProperties>
         </y:GenericEdge>
       </data>

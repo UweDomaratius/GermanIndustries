@@ -129,6 +129,13 @@ grf {
 			desc: string(STR_PARAM_EXT_COKE_SULPHUR_DESC);
 		}
 	}
+	param {
+		param_extension_ammonia {
+			type: bool;
+			name: string(STR_PARAM_EXT_AMMONIA);
+			desc: string(STR_PARAM_EXT_AMMONIA_DESC);
+		}
+	}
 }
 
 if (ttd_platform != PLATFORM_OPENTTD || openttd_version < version_openttd(14, 0)) {
@@ -157,6 +164,11 @@ if (param_extension_coke_sulphur && !param_extension_basic_inorganic_chemistry &
 	exit;
 }
 
+if (param_extension_ammonia && (!param_extension_basic_inorganic_chemistry || !param_extension_building_materials)) {
+	error(FATAL, string(STR_ERR_EXTENSION_AMMONIA_REQUIRES_INORGANIC_CHEMISTRY_BUILDING_MATERIALS));
+	exit;
+}
+
 // TODO: check for incompatible grfs
 
 // disable all default industries
@@ -175,5 +187,6 @@ cargotable {
 	QLME, GLAS, // ext glass
 	PAPR, // ext paper
 	RFPR, C2H4, PETR, // ext organic chemistry
-	ACID, SULP, PORE, COKE // ext coke sulphur
+	ACID, SULP, PORE, COKE, // ext coke sulphur
+	O2__, N2__, NH3_, SASH // ext ammonia
 }

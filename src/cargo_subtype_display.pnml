@@ -152,6 +152,27 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_mnsp,
 	return 0x3800 + string(STR_EMPTY);
 }
 
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_nh3, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("NH3_") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	NH3_: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_n2, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("N2__") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	N2__: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_o2, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("O2__") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	O2__: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
 switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_oil, 
 	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("OIL_") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
 	 getbits(extra_callback_info2, 16, 8)]) {
@@ -205,6 +226,13 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_sand,
 	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("SAND") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
 	 getbits(extra_callback_info2, 16, 8)]) {
 	SAND: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_sash, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("SASH") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	SASH: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
 	return 0x3800 + string(STR_EMPTY);
 }
 
@@ -274,6 +302,9 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info,
 	LYE_: switch_cargo_subtype_display_info_lye;
 	MILK: switch_cargo_subtype_display_info_milk;
 	MNSP: switch_cargo_subtype_display_info_mnsp;
+	NH3_: switch_cargo_subtype_display_info_nh3;
+	N2__: switch_cargo_subtype_display_info_n2;
+	O2__: switch_cargo_subtype_display_info_o2;
 	OIL_: switch_cargo_subtype_display_info_oil;
 	PAPR: switch_cargo_subtype_display_info_papr;
 	PLAS: switch_cargo_subtype_display_info_plas;	
@@ -282,6 +313,7 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info,
 	RFPR: switch_cargo_subtype_display_info_rfpr;
 	SALT: switch_cargo_subtype_display_info_salt;
 	SAND: switch_cargo_subtype_display_info_sand;
+	SASH: switch_cargo_subtype_display_info_sash;
 	STEL: switch_cargo_subtype_display_info_stel;
 	SULP: switch_cargo_subtype_display_info_sulp;
 	TEXT: switch_cargo_subtype_display_info_text;
@@ -320,6 +352,20 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_mnsp_white,
 	return 0x3800 + string(STR_EMPTY);
 }
 
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_nh3_white, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("NH3_") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	NH3_: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_OPTIONAL_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_o2_white, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("O2__") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	O2__: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_OPTIONAL_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
 switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_plas_white, 
 	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("PLAS") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
 	 getbits(extra_callback_info2, 16, 8)]) {
@@ -339,6 +385,8 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_white,
 	COAT: switch_cargo_subtype_display_info_coat_white;
 	LYE_: switch_cargo_subtype_display_info_lye_white;
 	MNSP: switch_cargo_subtype_display_info_mnsp_white;
+	NH3_: switch_cargo_subtype_display_info_nh3_white;
+	O2__: switch_cargo_subtype_display_info_o2_white;
 	PLAS: switch_cargo_subtype_display_info_plas_white;
 	SALT: switch_cargo_subtype_display_info_salt_white;
 	return 0x3800 + string(STR_EMPTY);

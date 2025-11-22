@@ -1,0 +1,32 @@
+spriteset(cargoicon_n2) {
+	[10 + 20 * 1, 10 + 20 * 6, 10, 10, 0, 0,  "graphics/other/cargoicons.png"]
+}
+
+if (param_extension_ammonia) {
+	item(FEAT_CARGOS, n2, CARGO_ID_N2) {
+		property {
+			type_name: string(STR_CARGO_NAME_N2);
+			unit_name: string(STR_CARGO_NAME_N2);
+			type_abbreviation: string(STR_CID_N2);
+			sprite: NEW_CARGO_SPRITE;
+			weight: 1.0;
+			is_freight: 1;
+			cargo_classes: bitmask(CC_LIQUID);
+			town_growth_effect: TOWNGROWTH_NONE;
+			town_growth_multiplier: 1.0;
+			units_of_cargo: TTD_STR_TONS;
+			items_of_cargo: string(STR_QUANTITY_N2);
+			penalty_lowerbound: 22;
+			single_penalty_length: 44;
+			capacity_multiplier: 1;
+			cargo_payment_list_colour: 150;
+			station_list_colour: 150;
+			price_factor: 138;
+			cargo_label: "N2__";
+			number: CARGO_ID_N2;
+		}
+		graphics {
+			cargoicon_n2;
+		}
+	}
+}

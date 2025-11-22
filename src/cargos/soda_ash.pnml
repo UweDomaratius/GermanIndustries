@@ -1,0 +1,32 @@
+spriteset(cargoicon_soda) {
+	[10 + 20 * 12, 10 + 20 * 3, 10, 10, 0, 0,  "graphics/other/cargoicons.png"]
+}
+
+if (param_extension_ammonia) {
+	item(FEAT_CARGOS, soda, CARGO_ID_SODA) {
+		property {
+			type_name: string(STR_CARGO_NAME_SODA);
+			unit_name: string(STR_CARGO_NAME_SODA);
+			type_abbreviation: string(STR_CID_SODA);
+			sprite: NEW_CARGO_SPRITE;
+			weight: 1.0;
+			is_freight: 1;
+			cargo_classes: bitmask(CC_BULK, CC_COVERED);
+			town_growth_effect: TOWNGROWTH_NONE;
+			town_growth_multiplier: 1.0;
+			units_of_cargo: TTD_STR_TONS;
+			items_of_cargo: string(STR_QUANTITY_SODA);
+			penalty_lowerbound: 14;
+			single_penalty_length: 255;
+			capacity_multiplier: 1;
+			cargo_payment_list_colour: 154;
+			station_list_colour: 154;
+			price_factor: 96;
+			cargo_label: "SASH";
+			number: CARGO_ID_SODA;
+		}
+		graphics {
+			cargoicon_soda;
+		}
+	}
+}

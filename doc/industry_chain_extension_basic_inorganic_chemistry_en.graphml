@@ -52,7 +52,7 @@
     <node id="n3">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="150.0" x="2100.0" y="305.0"/>
+          <y:Geometry height="30.0" width="150.0" x="2100.0" y="345.0"/>
           <y:Fill color="#B8DCC8" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="48.689453125" x="50.6552734375" xml:space="preserve" y="5.6494140625">Chlorine<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
@@ -63,7 +63,7 @@
     <node id="n4">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="150.0" x="2100.0" y="345.0"/>
+          <y:Geometry height="30.0" width="150.0" x="2100.0" y="385.0"/>
           <y:Fill color="#B8DCC8" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="23.34765625" x="63.326171875" xml:space="preserve" y="5.6494140625">Lye<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
@@ -74,7 +74,7 @@
     <node id="n5">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="150.0" x="2100.0" y="385.0"/>
+          <y:Geometry height="30.0" width="150.0" x="2100.0" y="305.0"/>
           <y:Fill color="#B8DCC8" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="56.03125" x="46.984375" xml:space="preserve" y="5.6494140625">Hydrogen<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
@@ -132,10 +132,10 @@ Lye and Salt are optional<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></
     <node id="n10">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="70.0" width="150.0" x="2350.0" y="95.00000000000006"/>
+          <y:Geometry height="110.0" width="150.0" x="2350.0" y="55.00000000000006"/>
           <y:Fill color="#B8DCC8" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="117.390625" x="16.3046875" xml:space="preserve" y="18.298828125">Pharmaceutical Plant
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="117.390625" x="16.3046875" xml:space="preserve" y="38.298828125">Pharmaceutical Plant
 1900<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
@@ -144,7 +144,7 @@ Lye and Salt are optional<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></
     <node id="n11">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="150.0" x="2600.0" y="115.00000000000006"/>
+          <y:Geometry height="30.0" width="150.0" x="2600.0" y="95.00000000000006"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="39.35546875" x="55.322265625" xml:space="preserve" y="5.6494140625">Goods<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
@@ -179,7 +179,7 @@ Lye is optional<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMod
     <node id="n14">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="150.0" x="2100.0" y="105.0"/>
+          <y:Geometry height="30.0" width="150.0" x="2100.0" y="74.99999999999997"/>
           <y:Fill color="#787840" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#FFFFFF" verticalTextPosition="bottom" visible="true" width="49.369140625" x="50.3154296875" xml:space="preserve" y="5.6494140625">Naphtha<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
@@ -190,10 +190,54 @@ Lye is optional<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMod
     <node id="n15">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="150.0" x="2100.0" y="65.0"/>
+          <y:Geometry height="30.0" width="150.0" x="2100.0" y="35.0"/>
           <y:Fill color="#787840" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#FFFFFF" verticalTextPosition="bottom" visible="true" width="50.69921875" x="49.650390625" xml:space="preserve" y="5.6494140625">Ethylene<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n16">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="50.0" width="150.0" x="2350.0" y="-64.99999999999991"/>
+          <y:Fill color="#508CA0" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="85.369140625" x="32.3154296875" xml:space="preserve" y="15.6494140625">Ammonia Plant<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n17">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="50.0" width="150.0" x="2350.0" y="-4.999999999999915"/>
+          <y:Fill color="#444C5C" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#FFFFFF" verticalTextPosition="bottom" visible="true" width="58.029296875" x="45.9853515625" xml:space="preserve" y="15.6494140625">Acid Plant<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n18">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="30.0" width="150.0" x="2100.0" y="115.0"/>
+          <y:Fill color="#508CA0" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="49.357421875" x="50.3212890625" xml:space="preserve" y="5.6494140625">Nitrogen<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n19">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="30.0" width="150.0" x="2100.0" y="155.0"/>
+          <y:Fill color="#508CA0" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="45.35546875" x="52.322265625" xml:space="preserve" y="5.6494140625">Oxygen<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
           <y:Shape type="roundrectangle"/>
         </y:ShapeNode>
       </data>
@@ -228,9 +272,8 @@ Lye is optional<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMod
     <edge id="e2" source="n2" target="n3">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="17.972472622475607" sy="-10.0" tx="0.0" ty="0.0">
-            <y:Point x="2030.0" y="350.0"/>
-            <y:Point x="2030.0" y="320.0"/>
+          <y:Path sx="25.763688760806872" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="2040.0" y="360.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -243,8 +286,9 @@ Lye is optional<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMod
     <edge id="e3" source="n2" target="n4">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
-            <y:Point x="2040.0" y="360.0"/>
+          <y:Path sx="18.60230547550418" sy="10.0" tx="0.0" ty="0.0">
+            <y:Point x="2040.0" y="370.0"/>
+            <y:Point x="2040.0" y="400.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -257,9 +301,9 @@ Lye is optional<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMod
     <edge id="e4" source="n2" target="n5">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="4.666374639766445" sy="10.0" tx="0.0" ty="0.0">
-            <y:Point x="2030.0" y="370.0"/>
-            <y:Point x="2030.0" y="400.0"/>
+          <y:Path sx="20.64841498559076" sy="-10.0" tx="0.0" ty="0.0">
+            <y:Point x="2040.0" y="350.0"/>
+            <y:Point x="2040.0" y="320.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -285,7 +329,7 @@ Lye is optional<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMod
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
-            <y:Point x="2290.0" y="320.0"/>
+            <y:Point x="2290.0" y="360.0"/>
             <y:Point x="2290.0" y="200.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
@@ -300,7 +344,7 @@ Lye is optional<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMod
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
-            <y:Point x="2300.0" y="360.0"/>
+            <y:Point x="2300.0" y="400.0"/>
             <y:Point x="2300.0" y="320.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
@@ -315,7 +359,7 @@ Lye is optional<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMod
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="-14.931988472622834" ty="-20.0">
-            <y:Point x="2300.0" y="360.0"/>
+            <y:Point x="2300.0" y="400.0"/>
             <y:Point x="2300.0" y="420.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
@@ -344,9 +388,9 @@ Lye is optional<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMod
     <edge id="e10" source="n3" target="n10">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-0.3878079077826442" ty="29.99999999999997">
-            <y:Point x="2290.0" y="320.0"/>
-            <y:Point x="2290.0" y="160.00000000000003"/>
+          <y:Path sx="0.0" sy="0.0" tx="-5.677233429394619" ty="9.999999999999943">
+            <y:Point x="2290.0" y="360.0"/>
+            <y:Point x="2290.0" y="120.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -359,9 +403,9 @@ Lye is optional<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMod
     <edge id="e11" source="n5" target="n10">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-1.2258943631140937" ty="9.999999999999972">
-            <y:Point x="2280.0" y="400.0"/>
-            <y:Point x="2280.0" y="140.00000000000003"/>
+          <y:Path sx="0.0" sy="0.0" tx="-3.6311239193082656" ty="-10.000000000000057">
+            <y:Point x="2280.0" y="320.0"/>
+            <y:Point x="2280.0" y="100.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -387,7 +431,7 @@ Lye is optional<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMod
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
-            <y:Point x="2300.0" y="360.0"/>
+            <y:Point x="2300.0" y="400.0"/>
             <y:Point x="2300.0" y="380.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
@@ -402,7 +446,7 @@ Lye is optional<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMod
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="-0.5619596541791907" ty="10.0">
-            <y:Point x="2300.0" y="360.0"/>
+            <y:Point x="2300.0" y="400.0"/>
             <y:Point x="2300.0" y="270.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
@@ -417,7 +461,7 @@ Lye is optional<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMod
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="-17.585590778098776" ty="-10.0">
-            <y:Point x="2290.0" y="320.0"/>
+            <y:Point x="2290.0" y="360.0"/>
             <y:Point x="2290.0" y="250.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
@@ -429,10 +473,12 @@ Lye is optional<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMod
       </data>
     </edge>
     <edge id="e16" source="n14" target="n10">
-      <data key="d9"/>
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-1.2258943631140937" ty="-10.000000000000057"/>
+          <y:Path sx="0.0" sy="0.0" tx="-4.654178674351897" ty="-30.000000000000057">
+            <y:Point x="2300.6484149855905" y="90.0"/>
+            <y:Point x="2300.0" y="80.0"/>
+          </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
           <y:StyleProperties>
@@ -442,17 +488,80 @@ Lye is optional<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMod
       </data>
     </edge>
     <edge id="e17" source="n15" target="n10">
-      <data key="d9"/>
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-7.930586005765235" ty="-30.000000000000057">
-            <y:Point x="2300.0" y="80.0"/>
-            <y:Point x="2300.0" y="100.0"/>
+          <y:Path sx="0.0" sy="0.0" tx="-17.953890489913647" ty="-50.00000000000006">
+            <y:Point x="2300.0" y="50.0"/>
+            <y:Point x="2300.0" y="60.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
           <y:StyleProperties>
             <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#787840"/>
+          </y:StyleProperties>
+        </y:GenericEdge>
+      </data>
+    </edge>
+    <edge id="e18" source="n5" target="n17">
+      <data key="d9"/>
+      <data key="d10">
+        <y:GenericEdge configuration="com.yworks.edge.framed">
+          <y:Path sx="0.0" sy="0.0" tx="-13.86167146974094" ty="-10.000000000000085">
+            <y:Point x="2280.0" y="320.0"/>
+            <y:Point x="2280.0" y="10.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:Arrows source="none" target="delta"/>
+          <y:StyleProperties>
+            <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#ccd0dc"/>
+          </y:StyleProperties>
+        </y:GenericEdge>
+      </data>
+    </edge>
+    <edge id="e19" source="n5" target="n16">
+      <data key="d9"/>
+      <data key="d10">
+        <y:GenericEdge configuration="com.yworks.edge.framed">
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="2280.0" y="320.0"/>
+            <y:Point x="2280.0" y="-40.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:Arrows source="none" target="delta"/>
+          <y:StyleProperties>
+            <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#ccd0dc"/>
+          </y:StyleProperties>
+        </y:GenericEdge>
+      </data>
+    </edge>
+    <edge id="e20" source="n18" target="n10">
+      <data key="d9"/>
+      <data key="d10">
+        <y:GenericEdge configuration="com.yworks.edge.framed">
+          <y:Path sx="0.0" sy="0.0" tx="0.7685025936598322" ty="29.999999999999943">
+            <y:Point x="2300.0" y="130.0"/>
+            <y:Point x="2300.0" y="140.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:Arrows source="none" target="delta"/>
+          <y:StyleProperties>
+            <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#3890e8"/>
+          </y:StyleProperties>
+        </y:GenericEdge>
+      </data>
+    </edge>
+    <edge id="e21" source="n19" target="n10">
+      <data key="d9"/>
+      <data key="d10">
+        <y:GenericEdge configuration="com.yworks.edge.framed">
+          <y:Path sx="0.0" sy="0.0" tx="-17.334164841498932" ty="49.99999999999994">
+            <y:Point x="2300.0" y="170.0"/>
+            <y:Point x="2300.0" y="160.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:Arrows source="none" target="delta"/>
+          <y:StyleProperties>
+            <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#0060d4"/>
           </y:StyleProperties>
         </y:GenericEdge>
       </data>

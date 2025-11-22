@@ -41,6 +41,8 @@ STR_PARAM_EXT_ORGANIC_CHEMISTRY :Extension set "Organic Chemistry"
 STR_PARAM_EXT_ORGANIC_CHEMISTRY_DESC :Adds industries and cargos related to the processing of crude oil. Requires the extension Basic inorganic chemistry to be activated.
 STR_PARAM_EXT_COKE_SULPHUR :Extension set "Coke and Sulphur"
 STR_PARAM_EXT_COKE_SULPHUR_DESC :Adds industries and cargos related to the processing of ores containing sulphur.
+STR_PARAM_EXT_AMMONIA :Extension set "Ammonia synthesis"
+STR_PARAM_EXT_AMMONIA_DESC :Adds industries and cargos related to the synthesis of ammonia.
 
 STR_TOWN    :{STRING}
 STR_STATION :{STRING} {STRING}
@@ -60,6 +62,7 @@ STR_1985:1985
 # cargo type name
 STR_CARGO_NAME_ACID               :Acid
 STR_CARGO_NAME_ALUMINIUM          :Aluminium
+STR_CARGO_NAME_AMMONIA            :Ammonia
 STR_CARGO_NAME_BAUXITE            :Bauxite
 STR_CARGO_NAME_BUILDING_MATERIALS :Bricks
 STR_CARGO_NAME_CARBON_BLACK       :Carbon Black
@@ -75,7 +78,9 @@ STR_CARGO_NAME_HYDROGEN           :Hydrogen
 STR_CARGO_NAME_LIMESTONE          :Limestone
 STR_CARGO_NAME_LYE                :Lye
 STR_CARGO_NAME_MILK               :Milk
+STR_CARGO_NAME_N2                 :Nitrogen
 STR_CARGO_NAME_NAPHTHA            :Naphtha
+STR_CARGO_NAME_O2                 :Oxygen
 STR_CARGO_NAME_PACKAGING          :Packaging
 STR_CARGO_NAME_PAINT              :Paint
 STR_CARGO_NAME_PETROL             :Petrol
@@ -84,6 +89,7 @@ STR_CARGO_NAME_PYRITE_ORE         :Pyrite Ore
 STR_CARGO_NAME_QUICKLIME          :Quicklime
 STR_CARGO_NAME_SALT               :Salt
 STR_CARGO_NAME_SAND               :Sand
+STR_CARGO_NAME_SODA               :Soda Ash
 STR_CARGO_NAME_SULPHUR            :Schwefel
 STR_CARGO_NAME_TEXTILES           :Textiles
 STR_CARGO_NAME_TIMBER             :Timber
@@ -93,6 +99,7 @@ STR_CARGO_NAME_WOOL               :Wool
 # cargo long form ("x units of cargo")
 STR_QUANTITY_ACID                 :{WEIGHT} of acid
 STR_QUANTITY_ALUMINIUM            :{WEIGHT} of aluminium
+STR_QUANTITY_AMMONIA              :{WEIGHT} of ammonia
 STR_QUANTITY_BAUXITE              :{WEIGHT} of bauxite
 STR_QUANTITY_BUILDING_MATERIALS   :{WEIGHT} of bricks
 STR_QUANTITY_CARBON_BLACK         :{WEIGHT} of carbon black
@@ -109,7 +116,9 @@ STR_QUANTITY_HYDROGEN             :{WEIGHT} of hydrogen
 STR_QUANTITY_LIMESTONE            :{WEIGHT} of limestone
 STR_QUANTITY_LYE                  :{WEIGHT} of lye
 STR_QUANTITY_MILK                 :{WEIGHT} of milk
+STR_QUANTITY_N2                   :{WEIGHT} of nitrogen
 STR_QUANTITY_NAPHTHA              :{WEIGHT} of naphtha
+STR_QUANTITY_O2                   :{WEIGHT} of oxygen
 STR_QUANTITY_OIL                  :{WEIGHT} of oil
 STR_QUANTITY_PACKAGING            :{WEIGHT} of packaging
 STR_QUANTITY_PAINT                :{WEIGHT} of paint
@@ -119,6 +128,7 @@ STR_QUANTITY_PYRITE_ORE           :{WEIGHT} of pyrite ore
 STR_QUANTITY_QUICKLIME            :{WEIGHT} of quicklime
 STR_QUANTITY_SALT                 :{WEIGHT} of salt
 STR_QUANTITY_SAND                 :{WEIGHT} of sand
+STR_QUANTITY_SODA                 :{WEIGHT} of soda ash
 STR_QUANTITY_SULPHUR              :{WEIGHT} of sulphur
 STR_QUANTITY_TEXTILES             :{WEIGHT} of textiles
 STR_QUANTITY_TIMBER               :{WEIGHT} of timber
@@ -128,6 +138,7 @@ STR_QUANTITY_WOOL                 :{WEIGHT} of wool
 # cargo abbreviation (used e.g. in station overview list to denote waiting cargo)
 STR_CID_ACID                      :{TINYFONT}ACID
 STR_CID_ALUMINIUM                 :{TINYFONT}ALUM
+STR_CID_AMMONIA                   :{TINYFONT}NH3
 STR_CID_BAUXITE                   :{TINYFONT}AORE
 STR_CID_BUILDING_MATERIALS        :{TINYFONT}BDMT
 STR_CID_CARBON_BLACK              :{TINYFONT}CBLK
@@ -144,7 +155,9 @@ STR_CID_HYDROGEN                  :{TINYFONT}H2
 STR_CID_LIMESTONE                 :{TINYFONT}LIME
 STR_CID_LYE                       :{TINYFONT}LYE
 STR_CID_MILK                      :{TINYFONT}MILK
+STR_CID_N2                        :{TINYFONT}N2
 STR_CID_NAPHTHA                   :{TINYFONT}RFPR
+STR_CID_O2                        :{TINYFONT}O2
 # do not use the cargo label MNSP here, MNSP is used to improve compatibility with vehicle sets designed for FIRS/AXIS,
 # introducing another cargo label would make it more complicated for vehicle set developers
 STR_CID_PACKAGING                 :{TINYFONT}PACK
@@ -155,6 +168,7 @@ STR_CID_PYRITE_ORE                :{TINYFONT}PORE
 STR_CID_QUICKLIME                 :{TINYFONT}QLME
 STR_CID_SALT                      :{TINYFONT}SALT
 STR_CID_SAND                      :{TINYFONT}SAND
+STR_CID_SODA                      :{TINYFONT}SODA
 STR_CID_SULPHUR                   :{TINYFONT}SULP
 STR_CID_TEXTILES                  :{TINYFONT}TEXT
 STR_CID_TIMBER                    :{TINYFONT}WDPR
@@ -164,17 +178,20 @@ STR_CID_WOOL                      :{TINYFONT}WOOL
 # Industries
 STR_IND_ACID_PLANT             :Acid Plant
 STR_IND_ALUMINIUM_PLANT        :Aluminium Plant
+STR_IND_AMMONIA_PLANT          :Ammonia Plant
 STR_IND_ANIMAL_FARM            :Animal Farm
 STR_IND_BREWERY                :Brewery
 STR_IND_BRICK_WORKS            :Brickworks
 STR_IND_BUILDERS_YARD          :Builders Yard
 STR_IND_CARBON_BLACK_PLANT     :Carbon Black Plant
 STR_IND_CEMENT_PLANT           :Cement Plant
-STR_IND_CHLOR_ALKALI_PLANT     :Chloralkali process plant
+STR_IND_CHLOR_ALKALI_PLANT     :Chloralkali Process Plant
+STR_IND_CLEANING_PRODUCTS_FACTORY:Cleaning Products Factory
 STR_IND_CLOTHING_PLANT         :Clothing Plant
 STR_IND_COAL_LIQUEFACTION_PLANT:Coal Liquefaction Plant
 STR_IND_COKE_OVEN              :Coke Oven
 STR_IND_COPPER_SMELTER         :Copper Smelter
+STR_IND_CRYO_PLANT             :Cryo Plant
 STR_IND_DAIRY                  :Dairy
 STR_IND_DEPARTMENT_STORE       :Department Store
 STR_IND_FISHING_GROUNDS        :Fishing Grounds
@@ -196,6 +213,7 @@ STR_IND_PORT                   :Port
 STR_IND_PYRITE_MINE            :Pyrite Mine
 STR_IND_SALT_MINE              :Salt Mine
 STR_IND_SANDPIT                :Sand pit
+STR_IND_SODA_PLANT             :Solvay Plant
 STR_IND_STEAMCRACKER           :Steamcracker
 STR_IND_STEAMREFORMER          :Steamreformer
 STR_IND_STOCKYARD              :Meatpacking Plant
@@ -204,58 +222,62 @@ STR_IND_VEHICLE_DISTRIBUTOR    :Vehicle Distributor
 STR_IND_VEHICLE_FACTORY        :Vehicle Factory
 
 # station names related to industries
-STR_STATION_ALUMINIUM_PLANT        :Aluminium Plant
-STR_STATION_ANIMAL_FARM            :Animal Farm
-STR_STATION_BREWERY                :Brewery
-STR_STATION_BRICK_WORKS            :Brickworks
-STR_STATION_BUILDERS_YARD          :Builders Yard
-STR_STATION_CARBON_BLACK_PLANT     :Carbon Black Plant
-STR_STATION_CEMENT_PLANT           :Cement Plant
-STR_STATION_CHLOR_ALKALI_PLANT     :Chloralkali process Plant
-STR_STATION_CLOTHING_PLANT         :Clothing Plant
-STR_STATION_COAL_LIQUEFACTION_PLANT:Coal Liquefaction Plant
-STR_STATION_COAL_MINE              :Mining
-STR_STATION_COKE_OVEN              :Coke Oven
-STR_STATION_COPPER_ORE_MINE        :Mining
-STR_STATION_COPPER_SMELTER         :Copper Smelter
-STR_STATION_DAIRY                  :Dairy
-STR_STATION_DEPARTMENT_STORE       :Department Store
-STR_STATION_FARM                   :Farm
-STR_STATION_FISHING_GROUNDS        :Fishing Grounds
-STR_STATION_FLOUR_MILL             :Flour Mill
-STR_STATION_FOOD_PROCESSOR         :Food Processor
-STR_STATION_FOREST                 :Forest
-STR_STATION_FURNITURE_FACTORY      :Furniture Factory
-STR_STATION_GENERAL_STORE          :General Store
-STR_STATION_GLASS_WORKS            :Glass Works
-STR_STATION_HOTEL                  :Hotel
-STR_STATION_INTEGRATED_STEEL_MILL  :Integrated Steel Mill
-STR_STATION_IRON_ORE_MINE          :Mining
-STR_STATION_LIME_KILN              :Lime Kiln
-STR_STATION_LIMESTONE_MINE         :Mining
-STR_STATION_OIL_REFINERY           :Refinery
-STR_STATION_OIL_RIG                :Oil Rig
-STR_STATION_OIL_WELL               :Oil Wells
-STR_STATION_ORE_SMELTER            :Ore Smelter
-STR_STATION_PACKAGING_PLANT        :Packaging Plant
-STR_STATION_PAINT_FACTORY          :Paint Factory
-STR_STATION_PAPER_MILL             :Paper Mill
-STR_STATION_PETROL_STATION         :Petrol Station
-STR_STATION_PHARMACEUTICAL_PLANT   :Pharmaceutical Plant
-STR_STATION_PLASTICS_PLANT         :Plastics Plant
-STR_STATION_PORT                   :Port
-STR_STATION_POWER_PLANT            :Powerplant
-STR_STATION_PYRITE_MINE            :Mining
-STR_STATION_PRINTING_WORKS         :Printing Works
-STR_STATION_SALT_MINE              :Salt Mine
-STR_STATION_SANDPIT                :Sand Pit
-STR_STATION_SAWMILL                :Sawmill
-STR_STATION_STEAMCRACKER           :Steamcracker
-STR_STATION_STEAMREFORMER          :Steamreformer
-STR_STATION_STOCKYARD              :Stockyard
-STR_STATION_TEXTILE_MILL           :Textile Mill
-STR_STATION_VEHICLE_DISTRIBUTOR    :Vehicle Distributor
-STR_STATION_VEHICLE_FACTORY        :Vehicle Factory
+STR_STATION_ALUMINIUM_PLANT          :Aluminium Plant
+STR_STATION_AMMONIA_PLANT            :Ammonia Plant
+STR_STATION_ANIMAL_FARM              :Animal Farm
+STR_STATION_BREWERY                  :Brewery
+STR_STATION_BRICK_WORKS              :Brickworks
+STR_STATION_BUILDERS_YARD            :Builders Yard
+STR_STATION_CARBON_BLACK_PLANT       :Carbon Black Plant
+STR_STATION_CEMENT_PLANT             :Cement Plant
+STR_STATION_CHLOR_ALKALI_PLANT       :Chloralkali Process Plant
+STR_STATION_CLEANING_PRODUCTS_FACTORY:Cleaning Products Factory
+STR_STATION_CLOTHING_PLANT           :Clothing Plant
+STR_STATION_COAL_LIQUEFACTION_PLANT  :Coal Liquefaction Plant
+STR_STATION_COAL_MINE                :Mining
+STR_STATION_COKE_OVEN                :Coke Oven
+STR_STATION_COPPER_ORE_MINE          :Mining
+STR_STATION_COPPER_SMELTER           :Copper Smelter
+STR_STATION_CRYO_PLANT               :Cryo Plant
+STR_STATION_DAIRY                    :Dairy
+STR_STATION_DEPARTMENT_STORE         :Department Store
+STR_STATION_FARM                     :Farm
+STR_STATION_FISHING_GROUNDS          :Fishing Grounds
+STR_STATION_FLOUR_MILL               :Flour Mill
+STR_STATION_FOOD_PROCESSOR           :Food Processor
+STR_STATION_FOREST                   :Forest
+STR_STATION_FURNITURE_FACTORY        :Furniture Factory
+STR_STATION_GENERAL_STORE            :General Store
+STR_STATION_GLASS_WORKS              :Glass Works
+STR_STATION_HOTEL                    :Hotel
+STR_STATION_INTEGRATED_STEEL_MILL    :Integrated Steel Mill
+STR_STATION_IRON_ORE_MINE            :Mining
+STR_STATION_LIME_KILN                :Lime Kiln
+STR_STATION_LIMESTONE_MINE           :Mining
+STR_STATION_OIL_REFINERY             :Refinery
+STR_STATION_OIL_RIG                  :Oil Rig
+STR_STATION_OIL_WELL                 :Oil Wells
+STR_STATION_ORE_SMELTER              :Ore Smelter
+STR_STATION_PACKAGING_PLANT          :Packaging Plant
+STR_STATION_PAINT_FACTORY            :Paint Factory
+STR_STATION_PAPER_MILL               :Paper Mill
+STR_STATION_PETROL_STATION           :Petrol Station
+STR_STATION_PHARMACEUTICAL_PLANT     :Pharmaceutical Plant
+STR_STATION_PLASTICS_PLANT           :Plastics Plant
+STR_STATION_PORT                     :Port
+STR_STATION_POWER_PLANT              :Powerplant
+STR_STATION_PYRITE_MINE              :Mining
+STR_STATION_PRINTING_WORKS           :Printing Works
+STR_STATION_SALT_MINE                :Salt Mine
+STR_STATION_SANDPIT                  :Sand Pit
+STR_STATION_SAWMILL                  :Sawmill
+STR_STATION_SODA_PLANT               :Solvay Plant
+STR_STATION_STEAMCRACKER             :Steamcracker
+STR_STATION_STEAMREFORMER            :Steamreformer
+STR_STATION_STOCKYARD                :Stockyard
+STR_STATION_TEXTILE_MILL             :Textile Mill
+STR_STATION_VEHICLE_DISTRIBUTOR      :Vehicle Distributor
+STR_STATION_VEHICLE_FACTORY          :Vehicle Factory
 
 # Industry window texts
 STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION :Transport more than 60% of the produced cargo to increase production.
@@ -266,7 +288,7 @@ STR_ORGANIC_INDUSTRY_TEXT:{STRING}{STRING}
 STR_EXTRACTIVE_INDUSTRY_TEXT:{STRING}{STRING}{}About {YELLOW}{COMMA} kt {BLACK} remain (est. {YELLOW}{COMMA} years{BLACK} at current production rate)
 # Secondary industries with optional input requirements
 STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO :Industry requires the raw materials printed in black to produce anything. Raw materials printed in white will increase the maximum production level.
-STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO_ANY :Industry starts producing as soon as any raw material printed is available. Maximum production level is limited by the number of different raw materials available. Raw materials printed in white will further increase the maximum production level.
+STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO_ANY :Industry starts producing as soon as any raw material printed in black is available. Maximum production level is limited by the number of different raw materials available. Raw materials printed in white will further increase the maximum production level.
 STR_INDUSTRY_NEEDS_ANY_INPUT :Industry starts producing as soon as any raw material is available. Maximum production level is limited by the number of different raw materials available.
 # Text that has to do with energy production, power plant displays how much power is produced and demanded,
 # Industries show much power they need for their current production and if their demand is met
@@ -277,6 +299,8 @@ STR_INDUSTRY_NOT_ENOUGH_POWER :{YELLOW}Not enough power available, production re
 STR_INDUSTRY_ENOUGH_POWER :{GREEN}Enough power available.
 # Custom texts for industries
 STR_ACID_PLANT_HCL_SULP :Industry requires either sulphur or both hydrogen and chlorine to produce anything. Production level will increase if all three are available.
+STR_ACID_PLANT_HCL_SULP_NH3 :Industry requires sulphur + oxygen or hydrogen + chlorine or ammonia + oxygen to produce anything. Production level will increase if all five are available.
+STR_ACID_PLANT_SULP_NH3 :Industry requires sulphur + oxygen or ammonia + oxygen to produce anything. Production level will increase if all three are available.
 
 STR_INDUSTRY_ELECTRICITY_OPTIONAL_CARGO_TEXT :Industry can produce {YELLOW}{COMMA}{BLACK} items ({YELLOW}{COMMA}{BLACK}% of maximum production){}Maximum production requires {YELLOW}{COMMA}{BLACK} power.{}{STRING}{}{BLACK}{STRING}
 
@@ -292,7 +316,8 @@ STR_CARGO_SUBTYPE_DISPLAY_OPTIONAL_CARGO_AVAILABLE :{WHITE} ({CARGO_SHORT} in st
 STR_ERR_OPENTTD_VERSION:{ORANGE}E00:{TITLE} requires OpenTTD 14.0 or newer
 STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE :must be placed below the snow line.
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE :cannot be placed on steep slopes.
-STR_ERR_EXTENSION_GLASS_REQUIRES_EXTENSION_BUILDING_INDUSTRIES:Extension "Glass" requires Extension "Building Industries" to be activated.
-STR_ERR_EXTENSION_PAPER_REQUIRES_EXTENSION_BASIC_INORGANIC_CHEMISTRY:Extension "Paper" requires Extension "Basic inorganic chemistry" to be activated.
-STR_ERR_EXTENSION_ORGANIC_CHEMISTRY_REQUIRES_EXTENSION_BASIC_INORGANIC_CHEMISTRY:Extension "Organic Chemistry" requires Extension "Basic inorganic chemistry" to be activated.
+STR_ERR_EXTENSION_GLASS_REQUIRES_EXTENSION_BUILDING_INDUSTRIES:Extension "Glass" requires extension "Building Industries" to be activated.
+STR_ERR_EXTENSION_PAPER_REQUIRES_EXTENSION_BASIC_INORGANIC_CHEMISTRY:Extension "Paper" requires extension "Basic inorganic chemistry" to be activated.
+STR_ERR_EXTENSION_ORGANIC_CHEMISTRY_REQUIRES_EXTENSION_BASIC_INORGANIC_CHEMISTRY:Extension "Organic Chemistry" requires extension "Basic inorganic chemistry" to be activated.
 STR_ERR_EXTENSION_SULPHUR_COKE_REQUIRES_OTHER_EXTENSIONS:Extension "Coke and Sulphur" requires at least one of the following extensions to be activated: "Basic inorganic chemistry", "Painting Industries"
+STR_ERR_EXTENSION_AMMONIA_REQUIRES_INORGANIC_CHEMISTRY_BUILDING_MATERIALS:Extension "Ammonia" requires extensions "Building industries" and "Basic inorganic chemistry" to be activated.
