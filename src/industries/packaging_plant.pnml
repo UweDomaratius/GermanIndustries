@@ -826,6 +826,7 @@ switch(FEAT_INDUSTRIES, SELF, packaging_plant_switch_cargo_subtype, getbits(extr
 	ALUM: switch_cargo_subtype;
 	PLAS: switch_cargo_subtype;
 	GLAS: switch_cargo_subtype;
+	PAPR: switch_cargo_subtype;
 	return 0x3800 + string(STR_EMPTY);
 }
 

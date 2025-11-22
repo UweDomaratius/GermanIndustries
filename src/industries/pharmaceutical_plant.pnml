@@ -772,14 +772,15 @@ switch(FEAT_INDUSTRIES, SELF, pharmaceutical_plant_switch_location_check_industr
 
 produce(pharmaceutical_plant_produce,
 	[CHLO: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
-	 H2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);],
+	 H2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	],
 	[GOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
 	0 // do not run again
 )
 
 switch(FEAT_INDUSTRIES, SELF, pharmaceutical_plant_switch_produce, 
 	[STORE_TEMP(incoming_cargo_waiting("CHLO"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
-	STORE_TEMP(incoming_cargo_waiting("H2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 STORE_TEMP(incoming_cargo_waiting("H2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
 	 
 	 calculate_raw_material_usage(),
 	 calculate_total_production(),
@@ -788,106 +789,11 @@ switch(FEAT_INDUSTRIES, SELF, pharmaceutical_plant_switch_produce,
 	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
 	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
 	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (2-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 
-	 STORE_TEMP(incoming_cargo_waiting("MNSP"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
-	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
-	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
-	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW2),
 	 
 	 store_debug_production_data()
 	])
 {
 	pharmaceutical_plant_produce;
-}
-
-produce(pharmaceutical_plant_produce_ext_organic_chemistry,
-	[CHLO: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
-	 H2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
-	 RFPR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
-	 C2H4: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW3);
-	 ],
-	[GOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
-	0 // do not run again
-)
-
-switch(FEAT_INDUSTRIES, SELF, pharmaceutical_plant_switch_produce_ext_organic_chemistry, 
-	[STORE_TEMP(incoming_cargo_waiting("CHLO"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
-	STORE_TEMP(incoming_cargo_waiting("H2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
-	STORE_TEMP(incoming_cargo_waiting("RFPR"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
-	STORE_TEMP(incoming_cargo_waiting("C2H4"),TEMP_REGISTER_INCOMING_CARGO_WAITING3),
-	 
-	 calculate_raw_material_usage(),
-	 calculate_total_production(),
-	 calculate_number_of_waiting_cargos(),
-	 
-	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
-	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
-	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (4-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 
-	 STORE_TEMP(incoming_cargo_waiting("MNSP"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
-	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
-	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
-	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW2),
-	 
-	 store_debug_production_data()
-	])
-{
-	pharmaceutical_plant_produce_ext_organic_chemistry;
-}
-
-produce(pharmaceutical_plant_produce_ext_packaging_industries,
-	[CHLO: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
-	 H2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);],
-	[GOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
-	0 // do not run again
-)
-
-switch(FEAT_INDUSTRIES, SELF, pharmaceutical_plant_switch_produce_ext_packaging_industries, 
-	[STORE_TEMP(incoming_cargo_waiting("CHLO"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
-	STORE_TEMP(incoming_cargo_waiting("H2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
-	 
-	 calculate_raw_material_usage(),
-	 calculate_total_production(),
-	 calculate_number_of_waiting_cargos(),
-	 
-	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
-	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
-	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (2-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 
-	 store_debug_production_data()
-	])
-{
-	pharmaceutical_plant_produce_ext_packaging_industries;
-}
-
-produce(pharmaceutical_plant_produce_ext_packaging_industries_ext_organic_chemistry,
-	[CHLO: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
-	 H2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
-	 RFPR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
-	 C2H4: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW3);
-	 ],
-	[GOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
-	0 // do not run again
-)
-
-switch(FEAT_INDUSTRIES, SELF, pharmaceutical_plant_switch_produce_ext_packaging_industries_ext_organic_chemistry, 
-	[STORE_TEMP(incoming_cargo_waiting("CHLO"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
-	 STORE_TEMP(incoming_cargo_waiting("H2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
-	 STORE_TEMP(incoming_cargo_waiting("RFPR"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
-	 STORE_TEMP(incoming_cargo_waiting("C2H4"),TEMP_REGISTER_INCOMING_CARGO_WAITING3),
-	 
-	 calculate_raw_material_usage(),
-	 calculate_total_production(),
-	 calculate_number_of_waiting_cargos(),
-	 
-	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
-	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
-	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (4-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 
-	 store_debug_production_data()
-	])
-{
-	pharmaceutical_plant_produce_ext_packaging_industries_ext_organic_chemistry;
 }
 
 produce(pharmaceutical_plant_produce_ext_coke_sulphur,
@@ -912,59 +818,18 @@ switch(FEAT_INDUSTRIES, SELF, pharmaceutical_plant_switch_produce_ext_coke_sulph
 	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
 	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (3-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
 	 
-	 STORE_TEMP(incoming_cargo_waiting("MNSP"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
-	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
-	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
-	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW2),
-	 
 	 store_debug_production_data()
 	])
 {
 	pharmaceutical_plant_produce_ext_coke_sulphur;
 }
 
-produce(pharmaceutical_plant_produce_ext_organic_chemistry_ext_coke_sulphur,
-	[CHLO: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
-	 H2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
-	 RFPR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
-	 C2H4: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW3);
-	 ACID: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW4);
-	 ],
-	[GOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
-	0 // do not run again
-)
-
-switch(FEAT_INDUSTRIES, SELF, pharmaceutical_plant_switch_produce_ext_organic_chemistry_ext_coke_sulphur, 
-	[STORE_TEMP(incoming_cargo_waiting("CHLO"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
-	STORE_TEMP(incoming_cargo_waiting("H2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
-	STORE_TEMP(incoming_cargo_waiting("RFPR"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
-	STORE_TEMP(incoming_cargo_waiting("C2H4"),TEMP_REGISTER_INCOMING_CARGO_WAITING3),
-	STORE_TEMP(incoming_cargo_waiting("ACID"),TEMP_REGISTER_INCOMING_CARGO_WAITING4),
-	 
-	 calculate_raw_material_usage(),
-	 calculate_total_production(),
-	 calculate_number_of_waiting_cargos(),
-	 
-	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
-	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
-	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (5-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 
-	 STORE_TEMP(incoming_cargo_waiting("MNSP"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
-	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
-	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
-	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW2),
-	 
-	 store_debug_production_data()
-	])
-{
-	pharmaceutical_plant_produce_ext_organic_chemistry_ext_coke_sulphur;
-}
-
 produce(pharmaceutical_plant_produce_ext_packaging_industries_ext_coke_sulphur,
 	[CHLO: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
 	 H2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
 	 ACID: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
-	],
+	 MNSP: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW3);
+	 ],
 	[GOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
 	0 // do not run again
 )
@@ -982,10 +847,145 @@ switch(FEAT_INDUSTRIES, SELF, pharmaceutical_plant_switch_produce_ext_packaging_
 	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
 	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (3-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
 	 
+	 STORE_TEMP(incoming_cargo_waiting("MNSP"),TEMP_REGISTER_INCOMING_CARGO_WAITING3),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING3) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING3), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW3),
+	 
 	 store_debug_production_data()
 	])
 {
 	pharmaceutical_plant_produce_ext_packaging_industries_ext_coke_sulphur;
+}
+
+produce(pharmaceutical_plant_produce_ext_packaging_industries,
+	[CHLO: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 H2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 MNSP: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
+	],
+	[GOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, pharmaceutical_plant_switch_produce_ext_packaging_industries, 
+	[STORE_TEMP(incoming_cargo_waiting("CHLO"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 STORE_TEMP(incoming_cargo_waiting("H2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 calculate_number_of_waiting_cargos(),
+	 
+	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
+	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
+	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (2-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("MNSP"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW2),
+	 
+	 store_debug_production_data()
+	])
+{
+	pharmaceutical_plant_produce_ext_packaging_industries;
+}
+
+produce(pharmaceutical_plant_produce_ext_organic_chemistry,
+	[CHLO: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 H2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 RFPR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
+	 C2H4: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW3);
+	 ],
+	[GOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, pharmaceutical_plant_switch_produce_ext_organic_chemistry, 
+	[STORE_TEMP(incoming_cargo_waiting("CHLO"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 STORE_TEMP(incoming_cargo_waiting("H2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 STORE_TEMP(incoming_cargo_waiting("RFPR"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	 STORE_TEMP(incoming_cargo_waiting("C2H4"),TEMP_REGISTER_INCOMING_CARGO_WAITING3),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 calculate_number_of_waiting_cargos(),
+	 
+	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
+	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
+	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (4-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 
+	 store_debug_production_data()
+	])
+{
+	pharmaceutical_plant_produce_ext_organic_chemistry;
+}
+
+produce(pharmaceutical_plant_produce_ext_packaging_industries_ext_organic_chemistry,
+	[CHLO: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 H2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 RFPR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
+	 C2H4: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW3);
+	 MNSP: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW4);
+	],
+	[GOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, pharmaceutical_plant_switch_produce_ext_packaging_industries_ext_organic_chemistry, 
+	[STORE_TEMP(incoming_cargo_waiting("CHLO"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 STORE_TEMP(incoming_cargo_waiting("H2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 STORE_TEMP(incoming_cargo_waiting("RFPR"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	 STORE_TEMP(incoming_cargo_waiting("C2H4"),TEMP_REGISTER_INCOMING_CARGO_WAITING3),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 calculate_number_of_waiting_cargos(),
+	 
+	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
+	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
+	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (4-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("MNSP"),TEMP_REGISTER_INCOMING_CARGO_WAITING4),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING4) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING4), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW4),
+	 
+	 store_debug_production_data()
+	])
+{
+	pharmaceutical_plant_produce_ext_packaging_industries_ext_organic_chemistry;
+}
+
+produce(pharmaceutical_plant_produce_ext_organic_chemistry_ext_coke_sulphur,
+	[CHLO: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 H2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 RFPR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
+	 C2H4: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW3);
+	 ACID: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW4);
+	 ],
+	[GOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, pharmaceutical_plant_switch_produce_ext_organic_chemistry_ext_coke_sulphur, 
+	[STORE_TEMP(incoming_cargo_waiting("CHLO"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 STORE_TEMP(incoming_cargo_waiting("H2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 STORE_TEMP(incoming_cargo_waiting("RFPR"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	 STORE_TEMP(incoming_cargo_waiting("C2H4"),TEMP_REGISTER_INCOMING_CARGO_WAITING3),
+	 STORE_TEMP(incoming_cargo_waiting("ACID"),TEMP_REGISTER_INCOMING_CARGO_WAITING4),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 calculate_number_of_waiting_cargos(),
+	 
+	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
+	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
+	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (5-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 
+	 store_debug_production_data()
+	])
+{
+	pharmaceutical_plant_produce_ext_organic_chemistry_ext_coke_sulphur;
 }
 
 produce(pharmaceutical_plant_produce_ext_packaging_industries_ext_organic_chemistry_ext_coke_sulphur,
@@ -994,6 +994,7 @@ produce(pharmaceutical_plant_produce_ext_packaging_industries_ext_organic_chemis
 	 RFPR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
 	 C2H4: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW3);
 	 ACID: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW4);
+	 MNSP: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW5);
 	 ],
 	[GOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
 	0 // do not run again
@@ -1014,10 +1015,319 @@ switch(FEAT_INDUSTRIES, SELF, pharmaceutical_plant_switch_produce_ext_packaging_
 	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
 	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (5-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
 	 
+	 STORE_TEMP(incoming_cargo_waiting("MNSP"),TEMP_REGISTER_INCOMING_CARGO_WAITING5),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING5) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING5), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW5),
+	 
 	 store_debug_production_data()
 	])
 {
 	pharmaceutical_plant_produce_ext_packaging_industries_ext_organic_chemistry_ext_coke_sulphur;
+}
+
+produce(pharmaceutical_plant_produce_ext_ammonia,
+	[CHLO: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 H2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 O2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
+	 NH3_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW3);
+	 N2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW4);
+	 ],
+	[GOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, pharmaceutical_plant_switch_produce_ext_ammonia, 
+	[STORE_TEMP(incoming_cargo_waiting("CHLO"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 STORE_TEMP(incoming_cargo_waiting("H2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 STORE_TEMP(incoming_cargo_waiting("O2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	 STORE_TEMP(incoming_cargo_waiting("NH3_"),TEMP_REGISTER_INCOMING_CARGO_WAITING3),
+	 STORE_TEMP(incoming_cargo_waiting("N2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING4),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 calculate_number_of_waiting_cargos(),
+	 
+	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
+	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
+	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (5-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 
+	 store_debug_production_data()
+	])
+{
+	pharmaceutical_plant_produce_ext_ammonia;
+}
+
+produce(pharmaceutical_plant_produce_ext_packaging_industries_ext_ammonia,
+	[CHLO: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 H2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 O2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
+	 NH3_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW3);
+	 N2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW4);
+	 MNSP: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW5);
+	 ],
+	[GOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, pharmaceutical_plant_switch_produce_ext_packaging_industries_ext_ammonia, 
+	[STORE_TEMP(incoming_cargo_waiting("CHLO"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 STORE_TEMP(incoming_cargo_waiting("H2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 STORE_TEMP(incoming_cargo_waiting("O2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	 STORE_TEMP(incoming_cargo_waiting("NH3_"),TEMP_REGISTER_INCOMING_CARGO_WAITING3),
+	 STORE_TEMP(incoming_cargo_waiting("N2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING4),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 calculate_number_of_waiting_cargos(),
+	 
+	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
+	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
+	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (5-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("MNSP"),TEMP_REGISTER_INCOMING_CARGO_WAITING5),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING5) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING5), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW5),
+	 
+	 store_debug_production_data()
+	])
+{
+	pharmaceutical_plant_produce_ext_packaging_industries_ext_ammonia;
+}
+
+produce(pharmaceutical_plant_produce_ext_organic_chemistry_ext_ammonia,
+	[CHLO: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 H2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 RFPR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
+	 C2H4: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW3);
+	 O2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW4);
+	 NH3_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW5);
+	 N2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW6);
+	 ],
+	[GOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, pharmaceutical_plant_switch_produce_ext_organic_chemistry_ext_ammonia, 
+	[STORE_TEMP(incoming_cargo_waiting("CHLO"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 STORE_TEMP(incoming_cargo_waiting("H2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 STORE_TEMP(incoming_cargo_waiting("RFPR"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	 STORE_TEMP(incoming_cargo_waiting("C2H4"),TEMP_REGISTER_INCOMING_CARGO_WAITING3),
+	 STORE_TEMP(incoming_cargo_waiting("O2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING4),
+	 STORE_TEMP(incoming_cargo_waiting("NH3_"),TEMP_REGISTER_INCOMING_CARGO_WAITING5),
+	 STORE_TEMP(incoming_cargo_waiting("N2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING6),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 calculate_number_of_waiting_cargos(),
+	 
+	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
+	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
+	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (7-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 
+	 store_debug_production_data()
+	])
+{
+	pharmaceutical_plant_produce_ext_organic_chemistry_ext_ammonia;
+}
+
+produce(pharmaceutical_plant_produce_ext_packaging_industries_ext_organic_chemistry_ext_ammonia,
+	[CHLO: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 H2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 RFPR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
+	 C2H4: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW3);
+	 O2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW4);
+	 NH3_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW5);
+	 N2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW6);
+	 MNSP: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW7);
+	 ],
+	[GOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, pharmaceutical_plant_switch_produce_ext_packaging_industries_ext_organic_chemistry_ext_ammonia, 
+	[STORE_TEMP(incoming_cargo_waiting("CHLO"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 STORE_TEMP(incoming_cargo_waiting("H2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 STORE_TEMP(incoming_cargo_waiting("RFPR"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	 STORE_TEMP(incoming_cargo_waiting("C2H4"),TEMP_REGISTER_INCOMING_CARGO_WAITING3),
+	 STORE_TEMP(incoming_cargo_waiting("O2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING4),
+	 STORE_TEMP(incoming_cargo_waiting("NH3_"),TEMP_REGISTER_INCOMING_CARGO_WAITING5),
+	 STORE_TEMP(incoming_cargo_waiting("N2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING6),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 calculate_number_of_waiting_cargos(),
+	 
+	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
+	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
+	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (7-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("MNSP"),TEMP_REGISTER_INCOMING_CARGO_WAITING7),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING7) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING7), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW7),
+	 
+	 store_debug_production_data()
+	])
+{
+	pharmaceutical_plant_produce_ext_packaging_industries_ext_organic_chemistry_ext_ammonia;
+}
+
+produce(pharmaceutical_plant_produce_ext_coke_sulphur_ext_ammonia,
+	[CHLO: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 H2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 ACID: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
+	 O2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW3);
+	 NH3_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW4);
+	 N2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW5);
+	 ],
+	[GOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, pharmaceutical_plant_switch_produce_ext_coke_sulphur_ext_ammonia, 
+	[STORE_TEMP(incoming_cargo_waiting("CHLO"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 STORE_TEMP(incoming_cargo_waiting("H2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 STORE_TEMP(incoming_cargo_waiting("ACID"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	 STORE_TEMP(incoming_cargo_waiting("O2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING3),
+	 STORE_TEMP(incoming_cargo_waiting("NH3_"),TEMP_REGISTER_INCOMING_CARGO_WAITING4),
+	 STORE_TEMP(incoming_cargo_waiting("N2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING5),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 calculate_number_of_waiting_cargos(),
+	 
+	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
+	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
+	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (6-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 
+	 store_debug_production_data()
+	])
+{
+	pharmaceutical_plant_produce_ext_coke_sulphur_ext_ammonia;
+}
+
+produce(pharmaceutical_plant_produce_ext_packaging_industries_ext_coke_sulphur_ext_ammonia,
+	[CHLO: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 H2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 ACID: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
+	 O2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW3);
+	 NH3_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW4);
+	 N2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW5);
+	 MNSP: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW6);
+	 ],
+	[GOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, pharmaceutical_plant_switch_produce_ext_packaging_industries_ext_coke_sulphur_ext_ammonia, 
+	[STORE_TEMP(incoming_cargo_waiting("CHLO"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 STORE_TEMP(incoming_cargo_waiting("H2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 STORE_TEMP(incoming_cargo_waiting("ACID"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	 STORE_TEMP(incoming_cargo_waiting("O2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING3),
+	 STORE_TEMP(incoming_cargo_waiting("NH3_"),TEMP_REGISTER_INCOMING_CARGO_WAITING4),
+	 STORE_TEMP(incoming_cargo_waiting("N2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING5),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 calculate_number_of_waiting_cargos(),
+	 
+	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
+	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
+	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (6-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("MNSP"),TEMP_REGISTER_INCOMING_CARGO_WAITING6),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING6) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING6), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW6),
+	 
+	 store_debug_production_data()
+	])
+{
+	pharmaceutical_plant_produce_ext_packaging_industries_ext_coke_sulphur_ext_ammonia;
+}
+
+produce(pharmaceutical_plant_produce_ext_organic_chemistry_ext_coke_sulphur_ext_ammonia,
+	[CHLO: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 H2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 RFPR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
+	 C2H4: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW3);
+	 O2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW4);
+	 NH3_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW5);
+	 ACID: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW6);
+	 N2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW7);
+	 ],
+	[GOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, pharmaceutical_plant_switch_produce_ext_organic_chemistry_ext_coke_sulphur_ext_ammonia, 
+	[STORE_TEMP(incoming_cargo_waiting("CHLO"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 STORE_TEMP(incoming_cargo_waiting("H2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 STORE_TEMP(incoming_cargo_waiting("RFPR"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	 STORE_TEMP(incoming_cargo_waiting("C2H4"),TEMP_REGISTER_INCOMING_CARGO_WAITING3),
+	 STORE_TEMP(incoming_cargo_waiting("O2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING4),
+	 STORE_TEMP(incoming_cargo_waiting("NH3_"),TEMP_REGISTER_INCOMING_CARGO_WAITING5),
+	 STORE_TEMP(incoming_cargo_waiting("ACID"),TEMP_REGISTER_INCOMING_CARGO_WAITING6),
+	 STORE_TEMP(incoming_cargo_waiting("N2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING7),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 calculate_number_of_waiting_cargos(),
+	 
+	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
+	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
+	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (8-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 
+	 store_debug_production_data()
+	])
+{
+	pharmaceutical_plant_produce_ext_organic_chemistry_ext_coke_sulphur_ext_ammonia;
+}
+
+produce(pharmaceutical_plant_produce_ext_packaging_industries_ext_organic_chemistry_ext_coke_sulphur_ext_ammonia,
+	[CHLO: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 H2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 RFPR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
+	 C2H4: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW3);
+	 O2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW4);
+	 NH3_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW5);
+	 ACID: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW6);
+	 N2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW7);
+	 MNSP: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW8);
+	 ],
+	[GOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, pharmaceutical_plant_switch_produce_ext_packaging_industries_ext_organic_chemistry_ext_coke_sulphur_ext_ammonia, 
+	[STORE_TEMP(incoming_cargo_waiting("CHLO"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 STORE_TEMP(incoming_cargo_waiting("H2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 STORE_TEMP(incoming_cargo_waiting("RFPR"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	 STORE_TEMP(incoming_cargo_waiting("C2H4"),TEMP_REGISTER_INCOMING_CARGO_WAITING3),
+	 STORE_TEMP(incoming_cargo_waiting("O2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING4),
+	 STORE_TEMP(incoming_cargo_waiting("NH3_"),TEMP_REGISTER_INCOMING_CARGO_WAITING5),
+	 STORE_TEMP(incoming_cargo_waiting("ACID"),TEMP_REGISTER_INCOMING_CARGO_WAITING6),
+	 STORE_TEMP(incoming_cargo_waiting("N2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING7),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 calculate_number_of_waiting_cargos(),
+	 
+	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
+	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
+	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (8-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("MNSP"),TEMP_REGISTER_INCOMING_CARGO_WAITING8),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING8) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING8), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW8),
+	 
+	 store_debug_production_data()
+	])
+{
+	pharmaceutical_plant_produce_ext_packaging_industries_ext_organic_chemistry_ext_coke_sulphur_ext_ammonia;
 }
 
 switch(FEAT_INDUSTRIES, SELF, pharmaceutical_plant_switch_extra_text_fund, 
@@ -1040,6 +1350,8 @@ switch(FEAT_INDUSTRIES, SELF, pharmaceutical_plant_switch_cargo_subtype, getbits
 	H2__: switch_cargo_subtype;
 	RFPR: switch_cargo_subtype;
 	C2H4: switch_cargo_subtype;
+	O2__: switch_cargo_subtype;
+	NH3_: switch_cargo_subtype;
 	MNSP: switch_cargo_subtype_white;
 	return 0x3800 + string(STR_EMPTY);
 }
@@ -1124,7 +1436,87 @@ switch(FEAT_INDUSTRIES, SELF,pharmaceutical_plant_switch_update_last_served_date
 	check_secondary_industry_closure();
 }
 
-if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_industries && !param_extension_organic_chemistry && !param_extension_coke_sulphur) {
+switch(FEAT_INDUSTRIES, SELF,pharmaceutical_plant_switch_update_last_served_date_ext_ammonia,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("GOOD") != 0 || last_month_production("GOOD") != 0 || 
+		incoming_cargo_waiting("CHLO") != 0 || incoming_cargo_waiting("H2__") != 0 || incoming_cargo_waiting("O2__") != 0 || incoming_cargo_waiting("NH3_") != 0 ||
+		this_month_transported("GOOD") != 0 || last_month_transported("GOOD") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+switch(FEAT_INDUSTRIES, SELF,pharmaceutical_plant_switch_update_last_served_date_ext_packaging_industries_ext_ammonia,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("GOOD") != 0 || last_month_production("GOOD") != 0 || 
+		incoming_cargo_waiting("CHLO") != 0 || incoming_cargo_waiting("H2__") != 0 || incoming_cargo_waiting("MNSP") != 0 || incoming_cargo_waiting("O2__") != 0 || incoming_cargo_waiting("NH3_") != 0 ||
+		this_month_transported("GOOD") != 0 || last_month_transported("GOOD") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+switch(FEAT_INDUSTRIES, SELF,pharmaceutical_plant_switch_update_last_served_date_ext_organic_chemistry_ext_ammonia,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("GOOD") != 0 || last_month_production("GOOD") != 0 || 
+		incoming_cargo_waiting("CHLO") != 0 || incoming_cargo_waiting("H2__") != 0 || incoming_cargo_waiting("RFPR") != 0 || incoming_cargo_waiting("C2H4") != 0 || incoming_cargo_waiting("O2__") != 0 || incoming_cargo_waiting("NH3_") != 0 ||
+		this_month_transported("GOOD") != 0 || last_month_transported("GOOD") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+switch(FEAT_INDUSTRIES, SELF,pharmaceutical_plant_switch_update_last_served_date_ext_packaging_industries_ext_organic_chemistry_ext_ammonia,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("GOOD") != 0 || last_month_production("GOOD") != 0 || 
+		incoming_cargo_waiting("CHLO") != 0 || incoming_cargo_waiting("H2__") != 0 || incoming_cargo_waiting("MNSP") != 0 || incoming_cargo_waiting("RFPR") != 0 || incoming_cargo_waiting("C2H4") != 0 || incoming_cargo_waiting("O2__") != 0 || incoming_cargo_waiting("NH3_") != 0 ||
+		this_month_transported("GOOD") != 0 || last_month_transported("GOOD") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+switch(FEAT_INDUSTRIES, SELF,pharmaceutical_plant_switch_update_last_served_date_ext_coke_sulphur_ext_ammonia,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("GOOD") != 0 || last_month_production("GOOD") != 0 || 
+		incoming_cargo_waiting("CHLO") != 0 || incoming_cargo_waiting("H2__") != 0 || incoming_cargo_waiting("ACID") != 0 || incoming_cargo_waiting("O2__") != 0 || incoming_cargo_waiting("NH3_") != 0 ||
+		this_month_transported("GOOD") != 0 || last_month_transported("GOOD") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+switch(FEAT_INDUSTRIES, SELF,pharmaceutical_plant_switch_update_last_served_date_ext_packaging_industries_ext_coke_sulphur_ext_ammonia,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("GOOD") != 0 || last_month_production("GOOD") != 0 || 
+		incoming_cargo_waiting("CHLO") != 0 || incoming_cargo_waiting("H2__") != 0 || incoming_cargo_waiting("MNSP") != 0 || incoming_cargo_waiting("ACID") != 0 || incoming_cargo_waiting("O2__") != 0 || incoming_cargo_waiting("NH3_") != 0 ||
+		this_month_transported("GOOD") != 0 || last_month_transported("GOOD") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+switch(FEAT_INDUSTRIES, SELF,pharmaceutical_plant_switch_update_last_served_date_ext_organic_chemistry_ext_coke_sulphur_ext_ammonia,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("GOOD") != 0 || last_month_production("GOOD") != 0 || 
+		incoming_cargo_waiting("CHLO") != 0 || incoming_cargo_waiting("H2__") != 0 || incoming_cargo_waiting("RFPR") != 0 || incoming_cargo_waiting("C2H4") != 0 || incoming_cargo_waiting("ACID") != 0 || incoming_cargo_waiting("O2__") != 0 || incoming_cargo_waiting("NH3_") != 0 ||
+		this_month_transported("GOOD") != 0 || last_month_transported("GOOD") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+switch(FEAT_INDUSTRIES, SELF,pharmaceutical_plant_switch_update_last_served_date_ext_packaging_industries_ext_organic_chemistry_ext_coke_sulphur_ext_ammonia,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("GOOD") != 0 || last_month_production("GOOD") != 0 || 
+		incoming_cargo_waiting("CHLO") != 0 || incoming_cargo_waiting("H2__") != 0 || incoming_cargo_waiting("MNSP") != 0 || incoming_cargo_waiting("RFPR") != 0 || incoming_cargo_waiting("C2H4") != 0 || incoming_cargo_waiting("ACID") != 0 || incoming_cargo_waiting("O2__") != 0 || incoming_cargo_waiting("NH3_") != 0 ||
+		this_month_transported("GOOD") != 0 || last_month_transported("GOOD") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_industries && !param_extension_organic_chemistry && !param_extension_coke_sulphur && !param_extension_ammonia) {
 	item(FEAT_INDUSTRIES, pharmaceutical_plant, INDUSTRY_ID_PHARMACEUTICAL_PLANT) {
 		property {
 			substitute: 0;
@@ -1160,7 +1552,7 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_indu
 	}
 }
 
-if (param_extension_basic_inorganic_chemistry && param_extension_packaging_industries && !param_extension_organic_chemistry && !param_extension_coke_sulphur) {
+if (param_extension_basic_inorganic_chemistry && param_extension_packaging_industries && !param_extension_organic_chemistry && !param_extension_coke_sulphur && !param_extension_ammonia) {
 	item(FEAT_INDUSTRIES, pharmaceutical_plant, INDUSTRY_ID_PHARMACEUTICAL_PLANT) {
 		property {
 			substitute: 0;
@@ -1196,7 +1588,7 @@ if (param_extension_basic_inorganic_chemistry && param_extension_packaging_indus
 	}
 }
 
-if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_industries && param_extension_organic_chemistry && !param_extension_coke_sulphur) {
+if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_industries && param_extension_organic_chemistry && !param_extension_coke_sulphur && !param_extension_ammonia) {
 	item(FEAT_INDUSTRIES, pharmaceutical_plant, INDUSTRY_ID_PHARMACEUTICAL_PLANT) {
 		property {
 			substitute: 0;
@@ -1232,7 +1624,7 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_indu
 	}
 }
 
-if (param_extension_basic_inorganic_chemistry && param_extension_packaging_industries && param_extension_organic_chemistry && !param_extension_coke_sulphur) {
+if (param_extension_basic_inorganic_chemistry && param_extension_packaging_industries && param_extension_organic_chemistry && !param_extension_coke_sulphur && !param_extension_ammonia) {
 	item(FEAT_INDUSTRIES, pharmaceutical_plant, INDUSTRY_ID_PHARMACEUTICAL_PLANT) {
 		property {
 			substitute: 0;
@@ -1268,7 +1660,7 @@ if (param_extension_basic_inorganic_chemistry && param_extension_packaging_indus
 	}
 }
 
-if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_industries && !param_extension_organic_chemistry && param_extension_coke_sulphur) {
+if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_industries && !param_extension_organic_chemistry && param_extension_coke_sulphur && !param_extension_ammonia) {
 	item(FEAT_INDUSTRIES, pharmaceutical_plant, INDUSTRY_ID_PHARMACEUTICAL_PLANT) {
 		property {
 			substitute: 0;
@@ -1304,7 +1696,7 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_indu
 	}
 }
 
-if (param_extension_basic_inorganic_chemistry && param_extension_packaging_industries && !param_extension_organic_chemistry && param_extension_coke_sulphur) {
+if (param_extension_basic_inorganic_chemistry && param_extension_packaging_industries && !param_extension_organic_chemistry && param_extension_coke_sulphur && !param_extension_ammonia) {
 	item(FEAT_INDUSTRIES, pharmaceutical_plant, INDUSTRY_ID_PHARMACEUTICAL_PLANT) {
 		property {
 			substitute: 0;
@@ -1340,7 +1732,7 @@ if (param_extension_basic_inorganic_chemistry && param_extension_packaging_indus
 	}
 }
 
-if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_industries && param_extension_organic_chemistry && param_extension_coke_sulphur) {
+if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_industries && param_extension_organic_chemistry && param_extension_coke_sulphur && !param_extension_ammonia) {
 	item(FEAT_INDUSTRIES, pharmaceutical_plant, INDUSTRY_ID_PHARMACEUTICAL_PLANT) {
 		property {
 			substitute: 0;
@@ -1376,7 +1768,7 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_indu
 	}
 }
 
-if (param_extension_basic_inorganic_chemistry && param_extension_packaging_industries && param_extension_organic_chemistry && param_extension_coke_sulphur) {
+if (param_extension_basic_inorganic_chemistry && param_extension_packaging_industries && param_extension_organic_chemistry && param_extension_coke_sulphur && !param_extension_ammonia) {
 	item(FEAT_INDUSTRIES, pharmaceutical_plant, INDUSTRY_ID_PHARMACEUTICAL_PLANT) {
 		property {
 			substitute: 0;
@@ -1402,6 +1794,294 @@ if (param_extension_basic_inorganic_chemistry && param_extension_packaging_indus
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        pharmaceutical_plant_switch_produce_ext_packaging_industries_ext_organic_chemistry_ext_coke_sulphur;
 			monthly_prod_change:      pharmaceutical_plant_switch_update_last_served_date_ext_packaging_industries_ext_organic_chemistry_ext_coke_sulphur;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           pharmaceutical_plant_switch_location_check_industry_distance;
+			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO_ANY);
+			extra_text_fund:          pharmaceutical_plant_switch_extra_text_fund;
+			cargo_subtype_display:    pharmaceutical_plant_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+
+if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_industries && !param_extension_organic_chemistry && !param_extension_coke_sulphur && param_extension_ammonia) {
+	item(FEAT_INDUSTRIES, pharmaceutical_plant, INDUSTRY_ID_PHARMACEUTICAL_PLANT) {
+		property {
+			substitute: 0;
+			map_colour: 177;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [pharmaceutical_plant_industry_layout_1_tilelayout,pharmaceutical_plant_industry_layout_2_tilelayout,pharmaceutical_plant_industry_layout_3_tilelayout,pharmaceutical_plant_industry_layout_4_tilelayout,pharmaceutical_plant_industry_layout_5_tilelayout,pharmaceutical_plant_industry_layout_6_tilelayout];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_PHARMACEUTICAL_PLANT);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 170;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("O2__"),accept_cargo("NH3_"),produce_cargo("GOOD",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
+		}
+			
+		graphics {
+			construction_probability: pharmaceutical_plant_switch_check_availability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        pharmaceutical_plant_switch_produce_ext_ammonia;
+			monthly_prod_change:      pharmaceutical_plant_switch_update_last_served_date_ext_ammonia;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           pharmaceutical_plant_switch_location_check_industry_distance;
+			extra_text_industry:      return string(STR_INDUSTRY_NEEDS_ANY_INPUT);
+			extra_text_fund:          pharmaceutical_plant_switch_extra_text_fund;
+			cargo_subtype_display:    pharmaceutical_plant_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+
+if (param_extension_basic_inorganic_chemistry && param_extension_packaging_industries && !param_extension_organic_chemistry && !param_extension_coke_sulphur && param_extension_ammonia) {
+	item(FEAT_INDUSTRIES, pharmaceutical_plant, INDUSTRY_ID_PHARMACEUTICAL_PLANT) {
+		property {
+			substitute: 0;
+			map_colour: 177;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [pharmaceutical_plant_industry_layout_1_tilelayout,pharmaceutical_plant_industry_layout_2_tilelayout,pharmaceutical_plant_industry_layout_3_tilelayout,pharmaceutical_plant_industry_layout_4_tilelayout,pharmaceutical_plant_industry_layout_5_tilelayout,pharmaceutical_plant_industry_layout_6_tilelayout];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_PHARMACEUTICAL_PLANT);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 170;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("MNSP"),accept_cargo("O2__"),accept_cargo("NH3_"),produce_cargo("GOOD",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
+		}
+			
+		graphics {
+			construction_probability: pharmaceutical_plant_switch_check_availability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        pharmaceutical_plant_switch_produce_ext_packaging_industries_ext_ammonia;
+			monthly_prod_change:      pharmaceutical_plant_switch_update_last_served_date_ext_packaging_industries_ext_ammonia;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           pharmaceutical_plant_switch_location_check_industry_distance;
+			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO_ANY);
+			extra_text_fund:          pharmaceutical_plant_switch_extra_text_fund;
+			cargo_subtype_display:    pharmaceutical_plant_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+
+if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_industries && param_extension_organic_chemistry && !param_extension_coke_sulphur && param_extension_ammonia) {
+	item(FEAT_INDUSTRIES, pharmaceutical_plant, INDUSTRY_ID_PHARMACEUTICAL_PLANT) {
+		property {
+			substitute: 0;
+			map_colour: 177;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [pharmaceutical_plant_industry_layout_1_tilelayout,pharmaceutical_plant_industry_layout_2_tilelayout,pharmaceutical_plant_industry_layout_3_tilelayout,pharmaceutical_plant_industry_layout_4_tilelayout,pharmaceutical_plant_industry_layout_5_tilelayout,pharmaceutical_plant_industry_layout_6_tilelayout];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_PHARMACEUTICAL_PLANT);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 170;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("C2H4"),accept_cargo("RFPR"),accept_cargo("O2__"),accept_cargo("NH3_"),produce_cargo("GOOD",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
+		}
+			
+		graphics {
+			construction_probability: pharmaceutical_plant_switch_check_availability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        pharmaceutical_plant_switch_produce_ext_organic_chemistry_ext_ammonia;
+			monthly_prod_change:      pharmaceutical_plant_switch_update_last_served_date_ext_organic_chemistry_ext_ammonia;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           pharmaceutical_plant_switch_location_check_industry_distance;
+			extra_text_industry:      return string(STR_INDUSTRY_NEEDS_ANY_INPUT);
+			extra_text_fund:          pharmaceutical_plant_switch_extra_text_fund;
+			cargo_subtype_display:    pharmaceutical_plant_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+
+if (param_extension_basic_inorganic_chemistry && param_extension_packaging_industries && param_extension_organic_chemistry && !param_extension_coke_sulphur && param_extension_ammonia) {
+	item(FEAT_INDUSTRIES, pharmaceutical_plant, INDUSTRY_ID_PHARMACEUTICAL_PLANT) {
+		property {
+			substitute: 0;
+			map_colour: 177;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [pharmaceutical_plant_industry_layout_1_tilelayout,pharmaceutical_plant_industry_layout_2_tilelayout,pharmaceutical_plant_industry_layout_3_tilelayout,pharmaceutical_plant_industry_layout_4_tilelayout,pharmaceutical_plant_industry_layout_5_tilelayout,pharmaceutical_plant_industry_layout_6_tilelayout];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_PHARMACEUTICAL_PLANT);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 170;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("C2H4"),accept_cargo("RFPR"),accept_cargo("MNSP"),accept_cargo("O2__"),accept_cargo("NH3_"),produce_cargo("GOOD",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
+		}
+			
+		graphics {
+			construction_probability: pharmaceutical_plant_switch_check_availability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        pharmaceutical_plant_switch_produce_ext_packaging_industries_ext_organic_chemistry_ext_ammonia;
+			monthly_prod_change:      pharmaceutical_plant_switch_update_last_served_date_ext_packaging_industries_ext_organic_chemistry_ext_ammonia;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           pharmaceutical_plant_switch_location_check_industry_distance;
+			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO_ANY);
+			extra_text_fund:          pharmaceutical_plant_switch_extra_text_fund;
+			cargo_subtype_display:    pharmaceutical_plant_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+
+if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_industries && !param_extension_organic_chemistry && param_extension_coke_sulphur && param_extension_ammonia) {
+	item(FEAT_INDUSTRIES, pharmaceutical_plant, INDUSTRY_ID_PHARMACEUTICAL_PLANT) {
+		property {
+			substitute: 0;
+			map_colour: 177;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [pharmaceutical_plant_industry_layout_1_tilelayout,pharmaceutical_plant_industry_layout_2_tilelayout,pharmaceutical_plant_industry_layout_3_tilelayout,pharmaceutical_plant_industry_layout_4_tilelayout,pharmaceutical_plant_industry_layout_5_tilelayout,pharmaceutical_plant_industry_layout_6_tilelayout];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_PHARMACEUTICAL_PLANT);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 170;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("ACID"),accept_cargo("O2__"),accept_cargo("NH3_"),produce_cargo("GOOD",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
+		}
+			
+		graphics {
+			construction_probability: pharmaceutical_plant_switch_check_availability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        pharmaceutical_plant_switch_produce_ext_coke_sulphur_ext_ammonia;
+			monthly_prod_change:      pharmaceutical_plant_switch_update_last_served_date_ext_coke_sulphur_ext_ammonia;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           pharmaceutical_plant_switch_location_check_industry_distance;
+			extra_text_industry:      return string(STR_INDUSTRY_NEEDS_ANY_INPUT);
+			extra_text_fund:          pharmaceutical_plant_switch_extra_text_fund;
+			cargo_subtype_display:    pharmaceutical_plant_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+
+if (param_extension_basic_inorganic_chemistry && param_extension_packaging_industries && !param_extension_organic_chemistry && param_extension_coke_sulphur && param_extension_ammonia) {
+	item(FEAT_INDUSTRIES, pharmaceutical_plant, INDUSTRY_ID_PHARMACEUTICAL_PLANT) {
+		property {
+			substitute: 0;
+			map_colour: 177;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [pharmaceutical_plant_industry_layout_1_tilelayout,pharmaceutical_plant_industry_layout_2_tilelayout,pharmaceutical_plant_industry_layout_3_tilelayout,pharmaceutical_plant_industry_layout_4_tilelayout,pharmaceutical_plant_industry_layout_5_tilelayout,pharmaceutical_plant_industry_layout_6_tilelayout];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_PHARMACEUTICAL_PLANT);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 170;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("MNSP"),accept_cargo("ACID"),accept_cargo("O2__"),accept_cargo("NH3_"),produce_cargo("GOOD",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
+		}
+			
+		graphics {
+			construction_probability: pharmaceutical_plant_switch_check_availability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        pharmaceutical_plant_switch_produce_ext_packaging_industries_ext_coke_sulphur_ext_ammonia;
+			monthly_prod_change:      pharmaceutical_plant_switch_update_last_served_date_ext_packaging_industries_ext_coke_sulphur_ext_ammonia;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           pharmaceutical_plant_switch_location_check_industry_distance;
+			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO_ANY);
+			extra_text_fund:          pharmaceutical_plant_switch_extra_text_fund;
+			cargo_subtype_display:    pharmaceutical_plant_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+
+if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_industries && param_extension_organic_chemistry && param_extension_coke_sulphur && param_extension_ammonia) {
+	item(FEAT_INDUSTRIES, pharmaceutical_plant, INDUSTRY_ID_PHARMACEUTICAL_PLANT) {
+		property {
+			substitute: 0;
+			map_colour: 177;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [pharmaceutical_plant_industry_layout_1_tilelayout,pharmaceutical_plant_industry_layout_2_tilelayout,pharmaceutical_plant_industry_layout_3_tilelayout,pharmaceutical_plant_industry_layout_4_tilelayout,pharmaceutical_plant_industry_layout_5_tilelayout,pharmaceutical_plant_industry_layout_6_tilelayout];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_PHARMACEUTICAL_PLANT);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 170;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("C2H4"),accept_cargo("RFPR"),accept_cargo("ACID"),accept_cargo("O2__"),accept_cargo("NH3_"),produce_cargo("GOOD",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
+		}
+			
+		graphics {
+			construction_probability: pharmaceutical_plant_switch_check_availability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        pharmaceutical_plant_switch_produce_ext_organic_chemistry_ext_coke_sulphur_ext_ammonia;
+			monthly_prod_change:      pharmaceutical_plant_switch_update_last_served_date_ext_organic_chemistry_ext_coke_sulphur_ext_ammonia;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           pharmaceutical_plant_switch_location_check_industry_distance;
+			extra_text_industry:      return string(STR_INDUSTRY_NEEDS_ANY_INPUT);
+			extra_text_fund:          pharmaceutical_plant_switch_extra_text_fund;
+			cargo_subtype_display:    pharmaceutical_plant_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+
+if (param_extension_basic_inorganic_chemistry && param_extension_packaging_industries && param_extension_organic_chemistry && param_extension_coke_sulphur && param_extension_ammonia) {
+	item(FEAT_INDUSTRIES, pharmaceutical_plant, INDUSTRY_ID_PHARMACEUTICAL_PLANT) {
+		property {
+			substitute: 0;
+			map_colour: 177;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [pharmaceutical_plant_industry_layout_1_tilelayout,pharmaceutical_plant_industry_layout_2_tilelayout,pharmaceutical_plant_industry_layout_3_tilelayout,pharmaceutical_plant_industry_layout_4_tilelayout,pharmaceutical_plant_industry_layout_5_tilelayout,pharmaceutical_plant_industry_layout_6_tilelayout];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_PHARMACEUTICAL_PLANT);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 170;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("C2H4"),accept_cargo("RFPR"),accept_cargo("MNSP"),accept_cargo("ACID"),accept_cargo("O2__"),accept_cargo("NH3_"),produce_cargo("GOOD",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
+		}
+			
+		graphics {
+			construction_probability: pharmaceutical_plant_switch_check_availability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        pharmaceutical_plant_switch_produce_ext_packaging_industries_ext_organic_chemistry_ext_coke_sulphur_ext_ammonia;
+			monthly_prod_change:      pharmaceutical_plant_switch_update_last_served_date_ext_packaging_industries_ext_organic_chemistry_ext_coke_sulphur_ext_ammonia;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           pharmaceutical_plant_switch_location_check_industry_distance;
 			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO_ANY);
