@@ -1,0 +1,2203 @@
+spriteset(fruit_plantation_spriteset_1) {
+	[10, 10, 64, 59, -31, -28, ANIM | NOCROP, "graphics/industries/fruit_plantation.png"]
+}
+spriteset(fruit_plantation_spriteset_2) {
+[80, 10, 64, 59, -31, -28, ANIM | NOCROP, "graphics/industries/fruit_plantation.png"]
+}
+
+spritelayout fruit_plantation_house_spritelayout {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_MOSTLY_GREEN;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: fruit_plantation_spriteset_1(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (construction_state == 0 || LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+}
+spritelayout fruit_plantation_shed_spritelayout {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_MOSTLY_GREEN;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: fruit_plantation_spriteset_2(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (construction_state < 2 || LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_10 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_11 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_12 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_13 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 6;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 6;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 6;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 6;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 6;		yoffset: 6;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 6;		yoffset: 6;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_14 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_15 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}           
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_16 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 6;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 6;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 8;		yoffset: 1;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 8;		yoffset: 1;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 6;		yoffset: 6;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 6;		yoffset: 6;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_17 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 5;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 5;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: 5;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: 5;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_18 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_19 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 1;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 1;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 8;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 8;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_110 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_111 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}                   
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 8;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 8;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 7;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 7;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 7;		yoffset: 7;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 7;		yoffset: 7;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_112 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}           
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_113 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_114 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 1;		yoffset: 1;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 1;		yoffset: 1;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: -1;		yoffset: 6;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: -1;		yoffset: 6;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 8;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 8;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 6;		yoffset: 6;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 6;		yoffset: 6;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_123 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 5;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 5;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: -2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: -2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 4;		yoffset: 4;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 4;		yoffset: 4;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_127 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 7;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 7;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: -2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: -2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: 5;		xextent: 4;		yextent: 4;		zextent: 32;
+	}           
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: 5;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_129 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 7;		xextent: 4;		yextent: 4;		zextent: 32;
+	}           
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 7;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 7;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 7;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 7;		yoffset: 7;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 7;		yoffset: 7;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_130 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}	
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: -1;		yoffset: 4;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: -1;		yoffset: 4;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 7;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 7;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 6;		yoffset: 5;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 6;		yoffset: 5;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_20 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: TTD_TEMPERATE_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE5;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_21 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: TTD_TEMPERATE_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE5;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_22 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}            
+	building {
+		sprite: TTD_TEMPERATE_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE5;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}           
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_23 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: TTD_TEMPERATE_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 6;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 6;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE5;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 6;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 6;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 6;		yoffset: 6;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 6;		yoffset: 6;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_24 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: TTD_TEMPERATE_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE5;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}           
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_25 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: TTD_TEMPERATE_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE5;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_26 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: TTD_TEMPERATE_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 6;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 6;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE5;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 8;		yoffset: 1;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 8;		yoffset: 1;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 6;		yoffset: 6;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 6;		yoffset: 6;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_27 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: TTD_TEMPERATE_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 5;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 5;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE5;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}           
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: 5;		xextent: 4;		yextent: 4;		zextent: 32;
+	}           
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: 5;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_28 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}                   
+	building {
+		sprite: TTD_TEMPERATE_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE5;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_29 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 1;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 1;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE5;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 8;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 8;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_210 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}           
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE5;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_211 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: TTD_TEMPERATE_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 8;		xextent: 4;		yextent: 4;		zextent: 32;
+	}           
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 8;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE5;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 7;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 7;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 7;		yoffset: 7;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 7;		yoffset: 7;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_212 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: TTD_TEMPERATE_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE5;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_213 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}                   
+	building {
+		sprite: TTD_TEMPERATE_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 2;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE5;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 9;		yoffset: 9;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_214 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: TTD_TEMPERATE_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 1;		yoffset: 1;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 1;		yoffset: 1;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: -1;		yoffset: 6;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: -1;		yoffset: 6;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE5;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 8;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 8;		yoffset: 2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 6;		yoffset: 6;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 6;		yoffset: 6;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_223 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: TTD_TEMPERATE_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 5;		xextent: 4;		yextent: 4;		zextent: 32;
+	}           
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 5;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE5;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: -2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: -2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 4;		yoffset: 4;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 4;		yoffset: 4;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_227 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: TTD_TEMPERATE_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 7;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 7;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE5;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: -2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: -2;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 5;		yoffset: 5;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 5;		yoffset: 5;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_229 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}                    
+	building {
+		sprite: TTD_TEMPERATE_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 7;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 7;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE5;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 7;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 7;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 7;		yoffset: 7;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 7;		yoffset: 7;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+spritelayout fruit_plantation_slope_aware_ground_with_trees_230 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_PLANTATION + slope_to_sprite_offset(nearby_tile_slope(0,0));
+		hide_sprite: 0;
+		always_draw: 1;
+	}                   
+	building {
+		sprite: TTD_TEMPERATE_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 0;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}           
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 0;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: -1;		yoffset: 4;		xextent: 4;		yextent: 4;		zextent: 32;
+	}           
+	building {
+		sprite: TTD_TROPIC_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: -1;		yoffset: 4;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE5;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 7;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE3;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 7;		yoffset: 0;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+	building {
+		sprite: TTD_TEMPERATE_TREE2;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
+		xoffset: 6;		yoffset: 5;		xextent: 4;		yextent: 4;		zextent: 32;
+	}            
+	building {
+		sprite: TTD_TROPIC_TREE4;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
+		xoffset: 6;		yoffset: 5;		xextent: 4;		yextent: 4;		zextent: 32;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, fruit_plantation_slope_aware_ground_with_trees_1, nearby_tile_slope(0,0)) {
+	0: fruit_plantation_slope_aware_ground_with_trees_10;
+	1: fruit_plantation_slope_aware_ground_with_trees_11;
+	2: fruit_plantation_slope_aware_ground_with_trees_12;
+	3: fruit_plantation_slope_aware_ground_with_trees_13;
+	4: fruit_plantation_slope_aware_ground_with_trees_14;
+	5: fruit_plantation_slope_aware_ground_with_trees_15;
+	6: fruit_plantation_slope_aware_ground_with_trees_16;
+	7: fruit_plantation_slope_aware_ground_with_trees_17;
+	8: fruit_plantation_slope_aware_ground_with_trees_18;
+	9: fruit_plantation_slope_aware_ground_with_trees_19;
+	10: fruit_plantation_slope_aware_ground_with_trees_110;
+	11: fruit_plantation_slope_aware_ground_with_trees_111;
+	12: fruit_plantation_slope_aware_ground_with_trees_112;
+	13: fruit_plantation_slope_aware_ground_with_trees_113;
+	14: fruit_plantation_slope_aware_ground_with_trees_114;
+	23: fruit_plantation_slope_aware_ground_with_trees_123;
+	27: fruit_plantation_slope_aware_ground_with_trees_127;
+	29: fruit_plantation_slope_aware_ground_with_trees_129;
+	30: fruit_plantation_slope_aware_ground_with_trees_130;
+	fruit_plantation_slope_aware_ground_with_trees_10;
+}
+switch(FEAT_INDUSTRYTILES, SELF, fruit_plantation_slope_aware_ground_with_trees_2, nearby_tile_slope(0,0)) {
+	0: fruit_plantation_slope_aware_ground_with_trees_20;
+	1: fruit_plantation_slope_aware_ground_with_trees_21;
+	2: fruit_plantation_slope_aware_ground_with_trees_22;
+	3: fruit_plantation_slope_aware_ground_with_trees_23;
+	4: fruit_plantation_slope_aware_ground_with_trees_24;
+	5: fruit_plantation_slope_aware_ground_with_trees_25;
+	6: fruit_plantation_slope_aware_ground_with_trees_26;
+	7: fruit_plantation_slope_aware_ground_with_trees_27;
+	8: fruit_plantation_slope_aware_ground_with_trees_28;
+	9: fruit_plantation_slope_aware_ground_with_trees_29;
+	10: fruit_plantation_slope_aware_ground_with_trees_210;
+	11: fruit_plantation_slope_aware_ground_with_trees_211;
+	12: fruit_plantation_slope_aware_ground_with_trees_212;
+	13: fruit_plantation_slope_aware_ground_with_trees_213;
+	14: fruit_plantation_slope_aware_ground_with_trees_214;
+	23: fruit_plantation_slope_aware_ground_with_trees_223;
+	27: fruit_plantation_slope_aware_ground_with_trees_227;
+	29: fruit_plantation_slope_aware_ground_with_trees_229;
+	30: fruit_plantation_slope_aware_ground_with_trees_230;
+	fruit_plantation_slope_aware_ground_with_trees_20;
+}
+switch(FEAT_INDUSTRYTILES, SELF, fruit_plantation_layout_1_graphics_switch, relative_pos) {
+	//relative_coord(0, 0): fruit_plantation_slope_aware_ground_with_trees_1;
+	//relative_coord(0, 1): fruit_plantation_slope_aware_ground_with_trees_1;
+	//relative_coord(0, 2): fruit_plantation_slope_aware_ground_with_trees_1;
+	//relative_coord(1, 0): fruit_plantation_slope_aware_ground_with_trees_1;
+	//relative_coord(1, 1): fruit_plantation_slope_aware_ground_with_trees_1;
+	//relative_coord(1, 2): fruit_plantation_slope_aware_ground_with_trees_2;
+	//relative_coord(2, 1): fruit_plantation_house_spritelayout;
+	//relative_coord(2, 2): fruit_plantation_shed_spritelayout;
+	relative_coord(0, 0): fruit_plantation_slope_aware_ground_with_trees_10;
+	relative_coord(0, 1): fruit_plantation_slope_aware_ground_with_trees_10;
+	relative_coord(0, 2): fruit_plantation_slope_aware_ground_with_trees_10;
+	relative_coord(1, 0): fruit_plantation_slope_aware_ground_with_trees_10;
+	relative_coord(1, 1): fruit_plantation_slope_aware_ground_with_trees_10;
+	relative_coord(1, 2): fruit_plantation_slope_aware_ground_with_trees_10;
+	relative_coord(2, 1): fruit_plantation_house_spritelayout;
+	relative_coord(2, 2): fruit_plantation_shed_spritelayout;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, fruit_plantation_layout_2_graphics_switch, relative_pos) {
+	relative_coord(0, 0): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(0, 1): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(0, 2): fruit_plantation_slope_aware_ground_with_trees_2;
+	relative_coord(0, 3): fruit_plantation_house_spritelayout;
+	relative_coord(1, 1): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(1, 2): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(1, 3): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(1, 4): fruit_plantation_shed_spritelayout;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, fruit_plantation_layout_3_graphics_switch, relative_pos) {
+	relative_coord(0, 0): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(0, 1): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(1, 0): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(1, 1): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(2, 0): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(2, 1): fruit_plantation_shed_spritelayout;
+	relative_coord(3, 0): fruit_plantation_slope_aware_ground_with_trees_2;
+	relative_coord(3, 1): fruit_plantation_house_spritelayout;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, fruit_plantation_layout_4_graphics_switch, relative_pos) {
+	relative_coord(0, 0): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(0, 1): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(0, 3): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(0, 4): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(1, 0): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(1, 1): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(1, 3): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(1, 4): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(3, 0): fruit_plantation_slope_aware_ground_with_trees_2;
+	relative_coord(3, 1): fruit_plantation_shed_spritelayout;
+	relative_coord(3, 3): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(3, 4): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(4, 0): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(4, 1): fruit_plantation_house_spritelayout;
+	relative_coord(4, 3): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(4, 4): fruit_plantation_slope_aware_ground_with_trees_1;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, fruit_plantation_layout_5_graphics_switch, relative_pos) {
+	relative_coord(0, 1): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(0, 2): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(0, 3): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(0, 4): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(1, 0): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(1, 1): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(1, 2): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(1, 3): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(1, 4): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(1, 5): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(3, 0): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(3, 1): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(3, 2): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(3, 3): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(3, 4): fruit_plantation_shed_spritelayout;
+	relative_coord(3, 5): fruit_plantation_house_spritelayout;
+	relative_coord(4, 1): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(4, 2): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(4, 3): fruit_plantation_slope_aware_ground_with_trees_1;
+	relative_coord(4, 4): fruit_plantation_slope_aware_ground_with_trees_2;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, PARENT, fruit_plantation_industry_graphics_switch_layouts, layout_num) {
+	1: fruit_plantation_layout_1_graphics_switch;
+	2: fruit_plantation_layout_2_graphics_switch;
+	3: fruit_plantation_layout_3_graphics_switch;
+	4: fruit_plantation_layout_4_graphics_switch;
+	5: fruit_plantation_layout_5_graphics_switch;
+    fruit_plantation_layout_1_graphics_switch; // default
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, fruit_plantation_switch_graphics,
+	[switch_terrain_sprite(),switch_trees(),switch_graphics_init_temp_registers()
+	]) {
+    fruit_plantation_industry_graphics_switch_layouts;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// location checks
+//////////////////////////////////////////////////////////////////////////////
+switch (FEAT_INDUSTRYTILES, SELF, fruit_plantation_switch_location_check_flat_tile, nearby_tile_slope(0,0) == SLOPE_FLAT) {
+	1: return CB_RESULT_LOCATION_ALLOW;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, fruit_plantation_switch_location_check_below_snowline, UCMP(nearby_tile_height(0, 0) - 0, snowline_height - 0)) {
+	0..1: fruit_plantation_switch_location_check_flat_tile;
+	return string(STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE);
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, fruit_plantation_switch_tile_location_check,
+	is_funded_or_prospected() || (generation_not_forbidden_by_param() && not_next_to_desert() && not_next_to_industry() && not_next_to_buildings()))
+{
+	1: fruit_plantation_switch_location_check_below_snowline;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// industry tile and layout definition
+//////////////////////////////////////////////////////////////////////////////
+item(FEAT_INDUSTRYTILES, fruit_plantation_tile_1, INDUSTRY_TILE_ID_FRUIT_PLANTATION_1) {
+	property {
+		substitute:         0;
+        land_shape_flags:   0;
+        special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+        animation_triggers: bitmask();
+	}
+	graphics {
+		tile_check: fruit_plantation_switch_tile_location_check;
+		foundations: return CB_RESULT_NO_FOUNDATIONS;
+        autoslope: return CB_RESULT_NO_AUTOSLOPE;
+		fruit_plantation_switch_graphics;
+	}
+}
+item(FEAT_INDUSTRYTILES, fruit_plantation_tile_2, INDUSTRY_TILE_ID_FRUIT_PLANTATION_2) {
+	property {
+		substitute:         0;
+        land_shape_flags:   0;
+        special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+        animation_triggers: bitmask();
+	}
+	graphics {
+		tile_check: fruit_plantation_switch_tile_location_check;
+        autoslope: return CB_RESULT_NO_AUTOSLOPE;
+		fruit_plantation_switch_graphics;
+	}
+}
+
+tilelayout fruit_plantation_industry_layout_1_tilelayout {
+	0, 0: fruit_plantation_tile_1;
+	0, 1: fruit_plantation_tile_1;
+	0, 2: fruit_plantation_tile_1;
+	1, 0: fruit_plantation_tile_1;
+	1, 1: fruit_plantation_tile_1;
+	1, 2: fruit_plantation_tile_1;
+	2, 1: fruit_plantation_tile_2;
+	2, 2: fruit_plantation_tile_2;
+}
+tilelayout fruit_plantation_industry_layout_2_tilelayout {
+	0, 0: fruit_plantation_tile_1;
+	0, 1: fruit_plantation_tile_1;
+	0, 2: fruit_plantation_tile_1;
+	0, 3: fruit_plantation_tile_2;
+	1, 1: fruit_plantation_tile_1;
+	1, 2: fruit_plantation_tile_1;
+	1, 3: fruit_plantation_tile_1;
+	1, 4: fruit_plantation_tile_2;
+}
+
+tilelayout fruit_plantation_industry_layout_3_tilelayout {
+	0, 0: fruit_plantation_tile_1;
+	0, 1: fruit_plantation_tile_1;
+	1, 0: fruit_plantation_tile_1;
+	1, 1: fruit_plantation_tile_1;
+	2, 0: fruit_plantation_tile_1;
+	2, 1: fruit_plantation_tile_2;
+	3, 0: fruit_plantation_tile_1;
+	3, 1: fruit_plantation_tile_2;
+}
+
+tilelayout fruit_plantation_industry_layout_4_tilelayout {
+	0, 0: fruit_plantation_tile_1;
+	0, 1: fruit_plantation_tile_1;
+	0, 3: fruit_plantation_tile_1;
+	0, 4: fruit_plantation_tile_1;
+	1, 0: fruit_plantation_tile_1;
+	1, 1: fruit_plantation_tile_1;
+	1, 3: fruit_plantation_tile_1;
+	1, 4: fruit_plantation_tile_1;
+	3, 0: fruit_plantation_tile_1;
+	3, 1: fruit_plantation_tile_2;
+	3, 3: fruit_plantation_tile_1;
+	3, 4: fruit_plantation_tile_1;
+	4, 0: fruit_plantation_tile_1;
+	4, 1: fruit_plantation_tile_2;
+	4, 3: fruit_plantation_tile_1;
+	4, 4: fruit_plantation_tile_1;
+}
+tilelayout fruit_plantation_industry_layout_5_tilelayout {
+	0, 1: fruit_plantation_tile_1;
+	0, 2: fruit_plantation_tile_1;
+	0, 3: fruit_plantation_tile_1;
+	0, 4: fruit_plantation_tile_1;
+	1, 0: fruit_plantation_tile_1;
+	1, 1: fruit_plantation_tile_1;
+	1, 2: fruit_plantation_tile_1;
+	1, 3: fruit_plantation_tile_1;
+	1, 4: fruit_plantation_tile_1;
+	1, 5: fruit_plantation_tile_1;
+	3, 0: fruit_plantation_tile_1;
+	3, 1: fruit_plantation_tile_1;
+	3, 2: fruit_plantation_tile_1;
+	3, 3: fruit_plantation_tile_1;
+	3, 4: fruit_plantation_tile_2;
+	3, 5: fruit_plantation_tile_2;
+	4, 1: fruit_plantation_tile_1;
+	4, 2: fruit_plantation_tile_1;
+	4, 3: fruit_plantation_tile_1;
+	4, 4: fruit_plantation_tile_1;
+}
+
+switch(FEAT_INDUSTRIES, SELF, fruit_plantation_switch_location_check_industry_distance,
+	   (industry_distance(INDUSTRY_ID_GENERAL_STORE) >= 32) &&
+	   (industry_distance(INDUSTRY_ID_HOTEL) >= 32) &&
+	   (industry_distance(INDUSTRY_ID_FOOD_PROCESSOR) >= 32) &&
+	   //(industry_distance(INDUSTRY_ID_BIOREFINERY) >= 32) &&
+	   (industry_distance(INDUSTRY_ID_FRUIT_PLANTATION) >= 16) &&
+	   (town_euclidean_dist(0,0) > 32) // should not be near towns
+	   ) 
+{
+	   1: return CB_RESULT_LOCATION_ALLOW;
+	   return CB_RESULT_LOCATION_DISALLOW;
+}
+
+// before 1920 no proper fertilizer was available, so maximum production was limited
+switch(FEAT_INDUSTRIES, SELF, fruit_plantation_func_calc_max_prod, 
+	param_economy_model == 0 ? 128 :
+	  current_year <= 1920 ? 40 : 
+	  128) {
+	return;
+}
+
+// TODO: limit production increase to make it adapt slower (grain and lvst need time to grow)
+switch(FEAT_INDUSTRIES, SELF, fruit_plantation_switch_prod_change, 
+	[STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
+	 STORE_TEMP(transported_last_month_pct("FRUT"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 STORE_TEMP(fruit_plantation_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)])
+{
+	change_production; // use default rules to adapt production
+}
+
+// randomize production at build time based on random bits: 96t min, 152t max
+switch(FEAT_INDUSTRIES, SELF, fruit_plantation_switch_prod_change_build,
+	[initialize_extractive_resources(),
+	 STORE_TEMP(fruit_plantation_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	])
+{
+	randomize_initial_production;
+}
+
+produce(fruit_plantation_produce,
+	[],
+	[FRUT: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, fruit_plantation_switch_produce,
+	[init_primary_production()]) {
+	fruit_plantation_produce;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// build the industry window text here
+////////////////////////////////////////////////////////////////////////////////
+switch(FEAT_INDUSTRIES, SELF, fruit_plantation_switch_extra_text, 
+	[STORE_TEMP(fruit_plantation_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
+	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 STORE_TEMP(production_level * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	 STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
+	 STORE_TEMP(
+		LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL) < LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION) ? string(STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION) : string(STR_INDUSTRY_PREREQ_KEEP_PRODUCTION) | 
+		string(STR_EMPTY) << 16,
+		TEMP_REGISTER_EXTRA_TEXT_ARG0)
+	]) {
+	return string(STR_ORGANIC_INDUSTRY_TEXT);
+}
+if (param_extension_fruits) {
+	item(FEAT_INDUSTRIES, fruit_plantation, INDUSTRY_ID_FRUIT_PLANTATION) {
+		property {
+			substitute: 0;
+			map_colour: 83;
+			life_type: IND_LIFE_TYPE_ORGANIC;
+			min_cargo_distr: 1;
+			layouts: [fruit_plantation_industry_layout_1_tilelayout,fruit_plantation_industry_layout_2_tilelayout,fruit_plantation_industry_layout_3_tilelayout,fruit_plantation_industry_layout_4_tilelayout,fruit_plantation_industry_layout_5_tilelayout];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_FRUIT_PLANTATION);
+			prob_map_gen: 10;
+			prob_in_game: 4;
+			prospect_chance: 0.75;
+			fund_cost_multiplier: 54;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [produce_cargo("FRUT",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FRUIT_PLANTATION));
+		}
+	
+		graphics {
+			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        fruit_plantation_switch_produce;
+			monthly_prod_change:      fruit_plantation_switch_prod_change;
+			random_prod_change:       fruit_plantation_switch_prod_change;
+			build_prod_change:        fruit_plantation_switch_prod_change_build;
+			location_check:           fruit_plantation_switch_location_check_industry_distance;
+			extra_text_fund:          return string(STR_EMPTY);
+			extra_text_industry:      fruit_plantation_switch_extra_text;
+		}
+	}
+}
+
+
+    

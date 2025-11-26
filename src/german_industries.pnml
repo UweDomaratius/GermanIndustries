@@ -136,6 +136,13 @@ grf {
 			desc: string(STR_PARAM_EXT_AMMONIA_DESC);
 		}
 	}
+	param {
+		param_extension_fruits {
+			type: bool;
+			name: string(STR_PARAM_EXT_FRUITS);
+			desc: string(STR_PARAM_EXT_FRUITS_DESC);
+		}
+	}
 }
 
 if (ttd_platform != PLATFORM_OPENTTD || openttd_version < version_openttd(14, 0)) {
@@ -169,6 +176,11 @@ if (param_extension_ammonia && (!param_extension_basic_inorganic_chemistry || !p
 	exit;
 }
 
+if (param_extension_fruits && !param_extension_organic_chemistry) {
+	error(FATAL, string(STR_ERR_EXTENSION_FRUITS_REQUIRES_ORGANIC_CHEMISTRY));
+	exit;
+}
+
 // TODO: check for incompatible grfs
 
 // disable all default industries
@@ -188,5 +200,6 @@ cargotable {
 	PAPR, // ext paper
 	RFPR, C2H4, PETR, // ext organic chemistry
 	ACID, SULP, PORE, COKE, // ext coke sulphur
-	O2__, N2__, NH3_, SASH // ext ammonia
+	O2__, N2__, NH3_, SASH, // ext ammonia
+	FRUT, BIOM // ext fruits
 }

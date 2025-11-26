@@ -428,7 +428,6 @@ switch(FEAT_INDUSTRIES, SELF, sawmill_switch_location_check_industry_distance,
 	   return CB_RESULT_LOCATION_DISALLOW;
 }
 
-// 1 WOOD => 1 WDPR
 produce(sawmill_produce,
 	[WOOD: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);],
 	[WDPR: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100) : 0;],
@@ -442,6 +441,23 @@ switch(FEAT_INDUSTRIES, SELF, sawmill_switch_produce,
 	 store_debug_production_data()
 	]) {
 	sawmill_produce;
+}
+
+produce(sawmill_produce_ext_fruits,
+	[WOOD: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);],
+	[WDPR: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*80/100) : 0;
+	 BIOM: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*30/100) : 0;
+	],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, sawmill_switch_produce_ext_fruits, 
+	[STORE_TEMP(incoming_cargo_waiting("WOOD"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+     calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 store_debug_production_data()
+	]) {
+	sawmill_produce_ext_fruits;
 }
 
 // only show stockpile for WOOD and nothing else
@@ -460,33 +476,78 @@ switch(FEAT_INDUSTRIES, SELF, sawmill_switch_update_last_served_date,
 	check_secondary_industry_closure();
 }
 
-item(FEAT_INDUSTRIES, sawmill, INDUSTRY_ID_SAWMILL) {
-	property {
-		substitute: 0;
-		map_colour: 0xC2;
-		life_type: IND_LIFE_TYPE_PROCESSING;
-		min_cargo_distr: 1;
-		layouts: [sawmill_tilelayout_1];
-		spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
-		conflicting_ind_types: [];
-		random_sound_effects: [];
-		name: TTD_STR_INDUSTRY_NAME_SAWMILL;
-		prob_map_gen: 5;
-		prob_in_game: 3;
-		fund_cost_multiplier: 97;
-		remove_cost_multiplier: 0;
-		remove_cost_multiplier: 0;
-		cargo_types: [accept_cargo("WOOD"),produce_cargo("WDPR",0)];
-		nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_SAWMILL));
+switch(FEAT_INDUSTRIES, SELF, sawmill_switch_update_last_served_date_ext_fruits,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("WDPR") != 0 || last_month_production("WDPR") != 0 || last_month_production("BIOM") != 0 ||
+		incoming_cargo_waiting("WOOD") != 0 || 
+		this_month_transported("WDPR") != 0 || last_month_transported("WDPR") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+if (!param_extension_fruits) {
+	item(FEAT_INDUSTRIES, sawmill, INDUSTRY_ID_SAWMILL) {
+		property {
+			substitute: 0;
+			map_colour: 0xC2;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [sawmill_tilelayout_1];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: TTD_STR_INDUSTRY_NAME_SAWMILL;
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 97;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("WOOD"),produce_cargo("WDPR",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_SAWMILL));
+		}
+			
+		graphics {
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        sawmill_switch_produce;
+			monthly_prod_change:      sawmill_switch_update_last_served_date;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           sawmill_switch_location_check_industry_distance;
+			cargo_subtype_display:    sawmill_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+		}
 	}
-        
-	graphics {
-		produce_cargo_arrival:    empty_produce; 
-		produce_256_ticks:        sawmill_switch_produce;
-		monthly_prod_change:      sawmill_switch_update_last_served_date;
-		random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
-		location_check:           sawmill_switch_location_check_industry_distance;
-		cargo_subtype_display:    sawmill_switch_cargo_subtype;
-		build_prod_change:        initialize_last_served_date;
+}
+
+if (param_extension_fruits) {
+	item(FEAT_INDUSTRIES, sawmill, INDUSTRY_ID_SAWMILL) {
+		property {
+			substitute: 0;
+			map_colour: 0xC2;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [sawmill_tilelayout_1];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: TTD_STR_INDUSTRY_NAME_SAWMILL;
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 97;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("WOOD"),produce_cargo("WDPR",0),produce_cargo("BIOM",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_SAWMILL));
+		}
+			
+		graphics {
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        sawmill_switch_produce_ext_fruits;
+			monthly_prod_change:      sawmill_switch_update_last_served_date_ext_fruits;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           sawmill_switch_location_check_industry_distance;
+			cargo_subtype_display:    sawmill_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+		}
 	}
 }

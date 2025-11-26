@@ -127,10 +127,23 @@ produce(general_store_produce,
 	[],
 	0 // do not run again
 )
-
 switch(FEAT_INDUSTRIES, SELF, general_store_switch_produce,
 	[STORE_TEMP(incoming_cargo_waiting("FOOD"), TEMP_REGISTER_INCOMING_CARGO_WAITING0)]) {
 	general_store_produce; 
+}
+
+produce(general_store_produce_extension_fruits,
+	[FOOD: LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0) > 12 ? LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0) - 12 : LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0) != 0 ? 1 : 0;
+	 FRUT: LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1) > 12 ? LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1) - 12 : LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1) != 0 ? 1 : 0;
+	],
+	[],
+	0 // do not run again
+)
+switch(FEAT_INDUSTRIES, SELF, general_store_switch_produce_extension_fruits,
+	[STORE_TEMP(incoming_cargo_waiting("FOOD"), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 STORE_TEMP(incoming_cargo_waiting("FRUT"), TEMP_REGISTER_INCOMING_CARGO_WAITING1)
+	]) {
+	general_store_produce_extension_fruits; 
 }
 
 switch(FEAT_INDUSTRIES, SELF, general_store_switch_update_last_served_date,
@@ -141,38 +154,84 @@ switch(FEAT_INDUSTRIES, SELF, general_store_switch_update_last_served_date,
 	check_secondary_industry_closure();
 }
 
-item(FEAT_INDUSTRIES, general_store, INDUSTRY_ID_GENERAL_STORE) {
-	property {
-		substitute: 0;
-		map_colour: 168;
-		life_type: IND_LIFE_TYPE_BLACK_HOLE;
-		min_cargo_distr: 1;
-		layouts: [general_store_tilelayout];
-		spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_ONLY_IN_TOWNS);
-		conflicting_ind_types: [];
-		random_sound_effects: [];
-		name: string(STR_IND_GENERAL_STORE);
-		prob_map_gen: 24;
-		prob_in_game: 12;
-		prospect_chance: 0.75;
-		fund_cost_multiplier: 15;
-		remove_cost_multiplier: 0;
-		remove_cost_multiplier: 0;
-		cargo_types: [accept_cargo("FOOD")];
-		nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_GENERAL_STORE));
-	}
-        
-	graphics {
-		construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
-		produce_cargo_arrival:    empty_produce; 
-		produce_256_ticks:        general_store_switch_produce;
-		monthly_prod_change:      CB_RESULT_IND_PROD_NO_CHANGE;
-		random_prod_change:       general_store_switch_update_last_served_date;
-		location_check:           general_store_switch_location_check_industry_distance;
-		extra_text_fund:          return CB_RESULT_NO_TEXT;
-		extra_text_industry:      return CB_RESULT_NO_TEXT;
-		cargo_subtype_display:    return CB_RESULT_IND_NO_TEXT_NO_AMOUNT;
-		build_prod_change:        initialize_last_served_date;
+switch(FEAT_INDUSTRIES, SELF, general_store_switch_update_last_served_date_ext_fruits,
+	[update_last_served_date(),
+	 STORE_PERM(incoming_cargo_waiting("FOOD") != 0 || incoming_cargo_waiting("FRUT") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+if (!param_extension_fruits) {
+	item(FEAT_INDUSTRIES, general_store, INDUSTRY_ID_GENERAL_STORE) {
+		property {
+			substitute: 0;
+			map_colour: 168;
+			life_type: IND_LIFE_TYPE_BLACK_HOLE;
+			min_cargo_distr: 1;
+			layouts: [general_store_tilelayout];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_ONLY_IN_TOWNS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_GENERAL_STORE);
+			prob_map_gen: 24;
+			prob_in_game: 12;
+			prospect_chance: 0.75;
+			fund_cost_multiplier: 15;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("FOOD")];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_GENERAL_STORE));
+		}
+			
+		graphics {
+			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        general_store_switch_produce;
+			monthly_prod_change:      CB_RESULT_IND_PROD_NO_CHANGE;
+			random_prod_change:       general_store_switch_update_last_served_date;
+			location_check:           general_store_switch_location_check_industry_distance;
+			extra_text_fund:          return CB_RESULT_NO_TEXT;
+			extra_text_industry:      return CB_RESULT_NO_TEXT;
+			cargo_subtype_display:    return CB_RESULT_IND_NO_TEXT_NO_AMOUNT;
+			build_prod_change:        initialize_last_served_date;
+		}
 	}
 }
-    
+ 
+if (param_extension_fruits) {
+	item(FEAT_INDUSTRIES, general_store, INDUSTRY_ID_GENERAL_STORE) {
+		property {
+			substitute: 0;
+			map_colour: 168;
+			life_type: IND_LIFE_TYPE_BLACK_HOLE;
+			min_cargo_distr: 1;
+			layouts: [general_store_tilelayout];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_ONLY_IN_TOWNS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_GENERAL_STORE);
+			prob_map_gen: 24;
+			prob_in_game: 12;
+			prospect_chance: 0.75;
+			fund_cost_multiplier: 15;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("FOOD"),accept_cargo("FRUT")];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_GENERAL_STORE));
+		}
+			
+		graphics {
+			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        general_store_switch_produce_extension_fruits;
+			monthly_prod_change:      CB_RESULT_IND_PROD_NO_CHANGE;
+			random_prod_change:       general_store_switch_update_last_served_date_ext_fruits;
+			location_check:           general_store_switch_location_check_industry_distance;
+			extra_text_fund:          return CB_RESULT_NO_TEXT;
+			extra_text_industry:      return CB_RESULT_NO_TEXT;
+			cargo_subtype_display:    return CB_RESULT_IND_NO_TEXT_NO_AMOUNT;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+} 
