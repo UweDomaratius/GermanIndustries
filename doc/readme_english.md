@@ -120,7 +120,7 @@ The set comes with a basic set of industries and cargos. These are listed as fol
 
 [Coal](#cargo_COAL) [Fish](#cargo_FISH) [Food](#cargo_FOOD) [Goods](#cargo_GOOD) [Grain](#cargo_GRAI) [Iron Ore](#cargo_IORE) [Livestock](#cargo_LVST) [Mail](#cargo_MAIL) [Oil](#cargo_OIL_) [Passengers](#cargo_PASS) [Plastics](#cargo_PLAS) [Sand](#cargo_SAND) [Steel](#cargo_STEL) [Timber](#cargo_WDPR) [Vehicles](#cargo_VEHI) [Wood](#cargo_WOOD) 
 
-[Builders Yard](#industry_13) [Coal Mine](#industry_27) [Department Store](#industry_38) [Farm](#industry_40) [Fishing Grounds](#industry_42) [Food Processing Plant](#industry_45) [Forest](#industry_53) [Furniture Factory](#industry_55) [General Store](#industry_58) [Hotel](#industry_61) [Integrated Steel Mill](#industry_62) [Iron Ore Mine](#industry_70) [Oil Rig](#industry_78) [Oil Wells](#industry_79) [Petrol Station](#industry_97) [Plastics Plant](#industry_114) [Port](#industry_122) [Power Station](#industry_130) [Sawmill](#industry_136) [Vehicle Distributor](#industry_142) [Vehicle Factory](#industry_143) 
+[Builders Yard](#industry_16) [Coal Mine](#industry_30) [Department Store](#industry_41) [Farm](#industry_43) [Fishing Grounds](#industry_48) [Food Processing Plant](#industry_51) [Forest](#industry_63) [Furniture Factory](#industry_66) [General Store](#industry_69) [Hotel](#industry_73) [Integrated Steel Mill](#industry_75) [Iron Ore Mine](#industry_83) [Oil Rig](#industry_91) [Oil Wells](#industry_92) [Petrol Station](#industry_110) [Plastics Plant](#industry_127) [Port](#industry_135) [Power Station](#industry_143) [Sawmill](#industry_151) [Vehicle Distributor](#industry_159) [Vehicle Factory](#industry_160) 
 
 <img src="base_industry_chain_en.png" alt="The basic industry chain">
 
@@ -138,7 +138,7 @@ The image depicts the interactions between the different extensions. Each extens
 A cargo shown in a colored box is part of the extension of the same color, so if that extension is not enabled, the cargo is not active either.
 For each extension, an extra diagram is available to see the detailed connections between their cargos and industries.
 
-The set contains 12 extensions as listed below.
+The set contains 13 extensions as listed below.
 
 <a name="extension_0"></a>
 ### Aluminium
@@ -163,18 +163,18 @@ Color in the industry charts of this documentation: <span style="background-colo
 
 * [Aluminium Plant](#industry_4)
 * [Aluminium Plant](#industry_5)
-* [Packaging Plant](#industry_85)
-* [Packaging Plant](#industry_87)
-* [Packaging Plant](#industry_89)
-* [Packaging Plant](#industry_91)
-* [Port](#industry_123)
-* [Port](#industry_125)
-* [Port](#industry_127)
-* [Port](#industry_129)
-* [Vehicle Factory](#industry_144)
-* [Vehicle Factory](#industry_146)
-* [Vehicle Factory](#industry_148)
-* [Vehicle Factory](#industry_150)
+* [Packaging Plant](#industry_98)
+* [Packaging Plant](#industry_100)
+* [Packaging Plant](#industry_102)
+* [Packaging Plant](#industry_104)
+* [Port](#industry_136)
+* [Port](#industry_138)
+* [Port](#industry_140)
+* [Port](#industry_142)
+* [Vehicle Factory](#industry_161)
+* [Vehicle Factory](#industry_163)
+* [Vehicle Factory](#industry_165)
+* [Vehicle Factory](#industry_167)
 
 
 <img src="industry_chain_extension_aluminium_en.png" alt="industry chain for extension Aluminium">
@@ -197,12 +197,12 @@ Color in the industry charts of this documentation: <span style="background-colo
 #### Industries introduced
 
 * [Ammonia Plant](#industry_6)
-* [Cleaning Products Factory](#industry_20)
-* [Cleaning Products Factory](#industry_21)
-* [Cleaning Products Factory](#industry_22)
 * [Cleaning Products Factory](#industry_23)
-* [Cryo Plant](#industry_33)
-* [Solvay Plant](#industry_137)
+* [Cleaning Products Factory](#industry_24)
+* [Cleaning Products Factory](#industry_25)
+* [Cleaning Products Factory](#industry_26)
+* [Cryo Plant](#industry_36)
+* [Solvay Plant](#industry_153)
 
 
 #### Industries modified
@@ -210,32 +210,32 @@ Color in the industry charts of this documentation: <span style="background-colo
 * [Acid Plant](#industry_2)
 * [Acid Plant](#industry_3)
 * [Ammonia Plant](#industry_6)
-* [Carbon Black Plant](#industry_16)
-* [Carbon Black Plant](#industry_17)
-* [Cleaning Products Factory](#industry_20)
-* [Cleaning Products Factory](#industry_21)
-* [Cleaning Products Factory](#industry_22)
+* [Carbon Black Plant](#industry_19)
+* [Carbon Black Plant](#industry_20)
 * [Cleaning Products Factory](#industry_23)
-* [Cryo Plant](#industry_33)
-* [Glass Works](#industry_60)
-* [Integrated Steel Mill](#industry_66)
-* [Integrated Steel Mill](#industry_67)
-* [Integrated Steel Mill](#industry_68)
-* [Integrated Steel Mill](#industry_69)
-* [Ore Smelter](#industry_82)
-* [Ore Smelter](#industry_83)
-* [Pharmaceutical Plant](#industry_106)
-* [Pharmaceutical Plant](#industry_107)
-* [Pharmaceutical Plant](#industry_108)
-* [Pharmaceutical Plant](#industry_109)
-* [Pharmaceutical Plant](#industry_110)
-* [Pharmaceutical Plant](#industry_111)
-* [Pharmaceutical Plant](#industry_112)
-* [Pharmaceutical Plant](#industry_113)
-* [Solvay Plant](#industry_137)
+* [Cleaning Products Factory](#industry_24)
+* [Cleaning Products Factory](#industry_25)
+* [Cleaning Products Factory](#industry_26)
+* [Cryo Plant](#industry_36)
+* [Glass Works](#industry_72)
+* [Integrated Steel Mill](#industry_79)
+* [Integrated Steel Mill](#industry_80)
+* [Integrated Steel Mill](#industry_81)
+* [Integrated Steel Mill](#industry_82)
+* [Ore Smelter](#industry_95)
+* [Ore Smelter](#industry_96)
+* [Pharmaceutical Plant](#industry_119)
+* [Pharmaceutical Plant](#industry_120)
+* [Pharmaceutical Plant](#industry_121)
+* [Pharmaceutical Plant](#industry_122)
+* [Pharmaceutical Plant](#industry_123)
+* [Pharmaceutical Plant](#industry_124)
+* [Pharmaceutical Plant](#industry_125)
+* [Pharmaceutical Plant](#industry_126)
+* [Solvay Plant](#industry_153)
 
 
-<img src="industry_chain_extension_ammonia_de.png" alt="industry chain for extension Ammonia">
+<img src="industry_chain_extension_ammonia_en.png" alt="industry chain for extension Ammonia">
 
 <a name="extension_2"></a>
 ### Basic Inorganic Chemistry
@@ -254,24 +254,24 @@ Color in the industry charts of this documentation: <span style="background-colo
 
 #### Industries introduced
 
-* [Chloralkali Process Plant](#industry_19)
-* [Pharmaceutical Plant](#industry_98)
-* [Pharmaceutical Plant](#industry_99)
-* [Pharmaceutical Plant](#industry_100)
-* [Pharmaceutical Plant](#industry_101)
-* [Pharmaceutical Plant](#industry_102)
-* [Pharmaceutical Plant](#industry_103)
-* [Pharmaceutical Plant](#industry_104)
-* [Pharmaceutical Plant](#industry_105)
-* [Pharmaceutical Plant](#industry_106)
-* [Pharmaceutical Plant](#industry_107)
-* [Pharmaceutical Plant](#industry_108)
-* [Pharmaceutical Plant](#industry_109)
-* [Pharmaceutical Plant](#industry_110)
+* [Chloralkali Process Plant](#industry_22)
 * [Pharmaceutical Plant](#industry_111)
 * [Pharmaceutical Plant](#industry_112)
 * [Pharmaceutical Plant](#industry_113)
-* [Salt Mine](#industry_134)
+* [Pharmaceutical Plant](#industry_114)
+* [Pharmaceutical Plant](#industry_115)
+* [Pharmaceutical Plant](#industry_116)
+* [Pharmaceutical Plant](#industry_117)
+* [Pharmaceutical Plant](#industry_118)
+* [Pharmaceutical Plant](#industry_119)
+* [Pharmaceutical Plant](#industry_120)
+* [Pharmaceutical Plant](#industry_121)
+* [Pharmaceutical Plant](#industry_122)
+* [Pharmaceutical Plant](#industry_123)
+* [Pharmaceutical Plant](#industry_124)
+* [Pharmaceutical Plant](#industry_125)
+* [Pharmaceutical Plant](#industry_126)
+* [Salt Mine](#industry_149)
 
 
 #### Industries modified
@@ -279,34 +279,38 @@ Color in the industry charts of this documentation: <span style="background-colo
 * [Acid Plant](#industry_1)
 * [Acid Plant](#industry_3)
 * [Aluminium Plant](#industry_5)
-* [Chloralkali Process Plant](#industry_19)
-* [Dairy](#industry_35)
-* [Dairy](#industry_37)
-* [Food Processing Plant](#industry_46)
-* [Food Processing Plant](#industry_48)
-* [Food Processing Plant](#industry_51)
+* [Chloralkali Process Plant](#industry_22)
+* [Dairy](#industry_38)
+* [Dairy](#industry_40)
 * [Food Processing Plant](#industry_52)
-* [Pharmaceutical Plant](#industry_98)
-* [Pharmaceutical Plant](#industry_99)
-* [Pharmaceutical Plant](#industry_100)
-* [Pharmaceutical Plant](#industry_101)
-* [Pharmaceutical Plant](#industry_102)
-* [Pharmaceutical Plant](#industry_103)
-* [Pharmaceutical Plant](#industry_104)
-* [Pharmaceutical Plant](#industry_105)
-* [Pharmaceutical Plant](#industry_106)
-* [Pharmaceutical Plant](#industry_107)
-* [Pharmaceutical Plant](#industry_108)
-* [Pharmaceutical Plant](#industry_109)
-* [Pharmaceutical Plant](#industry_110)
+* [Food Processing Plant](#industry_54)
+* [Food Processing Plant](#industry_57)
+* [Food Processing Plant](#industry_58)
+* [Food Processing Plant](#industry_59)
+* [Food Processing Plant](#industry_60)
+* [Food Processing Plant](#industry_61)
+* [Food Processing Plant](#industry_62)
 * [Pharmaceutical Plant](#industry_111)
 * [Pharmaceutical Plant](#industry_112)
 * [Pharmaceutical Plant](#industry_113)
-* [Plastics Plant](#industry_115)
-* [Plastics Plant](#industry_117)
-* [Plastics Plant](#industry_119)
-* [Plastics Plant](#industry_121)
-* [Salt Mine](#industry_134)
+* [Pharmaceutical Plant](#industry_114)
+* [Pharmaceutical Plant](#industry_115)
+* [Pharmaceutical Plant](#industry_116)
+* [Pharmaceutical Plant](#industry_117)
+* [Pharmaceutical Plant](#industry_118)
+* [Pharmaceutical Plant](#industry_119)
+* [Pharmaceutical Plant](#industry_120)
+* [Pharmaceutical Plant](#industry_121)
+* [Pharmaceutical Plant](#industry_122)
+* [Pharmaceutical Plant](#industry_123)
+* [Pharmaceutical Plant](#industry_124)
+* [Pharmaceutical Plant](#industry_125)
+* [Pharmaceutical Plant](#industry_126)
+* [Plastics Plant](#industry_128)
+* [Plastics Plant](#industry_130)
+* [Plastics Plant](#industry_132)
+* [Plastics Plant](#industry_134)
+* [Salt Mine](#industry_149)
 
 
 <img src="industry_chain_extension_basic_inorganic_chemistry_en.png" alt="industry chain for extension Basic Inorganic Chemistry">
@@ -327,21 +331,21 @@ Color in the industry charts of this documentation: <span style="background-colo
 
 #### Industries introduced
 
-* [Brickworks](#industry_11)
-* [Cement Plant](#industry_18)
-* [Limestone Mine](#industry_73)
-* [Sand pit](#industry_135)
+* [Brickworks](#industry_14)
+* [Cement Plant](#industry_21)
+* [Limestone Mine](#industry_86)
+* [Sand pit](#industry_150)
 
 
 #### Industries modified
 
-* [Brickworks](#industry_11)
-* [Builders Yard](#industry_12)
-* [Cement Plant](#industry_18)
-* [Limestone Mine](#industry_73)
-* [Paint Factory](#industry_93)
-* [Paint Factory](#industry_95)
-* [Sand pit](#industry_135)
+* [Brickworks](#industry_14)
+* [Builders Yard](#industry_15)
+* [Cement Plant](#industry_21)
+* [Limestone Mine](#industry_86)
+* [Paint Factory](#industry_106)
+* [Paint Factory](#industry_108)
+* [Sand pit](#industry_150)
 
 
 <img src="industry_chain_extension_building_industries_en.png" alt="industry chain for extension Building Industries">
@@ -367,11 +371,11 @@ Color in the industry charts of this documentation: <span style="background-colo
 * [Acid Plant](#industry_1)
 * [Acid Plant](#industry_2)
 * [Acid Plant](#industry_3)
-* [Coke Oven](#industry_28)
-* [Ore Smelter](#industry_80)
-* [Ore Smelter](#industry_81)
-* [Ore Smelter](#industry_82)
-* [Ore Smelter](#industry_83)
+* [Coke Oven](#industry_31)
+* [Ore Smelter](#industry_93)
+* [Ore Smelter](#industry_94)
+* [Ore Smelter](#industry_95)
+* [Ore Smelter](#industry_96)
 
 
 #### Industries modified
@@ -380,36 +384,37 @@ Color in the industry charts of this documentation: <span style="background-colo
 * [Acid Plant](#industry_1)
 * [Acid Plant](#industry_2)
 * [Acid Plant](#industry_3)
-* [Cleaning Products Factory](#industry_21)
-* [Cleaning Products Factory](#industry_23)
-* [Coke Oven](#industry_28)
-* [Copper Ore Mine](#industry_30)
-* [Copper Smelter](#industry_32)
-* [Integrated Steel Mill](#industry_64)
-* [Integrated Steel Mill](#industry_65)
-* [Integrated Steel Mill](#industry_68)
-* [Integrated Steel Mill](#industry_69)
-* [Lime Kiln](#industry_72)
-* [Oil Refinery](#industry_77)
-* [Ore Smelter](#industry_80)
-* [Ore Smelter](#industry_81)
-* [Ore Smelter](#industry_82)
-* [Ore Smelter](#industry_83)
-* [Paint Factory](#industry_94)
-* [Paint Factory](#industry_95)
-* [Pharmaceutical Plant](#industry_102)
-* [Pharmaceutical Plant](#industry_103)
-* [Pharmaceutical Plant](#industry_104)
-* [Pharmaceutical Plant](#industry_105)
-* [Pharmaceutical Plant](#industry_110)
-* [Pharmaceutical Plant](#industry_111)
-* [Pharmaceutical Plant](#industry_112)
-* [Pharmaceutical Plant](#industry_113)
-* [Port](#industry_126)
-* [Port](#industry_127)
-* [Port](#industry_128)
-* [Port](#industry_129)
-* [Power Station](#industry_131)
+* [Cleaning Products Factory](#industry_24)
+* [Cleaning Products Factory](#industry_26)
+* [Coke Oven](#industry_31)
+* [Copper Ore Mine](#industry_33)
+* [Copper Smelter](#industry_35)
+* [Integrated Steel Mill](#industry_77)
+* [Integrated Steel Mill](#industry_78)
+* [Integrated Steel Mill](#industry_81)
+* [Integrated Steel Mill](#industry_82)
+* [Lime Kiln](#industry_85)
+* [Oil Refinery](#industry_90)
+* [Ore Smelter](#industry_93)
+* [Ore Smelter](#industry_94)
+* [Ore Smelter](#industry_95)
+* [Ore Smelter](#industry_96)
+* [Paint Factory](#industry_107)
+* [Paint Factory](#industry_108)
+* [Pharmaceutical Plant](#industry_115)
+* [Pharmaceutical Plant](#industry_116)
+* [Pharmaceutical Plant](#industry_117)
+* [Pharmaceutical Plant](#industry_118)
+* [Pharmaceutical Plant](#industry_123)
+* [Pharmaceutical Plant](#industry_124)
+* [Pharmaceutical Plant](#industry_125)
+* [Pharmaceutical Plant](#industry_126)
+* [Port](#industry_139)
+* [Port](#industry_140)
+* [Port](#industry_141)
+* [Port](#industry_142)
+* [Power Station](#industry_144)
+* [Power Station](#industry_146)
 
 
 <img src="industry_chain_extension_coke_sulphur_en.png" alt="industry chain for extension Coke and Sulphur">
@@ -430,42 +435,91 @@ Color in the industry charts of this documentation: <span style="background-colo
 
 * [Animal Farm](#industry_7)
 * [Animal Farm](#industry_8)
-* [Brewery](#industry_9)
-* [Brewery](#industry_10)
-* [Dairy](#industry_34)
-* [Dairy](#industry_35)
-* [Dairy](#industry_36)
+* [Animal Farm](#industry_9)
+* [Animal Farm](#industry_10)
+* [Brewery](#industry_12)
+* [Brewery](#industry_13)
 * [Dairy](#industry_37)
-* [Flour Mill](#industry_43)
-* [Flour Mill](#industry_44)
-* [Meatpacking Plant](#industry_74)
-* [Meatpacking Plant](#industry_75)
+* [Dairy](#industry_38)
+* [Dairy](#industry_39)
+* [Dairy](#industry_40)
+* [Flour Mill](#industry_49)
+* [Flour Mill](#industry_50)
+* [Meatpacking Plant](#industry_87)
+* [Meatpacking Plant](#industry_88)
 
 
 #### Industries modified
 
 * [Animal Farm](#industry_7)
 * [Animal Farm](#industry_8)
-* [Brewery](#industry_9)
-* [Brewery](#industry_10)
-* [Dairy](#industry_34)
-* [Dairy](#industry_35)
-* [Dairy](#industry_36)
+* [Animal Farm](#industry_9)
+* [Animal Farm](#industry_10)
+* [Brewery](#industry_12)
+* [Brewery](#industry_13)
 * [Dairy](#industry_37)
-* [Farm](#industry_41)
-* [Flour Mill](#industry_43)
-* [Flour Mill](#industry_44)
-* [Food Processing Plant](#industry_47)
-* [Food Processing Plant](#industry_48)
-* [Food Processing Plant](#industry_50)
-* [Food Processing Plant](#industry_52)
-* [Meatpacking Plant](#industry_74)
-* [Meatpacking Plant](#industry_75)
+* [Dairy](#industry_38)
+* [Dairy](#industry_39)
+* [Dairy](#industry_40)
+* [Farm](#industry_44)
+* [Farm](#industry_47)
+* [Flour Mill](#industry_49)
+* [Flour Mill](#industry_50)
+* [Food Processing Plant](#industry_53)
+* [Food Processing Plant](#industry_54)
+* [Food Processing Plant](#industry_56)
+* [Food Processing Plant](#industry_58)
+* [Food Processing Plant](#industry_60)
+* [Food Processing Plant](#industry_62)
+* [Meatpacking Plant](#industry_87)
+* [Meatpacking Plant](#industry_88)
 
 
 <img src="industry_chain_extension_food_industries_en.png" alt="industry chain for extension Food Industries">
 
 <a name="extension_6"></a>
+### Fruits and Bioenergy
+
+Renewable raw materials have become more important since the second half of the 20th century. One example is the recycling of biomass, organic waste, in the energy sector. 
+
+Color in the industry charts of this documentation: <span style="background-color:#80a82c;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+#### Cargos
+
+* [Biomass](#cargo_BIOM)
+* [Fruits](#cargo_FRUT)
+
+
+#### Industries introduced
+
+* [Biorefinery](#industry_11)
+* [Fruit Plantation](#industry_64)
+
+
+#### Industries modified
+
+* [Animal Farm](#industry_9)
+* [Animal Farm](#industry_10)
+* [Biorefinery](#industry_11)
+* [Farm](#industry_45)
+* [Farm](#industry_46)
+* [Farm](#industry_47)
+* [Food Processing Plant](#industry_59)
+* [Food Processing Plant](#industry_60)
+* [Food Processing Plant](#industry_61)
+* [Food Processing Plant](#industry_62)
+* [Fruit Plantation](#industry_64)
+* [General Store](#industry_70)
+* [Hotel](#industry_74)
+* [Power Station](#industry_145)
+* [Power Station](#industry_146)
+* [Sawmill](#industry_152)
+* [Steamreformer](#industry_156)
+
+
+<img src="industry_chain_extension_fruits_en.png" alt="industry chain for extension Fruits and Bioenergy">
+
+<a name="extension_7"></a>
 ### Glass
 
 Glass is an ubiquitous material used in everyday life. The extension adds cargos and industries related to glass production and adapts various industries to require glass, most importantly for packaging needs. 
@@ -480,36 +534,36 @@ Color in the industry charts of this documentation: <span style="background-colo
 
 #### Industries introduced
 
-* [Glass Works](#industry_59)
-* [Glass Works](#industry_60)
-* [Lime Kiln](#industry_71)
-* [Lime Kiln](#industry_72)
+* [Glass Works](#industry_71)
+* [Glass Works](#industry_72)
+* [Lime Kiln](#industry_84)
+* [Lime Kiln](#industry_85)
 
 
 #### Industries modified
 
-* [Brewery](#industry_10)
-* [Glass Works](#industry_59)
-* [Glass Works](#industry_60)
-* [Integrated Steel Mill](#industry_63)
-* [Integrated Steel Mill](#industry_65)
-* [Integrated Steel Mill](#industry_67)
-* [Integrated Steel Mill](#industry_69)
-* [Lime Kiln](#industry_71)
-* [Lime Kiln](#industry_72)
-* [Packaging Plant](#industry_86)
-* [Packaging Plant](#industry_87)
-* [Packaging Plant](#industry_90)
-* [Packaging Plant](#industry_91)
-* [Vehicle Factory](#industry_147)
-* [Vehicle Factory](#industry_148)
-* [Vehicle Factory](#industry_149)
-* [Vehicle Factory](#industry_150)
+* [Brewery](#industry_13)
+* [Glass Works](#industry_71)
+* [Glass Works](#industry_72)
+* [Integrated Steel Mill](#industry_76)
+* [Integrated Steel Mill](#industry_78)
+* [Integrated Steel Mill](#industry_80)
+* [Integrated Steel Mill](#industry_82)
+* [Lime Kiln](#industry_84)
+* [Lime Kiln](#industry_85)
+* [Packaging Plant](#industry_99)
+* [Packaging Plant](#industry_100)
+* [Packaging Plant](#industry_103)
+* [Packaging Plant](#industry_104)
+* [Vehicle Factory](#industry_164)
+* [Vehicle Factory](#industry_165)
+* [Vehicle Factory](#industry_166)
+* [Vehicle Factory](#industry_167)
 
 
 <img src="industry_chain_extension_glass_en.png" alt="industry chain for extension Glass">
 
-<a name="extension_7"></a>
+<a name="extension_8"></a>
 ### Organic Chemistry
 
 Organic chemistry is the science of carbohydrates, compounds consisting of carbon and hydrogen. The base materials (coal and most importantly crude oil) were created from organic matter (e.g. plants) over millions of years. In the 20th century crude oil became one of the most important resources of mankind, as it is indispensable for the production of fuels and plastics. Each day, several billions of liters of crude oil are consumed for industrial purposes. 
@@ -525,39 +579,41 @@ Color in the industry charts of this documentation: <span style="background-colo
 
 #### Industries introduced
 
-* [Coal Liquefaction Plant](#industry_26)
-* [Oil Refinery](#industry_76)
-* [Oil Refinery](#industry_77)
-* [Steamcracker](#industry_138)
-* [Steamreformer](#industry_139)
+* [Coal Liquefaction Plant](#industry_29)
+* [Oil Refinery](#industry_89)
+* [Oil Refinery](#industry_90)
+* [Steamcracker](#industry_154)
+* [Steamreformer](#industry_155)
+* [Steamreformer](#industry_156)
 
 
 #### Industries modified
 
-* [Carbon Black Plant](#industry_15)
-* [Carbon Black Plant](#industry_17)
-* [Coal Liquefaction Plant](#industry_26)
-* [Oil Refinery](#industry_76)
-* [Oil Refinery](#industry_77)
-* [Pharmaceutical Plant](#industry_100)
-* [Pharmaceutical Plant](#industry_101)
-* [Pharmaceutical Plant](#industry_104)
-* [Pharmaceutical Plant](#industry_105)
-* [Pharmaceutical Plant](#industry_108)
-* [Pharmaceutical Plant](#industry_109)
-* [Pharmaceutical Plant](#industry_112)
+* [Carbon Black Plant](#industry_18)
+* [Carbon Black Plant](#industry_20)
+* [Coal Liquefaction Plant](#industry_29)
+* [Oil Refinery](#industry_89)
+* [Oil Refinery](#industry_90)
 * [Pharmaceutical Plant](#industry_113)
-* [Plastics Plant](#industry_118)
-* [Plastics Plant](#industry_119)
-* [Plastics Plant](#industry_120)
-* [Plastics Plant](#industry_121)
-* [Steamcracker](#industry_138)
-* [Steamreformer](#industry_139)
+* [Pharmaceutical Plant](#industry_114)
+* [Pharmaceutical Plant](#industry_117)
+* [Pharmaceutical Plant](#industry_118)
+* [Pharmaceutical Plant](#industry_121)
+* [Pharmaceutical Plant](#industry_122)
+* [Pharmaceutical Plant](#industry_125)
+* [Pharmaceutical Plant](#industry_126)
+* [Plastics Plant](#industry_131)
+* [Plastics Plant](#industry_132)
+* [Plastics Plant](#industry_133)
+* [Plastics Plant](#industry_134)
+* [Steamcracker](#industry_154)
+* [Steamreformer](#industry_155)
+* [Steamreformer](#industry_156)
 
 
 <img src="industry_chain_extension_organic_chemistry_en.png" alt="industry chain for extension Organic Chemistry">
 
-<a name="extension_8"></a>
+<a name="extension_9"></a>
 ### Packaging Industries
 
 Packaging industries produce all sorts of materials, be it cardboard boxes or aluminium cans for drinks, to contain practically anything that needs protection during transport. The packaging extension adds an additional layer of complexity to the production of food and goods. 
@@ -571,53 +627,55 @@ Color in the industry charts of this documentation: <span style="background-colo
 
 #### Industries introduced
 
-* [Packaging Plant](#industry_84)
-* [Packaging Plant](#industry_85)
-* [Packaging Plant](#industry_86)
-* [Packaging Plant](#industry_87)
-* [Packaging Plant](#industry_88)
-* [Packaging Plant](#industry_89)
-* [Packaging Plant](#industry_90)
-* [Packaging Plant](#industry_91)
+* [Packaging Plant](#industry_97)
+* [Packaging Plant](#industry_98)
+* [Packaging Plant](#industry_99)
+* [Packaging Plant](#industry_100)
+* [Packaging Plant](#industry_101)
+* [Packaging Plant](#industry_102)
+* [Packaging Plant](#industry_103)
+* [Packaging Plant](#industry_104)
 
 
 #### Industries modified
 
-* [Cleaning Products Factory](#industry_22)
-* [Cleaning Products Factory](#industry_23)
-* [Clothing Plant](#industry_25)
-* [Dairy](#industry_36)
-* [Dairy](#industry_37)
-* [Flour Mill](#industry_44)
-* [Food Processing Plant](#industry_49)
-* [Food Processing Plant](#industry_50)
-* [Food Processing Plant](#industry_51)
-* [Food Processing Plant](#industry_52)
-* [Furniture Factory](#industry_56)
-* [Furniture Factory](#industry_57)
-* [Meatpacking Plant](#industry_75)
-* [Packaging Plant](#industry_84)
-* [Packaging Plant](#industry_85)
-* [Packaging Plant](#industry_86)
-* [Packaging Plant](#industry_87)
-* [Packaging Plant](#industry_88)
-* [Packaging Plant](#industry_89)
-* [Packaging Plant](#industry_90)
-* [Packaging Plant](#industry_91)
-* [Pharmaceutical Plant](#industry_99)
-* [Pharmaceutical Plant](#industry_101)
-* [Pharmaceutical Plant](#industry_103)
-* [Pharmaceutical Plant](#industry_105)
-* [Pharmaceutical Plant](#industry_107)
-* [Pharmaceutical Plant](#industry_109)
-* [Pharmaceutical Plant](#industry_111)
-* [Pharmaceutical Plant](#industry_113)
-* [Printing Works](#industry_133)
+* [Cleaning Products Factory](#industry_25)
+* [Cleaning Products Factory](#industry_26)
+* [Clothing Plant](#industry_28)
+* [Dairy](#industry_39)
+* [Dairy](#industry_40)
+* [Flour Mill](#industry_50)
+* [Food Processing Plant](#industry_55)
+* [Food Processing Plant](#industry_56)
+* [Food Processing Plant](#industry_57)
+* [Food Processing Plant](#industry_58)
+* [Food Processing Plant](#industry_61)
+* [Food Processing Plant](#industry_62)
+* [Furniture Factory](#industry_67)
+* [Furniture Factory](#industry_68)
+* [Meatpacking Plant](#industry_88)
+* [Packaging Plant](#industry_97)
+* [Packaging Plant](#industry_98)
+* [Packaging Plant](#industry_99)
+* [Packaging Plant](#industry_100)
+* [Packaging Plant](#industry_101)
+* [Packaging Plant](#industry_102)
+* [Packaging Plant](#industry_103)
+* [Packaging Plant](#industry_104)
+* [Pharmaceutical Plant](#industry_112)
+* [Pharmaceutical Plant](#industry_114)
+* [Pharmaceutical Plant](#industry_116)
+* [Pharmaceutical Plant](#industry_118)
+* [Pharmaceutical Plant](#industry_120)
+* [Pharmaceutical Plant](#industry_122)
+* [Pharmaceutical Plant](#industry_124)
+* [Pharmaceutical Plant](#industry_126)
+* [Printing Works](#industry_148)
 
 
 <img src="industry_chain_extension_packaging_industries_en.png" alt="industry chain for extension Packaging Industries">
 
-<a name="extension_9"></a>
+<a name="extension_10"></a>
 ### Painting Industries
 
 For thousands of years, paints and pigments such as Indigo had been produced from plants and various powders, which made it prohibitely expensive for industrial scale uses. The production of artificial colors was one of the first important uses of the chemical industry. In fact, some of the biggest chemical companies in Germany started as producers of paints and dyes, such as Agfa and BASF (both derived parts of their name from Anilin, a base chemical used in the production of paints). In 1925 the biggest German chemical companies joined together in the so-called I.G. Farben (literally "interest group paint industries"), which became the biggest chemical company in the world prior to World War 2. Even today, paints, dyes, pigments and related products are a staple of the chemical industry and see wide uses in many other areas, be it textile, plastics production, construction or in the automobile sector. 
@@ -634,54 +692,54 @@ Color in the industry charts of this documentation: <span style="background-colo
 
 #### Industries introduced
 
-* [Carbon Black Plant](#industry_14)
-* [Carbon Black Plant](#industry_15)
-* [Carbon Black Plant](#industry_16)
 * [Carbon Black Plant](#industry_17)
-* [Copper Ore Mine](#industry_29)
-* [Copper Ore Mine](#industry_30)
-* [Copper Smelter](#industry_31)
-* [Copper Smelter](#industry_32)
-* [Paint Factory](#industry_92)
-* [Paint Factory](#industry_93)
-* [Paint Factory](#industry_94)
-* [Paint Factory](#industry_95)
+* [Carbon Black Plant](#industry_18)
+* [Carbon Black Plant](#industry_19)
+* [Carbon Black Plant](#industry_20)
+* [Copper Ore Mine](#industry_32)
+* [Copper Ore Mine](#industry_33)
+* [Copper Smelter](#industry_34)
+* [Copper Smelter](#industry_35)
+* [Paint Factory](#industry_105)
+* [Paint Factory](#industry_106)
+* [Paint Factory](#industry_107)
+* [Paint Factory](#industry_108)
 
 
 #### Industries modified
 
-* [Carbon Black Plant](#industry_14)
-* [Carbon Black Plant](#industry_15)
-* [Carbon Black Plant](#industry_16)
 * [Carbon Black Plant](#industry_17)
-* [Copper Ore Mine](#industry_29)
-* [Copper Ore Mine](#industry_30)
-* [Copper Smelter](#industry_31)
-* [Copper Smelter](#industry_32)
-* [Ore Smelter](#industry_81)
-* [Ore Smelter](#industry_83)
-* [Paint Factory](#industry_92)
-* [Paint Factory](#industry_93)
-* [Paint Factory](#industry_94)
-* [Paint Factory](#industry_95)
-* [Plastics Plant](#industry_116)
-* [Plastics Plant](#industry_117)
-* [Plastics Plant](#industry_120)
-* [Plastics Plant](#industry_121)
-* [Port](#industry_124)
-* [Port](#industry_125)
-* [Port](#industry_128)
-* [Port](#industry_129)
-* [Textile Mill](#industry_141)
-* [Vehicle Factory](#industry_145)
-* [Vehicle Factory](#industry_146)
-* [Vehicle Factory](#industry_149)
-* [Vehicle Factory](#industry_150)
+* [Carbon Black Plant](#industry_18)
+* [Carbon Black Plant](#industry_19)
+* [Carbon Black Plant](#industry_20)
+* [Copper Ore Mine](#industry_32)
+* [Copper Ore Mine](#industry_33)
+* [Copper Smelter](#industry_34)
+* [Copper Smelter](#industry_35)
+* [Ore Smelter](#industry_94)
+* [Ore Smelter](#industry_96)
+* [Paint Factory](#industry_105)
+* [Paint Factory](#industry_106)
+* [Paint Factory](#industry_107)
+* [Paint Factory](#industry_108)
+* [Plastics Plant](#industry_129)
+* [Plastics Plant](#industry_130)
+* [Plastics Plant](#industry_133)
+* [Plastics Plant](#industry_134)
+* [Port](#industry_137)
+* [Port](#industry_138)
+* [Port](#industry_141)
+* [Port](#industry_142)
+* [Textile Mill](#industry_158)
+* [Vehicle Factory](#industry_162)
+* [Vehicle Factory](#industry_163)
+* [Vehicle Factory](#industry_166)
+* [Vehicle Factory](#industry_167)
 
 
 <img src="industry_chain_extension_painting_industries_en.png" alt="industry chain for extension Painting Industries">
 
-<a name="extension_10"></a>
+<a name="extension_11"></a>
 ### Paper
 
 Paper is an ubiquitous material used in everyday life. The extension adds cargos and industries related to paper production and adapts various industries to require paper, most importantly for packaging needs. 
@@ -695,25 +753,25 @@ Color in the industry charts of this documentation: <span style="background-colo
 
 #### Industries introduced
 
-* [Paper Mill](#industry_96)
-* [Printing Works](#industry_132)
-* [Printing Works](#industry_133)
+* [Paper Mill](#industry_109)
+* [Printing Works](#industry_147)
+* [Printing Works](#industry_148)
 
 
 #### Industries modified
 
-* [Packaging Plant](#industry_88)
-* [Packaging Plant](#industry_89)
-* [Packaging Plant](#industry_90)
-* [Packaging Plant](#industry_91)
-* [Paper Mill](#industry_96)
-* [Printing Works](#industry_132)
-* [Printing Works](#industry_133)
+* [Packaging Plant](#industry_101)
+* [Packaging Plant](#industry_102)
+* [Packaging Plant](#industry_103)
+* [Packaging Plant](#industry_104)
+* [Paper Mill](#industry_109)
+* [Printing Works](#industry_147)
+* [Printing Works](#industry_148)
 
 
 <img src="industry_chain_extension_paper_en.png" alt="industry chain for extension Paper">
 
-<a name="extension_11"></a>
+<a name="extension_12"></a>
 ### Textile Industries
 
 The production of yarns and textiles to create clothes was one of the very first cultural achievements of mankind. Sources for the production include various natural sources such as wool from sheep and other animals as well as cotton and other plants. With the innovations of the chemical industry in the 20th century, artificial fibers such as polyester became available. 
@@ -730,22 +788,24 @@ Color in the industry charts of this documentation: <span style="background-colo
 
 #### Industries introduced
 
-* [Clothing Plant](#industry_24)
-* [Clothing Plant](#industry_25)
-* [Textile Mill](#industry_140)
-* [Textile Mill](#industry_141)
+* [Clothing Plant](#industry_27)
+* [Clothing Plant](#industry_28)
+* [Textile Mill](#industry_157)
+* [Textile Mill](#industry_158)
 
 
 #### Industries modified
 
 * [Animal Farm](#industry_8)
-* [Clothing Plant](#industry_24)
-* [Clothing Plant](#industry_25)
-* [Farm](#industry_39)
-* [Furniture Factory](#industry_54)
-* [Furniture Factory](#industry_56)
-* [Textile Mill](#industry_140)
-* [Textile Mill](#industry_141)
+* [Animal Farm](#industry_10)
+* [Clothing Plant](#industry_27)
+* [Clothing Plant](#industry_28)
+* [Farm](#industry_42)
+* [Farm](#industry_45)
+* [Furniture Factory](#industry_65)
+* [Furniture Factory](#industry_67)
+* [Textile Mill](#industry_157)
+* [Textile Mill](#industry_158)
 
 
 <img src="industry_chain_extension_textile_industries_en.png" alt="industry chain for extension Textile Industries">
@@ -753,7 +813,7 @@ Color in the industry charts of this documentation: <span style="background-colo
 
 ## Cargos
 
-The set contains 47 cargos as listed below.
+The set contains 49 cargos as listed below.
 
 <a name="cargo_ACID"></a>
 ### Acid
@@ -770,19 +830,19 @@ Color in the industry chain view: <span style="background-color:#b4cc7c;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Acid Plant](#industry_0) | [Cleaning Products Factory](#industry_21) |
-| [Acid Plant](#industry_1) | [Cleaning Products Factory](#industry_23) |
-| [Acid Plant](#industry_2) | [Copper Smelter](#industry_32) |
-| [Acid Plant](#industry_3) | [Paint Factory](#industry_94) |
-|  | [Paint Factory](#industry_95) |
-|  | [Pharmaceutical Plant](#industry_102) |
-|  | [Pharmaceutical Plant](#industry_103) |
-|  | [Pharmaceutical Plant](#industry_104) |
-|  | [Pharmaceutical Plant](#industry_105) |
-|  | [Pharmaceutical Plant](#industry_110) |
-|  | [Pharmaceutical Plant](#industry_111) |
-|  | [Pharmaceutical Plant](#industry_112) |
-|  | [Pharmaceutical Plant](#industry_113) |
+| [Acid Plant](#industry_0) | [Cleaning Products Factory](#industry_24) |
+| [Acid Plant](#industry_1) | [Cleaning Products Factory](#industry_26) |
+| [Acid Plant](#industry_2) | [Copper Smelter](#industry_35) |
+| [Acid Plant](#industry_3) | [Paint Factory](#industry_107) |
+|  | [Paint Factory](#industry_108) |
+|  | [Pharmaceutical Plant](#industry_115) |
+|  | [Pharmaceutical Plant](#industry_116) |
+|  | [Pharmaceutical Plant](#industry_117) |
+|  | [Pharmaceutical Plant](#industry_118) |
+|  | [Pharmaceutical Plant](#industry_123) |
+|  | [Pharmaceutical Plant](#industry_124) |
+|  | [Pharmaceutical Plant](#industry_125) |
+|  | [Pharmaceutical Plant](#industry_126) |
 
 <a name="cargo_ALUM"></a>
 ### Aluminium
@@ -799,14 +859,14 @@ Color in the industry chain view: <span style="background-color:#d8d8d8;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Aluminium Plant](#industry_4) | [Packaging Plant](#industry_85) |
-| [Aluminium Plant](#industry_5) | [Packaging Plant](#industry_87) |
-|  | [Packaging Plant](#industry_89) |
-|  | [Packaging Plant](#industry_91) |
-|  | [Vehicle Factory](#industry_144) |
-|  | [Vehicle Factory](#industry_146) |
-|  | [Vehicle Factory](#industry_148) |
-|  | [Vehicle Factory](#industry_150) |
+| [Aluminium Plant](#industry_4) | [Packaging Plant](#industry_98) |
+| [Aluminium Plant](#industry_5) | [Packaging Plant](#industry_100) |
+|  | [Packaging Plant](#industry_102) |
+|  | [Packaging Plant](#industry_104) |
+|  | [Vehicle Factory](#industry_161) |
+|  | [Vehicle Factory](#industry_163) |
+|  | [Vehicle Factory](#industry_165) |
+|  | [Vehicle Factory](#industry_167) |
 
 <a name="cargo_NH3_"></a>
 ### Ammonia
@@ -825,15 +885,15 @@ Color in the industry chain view: <span style="background-color:#508ca0;">&nbsp;
 | -- | -- |
 | [Ammonia Plant](#industry_6) | [Acid Plant](#industry_2) |
 |  | [Acid Plant](#industry_3) |
-|  | [Pharmaceutical Plant](#industry_106) |
-|  | [Pharmaceutical Plant](#industry_107) |
-|  | [Pharmaceutical Plant](#industry_108) |
-|  | [Pharmaceutical Plant](#industry_109) |
-|  | [Pharmaceutical Plant](#industry_110) |
-|  | [Pharmaceutical Plant](#industry_111) |
-|  | [Pharmaceutical Plant](#industry_112) |
-|  | [Pharmaceutical Plant](#industry_113) |
-|  | [Solvay Plant](#industry_137) |
+|  | [Pharmaceutical Plant](#industry_119) |
+|  | [Pharmaceutical Plant](#industry_120) |
+|  | [Pharmaceutical Plant](#industry_121) |
+|  | [Pharmaceutical Plant](#industry_122) |
+|  | [Pharmaceutical Plant](#industry_123) |
+|  | [Pharmaceutical Plant](#industry_124) |
+|  | [Pharmaceutical Plant](#industry_125) |
+|  | [Pharmaceutical Plant](#industry_126) |
+|  | [Solvay Plant](#industry_153) |
 
 <a name="cargo_AORE"></a>
 ### Bauxite
@@ -850,10 +910,32 @@ Color in the industry chain view: <span style="background-color:#541c10;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Port](#industry_123) | [Aluminium Plant](#industry_4) |
-| [Port](#industry_125) | [Aluminium Plant](#industry_5) |
-| [Port](#industry_127) |  |
-| [Port](#industry_129) |  |
+| [Port](#industry_136) | [Aluminium Plant](#industry_4) |
+| [Port](#industry_138) | [Aluminium Plant](#industry_5) |
+| [Port](#industry_140) |  |
+| [Port](#industry_142) |  |
+
+<a name="cargo_BIOM"></a>
+### Biomass
+
+Biomass is, in the context of this set, the sum of organic materials that can be used to create energy or chemicals. Among others, this is mainly organic agricultural waste. 
+
+Cargo Table Entry: BIOM
+
+Part of extension: [Fruits and Bioenergy](#extension_6)
+
+Cargo classes: Bulk
+
+Color in the industry chain view: <span style="background-color:#80a82c;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+| Produced by | Required by |
+| -- | -- |
+| [Animal Farm](#industry_9) | [Biorefinery](#industry_11) |
+| [Animal Farm](#industry_10) | [Power Station](#industry_145) |
+| [Farm](#industry_45) | [Power Station](#industry_146) |
+| [Farm](#industry_46) | [Steamreformer](#industry_156) |
+| [Farm](#industry_47) |  |
+| [Sawmill](#industry_152) |  |
 
 <a name="cargo_BDMT"></a>
 ### Bricks
@@ -870,7 +952,7 @@ Color in the industry chain view: <span style="background-color:#cc8060;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Brickworks](#industry_11) | [Builders Yard](#industry_12) |
+| [Brickworks](#industry_14) | [Builders Yard](#industry_15) |
 
 <a name="cargo_CBLK"></a>
 ### Carbon Black
@@ -879,7 +961,7 @@ Carbon black is a powder of practically pure elemental carbon. It is used as a b
 
 Cargo Table Entry: CBLK
 
-Part of extension: [Painting Industries](#extension_9)
+Part of extension: [Painting Industries](#extension_10)
 
 Cargo classes: Bulk, Covered, Piece goods, Powderized
 
@@ -887,10 +969,10 @@ Color in the industry chain view: <span style="background-color:#343c48;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Carbon Black Plant](#industry_14) | [Paint Factory](#industry_92) |
-| [Carbon Black Plant](#industry_15) | [Paint Factory](#industry_93) |
-| [Carbon Black Plant](#industry_16) | [Paint Factory](#industry_94) |
-| [Carbon Black Plant](#industry_17) | [Paint Factory](#industry_95) |
+| [Carbon Black Plant](#industry_17) | [Paint Factory](#industry_105) |
+| [Carbon Black Plant](#industry_18) | [Paint Factory](#industry_106) |
+| [Carbon Black Plant](#industry_19) | [Paint Factory](#industry_107) |
+| [Carbon Black Plant](#industry_20) | [Paint Factory](#industry_108) |
 
 <a name="cargo_CMNT"></a>
 ### Cement
@@ -907,7 +989,7 @@ Color in the industry chain view: <span style="background-color:#6c7484;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Cement Plant](#industry_18) | [Builders Yard](#industry_12) |
+| [Cement Plant](#industry_21) | [Builders Yard](#industry_15) |
 
 <a name="cargo_CHLO"></a>
 ### Chlorine
@@ -924,29 +1006,29 @@ Color in the industry chain view: <span style="background-color:#b8dcc8;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Chloralkali Process Plant](#industry_19) | [Acid Plant](#industry_1) |
+| [Chloralkali Process Plant](#industry_22) | [Acid Plant](#industry_1) |
 |  | [Acid Plant](#industry_3) |
-|  | [Paper Mill](#industry_96) |
-|  | [Pharmaceutical Plant](#industry_98) |
-|  | [Pharmaceutical Plant](#industry_99) |
-|  | [Pharmaceutical Plant](#industry_100) |
-|  | [Pharmaceutical Plant](#industry_101) |
-|  | [Pharmaceutical Plant](#industry_102) |
-|  | [Pharmaceutical Plant](#industry_103) |
-|  | [Pharmaceutical Plant](#industry_104) |
-|  | [Pharmaceutical Plant](#industry_105) |
-|  | [Pharmaceutical Plant](#industry_106) |
-|  | [Pharmaceutical Plant](#industry_107) |
-|  | [Pharmaceutical Plant](#industry_108) |
-|  | [Pharmaceutical Plant](#industry_109) |
-|  | [Pharmaceutical Plant](#industry_110) |
+|  | [Paper Mill](#industry_109) |
 |  | [Pharmaceutical Plant](#industry_111) |
 |  | [Pharmaceutical Plant](#industry_112) |
 |  | [Pharmaceutical Plant](#industry_113) |
-|  | [Plastics Plant](#industry_115) |
-|  | [Plastics Plant](#industry_117) |
-|  | [Plastics Plant](#industry_119) |
-|  | [Plastics Plant](#industry_121) |
+|  | [Pharmaceutical Plant](#industry_114) |
+|  | [Pharmaceutical Plant](#industry_115) |
+|  | [Pharmaceutical Plant](#industry_116) |
+|  | [Pharmaceutical Plant](#industry_117) |
+|  | [Pharmaceutical Plant](#industry_118) |
+|  | [Pharmaceutical Plant](#industry_119) |
+|  | [Pharmaceutical Plant](#industry_120) |
+|  | [Pharmaceutical Plant](#industry_121) |
+|  | [Pharmaceutical Plant](#industry_122) |
+|  | [Pharmaceutical Plant](#industry_123) |
+|  | [Pharmaceutical Plant](#industry_124) |
+|  | [Pharmaceutical Plant](#industry_125) |
+|  | [Pharmaceutical Plant](#industry_126) |
+|  | [Plastics Plant](#industry_128) |
+|  | [Plastics Plant](#industry_130) |
+|  | [Plastics Plant](#industry_132) |
+|  | [Plastics Plant](#industry_134) |
 
 <a name="cargo_COAL"></a>
 ### Coal
@@ -963,19 +1045,21 @@ Color in the industry chain view: <span style="background-color:#626562;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Coal Mine](#industry_27) | [Brickworks](#industry_11) |
-| [Port](#industry_122) | [Carbon Black Plant](#industry_14) |
-| [Port](#industry_123) | [Carbon Black Plant](#industry_15) |
-| [Port](#industry_124) | [Carbon Black Plant](#industry_16) |
-| [Port](#industry_125) | [Carbon Black Plant](#industry_17) |
-| [Port](#industry_126) | [Coal Liquefaction Plant](#industry_26) |
-| [Port](#industry_127) | [Coke Oven](#industry_28) |
-| [Port](#industry_128) | [Integrated Steel Mill](#industry_62) |
-| [Port](#industry_129) | [Integrated Steel Mill](#industry_63) |
-|  | [Integrated Steel Mill](#industry_66) |
-|  | [Integrated Steel Mill](#industry_67) |
-|  | [Power Station](#industry_130) |
-|  | [Power Station](#industry_131) |
+| [Coal Mine](#industry_30) | [Brickworks](#industry_14) |
+| [Port](#industry_135) | [Carbon Black Plant](#industry_17) |
+| [Port](#industry_136) | [Carbon Black Plant](#industry_18) |
+| [Port](#industry_137) | [Carbon Black Plant](#industry_19) |
+| [Port](#industry_138) | [Carbon Black Plant](#industry_20) |
+| [Port](#industry_139) | [Coal Liquefaction Plant](#industry_29) |
+| [Port](#industry_140) | [Coke Oven](#industry_31) |
+| [Port](#industry_141) | [Integrated Steel Mill](#industry_75) |
+| [Port](#industry_142) | [Integrated Steel Mill](#industry_76) |
+|  | [Integrated Steel Mill](#industry_79) |
+|  | [Integrated Steel Mill](#industry_80) |
+|  | [Power Station](#industry_143) |
+|  | [Power Station](#industry_144) |
+|  | [Power Station](#industry_145) |
+|  | [Power Station](#industry_146) |
 
 <a name="cargo_COKE"></a>
 ### Coke
@@ -992,15 +1076,15 @@ Color in the industry chain view: <span style="background-color:#444c5c;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Coke Oven](#industry_28) | [Integrated Steel Mill](#industry_64) |
-|  | [Integrated Steel Mill](#industry_65) |
-|  | [Integrated Steel Mill](#industry_68) |
-|  | [Integrated Steel Mill](#industry_69) |
-|  | [Lime Kiln](#industry_72) |
-|  | [Ore Smelter](#industry_80) |
-|  | [Ore Smelter](#industry_81) |
-|  | [Ore Smelter](#industry_82) |
-|  | [Ore Smelter](#industry_83) |
+| [Coke Oven](#industry_31) | [Integrated Steel Mill](#industry_77) |
+|  | [Integrated Steel Mill](#industry_78) |
+|  | [Integrated Steel Mill](#industry_81) |
+|  | [Integrated Steel Mill](#industry_82) |
+|  | [Lime Kiln](#industry_85) |
+|  | [Ore Smelter](#industry_93) |
+|  | [Ore Smelter](#industry_94) |
+|  | [Ore Smelter](#industry_95) |
+|  | [Ore Smelter](#industry_96) |
 
 <a name="cargo_COPR"></a>
 ### Copper
@@ -1009,7 +1093,7 @@ Copper is a metal which has been known for thousands of years and was among the 
 
 Cargo Table Entry: COPR
 
-Part of extension: [Painting Industries](#extension_9)
+Part of extension: [Painting Industries](#extension_10)
 
 Cargo classes: Piece goods
 
@@ -1017,10 +1101,10 @@ Color in the industry chain view: <span style="background-color:#8c4c40;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Copper Smelter](#industry_31) | [Paint Factory](#industry_92) |
-| [Copper Smelter](#industry_32) | [Paint Factory](#industry_93) |
-|  | [Paint Factory](#industry_94) |
-|  | [Paint Factory](#industry_95) |
+| [Copper Smelter](#industry_34) | [Paint Factory](#industry_105) |
+| [Copper Smelter](#industry_35) | [Paint Factory](#industry_106) |
+|  | [Paint Factory](#industry_107) |
+|  | [Paint Factory](#industry_108) |
 
 <a name="cargo_CORE"></a>
 ### Copper Ore
@@ -1031,7 +1115,7 @@ Germany does not have a lot of copper ores, still mining was done until the late
 
 Cargo Table Entry: CORE
 
-Part of extension: [Painting Industries](#extension_9)
+Part of extension: [Painting Industries](#extension_10)
 
 Cargo classes: Bulk
 
@@ -1039,11 +1123,11 @@ Color in the industry chain view: <span style="background-color:#501c04;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Copper Ore Mine](#industry_29) | [Copper Smelter](#industry_31) |
-| [Ore Smelter](#industry_81) | [Copper Smelter](#industry_32) |
-| [Ore Smelter](#industry_83) |  |
-| [Port](#industry_124) |  |
-| [Port](#industry_125) |  |
+| [Copper Ore Mine](#industry_32) | [Copper Smelter](#industry_34) |
+| [Ore Smelter](#industry_94) | [Copper Smelter](#industry_35) |
+| [Ore Smelter](#industry_96) |  |
+| [Port](#industry_137) |  |
+| [Port](#industry_138) |  |
 
 <a name="cargo_C2H4"></a>
 ### Ethylene
@@ -1054,7 +1138,7 @@ While there are various pipelines in Europe to transport ethylene e.g. between R
 
 Cargo Table Entry: C2H4
 
-Part of extension: [Organic Chemistry](#extension_7)
+Part of extension: [Organic Chemistry](#extension_8)
 
 Cargo classes: Hazardous, Liquid
 
@@ -1062,18 +1146,18 @@ Color in the industry chain view: <span style="background-color:#787840;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Coal Liquefaction Plant](#industry_26) | [Pharmaceutical Plant](#industry_100) |
-| [Steamcracker](#industry_138) | [Pharmaceutical Plant](#industry_101) |
-|  | [Pharmaceutical Plant](#industry_104) |
-|  | [Pharmaceutical Plant](#industry_105) |
-|  | [Pharmaceutical Plant](#industry_108) |
-|  | [Pharmaceutical Plant](#industry_109) |
-|  | [Pharmaceutical Plant](#industry_112) |
-|  | [Pharmaceutical Plant](#industry_113) |
-|  | [Plastics Plant](#industry_118) |
-|  | [Plastics Plant](#industry_119) |
-|  | [Plastics Plant](#industry_120) |
-|  | [Plastics Plant](#industry_121) |
+| [Biorefinery](#industry_11) | [Pharmaceutical Plant](#industry_113) |
+| [Coal Liquefaction Plant](#industry_29) | [Pharmaceutical Plant](#industry_114) |
+| [Steamcracker](#industry_154) | [Pharmaceutical Plant](#industry_117) |
+|  | [Pharmaceutical Plant](#industry_118) |
+|  | [Pharmaceutical Plant](#industry_121) |
+|  | [Pharmaceutical Plant](#industry_122) |
+|  | [Pharmaceutical Plant](#industry_125) |
+|  | [Pharmaceutical Plant](#industry_126) |
+|  | [Plastics Plant](#industry_131) |
+|  | [Plastics Plant](#industry_132) |
+|  | [Plastics Plant](#industry_133) |
+|  | [Plastics Plant](#industry_134) |
 
 <a name="cargo_FISH"></a>
 ### Fish
@@ -1088,14 +1172,18 @@ Color in the industry chain view: <span style="background-color:#8c68fc;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Fishing Grounds](#industry_42) | [Food Processing Plant](#industry_45) |
-|  | [Food Processing Plant](#industry_46) |
-|  | [Food Processing Plant](#industry_47) |
-|  | [Food Processing Plant](#industry_48) |
-|  | [Food Processing Plant](#industry_49) |
-|  | [Food Processing Plant](#industry_50) |
-|  | [Food Processing Plant](#industry_51) |
+| [Fishing Grounds](#industry_48) | [Food Processing Plant](#industry_51) |
 |  | [Food Processing Plant](#industry_52) |
+|  | [Food Processing Plant](#industry_53) |
+|  | [Food Processing Plant](#industry_54) |
+|  | [Food Processing Plant](#industry_55) |
+|  | [Food Processing Plant](#industry_56) |
+|  | [Food Processing Plant](#industry_57) |
+|  | [Food Processing Plant](#industry_58) |
+|  | [Food Processing Plant](#industry_59) |
+|  | [Food Processing Plant](#industry_60) |
+|  | [Food Processing Plant](#industry_61) |
+|  | [Food Processing Plant](#industry_62) |
 
 <a name="cargo_FOOD"></a>
 ### Food
@@ -1110,24 +1198,51 @@ Color in the industry chain view: <span style="background-color:#a00000;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Brewery](#industry_9) | [General Store](#industry_58) |
-| [Brewery](#industry_10) | [Hotel](#industry_61) |
-| [Dairy](#industry_34) |  |
-| [Dairy](#industry_35) |  |
-| [Dairy](#industry_36) |  |
-| [Dairy](#industry_37) |  |
-| [Flour Mill](#industry_43) |  |
-| [Flour Mill](#industry_44) |  |
-| [Food Processing Plant](#industry_45) |  |
-| [Food Processing Plant](#industry_46) |  |
-| [Food Processing Plant](#industry_47) |  |
-| [Food Processing Plant](#industry_48) |  |
-| [Food Processing Plant](#industry_49) |  |
-| [Food Processing Plant](#industry_50) |  |
+| [Brewery](#industry_12) | [General Store](#industry_69) |
+| [Brewery](#industry_13) | [General Store](#industry_70) |
+| [Dairy](#industry_37) | [Hotel](#industry_73) |
+| [Dairy](#industry_38) | [Hotel](#industry_74) |
+| [Dairy](#industry_39) |  |
+| [Dairy](#industry_40) |  |
+| [Flour Mill](#industry_49) |  |
+| [Flour Mill](#industry_50) |  |
 | [Food Processing Plant](#industry_51) |  |
 | [Food Processing Plant](#industry_52) |  |
-| [Meatpacking Plant](#industry_74) |  |
-| [Meatpacking Plant](#industry_75) |  |
+| [Food Processing Plant](#industry_53) |  |
+| [Food Processing Plant](#industry_54) |  |
+| [Food Processing Plant](#industry_55) |  |
+| [Food Processing Plant](#industry_56) |  |
+| [Food Processing Plant](#industry_57) |  |
+| [Food Processing Plant](#industry_58) |  |
+| [Food Processing Plant](#industry_59) |  |
+| [Food Processing Plant](#industry_60) |  |
+| [Food Processing Plant](#industry_61) |  |
+| [Food Processing Plant](#industry_62) |  |
+| [Meatpacking Plant](#industry_87) |  |
+| [Meatpacking Plant](#industry_88) |  |
+
+<a name="cargo_FRUT"></a>
+### Fruits
+
+Fruits have been a staple of human diet and are a challenging cargo, as they easily rot and need to be transported fast. Historically, transportation of fruits like bananas from South America to Europe required specialized vehicles. 
+
+Cargo Table Entry: FRUT
+
+Part of extension: [Fruits and Bioenergy](#extension_6)
+
+Cargo classes: Express, Piece goods, Refrigerated
+
+Color in the industry chain view: <span style="background-color:#306004;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+| Produced by | Required by |
+| -- | -- |
+| [Fruit Plantation](#industry_64) | [Biorefinery](#industry_11) |
+|  | [Food Processing Plant](#industry_59) |
+|  | [Food Processing Plant](#industry_60) |
+|  | [Food Processing Plant](#industry_61) |
+|  | [Food Processing Plant](#industry_62) |
+|  | [General Store](#industry_70) |
+|  | [Hotel](#industry_74) |
 
 <a name="cargo_GLAS"></a>
 ### Glass
@@ -1138,7 +1253,7 @@ Typically, when talking about glass, one talks about transparent material made f
 
 Cargo Table Entry: GLAS
 
-Part of extension: [Glass](#extension_6)
+Part of extension: [Glass](#extension_7)
 
 Cargo classes: Piece goods
 
@@ -1146,15 +1261,15 @@ Color in the industry chain view: <span style="background-color:#5840ac;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Glass Works](#industry_59) | [Brewery](#industry_10) |
-| [Glass Works](#industry_60) | [Packaging Plant](#industry_86) |
-|  | [Packaging Plant](#industry_87) |
-|  | [Packaging Plant](#industry_90) |
-|  | [Packaging Plant](#industry_91) |
-|  | [Vehicle Factory](#industry_147) |
-|  | [Vehicle Factory](#industry_148) |
-|  | [Vehicle Factory](#industry_149) |
-|  | [Vehicle Factory](#industry_150) |
+| [Glass Works](#industry_71) | [Brewery](#industry_13) |
+| [Glass Works](#industry_72) | [Packaging Plant](#industry_99) |
+|  | [Packaging Plant](#industry_100) |
+|  | [Packaging Plant](#industry_103) |
+|  | [Packaging Plant](#industry_104) |
+|  | [Vehicle Factory](#industry_164) |
+|  | [Vehicle Factory](#industry_165) |
+|  | [Vehicle Factory](#industry_166) |
+|  | [Vehicle Factory](#industry_167) |
 
 <a name="cargo_GOOD"></a>
 ### Goods
@@ -1169,34 +1284,34 @@ Color in the industry chain view: <span style="background-color:#fc9c00;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Cleaning Products Factory](#industry_20) | [Department Store](#industry_38) |
-| [Cleaning Products Factory](#industry_21) | [Port](#industry_122) |
-| [Cleaning Products Factory](#industry_22) | [Port](#industry_123) |
-| [Cleaning Products Factory](#industry_23) | [Port](#industry_124) |
-| [Clothing Plant](#industry_24) | [Port](#industry_125) |
-| [Clothing Plant](#industry_25) | [Port](#industry_126) |
-| [Furniture Factory](#industry_54) | [Port](#industry_127) |
-| [Furniture Factory](#industry_55) | [Port](#industry_128) |
-| [Furniture Factory](#industry_56) | [Port](#industry_129) |
-| [Furniture Factory](#industry_57) |  |
-| [Pharmaceutical Plant](#industry_98) |  |
-| [Pharmaceutical Plant](#industry_99) |  |
-| [Pharmaceutical Plant](#industry_100) |  |
-| [Pharmaceutical Plant](#industry_101) |  |
-| [Pharmaceutical Plant](#industry_102) |  |
-| [Pharmaceutical Plant](#industry_103) |  |
-| [Pharmaceutical Plant](#industry_104) |  |
-| [Pharmaceutical Plant](#industry_105) |  |
-| [Pharmaceutical Plant](#industry_106) |  |
-| [Pharmaceutical Plant](#industry_107) |  |
-| [Pharmaceutical Plant](#industry_108) |  |
-| [Pharmaceutical Plant](#industry_109) |  |
-| [Pharmaceutical Plant](#industry_110) |  |
+| [Cleaning Products Factory](#industry_23) | [Department Store](#industry_41) |
+| [Cleaning Products Factory](#industry_24) | [Port](#industry_135) |
+| [Cleaning Products Factory](#industry_25) | [Port](#industry_136) |
+| [Cleaning Products Factory](#industry_26) | [Port](#industry_137) |
+| [Clothing Plant](#industry_27) | [Port](#industry_138) |
+| [Clothing Plant](#industry_28) | [Port](#industry_139) |
+| [Furniture Factory](#industry_65) | [Port](#industry_140) |
+| [Furniture Factory](#industry_66) | [Port](#industry_141) |
+| [Furniture Factory](#industry_67) | [Port](#industry_142) |
+| [Furniture Factory](#industry_68) |  |
 | [Pharmaceutical Plant](#industry_111) |  |
 | [Pharmaceutical Plant](#industry_112) |  |
 | [Pharmaceutical Plant](#industry_113) |  |
-| [Printing Works](#industry_132) |  |
-| [Printing Works](#industry_133) |  |
+| [Pharmaceutical Plant](#industry_114) |  |
+| [Pharmaceutical Plant](#industry_115) |  |
+| [Pharmaceutical Plant](#industry_116) |  |
+| [Pharmaceutical Plant](#industry_117) |  |
+| [Pharmaceutical Plant](#industry_118) |  |
+| [Pharmaceutical Plant](#industry_119) |  |
+| [Pharmaceutical Plant](#industry_120) |  |
+| [Pharmaceutical Plant](#industry_121) |  |
+| [Pharmaceutical Plant](#industry_122) |  |
+| [Pharmaceutical Plant](#industry_123) |  |
+| [Pharmaceutical Plant](#industry_124) |  |
+| [Pharmaceutical Plant](#industry_125) |  |
+| [Pharmaceutical Plant](#industry_126) |  |
+| [Printing Works](#industry_147) |  |
+| [Printing Works](#industry_148) |  |
 
 <a name="cargo_GRAI"></a>
 ### Grain
@@ -1211,15 +1326,18 @@ Color in the industry chain view: <span style="background-color:#fcfc00;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Farm](#industry_39) | [Animal Farm](#industry_8) |
-| [Farm](#industry_40) | [Brewery](#industry_9) |
-| [Farm](#industry_41) | [Brewery](#industry_10) |
-|  | [Flour Mill](#industry_43) |
-|  | [Flour Mill](#industry_44) |
-|  | [Food Processing Plant](#industry_45) |
-|  | [Food Processing Plant](#industry_46) |
-|  | [Food Processing Plant](#industry_49) |
+| [Farm](#industry_42) | [Animal Farm](#industry_8) |
+| [Farm](#industry_43) | [Animal Farm](#industry_10) |
+| [Farm](#industry_44) | [Brewery](#industry_12) |
+| [Farm](#industry_45) | [Brewery](#industry_13) |
+| [Farm](#industry_46) | [Flour Mill](#industry_49) |
+| [Farm](#industry_47) | [Flour Mill](#industry_50) |
 |  | [Food Processing Plant](#industry_51) |
+|  | [Food Processing Plant](#industry_52) |
+|  | [Food Processing Plant](#industry_55) |
+|  | [Food Processing Plant](#industry_57) |
+|  | [Food Processing Plant](#industry_59) |
+|  | [Food Processing Plant](#industry_61) |
 
 <a name="cargo_H2__"></a>
 ### Hydrogen
@@ -1236,26 +1354,26 @@ Color in the industry chain view: <span style="background-color:#ccd0dc;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Chloralkali Process Plant](#industry_19) | [Acid Plant](#industry_1) |
-| [Steamreformer](#industry_139) | [Acid Plant](#industry_3) |
-|  | [Ammonia Plant](#industry_6) |
-|  | [Coal Liquefaction Plant](#industry_26) |
-|  | [Pharmaceutical Plant](#industry_98) |
-|  | [Pharmaceutical Plant](#industry_99) |
-|  | [Pharmaceutical Plant](#industry_100) |
-|  | [Pharmaceutical Plant](#industry_101) |
-|  | [Pharmaceutical Plant](#industry_102) |
-|  | [Pharmaceutical Plant](#industry_103) |
-|  | [Pharmaceutical Plant](#industry_104) |
-|  | [Pharmaceutical Plant](#industry_105) |
-|  | [Pharmaceutical Plant](#industry_106) |
-|  | [Pharmaceutical Plant](#industry_107) |
-|  | [Pharmaceutical Plant](#industry_108) |
-|  | [Pharmaceutical Plant](#industry_109) |
-|  | [Pharmaceutical Plant](#industry_110) |
+| [Chloralkali Process Plant](#industry_22) | [Acid Plant](#industry_1) |
+| [Steamreformer](#industry_155) | [Acid Plant](#industry_3) |
+| [Steamreformer](#industry_156) | [Ammonia Plant](#industry_6) |
+|  | [Coal Liquefaction Plant](#industry_29) |
 |  | [Pharmaceutical Plant](#industry_111) |
 |  | [Pharmaceutical Plant](#industry_112) |
 |  | [Pharmaceutical Plant](#industry_113) |
+|  | [Pharmaceutical Plant](#industry_114) |
+|  | [Pharmaceutical Plant](#industry_115) |
+|  | [Pharmaceutical Plant](#industry_116) |
+|  | [Pharmaceutical Plant](#industry_117) |
+|  | [Pharmaceutical Plant](#industry_118) |
+|  | [Pharmaceutical Plant](#industry_119) |
+|  | [Pharmaceutical Plant](#industry_120) |
+|  | [Pharmaceutical Plant](#industry_121) |
+|  | [Pharmaceutical Plant](#industry_122) |
+|  | [Pharmaceutical Plant](#industry_123) |
+|  | [Pharmaceutical Plant](#industry_124) |
+|  | [Pharmaceutical Plant](#industry_125) |
+|  | [Pharmaceutical Plant](#industry_126) |
 
 <a name="cargo_IORE"></a>
 ### Iron Ore
@@ -1272,19 +1390,19 @@ Color in the industry chain view: <span style="background-color:#fc0000;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Iron Ore Mine](#industry_70) | [Integrated Steel Mill](#industry_62) |
-| [Ore Smelter](#industry_80) | [Integrated Steel Mill](#industry_63) |
-| [Ore Smelter](#industry_81) | [Integrated Steel Mill](#industry_64) |
-| [Ore Smelter](#industry_82) | [Integrated Steel Mill](#industry_65) |
-| [Ore Smelter](#industry_83) | [Integrated Steel Mill](#industry_66) |
-| [Port](#industry_122) | [Integrated Steel Mill](#industry_67) |
-| [Port](#industry_123) | [Integrated Steel Mill](#industry_68) |
-| [Port](#industry_124) | [Integrated Steel Mill](#industry_69) |
-| [Port](#industry_125) | [Paint Factory](#industry_92) |
-| [Port](#industry_126) | [Paint Factory](#industry_93) |
-| [Port](#industry_127) | [Paint Factory](#industry_94) |
-| [Port](#industry_128) | [Paint Factory](#industry_95) |
-| [Port](#industry_129) |  |
+| [Iron Ore Mine](#industry_83) | [Integrated Steel Mill](#industry_75) |
+| [Ore Smelter](#industry_93) | [Integrated Steel Mill](#industry_76) |
+| [Ore Smelter](#industry_94) | [Integrated Steel Mill](#industry_77) |
+| [Ore Smelter](#industry_95) | [Integrated Steel Mill](#industry_78) |
+| [Ore Smelter](#industry_96) | [Integrated Steel Mill](#industry_79) |
+| [Port](#industry_135) | [Integrated Steel Mill](#industry_80) |
+| [Port](#industry_136) | [Integrated Steel Mill](#industry_81) |
+| [Port](#industry_137) | [Integrated Steel Mill](#industry_82) |
+| [Port](#industry_138) | [Paint Factory](#industry_105) |
+| [Port](#industry_139) | [Paint Factory](#industry_106) |
+| [Port](#industry_140) | [Paint Factory](#industry_107) |
+| [Port](#industry_141) | [Paint Factory](#industry_108) |
+| [Port](#industry_142) |  |
 
 <a name="cargo_LIME"></a>
 ### Limestone
@@ -1301,12 +1419,12 @@ Color in the industry chain view: <span style="background-color:#7044a8;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Limestone Mine](#industry_73) | [Cement Plant](#industry_18) |
-|  | [Lime Kiln](#industry_71) |
-|  | [Lime Kiln](#industry_72) |
-|  | [Paint Factory](#industry_93) |
-|  | [Paint Factory](#industry_95) |
-|  | [Solvay Plant](#industry_137) |
+| [Limestone Mine](#industry_86) | [Cement Plant](#industry_21) |
+|  | [Lime Kiln](#industry_84) |
+|  | [Lime Kiln](#industry_85) |
+|  | [Paint Factory](#industry_106) |
+|  | [Paint Factory](#industry_108) |
+|  | [Solvay Plant](#industry_153) |
 
 <a name="cargo_LVST"></a>
 ### Livestock
@@ -1321,12 +1439,14 @@ Color in the industry chain view: <span style="background-color:#5c9c34;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Animal Farm](#industry_7) | [Food Processing Plant](#industry_45) |
-| [Animal Farm](#industry_8) | [Food Processing Plant](#industry_46) |
-| [Farm](#industry_39) | [Food Processing Plant](#industry_49) |
-| [Farm](#industry_40) | [Food Processing Plant](#industry_51) |
-|  | [Meatpacking Plant](#industry_74) |
-|  | [Meatpacking Plant](#industry_75) |
+| [Animal Farm](#industry_7) | [Food Processing Plant](#industry_51) |
+| [Animal Farm](#industry_8) | [Food Processing Plant](#industry_52) |
+| [Animal Farm](#industry_9) | [Food Processing Plant](#industry_55) |
+| [Animal Farm](#industry_10) | [Food Processing Plant](#industry_57) |
+| [Farm](#industry_42) | [Food Processing Plant](#industry_59) |
+| [Farm](#industry_43) | [Food Processing Plant](#industry_61) |
+| [Farm](#industry_45) | [Meatpacking Plant](#industry_87) |
+| [Farm](#industry_46) | [Meatpacking Plant](#industry_88) |
 
 <a name="cargo_LYE_"></a>
 ### Lye
@@ -1343,14 +1463,18 @@ Color in the industry chain view: <span style="background-color:#78a488;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Chloralkali Process Plant](#industry_19) | [Aluminium Plant](#industry_5) |
-|  | [Dairy](#industry_35) |
-|  | [Dairy](#industry_37) |
-|  | [Food Processing Plant](#industry_46) |
-|  | [Food Processing Plant](#industry_48) |
-|  | [Food Processing Plant](#industry_51) |
+| [Chloralkali Process Plant](#industry_22) | [Aluminium Plant](#industry_5) |
+|  | [Dairy](#industry_38) |
+|  | [Dairy](#industry_40) |
 |  | [Food Processing Plant](#industry_52) |
-|  | [Paper Mill](#industry_96) |
+|  | [Food Processing Plant](#industry_54) |
+|  | [Food Processing Plant](#industry_57) |
+|  | [Food Processing Plant](#industry_58) |
+|  | [Food Processing Plant](#industry_59) |
+|  | [Food Processing Plant](#industry_60) |
+|  | [Food Processing Plant](#industry_61) |
+|  | [Food Processing Plant](#industry_62) |
+|  | [Paper Mill](#industry_109) |
 
 <a name="cargo_MAIL"></a>
 ### Mail
@@ -1381,10 +1505,10 @@ Color in the industry chain view: <span style="background-color:#e0f4fc;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Animal Farm](#industry_7) | [Dairy](#industry_34) |
-| [Animal Farm](#industry_8) | [Dairy](#industry_35) |
-|  | [Dairy](#industry_36) |
-|  | [Dairy](#industry_37) |
+| [Animal Farm](#industry_7) | [Dairy](#industry_37) |
+| [Animal Farm](#industry_8) | [Dairy](#industry_38) |
+| [Animal Farm](#industry_9) | [Dairy](#industry_39) |
+| [Animal Farm](#industry_10) | [Dairy](#industry_40) |
 
 <a name="cargo_RFPR"></a>
 ### Naphtha
@@ -1393,7 +1517,7 @@ Naphtha is a product of refining crude oil. It consists of various carbohydrates
 
 Cargo Table Entry: RFPR
 
-Part of extension: [Organic Chemistry](#extension_7)
+Part of extension: [Organic Chemistry](#extension_8)
 
 Cargo classes: Hazardous, Liquid
 
@@ -1401,18 +1525,19 @@ Color in the industry chain view: <span style="background-color:#403c0c;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Oil Refinery](#industry_76) | [Carbon Black Plant](#industry_15) |
-| [Oil Refinery](#industry_77) | [Carbon Black Plant](#industry_17) |
-|  | [Pharmaceutical Plant](#industry_100) |
-|  | [Pharmaceutical Plant](#industry_101) |
-|  | [Pharmaceutical Plant](#industry_104) |
-|  | [Pharmaceutical Plant](#industry_105) |
-|  | [Pharmaceutical Plant](#industry_108) |
-|  | [Pharmaceutical Plant](#industry_109) |
-|  | [Pharmaceutical Plant](#industry_112) |
+| [Oil Refinery](#industry_89) | [Carbon Black Plant](#industry_18) |
+| [Oil Refinery](#industry_90) | [Carbon Black Plant](#industry_20) |
 |  | [Pharmaceutical Plant](#industry_113) |
-|  | [Steamcracker](#industry_138) |
-|  | [Steamreformer](#industry_139) |
+|  | [Pharmaceutical Plant](#industry_114) |
+|  | [Pharmaceutical Plant](#industry_117) |
+|  | [Pharmaceutical Plant](#industry_118) |
+|  | [Pharmaceutical Plant](#industry_121) |
+|  | [Pharmaceutical Plant](#industry_122) |
+|  | [Pharmaceutical Plant](#industry_125) |
+|  | [Pharmaceutical Plant](#industry_126) |
+|  | [Steamcracker](#industry_154) |
+|  | [Steamreformer](#industry_155) |
+|  | [Steamreformer](#industry_156) |
 
 <a name="cargo_N2__"></a>
 ### Nitrogen
@@ -1429,7 +1554,7 @@ Color in the industry chain view: <span style="background-color:#3890e8;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Cryo Plant](#industry_33) | [Ammonia Plant](#industry_6) |
+| [Cryo Plant](#industry_36) | [Ammonia Plant](#industry_6) |
 
 <a name="cargo_OIL_"></a>
 ### Oil
@@ -1448,16 +1573,18 @@ Color in the industry chain view: <span style="background-color:#a888e0;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Oil Rig](#industry_78) | [Carbon Black Plant](#industry_14) |
-| [Oil Wells](#industry_79) | [Carbon Black Plant](#industry_16) |
-| [Port](#industry_122) | [Oil Refinery](#industry_76) |
-| [Port](#industry_123) | [Oil Refinery](#industry_77) |
-| [Port](#industry_124) | [Plastics Plant](#industry_114) |
-| [Port](#industry_125) | [Plastics Plant](#industry_115) |
-| [Port](#industry_126) | [Plastics Plant](#industry_116) |
-| [Port](#industry_127) | [Plastics Plant](#industry_117) |
-| [Port](#industry_128) | [Power Station](#industry_130) |
-| [Port](#industry_129) | [Power Station](#industry_131) |
+| [Oil Rig](#industry_91) | [Carbon Black Plant](#industry_17) |
+| [Oil Wells](#industry_92) | [Carbon Black Plant](#industry_19) |
+| [Port](#industry_135) | [Oil Refinery](#industry_89) |
+| [Port](#industry_136) | [Oil Refinery](#industry_90) |
+| [Port](#industry_137) | [Plastics Plant](#industry_127) |
+| [Port](#industry_138) | [Plastics Plant](#industry_128) |
+| [Port](#industry_139) | [Plastics Plant](#industry_129) |
+| [Port](#industry_140) | [Plastics Plant](#industry_130) |
+| [Port](#industry_141) | [Power Station](#industry_143) |
+| [Port](#industry_142) | [Power Station](#industry_144) |
+|  | [Power Station](#industry_145) |
+|  | [Power Station](#industry_146) |
 
 <a name="cargo_O2__"></a>
 ### Oxygen
@@ -1474,24 +1601,24 @@ Color in the industry chain view: <span style="background-color:#0060d4;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Cryo Plant](#industry_33) | [Acid Plant](#industry_2) |
+| [Cryo Plant](#industry_36) | [Acid Plant](#industry_2) |
 |  | [Acid Plant](#industry_3) |
-|  | [Carbon Black Plant](#industry_16) |
-|  | [Carbon Black Plant](#industry_17) |
-|  | [Integrated Steel Mill](#industry_66) |
-|  | [Integrated Steel Mill](#industry_67) |
-|  | [Integrated Steel Mill](#industry_68) |
-|  | [Integrated Steel Mill](#industry_69) |
-|  | [Ore Smelter](#industry_82) |
-|  | [Ore Smelter](#industry_83) |
-|  | [Pharmaceutical Plant](#industry_106) |
-|  | [Pharmaceutical Plant](#industry_107) |
-|  | [Pharmaceutical Plant](#industry_108) |
-|  | [Pharmaceutical Plant](#industry_109) |
-|  | [Pharmaceutical Plant](#industry_110) |
-|  | [Pharmaceutical Plant](#industry_111) |
-|  | [Pharmaceutical Plant](#industry_112) |
-|  | [Pharmaceutical Plant](#industry_113) |
+|  | [Carbon Black Plant](#industry_19) |
+|  | [Carbon Black Plant](#industry_20) |
+|  | [Integrated Steel Mill](#industry_79) |
+|  | [Integrated Steel Mill](#industry_80) |
+|  | [Integrated Steel Mill](#industry_81) |
+|  | [Integrated Steel Mill](#industry_82) |
+|  | [Ore Smelter](#industry_95) |
+|  | [Ore Smelter](#industry_96) |
+|  | [Pharmaceutical Plant](#industry_119) |
+|  | [Pharmaceutical Plant](#industry_120) |
+|  | [Pharmaceutical Plant](#industry_121) |
+|  | [Pharmaceutical Plant](#industry_122) |
+|  | [Pharmaceutical Plant](#industry_123) |
+|  | [Pharmaceutical Plant](#industry_124) |
+|  | [Pharmaceutical Plant](#industry_125) |
+|  | [Pharmaceutical Plant](#industry_126) |
 
 <a name="cargo_MNSP"></a>
 ### Packaging
@@ -1500,7 +1627,7 @@ Packaging is a necessary evil for transporting goods and foods. It protects the 
 
 Cargo Table Entry: MNSP
 
-Part of extension: [Packaging Industries](#extension_8)
+Part of extension: [Packaging Industries](#extension_9)
 
 Cargo classes: Piece goods
 
@@ -1508,27 +1635,29 @@ Color in the industry chain view: <span style="background-color:#b87818;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Packaging Plant](#industry_84) | [Cleaning Products Factory](#industry_23) |
-| [Packaging Plant](#industry_85) | [Clothing Plant](#industry_25) |
-| [Packaging Plant](#industry_86) | [Dairy](#industry_36) |
-| [Packaging Plant](#industry_87) | [Dairy](#industry_37) |
-| [Packaging Plant](#industry_88) | [Flour Mill](#industry_44) |
-| [Packaging Plant](#industry_89) | [Food Processing Plant](#industry_49) |
-| [Packaging Plant](#industry_90) | [Food Processing Plant](#industry_50) |
-| [Packaging Plant](#industry_91) | [Food Processing Plant](#industry_51) |
-|  | [Food Processing Plant](#industry_52) |
-|  | [Furniture Factory](#industry_56) |
-|  | [Furniture Factory](#industry_57) |
-|  | [Meatpacking Plant](#industry_75) |
-|  | [Pharmaceutical Plant](#industry_99) |
-|  | [Pharmaceutical Plant](#industry_101) |
-|  | [Pharmaceutical Plant](#industry_103) |
-|  | [Pharmaceutical Plant](#industry_105) |
-|  | [Pharmaceutical Plant](#industry_107) |
-|  | [Pharmaceutical Plant](#industry_109) |
-|  | [Pharmaceutical Plant](#industry_111) |
-|  | [Pharmaceutical Plant](#industry_113) |
-|  | [Printing Works](#industry_133) |
+| [Packaging Plant](#industry_97) | [Cleaning Products Factory](#industry_26) |
+| [Packaging Plant](#industry_98) | [Clothing Plant](#industry_28) |
+| [Packaging Plant](#industry_99) | [Dairy](#industry_39) |
+| [Packaging Plant](#industry_100) | [Dairy](#industry_40) |
+| [Packaging Plant](#industry_101) | [Flour Mill](#industry_50) |
+| [Packaging Plant](#industry_102) | [Food Processing Plant](#industry_55) |
+| [Packaging Plant](#industry_103) | [Food Processing Plant](#industry_56) |
+| [Packaging Plant](#industry_104) | [Food Processing Plant](#industry_57) |
+|  | [Food Processing Plant](#industry_58) |
+|  | [Food Processing Plant](#industry_61) |
+|  | [Food Processing Plant](#industry_62) |
+|  | [Furniture Factory](#industry_67) |
+|  | [Furniture Factory](#industry_68) |
+|  | [Meatpacking Plant](#industry_88) |
+|  | [Pharmaceutical Plant](#industry_112) |
+|  | [Pharmaceutical Plant](#industry_114) |
+|  | [Pharmaceutical Plant](#industry_116) |
+|  | [Pharmaceutical Plant](#industry_118) |
+|  | [Pharmaceutical Plant](#industry_120) |
+|  | [Pharmaceutical Plant](#industry_122) |
+|  | [Pharmaceutical Plant](#industry_124) |
+|  | [Pharmaceutical Plant](#industry_126) |
+|  | [Printing Works](#industry_148) |
 
 <a name="cargo_COAT"></a>
 ### Paint
@@ -1537,7 +1666,7 @@ Paints are as old as mankind, having been used already to create cave-paintings 
 
 Cargo Table Entry: COAT
 
-Part of extension: [Painting Industries](#extension_9)
+Part of extension: [Painting Industries](#extension_10)
 
 Cargo classes: Liquid, Piece goods
 
@@ -1545,15 +1674,15 @@ Color in the industry chain view: <span style="background-color:#bc546c;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Paint Factory](#industry_92) | [Plastics Plant](#industry_116) |
-| [Paint Factory](#industry_93) | [Plastics Plant](#industry_117) |
-| [Paint Factory](#industry_94) | [Plastics Plant](#industry_120) |
-| [Paint Factory](#industry_95) | [Plastics Plant](#industry_121) |
-|  | [Textile Mill](#industry_141) |
-|  | [Vehicle Factory](#industry_145) |
-|  | [Vehicle Factory](#industry_146) |
-|  | [Vehicle Factory](#industry_149) |
-|  | [Vehicle Factory](#industry_150) |
+| [Paint Factory](#industry_105) | [Plastics Plant](#industry_129) |
+| [Paint Factory](#industry_106) | [Plastics Plant](#industry_130) |
+| [Paint Factory](#industry_107) | [Plastics Plant](#industry_133) |
+| [Paint Factory](#industry_108) | [Plastics Plant](#industry_134) |
+|  | [Textile Mill](#industry_158) |
+|  | [Vehicle Factory](#industry_162) |
+|  | [Vehicle Factory](#industry_163) |
+|  | [Vehicle Factory](#industry_166) |
+|  | [Vehicle Factory](#industry_167) |
 
 <a name="cargo_PAPR"></a>
 ### Paper
@@ -1562,7 +1691,7 @@ Paper consists of dried cellulose fibers and has been known since papyrus has be
 
 Cargo Table Entry: PAPR
 
-Part of extension: [Paper](#extension_10)
+Part of extension: [Paper](#extension_11)
 
 Cargo classes: Piece goods
 
@@ -1570,12 +1699,12 @@ Color in the industry chain view: <span style="background-color:#b8b8b8;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Paper Mill](#industry_96) | [Packaging Plant](#industry_88) |
-|  | [Packaging Plant](#industry_89) |
-|  | [Packaging Plant](#industry_90) |
-|  | [Packaging Plant](#industry_91) |
-|  | [Printing Works](#industry_132) |
-|  | [Printing Works](#industry_133) |
+| [Paper Mill](#industry_109) | [Packaging Plant](#industry_101) |
+|  | [Packaging Plant](#industry_102) |
+|  | [Packaging Plant](#industry_103) |
+|  | [Packaging Plant](#industry_104) |
+|  | [Printing Works](#industry_147) |
+|  | [Printing Works](#industry_148) |
 
 <a name="cargo_PASS"></a>
 ### Passengers
@@ -1590,8 +1719,9 @@ Color in the industry chain view: <span style="background-color:#80c4fc;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Hotel](#industry_61) | [Hotel](#industry_61) |
-| [Oil Rig](#industry_78) | [Oil Rig](#industry_78) |
+| [Hotel](#industry_73) | [Hotel](#industry_73) |
+| [Hotel](#industry_74) | [Hotel](#industry_74) |
+| [Oil Rig](#industry_91) | [Oil Rig](#industry_91) |
 
 <a name="cargo_PETR"></a>
 ### Petrol
@@ -1600,7 +1730,7 @@ Petrol or fuel is the generic term for any kind of fuel used to run road vehicle
 
 Cargo Table Entry: PETR
 
-Part of extension: [Organic Chemistry](#extension_7)
+Part of extension: [Organic Chemistry](#extension_8)
 
 Cargo classes: Hazardous, Liquid
 
@@ -1608,10 +1738,11 @@ Color in the industry chain view: <span style="background-color:#cccca8;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Coal Liquefaction Plant](#industry_26) | [Petrol Station](#industry_97) |
-| [Oil Refinery](#industry_76) |  |
-| [Oil Refinery](#industry_77) |  |
-| [Steamcracker](#industry_138) |  |
+| [Biorefinery](#industry_11) | [Petrol Station](#industry_110) |
+| [Coal Liquefaction Plant](#industry_29) |  |
+| [Oil Refinery](#industry_89) |  |
+| [Oil Refinery](#industry_90) |  |
+| [Steamcracker](#industry_154) |  |
 
 <a name="cargo_PLAS"></a>
 ### Plastics
@@ -1628,28 +1759,28 @@ Color in the industry chain view: <span style="background-color:#e8d0fc;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Plastics Plant](#industry_114) | [Furniture Factory](#industry_54) |
-| [Plastics Plant](#industry_115) | [Furniture Factory](#industry_55) |
-| [Plastics Plant](#industry_116) | [Furniture Factory](#industry_56) |
-| [Plastics Plant](#industry_117) | [Furniture Factory](#industry_57) |
-| [Plastics Plant](#industry_118) | [Packaging Plant](#industry_84) |
-| [Plastics Plant](#industry_119) | [Packaging Plant](#industry_85) |
-| [Plastics Plant](#industry_120) | [Packaging Plant](#industry_86) |
-| [Plastics Plant](#industry_121) | [Packaging Plant](#industry_87) |
-|  | [Packaging Plant](#industry_88) |
-|  | [Packaging Plant](#industry_89) |
-|  | [Packaging Plant](#industry_90) |
-|  | [Packaging Plant](#industry_91) |
-|  | [Textile Mill](#industry_140) |
-|  | [Textile Mill](#industry_141) |
-|  | [Vehicle Factory](#industry_143) |
-|  | [Vehicle Factory](#industry_144) |
-|  | [Vehicle Factory](#industry_145) |
-|  | [Vehicle Factory](#industry_146) |
-|  | [Vehicle Factory](#industry_147) |
-|  | [Vehicle Factory](#industry_148) |
-|  | [Vehicle Factory](#industry_149) |
-|  | [Vehicle Factory](#industry_150) |
+| [Plastics Plant](#industry_127) | [Furniture Factory](#industry_65) |
+| [Plastics Plant](#industry_128) | [Furniture Factory](#industry_66) |
+| [Plastics Plant](#industry_129) | [Furniture Factory](#industry_67) |
+| [Plastics Plant](#industry_130) | [Furniture Factory](#industry_68) |
+| [Plastics Plant](#industry_131) | [Packaging Plant](#industry_97) |
+| [Plastics Plant](#industry_132) | [Packaging Plant](#industry_98) |
+| [Plastics Plant](#industry_133) | [Packaging Plant](#industry_99) |
+| [Plastics Plant](#industry_134) | [Packaging Plant](#industry_100) |
+|  | [Packaging Plant](#industry_101) |
+|  | [Packaging Plant](#industry_102) |
+|  | [Packaging Plant](#industry_103) |
+|  | [Packaging Plant](#industry_104) |
+|  | [Textile Mill](#industry_157) |
+|  | [Textile Mill](#industry_158) |
+|  | [Vehicle Factory](#industry_160) |
+|  | [Vehicle Factory](#industry_161) |
+|  | [Vehicle Factory](#industry_162) |
+|  | [Vehicle Factory](#industry_163) |
+|  | [Vehicle Factory](#industry_164) |
+|  | [Vehicle Factory](#industry_165) |
+|  | [Vehicle Factory](#industry_166) |
+|  | [Vehicle Factory](#industry_167) |
 
 <a name="cargo_PORE"></a>
 ### Pyrite Ore
@@ -1666,11 +1797,11 @@ Color in the industry chain view: <span style="background-color:#fcf880;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Copper Ore Mine](#industry_30) | [Ore Smelter](#industry_80) |
-| [Port](#industry_126) | [Ore Smelter](#industry_81) |
-| [Port](#industry_127) | [Ore Smelter](#industry_82) |
-| [Port](#industry_128) | [Ore Smelter](#industry_83) |
-| [Port](#industry_129) |  |
+| [Copper Ore Mine](#industry_33) | [Ore Smelter](#industry_93) |
+| [Port](#industry_139) | [Ore Smelter](#industry_94) |
+| [Port](#industry_140) | [Ore Smelter](#industry_95) |
+| [Port](#industry_141) | [Ore Smelter](#industry_96) |
+| [Port](#industry_142) |  |
 
 <a name="cargo_QLME"></a>
 ### Quicklime
@@ -1679,7 +1810,7 @@ Quicklime, chemically speaking, is calcium oxide. The substance is highly reacti
 
 Cargo Table Entry: QLME
 
-Part of extension: [Glass](#extension_6)
+Part of extension: [Glass](#extension_7)
 
 Cargo classes: Bulk, Covered
 
@@ -1687,12 +1818,12 @@ Color in the industry chain view: <span style="background-color:#fcfcc0;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Lime Kiln](#industry_71) | [Glass Works](#industry_59) |
-| [Lime Kiln](#industry_72) | [Glass Works](#industry_60) |
-|  | [Integrated Steel Mill](#industry_63) |
-|  | [Integrated Steel Mill](#industry_65) |
-|  | [Integrated Steel Mill](#industry_67) |
-|  | [Integrated Steel Mill](#industry_69) |
+| [Lime Kiln](#industry_84) | [Glass Works](#industry_71) |
+| [Lime Kiln](#industry_85) | [Glass Works](#industry_72) |
+|  | [Integrated Steel Mill](#industry_76) |
+|  | [Integrated Steel Mill](#industry_78) |
+|  | [Integrated Steel Mill](#industry_80) |
+|  | [Integrated Steel Mill](#industry_82) |
 
 <a name="cargo_SALT"></a>
 ### Salt
@@ -1709,12 +1840,16 @@ Color in the industry chain view: <span style="background-color:#d4d4e0;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Salt Mine](#industry_134) | [Chloralkali Process Plant](#industry_19) |
-|  | [Food Processing Plant](#industry_46) |
-|  | [Food Processing Plant](#industry_48) |
-|  | [Food Processing Plant](#industry_51) |
+| [Salt Mine](#industry_149) | [Chloralkali Process Plant](#industry_22) |
 |  | [Food Processing Plant](#industry_52) |
-|  | [Solvay Plant](#industry_137) |
+|  | [Food Processing Plant](#industry_54) |
+|  | [Food Processing Plant](#industry_57) |
+|  | [Food Processing Plant](#industry_58) |
+|  | [Food Processing Plant](#industry_59) |
+|  | [Food Processing Plant](#industry_60) |
+|  | [Food Processing Plant](#industry_61) |
+|  | [Food Processing Plant](#industry_62) |
+|  | [Solvay Plant](#industry_153) |
 
 <a name="cargo_SAND"></a>
 ### Sand
@@ -1729,10 +1864,10 @@ Color in the industry chain view: <span style="background-color:#e8b810;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Sand pit](#industry_135) | [Builders Yard](#industry_12) |
-|  | [Cement Plant](#industry_18) |
-|  | [Glass Works](#industry_59) |
-|  | [Glass Works](#industry_60) |
+| [Sand pit](#industry_150) | [Builders Yard](#industry_15) |
+|  | [Cement Plant](#industry_21) |
+|  | [Glass Works](#industry_71) |
+|  | [Glass Works](#industry_72) |
 
 <a name="cargo_SULP"></a>
 ### Schwefel
@@ -1749,13 +1884,14 @@ Color in the industry chain view: <span style="background-color:#fcd400;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Coke Oven](#industry_28) | [Acid Plant](#industry_0) |
-| [Oil Refinery](#industry_77) | [Acid Plant](#industry_1) |
-| [Ore Smelter](#industry_80) | [Acid Plant](#industry_2) |
-| [Ore Smelter](#industry_81) | [Acid Plant](#industry_3) |
-| [Ore Smelter](#industry_82) |  |
-| [Ore Smelter](#industry_83) |  |
-| [Power Station](#industry_131) |  |
+| [Coke Oven](#industry_31) | [Acid Plant](#industry_0) |
+| [Oil Refinery](#industry_90) | [Acid Plant](#industry_1) |
+| [Ore Smelter](#industry_93) | [Acid Plant](#industry_2) |
+| [Ore Smelter](#industry_94) | [Acid Plant](#industry_3) |
+| [Ore Smelter](#industry_95) |  |
+| [Ore Smelter](#industry_96) |  |
+| [Power Station](#industry_144) |  |
+| [Power Station](#industry_146) |  |
 
 <a name="cargo_SASH"></a>
 ### Soda Ash
@@ -1772,11 +1908,11 @@ Color in the industry chain view: <span style="background-color:#104060;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Solvay Plant](#industry_137) | [Cleaning Products Factory](#industry_20) |
-|  | [Cleaning Products Factory](#industry_21) |
-|  | [Cleaning Products Factory](#industry_22) |
-|  | [Cleaning Products Factory](#industry_23) |
-|  | [Glass Works](#industry_60) |
+| [Solvay Plant](#industry_153) | [Cleaning Products Factory](#industry_23) |
+|  | [Cleaning Products Factory](#industry_24) |
+|  | [Cleaning Products Factory](#industry_25) |
+|  | [Cleaning Products Factory](#industry_26) |
+|  | [Glass Works](#industry_72) |
 
 <a name="cargo_STEL"></a>
 ### Steel
@@ -1793,14 +1929,14 @@ Color in the industry chain view: <span style="background-color:#a8a8a8;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Integrated Steel Mill](#industry_62) | [Vehicle Factory](#industry_143) |
-| [Integrated Steel Mill](#industry_63) | [Vehicle Factory](#industry_144) |
-| [Integrated Steel Mill](#industry_64) | [Vehicle Factory](#industry_145) |
-| [Integrated Steel Mill](#industry_65) | [Vehicle Factory](#industry_146) |
-| [Integrated Steel Mill](#industry_66) | [Vehicle Factory](#industry_147) |
-| [Integrated Steel Mill](#industry_67) | [Vehicle Factory](#industry_148) |
-| [Integrated Steel Mill](#industry_68) | [Vehicle Factory](#industry_149) |
-| [Integrated Steel Mill](#industry_69) | [Vehicle Factory](#industry_150) |
+| [Integrated Steel Mill](#industry_75) | [Vehicle Factory](#industry_160) |
+| [Integrated Steel Mill](#industry_76) | [Vehicle Factory](#industry_161) |
+| [Integrated Steel Mill](#industry_77) | [Vehicle Factory](#industry_162) |
+| [Integrated Steel Mill](#industry_78) | [Vehicle Factory](#industry_163) |
+| [Integrated Steel Mill](#industry_79) | [Vehicle Factory](#industry_164) |
+| [Integrated Steel Mill](#industry_80) | [Vehicle Factory](#industry_165) |
+| [Integrated Steel Mill](#industry_81) | [Vehicle Factory](#industry_166) |
+| [Integrated Steel Mill](#industry_82) | [Vehicle Factory](#industry_167) |
 
 <a name="cargo_TEXT"></a>
 ### Textiles
@@ -1809,7 +1945,7 @@ Textile is an umbrella term for various fiber-based materials such as yarns, thr
 
 Cargo Table Entry: TEXT
 
-Part of extension: [Textile Industries](#extension_11)
+Part of extension: [Textile Industries](#extension_12)
 
 Cargo classes: Covered, Piece goods
 
@@ -1817,10 +1953,10 @@ Color in the industry chain view: <span style="background-color:#803828;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Textile Mill](#industry_140) | [Clothing Plant](#industry_24) |
-| [Textile Mill](#industry_141) | [Clothing Plant](#industry_25) |
-|  | [Furniture Factory](#industry_54) |
-|  | [Furniture Factory](#industry_56) |
+| [Textile Mill](#industry_157) | [Clothing Plant](#industry_27) |
+| [Textile Mill](#industry_158) | [Clothing Plant](#industry_28) |
+|  | [Furniture Factory](#industry_65) |
+|  | [Furniture Factory](#industry_67) |
 
 <a name="cargo_WDPR"></a>
 ### Timber
@@ -1835,12 +1971,12 @@ Color in the industry chain view: <span style="background-color:#b09c6c;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Sawmill](#industry_136) | [Builders Yard](#industry_12) |
-|  | [Builders Yard](#industry_13) |
-|  | [Furniture Factory](#industry_54) |
-|  | [Furniture Factory](#industry_55) |
-|  | [Furniture Factory](#industry_56) |
-|  | [Furniture Factory](#industry_57) |
+| [Sawmill](#industry_151) | [Builders Yard](#industry_15) |
+| [Sawmill](#industry_152) | [Builders Yard](#industry_16) |
+|  | [Furniture Factory](#industry_65) |
+|  | [Furniture Factory](#industry_66) |
+|  | [Furniture Factory](#industry_67) |
+|  | [Furniture Factory](#industry_68) |
 
 <a name="cargo_VEHI"></a>
 ### Vehicles
@@ -1857,15 +1993,15 @@ Color in the industry chain view: <span style="background-color:#bc546c;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Vehicle Factory](#industry_143) | [Port](#industry_122) |
-| [Vehicle Factory](#industry_144) | [Port](#industry_123) |
-| [Vehicle Factory](#industry_145) | [Port](#industry_124) |
-| [Vehicle Factory](#industry_146) | [Port](#industry_125) |
-| [Vehicle Factory](#industry_147) | [Port](#industry_126) |
-| [Vehicle Factory](#industry_148) | [Port](#industry_127) |
-| [Vehicle Factory](#industry_149) | [Port](#industry_128) |
-| [Vehicle Factory](#industry_150) | [Port](#industry_129) |
-|  | [Vehicle Distributor](#industry_142) |
+| [Vehicle Factory](#industry_160) | [Port](#industry_135) |
+| [Vehicle Factory](#industry_161) | [Port](#industry_136) |
+| [Vehicle Factory](#industry_162) | [Port](#industry_137) |
+| [Vehicle Factory](#industry_163) | [Port](#industry_138) |
+| [Vehicle Factory](#industry_164) | [Port](#industry_139) |
+| [Vehicle Factory](#industry_165) | [Port](#industry_140) |
+| [Vehicle Factory](#industry_166) | [Port](#industry_141) |
+| [Vehicle Factory](#industry_167) | [Port](#industry_142) |
+|  | [Vehicle Distributor](#industry_159) |
 
 <a name="cargo_WOOD"></a>
 ### Wood
@@ -1882,8 +2018,9 @@ Color in the industry chain view: <span style="background-color:#74581c;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Forest](#industry_53) | [Paper Mill](#industry_96) |
-|  | [Sawmill](#industry_136) |
+| [Forest](#industry_63) | [Paper Mill](#industry_109) |
+|  | [Sawmill](#industry_151) |
+|  | [Sawmill](#industry_152) |
 
 <a name="cargo_WOOL"></a>
 ### Wool
@@ -1892,7 +2029,7 @@ Wool is a textile fiber obtained mainly from sheep and used to produces yarn, ou
 
 Cargo Table Entry: WOOL
 
-Part of extension: [Textile Industries](#extension_11)
+Part of extension: [Textile Industries](#extension_12)
 
 Cargo classes: Covered, Piece goods
 
@@ -1900,8 +2037,10 @@ Color in the industry chain view: <span style="background-color:#a85c4c;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Animal Farm](#industry_8) | [Textile Mill](#industry_140) |
-| [Farm](#industry_39) | [Textile Mill](#industry_141) |
+| [Animal Farm](#industry_8) | [Textile Mill](#industry_157) |
+| [Animal Farm](#industry_10) | [Textile Mill](#industry_158) |
+| [Farm](#industry_42) |  |
+| [Farm](#industry_45) |  |
 
 
 ## Industries
@@ -2076,7 +2215,7 @@ Animal farms are a specific form of an agricultural industry focusing on raising
 
 Industry requires extension(s): [Food Industries](#extension_5) 
 
-Industry is not available with these extension: [Textile Industries](#extension_11) 
+Industry is not available with these extension: [Textile Industries](#extension_12) [Fruits and Bioenergy](#extension_6) 
 
 
 Color in the overview map: <span style="background-color:#90e05c;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2094,7 +2233,9 @@ Color in the overview map: <span style="background-color:#90e05c;">&nbsp;&nbsp;&
 
 Animal farms are a specific form of an agricultural industry focusing on raising livestock and producing related products such as milk or wool. While one can further distinguish these farms into dairy farms, poultry and pig farms or in various other ways, in the scope of the set all of these are combined into one type of animal farm. 
 
-Industry requires extension(s): [Food Industries](#extension_5) [Textile Industries](#extension_11) 
+Industry requires extension(s): [Food Industries](#extension_5) [Textile Industries](#extension_12) 
+
+Industry is not available with these extension: [Fruits and Bioenergy](#extension_6) 
 
 
 Color in the overview map: <span style="background-color:#90e05c;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2107,6 +2248,69 @@ Color in the overview map: <span style="background-color:#90e05c;">&nbsp;&nbsp;&
 
 
 <a name="industry_9"></a>
+### Animal Farm
+
+<img src="animal_farm.png" alt="Animal Farm">
+
+Animal farms are a specific form of an agricultural industry focusing on raising livestock and producing related products such as milk or wool. While one can further distinguish these farms into dairy farms, poultry and pig farms or in various other ways, in the scope of the set all of these are combined into one type of animal farm. 
+
+Industry requires extension(s): [Food Industries](#extension_5) [Fruits and Bioenergy](#extension_6) 
+
+Industry is not available with these extension: [Textile Industries](#extension_12) 
+
+
+Color in the overview map: <span style="background-color:#90e05c;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+| Requires | Produces |
+| -- | -- |
+|  | [Biomass](#cargo_BIOM) |
+|  | [Livestock](#cargo_LVST) |
+|  | [Milk](#cargo_MILK) |
+
+
+<a name="industry_10"></a>
+### Animal Farm
+
+<img src="animal_farm.png" alt="Animal Farm">
+
+Animal farms are a specific form of an agricultural industry focusing on raising livestock and producing related products such as milk or wool. While one can further distinguish these farms into dairy farms, poultry and pig farms or in various other ways, in the scope of the set all of these are combined into one type of animal farm. 
+
+Industry requires extension(s): [Food Industries](#extension_5) [Textile Industries](#extension_12) [Fruits and Bioenergy](#extension_6) 
+
+
+Color in the overview map: <span style="background-color:#90e05c;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+| Requires | Produces |
+| -- | -- |
+| [Grain](#cargo_GRAI) | [Biomass](#cargo_BIOM) |
+|  | [Livestock](#cargo_LVST) |
+|  | [Milk](#cargo_MILK) |
+|  | [Wool](#cargo_WOOL) |
+
+
+<a name="industry_11"></a>
+### Biorefinery
+
+<img src="biorefinery.png" alt="Biorefinery">
+
+Basic chemicals can be extracted from biomass and fruits. This approach is much better for the environment, compared to the usual ways requiring crude oil. 
+
+Industry requires extension(s): [Fruits and Bioenergy](#extension_6) 
+
+Industry will only spawn after 1900.
+This restriction is also valid for funding the industry.
+
+Color in the overview map: <span style="background-color:#80a82c;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+Industry will start producing as soon as any of the required cargos is available. Productivity increases with the number of different available cargos.
+
+| Requires | Produces |
+| -- | -- |
+| [Biomass](#cargo_BIOM) | [Ethylene](#cargo_C2H4) |
+| [Fruits](#cargo_FRUT) | [Petrol](#cargo_PETR) |
+
+
+<a name="industry_12"></a>
 ### Brewery
 
 <img src="brewery.png" alt="Brewery">
@@ -2119,7 +2323,7 @@ In the set, beer is not an extra type of freight, but it is simply labeled as fo
 
 Industry requires extension(s): [Food Industries](#extension_5) 
 
-Industry is not available with these extension: [Glass](#extension_6) 
+Industry is not available with these extension: [Glass](#extension_7) 
 
 
 Color in the overview map: <span style="background-color:#fcd898;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2129,7 +2333,7 @@ Color in the overview map: <span style="background-color:#fcd898;">&nbsp;&nbsp;&
 | [Grain](#cargo_GRAI) | [Food](#cargo_FOOD) |
 
 
-<a name="industry_10"></a>
+<a name="industry_13"></a>
 ### Brewery
 
 <img src="brewery.png" alt="Brewery">
@@ -2140,7 +2344,7 @@ Germany has a long tradition of brewing beer, and beer is a large part of German
 
 In the set, beer is not an extra type of freight, but it is simply labeled as food. 
 
-Industry requires extension(s): [Food Industries](#extension_5) [Glass](#extension_6) 
+Industry requires extension(s): [Food Industries](#extension_5) [Glass](#extension_7) 
 
 
 Color in the overview map: <span style="background-color:#fcd898;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2153,7 +2357,7 @@ Industry requires any of the raw materials printed in black to produce anything.
 | [Grain](#cargo_GRAI) |  |
 
 
-<a name="industry_11"></a>
+<a name="industry_14"></a>
 ### Brickworks
 
 <img src="brick_works.png" alt="Brickworks">
@@ -2174,7 +2378,7 @@ Color in the overview map: <span style="background-color:#cc8060;">&nbsp;&nbsp;&
 | [Coal](#cargo_COAL) | [Bricks](#cargo_BDMT) |
 
 
-<a name="industry_12"></a>
+<a name="industry_15"></a>
 ### Builders Yard
 
 <img src="builders_yard.png" alt="Builders Yard">
@@ -2194,7 +2398,7 @@ Color in the overview map: <span style="background-color:#acacc0;">&nbsp;&nbsp;&
 | [Timber](#cargo_WDPR) |  |
 
 
-<a name="industry_13"></a>
+<a name="industry_16"></a>
 ### Builders Yard
 
 <img src="builders_yard.png" alt="Builders Yard">
@@ -2211,16 +2415,16 @@ Color in the overview map: <span style="background-color:#acacc0;">&nbsp;&nbsp;&
 | [Timber](#cargo_WDPR) |  |
 
 
-<a name="industry_14"></a>
+<a name="industry_17"></a>
 ### Carbon Black Plant
 
 <img src="carbon_black_plant.png" alt="Carbon Black Plant">
 
 The carbon black plant is basically speaking taking carbon-based compounds such as coal or oil and reduces them to almost pure carbon powder. Typically, the raw materials used for this are residues and heavy fractions from oil destillations. Depending on the actual process used, carbon dioxide is a usual byproduct. However, recent research resulted in new processes that do not result in unwanted byproducts, breaking down the hydrocarbons completely into carbon and Hydrogen, considerably reducing the ecological footprint. 
 
-Industry requires extension(s): [Painting Industries](#extension_9) 
+Industry requires extension(s): [Painting Industries](#extension_10) 
 
-Industry is not available with these extension: [Organic Chemistry](#extension_7) [Ammonia](#extension_1) 
+Industry is not available with these extension: [Organic Chemistry](#extension_8) [Ammonia](#extension_1) 
 
 Industry will only spawn after 1850.
 This restriction is also valid for funding the industry.
@@ -2235,14 +2439,14 @@ Industry will start producing as soon as any of the required cargos is available
 | [Oil](#cargo_OIL_) |  |
 
 
-<a name="industry_15"></a>
+<a name="industry_18"></a>
 ### Carbon Black Plant
 
 <img src="carbon_black_plant.png" alt="Carbon Black Plant">
 
 The carbon black plant is basically speaking taking carbon-based compounds such as coal or oil and reduces them to almost pure carbon powder. Typically, the raw materials used for this are residues and heavy fractions from oil destillations. Depending on the actual process used, carbon dioxide is a usual byproduct. However, recent research resulted in new processes that do not result in unwanted byproducts, breaking down the hydrocarbons completely into carbon and Hydrogen, considerably reducing the ecological footprint. 
 
-Industry requires extension(s): [Painting Industries](#extension_9) [Organic Chemistry](#extension_7) 
+Industry requires extension(s): [Painting Industries](#extension_10) [Organic Chemistry](#extension_8) 
 
 Industry is not available with these extension: [Ammonia](#extension_1) 
 
@@ -2259,16 +2463,16 @@ Industry will start producing as soon as any of the required cargos is available
 | [Naphtha](#cargo_RFPR) |  |
 
 
-<a name="industry_16"></a>
+<a name="industry_19"></a>
 ### Carbon Black Plant
 
 <img src="carbon_black_plant.png" alt="Carbon Black Plant">
 
 The carbon black plant is basically speaking taking carbon-based compounds such as coal or oil and reduces them to almost pure carbon powder. Typically, the raw materials used for this are residues and heavy fractions from oil destillations. Depending on the actual process used, carbon dioxide is a usual byproduct. However, recent research resulted in new processes that do not result in unwanted byproducts, breaking down the hydrocarbons completely into carbon and Hydrogen, considerably reducing the ecological footprint. 
 
-Industry requires extension(s): [Painting Industries](#extension_9) [Ammonia](#extension_1) 
+Industry requires extension(s): [Painting Industries](#extension_10) [Ammonia](#extension_1) 
 
-Industry is not available with these extension: [Organic Chemistry](#extension_7) 
+Industry is not available with these extension: [Organic Chemistry](#extension_8) 
 
 Industry will only spawn after 1850.
 This restriction is also valid for funding the industry.
@@ -2284,14 +2488,14 @@ Industry requires any of the raw materials printed in black to produce anything.
 | [Oil](#cargo_OIL_) |  |
 
 
-<a name="industry_17"></a>
+<a name="industry_20"></a>
 ### Carbon Black Plant
 
 <img src="carbon_black_plant.png" alt="Carbon Black Plant">
 
 The carbon black plant is basically speaking taking carbon-based compounds such as coal or oil and reduces them to almost pure carbon powder. Typically, the raw materials used for this are residues and heavy fractions from oil destillations. Depending on the actual process used, carbon dioxide is a usual byproduct. However, recent research resulted in new processes that do not result in unwanted byproducts, breaking down the hydrocarbons completely into carbon and Hydrogen, considerably reducing the ecological footprint. 
 
-Industry requires extension(s): [Painting Industries](#extension_9) [Organic Chemistry](#extension_7) [Ammonia](#extension_1) 
+Industry requires extension(s): [Painting Industries](#extension_10) [Organic Chemistry](#extension_8) [Ammonia](#extension_1) 
 
 Industry will only spawn after 1850.
 This restriction is also valid for funding the industry.
@@ -2307,7 +2511,7 @@ Industry requires any of the raw materials printed in black to produce anything.
 | [Naphtha](#cargo_RFPR) |  |
 
 
-<a name="industry_18"></a>
+<a name="industry_21"></a>
 ### Cement Plant
 
 <img src="cement_plant.png" alt="Cement Plant">
@@ -2327,7 +2531,7 @@ Color in the overview map: <span style="background-color:#6c7484;">&nbsp;&nbsp;&
 | [Sand](#cargo_SAND) |  |
 
 
-<a name="industry_19"></a>
+<a name="industry_22"></a>
 ### Chloralkali Process Plant
 
 <img src="chloralkali_plant.png" alt="Chloralkali Process Plant">
@@ -2350,7 +2554,7 @@ Industry requires electricity to produce anything. See [Electricity](#electricty
 |  | [Lye](#cargo_LYE_) |
 
 
-<a name="industry_20"></a>
+<a name="industry_23"></a>
 ### Cleaning Products Factory
 
 <img src="cleaning_products_factory.png" alt="Cleaning Products Factory">
@@ -2359,7 +2563,7 @@ Cleaning products such as soaps and detergents were some of the first commercial
 
 Industry requires extension(s): [Ammonia](#extension_1) 
 
-Industry is not available with these extension: [Coke and Sulphur](#extension_4) [Packaging Industries](#extension_8) 
+Industry is not available with these extension: [Coke and Sulphur](#extension_4) [Packaging Industries](#extension_9) 
 
 Industry will only spawn after 1860.
 This restriction is also valid for funding the industry.
@@ -2373,7 +2577,7 @@ Industry requires the raw materials printed in black to produce anything. Raw ma
 | [Soda Ash](#cargo_SASH) | [Goods](#cargo_GOOD) |
 
 
-<a name="industry_21"></a>
+<a name="industry_24"></a>
 ### Cleaning Products Factory
 
 <img src="cleaning_products_factory.png" alt="Cleaning Products Factory">
@@ -2382,7 +2586,7 @@ Cleaning products such as soaps and detergents were some of the first commercial
 
 Industry requires extension(s): [Ammonia](#extension_1) [Coke and Sulphur](#extension_4) 
 
-Industry is not available with these extension: [Packaging Industries](#extension_8) 
+Industry is not available with these extension: [Packaging Industries](#extension_9) 
 
 Industry will only spawn after 1860.
 This restriction is also valid for funding the industry.
@@ -2397,14 +2601,14 @@ Industry will start producing as soon as any of the required cargos is available
 | [Soda Ash](#cargo_SASH) |  |
 
 
-<a name="industry_22"></a>
+<a name="industry_25"></a>
 ### Cleaning Products Factory
 
 <img src="cleaning_products_factory.png" alt="Cleaning Products Factory">
 
 Cleaning products such as soaps and detergents were some of the first commercial products of the young chemical industry. Already in the second half of the 19th century companies specializing in such products were founded. Some of them, such as Henkel, belong to the biggest chemical companies in the world and operate globally. Many developments and improvements in this area were developed in Germany, such as the first fully synthetic laundry detergent in the 1930s. 
 
-Industry requires extension(s): [Ammonia](#extension_1) [Packaging Industries](#extension_8) 
+Industry requires extension(s): [Ammonia](#extension_1) [Packaging Industries](#extension_9) 
 
 Industry is not available with these extension: [Coke and Sulphur](#extension_4) 
 
@@ -2420,14 +2624,14 @@ Industry requires the raw materials printed in black to produce anything. Raw ma
 | [Soda Ash](#cargo_SASH) | [Goods](#cargo_GOOD) |
 
 
-<a name="industry_23"></a>
+<a name="industry_26"></a>
 ### Cleaning Products Factory
 
 <img src="cleaning_products_factory.png" alt="Cleaning Products Factory">
 
 Cleaning products such as soaps and detergents were some of the first commercial products of the young chemical industry. Already in the second half of the 19th century companies specializing in such products were founded. Some of them, such as Henkel, belong to the biggest chemical companies in the world and operate globally. Many developments and improvements in this area were developed in Germany, such as the first fully synthetic laundry detergent in the 1930s. 
 
-Industry requires extension(s): [Ammonia](#extension_1) [Coke and Sulphur](#extension_4) [Packaging Industries](#extension_8) 
+Industry requires extension(s): [Ammonia](#extension_1) [Coke and Sulphur](#extension_4) [Packaging Industries](#extension_9) 
 
 Industry will only spawn after 1860.
 This restriction is also valid for funding the industry.
@@ -2443,14 +2647,14 @@ Industry requires any of the raw materials printed in black to produce anything.
 | [Soda Ash](#cargo_SASH) |  |
 
 
-<a name="industry_24"></a>
+<a name="industry_27"></a>
 ### Clothing Plant
 
 <img src="clothing_plant.png" alt="Clothing Plant">
 
 The clothing plant is the place where textiles are turned into clothing by means of tailoring and sewing. Historically, there was a rich history of clothing manufacturing in Europe, which has been replaced almost completely by cheaper Asian competitors, although high quality tailors still have their niche. Germany had a considerable clothing manufacturing industry in the 19th century, mainly located in Silesia and Saxony. Today, many different companies exist, some of which are well known internationally like Boss, Triumph or adidas, but production typically has been outsourced to Asia. 
 
-Industry requires extension(s): [Textile Industries](#extension_11) 
+Industry requires extension(s): [Textile Industries](#extension_12) 
 
 
 Color in the overview map: <span style="background-color:#803828;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2460,14 +2664,14 @@ Color in the overview map: <span style="background-color:#803828;">&nbsp;&nbsp;&
 | [Textiles](#cargo_TEXT) | [Goods](#cargo_GOOD) |
 
 
-<a name="industry_25"></a>
+<a name="industry_28"></a>
 ### Clothing Plant
 
 <img src="clothing_plant.png" alt="Clothing Plant">
 
 The clothing plant is the place where textiles are turned into clothing by means of tailoring and sewing. Historically, there was a rich history of clothing manufacturing in Europe, which has been replaced almost completely by cheaper Asian competitors, although high quality tailors still have their niche. Germany had a considerable clothing manufacturing industry in the 19th century, mainly located in Silesia and Saxony. Today, many different companies exist, some of which are well known internationally like Boss, Triumph or adidas, but production typically has been outsourced to Asia. 
 
-Industry requires extension(s): [Textile Industries](#extension_11) [Packaging Industries](#extension_8) 
+Industry requires extension(s): [Textile Industries](#extension_12) [Packaging Industries](#extension_9) 
 
 
 Color in the overview map: <span style="background-color:#803828;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2480,14 +2684,14 @@ Industry requires the raw materials printed in black to produce anything. Raw ma
 | [Textiles](#cargo_TEXT) |  |
 
 
-<a name="industry_26"></a>
+<a name="industry_29"></a>
 ### Coal Liquefaction Plant
 
 <img src="coal_liquefaction_plant.png" alt="Coal Liquefaction Plant">
 
 Creating fuels by liquifying coal in combination with hydrogen is a bit of a special case in the German history of chemistry. As Germany does not have own reserves of crude oil, it was a political goal since the early 20th century to overcome this dependency. The first fuel created synthetically this way was the so-called Leuna-Benzin ("Leuna-fuel"), named after the location of the plant. These plants were important for the preparation of World War II in Nazi Germany and thus were extended heavily. After the end of the war the relevance of this process practically vanished, since fuels can be produced much cheaper from oil, which was now available in abundance via imports. However, in the 21st century many countries see that this process may be a way to reduce the dependency on oil imports, with all its political implications. 
 
-Industry requires extension(s): [Organic Chemistry](#extension_7) 
+Industry requires extension(s): [Organic Chemistry](#extension_8) 
 
 Industry will only spawn after 1930.
 This restriction is also valid for funding the industry.
@@ -2500,7 +2704,7 @@ Color in the overview map: <span style="background-color:#cccca8;">&nbsp;&nbsp;&
 | [Hydrogen](#cargo_H2__) | [Petrol](#cargo_PETR) |
 
 
-<a name="industry_27"></a>
+<a name="industry_30"></a>
 ### Coal Mine
 
 <img src="coal_mine.png" alt="Coal Mine">
@@ -2521,7 +2725,7 @@ Industry is generated with limited resources and will close down once these are 
 |  | [Coal](#cargo_COAL) |
 
 
-<a name="industry_28"></a>
+<a name="industry_31"></a>
 ### Coke Oven
 
 <img src="coke_oven.png" alt="Coke Oven">
@@ -2541,14 +2745,14 @@ Color in the overview map: <span style="background-color:#444c5c;">&nbsp;&nbsp;&
 |  | [Schwefel](#cargo_SULP) |
 
 
-<a name="industry_29"></a>
+<a name="industry_32"></a>
 ### Copper Ore Mine
 
 <img src="copper_ore_mine.png" alt="Copper Ore Mine">
 
 Mining copper ore has been done since ancient times. In the set, as with all mining, the starting time is set way later in order to simulate the improved mining technologies required to do really deep mining. Europe in general does not contain a lot of copper ore, mining was done in central Germany, but the reserves were already depleted even before the industrial revolution. The last copper ore mines were in production until the middle of the 20th century, but that had at least partially political reasons, with East Germany not having access to copper on the world market. Today, copper is mainly produced from imported ore and by recycling scrap metal. 
 
-Industry requires extension(s): [Painting Industries](#extension_9) 
+Industry requires extension(s): [Painting Industries](#extension_10) 
 
 Industry is not available with these extension: [Coke and Sulphur](#extension_4) 
 
@@ -2564,14 +2768,14 @@ Industry is generated with limited resources and will close down once these are 
 |  | [Copper Ore](#cargo_CORE) |
 
 
-<a name="industry_30"></a>
+<a name="industry_33"></a>
 ### Copper Ore Mine
 
 <img src="copper_ore_mine.png" alt="Copper Ore Mine">
 
 Mining copper ore has been done since ancient times. In the set, as with all mining, the starting time is set way later in order to simulate the improved mining technologies required to do really deep mining. Europe in general does not contain a lot of copper ore, mining was done in central Germany, but the reserves were already depleted even before the industrial revolution. The last copper ore mines were in production until the middle of the 20th century, but that had at least partially political reasons, with East Germany not having access to copper on the world market. Today, copper is mainly produced from imported ore and by recycling scrap metal. 
 
-Industry requires extension(s): [Painting Industries](#extension_9) [Coke and Sulphur](#extension_4) 
+Industry requires extension(s): [Painting Industries](#extension_10) [Coke and Sulphur](#extension_4) 
 
 Industry will only spawn from 1800 to 1930.
 This restriction is also valid for funding the industry.
@@ -2585,14 +2789,14 @@ Industry is generated with limited resources and will close down once these are 
 |  | [Pyrite Ore](#cargo_PORE) |
 
 
-<a name="industry_31"></a>
+<a name="industry_34"></a>
 ### Copper Smelter
 
 <img src="copper_smelter.png" alt="Copper Smelter">
 
 The production of copper from copper ore is an energy-intense multi-step process requiring electrolysis. Byproducts of the process are certain other metal ores, as well as sulphur, depending on the quality of the ore used as input material. In the set, it is assumed that high quality ore with little impurity is used, while low-quality ores with sulphur are part of a different extension. The largest producer in Europe is located in Hamburg, Germany, producing copper from imported copper ore and scrap metal. 
 
-Industry requires extension(s): [Painting Industries](#extension_9) 
+Industry requires extension(s): [Painting Industries](#extension_10) 
 
 Industry is not available with these extension: [Coke and Sulphur](#extension_4) 
 
@@ -2608,14 +2812,14 @@ Industry requires electricity to produce anything. See [Electricity](#electricty
 | [Copper Ore](#cargo_CORE) | [Copper](#cargo_COPR) |
 
 
-<a name="industry_32"></a>
+<a name="industry_35"></a>
 ### Copper Smelter
 
 <img src="copper_smelter.png" alt="Copper Smelter">
 
 The production of copper from copper ore is an energy-intense multi-step process requiring electrolysis. Byproducts of the process are certain other metal ores, as well as sulphur, depending on the quality of the ore used as input material. In the set, it is assumed that high quality ore with little impurity is used, while low-quality ores with sulphur are part of a different extension. The largest producer in Europe is located in Hamburg, Germany, producing copper from imported copper ore and scrap metal. 
 
-Industry requires extension(s): [Painting Industries](#extension_9) [Coke and Sulphur](#extension_4) 
+Industry requires extension(s): [Painting Industries](#extension_10) [Coke and Sulphur](#extension_4) 
 
 Industry will only spawn after 1900.
 This restriction is also valid for funding the industry.
@@ -2630,7 +2834,7 @@ Industry requires electricity to produce anything. See [Electricity](#electricty
 | [Copper Ore](#cargo_CORE) |  |
 
 
-<a name="industry_33"></a>
+<a name="industry_36"></a>
 ### Cryo Plant
 
 <img src="cryo_plant.png" alt="Cryo Plant">
@@ -2650,7 +2854,7 @@ Color in the overview map: <span style="background-color:#0060d4;">&nbsp;&nbsp;&
 |  | [Oxygen](#cargo_O2__) |
 
 
-<a name="industry_34"></a>
+<a name="industry_37"></a>
 ### Dairy
 
 <img src="dairy.png" alt="Dairy">
@@ -2659,7 +2863,7 @@ A dairy is, at least in the terminology used for this set, an industry that prod
 
 Industry requires extension(s): [Food Industries](#extension_5) 
 
-Industry is not available with these extension: [Basic Inorganic Chemistry](#extension_2) [Packaging Industries](#extension_8) 
+Industry is not available with these extension: [Basic Inorganic Chemistry](#extension_2) [Packaging Industries](#extension_9) 
 
 
 Color in the overview map: <span style="background-color:#fcd898;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2669,7 +2873,7 @@ Color in the overview map: <span style="background-color:#fcd898;">&nbsp;&nbsp;&
 | [Milk](#cargo_MILK) | [Food](#cargo_FOOD) |
 
 
-<a name="industry_35"></a>
+<a name="industry_38"></a>
 ### Dairy
 
 <img src="dairy.png" alt="Dairy">
@@ -2678,7 +2882,7 @@ A dairy is, at least in the terminology used for this set, an industry that prod
 
 Industry requires extension(s): [Food Industries](#extension_5) [Basic Inorganic Chemistry](#extension_2) 
 
-Industry is not available with these extension: [Packaging Industries](#extension_8) 
+Industry is not available with these extension: [Packaging Industries](#extension_9) 
 
 
 Color in the overview map: <span style="background-color:#fcd898;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2691,14 +2895,14 @@ Industry requires the raw materials printed in black to produce anything. Raw ma
 | [Milk](#cargo_MILK) |  |
 
 
-<a name="industry_36"></a>
+<a name="industry_39"></a>
 ### Dairy
 
 <img src="dairy.png" alt="Dairy">
 
 A dairy is, at least in the terminology used for this set, an industry that produces milk-based food, such as butter and cheese. The milk is produced from cattle in animal farms. 
 
-Industry requires extension(s): [Food Industries](#extension_5) [Packaging Industries](#extension_8) 
+Industry requires extension(s): [Food Industries](#extension_5) [Packaging Industries](#extension_9) 
 
 Industry is not available with these extension: [Basic Inorganic Chemistry](#extension_2) 
 
@@ -2713,14 +2917,14 @@ Industry requires the raw materials printed in black to produce anything. Raw ma
 | [Packaging](#cargo_MNSP) |  |
 
 
-<a name="industry_37"></a>
+<a name="industry_40"></a>
 ### Dairy
 
 <img src="dairy.png" alt="Dairy">
 
 A dairy is, at least in the terminology used for this set, an industry that produces milk-based food, such as butter and cheese. The milk is produced from cattle in animal farms. 
 
-Industry requires extension(s): [Food Industries](#extension_5) [Basic Inorganic Chemistry](#extension_2) [Packaging Industries](#extension_8) 
+Industry requires extension(s): [Food Industries](#extension_5) [Basic Inorganic Chemistry](#extension_2) [Packaging Industries](#extension_9) 
 
 
 Color in the overview map: <span style="background-color:#fcd898;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2734,7 +2938,7 @@ Industry requires the raw materials printed in black to produce anything. Raw ma
 | [Packaging](#cargo_MNSP) |  |
 
 
-<a name="industry_38"></a>
+<a name="industry_41"></a>
 ### Department Store
 
 <img src="department_store.png" alt="Department Store">
@@ -2749,16 +2953,16 @@ Color in the overview map: <span style="background-color:#fcf4ec;">&nbsp;&nbsp;&
 | [Goods](#cargo_GOOD) |  |
 
 
-<a name="industry_39"></a>
+<a name="industry_42"></a>
 ### Farm
 
 <img src="farm.png" alt="Farm">
 
 Farms are the main agricultural industry in the set, producing grain and livestock. Both are inputs for the food industry. 
 
-Industry requires extension(s): [Textile Industries](#extension_11) 
+Industry requires extension(s): [Textile Industries](#extension_12) 
 
-Industry is not available with these extension: [Food Industries](#extension_5) 
+Industry is not available with these extension: [Food Industries](#extension_5) [Fruits and Bioenergy](#extension_6) 
 
 
 Color in the overview map: <span style="background-color:#ec9ca4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2770,14 +2974,14 @@ Color in the overview map: <span style="background-color:#ec9ca4;">&nbsp;&nbsp;&
 |  | [Wool](#cargo_WOOL) |
 
 
-<a name="industry_40"></a>
+<a name="industry_43"></a>
 ### Farm
 
 <img src="farm.png" alt="Farm">
 
 Farms are the main agricultural industry in the set, producing grain and livestock. Both are inputs for the food industry. 
 
-Industry is not available with these extension: [Textile Industries](#extension_11) [Food Industries](#extension_5) 
+Industry is not available with these extension: [Textile Industries](#extension_12) [Food Industries](#extension_5) [Fruits and Bioenergy](#extension_6) 
 
 
 Color in the overview map: <span style="background-color:#ec9ca4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2788,7 +2992,7 @@ Color in the overview map: <span style="background-color:#ec9ca4;">&nbsp;&nbsp;&
 |  | [Livestock](#cargo_LVST) |
 
 
-<a name="industry_41"></a>
+<a name="industry_44"></a>
 ### Farm
 
 <img src="farm.png" alt="Farm">
@@ -2796,6 +3000,8 @@ Color in the overview map: <span style="background-color:#ec9ca4;">&nbsp;&nbsp;&
 Farms are the main agricultural industry in the set, producing grain and livestock. Both are inputs for the food industry. 
 
 Industry requires extension(s): [Food Industries](#extension_5) 
+
+Industry is not available with these extension: [Fruits and Bioenergy](#extension_6) 
 
 
 Color in the overview map: <span style="background-color:#ec9ca4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2805,7 +3011,68 @@ Color in the overview map: <span style="background-color:#ec9ca4;">&nbsp;&nbsp;&
 |  | [Grain](#cargo_GRAI) |
 
 
-<a name="industry_42"></a>
+<a name="industry_45"></a>
+### Farm
+
+<img src="farm.png" alt="Farm">
+
+Farms are the main agricultural industry in the set, producing grain and livestock. Both are inputs for the food industry. 
+
+Industry requires extension(s): [Textile Industries](#extension_12) [Fruits and Bioenergy](#extension_6) 
+
+Industry is not available with these extension: [Food Industries](#extension_5) 
+
+
+Color in the overview map: <span style="background-color:#ec9ca4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+| Requires | Produces |
+| -- | -- |
+|  | [Biomass](#cargo_BIOM) |
+|  | [Grain](#cargo_GRAI) |
+|  | [Livestock](#cargo_LVST) |
+|  | [Wool](#cargo_WOOL) |
+
+
+<a name="industry_46"></a>
+### Farm
+
+<img src="farm.png" alt="Farm">
+
+Farms are the main agricultural industry in the set, producing grain and livestock. Both are inputs for the food industry. 
+
+Industry requires extension(s): [Fruits and Bioenergy](#extension_6) 
+
+Industry is not available with these extension: [Textile Industries](#extension_12) [Food Industries](#extension_5) 
+
+
+Color in the overview map: <span style="background-color:#ec9ca4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+| Requires | Produces |
+| -- | -- |
+|  | [Biomass](#cargo_BIOM) |
+|  | [Grain](#cargo_GRAI) |
+|  | [Livestock](#cargo_LVST) |
+
+
+<a name="industry_47"></a>
+### Farm
+
+<img src="farm.png" alt="Farm">
+
+Farms are the main agricultural industry in the set, producing grain and livestock. Both are inputs for the food industry. 
+
+Industry requires extension(s): [Food Industries](#extension_5) [Fruits and Bioenergy](#extension_6) 
+
+
+Color in the overview map: <span style="background-color:#ec9ca4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+| Requires | Produces |
+| -- | -- |
+|  | [Biomass](#cargo_BIOM) |
+|  | [Grain](#cargo_GRAI) |
+
+
+<a name="industry_48"></a>
 ### Fishing Grounds
 
 <img src="fishing_grounds.png" alt="Fishing Grounds">
@@ -2820,7 +3087,7 @@ Color in the overview map: <span style="background-color:#9cccdc;">&nbsp;&nbsp;&
 |  | [Fish](#cargo_FISH) |
 
 
-<a name="industry_43"></a>
+<a name="industry_49"></a>
 ### Flour Mill
 
 <img src="flour_mill.png" alt="Flour Mill">
@@ -2829,7 +3096,7 @@ Flour mills have been around for thousands of years. They grind grain into flour
 
 Industry requires extension(s): [Food Industries](#extension_5) 
 
-Industry is not available with these extension: [Packaging Industries](#extension_8) 
+Industry is not available with these extension: [Packaging Industries](#extension_9) 
 
 
 Color in the overview map: <span style="background-color:#d4bc94;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2839,14 +3106,14 @@ Color in the overview map: <span style="background-color:#d4bc94;">&nbsp;&nbsp;&
 | [Grain](#cargo_GRAI) | [Food](#cargo_FOOD) |
 
 
-<a name="industry_44"></a>
+<a name="industry_50"></a>
 ### Flour Mill
 
 <img src="flour_mill.png" alt="Flour Mill">
 
 Flour mills have been around for thousands of years. They grind grain into flour, which is an all-important ingredient for many types of food. This grinding involved a rotating stone, the millstone, which was typically achieved by using water or wind for power. Mills were ubiquitous, as is the surname Miller, which was derived from the job of running the mill. Industrialization changed the process of creating flour considerably, providing new power sources and allowing much larger production volumes. 
 
-Industry requires extension(s): [Food Industries](#extension_5) [Packaging Industries](#extension_8) 
+Industry requires extension(s): [Food Industries](#extension_5) [Packaging Industries](#extension_9) 
 
 
 Color in the overview map: <span style="background-color:#d4bc94;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2859,14 +3126,14 @@ Industry requires the raw materials printed in black to produce anything. Raw ma
 | [Packaging](#cargo_MNSP) |  |
 
 
-<a name="industry_45"></a>
+<a name="industry_51"></a>
 ### Food Processing Plant
 
 <img src="food_processor.png" alt="Food Processing Plant">
 
 The food processor is an abstraction of various food-production related industries. Whether it is bakery products, canned fish or any other sort of food, it is produced here, to be transported to the supermarket shelves. 
 
-Industry is not available with these extension: [Basic Inorganic Chemistry](#extension_2) [Food Industries](#extension_5) [Packaging Industries](#extension_8) 
+Industry is not available with these extension: [Basic Inorganic Chemistry](#extension_2) [Food Industries](#extension_5) [Packaging Industries](#extension_9) 
 
 
 Color in the overview map: <span style="background-color:#a00000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2880,7 +3147,7 @@ Industry will start producing as soon as any of the required cargos is available
 | [Livestock](#cargo_LVST) |  |
 
 
-<a name="industry_46"></a>
+<a name="industry_52"></a>
 ### Food Processing Plant
 
 <img src="food_processor.png" alt="Food Processing Plant">
@@ -2889,7 +3156,7 @@ The food processor is an abstraction of various food-production related industri
 
 Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) 
 
-Industry is not available with these extension: [Food Industries](#extension_5) [Packaging Industries](#extension_8) 
+Industry is not available with these extension: [Food Industries](#extension_5) [Packaging Industries](#extension_9) [Fruits and Bioenergy](#extension_6) 
 
 
 Color in the overview map: <span style="background-color:#a00000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2905,7 +3172,7 @@ Industry requires any of the raw materials printed in black to produce anything.
 | [Salt](#cargo_SALT) |  |
 
 
-<a name="industry_47"></a>
+<a name="industry_53"></a>
 ### Food Processing Plant
 
 <img src="food_processor.png" alt="Food Processing Plant">
@@ -2914,7 +3181,7 @@ The food processor is an abstraction of various food-production related industri
 
 Industry requires extension(s): [Food Industries](#extension_5) 
 
-Industry is not available with these extension: [Basic Inorganic Chemistry](#extension_2) [Packaging Industries](#extension_8) 
+Industry is not available with these extension: [Basic Inorganic Chemistry](#extension_2) [Packaging Industries](#extension_9) 
 
 
 Color in the overview map: <span style="background-color:#a00000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2926,7 +3193,7 @@ Industry will start producing as soon as any of the required cargos is available
 | [Fish](#cargo_FISH) | [Food](#cargo_FOOD) |
 
 
-<a name="industry_48"></a>
+<a name="industry_54"></a>
 ### Food Processing Plant
 
 <img src="food_processor.png" alt="Food Processing Plant">
@@ -2935,7 +3202,7 @@ The food processor is an abstraction of various food-production related industri
 
 Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Food Industries](#extension_5) 
 
-Industry is not available with these extension: [Packaging Industries](#extension_8) 
+Industry is not available with these extension: [Packaging Industries](#extension_9) [Fruits and Bioenergy](#extension_6) 
 
 
 Color in the overview map: <span style="background-color:#a00000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -2949,14 +3216,14 @@ Industry requires the raw materials printed in black to produce anything. Raw ma
 | [Salt](#cargo_SALT) |  |
 
 
-<a name="industry_49"></a>
+<a name="industry_55"></a>
 ### Food Processing Plant
 
 <img src="food_processor.png" alt="Food Processing Plant">
 
 The food processor is an abstraction of various food-production related industries. Whether it is bakery products, canned fish or any other sort of food, it is produced here, to be transported to the supermarket shelves. 
 
-Industry requires extension(s): [Packaging Industries](#extension_8) 
+Industry requires extension(s): [Packaging Industries](#extension_9) 
 
 Industry is not available with these extension: [Basic Inorganic Chemistry](#extension_2) [Food Industries](#extension_5) 
 
@@ -2973,14 +3240,14 @@ Industry requires any of the raw materials printed in black to produce anything.
 | [Packaging](#cargo_MNSP) |  |
 
 
-<a name="industry_50"></a>
+<a name="industry_56"></a>
 ### Food Processing Plant
 
 <img src="food_processor.png" alt="Food Processing Plant">
 
 The food processor is an abstraction of various food-production related industries. Whether it is bakery products, canned fish or any other sort of food, it is produced here, to be transported to the supermarket shelves. 
 
-Industry requires extension(s): [Food Industries](#extension_5) [Packaging Industries](#extension_8) 
+Industry requires extension(s): [Food Industries](#extension_5) [Packaging Industries](#extension_9) 
 
 Industry is not available with these extension: [Basic Inorganic Chemistry](#extension_2) 
 
@@ -2995,16 +3262,16 @@ Industry requires the raw materials printed in black to produce anything. Raw ma
 | [Packaging](#cargo_MNSP) |  |
 
 
-<a name="industry_51"></a>
+<a name="industry_57"></a>
 ### Food Processing Plant
 
 <img src="food_processor.png" alt="Food Processing Plant">
 
 The food processor is an abstraction of various food-production related industries. Whether it is bakery products, canned fish or any other sort of food, it is produced here, to be transported to the supermarket shelves. 
 
-Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Packaging Industries](#extension_8) 
+Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Packaging Industries](#extension_9) 
 
-Industry is not available with these extension: [Food Industries](#extension_5) 
+Industry is not available with these extension: [Food Industries](#extension_5) [Fruits and Bioenergy](#extension_6) 
 
 
 Color in the overview map: <span style="background-color:#a00000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -3021,14 +3288,16 @@ Industry requires any of the raw materials printed in black to produce anything.
 | [Salt](#cargo_SALT) |  |
 
 
-<a name="industry_52"></a>
+<a name="industry_58"></a>
 ### Food Processing Plant
 
 <img src="food_processor.png" alt="Food Processing Plant">
 
 The food processor is an abstraction of various food-production related industries. Whether it is bakery products, canned fish or any other sort of food, it is produced here, to be transported to the supermarket shelves. 
 
-Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Food Industries](#extension_5) [Packaging Industries](#extension_8) 
+Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Food Industries](#extension_5) [Packaging Industries](#extension_9) 
+
+Industry is not available with these extension: [Fruits and Bioenergy](#extension_6) 
 
 
 Color in the overview map: <span style="background-color:#a00000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -3043,7 +3312,107 @@ Industry requires the raw materials printed in black to produce anything. Raw ma
 | [Salt](#cargo_SALT) |  |
 
 
-<a name="industry_53"></a>
+<a name="industry_59"></a>
+### Food Processing Plant
+
+<img src="food_processor.png" alt="Food Processing Plant">
+
+The food processor is an abstraction of various food-production related industries. Whether it is bakery products, canned fish or any other sort of food, it is produced here, to be transported to the supermarket shelves. 
+
+Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Fruits and Bioenergy](#extension_6) 
+
+Industry is not available with these extension: [Food Industries](#extension_5) [Packaging Industries](#extension_9) 
+
+
+Color in the overview map: <span style="background-color:#a00000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+Industry requires any of the raw materials printed in black to produce anything. Maximum production level is limited by the number of different raw materials available. Raw materials printed in white will increase the maximum production level.
+
+| Requires | Produces |
+| -- | -- |
+| [Fish](#cargo_FISH) | [Food](#cargo_FOOD) |
+| [Fruits](#cargo_FRUT) |  |
+| [Grain](#cargo_GRAI) |  |
+| [Livestock](#cargo_LVST) |  |
+| [Lye](#cargo_LYE_) |  |
+| [Salt](#cargo_SALT) |  |
+
+
+<a name="industry_60"></a>
+### Food Processing Plant
+
+<img src="food_processor.png" alt="Food Processing Plant">
+
+The food processor is an abstraction of various food-production related industries. Whether it is bakery products, canned fish or any other sort of food, it is produced here, to be transported to the supermarket shelves. 
+
+Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Food Industries](#extension_5) [Fruits and Bioenergy](#extension_6) 
+
+Industry is not available with these extension: [Packaging Industries](#extension_9) 
+
+
+Color in the overview map: <span style="background-color:#a00000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+Industry requires the raw materials printed in black to produce anything. Raw materials printed in white will increase the maximum production level.
+
+| Requires | Produces |
+| -- | -- |
+| [Fish](#cargo_FISH) | [Food](#cargo_FOOD) |
+| [Fruits](#cargo_FRUT) |  |
+| [Lye](#cargo_LYE_) |  |
+| [Salt](#cargo_SALT) |  |
+
+
+<a name="industry_61"></a>
+### Food Processing Plant
+
+<img src="food_processor.png" alt="Food Processing Plant">
+
+The food processor is an abstraction of various food-production related industries. Whether it is bakery products, canned fish or any other sort of food, it is produced here, to be transported to the supermarket shelves. 
+
+Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Packaging Industries](#extension_9) [Fruits and Bioenergy](#extension_6) 
+
+Industry is not available with these extension: [Food Industries](#extension_5) 
+
+
+Color in the overview map: <span style="background-color:#a00000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+Industry requires any of the raw materials printed in black to produce anything. Maximum production level is limited by the number of different raw materials available. Raw materials printed in white will increase the maximum production level.
+
+| Requires | Produces |
+| -- | -- |
+| [Fish](#cargo_FISH) | [Food](#cargo_FOOD) |
+| [Fruits](#cargo_FRUT) |  |
+| [Grain](#cargo_GRAI) |  |
+| [Livestock](#cargo_LVST) |  |
+| [Lye](#cargo_LYE_) |  |
+| [Packaging](#cargo_MNSP) |  |
+| [Salt](#cargo_SALT) |  |
+
+
+<a name="industry_62"></a>
+### Food Processing Plant
+
+<img src="food_processor.png" alt="Food Processing Plant">
+
+The food processor is an abstraction of various food-production related industries. Whether it is bakery products, canned fish or any other sort of food, it is produced here, to be transported to the supermarket shelves. 
+
+Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Food Industries](#extension_5) [Packaging Industries](#extension_9) [Fruits and Bioenergy](#extension_6) 
+
+
+Color in the overview map: <span style="background-color:#a00000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+Industry requires the raw materials printed in black to produce anything. Raw materials printed in white will increase the maximum production level.
+
+| Requires | Produces |
+| -- | -- |
+| [Fish](#cargo_FISH) | [Food](#cargo_FOOD) |
+| [Fruits](#cargo_FRUT) |  |
+| [Lye](#cargo_LYE_) |  |
+| [Packaging](#cargo_MNSP) |  |
+| [Salt](#cargo_SALT) |  |
+
+
+<a name="industry_63"></a>
 ### Forest
 
 <img src="forest.png" alt="Forest">
@@ -3058,16 +3427,33 @@ Color in the overview map: <span style="background-color:#68941c;">&nbsp;&nbsp;&
 |  | [Wood](#cargo_WOOD) |
 
 
-<a name="industry_54"></a>
+<a name="industry_64"></a>
+### Fruit Plantation
+
+<img src="fruit_plantation.png" alt="Fruit Plantation">
+
+Fruit plantations are a common sight in Northern Germany. Still, a lot of fruit is being imported from other countries where the climate is more suited to growing certain fruits. 
+
+Industry requires extension(s): [Fruits and Bioenergy](#extension_6) 
+
+
+Color in the overview map: <span style="background-color:#306004;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+| Requires | Produces |
+| -- | -- |
+|  | [Fruits](#cargo_FRUT) |
+
+
+<a name="industry_65"></a>
 ### Furniture Factory
 
 <img src="furniture_factory.png" alt="Furniture Factory">
 
 The furniture industry is quite big in Germany, with IKEA being the market leader. Mostly, furniture is sold via a handful of companies who own dozens or hundreds of discount furniture stores across the whole country. Classic furniture fabrication by specialized carpenters has practically ceased to exist. 
 
-Industry requires extension(s): [Textile Industries](#extension_11) 
+Industry requires extension(s): [Textile Industries](#extension_12) 
 
-Industry is not available with these extension: [Packaging Industries](#extension_8) 
+Industry is not available with these extension: [Packaging Industries](#extension_9) 
 
 
 Color in the overview map: <span style="background-color:#a888e0;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -3081,14 +3467,14 @@ Industry will start producing as soon as any of the required cargos is available
 | [Timber](#cargo_WDPR) |  |
 
 
-<a name="industry_55"></a>
+<a name="industry_66"></a>
 ### Furniture Factory
 
 <img src="furniture_factory.png" alt="Furniture Factory">
 
 The furniture industry is quite big in Germany, with IKEA being the market leader. Mostly, furniture is sold via a handful of companies who own dozens or hundreds of discount furniture stores across the whole country. Classic furniture fabrication by specialized carpenters has practically ceased to exist. 
 
-Industry is not available with these extension: [Textile Industries](#extension_11) [Packaging Industries](#extension_8) 
+Industry is not available with these extension: [Textile Industries](#extension_12) [Packaging Industries](#extension_9) 
 
 
 Color in the overview map: <span style="background-color:#a888e0;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -3101,14 +3487,14 @@ Industry will start producing as soon as any of the required cargos is available
 | [Timber](#cargo_WDPR) |  |
 
 
-<a name="industry_56"></a>
+<a name="industry_67"></a>
 ### Furniture Factory
 
 <img src="furniture_factory.png" alt="Furniture Factory">
 
 The furniture industry is quite big in Germany, with IKEA being the market leader. Mostly, furniture is sold via a handful of companies who own dozens or hundreds of discount furniture stores across the whole country. Classic furniture fabrication by specialized carpenters has practically ceased to exist. 
 
-Industry requires extension(s): [Textile Industries](#extension_11) [Packaging Industries](#extension_8) 
+Industry requires extension(s): [Textile Industries](#extension_12) [Packaging Industries](#extension_9) 
 
 
 Color in the overview map: <span style="background-color:#a888e0;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -3123,16 +3509,16 @@ Industry requires any of the raw materials printed in black to produce anything.
 | [Timber](#cargo_WDPR) |  |
 
 
-<a name="industry_57"></a>
+<a name="industry_68"></a>
 ### Furniture Factory
 
 <img src="furniture_factory.png" alt="Furniture Factory">
 
 The furniture industry is quite big in Germany, with IKEA being the market leader. Mostly, furniture is sold via a handful of companies who own dozens or hundreds of discount furniture stores across the whole country. Classic furniture fabrication by specialized carpenters has practically ceased to exist. 
 
-Industry requires extension(s): [Packaging Industries](#extension_8) 
+Industry requires extension(s): [Packaging Industries](#extension_9) 
 
-Industry is not available with these extension: [Textile Industries](#extension_11) 
+Industry is not available with these extension: [Textile Industries](#extension_12) 
 
 
 Color in the overview map: <span style="background-color:#a888e0;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -3146,12 +3532,14 @@ Industry requires any of the raw materials printed in black to produce anything.
 | [Timber](#cargo_WDPR) |  |
 
 
-<a name="industry_58"></a>
+<a name="industry_69"></a>
 ### General Store
 
 <img src="general_store.png" alt="General Store">
 
 The general store is the location where food is bought in cities. You could also simply say it's the supermarket, but the modern supermarket only evolved in the latter half of the 20th century. 
+
+Industry is not available with these extension: [Fruits and Bioenergy](#extension_6) 
 
 
 Color in the overview map: <span style="background-color:#fcd8c8;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -3161,14 +3549,32 @@ Color in the overview map: <span style="background-color:#fcd8c8;">&nbsp;&nbsp;&
 | [Food](#cargo_FOOD) |  |
 
 
-<a name="industry_59"></a>
+<a name="industry_70"></a>
+### General Store
+
+<img src="general_store.png" alt="General Store">
+
+The general store is the location where food is bought in cities. You could also simply say it's the supermarket, but the modern supermarket only evolved in the latter half of the 20th century. 
+
+Industry requires extension(s): [Fruits and Bioenergy](#extension_6) 
+
+
+Color in the overview map: <span style="background-color:#fcd8c8;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+| Requires | Produces |
+| -- | -- |
+| [Food](#cargo_FOOD) |  |
+| [Fruits](#cargo_FRUT) |  |
+
+
+<a name="industry_71"></a>
 ### Glass Works
 
 <img src="glass_works.png" alt="Glass Works">
 
 Glass is produced by creating a molten mixture of various materials, forming it into the desired shape and then cooling it in a specific speed. Depending on the form of the product such as sheet glass for windows or container forms such as bottles, the process is highly automated. Some more intricate forms are still created by handcrafting, specifically by glassblowing. The properties of the glass depend on the raw materials used and their exact mixture. 
 
-Industry requires extension(s): [Glass](#extension_6) 
+Industry requires extension(s): [Glass](#extension_7) 
 
 Industry is not available with these extension: [Ammonia](#extension_1) 
 
@@ -3181,14 +3587,14 @@ Color in the overview map: <span style="background-color:#5840ac;">&nbsp;&nbsp;&
 | [Sand](#cargo_SAND) |  |
 
 
-<a name="industry_60"></a>
+<a name="industry_72"></a>
 ### Glass Works
 
 <img src="glass_works.png" alt="Glass Works">
 
 Glass is produced by creating a molten mixture of various materials, forming it into the desired shape and then cooling it in a specific speed. Depending on the form of the product such as sheet glass for windows or container forms such as bottles, the process is highly automated. Some more intricate forms are still created by handcrafting, specifically by glassblowing. The properties of the glass depend on the raw materials used and their exact mixture. 
 
-Industry requires extension(s): [Glass](#extension_6) [Ammonia](#extension_1) 
+Industry requires extension(s): [Glass](#extension_7) [Ammonia](#extension_1) 
 
 
 Color in the overview map: <span style="background-color:#5840ac;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -3200,7 +3606,7 @@ Color in the overview map: <span style="background-color:#5840ac;">&nbsp;&nbsp;&
 | [Soda Ash](#cargo_SASH) |  |
 
 
-<a name="industry_61"></a>
+<a name="industry_73"></a>
 ### Hotel
 
 <img src="hotel.png" alt="Hotel">
@@ -3208,6 +3614,8 @@ Color in the overview map: <span style="background-color:#5840ac;">&nbsp;&nbsp;&
 Whether it is for recreational purposes or for business trips, hotels play an important role in the economy. In some region like at the coast of the Baltic Sea they are the biggest economic factors. Huge cities like Frankfurt and Munich also boast a huge array of hotels to accomodate various trade fairs and festivities. 
 
 In the set, hotels "produce" as many passengers as are deliver to them, which simply models that people who check in will eventually also check out. 
+
+Industry is not available with these extension: [Fruits and Bioenergy](#extension_6) 
 
 
 Color in the overview map: <span style="background-color:#508ca0;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -3218,7 +3626,28 @@ Color in the overview map: <span style="background-color:#508ca0;">&nbsp;&nbsp;&
 | [Passengers](#cargo_PASS) |  |
 
 
-<a name="industry_62"></a>
+<a name="industry_74"></a>
+### Hotel
+
+<img src="hotel.png" alt="Hotel">
+
+Whether it is for recreational purposes or for business trips, hotels play an important role in the economy. In some region like at the coast of the Baltic Sea they are the biggest economic factors. Huge cities like Frankfurt and Munich also boast a huge array of hotels to accomodate various trade fairs and festivities. 
+
+In the set, hotels "produce" as many passengers as are deliver to them, which simply models that people who check in will eventually also check out. 
+
+Industry requires extension(s): [Fruits and Bioenergy](#extension_6) 
+
+
+Color in the overview map: <span style="background-color:#508ca0;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+| Requires | Produces |
+| -- | -- |
+| [Food](#cargo_FOOD) | [Passengers](#cargo_PASS) |
+| [Fruits](#cargo_FRUT) |  |
+| [Passengers](#cargo_PASS) |  |
+
+
+<a name="industry_75"></a>
 ### Integrated Steel Mill
 
 <img src="integrated_steel_mill.png" alt="Integrated Steel Mill">
@@ -3227,7 +3656,7 @@ Historically, steel production was a key driver of industrialization in the 19th
 
 While there are multiple different variants of producing steel out of iron ore, this set only contains the modern variant of the integrated steel mill. There are several steps to create steel out of iron ore, starting with a blast furnace, but molten pig iron is not transported over long distances, and as such it is not relevant in the scope of the game. 
 
-Industry is not available with these extension: [Glass](#extension_6) [Coke and Sulphur](#extension_4) [Ammonia](#extension_1) 
+Industry is not available with these extension: [Glass](#extension_7) [Coke and Sulphur](#extension_4) [Ammonia](#extension_1) 
 
 Industry will only spawn after 1800.
 This restriction is also valid for funding the industry.
@@ -3240,7 +3669,7 @@ Color in the overview map: <span style="background-color:#949594;">&nbsp;&nbsp;&
 | [Iron Ore](#cargo_IORE) |  |
 
 
-<a name="industry_63"></a>
+<a name="industry_76"></a>
 ### Integrated Steel Mill
 
 <img src="integrated_steel_mill.png" alt="Integrated Steel Mill">
@@ -3249,7 +3678,7 @@ Historically, steel production was a key driver of industrialization in the 19th
 
 While there are multiple different variants of producing steel out of iron ore, this set only contains the modern variant of the integrated steel mill. There are several steps to create steel out of iron ore, starting with a blast furnace, but molten pig iron is not transported over long distances, and as such it is not relevant in the scope of the game. 
 
-Industry requires extension(s): [Glass](#extension_6) 
+Industry requires extension(s): [Glass](#extension_7) 
 
 Industry is not available with these extension: [Coke and Sulphur](#extension_4) [Ammonia](#extension_1) 
 
@@ -3265,7 +3694,7 @@ Color in the overview map: <span style="background-color:#949594;">&nbsp;&nbsp;&
 | [Quicklime](#cargo_QLME) |  |
 
 
-<a name="industry_64"></a>
+<a name="industry_77"></a>
 ### Integrated Steel Mill
 
 <img src="integrated_steel_mill.png" alt="Integrated Steel Mill">
@@ -3276,7 +3705,7 @@ While there are multiple different variants of producing steel out of iron ore, 
 
 Industry requires extension(s): [Coke and Sulphur](#extension_4) 
 
-Industry is not available with these extension: [Glass](#extension_6) [Ammonia](#extension_1) 
+Industry is not available with these extension: [Glass](#extension_7) [Ammonia](#extension_1) 
 
 Industry will only spawn after 1800.
 This restriction is also valid for funding the industry.
@@ -3289,7 +3718,7 @@ Color in the overview map: <span style="background-color:#949594;">&nbsp;&nbsp;&
 | [Iron Ore](#cargo_IORE) |  |
 
 
-<a name="industry_65"></a>
+<a name="industry_78"></a>
 ### Integrated Steel Mill
 
 <img src="integrated_steel_mill.png" alt="Integrated Steel Mill">
@@ -3298,7 +3727,7 @@ Historically, steel production was a key driver of industrialization in the 19th
 
 While there are multiple different variants of producing steel out of iron ore, this set only contains the modern variant of the integrated steel mill. There are several steps to create steel out of iron ore, starting with a blast furnace, but molten pig iron is not transported over long distances, and as such it is not relevant in the scope of the game. 
 
-Industry requires extension(s): [Glass](#extension_6) [Coke and Sulphur](#extension_4) 
+Industry requires extension(s): [Glass](#extension_7) [Coke and Sulphur](#extension_4) 
 
 Industry is not available with these extension: [Ammonia](#extension_1) 
 
@@ -3316,7 +3745,7 @@ Industry requires the raw materials printed in black to produce anything. Raw ma
 | [Quicklime](#cargo_QLME) |  |
 
 
-<a name="industry_66"></a>
+<a name="industry_79"></a>
 ### Integrated Steel Mill
 
 <img src="integrated_steel_mill.png" alt="Integrated Steel Mill">
@@ -3327,7 +3756,7 @@ While there are multiple different variants of producing steel out of iron ore, 
 
 Industry requires extension(s): [Ammonia](#extension_1) 
 
-Industry is not available with these extension: [Glass](#extension_6) [Coke and Sulphur](#extension_4) 
+Industry is not available with these extension: [Glass](#extension_7) [Coke and Sulphur](#extension_4) 
 
 Industry will only spawn after 1800.
 This restriction is also valid for funding the industry.
@@ -3341,7 +3770,7 @@ Color in the overview map: <span style="background-color:#949594;">&nbsp;&nbsp;&
 | [Oxygen](#cargo_O2__) |  |
 
 
-<a name="industry_67"></a>
+<a name="industry_80"></a>
 ### Integrated Steel Mill
 
 <img src="integrated_steel_mill.png" alt="Integrated Steel Mill">
@@ -3350,7 +3779,7 @@ Historically, steel production was a key driver of industrialization in the 19th
 
 While there are multiple different variants of producing steel out of iron ore, this set only contains the modern variant of the integrated steel mill. There are several steps to create steel out of iron ore, starting with a blast furnace, but molten pig iron is not transported over long distances, and as such it is not relevant in the scope of the game. 
 
-Industry requires extension(s): [Glass](#extension_6) [Ammonia](#extension_1) 
+Industry requires extension(s): [Glass](#extension_7) [Ammonia](#extension_1) 
 
 Industry is not available with these extension: [Coke and Sulphur](#extension_4) 
 
@@ -3367,7 +3796,7 @@ Color in the overview map: <span style="background-color:#949594;">&nbsp;&nbsp;&
 | [Quicklime](#cargo_QLME) |  |
 
 
-<a name="industry_68"></a>
+<a name="industry_81"></a>
 ### Integrated Steel Mill
 
 <img src="integrated_steel_mill.png" alt="Integrated Steel Mill">
@@ -3378,7 +3807,7 @@ While there are multiple different variants of producing steel out of iron ore, 
 
 Industry requires extension(s): [Coke and Sulphur](#extension_4) [Ammonia](#extension_1) 
 
-Industry is not available with these extension: [Glass](#extension_6) 
+Industry is not available with these extension: [Glass](#extension_7) 
 
 Industry will only spawn after 1800.
 This restriction is also valid for funding the industry.
@@ -3392,7 +3821,7 @@ Color in the overview map: <span style="background-color:#949594;">&nbsp;&nbsp;&
 | [Oxygen](#cargo_O2__) |  |
 
 
-<a name="industry_69"></a>
+<a name="industry_82"></a>
 ### Integrated Steel Mill
 
 <img src="integrated_steel_mill.png" alt="Integrated Steel Mill">
@@ -3401,7 +3830,7 @@ Historically, steel production was a key driver of industrialization in the 19th
 
 While there are multiple different variants of producing steel out of iron ore, this set only contains the modern variant of the integrated steel mill. There are several steps to create steel out of iron ore, starting with a blast furnace, but molten pig iron is not transported over long distances, and as such it is not relevant in the scope of the game. 
 
-Industry requires extension(s): [Glass](#extension_6) [Coke and Sulphur](#extension_4) [Ammonia](#extension_1) 
+Industry requires extension(s): [Glass](#extension_7) [Coke and Sulphur](#extension_4) [Ammonia](#extension_1) 
 
 Industry will only spawn after 1800.
 This restriction is also valid for funding the industry.
@@ -3416,7 +3845,7 @@ Color in the overview map: <span style="background-color:#949594;">&nbsp;&nbsp;&
 | [Quicklime](#cargo_QLME) |  |
 
 
-<a name="industry_70"></a>
+<a name="industry_83"></a>
 ### Iron Ore Mine
 
 <img src="iron_ore_mine.png" alt="Iron Ore Mine">
@@ -3437,14 +3866,14 @@ Industry is generated with limited resources and will close down once these are 
 |  | [Iron Ore](#cargo_IORE) |
 
 
-<a name="industry_71"></a>
+<a name="industry_84"></a>
 ### Lime Kiln
 
 <img src="lime_kiln.png" alt="Lime Kiln">
 
 A lime kiln is a kind of oven used for the process of calcination of limestone. This reaction turns limestone into so-called quicklime. Chemically speaking, calcium carbonate is turned into calcium oxide. Note that the lime is not burned, but merely subjected to lots of heat. This process has been known for thousands of years, with quicklime being a key ingredient in the production of cement. The kiln is typically heated by burning all sorts of fossil fuels, which adds to the already sum of carbon dioxide emissions inherent to the reaction. 
 
-Industry requires extension(s): [Glass](#extension_6) 
+Industry requires extension(s): [Glass](#extension_7) 
 
 Industry is not available with these extension: [Coke and Sulphur](#extension_4) 
 
@@ -3456,14 +3885,14 @@ Color in the overview map: <span style="background-color:#8c68fc;">&nbsp;&nbsp;&
 | [Limestone](#cargo_LIME) | [Quicklime](#cargo_QLME) |
 
 
-<a name="industry_72"></a>
+<a name="industry_85"></a>
 ### Lime Kiln
 
 <img src="lime_kiln.png" alt="Lime Kiln">
 
 A lime kiln is a kind of oven used for the process of calcination of limestone. This reaction turns limestone into so-called quicklime. Chemically speaking, calcium carbonate is turned into calcium oxide. Note that the lime is not burned, but merely subjected to lots of heat. This process has been known for thousands of years, with quicklime being a key ingredient in the production of cement. The kiln is typically heated by burning all sorts of fossil fuels, which adds to the already sum of carbon dioxide emissions inherent to the reaction. 
 
-Industry requires extension(s): [Glass](#extension_6) [Coke and Sulphur](#extension_4) 
+Industry requires extension(s): [Glass](#extension_7) [Coke and Sulphur](#extension_4) 
 
 
 Color in the overview map: <span style="background-color:#8c68fc;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -3474,7 +3903,7 @@ Color in the overview map: <span style="background-color:#8c68fc;">&nbsp;&nbsp;&
 | [Limestone](#cargo_LIME) |  |
 
 
-<a name="industry_73"></a>
+<a name="industry_86"></a>
 ### Limestone Mine
 
 <img src="limestone_mine.png" alt="Limestone Mine">
@@ -3495,7 +3924,7 @@ Industry is generated with limited resources and will close down once these are 
 |  | [Limestone](#cargo_LIME) |
 
 
-<a name="industry_74"></a>
+<a name="industry_87"></a>
 ### Meatpacking Plant
 
 <img src="sand_pit.png" alt="Meatpacking Plant">
@@ -3504,7 +3933,7 @@ Meatpacking plants, in the scope of the set, are industries where livestock is s
 
 Industry requires extension(s): [Food Industries](#extension_5) 
 
-Industry is not available with these extension: [Packaging Industries](#extension_8) 
+Industry is not available with these extension: [Packaging Industries](#extension_9) 
 
 
 Color in the overview map: <span style="background-color:#b09c6c;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -3514,14 +3943,14 @@ Color in the overview map: <span style="background-color:#b09c6c;">&nbsp;&nbsp;&
 | [Livestock](#cargo_LVST) | [Food](#cargo_FOOD) |
 
 
-<a name="industry_75"></a>
+<a name="industry_88"></a>
 ### Meatpacking Plant
 
 <img src="sand_pit.png" alt="Meatpacking Plant">
 
 Meatpacking plants, in the scope of the set, are industries where livestock is slaughtered and processed, mainly resulting in meat for human consumption. While slaughtering animals for the production of meat has been done for thousands of years, the industrialized mass production that began in the 19th century introduced a new level of production volume. The introduction of effective cooling allowed the transportation of meat over long distances, in turn allowing the concentration of the production to large centralized stockyards. 
 
-Industry requires extension(s): [Food Industries](#extension_5) [Packaging Industries](#extension_8) 
+Industry requires extension(s): [Food Industries](#extension_5) [Packaging Industries](#extension_9) 
 
 
 Color in the overview map: <span style="background-color:#b09c6c;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -3534,14 +3963,14 @@ Industry requires the raw materials printed in black to produce anything. Raw ma
 | [Packaging](#cargo_MNSP) |  |
 
 
-<a name="industry_76"></a>
+<a name="industry_89"></a>
 ### Oil Refinery
 
 <img src="oil_refinery.png" alt="Oil Refinery">
 
 Oil refineries split up crude oil into its different components, which in turn are relevant base materials for the chemical industry. The refineries not only produce a variety of fuels, but also liquid gas, lubricants and heating oil. Additionally, the crude oil is filtered and sulphuric compounds are removed. A real refinery then has subsequent steps and processes to further split up the products of the first stage, so that a refinery can produce a huge variety of compounts. In the set, these additional steps have been moved out into their own industries (steam reformer and steam cracker), so that the player can control how much fuel, hydrogen and ethylen are to be produced. 
 
-Industry requires extension(s): [Organic Chemistry](#extension_7) 
+Industry requires extension(s): [Organic Chemistry](#extension_8) 
 
 Industry is not available with these extension: [Coke and Sulphur](#extension_4) 
 
@@ -3556,14 +3985,14 @@ Color in the overview map: <span style="background-color:#fcfc00;">&nbsp;&nbsp;&
 |  | [Naphtha](#cargo_RFPR) |
 
 
-<a name="industry_77"></a>
+<a name="industry_90"></a>
 ### Oil Refinery
 
 <img src="oil_refinery.png" alt="Oil Refinery">
 
 Oil refineries split up crude oil into its different components, which in turn are relevant base materials for the chemical industry. The refineries not only produce a variety of fuels, but also liquid gas, lubricants and heating oil. Additionally, the crude oil is filtered and sulphuric compounds are removed. A real refinery then has subsequent steps and processes to further split up the products of the first stage, so that a refinery can produce a huge variety of compounts. In the set, these additional steps have been moved out into their own industries (steam reformer and steam cracker), so that the player can control how much fuel, hydrogen and ethylen are to be produced. 
 
-Industry requires extension(s): [Organic Chemistry](#extension_7) [Coke and Sulphur](#extension_4) 
+Industry requires extension(s): [Organic Chemistry](#extension_8) [Coke and Sulphur](#extension_4) 
 
 Industry will only spawn after 1860.
 This restriction is also valid for funding the industry.
@@ -3577,7 +4006,7 @@ Color in the overview map: <span style="background-color:#fcfc00;">&nbsp;&nbsp;&
 |  | [Schwefel](#cargo_SULP) |
 
 
-<a name="industry_78"></a>
+<a name="industry_91"></a>
 ### Oil Rig
 
 <img src="oil_rig.png" alt="Oil Rig">
@@ -3599,7 +4028,7 @@ Industry is generated with limited resources and will close down once these are 
 |  | [Passengers](#cargo_PASS) |
 
 
-<a name="industry_79"></a>
+<a name="industry_92"></a>
 ### Oil Wells
 
 <img src="oil_well.png" alt="Oil Wells">
@@ -3618,7 +4047,7 @@ Industry is generated with limited resources and will close down once these are 
 |  | [Oil](#cargo_OIL_) |
 
 
-<a name="industry_80"></a>
+<a name="industry_93"></a>
 ### Ore Smelter
 
 <img src="ore_smelter.png" alt="Ore Smelter">
@@ -3627,7 +4056,7 @@ Copper compounds contain other substances such as sulphur and iron, which have t
 
 Industry requires extension(s): [Coke and Sulphur](#extension_4) 
 
-Industry is not available with these extension: [Painting Industries](#extension_9) [Ammonia](#extension_1) 
+Industry is not available with these extension: [Painting Industries](#extension_10) [Ammonia](#extension_1) 
 
 Industry will only spawn after 1800.
 This restriction is also valid for funding the industry.
@@ -3640,14 +4069,14 @@ Color in the overview map: <span style="background-color:#444c5c;">&nbsp;&nbsp;&
 | [Pyrite Ore](#cargo_PORE) | [Schwefel](#cargo_SULP) |
 
 
-<a name="industry_81"></a>
+<a name="industry_94"></a>
 ### Ore Smelter
 
 <img src="ore_smelter.png" alt="Ore Smelter">
 
 Copper compounds contain other substances such as sulphur and iron, which have to be split up to get pure copper. This is achieved in the ore smelter. This process results in iron-sulphur compounds and basic copper, which is then further refined using electrolysis to pure copper. In real plants, both process steps are combined to reduce energy consumption. In the game, both steps are split into their own industries to better simulate the transport tasks for each step. 
 
-Industry requires extension(s): [Coke and Sulphur](#extension_4) [Painting Industries](#extension_9) 
+Industry requires extension(s): [Coke and Sulphur](#extension_4) [Painting Industries](#extension_10) 
 
 Industry is not available with these extension: [Ammonia](#extension_1) 
 
@@ -3663,7 +4092,7 @@ Color in the overview map: <span style="background-color:#444c5c;">&nbsp;&nbsp;&
 |  | [Schwefel](#cargo_SULP) |
 
 
-<a name="industry_82"></a>
+<a name="industry_95"></a>
 ### Ore Smelter
 
 <img src="ore_smelter.png" alt="Ore Smelter">
@@ -3672,7 +4101,7 @@ Copper compounds contain other substances such as sulphur and iron, which have t
 
 Industry requires extension(s): [Coke and Sulphur](#extension_4) [Ammonia](#extension_1) 
 
-Industry is not available with these extension: [Painting Industries](#extension_9) 
+Industry is not available with these extension: [Painting Industries](#extension_10) 
 
 Industry will only spawn after 1800.
 This restriction is also valid for funding the industry.
@@ -3686,14 +4115,14 @@ Color in the overview map: <span style="background-color:#444c5c;">&nbsp;&nbsp;&
 | [Pyrite Ore](#cargo_PORE) |  |
 
 
-<a name="industry_83"></a>
+<a name="industry_96"></a>
 ### Ore Smelter
 
 <img src="ore_smelter.png" alt="Ore Smelter">
 
 Copper compounds contain other substances such as sulphur and iron, which have to be split up to get pure copper. This is achieved in the ore smelter. This process results in iron-sulphur compounds and basic copper, which is then further refined using electrolysis to pure copper. In real plants, both process steps are combined to reduce energy consumption. In the game, both steps are split into their own industries to better simulate the transport tasks for each step. 
 
-Industry requires extension(s): [Coke and Sulphur](#extension_4) [Painting Industries](#extension_9) [Ammonia](#extension_1) 
+Industry requires extension(s): [Coke and Sulphur](#extension_4) [Painting Industries](#extension_10) [Ammonia](#extension_1) 
 
 Industry will only spawn after 1800.
 This restriction is also valid for funding the industry.
@@ -3707,16 +4136,16 @@ Color in the overview map: <span style="background-color:#444c5c;">&nbsp;&nbsp;&
 | [Pyrite Ore](#cargo_PORE) | [Schwefel](#cargo_SULP) |
 
 
-<a name="industry_84"></a>
+<a name="industry_97"></a>
 ### Packaging Plant
 
 <img src="packaging_plant.png" alt="Packaging Plant">
 
 The packaging plant produces all sorts of packaging from various materials, be it plastics or aluminium. This plant is therefore paramount in ensuring maximum production levels for a variety of other industries, as with packaging, their output will be reduced considerably. 
 
-Industry requires extension(s): [Packaging Industries](#extension_8) 
+Industry requires extension(s): [Packaging Industries](#extension_9) 
 
-Industry is not available with these extension: [Aluminium](#extension_0) [Glass](#extension_6) [Paper](#extension_10) 
+Industry is not available with these extension: [Aluminium](#extension_0) [Glass](#extension_7) [Paper](#extension_11) 
 
 Industry will only spawn after 1930.
 This restriction is also valid for funding the industry.
@@ -3730,16 +4159,16 @@ Industry will start producing as soon as any of the required cargos is available
 | [Plastics](#cargo_PLAS) | [Packaging](#cargo_MNSP) |
 
 
-<a name="industry_85"></a>
+<a name="industry_98"></a>
 ### Packaging Plant
 
 <img src="packaging_plant.png" alt="Packaging Plant">
 
 The packaging plant produces all sorts of packaging from various materials, be it plastics or aluminium. This plant is therefore paramount in ensuring maximum production levels for a variety of other industries, as with packaging, their output will be reduced considerably. 
 
-Industry requires extension(s): [Packaging Industries](#extension_8) [Aluminium](#extension_0) 
+Industry requires extension(s): [Packaging Industries](#extension_9) [Aluminium](#extension_0) 
 
-Industry is not available with these extension: [Glass](#extension_6) [Paper](#extension_10) 
+Industry is not available with these extension: [Glass](#extension_7) [Paper](#extension_11) 
 
 Industry will only spawn after 1930.
 This restriction is also valid for funding the industry.
@@ -3754,16 +4183,16 @@ Industry will start producing as soon as any of the required cargos is available
 | [Plastics](#cargo_PLAS) |  |
 
 
-<a name="industry_86"></a>
+<a name="industry_99"></a>
 ### Packaging Plant
 
 <img src="packaging_plant.png" alt="Packaging Plant">
 
 The packaging plant produces all sorts of packaging from various materials, be it plastics or aluminium. This plant is therefore paramount in ensuring maximum production levels for a variety of other industries, as with packaging, their output will be reduced considerably. 
 
-Industry requires extension(s): [Packaging Industries](#extension_8) [Glass](#extension_6) 
+Industry requires extension(s): [Packaging Industries](#extension_9) [Glass](#extension_7) 
 
-Industry is not available with these extension: [Aluminium](#extension_0) [Paper](#extension_10) 
+Industry is not available with these extension: [Aluminium](#extension_0) [Paper](#extension_11) 
 
 Industry will only spawn after 1930.
 This restriction is also valid for funding the industry.
@@ -3778,16 +4207,16 @@ Industry will start producing as soon as any of the required cargos is available
 | [Plastics](#cargo_PLAS) |  |
 
 
-<a name="industry_87"></a>
+<a name="industry_100"></a>
 ### Packaging Plant
 
 <img src="packaging_plant.png" alt="Packaging Plant">
 
 The packaging plant produces all sorts of packaging from various materials, be it plastics or aluminium. This plant is therefore paramount in ensuring maximum production levels for a variety of other industries, as with packaging, their output will be reduced considerably. 
 
-Industry requires extension(s): [Packaging Industries](#extension_8) [Aluminium](#extension_0) [Glass](#extension_6) 
+Industry requires extension(s): [Packaging Industries](#extension_9) [Aluminium](#extension_0) [Glass](#extension_7) 
 
-Industry is not available with these extension: [Paper](#extension_10) 
+Industry is not available with these extension: [Paper](#extension_11) 
 
 Industry will only spawn after 1930.
 This restriction is also valid for funding the industry.
@@ -3803,16 +4232,16 @@ Industry will start producing as soon as any of the required cargos is available
 | [Plastics](#cargo_PLAS) |  |
 
 
-<a name="industry_88"></a>
+<a name="industry_101"></a>
 ### Packaging Plant
 
 <img src="packaging_plant.png" alt="Packaging Plant">
 
 The packaging plant produces all sorts of packaging from various materials, be it plastics or aluminium. This plant is therefore paramount in ensuring maximum production levels for a variety of other industries, as with packaging, their output will be reduced considerably. 
 
-Industry requires extension(s): [Packaging Industries](#extension_8) [Paper](#extension_10) 
+Industry requires extension(s): [Packaging Industries](#extension_9) [Paper](#extension_11) 
 
-Industry is not available with these extension: [Aluminium](#extension_0) [Glass](#extension_6) 
+Industry is not available with these extension: [Aluminium](#extension_0) [Glass](#extension_7) 
 
 Industry will only spawn after 1930.
 This restriction is also valid for funding the industry.
@@ -3827,16 +4256,16 @@ Industry will start producing as soon as any of the required cargos is available
 | [Plastics](#cargo_PLAS) |  |
 
 
-<a name="industry_89"></a>
+<a name="industry_102"></a>
 ### Packaging Plant
 
 <img src="packaging_plant.png" alt="Packaging Plant">
 
 The packaging plant produces all sorts of packaging from various materials, be it plastics or aluminium. This plant is therefore paramount in ensuring maximum production levels for a variety of other industries, as with packaging, their output will be reduced considerably. 
 
-Industry requires extension(s): [Packaging Industries](#extension_8) [Aluminium](#extension_0) [Paper](#extension_10) 
+Industry requires extension(s): [Packaging Industries](#extension_9) [Aluminium](#extension_0) [Paper](#extension_11) 
 
-Industry is not available with these extension: [Glass](#extension_6) 
+Industry is not available with these extension: [Glass](#extension_7) 
 
 Industry will only spawn after 1930.
 This restriction is also valid for funding the industry.
@@ -3852,14 +4281,14 @@ Industry will start producing as soon as any of the required cargos is available
 | [Plastics](#cargo_PLAS) |  |
 
 
-<a name="industry_90"></a>
+<a name="industry_103"></a>
 ### Packaging Plant
 
 <img src="packaging_plant.png" alt="Packaging Plant">
 
 The packaging plant produces all sorts of packaging from various materials, be it plastics or aluminium. This plant is therefore paramount in ensuring maximum production levels for a variety of other industries, as with packaging, their output will be reduced considerably. 
 
-Industry requires extension(s): [Packaging Industries](#extension_8) [Glass](#extension_6) [Paper](#extension_10) 
+Industry requires extension(s): [Packaging Industries](#extension_9) [Glass](#extension_7) [Paper](#extension_11) 
 
 Industry is not available with these extension: [Aluminium](#extension_0) 
 
@@ -3877,14 +4306,14 @@ Industry will start producing as soon as any of the required cargos is available
 | [Plastics](#cargo_PLAS) |  |
 
 
-<a name="industry_91"></a>
+<a name="industry_104"></a>
 ### Packaging Plant
 
 <img src="packaging_plant.png" alt="Packaging Plant">
 
 The packaging plant produces all sorts of packaging from various materials, be it plastics or aluminium. This plant is therefore paramount in ensuring maximum production levels for a variety of other industries, as with packaging, their output will be reduced considerably. 
 
-Industry requires extension(s): [Packaging Industries](#extension_8) [Aluminium](#extension_0) [Glass](#extension_6) [Paper](#extension_10) 
+Industry requires extension(s): [Packaging Industries](#extension_9) [Aluminium](#extension_0) [Glass](#extension_7) [Paper](#extension_11) 
 
 Industry will only spawn after 1930.
 This restriction is also valid for funding the industry.
@@ -3901,14 +4330,14 @@ Industry will start producing as soon as any of the required cargos is available
 | [Plastics](#cargo_PLAS) |  |
 
 
-<a name="industry_92"></a>
+<a name="industry_105"></a>
 ### Paint Factory
 
 <img src="paint_factory.png" alt="Paint Factory">
 
 Historically, factories producing paint, dyes, pigments and related products have always been a huge part of the chemical industry in Germany. Some of the most well-known chemical companies (e.g. Agfa, BASF, Bayer, Hoechst) started as paint producers or had or still have at least a huge portfolio including painting related products. These companies belong(ed) to the largest chemical companies in the world and are a relevant economic power in Germany. As such, these sorts of factories just have to be present in this set. 
 
-Industry requires extension(s): [Painting Industries](#extension_9) 
+Industry requires extension(s): [Painting Industries](#extension_10) 
 
 Industry is not available with these extension: [Building Industries](#extension_3) [Coke and Sulphur](#extension_4) 
 
@@ -3926,14 +4355,14 @@ Industry will start producing as soon as any of the required cargos is available
 | [Iron Ore](#cargo_IORE) |  |
 
 
-<a name="industry_93"></a>
+<a name="industry_106"></a>
 ### Paint Factory
 
 <img src="paint_factory.png" alt="Paint Factory">
 
 Historically, factories producing paint, dyes, pigments and related products have always been a huge part of the chemical industry in Germany. Some of the most well-known chemical companies (e.g. Agfa, BASF, Bayer, Hoechst) started as paint producers or had or still have at least a huge portfolio including painting related products. These companies belong(ed) to the largest chemical companies in the world and are a relevant economic power in Germany. As such, these sorts of factories just have to be present in this set. 
 
-Industry requires extension(s): [Painting Industries](#extension_9) [Building Industries](#extension_3) 
+Industry requires extension(s): [Painting Industries](#extension_10) [Building Industries](#extension_3) 
 
 Industry is not available with these extension: [Coke and Sulphur](#extension_4) 
 
@@ -3952,14 +4381,14 @@ Industry will start producing as soon as any of the required cargos is available
 | [Limestone](#cargo_LIME) |  |
 
 
-<a name="industry_94"></a>
+<a name="industry_107"></a>
 ### Paint Factory
 
 <img src="paint_factory.png" alt="Paint Factory">
 
 Historically, factories producing paint, dyes, pigments and related products have always been a huge part of the chemical industry in Germany. Some of the most well-known chemical companies (e.g. Agfa, BASF, Bayer, Hoechst) started as paint producers or had or still have at least a huge portfolio including painting related products. These companies belong(ed) to the largest chemical companies in the world and are a relevant economic power in Germany. As such, these sorts of factories just have to be present in this set. 
 
-Industry requires extension(s): [Painting Industries](#extension_9) [Coke and Sulphur](#extension_4) 
+Industry requires extension(s): [Painting Industries](#extension_10) [Coke and Sulphur](#extension_4) 
 
 Industry is not available with these extension: [Building Industries](#extension_3) 
 
@@ -3978,14 +4407,14 @@ Industry will start producing as soon as any of the required cargos is available
 | [Iron Ore](#cargo_IORE) |  |
 
 
-<a name="industry_95"></a>
+<a name="industry_108"></a>
 ### Paint Factory
 
 <img src="paint_factory.png" alt="Paint Factory">
 
 Historically, factories producing paint, dyes, pigments and related products have always been a huge part of the chemical industry in Germany. Some of the most well-known chemical companies (e.g. Agfa, BASF, Bayer, Hoechst) started as paint producers or had or still have at least a huge portfolio including painting related products. These companies belong(ed) to the largest chemical companies in the world and are a relevant economic power in Germany. As such, these sorts of factories just have to be present in this set. 
 
-Industry requires extension(s): [Painting Industries](#extension_9) [Building Industries](#extension_3) [Coke and Sulphur](#extension_4) 
+Industry requires extension(s): [Painting Industries](#extension_10) [Building Industries](#extension_3) [Coke and Sulphur](#extension_4) 
 
 Industry will only spawn after 1850.
 This restriction is also valid for funding the industry.
@@ -4003,14 +4432,14 @@ Industry will start producing as soon as any of the required cargos is available
 | [Limestone](#cargo_LIME) |  |
 
 
-<a name="industry_96"></a>
+<a name="industry_109"></a>
 ### Paper Mill
 
 <img src="paper_mill.png" alt="Paper Mill">
 
 The paper mill splits up wood using various chemicals, to retrieve cellulose fibers which are the basis for the production of paper. The process of making paper has been known for thousands of years, but the modern paper production only started in the late 19th century with advances in chemistry. Germany is one of the biggest producers of paper in the world, and the biggest one in Europe. The paper mill in the set shows such a paper mill that uses chemicals to break down the wood and to bleach the resulting paper. 
 
-Industry requires extension(s): [Paper](#extension_10) 
+Industry requires extension(s): [Paper](#extension_11) 
 
 Industry will only spawn after 1900.
 This restriction is also valid for funding the industry.
@@ -4024,7 +4453,7 @@ Color in the overview map: <span style="background-color:#9ca0ac;">&nbsp;&nbsp;&
 | [Wood](#cargo_WOOD) |  |
 
 
-<a name="industry_97"></a>
+<a name="industry_110"></a>
 ### Petrol Station
 
 <img src="petrol_station.png" alt="Petrol Station">
@@ -4041,7 +4470,7 @@ Color in the overview map: <span style="background-color:#78a488;">&nbsp;&nbsp;&
 | [Petrol](#cargo_PETR) |  |
 
 
-<a name="industry_98"></a>
+<a name="industry_111"></a>
 ### Pharmaceutical Plant
 
 <img src="pharmaceutical_plant.png" alt="Pharmaceutical Plant">
@@ -4050,7 +4479,7 @@ Pharmaceutical products such as medications and vaccines are a major economic fa
 
 Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) 
 
-Industry is not available with these extension: [Packaging Industries](#extension_8) [Organic Chemistry](#extension_7) [Coke and Sulphur](#extension_4) [Ammonia](#extension_1) 
+Industry is not available with these extension: [Packaging Industries](#extension_9) [Organic Chemistry](#extension_8) [Coke and Sulphur](#extension_4) [Ammonia](#extension_1) 
 
 Industry will only spawn after 1900.
 This restriction is also valid for funding the industry.
@@ -4065,16 +4494,16 @@ Industry will start producing as soon as any of the required cargos is available
 | [Hydrogen](#cargo_H2__) |  |
 
 
-<a name="industry_99"></a>
+<a name="industry_112"></a>
 ### Pharmaceutical Plant
 
 <img src="pharmaceutical_plant.png" alt="Pharmaceutical Plant">
 
 Pharmaceutical products such as medications and vaccines are a major economic factor in Germany. This goes back to the late 19th century, when breakthroughs in chemistry allowed for the creation of various new drugs. To give just one example: Bayer, a company that had started by producting dyes, developed Aspirin - today they are one of the largest producers of pharmaceuticals in the world. 
 
-Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Packaging Industries](#extension_8) 
+Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Packaging Industries](#extension_9) 
 
-Industry is not available with these extension: [Organic Chemistry](#extension_7) [Coke and Sulphur](#extension_4) [Ammonia](#extension_1) 
+Industry is not available with these extension: [Organic Chemistry](#extension_8) [Coke and Sulphur](#extension_4) [Ammonia](#extension_1) 
 
 Industry will only spawn after 1900.
 This restriction is also valid for funding the industry.
@@ -4090,16 +4519,16 @@ Industry requires any of the raw materials printed in black to produce anything.
 | [Packaging](#cargo_MNSP) |  |
 
 
-<a name="industry_100"></a>
+<a name="industry_113"></a>
 ### Pharmaceutical Plant
 
 <img src="pharmaceutical_plant.png" alt="Pharmaceutical Plant">
 
 Pharmaceutical products such as medications and vaccines are a major economic factor in Germany. This goes back to the late 19th century, when breakthroughs in chemistry allowed for the creation of various new drugs. To give just one example: Bayer, a company that had started by producting dyes, developed Aspirin - today they are one of the largest producers of pharmaceuticals in the world. 
 
-Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Organic Chemistry](#extension_7) 
+Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Organic Chemistry](#extension_8) 
 
-Industry is not available with these extension: [Packaging Industries](#extension_8) [Coke and Sulphur](#extension_4) [Ammonia](#extension_1) 
+Industry is not available with these extension: [Packaging Industries](#extension_9) [Coke and Sulphur](#extension_4) [Ammonia](#extension_1) 
 
 Industry will only spawn after 1900.
 This restriction is also valid for funding the industry.
@@ -4116,14 +4545,14 @@ Industry will start producing as soon as any of the required cargos is available
 | [Naphtha](#cargo_RFPR) |  |
 
 
-<a name="industry_101"></a>
+<a name="industry_114"></a>
 ### Pharmaceutical Plant
 
 <img src="pharmaceutical_plant.png" alt="Pharmaceutical Plant">
 
 Pharmaceutical products such as medications and vaccines are a major economic factor in Germany. This goes back to the late 19th century, when breakthroughs in chemistry allowed for the creation of various new drugs. To give just one example: Bayer, a company that had started by producting dyes, developed Aspirin - today they are one of the largest producers of pharmaceuticals in the world. 
 
-Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Packaging Industries](#extension_8) [Organic Chemistry](#extension_7) 
+Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Packaging Industries](#extension_9) [Organic Chemistry](#extension_8) 
 
 Industry is not available with these extension: [Coke and Sulphur](#extension_4) [Ammonia](#extension_1) 
 
@@ -4143,7 +4572,7 @@ Industry requires any of the raw materials printed in black to produce anything.
 | [Naphtha](#cargo_RFPR) |  |
 
 
-<a name="industry_102"></a>
+<a name="industry_115"></a>
 ### Pharmaceutical Plant
 
 <img src="pharmaceutical_plant.png" alt="Pharmaceutical Plant">
@@ -4152,7 +4581,7 @@ Pharmaceutical products such as medications and vaccines are a major economic fa
 
 Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Coke and Sulphur](#extension_4) 
 
-Industry is not available with these extension: [Packaging Industries](#extension_8) [Organic Chemistry](#extension_7) [Ammonia](#extension_1) 
+Industry is not available with these extension: [Packaging Industries](#extension_9) [Organic Chemistry](#extension_8) [Ammonia](#extension_1) 
 
 Industry will only spawn after 1900.
 This restriction is also valid for funding the industry.
@@ -4168,16 +4597,16 @@ Industry will start producing as soon as any of the required cargos is available
 | [Hydrogen](#cargo_H2__) |  |
 
 
-<a name="industry_103"></a>
+<a name="industry_116"></a>
 ### Pharmaceutical Plant
 
 <img src="pharmaceutical_plant.png" alt="Pharmaceutical Plant">
 
 Pharmaceutical products such as medications and vaccines are a major economic factor in Germany. This goes back to the late 19th century, when breakthroughs in chemistry allowed for the creation of various new drugs. To give just one example: Bayer, a company that had started by producting dyes, developed Aspirin - today they are one of the largest producers of pharmaceuticals in the world. 
 
-Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Packaging Industries](#extension_8) [Coke and Sulphur](#extension_4) 
+Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Packaging Industries](#extension_9) [Coke and Sulphur](#extension_4) 
 
-Industry is not available with these extension: [Organic Chemistry](#extension_7) [Ammonia](#extension_1) 
+Industry is not available with these extension: [Organic Chemistry](#extension_8) [Ammonia](#extension_1) 
 
 Industry will only spawn after 1900.
 This restriction is also valid for funding the industry.
@@ -4194,16 +4623,16 @@ Industry requires any of the raw materials printed in black to produce anything.
 | [Packaging](#cargo_MNSP) |  |
 
 
-<a name="industry_104"></a>
+<a name="industry_117"></a>
 ### Pharmaceutical Plant
 
 <img src="pharmaceutical_plant.png" alt="Pharmaceutical Plant">
 
 Pharmaceutical products such as medications and vaccines are a major economic factor in Germany. This goes back to the late 19th century, when breakthroughs in chemistry allowed for the creation of various new drugs. To give just one example: Bayer, a company that had started by producting dyes, developed Aspirin - today they are one of the largest producers of pharmaceuticals in the world. 
 
-Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Organic Chemistry](#extension_7) [Coke and Sulphur](#extension_4) 
+Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Organic Chemistry](#extension_8) [Coke and Sulphur](#extension_4) 
 
-Industry is not available with these extension: [Packaging Industries](#extension_8) [Ammonia](#extension_1) 
+Industry is not available with these extension: [Packaging Industries](#extension_9) [Ammonia](#extension_1) 
 
 Industry will only spawn after 1900.
 This restriction is also valid for funding the industry.
@@ -4221,14 +4650,14 @@ Industry will start producing as soon as any of the required cargos is available
 | [Naphtha](#cargo_RFPR) |  |
 
 
-<a name="industry_105"></a>
+<a name="industry_118"></a>
 ### Pharmaceutical Plant
 
 <img src="pharmaceutical_plant.png" alt="Pharmaceutical Plant">
 
 Pharmaceutical products such as medications and vaccines are a major economic factor in Germany. This goes back to the late 19th century, when breakthroughs in chemistry allowed for the creation of various new drugs. To give just one example: Bayer, a company that had started by producting dyes, developed Aspirin - today they are one of the largest producers of pharmaceuticals in the world. 
 
-Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Packaging Industries](#extension_8) [Organic Chemistry](#extension_7) [Coke and Sulphur](#extension_4) 
+Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Packaging Industries](#extension_9) [Organic Chemistry](#extension_8) [Coke and Sulphur](#extension_4) 
 
 Industry is not available with these extension: [Ammonia](#extension_1) 
 
@@ -4249,7 +4678,7 @@ Industry requires any of the raw materials printed in black to produce anything.
 | [Naphtha](#cargo_RFPR) |  |
 
 
-<a name="industry_106"></a>
+<a name="industry_119"></a>
 ### Pharmaceutical Plant
 
 <img src="pharmaceutical_plant.png" alt="Pharmaceutical Plant">
@@ -4258,7 +4687,7 @@ Pharmaceutical products such as medications and vaccines are a major economic fa
 
 Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Ammonia](#extension_1) 
 
-Industry is not available with these extension: [Packaging Industries](#extension_8) [Organic Chemistry](#extension_7) [Coke and Sulphur](#extension_4) 
+Industry is not available with these extension: [Packaging Industries](#extension_9) [Organic Chemistry](#extension_8) [Coke and Sulphur](#extension_4) 
 
 Industry will only spawn after 1900.
 This restriction is also valid for funding the industry.
@@ -4275,16 +4704,16 @@ Industry will start producing as soon as any of the required cargos is available
 | [Oxygen](#cargo_O2__) |  |
 
 
-<a name="industry_107"></a>
+<a name="industry_120"></a>
 ### Pharmaceutical Plant
 
 <img src="pharmaceutical_plant.png" alt="Pharmaceutical Plant">
 
 Pharmaceutical products such as medications and vaccines are a major economic factor in Germany. This goes back to the late 19th century, when breakthroughs in chemistry allowed for the creation of various new drugs. To give just one example: Bayer, a company that had started by producting dyes, developed Aspirin - today they are one of the largest producers of pharmaceuticals in the world. 
 
-Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Packaging Industries](#extension_8) [Ammonia](#extension_1) 
+Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Packaging Industries](#extension_9) [Ammonia](#extension_1) 
 
-Industry is not available with these extension: [Organic Chemistry](#extension_7) [Coke and Sulphur](#extension_4) 
+Industry is not available with these extension: [Organic Chemistry](#extension_8) [Coke and Sulphur](#extension_4) 
 
 Industry will only spawn after 1900.
 This restriction is also valid for funding the industry.
@@ -4302,16 +4731,16 @@ Industry requires any of the raw materials printed in black to produce anything.
 | [Oxygen](#cargo_O2__) |  |
 
 
-<a name="industry_108"></a>
+<a name="industry_121"></a>
 ### Pharmaceutical Plant
 
 <img src="pharmaceutical_plant.png" alt="Pharmaceutical Plant">
 
 Pharmaceutical products such as medications and vaccines are a major economic factor in Germany. This goes back to the late 19th century, when breakthroughs in chemistry allowed for the creation of various new drugs. To give just one example: Bayer, a company that had started by producting dyes, developed Aspirin - today they are one of the largest producers of pharmaceuticals in the world. 
 
-Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Organic Chemistry](#extension_7) [Ammonia](#extension_1) 
+Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Organic Chemistry](#extension_8) [Ammonia](#extension_1) 
 
-Industry is not available with these extension: [Packaging Industries](#extension_8) [Coke and Sulphur](#extension_4) 
+Industry is not available with these extension: [Packaging Industries](#extension_9) [Coke and Sulphur](#extension_4) 
 
 Industry will only spawn after 1900.
 This restriction is also valid for funding the industry.
@@ -4330,14 +4759,14 @@ Industry will start producing as soon as any of the required cargos is available
 | [Naphtha](#cargo_RFPR) |  |
 
 
-<a name="industry_109"></a>
+<a name="industry_122"></a>
 ### Pharmaceutical Plant
 
 <img src="pharmaceutical_plant.png" alt="Pharmaceutical Plant">
 
 Pharmaceutical products such as medications and vaccines are a major economic factor in Germany. This goes back to the late 19th century, when breakthroughs in chemistry allowed for the creation of various new drugs. To give just one example: Bayer, a company that had started by producting dyes, developed Aspirin - today they are one of the largest producers of pharmaceuticals in the world. 
 
-Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Packaging Industries](#extension_8) [Organic Chemistry](#extension_7) [Ammonia](#extension_1) 
+Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Packaging Industries](#extension_9) [Organic Chemistry](#extension_8) [Ammonia](#extension_1) 
 
 Industry is not available with these extension: [Coke and Sulphur](#extension_4) 
 
@@ -4359,7 +4788,7 @@ Industry requires any of the raw materials printed in black to produce anything.
 | [Naphtha](#cargo_RFPR) |  |
 
 
-<a name="industry_110"></a>
+<a name="industry_123"></a>
 ### Pharmaceutical Plant
 
 <img src="pharmaceutical_plant.png" alt="Pharmaceutical Plant">
@@ -4368,7 +4797,7 @@ Pharmaceutical products such as medications and vaccines are a major economic fa
 
 Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Coke and Sulphur](#extension_4) [Ammonia](#extension_1) 
 
-Industry is not available with these extension: [Packaging Industries](#extension_8) [Organic Chemistry](#extension_7) 
+Industry is not available with these extension: [Packaging Industries](#extension_9) [Organic Chemistry](#extension_8) 
 
 Industry will only spawn after 1900.
 This restriction is also valid for funding the industry.
@@ -4386,16 +4815,16 @@ Industry will start producing as soon as any of the required cargos is available
 | [Oxygen](#cargo_O2__) |  |
 
 
-<a name="industry_111"></a>
+<a name="industry_124"></a>
 ### Pharmaceutical Plant
 
 <img src="pharmaceutical_plant.png" alt="Pharmaceutical Plant">
 
 Pharmaceutical products such as medications and vaccines are a major economic factor in Germany. This goes back to the late 19th century, when breakthroughs in chemistry allowed for the creation of various new drugs. To give just one example: Bayer, a company that had started by producting dyes, developed Aspirin - today they are one of the largest producers of pharmaceuticals in the world. 
 
-Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Packaging Industries](#extension_8) [Coke and Sulphur](#extension_4) [Ammonia](#extension_1) 
+Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Packaging Industries](#extension_9) [Coke and Sulphur](#extension_4) [Ammonia](#extension_1) 
 
-Industry is not available with these extension: [Organic Chemistry](#extension_7) 
+Industry is not available with these extension: [Organic Chemistry](#extension_8) 
 
 Industry will only spawn after 1900.
 This restriction is also valid for funding the industry.
@@ -4414,16 +4843,16 @@ Industry requires any of the raw materials printed in black to produce anything.
 | [Oxygen](#cargo_O2__) |  |
 
 
-<a name="industry_112"></a>
+<a name="industry_125"></a>
 ### Pharmaceutical Plant
 
 <img src="pharmaceutical_plant.png" alt="Pharmaceutical Plant">
 
 Pharmaceutical products such as medications and vaccines are a major economic factor in Germany. This goes back to the late 19th century, when breakthroughs in chemistry allowed for the creation of various new drugs. To give just one example: Bayer, a company that had started by producting dyes, developed Aspirin - today they are one of the largest producers of pharmaceuticals in the world. 
 
-Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Organic Chemistry](#extension_7) [Coke and Sulphur](#extension_4) [Ammonia](#extension_1) 
+Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Organic Chemistry](#extension_8) [Coke and Sulphur](#extension_4) [Ammonia](#extension_1) 
 
-Industry is not available with these extension: [Packaging Industries](#extension_8) 
+Industry is not available with these extension: [Packaging Industries](#extension_9) 
 
 Industry will only spawn after 1900.
 This restriction is also valid for funding the industry.
@@ -4443,14 +4872,14 @@ Industry will start producing as soon as any of the required cargos is available
 | [Naphtha](#cargo_RFPR) |  |
 
 
-<a name="industry_113"></a>
+<a name="industry_126"></a>
 ### Pharmaceutical Plant
 
 <img src="pharmaceutical_plant.png" alt="Pharmaceutical Plant">
 
 Pharmaceutical products such as medications and vaccines are a major economic factor in Germany. This goes back to the late 19th century, when breakthroughs in chemistry allowed for the creation of various new drugs. To give just one example: Bayer, a company that had started by producting dyes, developed Aspirin - today they are one of the largest producers of pharmaceuticals in the world. 
 
-Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Packaging Industries](#extension_8) [Organic Chemistry](#extension_7) [Coke and Sulphur](#extension_4) [Ammonia](#extension_1) 
+Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Packaging Industries](#extension_9) [Organic Chemistry](#extension_8) [Coke and Sulphur](#extension_4) [Ammonia](#extension_1) 
 
 Industry will only spawn after 1900.
 This restriction is also valid for funding the industry.
@@ -4471,14 +4900,14 @@ Industry requires any of the raw materials printed in black to produce anything.
 | [Naphtha](#cargo_RFPR) |  |
 
 
-<a name="industry_114"></a>
+<a name="industry_127"></a>
 ### Plastics Plant
 
 <img src="plastics_plant.png" alt="Plastics Plant">
 
 The plastics plant produces all varieties of synthesized compounds, be it PVC or polyethylene. In Germany, production of synthetic rubber, called Buna, started in the 1930s. The plant site still exists today, belongs to Dow Chemical and still produces plastics. BASF, one of the biggest chemical companies in the world, also invented various plastics throughout the 20th century. 
 
-Industry is not available with these extension: [Basic Inorganic Chemistry](#extension_2) [Painting Industries](#extension_9) [Organic Chemistry](#extension_7) 
+Industry is not available with these extension: [Basic Inorganic Chemistry](#extension_2) [Painting Industries](#extension_10) [Organic Chemistry](#extension_8) 
 
 Industry will only spawn after 1930.
 This restriction is also valid for funding the industry.
@@ -4490,7 +4919,7 @@ Color in the overview map: <span style="background-color:#fcc000;">&nbsp;&nbsp;&
 | [Oil](#cargo_OIL_) | [Plastics](#cargo_PLAS) |
 
 
-<a name="industry_115"></a>
+<a name="industry_128"></a>
 ### Plastics Plant
 
 <img src="plastics_plant.png" alt="Plastics Plant">
@@ -4499,7 +4928,7 @@ The plastics plant produces all varieties of synthesized compounds, be it PVC or
 
 Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) 
 
-Industry is not available with these extension: [Painting Industries](#extension_9) [Organic Chemistry](#extension_7) 
+Industry is not available with these extension: [Painting Industries](#extension_10) [Organic Chemistry](#extension_8) 
 
 Industry will only spawn after 1930.
 This restriction is also valid for funding the industry.
@@ -4512,16 +4941,16 @@ Color in the overview map: <span style="background-color:#fcc000;">&nbsp;&nbsp;&
 | [Oil](#cargo_OIL_) |  |
 
 
-<a name="industry_116"></a>
+<a name="industry_129"></a>
 ### Plastics Plant
 
 <img src="plastics_plant.png" alt="Plastics Plant">
 
 The plastics plant produces all varieties of synthesized compounds, be it PVC or polyethylene. In Germany, production of synthetic rubber, called Buna, started in the 1930s. The plant site still exists today, belongs to Dow Chemical and still produces plastics. BASF, one of the biggest chemical companies in the world, also invented various plastics throughout the 20th century. 
 
-Industry requires extension(s): [Painting Industries](#extension_9) 
+Industry requires extension(s): [Painting Industries](#extension_10) 
 
-Industry is not available with these extension: [Basic Inorganic Chemistry](#extension_2) [Organic Chemistry](#extension_7) 
+Industry is not available with these extension: [Basic Inorganic Chemistry](#extension_2) [Organic Chemistry](#extension_8) 
 
 Industry will only spawn after 1930.
 This restriction is also valid for funding the industry.
@@ -4534,16 +4963,16 @@ Color in the overview map: <span style="background-color:#fcc000;">&nbsp;&nbsp;&
 | [Oil](#cargo_OIL_) |  |
 
 
-<a name="industry_117"></a>
+<a name="industry_130"></a>
 ### Plastics Plant
 
 <img src="plastics_plant.png" alt="Plastics Plant">
 
 The plastics plant produces all varieties of synthesized compounds, be it PVC or polyethylene. In Germany, production of synthetic rubber, called Buna, started in the 1930s. The plant site still exists today, belongs to Dow Chemical and still produces plastics. BASF, one of the biggest chemical companies in the world, also invented various plastics throughout the 20th century. 
 
-Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Painting Industries](#extension_9) 
+Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Painting Industries](#extension_10) 
 
-Industry is not available with these extension: [Organic Chemistry](#extension_7) 
+Industry is not available with these extension: [Organic Chemistry](#extension_8) 
 
 Industry will only spawn after 1930.
 This restriction is also valid for funding the industry.
@@ -4557,16 +4986,16 @@ Color in the overview map: <span style="background-color:#fcc000;">&nbsp;&nbsp;&
 | [Oil](#cargo_OIL_) |  |
 
 
-<a name="industry_118"></a>
+<a name="industry_131"></a>
 ### Plastics Plant
 
 <img src="plastics_plant.png" alt="Plastics Plant">
 
 The plastics plant produces all varieties of synthesized compounds, be it PVC or polyethylene. In Germany, production of synthetic rubber, called Buna, started in the 1930s. The plant site still exists today, belongs to Dow Chemical and still produces plastics. BASF, one of the biggest chemical companies in the world, also invented various plastics throughout the 20th century. 
 
-Industry requires extension(s): [Organic Chemistry](#extension_7) 
+Industry requires extension(s): [Organic Chemistry](#extension_8) 
 
-Industry is not available with these extension: [Basic Inorganic Chemistry](#extension_2) [Painting Industries](#extension_9) 
+Industry is not available with these extension: [Basic Inorganic Chemistry](#extension_2) [Painting Industries](#extension_10) 
 
 Industry will only spawn after 1930.
 This restriction is also valid for funding the industry.
@@ -4578,16 +5007,16 @@ Color in the overview map: <span style="background-color:#fcc000;">&nbsp;&nbsp;&
 | [Ethylene](#cargo_C2H4) | [Plastics](#cargo_PLAS) |
 
 
-<a name="industry_119"></a>
+<a name="industry_132"></a>
 ### Plastics Plant
 
 <img src="plastics_plant.png" alt="Plastics Plant">
 
 The plastics plant produces all varieties of synthesized compounds, be it PVC or polyethylene. In Germany, production of synthetic rubber, called Buna, started in the 1930s. The plant site still exists today, belongs to Dow Chemical and still produces plastics. BASF, one of the biggest chemical companies in the world, also invented various plastics throughout the 20th century. 
 
-Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Organic Chemistry](#extension_7) 
+Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Organic Chemistry](#extension_8) 
 
-Industry is not available with these extension: [Painting Industries](#extension_9) 
+Industry is not available with these extension: [Painting Industries](#extension_10) 
 
 Industry will only spawn after 1930.
 This restriction is also valid for funding the industry.
@@ -4600,14 +5029,14 @@ Color in the overview map: <span style="background-color:#fcc000;">&nbsp;&nbsp;&
 | [Chlorine](#cargo_CHLO) |  |
 
 
-<a name="industry_120"></a>
+<a name="industry_133"></a>
 ### Plastics Plant
 
 <img src="plastics_plant.png" alt="Plastics Plant">
 
 The plastics plant produces all varieties of synthesized compounds, be it PVC or polyethylene. In Germany, production of synthetic rubber, called Buna, started in the 1930s. The plant site still exists today, belongs to Dow Chemical and still produces plastics. BASF, one of the biggest chemical companies in the world, also invented various plastics throughout the 20th century. 
 
-Industry requires extension(s): [Painting Industries](#extension_9) [Organic Chemistry](#extension_7) 
+Industry requires extension(s): [Painting Industries](#extension_10) [Organic Chemistry](#extension_8) 
 
 Industry is not available with these extension: [Basic Inorganic Chemistry](#extension_2) 
 
@@ -4622,14 +5051,14 @@ Color in the overview map: <span style="background-color:#fcc000;">&nbsp;&nbsp;&
 | [Paint](#cargo_COAT) |  |
 
 
-<a name="industry_121"></a>
+<a name="industry_134"></a>
 ### Plastics Plant
 
 <img src="plastics_plant.png" alt="Plastics Plant">
 
 The plastics plant produces all varieties of synthesized compounds, be it PVC or polyethylene. In Germany, production of synthetic rubber, called Buna, started in the 1930s. The plant site still exists today, belongs to Dow Chemical and still produces plastics. BASF, one of the biggest chemical companies in the world, also invented various plastics throughout the 20th century. 
 
-Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Painting Industries](#extension_9) [Organic Chemistry](#extension_7) 
+Industry requires extension(s): [Basic Inorganic Chemistry](#extension_2) [Painting Industries](#extension_10) [Organic Chemistry](#extension_8) 
 
 Industry will only spawn after 1930.
 This restriction is also valid for funding the industry.
@@ -4643,7 +5072,7 @@ Color in the overview map: <span style="background-color:#fcc000;">&nbsp;&nbsp;&
 | [Paint](#cargo_COAT) |  |
 
 
-<a name="industry_122"></a>
+<a name="industry_135"></a>
 ### Port
 
 <img src="port.png" alt="Port">
@@ -4652,7 +5081,7 @@ Ports are centers of trade, and with the German industry dependent on importing 
 
 In the set, the maximum production of harbors is constantly increasing as time goes on. This reflects the fact that ships got bigger and innovations like the switch to containerized transport took place. 
 
-Industry is not available with these extension: [Aluminium](#extension_0) [Painting Industries](#extension_9) [Coke and Sulphur](#extension_4) 
+Industry is not available with these extension: [Aluminium](#extension_0) [Painting Industries](#extension_10) [Coke and Sulphur](#extension_4) 
 
 
 Color in the overview map: <span style="background-color:#fc6c00;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -4664,7 +5093,7 @@ Color in the overview map: <span style="background-color:#fc6c00;">&nbsp;&nbsp;&
 |  | [Oil](#cargo_OIL_) |
 
 
-<a name="industry_123"></a>
+<a name="industry_136"></a>
 ### Port
 
 <img src="port.png" alt="Port">
@@ -4675,7 +5104,7 @@ In the set, the maximum production of harbors is constantly increasing as time g
 
 Industry requires extension(s): [Aluminium](#extension_0) 
 
-Industry is not available with these extension: [Painting Industries](#extension_9) [Coke and Sulphur](#extension_4) 
+Industry is not available with these extension: [Painting Industries](#extension_10) [Coke and Sulphur](#extension_4) 
 
 
 Color in the overview map: <span style="background-color:#fc6c00;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -4688,7 +5117,7 @@ Color in the overview map: <span style="background-color:#fc6c00;">&nbsp;&nbsp;&
 |  | [Oil](#cargo_OIL_) |
 
 
-<a name="industry_124"></a>
+<a name="industry_137"></a>
 ### Port
 
 <img src="port.png" alt="Port">
@@ -4697,7 +5126,7 @@ Ports are centers of trade, and with the German industry dependent on importing 
 
 In the set, the maximum production of harbors is constantly increasing as time goes on. This reflects the fact that ships got bigger and innovations like the switch to containerized transport took place. 
 
-Industry requires extension(s): [Painting Industries](#extension_9) 
+Industry requires extension(s): [Painting Industries](#extension_10) 
 
 Industry is not available with these extension: [Aluminium](#extension_0) [Coke and Sulphur](#extension_4) 
 
@@ -4712,7 +5141,7 @@ Color in the overview map: <span style="background-color:#fc6c00;">&nbsp;&nbsp;&
 |  | [Oil](#cargo_OIL_) |
 
 
-<a name="industry_125"></a>
+<a name="industry_138"></a>
 ### Port
 
 <img src="port.png" alt="Port">
@@ -4721,7 +5150,7 @@ Ports are centers of trade, and with the German industry dependent on importing 
 
 In the set, the maximum production of harbors is constantly increasing as time goes on. This reflects the fact that ships got bigger and innovations like the switch to containerized transport took place. 
 
-Industry requires extension(s): [Aluminium](#extension_0) [Painting Industries](#extension_9) 
+Industry requires extension(s): [Aluminium](#extension_0) [Painting Industries](#extension_10) 
 
 Industry is not available with these extension: [Coke and Sulphur](#extension_4) 
 
@@ -4737,7 +5166,7 @@ Color in the overview map: <span style="background-color:#fc6c00;">&nbsp;&nbsp;&
 |  | [Oil](#cargo_OIL_) |
 
 
-<a name="industry_126"></a>
+<a name="industry_139"></a>
 ### Port
 
 <img src="port.png" alt="Port">
@@ -4748,7 +5177,7 @@ In the set, the maximum production of harbors is constantly increasing as time g
 
 Industry requires extension(s): [Coke and Sulphur](#extension_4) 
 
-Industry is not available with these extension: [Aluminium](#extension_0) [Painting Industries](#extension_9) 
+Industry is not available with these extension: [Aluminium](#extension_0) [Painting Industries](#extension_10) 
 
 
 Color in the overview map: <span style="background-color:#fc6c00;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -4761,7 +5190,7 @@ Color in the overview map: <span style="background-color:#fc6c00;">&nbsp;&nbsp;&
 |  | [Pyrite Ore](#cargo_PORE) |
 
 
-<a name="industry_127"></a>
+<a name="industry_140"></a>
 ### Port
 
 <img src="port.png" alt="Port">
@@ -4772,7 +5201,7 @@ In the set, the maximum production of harbors is constantly increasing as time g
 
 Industry requires extension(s): [Aluminium](#extension_0) [Coke and Sulphur](#extension_4) 
 
-Industry is not available with these extension: [Painting Industries](#extension_9) 
+Industry is not available with these extension: [Painting Industries](#extension_10) 
 
 
 Color in the overview map: <span style="background-color:#fc6c00;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -4786,7 +5215,7 @@ Color in the overview map: <span style="background-color:#fc6c00;">&nbsp;&nbsp;&
 |  | [Pyrite Ore](#cargo_PORE) |
 
 
-<a name="industry_128"></a>
+<a name="industry_141"></a>
 ### Port
 
 <img src="port.png" alt="Port">
@@ -4795,7 +5224,7 @@ Ports are centers of trade, and with the German industry dependent on importing 
 
 In the set, the maximum production of harbors is constantly increasing as time goes on. This reflects the fact that ships got bigger and innovations like the switch to containerized transport took place. 
 
-Industry requires extension(s): [Painting Industries](#extension_9) [Coke and Sulphur](#extension_4) 
+Industry requires extension(s): [Painting Industries](#extension_10) [Coke and Sulphur](#extension_4) 
 
 Industry is not available with these extension: [Aluminium](#extension_0) 
 
@@ -4810,7 +5239,7 @@ Color in the overview map: <span style="background-color:#fc6c00;">&nbsp;&nbsp;&
 |  | [Pyrite Ore](#cargo_PORE) |
 
 
-<a name="industry_129"></a>
+<a name="industry_142"></a>
 ### Port
 
 <img src="port.png" alt="Port">
@@ -4819,7 +5248,7 @@ Ports are centers of trade, and with the German industry dependent on importing 
 
 In the set, the maximum production of harbors is constantly increasing as time goes on. This reflects the fact that ships got bigger and innovations like the switch to containerized transport took place. 
 
-Industry requires extension(s): [Aluminium](#extension_0) [Painting Industries](#extension_9) [Coke and Sulphur](#extension_4) 
+Industry requires extension(s): [Aluminium](#extension_0) [Painting Industries](#extension_10) [Coke and Sulphur](#extension_4) 
 
 
 Color in the overview map: <span style="background-color:#fc6c00;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -4833,14 +5262,14 @@ Color in the overview map: <span style="background-color:#fc6c00;">&nbsp;&nbsp;&
 |  | [Pyrite Ore](#cargo_PORE) |
 
 
-<a name="industry_130"></a>
+<a name="industry_143"></a>
 ### Power Station
 
 <img src="power_plant.png" alt="Power Station">
 
 Power plants create electricity, typically by boiling water and using the resulting steam to turn turbines which are coupled with generators. This basic principle is also used in nuclear power plants, whereas hydroplants use the water directly for the turbines. Since it is a transportation game, the set concentrates on fossil power plants that require a constant delivery of coal and/or oil to be burned in order to create electricity. 
 
-Industry is not available with these extension: [Coke and Sulphur](#extension_4) 
+Industry is not available with these extension: [Coke and Sulphur](#extension_4) [Fruits and Bioenergy](#extension_6) 
 
 Industry will only spawn after 1880.
 This restriction is also valid for funding the industry.
@@ -4853,7 +5282,7 @@ Color in the overview map: <span style="background-color:#fc0000;">&nbsp;&nbsp;&
 | [Oil](#cargo_OIL_) |  |
 
 
-<a name="industry_131"></a>
+<a name="industry_144"></a>
 ### Power Station
 
 <img src="power_plant.png" alt="Power Station">
@@ -4861,6 +5290,8 @@ Color in the overview map: <span style="background-color:#fc0000;">&nbsp;&nbsp;&
 Power plants create electricity, typically by boiling water and using the resulting steam to turn turbines which are coupled with generators. This basic principle is also used in nuclear power plants, whereas hydroplants use the water directly for the turbines. Since it is a transportation game, the set concentrates on fossil power plants that require a constant delivery of coal and/or oil to be burned in order to create electricity. 
 
 Industry requires extension(s): [Coke and Sulphur](#extension_4) 
+
+Industry is not available with these extension: [Fruits and Bioenergy](#extension_6) 
 
 Industry will only spawn after 1880.
 This restriction is also valid for funding the industry.
@@ -4873,16 +5304,60 @@ Color in the overview map: <span style="background-color:#fc0000;">&nbsp;&nbsp;&
 | [Oil](#cargo_OIL_) |  |
 
 
-<a name="industry_132"></a>
+<a name="industry_145"></a>
+### Power Station
+
+<img src="power_plant.png" alt="Power Station">
+
+Power plants create electricity, typically by boiling water and using the resulting steam to turn turbines which are coupled with generators. This basic principle is also used in nuclear power plants, whereas hydroplants use the water directly for the turbines. Since it is a transportation game, the set concentrates on fossil power plants that require a constant delivery of coal and/or oil to be burned in order to create electricity. 
+
+Industry requires extension(s): [Fruits and Bioenergy](#extension_6) 
+
+Industry is not available with these extension: [Coke and Sulphur](#extension_4) 
+
+Industry will only spawn after 1880.
+This restriction is also valid for funding the industry.
+
+Color in the overview map: <span style="background-color:#fc0000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+| Requires | Produces |
+| -- | -- |
+| [Biomass](#cargo_BIOM) |  |
+| [Coal](#cargo_COAL) |  |
+| [Oil](#cargo_OIL_) |  |
+
+
+<a name="industry_146"></a>
+### Power Station
+
+<img src="power_plant.png" alt="Power Station">
+
+Power plants create electricity, typically by boiling water and using the resulting steam to turn turbines which are coupled with generators. This basic principle is also used in nuclear power plants, whereas hydroplants use the water directly for the turbines. Since it is a transportation game, the set concentrates on fossil power plants that require a constant delivery of coal and/or oil to be burned in order to create electricity. 
+
+Industry requires extension(s): [Coke and Sulphur](#extension_4) [Fruits and Bioenergy](#extension_6) 
+
+Industry will only spawn after 1880.
+This restriction is also valid for funding the industry.
+
+Color in the overview map: <span style="background-color:#fc0000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+| Requires | Produces |
+| -- | -- |
+| [Biomass](#cargo_BIOM) | [Schwefel](#cargo_SULP) |
+| [Coal](#cargo_COAL) |  |
+| [Oil](#cargo_OIL_) |  |
+
+
+<a name="industry_147"></a>
 ### Printing Works
 
 <img src="paper_mill.png" alt="Printing Works">
 
 Modern printing was invented in the 16th century in Germany. In the following centuries, printing newspapers become commonplace, and in the 19th century reading for fun became a pastime for educated citizens. Nowadays, pretty much anyone can get their own book printed on demand. 
 
-Industry requires extension(s): [Paper](#extension_10) 
+Industry requires extension(s): [Paper](#extension_11) 
 
-Industry is not available with these extension: [Packaging Industries](#extension_8) 
+Industry is not available with these extension: [Packaging Industries](#extension_9) 
 
 Industry will only spawn after 1900.
 This restriction is also valid for funding the industry.
@@ -4894,14 +5369,14 @@ Color in the overview map: <span style="background-color:#fc9c00;">&nbsp;&nbsp;&
 | [Paper](#cargo_PAPR) | [Goods](#cargo_GOOD) |
 
 
-<a name="industry_133"></a>
+<a name="industry_148"></a>
 ### Printing Works
 
 <img src="paper_mill.png" alt="Printing Works">
 
 Modern printing was invented in the 16th century in Germany. In the following centuries, printing newspapers become commonplace, and in the 19th century reading for fun became a pastime for educated citizens. Nowadays, pretty much anyone can get their own book printed on demand. 
 
-Industry requires extension(s): [Paper](#extension_10) [Packaging Industries](#extension_8) 
+Industry requires extension(s): [Paper](#extension_11) [Packaging Industries](#extension_9) 
 
 Industry will only spawn after 1900.
 This restriction is also valid for funding the industry.
@@ -4914,7 +5389,7 @@ Color in the overview map: <span style="background-color:#fc9c00;">&nbsp;&nbsp;&
 | [Paper](#cargo_PAPR) |  |
 
 
-<a name="industry_134"></a>
+<a name="industry_149"></a>
 ### Salt Mine
 
 <img src="salt_mine.png" alt="Salt Mine">
@@ -4935,7 +5410,7 @@ Industry is generated with limited resources and will close down once these are 
 |  | [Salt](#cargo_SALT) |
 
 
-<a name="industry_135"></a>
+<a name="industry_150"></a>
 ### Sand pit
 
 <img src="sand_pit.png" alt="Sand pit">
@@ -4954,12 +5429,14 @@ Industry is generated with limited resources and will close down once these are 
 |  | [Sand](#cargo_SAND) |
 
 
-<a name="industry_136"></a>
+<a name="industry_151"></a>
 ### Sawmill
 
 <img src="sawmill.png" alt="Sawmill">
 
 Sawmills cut wood into normalized sizes and shapes, such that the resulting beams and planks can be used for various industries. As such, they are a necessary step to provide materials used in construction, furniture industries and other applications. 
+
+Industry is not available with these extension: [Fruits and Bioenergy](#extension_6) 
 
 
 Color in the overview map: <span style="background-color:#fc9c00;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -4969,7 +5446,25 @@ Color in the overview map: <span style="background-color:#fc9c00;">&nbsp;&nbsp;&
 | [Wood](#cargo_WOOD) | [Timber](#cargo_WDPR) |
 
 
-<a name="industry_137"></a>
+<a name="industry_152"></a>
+### Sawmill
+
+<img src="sawmill.png" alt="Sawmill">
+
+Sawmills cut wood into normalized sizes and shapes, such that the resulting beams and planks can be used for various industries. As such, they are a necessary step to provide materials used in construction, furniture industries and other applications. 
+
+Industry requires extension(s): [Fruits and Bioenergy](#extension_6) 
+
+
+Color in the overview map: <span style="background-color:#fc9c00;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+| Requires | Produces |
+| -- | -- |
+| [Wood](#cargo_WOOD) | [Biomass](#cargo_BIOM) |
+|  | [Timber](#cargo_WDPR) |
+
+
+<a name="industry_153"></a>
 ### Solvay Plant
 
 <img src="soda_plant.png" alt="Solvay Plant">
@@ -4992,14 +5487,14 @@ Industry requires the raw materials printed in black to produce anything. Raw ma
 | [Salt](#cargo_SALT) |  |
 
 
-<a name="industry_138"></a>
+<a name="industry_154"></a>
 ### Steamcracker
 
 <img src="steamcracker.png" alt="Steamcracker">
 
 Oil refineries produce large amounts of so-called naphtha, or crude oil. The chemical industry however, requires lots of compounds that can be won out of naphtha. To do that, it has to be heated to above 800°C, so that the naphtha is actually in a gaseous state, hence the name of the process. The products of the process are a variety of carbohydrates which are essential for the production of plastics, among other things. 
 
-Industry requires extension(s): [Organic Chemistry](#extension_7) 
+Industry requires extension(s): [Organic Chemistry](#extension_8) 
 
 Industry will only spawn after 1900.
 This restriction is also valid for funding the industry.
@@ -5012,7 +5507,7 @@ Color in the overview map: <span style="background-color:#787840;">&nbsp;&nbsp;&
 |  | [Petrol](#cargo_PETR) |
 
 
-<a name="industry_139"></a>
+<a name="industry_155"></a>
 ### Steamreformer
 
 <img src="steamreformer.png" alt="Steamreformer">
@@ -5021,7 +5516,9 @@ Steam reforming is based on an idea by Carl Bosch, who was looking for a cheap w
 
 Since natural gas is not part of the set, naphtha, a crude oil, is used as a base. 
 
-Industry requires extension(s): [Organic Chemistry](#extension_7) 
+Industry requires extension(s): [Organic Chemistry](#extension_8) 
+
+Industry is not available with these extension: [Fruits and Bioenergy](#extension_6) 
 
 Industry will only spawn after 1900.
 This restriction is also valid for funding the industry.
@@ -5033,16 +5530,40 @@ Color in the overview map: <span style="background-color:#403c0c;">&nbsp;&nbsp;&
 | [Naphtha](#cargo_RFPR) | [Hydrogen](#cargo_H2__) |
 
 
-<a name="industry_140"></a>
+<a name="industry_156"></a>
+### Steamreformer
+
+<img src="steamreformer.png" alt="Steamreformer">
+
+Steam reforming is based on an idea by Carl Bosch, who was looking for a cheap way to produce hydrogen. The process basically consists of splitting carbohydrates, usually natural gas, into carbon dioxide and hydrogen by adding heat and water. About 50% of the hydrogen needed for industrial purposes are produced this way. About 60% of this hydrogen is then used for the synthesis of ammonia. 
+
+Since natural gas is not part of the set, naphtha, a crude oil, is used as a base. 
+
+Industry requires extension(s): [Organic Chemistry](#extension_8) [Fruits and Bioenergy](#extension_6) 
+
+Industry will only spawn after 1900.
+This restriction is also valid for funding the industry.
+
+Color in the overview map: <span style="background-color:#403c0c;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+Industry will start producing as soon as any of the required cargos is available. Productivity increases with the number of different available cargos.
+
+| Requires | Produces |
+| -- | -- |
+| [Biomass](#cargo_BIOM) | [Hydrogen](#cargo_H2__) |
+| [Naphtha](#cargo_RFPR) |  |
+
+
+<a name="industry_157"></a>
 ### Textile Mill
 
 <img src="textile_mill.png" alt="Textile Mill">
 
 Textile mills are the representation of multiple real world industries that are focused on the creation of yarns and fabrics. This has been done since ancient times in household work before it became mechanized in the 18th and 19th century. In fact, looms were among the first mechanized items to be developed to improve production speed. In the set, this industry combines the steps of preparing cotton and synthetic fibres into yarn (spinning), and then turning them into textiles (e.g. by weaving) in a second step. The resulting textiles are then used by other industries to manufacture goods. 
 
-Industry requires extension(s): [Textile Industries](#extension_11) 
+Industry requires extension(s): [Textile Industries](#extension_12) 
 
-Industry is not available with these extension: [Painting Industries](#extension_9) 
+Industry is not available with these extension: [Painting Industries](#extension_10) 
 
 
 Color in the overview map: <span style="background-color:#a85c4c;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -5055,14 +5576,14 @@ Industry requires the raw materials printed in black to produce anything. Raw ma
 | [Wool](#cargo_WOOL) |  |
 
 
-<a name="industry_141"></a>
+<a name="industry_158"></a>
 ### Textile Mill
 
 <img src="textile_mill.png" alt="Textile Mill">
 
 Textile mills are the representation of multiple real world industries that are focused on the creation of yarns and fabrics. This has been done since ancient times in household work before it became mechanized in the 18th and 19th century. In fact, looms were among the first mechanized items to be developed to improve production speed. In the set, this industry combines the steps of preparing cotton and synthetic fibres into yarn (spinning), and then turning them into textiles (e.g. by weaving) in a second step. The resulting textiles are then used by other industries to manufacture goods. 
 
-Industry requires extension(s): [Textile Industries](#extension_11) [Painting Industries](#extension_9) 
+Industry requires extension(s): [Textile Industries](#extension_12) [Painting Industries](#extension_10) 
 
 
 Color in the overview map: <span style="background-color:#a85c4c;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -5076,7 +5597,7 @@ Industry requires the raw materials printed in black to produce anything. Raw ma
 | [Wool](#cargo_WOOL) |  |
 
 
-<a name="industry_142"></a>
+<a name="industry_159"></a>
 ### Vehicle Distributor
 
 <img src="vehicle_distributor.png" alt="Vehicle Distributor">
@@ -5093,14 +5614,14 @@ Color in the overview map: <span style="background-color:#bce0fc;">&nbsp;&nbsp;&
 | [Vehicles](#cargo_VEHI) |  |
 
 
-<a name="industry_143"></a>
+<a name="industry_160"></a>
 ### Vehicle Factory
 
 <img src="vehicle_factory.png" alt="Vehicle Factory">
 
 Germany is renowned for its automotive industry. After all, the key inventions in car development happened in Germany in the late 19th century. Mass motorization in Germany started after World War 2, mainly driven by the Volkswagen Beetle, one of the most mass-produced vehicles ever. Nowadays, cars are one of the key export goods of the German industry. The automotive industry is one of the most important industries, with companies like Mercedes-Benz, BMW, Audi or Porsche being known throughout the world. 
 
-Industry is not available with these extension: [Aluminium](#extension_0) [Painting Industries](#extension_9) [Glass](#extension_6) 
+Industry is not available with these extension: [Aluminium](#extension_0) [Painting Industries](#extension_10) [Glass](#extension_7) 
 
 Industry will only spawn after 1910.
 This restriction is also valid for funding the industry.
@@ -5117,7 +5638,7 @@ Industry requires electricity to produce anything. See [Electricity](#electricty
 | [Steel](#cargo_STEL) |  |
 
 
-<a name="industry_144"></a>
+<a name="industry_161"></a>
 ### Vehicle Factory
 
 <img src="vehicle_factory.png" alt="Vehicle Factory">
@@ -5126,7 +5647,7 @@ Germany is renowned for its automotive industry. After all, the key inventions i
 
 Industry requires extension(s): [Aluminium](#extension_0) 
 
-Industry is not available with these extension: [Painting Industries](#extension_9) [Glass](#extension_6) 
+Industry is not available with these extension: [Painting Industries](#extension_10) [Glass](#extension_7) 
 
 Industry will only spawn after 1910.
 This restriction is also valid for funding the industry.
@@ -5142,16 +5663,16 @@ Industry requires electricity to produce anything. See [Electricity](#electricty
 | [Steel](#cargo_STEL) |  |
 
 
-<a name="industry_145"></a>
+<a name="industry_162"></a>
 ### Vehicle Factory
 
 <img src="vehicle_factory.png" alt="Vehicle Factory">
 
 Germany is renowned for its automotive industry. After all, the key inventions in car development happened in Germany in the late 19th century. Mass motorization in Germany started after World War 2, mainly driven by the Volkswagen Beetle, one of the most mass-produced vehicles ever. Nowadays, cars are one of the key export goods of the German industry. The automotive industry is one of the most important industries, with companies like Mercedes-Benz, BMW, Audi or Porsche being known throughout the world. 
 
-Industry requires extension(s): [Painting Industries](#extension_9) 
+Industry requires extension(s): [Painting Industries](#extension_10) 
 
-Industry is not available with these extension: [Aluminium](#extension_0) [Glass](#extension_6) 
+Industry is not available with these extension: [Aluminium](#extension_0) [Glass](#extension_7) 
 
 Industry will only spawn after 1910.
 This restriction is also valid for funding the industry.
@@ -5167,16 +5688,16 @@ Industry requires electricity to produce anything. See [Electricity](#electricty
 | [Steel](#cargo_STEL) |  |
 
 
-<a name="industry_146"></a>
+<a name="industry_163"></a>
 ### Vehicle Factory
 
 <img src="vehicle_factory.png" alt="Vehicle Factory">
 
 Germany is renowned for its automotive industry. After all, the key inventions in car development happened in Germany in the late 19th century. Mass motorization in Germany started after World War 2, mainly driven by the Volkswagen Beetle, one of the most mass-produced vehicles ever. Nowadays, cars are one of the key export goods of the German industry. The automotive industry is one of the most important industries, with companies like Mercedes-Benz, BMW, Audi or Porsche being known throughout the world. 
 
-Industry requires extension(s): [Aluminium](#extension_0) [Painting Industries](#extension_9) 
+Industry requires extension(s): [Aluminium](#extension_0) [Painting Industries](#extension_10) 
 
-Industry is not available with these extension: [Glass](#extension_6) 
+Industry is not available with these extension: [Glass](#extension_7) 
 
 Industry will only spawn after 1910.
 This restriction is also valid for funding the industry.
@@ -5193,16 +5714,16 @@ Industry requires electricity to produce anything. See [Electricity](#electricty
 | [Steel](#cargo_STEL) |  |
 
 
-<a name="industry_147"></a>
+<a name="industry_164"></a>
 ### Vehicle Factory
 
 <img src="vehicle_factory.png" alt="Vehicle Factory">
 
 Germany is renowned for its automotive industry. After all, the key inventions in car development happened in Germany in the late 19th century. Mass motorization in Germany started after World War 2, mainly driven by the Volkswagen Beetle, one of the most mass-produced vehicles ever. Nowadays, cars are one of the key export goods of the German industry. The automotive industry is one of the most important industries, with companies like Mercedes-Benz, BMW, Audi or Porsche being known throughout the world. 
 
-Industry requires extension(s): [Glass](#extension_6) 
+Industry requires extension(s): [Glass](#extension_7) 
 
-Industry is not available with these extension: [Aluminium](#extension_0) [Painting Industries](#extension_9) 
+Industry is not available with these extension: [Aluminium](#extension_0) [Painting Industries](#extension_10) 
 
 Industry will only spawn after 1910.
 This restriction is also valid for funding the industry.
@@ -5218,16 +5739,16 @@ Industry requires electricity to produce anything. See [Electricity](#electricty
 | [Steel](#cargo_STEL) |  |
 
 
-<a name="industry_148"></a>
+<a name="industry_165"></a>
 ### Vehicle Factory
 
 <img src="vehicle_factory.png" alt="Vehicle Factory">
 
 Germany is renowned for its automotive industry. After all, the key inventions in car development happened in Germany in the late 19th century. Mass motorization in Germany started after World War 2, mainly driven by the Volkswagen Beetle, one of the most mass-produced vehicles ever. Nowadays, cars are one of the key export goods of the German industry. The automotive industry is one of the most important industries, with companies like Mercedes-Benz, BMW, Audi or Porsche being known throughout the world. 
 
-Industry requires extension(s): [Aluminium](#extension_0) [Glass](#extension_6) 
+Industry requires extension(s): [Aluminium](#extension_0) [Glass](#extension_7) 
 
-Industry is not available with these extension: [Painting Industries](#extension_9) 
+Industry is not available with these extension: [Painting Industries](#extension_10) 
 
 Industry will only spawn after 1910.
 This restriction is also valid for funding the industry.
@@ -5244,14 +5765,14 @@ Industry requires electricity to produce anything. See [Electricity](#electricty
 | [Steel](#cargo_STEL) |  |
 
 
-<a name="industry_149"></a>
+<a name="industry_166"></a>
 ### Vehicle Factory
 
 <img src="vehicle_factory.png" alt="Vehicle Factory">
 
 Germany is renowned for its automotive industry. After all, the key inventions in car development happened in Germany in the late 19th century. Mass motorization in Germany started after World War 2, mainly driven by the Volkswagen Beetle, one of the most mass-produced vehicles ever. Nowadays, cars are one of the key export goods of the German industry. The automotive industry is one of the most important industries, with companies like Mercedes-Benz, BMW, Audi or Porsche being known throughout the world. 
 
-Industry requires extension(s): [Painting Industries](#extension_9) [Glass](#extension_6) 
+Industry requires extension(s): [Painting Industries](#extension_10) [Glass](#extension_7) 
 
 Industry is not available with these extension: [Aluminium](#extension_0) 
 
@@ -5270,14 +5791,14 @@ Industry requires electricity to produce anything. See [Electricity](#electricty
 | [Steel](#cargo_STEL) |  |
 
 
-<a name="industry_150"></a>
+<a name="industry_167"></a>
 ### Vehicle Factory
 
 <img src="vehicle_factory.png" alt="Vehicle Factory">
 
 Germany is renowned for its automotive industry. After all, the key inventions in car development happened in Germany in the late 19th century. Mass motorization in Germany started after World War 2, mainly driven by the Volkswagen Beetle, one of the most mass-produced vehicles ever. Nowadays, cars are one of the key export goods of the German industry. The automotive industry is one of the most important industries, with companies like Mercedes-Benz, BMW, Audi or Porsche being known throughout the world. 
 
-Industry requires extension(s): [Aluminium](#extension_0) [Painting Industries](#extension_9) [Glass](#extension_6) 
+Industry requires extension(s): [Aluminium](#extension_0) [Painting Industries](#extension_10) [Glass](#extension_7) 
 
 Industry will only spawn after 1910.
 This restriction is also valid for funding the industry.

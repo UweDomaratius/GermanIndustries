@@ -1,0 +1,32 @@
+spriteset(cargoicon_fruits) {
+        [10 + 20 * 14, 10 + 20 * 0, 10, 10, 0, 0,  "graphics/other/cargoicons.png"]
+    }
+
+if (param_extension_fruits) {
+	item(FEAT_CARGOS, fruits, CARGO_ID_FRUITS) {
+		property {
+			type_name: string(STR_CARGO_NAME_FRUITS);
+			unit_name: string(STR_CARGO_NAME_FRUITS);
+			type_abbreviation: string(STR_CID_FRUITS);
+			sprite: NEW_CARGO_SPRITE;
+			weight: 1.0;
+			is_freight: 1;
+			cargo_classes: bitmask(CC_EXPRESS, CC_PIECE_GOODS, CC_REFRIGERATED);
+			town_growth_effect: TOWNGROWTH_NONE;
+			town_growth_multiplier: 1.0;
+			units_of_cargo: TTD_STR_TONS;
+			items_of_cargo: string(STR_QUANTITY_FRUITS);
+			penalty_lowerbound: 0;
+			single_penalty_length: 26;
+			capacity_multiplier: 1;
+			cargo_payment_list_colour: 83;
+			station_list_colour: 83;
+			price_factor: 124;
+			cargo_label: "FRUT";
+			number: CARGO_ID_FRUITS;
+		}
+		graphics {
+			cargoicon_fruits;
+		}
+	}
+}

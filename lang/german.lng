@@ -43,11 +43,14 @@ STR_PARAM_EXT_COKE_SULPHUR :Erweiterung "Koks und Schwefel"
 STR_PARAM_EXT_COKE_SULPHUR_DESC :Fügt Industrien und Frachten hinzu, die sich mit der Förderung und Verarbeitung von schwefelhaltigen Erzen beschäftigen.
 STR_PARAM_EXT_AMMONIA :Erweiterung "Ammoniaksynthese"
 STR_PARAM_EXT_AMMONIA_DESC :Fügt Industrien und Frachten hinzu, die sich mit der Synthese von Ammoniak beschäftigen.
+STR_PARAM_EXT_FRUITS :Erweiterung "Früchte und Bioenergie"
+STR_PARAM_EXT_FRUITS_DESC :Fügt Industrien und Frachten hinzu, die sich mit der Verwertung von Bioabfällen beschäftigen.
 
 # Frachten
 STR_CARGO_NAME_ACID               :Säure
 STR_CARGO_NAME_AMMONIA            :Ammoniak
 STR_CARGO_NAME_BAUXITE            :Bauxit
+STR_CARGO_NAME_BIOMASS            :Biomasse
 STR_CARGO_NAME_BUILDING_MATERIALS :Ziegel
 STR_CARGO_NAME_CARBON_BLACK       :Ruß
 STR_CARGO_NAME_CEMENT             :Zement
@@ -57,6 +60,7 @@ STR_CARGO_NAME_COPPER             :Kupfer
 STR_CARGO_NAME_COPPER_ORE         :Kupfererz
 STR_CARGO_NAME_ETHYLENE           :Ethylen
 STR_CARGO_NAME_FISH               :Fisch
+STR_CARGO_NAME_FRUITS             :Früchte
 STR_CARGO_NAME_GLASS              :Glas
 STR_CARGO_NAME_HYDROGEN           :Wasserstoff
 STR_CARGO_NAME_LIMESTONE          :Kalkstein
@@ -85,6 +89,7 @@ STR_QUANTITY_ACID                 :{WEIGHT} Säure
 STR_QUANTITY_ALUMINIUM            :{WEIGHT} Aluminium
 STR_QUANTITY_AMMONIA              :{WEIGHT} Ammoniak
 STR_QUANTITY_BAUXITE              :{WEIGHT} Bauxit
+STR_QUANTITY_BIOMASS              :{WEIGHT} Biomasse
 STR_QUANTITY_BUILDING_MATERIALS   :{WEIGHT} Ziegel
 STR_QUANTITY_CARBON_BLACK         :{WEIGHT} Ruß
 STR_QUANTITY_CEMENT               :{WEIGHT} Zement
@@ -94,6 +99,7 @@ STR_QUANTITY_COPPER               :{WEIGHT} Kupfer
 STR_QUANTITY_COPPER_ORE           :{WEIGHT} Kupfererz
 STR_QUANTITY_ETHYLENE             :{WEIGHT} Ethylen
 STR_QUANTITY_FISH                 :{WEIGHT} Fisch
+STR_QUANTITY_FRUITS               :{WEIGHT} Früchte
 STR_QUANTITY_GLASS                :{WEIGHT} Glas
 STR_QUANTITY_GOODS                :{WEIGHT} Güter
 STR_QUANTITY_HYDROGEN             :{WEIGHT} Wasserstoff
@@ -124,6 +130,7 @@ STR_IND_ACID_PLANT               :{G=w}Säurefabrik
 STR_IND_ALUMINIUM_PLANT          :{G=w}Aluhütte
 STR_IND_AMMONIA_PLANT            :Ammoniakreaktor
 STR_IND_ANIMAL_FARM              :{G=w}Viehzucht
+STR_IND_BIOREFINERY              :{G=w}Bioraffinerie
 STR_IND_BREWERY                  :{G=w}Brauerei
 STR_IND_BRICK_WORKS              :{G=w}Ziegelei
 STR_IND_BUILDERS_YARD            :Bauhof
@@ -139,6 +146,7 @@ STR_IND_CRYO_PLANT               :Luftzerleger
 STR_IND_DAIRY                    :{G=w}Molkerei
 STR_IND_FISHING_GROUNDS          :{G=w}Fischgründe
 STR_IND_FLOUR_MILL               :{G=w}Mühle
+STR_IND_FRUIT_PLANTATION         :{G=w}Obstplantage
 STR_IND_FURNITURE_FACTORY        :{G=w}Möbelfabrik
 STR_IND_DEPARTMENT_STORE         :{G=n}Kaufhaus
 STR_IND_GENERAL_STORE            :Laden
@@ -169,6 +177,7 @@ STR_IND_VEHICLE_FACTORY          :{G=w}Autofabrik
 STR_STATION_ALUMINIUM_PLANT          :Aluhütte
 STR_STATION_AMMONIA_PLANT            :Ammoniakreaktor
 STR_STATION_ANIMAL_FARM              :Viehzucht
+STR_STATION_BIOREFINERY              :Bioraffinerie
 STR_STATION_BREWERY                  :Brauerei
 STR_STATION_BRICK_WORKS              :Ziegelei
 STR_STATION_BUILDERS_YARD            :Bauhof
@@ -190,6 +199,7 @@ STR_STATION_FISHING_GROUNDS          :Fischgründe
 STR_STATION_FLOUR_MILL               :Mühle
 STR_STATION_FOOD_PROCESSOR           :Lebensmittelfabrik
 STR_STATION_FOREST                   :Wald
+STR_STATION_FRUIT_PLANTATION         :Obstplantage
 STR_STATION_FURNITURE_FACTORY        :Möbelfabrik
 STR_STATION_GENERAL_STORE            :Laden
 STR_STATION_GLASS_WORKS              :Glasfabrik
@@ -261,3 +271,4 @@ STR_ERR_EXTENSION_PAPER_REQUIRES_EXTENSION_BASIC_INORGANIC_CHEMISTRY:Erweiterung
 STR_ERR_EXTENSION_ORGANIC_CHEMISTRY_REQUIRES_EXTENSION_BASIC_INORGANIC_CHEMISTRY:Erweiterung "Organische Chemie" erfordert Erweiterung "Grundlegende anorganische Chemie".
 STR_ERR_EXTENSION_SULPHUR_COKE_REQUIRES_OTHER_EXTENSIONS:Erweiterung "Koks und Schwefel" erfordert mindestens eine der folgenden Erweiterungen: "Grundlegende anorganische Chemie", "Farbindustrie"
 STR_ERR_EXTENSION_AMMONIA_REQUIRES_INORGANIC_CHEMISTRY_BUILDING_MATERIALS:Erweiterung "Ammoniak" erfordert die Erweiterungen "Bauindustrie" und "Grundlegende anorganische Chemie"
+STR_ERR_EXTENSION_FRUITS_REQUIRES_ORGANIC_CHEMISTRY:Erweiterung "Obst und Bioenergie" erfordert die Erweiterung "Organische Chemie"

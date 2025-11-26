@@ -19,6 +19,13 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_alum,
 	return 0x3800 + string(STR_EMPTY);
 }
 
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_biom, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("BIOM") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	BIOM: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
 switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_c2h4, 
 	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("C2H4") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
 	 getbits(extra_callback_info2, 16, 8)]) {
@@ -86,6 +93,13 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_food,
 	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("FOOD") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
 	 getbits(extra_callback_info2, 16, 8)]) {
 	FOOD: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_frut, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("FRUT") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	FRUT: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
 	return 0x3800 + string(STR_EMPTY);
 }
 
@@ -283,6 +297,7 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info,
 	ACID: switch_cargo_subtype_display_info_acid;
 	AORE: switch_cargo_subtype_display_info_aore;
 	ALUM: switch_cargo_subtype_display_info_alum;
+	BIOM: switch_cargo_subtype_display_info_biom;
 	C2H4: switch_cargo_subtype_display_info_c2h4;
 	CBLK: switch_cargo_subtype_display_info_cblk;
 	CHLO: switch_cargo_subtype_display_info_chlor;
@@ -293,6 +308,7 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info,
 	CORE: switch_cargo_subtype_display_info_core;
 	FISH: switch_cargo_subtype_display_info_fish;
 	FOOD: switch_cargo_subtype_display_info_food;
+	FRUT: switch_cargo_subtype_display_info_frut;
 	GLAS: switch_cargo_subtype_display_info_glas;
 	GRAI: switch_cargo_subtype_display_info_grai;
 	H2__: switch_cargo_subtype_display_info_h2;

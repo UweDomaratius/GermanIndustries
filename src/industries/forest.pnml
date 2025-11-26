@@ -35,7 +35,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform0 {
 		always_draw: 1;
 	}			
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 0;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -47,13 +47,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform0 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 0;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 0;		yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -65,13 +65,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform0 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 0;		yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 0;		yoffset: 11;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -83,13 +83,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform0 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 0;		yoffset: 11;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 5;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -101,13 +101,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform0 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 5;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 5;		yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -119,13 +119,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform0 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 5;		yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 5;		yoffset: 11;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -137,13 +137,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform0 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 5;		yoffset: 11;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 11;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -155,13 +155,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform0 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 11;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 11;		yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -173,13 +173,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform0 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 11;		yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 11;		yoffset: 11;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -191,7 +191,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform0 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 11;		yoffset: 11;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -204,7 +204,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform1 {
 		always_draw: 1;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 0;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -216,13 +216,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform1 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 0;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 0;		yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -234,13 +234,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform1 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 0;		yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 0;		yoffset: 11;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -252,13 +252,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform1 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 0;		yoffset: 11;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 5;		yoffset: -1;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -270,13 +270,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform1 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 5;		yoffset: -1;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 4;		yoffset: 4;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -288,13 +288,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform1 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 4;		yoffset: 4;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 5;		yoffset: 11;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -306,13 +306,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform1 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 5;		yoffset: 11;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 9;		yoffset: -2;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -324,13 +324,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform1 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 9;		yoffset: -2;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 10;	yoffset: 4;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -342,13 +342,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform1 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 10;	yoffset: 4;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 11;	yoffset: 11;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -360,7 +360,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform1 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 11;	yoffset: 11;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -373,7 +373,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform2 {
 		always_draw: 1;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 0;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -385,13 +385,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform2 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 0;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 0;		yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -403,13 +403,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform2 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 0;		yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 0;		yoffset: 9;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -421,13 +421,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform2 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 0;		yoffset: 9;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 5;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -439,13 +439,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform2 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 5;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 4;		yoffset: 4;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -457,13 +457,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform2 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 4;		yoffset: 4;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 4;		yoffset: 8;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -475,13 +475,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform2 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 4;		yoffset: 8;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 10;	yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -493,13 +493,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform2 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 10;	yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 9;		yoffset: 4;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -511,13 +511,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform2 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 9;		yoffset: 4;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 7;		yoffset: 7;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -529,7 +529,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform2 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 7;		yoffset: 7;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -542,7 +542,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform3 {
 		always_draw: 1;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: -1;		yoffset: -3;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -554,13 +554,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform3 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: -1;		yoffset: -3;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: -1;		yoffset: 3;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -572,13 +572,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform3 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: -1;		yoffset: 3;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: -1;		yoffset: 9;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -590,13 +590,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform3 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: -1;		yoffset: 9;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 3;		yoffset: -3;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -608,13 +608,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform3 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 3;		yoffset: -3;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 3;		yoffset: 2;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -626,13 +626,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform3 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 3;		yoffset: 2;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 3;		yoffset: 8;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -644,13 +644,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform3 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 3;		yoffset: 8;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 7;		yoffset: -3;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -662,13 +662,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform3 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 7;		yoffset: -3;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 7;		yoffset: 2;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -680,13 +680,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform3 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 7;		yoffset: 2;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 7;		yoffset: 7;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -698,7 +698,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform3 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 7;		yoffset: 7;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -711,7 +711,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform4 {
 		always_draw: 1;
 	}			
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 0;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -723,13 +723,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform4 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 0;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 0;		yoffset: 4;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -741,13 +741,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform4 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 0;		yoffset: 4;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: -2;		yoffset: 9;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -759,13 +759,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform4 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: -2;		yoffset: 9;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 5;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -777,13 +777,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform4 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 5;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 5;		yoffset: 4;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -795,13 +795,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform4 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 5;		yoffset: 4;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 5;		yoffset: 10;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -813,13 +813,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform4 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 5;		yoffset: 10;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 11;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -831,13 +831,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform4 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 11;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 11;		yoffset: 4;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -849,13 +849,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform4 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 11;		yoffset: 4;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 11;		yoffset: 11;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -867,7 +867,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform4 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 11;		yoffset: 11;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -880,7 +880,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform5 {
 		always_draw: 1;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 0;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -892,13 +892,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform5 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 0;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: -2;	yoffset: 3;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -910,13 +910,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform5 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: -2;	yoffset: 3;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: -4;	yoffset: 8;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -928,13 +928,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform5 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: -4;	yoffset: 8;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 5;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -946,13 +946,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform5 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 5;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 3;		yoffset: 3;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -964,13 +964,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform5 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 3;		yoffset: 3;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 3;		yoffset: 9;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -982,13 +982,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform5 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 3;		yoffset: 9;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 10;	yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1000,13 +1000,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform5 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 10;	yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 8;		yoffset: 3;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1018,13 +1018,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform5 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 8;		yoffset: 3;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 11;	yoffset: 11;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1036,7 +1036,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform5 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 11;	yoffset: 11;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1049,7 +1049,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform6 {
 		always_draw: 1;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 0;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1061,13 +1061,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform6 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 0;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: -2;	yoffset: 3;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1079,13 +1079,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform6 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: -2;	yoffset: 3;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: -4;	yoffset: 8;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1097,13 +1097,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform6 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: -4;	yoffset: 8;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 5;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1115,13 +1115,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform6 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 5;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 3;		yoffset: 3;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1133,13 +1133,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform6 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 3;		yoffset: 3;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 1;		yoffset: 8;		
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1151,13 +1151,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform6 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 1;		yoffset: 8;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 10;	yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1169,13 +1169,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform6 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 10;	yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 8;		yoffset: 3;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1187,13 +1187,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform6 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 8;		yoffset: 3;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 6;		yoffset: 8;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1205,7 +1205,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform6 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 6;		yoffset: 8;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1218,7 +1218,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform7 {
 		always_draw: 1;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: -3;	yoffset: -3;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1230,13 +1230,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform7 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: -3;	yoffset: -3;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: -3;	yoffset: 3;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1248,13 +1248,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform7 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: -3;	yoffset: 3;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: -3;	yoffset: 7;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1266,13 +1266,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform7 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: -3;	yoffset: 7;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 2;		yoffset: -3;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1284,13 +1284,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform7 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 2;		yoffset: -3;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 2;		yoffset: 2;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1302,13 +1302,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform7 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 2;		yoffset: 2;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 2;		yoffset: 7;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1320,13 +1320,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform7 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 2;		yoffset: 7;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 7;		yoffset: -3;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1338,13 +1338,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform7 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 7;		yoffset: -3;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 7;		yoffset: 2;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1356,13 +1356,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform7 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 7;		yoffset: 2;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 7;		yoffset: 7;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1374,7 +1374,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform7 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 7;		yoffset: 7;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1387,7 +1387,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform8 {
 		always_draw: 1;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 0;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1399,13 +1399,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform8 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 0;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 0;		yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1417,13 +1417,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform8 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 0;		yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 0;		yoffset: 11;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1435,13 +1435,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform8 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 0;		yoffset: 11;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 5;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1453,13 +1453,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform8 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 5;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 5;		yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1471,13 +1471,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform8 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 5;		yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 5;		yoffset: 11;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1489,13 +1489,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform8 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 5;		yoffset: 11;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 11;	yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1507,13 +1507,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform8 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 11;	yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 11;	yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1525,13 +1525,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform8 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 11;	yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 11;	yoffset: 11;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1543,7 +1543,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform8 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 11;	yoffset: 11;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1556,7 +1556,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform9 {
 		always_draw: 1;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: -1;	yoffset: -1;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1568,13 +1568,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform9 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: -1;	yoffset: -1;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 0;		yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1586,13 +1586,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform9 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 0;		yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 1;		yoffset: 10;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1604,13 +1604,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform9 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 1;		yoffset: 10;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 3;		yoffset: -1;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1622,13 +1622,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform9 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 3;		yoffset: -1;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 4;		yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1640,13 +1640,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform9 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 4;		yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 5;		yoffset: 10;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1658,13 +1658,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform9 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 5;		yoffset: 10;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 8;		yoffset: -1;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1676,13 +1676,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform9 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 8;		yoffset: -1;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 9;		yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1694,13 +1694,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform9 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 9;		yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 10;	yoffset: 10;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1712,7 +1712,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform9 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 10;	yoffset: 10;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1725,7 +1725,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform10 {
 		always_draw: 1;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: -3;	yoffset: -3;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1737,13 +1737,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform10 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: -3;	yoffset: -3;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: -3;	yoffset: 3;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1755,13 +1755,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform10 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: -3;	yoffset: 3;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 1;		yoffset: 10;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1773,13 +1773,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform10 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 1;		yoffset: 10;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 2;		yoffset: -3;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1791,13 +1791,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform10 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 2;		yoffset: -3;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 2;		yoffset: 2;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1809,13 +1809,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform10 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 2;		yoffset: 2;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 5;		yoffset: 9;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1827,13 +1827,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform10 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 5;		yoffset: 9;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 10;	yoffset: 1;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1845,13 +1845,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform10 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 10;	yoffset: 1;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 9;		yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1863,13 +1863,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform10 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 9;		yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 8;		yoffset: 8;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1881,7 +1881,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform10 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 8;		yoffset: 8;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1894,7 +1894,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform11 {
 		always_draw: 1;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: -3;	yoffset: -3;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1906,13 +1906,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform11 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: -3;	yoffset: -3;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: -3;	yoffset: 3;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1924,13 +1924,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform11 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: -3;	yoffset: 3;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: -1;	yoffset: 10;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1942,13 +1942,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform11 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: -1;	yoffset: 10;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 2;		yoffset: -3;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1960,13 +1960,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform11 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 2;		yoffset: -3;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 2;		yoffset: 2;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1978,13 +1978,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform11 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 2;		yoffset: 2;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 3;		yoffset: 9;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -1996,13 +1996,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform11 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 3;		yoffset: 9;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 7;		yoffset: -3;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2014,13 +2014,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform11 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 7;		yoffset: -3;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 7;		yoffset: 2;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2032,13 +2032,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform11 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 7;		yoffset: 2;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 7;		yoffset: 7;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2050,7 +2050,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform11 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 7;		yoffset: 7;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2063,7 +2063,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform12 {
 		always_draw: 1;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 0;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2075,13 +2075,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform12 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 0;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: -1;	yoffset: 4;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2093,13 +2093,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform12 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: -1;	yoffset: 4;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: -3;	yoffset: 8;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2111,13 +2111,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform12 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: -3;	yoffset: 8;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 5;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2129,13 +2129,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform12 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 5;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 5;		yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2147,13 +2147,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform12 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 5;		yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 4;		yoffset: 10;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2165,13 +2165,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform12 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 4;		yoffset: 10;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 11;	yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2183,13 +2183,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform12 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 11;	yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 11;	yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2201,13 +2201,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform12 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 11;	yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 11;	yoffset: 11;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2219,7 +2219,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform12 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 11;	yoffset: 11;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2232,7 +2232,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform13 {
 		always_draw: 1;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 0;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2244,13 +2244,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform13 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 0;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 0;		yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2262,13 +2262,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform13 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 0;		yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: -2;	yoffset: 9;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2280,13 +2280,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform13 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: -2;	yoffset: 9;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 4;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2298,13 +2298,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform13 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 4;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 5;		yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2316,13 +2316,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform13 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 5;		yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 4;		yoffset: 10;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2334,13 +2334,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform13 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 4;		yoffset: 10;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 9;		yoffset: -2;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2352,13 +2352,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform13 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 9;		yoffset: -2;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 10;	yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2370,13 +2370,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform13 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 10;	yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 11;	yoffset: 11;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2388,7 +2388,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform13 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 11;	yoffset: 11;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2401,7 +2401,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform14 {
 		always_draw: 1;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 0;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2413,13 +2413,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform14 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 0;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 0;		yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2431,13 +2431,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform14 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 0;		yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 0;		yoffset: 10;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2449,13 +2449,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform14 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 0;		yoffset: 10;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 5;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2467,13 +2467,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform14 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 5;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 5;		yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2485,13 +2485,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform14 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 5;		yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 5;		yoffset: 10;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2503,13 +2503,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform14 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 5;		yoffset: 10;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 10;	yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2521,13 +2521,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform14 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 10;	yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 9;		yoffset: 4;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2539,13 +2539,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform14 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 9;		yoffset: 4;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 7;		yoffset: 7;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2557,7 +2557,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform14 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 7;		yoffset: 7;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2570,7 +2570,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform23 {
 		always_draw: 1;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 0;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2582,13 +2582,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform23 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 0;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: -2;	yoffset: 2;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2600,13 +2600,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform23 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: -2;	yoffset: 2;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: -5;	yoffset: 7;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2618,13 +2618,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform23 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: -5;	yoffset: 7;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 2;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2636,13 +2636,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform23 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 2;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 2;		yoffset: 2;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2654,13 +2654,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform23 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 2;		yoffset: 2;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: -1;	yoffset: 6;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2672,13 +2672,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform23 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: -1;	yoffset: 6;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 8;		yoffset: -2;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2690,13 +2690,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform23 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 8;		yoffset: -2;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 5;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2708,13 +2708,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform23 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 5;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 4;		yoffset: 4;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2726,7 +2726,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform23 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 4;		yoffset: 4;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2739,7 +2739,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform27 {
 		always_draw: 1;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 0;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2751,13 +2751,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform27 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 0;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 0;		yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2769,13 +2769,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform27 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 0;		yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: -1;	yoffset: 11;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2787,13 +2787,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform27 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: -1;	yoffset: 11;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 2;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2805,13 +2805,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform27 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 2;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 3;		yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2823,13 +2823,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform27 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 3;		yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 3;		yoffset: 10;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2841,13 +2841,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform27 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 3;		yoffset: 10;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 5;		yoffset: -5;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2859,13 +2859,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform27 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 5;		yoffset: -5;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 6;		yoffset: 2;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2877,13 +2877,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform27 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 6;		yoffset: 2;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 7;		yoffset: 8;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2895,7 +2895,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform27 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 7;		yoffset: 8;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2908,7 +2908,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform29 {
 		always_draw: 1;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: -3;	yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2920,13 +2920,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform29 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: -3;	yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: -3;	yoffset: 4;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2938,13 +2938,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform29 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: -3;	yoffset: 4;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: -3;	yoffset: 8;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2956,13 +2956,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform29 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: -3;	yoffset: 8;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 3;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2974,13 +2974,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform29 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 3;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 1;		yoffset: 3;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -2992,13 +2992,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform29 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 1;		yoffset: 3;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 4;		yoffset: 10;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -3010,13 +3010,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform29 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 4;		yoffset: 10;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 8;		yoffset: -3;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -3028,13 +3028,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform29 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 8;		yoffset: -3;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 10;	yoffset: 4;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -3046,13 +3046,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform29 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 10;	yoffset: 4;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 11;	yoffset: 11;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -3064,7 +3064,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform29 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 11;	yoffset: 11;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -3077,7 +3077,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform30 {
 		always_draw: 1;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: -3;	yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -3089,13 +3089,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform30 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: -3;	yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: -5;	yoffset: 2;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -3107,13 +3107,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform30 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: -5;	yoffset: 2;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: -8;	yoffset: 4;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -3125,13 +3125,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform30 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: -8;	yoffset: 4;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 3;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -3143,13 +3143,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform30 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 3;		yoffset: 0;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 1;		yoffset: 3;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -3161,13 +3161,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform30 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 1;		yoffset: 3;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: -1;	yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -3179,13 +3179,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform30 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: -1;	yoffset: 5;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 10;	yoffset: -1;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -3197,13 +3197,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform30 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 10;	yoffset: -1;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 9;		yoffset: 3;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -3215,13 +3215,13 @@ spritelayout forest_slope_aware_ground_with_trees_uniform30 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 9;		yoffset: 3;
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TEMPERATE_TREE;
+		sprite: TTD_TEMPERATE_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TEMPERATE_TREE);
 		xoffset: 7;		yoffset: 7;
 		xextent: 4;		yextent: 4;		zextent: 32;
@@ -3233,7 +3233,7 @@ spritelayout forest_slope_aware_ground_with_trees_uniform30 {
 		xextent: 4;		yextent: 4;		zextent: 32;
 	}
 	building {
-		sprite: TTD_TROPIC_TREE;
+		sprite: TTD_TROPIC_TREE1;
 		hide_sprite: LOAD_TEMP(TEMP_REGISTER_NO_TROPIC_TREE);
 		xoffset: 7;		yoffset: 7;
 		xextent: 4;		yextent: 4;		zextent: 32;

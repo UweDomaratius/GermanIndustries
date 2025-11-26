@@ -43,6 +43,8 @@ STR_PARAM_EXT_COKE_SULPHUR :Extension set "Coke and Sulphur"
 STR_PARAM_EXT_COKE_SULPHUR_DESC :Adds industries and cargos related to the processing of ores containing sulphur.
 STR_PARAM_EXT_AMMONIA :Extension set "Ammonia synthesis"
 STR_PARAM_EXT_AMMONIA_DESC :Adds industries and cargos related to the synthesis of ammonia.
+STR_PARAM_EXT_FRUITS :Extension set "Fruits and Bio Energy"
+STR_PARAM_EXT_FRUITS_DESC :Adds industries and cargos related to the harvesting of fruits and the usage of regenerative energy sources.
 
 STR_TOWN    :{STRING}
 STR_STATION :{STRING} {STRING}
@@ -64,6 +66,7 @@ STR_CARGO_NAME_ACID               :Acid
 STR_CARGO_NAME_ALUMINIUM          :Aluminium
 STR_CARGO_NAME_AMMONIA            :Ammonia
 STR_CARGO_NAME_BAUXITE            :Bauxite
+STR_CARGO_NAME_BIOMASS            :Biomass
 STR_CARGO_NAME_BUILDING_MATERIALS :Bricks
 STR_CARGO_NAME_CARBON_BLACK       :Carbon Black
 STR_CARGO_NAME_CEMENT             :Cement
@@ -73,6 +76,7 @@ STR_CARGO_NAME_COPPER             :Copper
 STR_CARGO_NAME_COPPER_ORE         :Copper Ore
 STR_CARGO_NAME_ETHYLENE           :Ethylene
 STR_CARGO_NAME_FISH               :Fish
+STR_CARGO_NAME_FRUITS             :Fruits
 STR_CARGO_NAME_GLASS              :Glass
 STR_CARGO_NAME_HYDROGEN           :Hydrogen
 STR_CARGO_NAME_LIMESTONE          :Limestone
@@ -101,6 +105,7 @@ STR_QUANTITY_ACID                 :{WEIGHT} of acid
 STR_QUANTITY_ALUMINIUM            :{WEIGHT} of aluminium
 STR_QUANTITY_AMMONIA              :{WEIGHT} of ammonia
 STR_QUANTITY_BAUXITE              :{WEIGHT} of bauxite
+STR_QUANTITY_BIOMASS              :{WEIGHT} of biomass
 STR_QUANTITY_BUILDING_MATERIALS   :{WEIGHT} of bricks
 STR_QUANTITY_CARBON_BLACK         :{WEIGHT} of carbon black
 STR_QUANTITY_CEMENT               :{WEIGHT} of cement
@@ -110,6 +115,7 @@ STR_QUANTITY_COPPER               :{WEIGHT} of copper
 STR_QUANTITY_COPPER_ORE           :{WEIGHT} of copper ore
 STR_QUANTITY_ETHYLENE             :{WEIGHT} of ethylene
 STR_QUANTITY_FISH                 :{WEIGHT} of fish
+STR_QUANTITY_FRUITS               :{WEIGHT} of fruits
 STR_QUANTITY_GLASS                :{WEIGHT} of glass
 STR_QUANTITY_GOODS                :{WEIGHT} of goods
 STR_QUANTITY_HYDROGEN             :{WEIGHT} of hydrogen
@@ -140,6 +146,7 @@ STR_CID_ACID                      :{TINYFONT}ACID
 STR_CID_ALUMINIUM                 :{TINYFONT}ALUM
 STR_CID_AMMONIA                   :{TINYFONT}NH3
 STR_CID_BAUXITE                   :{TINYFONT}AORE
+STR_CID_BIOMASS                   :{TINYFONT}BIOM
 STR_CID_BUILDING_MATERIALS        :{TINYFONT}BDMT
 STR_CID_CARBON_BLACK              :{TINYFONT}CBLK
 STR_CID_CEMENT                    :{TINYFONT}CMNT
@@ -150,6 +157,7 @@ STR_CID_COPPER_ORE                :{TINYFONT}CORE
 STR_CID_ETHYLENE                  :{TINYFONT}C2H4
 STR_CID_FISH                      :{TINYFONT}FISH
 STR_CID_FOOD                      :{TINYFONT}FOOD
+STR_CID_FRUITS                    :{TINYFONT}FRUT
 STR_CID_GLASS                     :{TINYFONT}GLAS
 STR_CID_HYDROGEN                  :{TINYFONT}H2
 STR_CID_LIMESTONE                 :{TINYFONT}LIME
@@ -180,6 +188,7 @@ STR_IND_ACID_PLANT             :Acid Plant
 STR_IND_ALUMINIUM_PLANT        :Aluminium Plant
 STR_IND_AMMONIA_PLANT          :Ammonia Plant
 STR_IND_ANIMAL_FARM            :Animal Farm
+STR_IND_BIOREFINERY            :Biorefinery
 STR_IND_BREWERY                :Brewery
 STR_IND_BRICK_WORKS            :Brickworks
 STR_IND_BUILDERS_YARD          :Builders Yard
@@ -196,6 +205,7 @@ STR_IND_DAIRY                  :Dairy
 STR_IND_DEPARTMENT_STORE       :Department Store
 STR_IND_FISHING_GROUNDS        :Fishing Grounds
 STR_IND_FLOUR_MILL             :Flour Mill
+STR_IND_FRUIT_PLANTATION       :Fruit Plantation
 STR_IND_FURNITURE_FACTORY      :Furniture Factory
 STR_IND_GENERAL_STORE          :General Store
 STR_IND_GLASS_WORKS            :Glass Works
@@ -225,6 +235,7 @@ STR_IND_VEHICLE_FACTORY        :Vehicle Factory
 STR_STATION_ALUMINIUM_PLANT          :Aluminium Plant
 STR_STATION_AMMONIA_PLANT            :Ammonia Plant
 STR_STATION_ANIMAL_FARM              :Animal Farm
+STR_STATION_BIOREFINERY              :Biorefinery
 STR_STATION_BREWERY                  :Brewery
 STR_STATION_BRICK_WORKS              :Brickworks
 STR_STATION_BUILDERS_YARD            :Builders Yard
@@ -246,6 +257,7 @@ STR_STATION_FISHING_GROUNDS          :Fishing Grounds
 STR_STATION_FLOUR_MILL               :Flour Mill
 STR_STATION_FOOD_PROCESSOR           :Food Processor
 STR_STATION_FOREST                   :Forest
+STR_STATION_FRUIT_PLANTATION         :Fruit Plantation
 STR_STATION_FURNITURE_FACTORY        :Furniture Factory
 STR_STATION_GENERAL_STORE            :General Store
 STR_STATION_GLASS_WORKS              :Glass Works
@@ -321,3 +333,4 @@ STR_ERR_EXTENSION_PAPER_REQUIRES_EXTENSION_BASIC_INORGANIC_CHEMISTRY:Extension "
 STR_ERR_EXTENSION_ORGANIC_CHEMISTRY_REQUIRES_EXTENSION_BASIC_INORGANIC_CHEMISTRY:Extension "Organic Chemistry" requires extension "Basic inorganic chemistry" to be activated.
 STR_ERR_EXTENSION_SULPHUR_COKE_REQUIRES_OTHER_EXTENSIONS:Extension "Coke and Sulphur" requires at least one of the following extensions to be activated: "Basic inorganic chemistry", "Painting Industries"
 STR_ERR_EXTENSION_AMMONIA_REQUIRES_INORGANIC_CHEMISTRY_BUILDING_MATERIALS:Extension "Ammonia" requires extensions "Building industries" and "Basic inorganic chemistry" to be activated.
+STR_ERR_EXTENSION_FRUITS_REQUIRES_ORGANIC_CHEMISTRY:Extension "Fruits and Bio Energy" requires extension "Organic chemistry" to be activated.
