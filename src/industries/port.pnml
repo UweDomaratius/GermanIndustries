@@ -1352,7 +1352,7 @@ tilelayout port_tilelayout_5 {
 switch(FEAT_INDUSTRIES, SELF, port_switch_location_check_industry_distance,
     [STORE_TEMP(16, TEMP_REGISTER_TOWN_MIN_DISTANCE),
 	 STORE_TEMP(64, TEMP_REGISTER_TOWN_MAX_DISTANCE),
-	   (distance_from_town() && 
+	   (is_industry_funded_or_prospected()) || ((distance_from_town() && 
 	   (is_near_map_edge(32)) &&
 	   (industry_distance(INDUSTRY_ID_ALUMINIUM_PLANT) >= 32) &&
 	   (industry_distance(INDUSTRY_ID_BRICK_WORKS) >= 32) &&
@@ -1371,7 +1371,7 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_location_check_industry_distance,
 	   (industry_distance(INDUSTRY_ID_PLASTICS_PLANT) >= 32) &&
 	   (industry_distance(INDUSTRY_ID_POWER_PLANT) >= 32) &&
 	   (industry_distance(INDUSTRY_ID_VEHICLE_FACTORY) >= 32) &&	   
-	   (industry_distance(INDUSTRY_ID_PORT) >= 16))])
+	   (industry_distance(INDUSTRY_ID_PORT) >= 16)))])
 {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;

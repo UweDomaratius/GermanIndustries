@@ -571,7 +571,7 @@ tilelayout packaging_plant_industry_layout_3_tilelayout {
 switch(FEAT_INDUSTRIES, SELF, packaging_plant_switch_location_check_industry_distance,
        [STORE_TEMP(32, TEMP_REGISTER_TOWN_MIN_DISTANCE),
 	    STORE_TEMP(64, TEMP_REGISTER_TOWN_MAX_DISTANCE),
-	    (distance_from_town() && 
+	    (is_industry_funded_or_prospected()) || ((distance_from_town() && 
 	    (industry_distance(INDUSTRY_ID_ALUMINIUM_PLANT) >= 32) && 
 		(industry_distance(INDUSTRY_ID_PLASTICS_PLANT) >= 32) && 
 		(industry_distance(INDUSTRY_ID_PHARMACEUTICAL_PLANT) >= 32) && 
@@ -584,7 +584,7 @@ switch(FEAT_INDUSTRIES, SELF, packaging_plant_switch_location_check_industry_dis
 		(industry_distance(INDUSTRY_ID_PAPER_MILL) >= 32) && 
 		(industry_distance(INDUSTRY_ID_PRINTING_WORKS) >= 32) && 
 		(industry_distance(INDUSTRY_ID_GLASS_WORKS) >= 32) && 
-	    (industry_distance(INDUSTRY_ID_PACKAGING_PLANT) >= 16))]) {
+	    (industry_distance(INDUSTRY_ID_PACKAGING_PLANT) >= 16)))]) {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;
 }

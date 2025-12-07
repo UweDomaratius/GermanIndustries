@@ -451,11 +451,11 @@ tilelayout soda_plant_tilelayout_3 {
 }
 
 switch(FEAT_INDUSTRIES, SELF, soda_plant_switch_location_check_industry_distance,
-	   (industry_distance(INDUSTRY_ID_AMMONIA_PLANT) >= 32) &&
+	   (is_industry_funded_or_prospected()) || ((industry_distance(INDUSTRY_ID_AMMONIA_PLANT) >= 32) &&
 	   (industry_distance(INDUSTRY_ID_GLASS_WORKS) >= 32) &&
-	   //(industry_distance(INDUSTRY_ID_CLEANING_AGENTS_PLANT) >= 32) &&
+	   (industry_distance(INDUSTRY_TILE_ID_CLEANING_PRODUCTS_FACTORY) >= 32) &&
 	   (industry_distance(INDUSTRY_ID_SODA_PLANT) >= 16) &&
-	   (town_euclidean_dist(0,0) > 32) // should not be near towns
+	   (town_euclidean_dist(0,0) > 32)) // should not be near towns
 	   ) 
 {
 	   1: return CB_RESULT_LOCATION_ALLOW;

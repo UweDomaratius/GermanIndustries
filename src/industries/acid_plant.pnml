@@ -929,13 +929,13 @@ tilelayout acid_plant_tilelayout_6 {
 switch(FEAT_INDUSTRIES, SELF, acid_plant_switch_location_check_industry_distance,
        [STORE_TEMP(32, TEMP_REGISTER_TOWN_MIN_DISTANCE),
 	    STORE_TEMP(64, TEMP_REGISTER_TOWN_MAX_DISTANCE),
-	    (distance_from_town() && 
+	    (is_industry_funded_or_prospected()) || ((distance_from_town() && 
 	    (industry_distance(INDUSTRY_ID_CHLOR_ALKALI_PLANT) >= 32) && 
 		(industry_distance(INDUSTRY_ID_ORE_SMELTER) >= 32) && 
 		(industry_distance(INDUSTRY_ID_POWER_PLANT) >= 32) && 
 		(industry_distance(INDUSTRY_ID_OIL_REFINERY) >= 32) && 
 		(industry_distance(INDUSTRY_ID_COKE_OVEN) >= 32) && 
-	    (industry_distance(INDUSTRY_ID_ACID_PLANT) >= 16))]) {
+	    (industry_distance(INDUSTRY_ID_ACID_PLANT) >= 16)))]) {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;
 }

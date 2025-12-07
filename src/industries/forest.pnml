@@ -4993,8 +4993,8 @@ tilelayout forest_layout_4_tilelayout {
 }
 
 switch(FEAT_INDUSTRIES, SELF, forest_switch_location_check_industry_distance,
-       (industry_distance(INDUSTRY_ID_FOREST) >= 16) 
-	   && (industry_distance(INDUSTRY_ID_SAWMILL) >= 32)
+       (is_industry_funded_or_prospected()) || ((industry_distance(INDUSTRY_ID_FOREST) >= 16) 
+	   && (industry_distance(INDUSTRY_ID_SAWMILL) >= 32))
 		) 
 {
 	   1: return CB_RESULT_LOCATION_ALLOW;
