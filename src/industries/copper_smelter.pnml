@@ -995,14 +995,14 @@ tilelayout copper_smelter_tilelayout_3 {
 switch(FEAT_INDUSTRIES, SELF, copper_smelter_switch_location_check_industry_distance,
        [STORE_TEMP(32, TEMP_REGISTER_TOWN_MIN_DISTANCE),
 	    STORE_TEMP(64, TEMP_REGISTER_TOWN_MAX_DISTANCE),
-	    (distance_from_town() && 
+	    (is_industry_funded_or_prospected()) || ((distance_from_town() && 
 		(industry_town_count(INDUSTRY_ID_POWER_PLANT) > 0) && // industry requires a power plant in the city
 		(industry_town_count(INDUSTRY_ID_COPPER_SMELTER) == 0) && // only allow one plant per city
 		(industry_distance(INDUSTRY_ID_COPPER_ORE_MINE) >= 32) && 
 		(industry_distance(INDUSTRY_ID_ACID_PLANT) >= 32) && 
 		(industry_distance(INDUSTRY_ID_VEHICLE_FACTORY) >= 32) && 
 		(industry_distance(INDUSTRY_ID_PAINT_FACTORY) >= 32) && 
-	    (industry_distance(INDUSTRY_ID_COPPER_SMELTER) >= 16))]) {
+	    (industry_distance(INDUSTRY_ID_COPPER_SMELTER) >= 16)))]) {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;
 }

@@ -560,7 +560,7 @@ tilelayout cryo_plant_industry_layout_5_tilelayout {
 }
 
 switch(FEAT_INDUSTRIES, SELF, cryo_plant_switch_location_check_industry_distance,
-	   (industry_distance(INDUSTRY_ID_AMMONIA_PLANT) >= 32) &&
+	   (is_industry_funded_or_prospected()) || ((industry_distance(INDUSTRY_ID_AMMONIA_PLANT) >= 32) &&
 	   (industry_distance(INDUSTRY_ID_ORE_SMELTER) >= 32) &&
 	   (industry_distance(INDUSTRY_ID_CARBON_BLACK_PLANT) >= 32) &&
 	   (industry_distance(INDUSTRY_ID_INTEGRATED_STEEL_MILL) >= 32) &&
@@ -568,7 +568,7 @@ switch(FEAT_INDUSTRIES, SELF, cryo_plant_switch_location_check_industry_distance
 	   (industry_distance(INDUSTRY_ID_ACID_PLANT) >= 32) &&
 	   (industry_distance(INDUSTRY_ID_PHARMACEUTICAL_PLANT) >= 32) &&
 	   (industry_distance(INDUSTRY_ID_CRYO_PLANT) >= 16) &&
-	   (town_euclidean_dist(0,0) > 32) // should not be near towns
+	   (town_euclidean_dist(0,0) > 32)) // should not be near towns
 	   ) 
 {
 	   1: return CB_RESULT_LOCATION_ALLOW;

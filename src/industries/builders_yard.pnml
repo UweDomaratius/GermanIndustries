@@ -289,7 +289,7 @@ tilelayout builders_yard_tilelayout_4 {
 }
 
 switch(FEAT_INDUSTRIES, SELF, builders_yard_switch_location_check_industry_distance,
-       [(
+       [(is_industry_funded_or_prospected()) || (
 	    (industry_distance(INDUSTRY_ID_CEMENT_PLANT) >= 32) &&
 		(industry_distance(INDUSTRY_ID_BRICK_WORKS) >= 32) &&
 		(town_euclidean_dist(0,0) < 16) &&

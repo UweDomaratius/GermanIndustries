@@ -1130,10 +1130,10 @@ tilelayout sandpit_layout_2_tilelayout {
 }
 
 switch(FEAT_INDUSTRIES, SELF, sandpit_switch_location_check_industry_distance,
-		(industry_distance(INDUSTRY_ID_SANDPIT) >= 16) && 
+		(is_industry_funded_or_prospected()) || ((industry_distance(INDUSTRY_ID_SANDPIT) >= 16) && 
 		(industry_distance(INDUSTRY_ID_CEMENT_PLANT) >= 32) &&
 		(industry_distance(INDUSTRY_ID_GLASS_WORKS) >= 32) &&
-		(industry_distance(INDUSTRY_ID_BUILDERS_YARD) >= 32)
+		(industry_distance(INDUSTRY_ID_BUILDERS_YARD) >= 32))
 		) 
 { 
 	1: return CB_RESULT_LOCATION_ALLOW;

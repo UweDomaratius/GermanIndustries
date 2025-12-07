@@ -322,12 +322,12 @@ tilelayout clothing_plant_tilelayout_2 {
 switch(FEAT_INDUSTRIES, SELF, clothing_plant_switch_location_check_industry_distance,
        [STORE_TEMP(0, TEMP_REGISTER_TOWN_MIN_DISTANCE),
 	    STORE_TEMP(16, TEMP_REGISTER_TOWN_MAX_DISTANCE),
-	    (distance_from_town() && 
+	    (is_industry_funded_or_prospected()) || ((distance_from_town() && 
 		(industry_distance(INDUSTRY_ID_CLOTHING_PLANT) >= 16) && 
 		(industry_distance(INDUSTRY_ID_DEPARTMENT_STORE) >= 32) && 
 		(industry_distance(INDUSTRY_ID_PORT) >= 32) && 
 		(industry_distance(INDUSTRY_ID_PACKAGING_PLANT) != 32) &&
-	    (industry_distance(INDUSTRY_ID_TEXTILE_MILL) >= 32))]) {
+	    (industry_distance(INDUSTRY_ID_TEXTILE_MILL) >= 32)))]) {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;
 }

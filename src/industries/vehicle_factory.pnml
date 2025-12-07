@@ -588,7 +588,7 @@ tilelayout vehicle_factory_tilelayout_4 {
 switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_location_check_industry_distance,
        [STORE_TEMP(24, TEMP_REGISTER_TOWN_MIN_DISTANCE),
 	    STORE_TEMP(128, TEMP_REGISTER_TOWN_MAX_DISTANCE),
-	    (distance_from_town() && 
+	    (is_industry_funded_or_prospected()) || (distance_from_town() && 
 		(industry_town_count(INDUSTRY_ID_POWER_PLANT) > 0) && // industry requires a power plant in the city
 		(industry_town_count(INDUSTRY_ID_VEHICLE_FACTORY) == 0) && // only allow one factory per city
 		(industry_distance(INDUSTRY_ID_INTEGRATED_STEEL_MILL) >= 32) &&

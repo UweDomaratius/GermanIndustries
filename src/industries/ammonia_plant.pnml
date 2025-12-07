@@ -1056,13 +1056,13 @@ tilelayout ammonia_plant_tilelayout_7 {
 }
 
 switch(FEAT_INDUSTRIES, SELF, ammonia_plant_switch_location_check_industry_distance,
-	   (industry_distance(INDUSTRY_ID_CRYO_PLANT) >= 32) &&
+	   (is_industry_funded_or_prospected()) || ((industry_distance(INDUSTRY_ID_CRYO_PLANT) >= 32) &&
 	   (industry_distance(INDUSTRY_ID_ACID_PLANT) >= 32) &&
 	   (industry_distance(INDUSTRY_ID_PHARMACEUTICAL_PLANT) >= 32) &&
 	   (industry_distance(INDUSTRY_ID_SODA_PLANT) >= 32) &&
 	   (industry_distance(INDUSTRY_ID_AMMONIA_PLANT) >= 16) &&
 	   (town_euclidean_dist(0,0) > 32) // should not be near towns
-	   ) 
+	   ) )
 {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;

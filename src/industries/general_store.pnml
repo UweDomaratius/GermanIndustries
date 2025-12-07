@@ -109,7 +109,7 @@ tilelayout general_store_tilelayout {
 }
 
 switch(FEAT_INDUSTRIES, SELF, general_store_switch_location_check_industry_distance,
-       [(
+       [(is_industry_funded_or_prospected()) || (
 	    (industry_distance(INDUSTRY_ID_FOOD_PROCESSOR) >= 32) &&
 		(industry_distance(INDUSTRY_ID_BREWERY) >= 32) &&
 		(industry_distance(INDUSTRY_ID_DAIRY) >= 32) &&

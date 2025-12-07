@@ -2099,12 +2099,12 @@ tilelayout fruit_plantation_industry_layout_5_tilelayout {
 }
 
 switch(FEAT_INDUSTRIES, SELF, fruit_plantation_switch_location_check_industry_distance,
-	   (industry_distance(INDUSTRY_ID_GENERAL_STORE) >= 32) &&
+	   (is_industry_funded_or_prospected()) || ((industry_distance(INDUSTRY_ID_GENERAL_STORE) >= 32) &&
 	   (industry_distance(INDUSTRY_ID_HOTEL) >= 32) &&
 	   (industry_distance(INDUSTRY_ID_FOOD_PROCESSOR) >= 32) &&
 	   //(industry_distance(INDUSTRY_ID_BIOREFINERY) >= 32) &&
 	   (industry_distance(INDUSTRY_ID_FRUIT_PLANTATION) >= 16) &&
-	   (town_euclidean_dist(0,0) > 32) // should not be near towns
+	   (town_euclidean_dist(0,0) > 32)) // should not be near towns
 	   ) 
 {
 	   1: return CB_RESULT_LOCATION_ALLOW;

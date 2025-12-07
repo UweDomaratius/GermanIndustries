@@ -539,11 +539,11 @@ tilelayout brick_works_tilelayout_3 {
 switch(FEAT_INDUSTRIES, SELF, brick_works_switch_location_check_industry_distance,
 	[STORE_TEMP(32, TEMP_REGISTER_TOWN_MIN_DISTANCE),
 	 STORE_TEMP(64, TEMP_REGISTER_TOWN_MAX_DISTANCE),
-	    (distance_from_town() && 
+	    (is_industry_funded_or_prospected()) || ((distance_from_town() && 
         (industry_distance(INDUSTRY_ID_BRICK_WORKS) >= 16) && 
 		(industry_distance(INDUSTRY_ID_BUILDERS_YARD) >= 32) &&
 		(industry_distance(INDUSTRY_ID_PORT) >= 32) &&
-	     (industry_distance(INDUSTRY_ID_COAL_MINE) >= 32))]) {
+	     (industry_distance(INDUSTRY_ID_COAL_MINE) >= 32)))]) {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;
 }
