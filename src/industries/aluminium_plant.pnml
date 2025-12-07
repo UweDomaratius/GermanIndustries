@@ -1214,7 +1214,7 @@ tilelayout aluminium_plant_tilelayout_3 {
 switch(FEAT_INDUSTRIES, SELF, aluminium_plant_switch_location_check_industry_distance,
        [STORE_TEMP(32, TEMP_REGISTER_TOWN_MIN_DISTANCE),
 	    STORE_TEMP(64, TEMP_REGISTER_TOWN_MAX_DISTANCE),
-	    (distance_from_town() && 
+	    (is_industry_funded_or_prospected()) || (distance_from_town() && 
 		(industry_town_count(INDUSTRY_ID_POWER_PLANT) > 0) && // industry requires a power plant in the city
 		(industry_town_count(INDUSTRY_ID_ALUMINIUM_PLANT) == 0) && // only allow one plant per city
 		(industry_distance(INDUSTRY_ID_PORT) >= 32) && 

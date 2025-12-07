@@ -329,14 +329,14 @@ tilelayout animal_farm_industry_layout_3_tilelayout {
 }
 
 switch(FEAT_INDUSTRIES, SELF, animal_farm_switch_location_check_industry_distance,
-	   (industry_distance(INDUSTRY_ID_ANIMAL_FARM) >= 16) &&
+	   (is_industry_funded_or_prospected()) || ((industry_distance(INDUSTRY_ID_ANIMAL_FARM) >= 16) &&
 	   (industry_distance(INDUSTRY_ID_FOOD_PROCESSOR) >= 32) &&
 	   (industry_distance(INDUSTRY_ID_DAIRY) >= 32) &&
 	   (industry_distance(INDUSTRY_ID_TEXTILE_MILL) >= 32) &&
 	   (industry_distance(INDUSTRY_ID_FARM) >= 32) &&
 	   (industry_distance(INDUSTRY_ID_TEXTILE_MILL) >= 32) &&
 	   (town_euclidean_dist(0,0) > 32) // should not be near towns
-	   ) 
+	   ) )
 {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;

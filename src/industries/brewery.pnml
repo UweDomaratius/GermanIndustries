@@ -427,7 +427,7 @@ tilelayout brewery_tilelayout_5 {
 switch(FEAT_INDUSTRIES, SELF, brewery_switch_location_check_industry_distance,
        [STORE_TEMP(0, TEMP_REGISTER_TOWN_MIN_DISTANCE),
 	    STORE_TEMP(24, TEMP_REGISTER_TOWN_MAX_DISTANCE),
-	    (distance_from_town() && 
+	    (is_industry_funded_or_prospected()) || (distance_from_town() && 
 	    (industry_distance(INDUSTRY_ID_FARM) >= 32) &&
 	    (industry_distance(INDUSTRY_ID_GENERAL_STORE) >= 32) &&
 		(industry_distance(INDUSTRY_ID_HOTEL) >= 32) &&

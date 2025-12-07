@@ -373,9 +373,9 @@ tilelayout copper_ore_mine_industry_layout_1_tilelayout {
 }
 
 switch(FEAT_INDUSTRIES, SELF, copper_ore_mine_switch_location_check_industry_distance,
-        (water_distance > 16) &&
+        (is_industry_funded_or_prospected()) || ((water_distance > 16) &&
 		(industry_distance(INDUSTRY_ID_COPPER_ORE_MINE) >= 16) && 
-		(industry_distance(INDUSTRY_ID_COPPER_SMELTER) >= 32)) 
+		(industry_distance(INDUSTRY_ID_COPPER_SMELTER) >= 32))) 
 { 
 	1: return CB_RESULT_LOCATION_ALLOW;
 	return CB_RESULT_LOCATION_DISALLOW;

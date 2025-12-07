@@ -377,7 +377,7 @@ tilelayout hotel_tilelayout_single_tile_2 {
 }
 
 switch(FEAT_INDUSTRIES, SELF, hotel_switch_location_check_industry_distance,
-       [(	    
+       [(is_industry_funded_or_prospected()) || (	    
 		(town_euclidean_dist(0,0) < 16) &&
 		(industry_distance(INDUSTRY_ID_GENERAL_STORE) >= 16) &&
 		(industry_distance(INDUSTRY_ID_OIL_RIG) >= 32) &&

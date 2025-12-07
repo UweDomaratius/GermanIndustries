@@ -236,7 +236,7 @@ tilelayout vehicle_distributor_tilelayout_3 {
 }
 
 switch(FEAT_INDUSTRIES, SELF, vehicle_distributor_switch_location_check_industry_distance,
-       [(
+       [(is_industry_funded_or_prospected()) || (
 	    (town_euclidean_dist(0,0) < 16) &&
 	    (industry_distance(INDUSTRY_ID_VEHICLE_FACTORY) >= 32) &&
 		(industry_distance(INDUSTRY_ID_VEHICLE_DISTRIBUTOR) >= 16))]) {

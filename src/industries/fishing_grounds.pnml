@@ -220,10 +220,10 @@ tilelayout fishing_grounds_industry_layout_4_tilelayout {
 }
 
 switch(FEAT_INDUSTRIES, SELF, fishing_grounds_switch_location_check_industry_distance,
-	   (industry_distance(INDUSTRY_ID_FISHING_GROUNDS) >= 16) 
+	   (is_industry_funded_or_prospected()) || ((industry_distance(INDUSTRY_ID_FISHING_GROUNDS) >= 16) 
 	   && is_near_map_edge(32)
-	   //&& (industry_distance(INDUSTRY_ID_FOOD_PROCESSOR) >= 32)
-	   ) 
+	   && (industry_distance(INDUSTRY_ID_FOOD_PROCESSOR) >= 32)
+	   ) )
 	   {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;

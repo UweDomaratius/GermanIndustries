@@ -749,11 +749,11 @@ tilelayout cleaning_products_factory_tilelayout_4 {
 }
 
 switch(FEAT_INDUSTRIES, SELF, cleaning_products_factory_switch_location_check_industry_distance,
-	   (industry_distance(INDUSTRY_ID_SODA_PLANT) >= 32) &&
+	   (is_industry_funded_or_prospected()) || ((industry_distance(INDUSTRY_ID_SODA_PLANT) >= 32) &&
 	   (industry_distance(INDUSTRY_ID_ACID_PLANT) >= 32) &&
 	   (industry_distance(INDUSTRY_ID_PACKAGING_PLANT) >= 32) &&
 	   (industry_distance(INDUSTRY_ID_CLEANING_PRODUCTS_FACTORY) >= 16) &&
-	   (town_euclidean_dist(0,0) > 32) // should not be near towns
+	   (town_euclidean_dist(0,0) > 32)) // should not be near towns
 	   ) 
 {
 	   1: return CB_RESULT_LOCATION_ALLOW;

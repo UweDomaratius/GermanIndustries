@@ -147,7 +147,7 @@ tilelayout petrol_station_tilelayout_2 {
 }
 
 switch(FEAT_INDUSTRIES, SELF, petrol_station_switch_location_check_industry_distance,
-       [(
+       [(is_industry_funded_or_prospected()) || (
 	    (industry_distance(INDUSTRY_ID_COAL_LIQUEFACTION_PLANT) >= 32) &&
 		(industry_distance(INDUSTRY_ID_OIL_REFINERY) >= 32) &&
 		(industry_distance(INDUSTRY_ID_STEAMCRACKER) >= 32) &&

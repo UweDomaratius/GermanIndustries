@@ -419,11 +419,11 @@ tilelayout sawmill_tilelayout_1 {
 switch(FEAT_INDUSTRIES, SELF, sawmill_switch_location_check_industry_distance,
        [STORE_TEMP(32, TEMP_REGISTER_TOWN_MIN_DISTANCE),
 	    STORE_TEMP(64, TEMP_REGISTER_TOWN_MAX_DISTANCE),
-	    (distance_from_town() && 
+	    (is_industry_funded_or_prospected()) || ((distance_from_town() && 
 	    (industry_distance(INDUSTRY_ID_FOREST) >= 32) &&
 	    (industry_distance(INDUSTRY_ID_FURNITURE_FACTORY) >= 32) &&
 		(industry_distance(INDUSTRY_ID_BUILDERS_YARD) >= 32) && 
-	    (industry_distance(INDUSTRY_ID_SAWMILL) >= 16))]) {
+	    (industry_distance(INDUSTRY_ID_SAWMILL) >= 16)))]) {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;
 }
