@@ -143,6 +143,13 @@ grf {
 			desc: string(STR_PARAM_EXT_FRUITS_DESC);
 		}
 	}
+	param {
+		param_extension_metallurgy {
+			type: bool;
+			name: string(STR_PARAM_EXT_METALLURGY);
+			desc: string(STR_PARAM_EXT_METALLURGY_DESC);
+		}
+	}
 }
 
 if (ttd_platform != PLATFORM_OPENTTD || openttd_version < version_openttd(14, 0)) {
@@ -181,6 +188,11 @@ if (param_extension_fruits && !param_extension_organic_chemistry) {
 	exit;
 }
 
+if (param_extension_metallurgy && !param_extension_coke_sulphur) {
+	error(FATAL, string(STR_ERR_EXTENSION_METALLURGY_REQUIRES_COKE_SULPHUR));
+	exit;
+}
+
 // TODO: check for incompatible grfs
 
 // disable all default industries
@@ -201,5 +213,6 @@ cargotable {
 	RFPR, C2H4, PETR, // ext organic chemistry
 	ACID, SULP, PORE, COKE, // ext coke sulphur
 	O2__, N2__, NH3_, SASH, // ext ammonia
-	FRUT, BIOM // ext fruits
+	FRUT, BIOM, // ext fruits
+	ENSP, STSH, STWR // ext metallurgy
 }

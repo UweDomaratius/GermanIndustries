@@ -77,6 +77,11 @@ constants = {
     # CARGO IDs FRUITS
     "CARGO_ID_BIOMASS" : "48",
     "CARGO_ID_FRUITS" : "47",
+    
+    # CARGO IDs METALLURGY
+    "CARGO_ID_MACHINE_PARTS" : "49",
+    "CARGO_ID_METAL_SHEETS" : "50",
+    "CARGO_ID_METAL_WIRE" : "51",
         
     # INDUSTRY IDS 0-20 (with gaps): Base Industries
     "INDUSTRY_ID_BUILDERS_YARD":"17",
@@ -163,6 +168,12 @@ constants = {
     # Fruits Extension
     "INDUSTRY_ID_FRUIT_PLANTATION":"56",
     "INDUSTRY_ID_BIOREFINERY":"57",
+    
+    # Metallurgy Extension
+    "INDUSTRY_ID_FOUNDRY_FORGE":"58",
+    "INDUSTRY_ID_SHEET_MILL":"59",
+    "INDUSTRY_ID_WIRE_MILL":"60",
+    "INDUSTRY_ID_APPLIANCE_FACTORY":"61",
     
     # INDUSTRY TILE IDs for Base Industries
     "INDUSTRY_TILE_ID_BUILDERS_YARD":"22",
@@ -269,6 +280,12 @@ constants = {
     "INDUSTRY_TILE_ID_BIOREFINERY" : "77",
     "INDUSTRY_TILE_ID_FRUIT_PLANTATION_1" : "75",
     "INDUSTRY_TILE_ID_FRUIT_PLANTATION_2" : "76",
+    
+    # TILE_IDs for METALLURGY
+    "INDUSTRY_TILE_ID_FOUNDRY_FORGE" : "78",
+    "INDUSTRY_TILE_ID_SHEET_MILL" : "79",
+    "INDUSTRY_TILE_ID_WIRE_MILL": "80",
+    "INDUSTRY_TILE_ID_APPLIANCE_FACTORY": "81",
         
     # TTD sprite IDs
     "TTD_OILRIG_STATION_TILE": "24",

@@ -45,6 +45,8 @@ STR_PARAM_EXT_AMMONIA :Extension set "Ammonia synthesis"
 STR_PARAM_EXT_AMMONIA_DESC :Adds industries and cargos related to the synthesis of ammonia.
 STR_PARAM_EXT_FRUITS :Extension set "Fruits and Bio Energy"
 STR_PARAM_EXT_FRUITS_DESC :Adds industries and cargos related to the harvesting of fruits and the usage of regenerative energy sources.
+STR_PARAM_EXT_METALLURGY :Extension set "Metallurgy"
+STR_PARAM_EXT_METALLURGY_DESC :Adds industries and cargos related to heavy industries and production of sheets, cables and other metal-based products.
 
 STR_TOWN    :{STRING}
 STR_STATION :{STRING} {STRING}
@@ -81,6 +83,9 @@ STR_CARGO_NAME_GLASS              :Glass
 STR_CARGO_NAME_HYDROGEN           :Hydrogen
 STR_CARGO_NAME_LIMESTONE          :Limestone
 STR_CARGO_NAME_LYE                :Lye
+STR_CARGO_NAME_MACHINE_PARTS      :Machine Parts
+STR_CARGO_NAME_METAL_SHEETS       :Metal Sheets
+STR_CARGO_NAME_METAL_WIRE         :Wire/Cables
 STR_CARGO_NAME_MILK               :Milk
 STR_CARGO_NAME_N2                 :Nitrogen
 STR_CARGO_NAME_NAPHTHA            :Naphtha
@@ -121,6 +126,9 @@ STR_QUANTITY_GOODS                :{WEIGHT} of goods
 STR_QUANTITY_HYDROGEN             :{WEIGHT} of hydrogen
 STR_QUANTITY_LIMESTONE            :{WEIGHT} of limestone
 STR_QUANTITY_LYE                  :{WEIGHT} of lye
+STR_QUANTITY_MACHINE_PARTS        :{WEIGHT} of machine parts
+STR_QUANTITY_METAL_SHEETS         :{WEIGHT} of metal sheets
+STR_QUANTITY_METAL_WIRE           :{WEIGHT} of wire/cables
 STR_QUANTITY_MILK                 :{WEIGHT} of milk
 STR_QUANTITY_N2                   :{WEIGHT} of nitrogen
 STR_QUANTITY_NAPHTHA              :{WEIGHT} of naphtha
@@ -162,6 +170,9 @@ STR_CID_GLASS                     :{TINYFONT}GLAS
 STR_CID_HYDROGEN                  :{TINYFONT}H2
 STR_CID_LIMESTONE                 :{TINYFONT}LIME
 STR_CID_LYE                       :{TINYFONT}LYE
+STR_CID_MACHINE_PARTS             :{TINYFONT}MPTS
+STR_CID_METAL_SHEETS              :{TINYFONT}MTSH
+STR_CID_METAL_WIRE                :{TINYFONT}WIRE
 STR_CID_MILK                      :{TINYFONT}MILK
 STR_CID_N2                        :{TINYFONT}N2
 STR_CID_NAPHTHA                   :{TINYFONT}RFPR
@@ -188,6 +199,7 @@ STR_IND_ACID_PLANT             :Acid Plant
 STR_IND_ALUMINIUM_PLANT        :Aluminium Plant
 STR_IND_AMMONIA_PLANT          :Ammonia Plant
 STR_IND_ANIMAL_FARM            :Animal Farm
+STR_IND_APPLIANCE_FACTORY      :Appliance Factory
 STR_IND_BIOREFINERY            :Biorefinery
 STR_IND_BREWERY                :Brewery
 STR_IND_BRICK_WORKS            :Brickworks
@@ -205,6 +217,7 @@ STR_IND_DAIRY                  :Dairy
 STR_IND_DEPARTMENT_STORE       :Department Store
 STR_IND_FISHING_GROUNDS        :Fishing Grounds
 STR_IND_FLOUR_MILL             :Flour Mill
+STR_IND_FOUNDRY_FORGE          :Foundry/Forge
 STR_IND_FRUIT_PLANTATION       :Fruit Plantation
 STR_IND_FURNITURE_FACTORY      :Furniture Factory
 STR_IND_GENERAL_STORE          :General Store
@@ -223,6 +236,7 @@ STR_IND_PORT                   :Port
 STR_IND_PYRITE_MINE            :Pyrite Mine
 STR_IND_SALT_MINE              :Salt Mine
 STR_IND_SANDPIT                :Sand pit
+STR_IND_SHEET_MILL             :Sheet Mill
 STR_IND_SODA_PLANT             :Solvay Plant
 STR_IND_STEAMCRACKER           :Steamcracker
 STR_IND_STEAMREFORMER          :Steamreformer
@@ -230,11 +244,13 @@ STR_IND_STOCKYARD              :Meatpacking Plant
 STR_IND_TEXTILE_MILL           :Textile Mill
 STR_IND_VEHICLE_DISTRIBUTOR    :Vehicle Distributor
 STR_IND_VEHICLE_FACTORY        :Vehicle Factory
+STR_IND_WIRE_MILL              :Wire Mill
 
 # station names related to industries
 STR_STATION_ALUMINIUM_PLANT          :Aluminium Plant
 STR_STATION_AMMONIA_PLANT            :Ammonia Plant
 STR_STATION_ANIMAL_FARM              :Animal Farm
+STR_STATION_APPLIANCE_FACTORY        :Appliance Factory
 STR_STATION_BIOREFINERY              :Biorefinery
 STR_STATION_BREWERY                  :Brewery
 STR_STATION_BRICK_WORKS              :Brickworks
@@ -257,6 +273,7 @@ STR_STATION_FISHING_GROUNDS          :Fishing Grounds
 STR_STATION_FLOUR_MILL               :Flour Mill
 STR_STATION_FOOD_PROCESSOR           :Food Processor
 STR_STATION_FOREST                   :Forest
+STR_STATION_FOUNDRY_FORGE            :Foundry/Forge
 STR_STATION_FRUIT_PLANTATION         :Fruit Plantation
 STR_STATION_FURNITURE_FACTORY        :Furniture Factory
 STR_STATION_GENERAL_STORE            :General Store
@@ -283,6 +300,7 @@ STR_STATION_PRINTING_WORKS           :Printing Works
 STR_STATION_SALT_MINE                :Salt Mine
 STR_STATION_SANDPIT                  :Sand Pit
 STR_STATION_SAWMILL                  :Sawmill
+STR_STATION_SHEET_MILL               :Sheet Mill
 STR_STATION_SODA_PLANT               :Solvay Plant
 STR_STATION_STEAMCRACKER             :Steamcracker
 STR_STATION_STEAMREFORMER            :Steamreformer
@@ -290,6 +308,7 @@ STR_STATION_STOCKYARD                :Stockyard
 STR_STATION_TEXTILE_MILL             :Textile Mill
 STR_STATION_VEHICLE_DISTRIBUTOR      :Vehicle Distributor
 STR_STATION_VEHICLE_FACTORY          :Vehicle Factory
+STR_STATION_WIRE_MILL                :Wire Mill
 
 # Industry window texts
 STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION :Transport more than 60% of the produced cargo to increase production.
@@ -313,6 +332,7 @@ STR_INDUSTRY_ENOUGH_POWER :{GREEN}Enough power available.
 STR_ACID_PLANT_HCL_SULP :Industry requires either sulphur or both hydrogen and chlorine to produce anything. Production level will increase if all three are available.
 STR_ACID_PLANT_HCL_SULP_NH3 :Industry requires sulphur + oxygen or hydrogen + chlorine or ammonia + oxygen to produce anything. Production level will increase if all five are available.
 STR_ACID_PLANT_SULP_NH3 :Industry requires sulphur + oxygen or ammonia + oxygen to produce anything. Production level will increase if all three are available.
+STR_FOUNDRY_FORGE_ALUM :Industry requires coke + steel or coke + aluminium to produce anything. Production level will increase if all three are available.
 
 STR_INDUSTRY_ELECTRICITY_OPTIONAL_CARGO_TEXT :Industry can produce {YELLOW}{COMMA}{BLACK} items ({YELLOW}{COMMA}{BLACK}% of maximum production){}Maximum production requires {YELLOW}{COMMA}{BLACK} power.{}{STRING}{}{BLACK}{STRING}
 
@@ -334,3 +354,4 @@ STR_ERR_EXTENSION_ORGANIC_CHEMISTRY_REQUIRES_EXTENSION_BASIC_INORGANIC_CHEMISTRY
 STR_ERR_EXTENSION_SULPHUR_COKE_REQUIRES_OTHER_EXTENSIONS:Extension "Coke and Sulphur" requires at least one of the following extensions to be activated: "Basic inorganic chemistry", "Painting Industries"
 STR_ERR_EXTENSION_AMMONIA_REQUIRES_INORGANIC_CHEMISTRY_BUILDING_MATERIALS:Extension "Ammonia" requires extensions "Building industries" and "Basic inorganic chemistry" to be activated.
 STR_ERR_EXTENSION_FRUITS_REQUIRES_ORGANIC_CHEMISTRY:Extension "Fruits and Bio Energy" requires extension "Organic chemistry" to be activated.
+STR_ERR_EXTENSION_METALLURGY_REQUIRES_COKE_SULPHUR:Extension "Metallurgy" requires extension "Coke and sulphur" to be activated.

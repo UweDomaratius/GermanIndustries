@@ -45,6 +45,8 @@ STR_PARAM_EXT_AMMONIA :Erweiterung "Ammoniaksynthese"
 STR_PARAM_EXT_AMMONIA_DESC :Fügt Industrien und Frachten hinzu, die sich mit der Synthese von Ammoniak beschäftigen.
 STR_PARAM_EXT_FRUITS :Erweiterung "Früchte und Bioenergie"
 STR_PARAM_EXT_FRUITS_DESC :Fügt Industrien und Frachten hinzu, die sich mit der Verwertung von Bioabfällen beschäftigen.
+STR_PARAM_EXT_METALLURGY :Erweiterung "Metallurgie"
+STR_PARAM_EXT_METALLURGY_DESC :Fügt Industrien und Frachten hinzu, die sich mit der Herstellung von Metallproduktion beschäftigen.
 
 # Frachten
 STR_CARGO_NAME_ACID               :Säure
@@ -65,6 +67,9 @@ STR_CARGO_NAME_GLASS              :Glas
 STR_CARGO_NAME_HYDROGEN           :Wasserstoff
 STR_CARGO_NAME_LIMESTONE          :Kalkstein
 STR_CARGO_NAME_LYE                :Natronlauge
+STR_CARGO_NAME_MACHINE_PARTS      :Maschinenteile
+STR_CARGO_NAME_METAL_SHEETS       :Bleche
+STR_CARGO_NAME_METAL_WIRE         :Draht/Kabel
 STR_CARGO_NAME_MILK               :Milch
 STR_CARGO_NAME_N2                 :Stickstoff
 STR_CARGO_NAME_NAPHTHA            :Naphtha
@@ -105,6 +110,9 @@ STR_QUANTITY_GOODS                :{WEIGHT} Güter
 STR_QUANTITY_HYDROGEN             :{WEIGHT} Wasserstoff
 STR_QUANTITY_LIMESTONE            :{WEIGHT} Kalkstein
 STR_QUANTITY_LYE                  :{WEIGHT} Natronlauge
+STR_QUANTITY_MACHINE_PARTS        :{WEIGHT} Maschinenteile
+STR_QUANTITY_METAL_SHEETS         :{WEIGHT} Bleche
+STR_QUANTITY_METAL_WIRE           :{WEIGHT} Draht/Kabel
 STR_QUANTITY_MILK                 :{WEIGHT} Milch
 STR_QUANTITY_N2                   :{WEIGHT} Stickstoff
 STR_QUANTITY_NAPHTHA              :{WEIGHT} Naphtha
@@ -130,6 +138,7 @@ STR_IND_ACID_PLANT               :{G=w}Säurefabrik
 STR_IND_ALUMINIUM_PLANT          :{G=w}Aluhütte
 STR_IND_AMMONIA_PLANT            :Ammoniakreaktor
 STR_IND_ANIMAL_FARM              :{G=w}Viehzucht
+STR_IND_APPLIANCE_FACTORY        :{G=n}Gerätewerk
 STR_IND_BIOREFINERY              :{G=w}Bioraffinerie
 STR_IND_BREWERY                  :{G=w}Brauerei
 STR_IND_BRICK_WORKS              :{G=w}Ziegelei
@@ -146,6 +155,7 @@ STR_IND_CRYO_PLANT               :Luftzerleger
 STR_IND_DAIRY                    :{G=w}Molkerei
 STR_IND_FISHING_GROUNDS          :{G=w}Fischgründe
 STR_IND_FLOUR_MILL               :{G=w}Mühle
+STR_IND_FOUNDRY_FORGE            :{G=w}Gießerei/Schmiede
 STR_IND_FRUIT_PLANTATION         :{G=w}Obstplantage
 STR_IND_FURNITURE_FACTORY        :{G=w}Möbelfabrik
 STR_IND_DEPARTMENT_STORE         :{G=n}Kaufhaus
@@ -165,6 +175,7 @@ STR_IND_PORT                     :Hafen
 STR_IND_PYRITE_MINE              :{G=n}Kupferkiesbergwerk
 STR_IND_SALT_MINE                :{G=n}Salzbergwerk
 STR_IND_SANDPIT                  :{G=w}Sandgrube
+STR_IND_SHEET_MILL               :{G=n}Walzwerk
 STR_IND_SODA_PLANT               :{G=w}Sodafabrik
 STR_IND_STEAMCRACKER             :Steamcracker
 STR_IND_STEAMREFORMER            :Dampfreformierer
@@ -172,11 +183,13 @@ STR_IND_STOCKYARD                :Schlachthof
 STR_IND_TEXTILE_MILL             :{G=w}Textilfabrik
 STR_IND_VEHICLE_DISTRIBUTOR      :{G=n}Autohaus
 STR_IND_VEHICLE_FACTORY          :{G=w}Autofabrik
+STR_IND_WIRE_MILL                :{G=n}Drahtwalzwerk
 
 # Stationsnamen
 STR_STATION_ALUMINIUM_PLANT          :Aluhütte
 STR_STATION_AMMONIA_PLANT            :Ammoniakreaktor
 STR_STATION_ANIMAL_FARM              :Viehzucht
+STR_STATION_APPLIANCE_FACTORY        :Gerätewerk
 STR_STATION_BIOREFINERY              :Bioraffinerie
 STR_STATION_BREWERY                  :Brauerei
 STR_STATION_BRICK_WORKS              :Ziegelei
@@ -199,6 +212,7 @@ STR_STATION_FISHING_GROUNDS          :Fischgründe
 STR_STATION_FLOUR_MILL               :Mühle
 STR_STATION_FOOD_PROCESSOR           :Lebensmittelfabrik
 STR_STATION_FOREST                   :Wald
+STR_STATION_FOUNDRY_FORGE            :Gießerei/Schmiede
 STR_STATION_FRUIT_PLANTATION         :Obstplantage
 STR_STATION_FURNITURE_FACTORY        :Möbelfabrik
 STR_STATION_GENERAL_STORE            :Laden
@@ -225,6 +239,7 @@ STR_STATION_PYRITE_MINE              :Bergwerk
 STR_STATION_SALT_MINE                :Salzbergwerk
 STR_STATION_SANDPIT                  :Sandgrube
 STR_STATION_SAWMILL                  :Sägewerk
+STR_STATION_SHEET_MILL               :Walzwerk
 STR_STATION_SODA_PLANT               :Sodafabrik
 STR_STATION_STEAMCRACKER             :Steamcracker
 STR_STATION_STEAMREFORMER            :Dampfreformierer
@@ -232,6 +247,7 @@ STR_STATION_STOCKYARD                :Schlachthof
 STR_STATION_TEXTILE_MILL             :Textilfabrik
 STR_STATION_VEHICLE_DISTRIBUTOR      :Autohändler
 STR_STATION_VEHICLE_FACTORY          :Autofabrik
+STR_STATION_WIRE_MILL                :Drahtwalzwerk
 
 # Industriefenster
 STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION :Transportiere mehr als 60% der produzierten Fracht um die Produktion zu erhöhen.
@@ -253,6 +269,7 @@ STR_INDUSTRY_ENOUGH_POWER :{GREEN}Genug Strom verfügbar.
 STR_ACID_PLANT_HCL_SULP :Industrie benötigt Schwefel oder Wasserstoff + Chlor zur Produktion. Die maximale Produktion erhöht sich, wenn alle drei Rohstoffe verfügbar sind.
 STR_ACID_PLANT_HCL_SULP_NH3 :Industrie benötigt Schwefel + Sauerstoff oder Wasserstoff + Chlor oder Ammoniak + Sauerstoff zur Produktion. Die maximale Produktion erhöht sich, wenn alle fünf Rohstoffe verfügbar sind.
 STR_ACID_PLANT_SULP_NH3 :Industrie benötigt Schwefel + Sauerstoff oder Ammoniak + Sauerstoff zur Produktion. Die maximale Produktion erhöht sich, wenn alle drei Rohstoffe verfügbar sind.
+STR_FOUNDRY_FORGE_ALUM :Industrie benötigt Koks + Stahl oder Koks + Aluminium zur Produktion. Die maximale Produktion erhöht sich, wenn alle drei Rohstoffe verfügbar sind.
 
 # Texte für Industriefinanzierung
 STR_INDUSTRY_NOT_AVAILABLE_BEFORE :{}{BLACK}Industrie erst ab {STRING} verfügbar.
@@ -272,3 +289,4 @@ STR_ERR_EXTENSION_ORGANIC_CHEMISTRY_REQUIRES_EXTENSION_BASIC_INORGANIC_CHEMISTRY
 STR_ERR_EXTENSION_SULPHUR_COKE_REQUIRES_OTHER_EXTENSIONS:Erweiterung "Koks und Schwefel" erfordert mindestens eine der folgenden Erweiterungen: "Grundlegende anorganische Chemie", "Farbindustrie"
 STR_ERR_EXTENSION_AMMONIA_REQUIRES_INORGANIC_CHEMISTRY_BUILDING_MATERIALS:Erweiterung "Ammoniak" erfordert die Erweiterungen "Bauindustrie" und "Grundlegende anorganische Chemie"
 STR_ERR_EXTENSION_FRUITS_REQUIRES_ORGANIC_CHEMISTRY:Erweiterung "Obst und Bioenergie" erfordert die Erweiterung "Organische Chemie"
+STR_ERR_EXTENSION_METALLURGY_REQUIRES_COKE_SULPHUR:Erweiterung "Metallurgie" erfordert Erweiterung "Koks und Schwefel"
