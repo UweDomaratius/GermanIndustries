@@ -784,7 +784,7 @@ tilelayout appliance_factory_tilelayout_3 {
 switch(FEAT_INDUSTRIES, SELF, appliance_factory_switch_location_check_industry_distance,
        [STORE_TEMP(0, TEMP_REGISTER_TOWN_MIN_DISTANCE),
 	    STORE_TEMP(32, TEMP_REGISTER_TOWN_MAX_DISTANCE),
-	    (distance_from_town() && 
+	    (is_industry_funded_or_prospected()) || (industry_generation_not_forbidden_by_param() && distance_from_town() && 
 	    (industry_distance(INDUSTRY_ID_PACKAGING_PLANT) >= 32) && 
 		(industry_distance(INDUSTRY_ID_PLASTICS_PLANT) >= 32) && 
 		(industry_distance(INDUSTRY_ID_FOUNDRY_FORGE) >= 32) && 

@@ -1298,7 +1298,7 @@ tilelayout wire_mill_tilelayout_8 {
 switch(FEAT_INDUSTRIES, SELF, wire_mill_switch_location_check_industry_distance,
        [STORE_TEMP(0, TEMP_REGISTER_TOWN_MIN_DISTANCE),
 	    STORE_TEMP(32, TEMP_REGISTER_TOWN_MAX_DISTANCE),
-	    (distance_from_town() && 
+	    (is_industry_funded_or_prospected()) || (industry_generation_not_forbidden_by_param() && distance_from_town() && 
 		(industry_distance(INDUSTRY_ID_COPPER_SMELTER) >= 32) && 
 		(industry_distance(INDUSTRY_ID_ALUMINIUM_PLANT) >= 32) && 
 		(industry_distance(INDUSTRY_ID_VEHICLE_FACTORY) >= 32) && 
@@ -1342,8 +1342,9 @@ switch(FEAT_INDUSTRIES, SELF, wire_mill_switch_produce,
 
 produce(wire_mill_produce_ext_aluminium,
 	[COPR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
-	 LYE_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
-	 ACID: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
+	 ALUM: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 LYE_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
+	 ACID: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW3);
 	],
 	[STWR: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100,1) : 0;],
 	0 // do not run again

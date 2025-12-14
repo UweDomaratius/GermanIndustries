@@ -481,7 +481,7 @@ switch(FEAT_INDUSTRIES, SELF, limestone_mine_switch_location_check_industry_dist
 
 
 switch(FEAT_INDUSTRIES, SELF, limestone_mine_func_calc_max_prod, 
-	128) {
+	255) {
 	return;
 }
 
@@ -499,7 +499,7 @@ switch(FEAT_INDUSTRIES, SELF, limestone_mine_switch_prod_change,
 // randomize production at build time based on random bits: 96t min, 152t max
 switch(FEAT_INDUSTRIES, SELF, limestone_mine_switch_prod_change_build,
 	[initialize_extractive_resources(),
-	 STORE_TEMP(limestone_mine_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	 STORE_TEMP(max(limestone_mine_func_calc_max_prod(),128),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
 	])
 {
 	randomize_initial_production;
