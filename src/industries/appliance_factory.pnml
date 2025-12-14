@@ -863,7 +863,7 @@ switch(FEAT_INDUSTRIES, SELF, appliance_factory_switch_extra_text_fund,
 switch(FEAT_INDUSTRIES, SELF, appliance_factory_switch_check_availability, 
 	current_year) {
 	0..1799: return CB_RESULT_IND_NO_CONSTRUCTION;
-	return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+	get_construction_probability;
 }
 
 switch(FEAT_INDUSTRIES, SELF, appliance_factory_switch_cargo_subtype, getbits(extra_callback_info2, 16, 8)) {
