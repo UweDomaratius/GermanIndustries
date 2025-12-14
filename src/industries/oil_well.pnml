@@ -457,7 +457,7 @@ switch(FEAT_INDUSTRIES, SELF, oil_well_switch_check_availability,
 	current_year) {
 	0..1859: return CB_RESULT_IND_NO_CONSTRUCTION;              // no coal mines before 1860
 	1985..5000000: oil_well_switch_check_availability_map_gen;  // check mode, if the map is generated with that starting year, coal mines should exist
-	return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+	get_construction_probability;
 }
 
 item(FEAT_INDUSTRIES, oil_well, INDUSTRY_ID_OIL_WELL) {

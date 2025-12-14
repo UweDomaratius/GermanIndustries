@@ -1222,7 +1222,7 @@ item(FEAT_INDUSTRIES, sandpit, INDUSTRY_ID_SANDPIT) {
 	}
 
 	graphics {
-		//construction_probability: sandpit_switch_check_availability;
+		construction_probability: get_construction_probability;
 		produce_cargo_arrival:    empty_produce; 
 		produce_256_ticks:        sandpit_switch_produce;
 		monthly_prod_change:      sandpit_switch_prod_change;

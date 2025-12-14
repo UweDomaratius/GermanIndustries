@@ -754,7 +754,7 @@ if (param_extension_glass && !param_extension_coke_sulphur) {
 		}
 			
 		graphics {
-			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			construction_probability: get_construction_probability;
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        lime_kiln_switch_produce;
 			monthly_prod_change:      lime_kiln_switch_update_last_served_date;
@@ -789,7 +789,7 @@ if (param_extension_glass && param_extension_coke_sulphur) {
 		}
 			
 		graphics {
-			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			construction_probability: get_construction_probability;
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        lime_kiln_switch_produce_ext_coke_sulphur;
 			monthly_prod_change:      lime_kiln_switch_update_last_served_date_ext_coke_sulphur;

@@ -547,7 +547,7 @@ switch(FEAT_INDUSTRIES, SELF, limestone_mine_switch_extra_text_fund,
 // year < 1800: no creation
 switch(FEAT_INDUSTRIES, SELF, limestone_mine_switch_check_availability, current_year) {
 	0..1799: return CB_RESULT_IND_NO_CONSTRUCTION;               // no limestone mines before 1800
-	return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+	get_construction_probability;
 }
 
 if (param_extension_building_materials) {

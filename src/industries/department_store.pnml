@@ -132,7 +132,7 @@ item(FEAT_INDUSTRIES, department_store, INDUSTRY_ID_DEPARTMENT_STORE) {
 	}
         
 	graphics {
-		construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+		construction_probability: get_construction_probability;
 		produce_cargo_arrival:    empty_produce; 
 		produce_256_ticks:        department_store_switch_produce;
 		monthly_prod_change:      department_store_switch_update_last_served_date;

@@ -1237,6 +1237,7 @@ if (param_extension_food_industries && !param_extension_packaging_industries) {
 		}
 			
 		graphics {
+			construction_probability: get_construction_probability;
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        stockyard_switch_produce;
 			monthly_prod_change:      stockyard_switch_update_last_served_date;
@@ -1270,6 +1271,7 @@ if (param_extension_food_industries && param_extension_packaging_industries) {
 		}
 			
 		graphics {
+			construction_probability: get_construction_probability;
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        stockyard_switch_produce_ext_packaging_industries;
 			monthly_prod_change:      stockyard_switch_update_last_served_date_ext_packaging_industries;

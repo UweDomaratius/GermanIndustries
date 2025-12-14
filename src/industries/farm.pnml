@@ -708,7 +708,7 @@ if (param_extension_textile_industries && !param_extension_food_industries && !p
 		}
 	
 		graphics {
-			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			construction_probability: get_construction_probability;
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        farm_switch_produce_extension_textile_industry;
 			monthly_prod_change:      farm_switch_prod_change;
@@ -744,7 +744,7 @@ if (!param_extension_textile_industries && !param_extension_food_industries && !
 		}
 	
 		graphics {
-			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			construction_probability: get_construction_probability;
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        farm_switch_produce;
 			monthly_prod_change:      farm_switch_prod_change;
@@ -780,7 +780,7 @@ if (param_extension_food_industries && !param_extension_fruits) {
 		}
 	
 		graphics {
-			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			construction_probability: get_construction_probability;
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        farm_switch_produce_extension_food_industry;
 			monthly_prod_change:      farm_switch_prod_change;
@@ -816,7 +816,7 @@ if (param_extension_textile_industries && !param_extension_food_industries && pa
 		}
 	
 		graphics {
-			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			construction_probability: get_construction_probability;
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        farm_switch_produce_extension_textile_industry_ext_fruits;
 			monthly_prod_change:      farm_switch_prod_change;
@@ -852,7 +852,7 @@ if (!param_extension_textile_industries && !param_extension_food_industries && p
 		}
 	
 		graphics {
-			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			construction_probability: get_construction_probability;
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        farm_switch_produce_ext_fruits;
 			monthly_prod_change:      farm_switch_prod_change;
@@ -888,7 +888,7 @@ if (param_extension_food_industries && param_extension_fruits) {
 		}
 	
 		graphics {
-			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			construction_probability: get_construction_probability;
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        farm_switch_produce_extension_food_industry_ext_fruits;
 			monthly_prod_change:      farm_switch_prod_change;

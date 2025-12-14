@@ -370,7 +370,7 @@ if (param_extension_building_materials) {
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_BUILDERS_YARD));
 		}
 		graphics {
-			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			construction_probability: get_construction_probability;
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        builders_yard_switch_produce_extension_building_industry;
 			monthly_prod_change:      builders_yard_switch_update_last_served_date;
@@ -406,7 +406,7 @@ if (!param_extension_building_materials) {
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_BUILDERS_YARD));
 		}
 		graphics {
-			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			construction_probability: get_construction_probability;
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        builders_yard_switch_produce;
 			monthly_prod_change:      builders_yard_switch_update_last_served_date_extension_building_industry;

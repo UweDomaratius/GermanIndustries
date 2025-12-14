@@ -806,7 +806,7 @@ switch(FEAT_INDUSTRIES, SELF, packaging_plant_switch_extra_text_fund,
 switch(FEAT_INDUSTRIES, SELF, packaging_plant_switch_check_availability, 
 	current_year) {
 	0..1929: return CB_RESULT_IND_NO_CONSTRUCTION;
-	return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+	get_construction_probability;
 }
 
 switch(FEAT_INDUSTRIES, SELF, packaging_plant_switch_extra_text_fund_ext_aluminium, 
@@ -819,7 +819,7 @@ switch(FEAT_INDUSTRIES, SELF, packaging_plant_switch_extra_text_fund_ext_alumini
 switch(FEAT_INDUSTRIES, SELF, packaging_plant_switch_check_availability_ext_aluminium, 
 	current_year) {
 	0..1899: return CB_RESULT_IND_NO_CONSTRUCTION;
-	return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+	get_construction_probability;
 }
 
 switch(FEAT_INDUSTRIES, SELF, packaging_plant_switch_cargo_subtype, getbits(extra_callback_info2, 16, 8)) {
@@ -1004,7 +1004,7 @@ if (param_extension_packaging_industries && !param_extension_aluminium && param_
 		}
 			
 		graphics {
-			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			construction_probability: get_construction_probability;
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        packaging_plant_switch_produce_ext_glass;
 			monthly_prod_change:      packaging_plant_switch_update_last_served_date_ext_glass;
@@ -1039,7 +1039,7 @@ if (param_extension_packaging_industries && param_extension_aluminium && param_e
 		}
 			
 		graphics {
-			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			construction_probability: get_construction_probability;
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        packaging_plant_switch_produce_ext_aluminium_ext_glass;
 			monthly_prod_change:      packaging_plant_switch_update_last_served_date_ext_aluminium_ext_glass;
@@ -1146,7 +1146,7 @@ if (param_extension_packaging_industries && !param_extension_aluminium && param_
 		}
 			
 		graphics {
-			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			construction_probability: get_construction_probability;
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        packaging_plant_switch_produce_ext_glass_ext_paper;
 			monthly_prod_change:      packaging_plant_switch_update_last_served_date_ext_glass_ext_paper;
@@ -1181,7 +1181,7 @@ if (param_extension_packaging_industries && param_extension_aluminium && param_e
 		}
 			
 		graphics {
-			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			construction_probability: get_construction_probability;
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        packaging_plant_switch_produce_ext_aluminium_ext_glass_ext_paper;
 			monthly_prod_change:      packaging_plant_switch_update_last_served_date_ext_aluminium_ext_glass_ext_paper;
