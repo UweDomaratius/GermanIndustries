@@ -462,7 +462,7 @@ if (!param_extension_fruits) {
 		}
 
 		graphics {
-			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			construction_probability: get_construction_probability;
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        hotel_switch_produce;
 			monthly_prod_change:      hotel_switch_update_last_served_date;
@@ -499,7 +499,7 @@ if (param_extension_fruits) {
 		}
 
 		graphics {
-			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			construction_probability: get_construction_probability;
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        hotel_switch_produce_ext_fruits;
 			monthly_prod_change:      hotel_switch_update_last_served_date_ext_fruits;

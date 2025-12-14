@@ -442,7 +442,7 @@ switch(FEAT_INDUSTRIES, SELF, oil_rig_switch_extra_text_fund,
 switch(FEAT_INDUSTRIES, SELF, oil_rig_switch_check_availability, 
 	current_year) {
 	0..1984: return CB_RESULT_IND_NO_CONSTRUCTION;
-	return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+	get_construction_probability;
 }
 
 item(FEAT_INDUSTRIES, oil_rig, INDUSTRY_ID_OIL_RIG) {

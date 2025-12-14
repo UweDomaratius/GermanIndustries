@@ -1098,7 +1098,7 @@ switch(FEAT_INDUSTRIES, SELF, ore_smelter_switch_extra_text_fund,
 switch(FEAT_INDUSTRIES, SELF, ore_smelter_switch_check_availability, 
 	current_year) {
 	0..1799: return CB_RESULT_IND_NO_CONSTRUCTION;
-	return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+	get_construction_probability;
 }
 
 if (param_extension_coke_sulphur && !param_extension_painting_industries && !param_extension_ammonia) {

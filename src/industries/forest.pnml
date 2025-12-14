@@ -5072,7 +5072,7 @@ item(FEAT_INDUSTRIES, forest, INDUSTRY_ID_FOREST) {
 	}
 
 	graphics {
-		construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+		construction_probability: get_construction_probability;
 		produce_cargo_arrival:    empty_produce; 
 		produce_256_ticks:        forest_switch_produce;
 		monthly_prod_change:      forest_switch_prod_change;

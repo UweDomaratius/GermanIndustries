@@ -296,7 +296,7 @@ item(FEAT_INDUSTRIES, fishing_grounds, INDUSTRY_ID_FISHING_GROUNDS) {
 	}
 
 	graphics {
-		construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+		construction_probability: get_construction_probability;
 		produce_cargo_arrival:    empty_produce; 
 		produce_256_ticks:        fishing_grounds_switch_produce;
 		monthly_prod_change:      fishing_grounds_switch_prod_change;

@@ -1662,7 +1662,7 @@ if (!param_extension_aluminium && !param_extension_painting_industries && !param
 		}
 			
 		graphics {
-			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			construction_probability: get_construction_probability;
 			produce_cargo_arrival:    port_produce_cargo_arrival; 
 			produce_256_ticks:        port_switch_produce;
 			monthly_prod_change:      port_switch_prod_change;
@@ -1699,7 +1699,7 @@ if (param_extension_aluminium && !param_extension_painting_industries && !param_
 		}
 			
 		graphics {
-			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			construction_probability: get_construction_probability;
 			produce_cargo_arrival:    port_produce_cargo_arrival; 
 			produce_256_ticks:        port_switch_produce_ext_aluminium;
 			monthly_prod_change:      port_switch_prod_change_ext_aluminium;
@@ -1736,7 +1736,7 @@ if (!param_extension_aluminium && param_extension_painting_industries && !param_
 		}
 			
 		graphics {
-			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			construction_probability: get_construction_probability;
 			produce_cargo_arrival:    port_produce_cargo_arrival; 
 			produce_256_ticks:        port_switch_produce_ext_painting_industries;
 			monthly_prod_change:      port_switch_prod_change_ext_painting_industries;
@@ -1773,7 +1773,7 @@ if (param_extension_aluminium && param_extension_painting_industries && !param_e
 		}
 			
 		graphics {
-			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			construction_probability: get_construction_probability;
 			produce_cargo_arrival:    port_produce_cargo_arrival; 
 			produce_256_ticks:        port_switch_produce_ext_aluminium_ext_painting_industries;
 			monthly_prod_change:      port_switch_prod_change_ext_aluminium_ext_painting_industries;
@@ -1810,7 +1810,7 @@ if (!param_extension_aluminium && !param_extension_painting_industries && param_
 		}
 			
 		graphics {
-			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			construction_probability: get_construction_probability;
 			produce_cargo_arrival:    port_produce_cargo_arrival; 
 			produce_256_ticks:        port_switch_produce_ext_coke_sulphur;
 			monthly_prod_change:      port_switch_prod_change_ext_coke_sulphur;
@@ -1847,7 +1847,7 @@ if (param_extension_aluminium && !param_extension_painting_industries && param_e
 		}
 			
 		graphics {
-			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			construction_probability: get_construction_probability;
 			produce_cargo_arrival:    port_produce_cargo_arrival; 
 			produce_256_ticks:        port_switch_produce_ext_aluminium_ext_coke_sulphur;
 			monthly_prod_change:      port_switch_prod_change_ext_aluminium_ext_coke_sulphur;
@@ -1884,7 +1884,7 @@ if (!param_extension_aluminium && param_extension_painting_industries && param_e
 		}
 			
 		graphics {
-			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			construction_probability: get_construction_probability;
 			produce_cargo_arrival:    port_produce_cargo_arrival; 
 			produce_256_ticks:        port_switch_produce_ext_painting_industries_ext_coke_sulphur;
 			monthly_prod_change:      port_switch_prod_change_ext_painting_industries_ext_coke_sulphur;
@@ -1921,7 +1921,7 @@ if (param_extension_aluminium && param_extension_painting_industries && param_ex
 		}
 			
 		graphics {
-			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			construction_probability: get_construction_probability;
 			produce_cargo_arrival:    port_produce_cargo_arrival; 
 			produce_256_ticks:        port_switch_produce_ext_aluminium_ext_painting_industries_ext_coke_sulphur;
 			monthly_prod_change:      port_switch_prod_change_ext_aluminium_ext_painting_industries_ext_coke_sulphur;
