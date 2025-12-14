@@ -813,7 +813,7 @@ if (param_extension_textile_industries && !param_extension_packaging_industries)
 		}
 			
 		graphics {
-			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			construction_probability: get_construction_probability;
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        furniture_factory_switch_produce_extension_textile_industry;
 			monthly_prod_change:      furniture_factory_switch_update_last_served_date_ext_textile_industries;
@@ -849,7 +849,7 @@ if (!param_extension_textile_industries && !param_extension_packaging_industries
 		}
 			
 		graphics {
-			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			construction_probability: get_construction_probability;
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        furniture_factory_switch_produce;
 			monthly_prod_change:      furnitury_factory_switch_update_last_served_date;
@@ -885,7 +885,7 @@ if (param_extension_textile_industries && param_extension_packaging_industries) 
 		}
 			
 		graphics {
-			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			construction_probability: get_construction_probability;
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        furniture_factory_switch_produce_extension_textile_industry_ext_packaging_industries;
 			monthly_prod_change:      furniture_factory_switch_update_last_served_date_ext_textile_industries_ext_packaging_industries;
@@ -921,7 +921,7 @@ if (!param_extension_textile_industries && param_extension_packaging_industries)
 		}
 			
 		graphics {
-			construction_probability: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+			construction_probability: get_construction_probability;
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        furniture_factory_switch_produce_ext_packaging_industries;
 			monthly_prod_change:      furnitury_factory_switch_update_last_served_date_ext_packaging_industries;

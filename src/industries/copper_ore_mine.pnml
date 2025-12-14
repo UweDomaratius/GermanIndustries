@@ -484,7 +484,7 @@ switch(FEAT_INDUSTRIES, SELF, copper_ore_mine_switch_check_availability_map_gen,
 switch(FEAT_INDUSTRIES, SELF, copper_ore_mine_switch_check_availability, current_year) {
 	0..1799: return CB_RESULT_IND_NO_CONSTRUCTION;               // no copper ore mines before 1800
 	1930..5000000: copper_ore_mine_switch_check_availability_map_gen;  // check mode, if the map is generated with that starting year, copper ore mines should exist
-	return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+	get_construction_probability;
 }
 
 if (param_extension_painting_industries && !param_extension_coke_sulphur) {

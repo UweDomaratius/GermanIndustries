@@ -497,7 +497,7 @@ switch(FEAT_INDUSTRIES, SELF, iron_ore_mine_switch_check_availability_map_gen,
 switch(FEAT_INDUSTRIES, SELF, iron_ore_mine_switch_check_availability, current_year) {
 	0..1799: return CB_RESULT_IND_NO_CONSTRUCTION;               // no iron ore mines before 1800
 	1930..5000000: iron_ore_mine_switch_check_availability_map_gen;  // check mode, if the map is generated with that starting year, iron ore mines should exist
-	return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+	get_construction_probability;
 }
 
 item(FEAT_INDUSTRIES, iron_ore_mine, INDUSTRY_ID_IRON_ORE_MINE) {

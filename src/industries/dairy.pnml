@@ -1176,6 +1176,7 @@ if (param_extension_food_industries && !param_extension_basic_inorganic_chemistr
 		}
 			
 		graphics {
+		    construction_probability: get_construction_probability;
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        dairy_switch_produce;
 			monthly_prod_change:      dairy_switch_update_last_served_date;
@@ -1209,6 +1210,7 @@ if (param_extension_food_industries && param_extension_basic_inorganic_chemistry
 		}
 			
 		graphics {
+		    construction_probability: get_construction_probability;
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        dairy_switch_produce_ext_basic_inorganic_chemistry;
 			monthly_prod_change:      dairy_switch_update_last_served_date_ext_basic_inorganic_chemistry;
@@ -1243,6 +1245,7 @@ if (param_extension_food_industries && !param_extension_basic_inorganic_chemistr
 		}
 			
 		graphics {
+			construction_probability: get_construction_probability;
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        dairy_switch_produce_ext_packaging_industries;
 			monthly_prod_change:      dairy_switch_update_last_served_date_ext_packaging_industries;
@@ -1277,6 +1280,7 @@ if (param_extension_food_industries && param_extension_basic_inorganic_chemistry
 		}
 			
 		graphics {
+		    construction_probability: get_construction_probability;
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        dairy_switch_produce_ext_basic_inorganic_chemistry_ext_packaging_industries;
 			monthly_prod_change:      dairy_switch_update_last_served_date_ext_basic_inorganic_chemistry_ext_packaging_industries;

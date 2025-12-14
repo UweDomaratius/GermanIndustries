@@ -1109,7 +1109,7 @@ switch(FEAT_INDUSTRIES, SELF, acid_plant_switch_extra_text_fund,
 switch(FEAT_INDUSTRIES, SELF, acid_plant_switch_check_availability, 
 	current_year) {
 	0..1799: return CB_RESULT_IND_NO_CONSTRUCTION;
-	return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+	get_construction_probability;
 }
 
 if (param_extension_coke_sulphur && !param_extension_basic_inorganic_chemistry && !param_extension_ammonia) {

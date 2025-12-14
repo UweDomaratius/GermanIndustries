@@ -36,9 +36,22 @@ switch (FEAT_INDUSTRIES, SELF, is_industry_funded_or_prospected,
 ////////////////////////////////////////////////////////////////////////////////
 switch (FEAT_INDUSTRYTILES, SELF, generation_not_forbidden_by_param, 
 			(getbits(extra_callback_info2, 0, 8) == IND_CREATION_GENERATION) || 
-			(getbits(extra_callback_info2, 0, 8) == IND_CREATION_RANDOM) && !param_forbid_industry_generation)
+			((getbits(extra_callback_info2, 0, 8) == IND_CREATION_RANDOM) && !param_forbid_industry_generation))
 {
 		return;
+}
+
+switch (FEAT_INDUSTRIES, SELF, industry_generation_not_forbidden_by_param,
+	        (getbits(extra_callback_info2, 0, 8) == IND_CREATION_GENERATION) || 
+			((getbits(extra_callback_info2, 0, 8) == IND_CREATION_RANDOM) && !param_forbid_industry_generation))
+{
+	return;
+}
+
+switch (FEAT_INDUSTRIES, SELF, get_construction_probability, [industry_generation_not_forbidden_by_param()])
+{
+	1: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+	return CB_RESULT_IND_NO_CONSTRUCTION;
 }
 
 ////////////////////////////////////////////////////////////////////////////////

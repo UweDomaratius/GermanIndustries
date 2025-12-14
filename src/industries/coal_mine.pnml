@@ -546,7 +546,7 @@ switch(FEAT_INDUSTRIES, SELF, coal_mine_switch_check_availability_map_gen,
 switch(FEAT_INDUSTRIES, SELF, coal_mine_switch_check_availability, current_year) {
 	0..1799: return CB_RESULT_IND_NO_CONSTRUCTION;               // no coal mines before 1800
 	1950..5000000: coal_mine_switch_check_availability_map_gen;  // check mode, if the map is generated with that starting year, coal mines should exist
-	return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+	get_construction_probability;
 }
 
 item(FEAT_INDUSTRIES, coal_mine, INDUSTRY_ID_COAL_MINE) {
