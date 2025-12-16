@@ -575,7 +575,7 @@ switch(FEAT_INDUSTRIES, SELF, cryo_plant_switch_location_check_industry_distance
 	   return CB_RESULT_LOCATION_DISALLOW;
 }
 
-switch(FEAT_INDUSTRIES, SELF, cryo_plant_func_calc_max_prod, 128) {
+switch(FEAT_INDUSTRIES, SELF, cryo_plant_func_calc_max_prod, 255) {
 	return;
 }
 
@@ -588,10 +588,9 @@ switch(FEAT_INDUSTRIES, SELF, cryo_plant_switch_prod_change,
 	change_production;
 }
 
-// randomize production at build time based on random bits: 96t min, 152t max
 switch(FEAT_INDUSTRIES, SELF, cryo_plant_switch_prod_change_build,
 	[initialize_extractive_resources(),
-	 STORE_TEMP(cryo_plant_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	 STORE_TEMP(max(cryo_plant_func_calc_max_prod(),128),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
 	])
 {
 	randomize_initial_production;

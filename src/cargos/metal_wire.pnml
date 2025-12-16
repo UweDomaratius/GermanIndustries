@@ -1,0 +1,31 @@
+spriteset(cargoicon_metal_wire) {
+	[10 + 20 * 8, 10 + 20 * 5, 10, 10, 0, 0,  "graphics/other/cargoicons.png"]
+}
+if (param_extension_metallurgy) {
+	item(FEAT_CARGOS, metal_wire, CARGO_ID_METAL_WIRE) {
+		property {
+			type_name: string(STR_CARGO_NAME_METAL_WIRE);
+			unit_name: string(STR_CARGO_NAME_METAL_WIRE);
+			type_abbreviation: string(STR_CID_METAL_WIRE);
+			sprite: NEW_CARGO_SPRITE;
+			weight: 1.0;
+			is_freight: 1;
+			cargo_classes: bitmask(CC_PIECE_GOODS);
+			town_growth_effect: TOWNGROWTH_NONE;
+			town_growth_multiplier: 1.0;
+			units_of_cargo: TTD_STR_TONS;
+			items_of_cargo: string(STR_QUANTITY_METAL_WIRE);
+			penalty_lowerbound: 30;
+			single_penalty_length: 42;
+			capacity_multiplier: 1;
+			cargo_payment_list_colour: 110;
+			station_list_colour: 110;
+			price_factor: 138;
+			cargo_label: "STWR";
+			number: CARGO_ID_METAL_WIRE;
+		}
+		graphics {
+			cargoicon_metal_wire;
+		}
+	}
+}

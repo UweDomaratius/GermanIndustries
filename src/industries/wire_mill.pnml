@@ -1,0 +1,1488 @@
+spriteset(wire_mill_spriteset_2) {
+	[10, 10, 64, 64, -31, -33, ANIM | NOCROP, "graphics/industries/wire_and_section_mill.png"]
+}
+spriteset(wire_mill_spriteset_3) {
+	[80, 10, 64, 64, -31, -33, ANIM | NOCROP, "graphics/industries/wire_and_section_mill.png"]
+}
+spriteset(wire_mill_spriteset_4) {
+	[150, 10, 64, 64, -31, -33, ANIM | NOCROP, "graphics/industries/wire_and_section_mill.png"]
+}
+spriteset(wire_mill_spriteset_5) {
+	[220, 10, 64, 64, -31, -33, ANIM | NOCROP, "graphics/industries/wire_and_section_mill.png"]
+}
+spriteset(wire_mill_spriteset_6) {
+	[290, 10, 64, 64, -31, -33, ANIM | NOCROP, "graphics/industries/wire_and_section_mill.png"]
+}
+spriteset(wire_mill_spriteset_7) {
+	[360, 10, 64, 64, -31, -33, ANIM | NOCROP, "graphics/industries/wire_and_section_mill.png"]
+}
+spriteset(wire_mill_spriteset_8) {
+	[430, 10, 64, 64, -31, -33, ANIM | NOCROP, "graphics/industries/wire_and_section_mill.png"]
+}
+spriteset(wire_mill_spriteset_9) {
+	[500, 10, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/wire_and_section_mill.png"]
+}
+spriteset(wire_mill_spriteset_10) {
+	[570, 10, 64, 31, -31, 0, ANIM | NOCROP, "graphics/industries/wire_and_section_mill.png"]
+}
+spriteset(wire_mill_spriteset_11) {
+	[500, 60, 64, 51, -31, -21, ANIM | NOCROP, "graphics/industries/wire_and_section_mill.png"]
+}
+spriteset(wire_mill_spriteset_12) {
+	[570, 60, 64, 51, -31, -21, ANIM | NOCROP, "graphics/industries/wire_and_section_mill.png"]
+}        
+			
+spritelayout wire_mill_spritelayout_shed_sw_ne_1 {
+	childsprite {
+		sprite: default_spriteset_ground_hard_standing_dirt;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: wire_mill_spriteset_2(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout wire_mill_spritelayout_shed_sw_ne_2 {
+	childsprite {
+		sprite: default_spriteset_ground_hard_standing_dirt;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: wire_mill_spriteset_3(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout wire_mill_spritelayout_shed_se_nw_1 {
+	childsprite {
+		sprite: default_spriteset_ground_hard_standing_dirt;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: wire_mill_spriteset_4(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout wire_mill_spritelayout_shed_se_nw_2 {
+	childsprite {
+		sprite: default_spriteset_ground_hard_standing_dirt;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: wire_mill_spriteset_5(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout wire_mill_spritelayout_small_shed_1 {
+	childsprite {
+		sprite: default_spriteset_ground_hard_standing_dirt;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: wire_mill_spriteset_6(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout wire_mill_spritelayout_small_shed_2 {
+	childsprite {
+		sprite: default_spriteset_ground_hard_standing_dirt;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: wire_mill_spriteset_7(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_SMOKE_SPRITE_WHITE_SMALL + (animation_frame / 4);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: -5;
+		yoffset: 0;
+		zoffset: 26+ animation_frame;
+		xextent: 11;
+		yextent: 16;
+		zextent: 7;
+		hide_sprite: animation_frame > 19;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout wire_mill_spritelayout_tanks {
+	childsprite {
+		sprite: default_spriteset_ground_hard_standing_dirt;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: wire_mill_spriteset_8(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout wire_mill_spritelayout_wire_1 {
+	childsprite {
+		sprite: default_spriteset_ground_hard_standing_dirt;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: wire_mill_spriteset_9(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout wire_mill_spritelayout_wire_2 {
+	childsprite {
+		sprite: default_spriteset_ground_hard_standing_dirt;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: wire_mill_spriteset_10(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout wire_mill_spritelayout_gantry_1 {
+	childsprite {
+		sprite: default_spriteset_ground_hard_standing_dirt;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: wire_mill_spriteset_11(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout wire_mill_spritelayout_gantry_2 {
+	childsprite {
+		sprite: default_spriteset_ground_hard_standing_dirt;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: wire_mill_spriteset_12(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;
+		yoffset:  16;
+		zoffset:  0;
+		xextent: 16;
+		yextent: 1;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;
+		yoffset:  0;
+		zoffset:  0;
+		xextent: 1;
+		yextent: 16;
+		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// graphics choice switch chain
+//////////////////////////////////////////////////////////////////////////////
+switch(FEAT_INDUSTRYTILES, SELF, wire_mill_industry_layout_1, relative_pos) {
+	relative_coord(4, 3): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(4, 4): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(4, 5): wire_mill_spritelayout_shed_sw_ne_2;
+	relative_coord(5, 3): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(5, 4): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(5, 5): wire_mill_spritelayout_shed_sw_ne_2;
+	relative_coord(6, 3): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(6, 4): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(6, 5): wire_mill_spritelayout_wire_1;
+	relative_coord(7, 3): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(7, 4): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(7, 5): wire_mill_spritelayout_wire_1;
+	relative_coord(8, 3): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(8, 4): wire_mill_spritelayout_small_shed_2;
+	relative_coord(8, 5): wire_mill_spritelayout_gantry_1;
+	relative_coord(9, 3): wire_mill_spritelayout_tanks;
+	relative_coord(9, 4): wire_mill_spritelayout_small_shed_1;
+	relative_coord(9, 5): wire_mill_spritelayout_gantry_1;
+	relative_coord(0, 0): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(0, 1): wire_mill_spritelayout_tanks;
+	relative_coord(1, 0): wire_mill_spritelayout_shed_sw_ne_2;
+	relative_coord(1, 1): wire_mill_spritelayout_small_shed_2;
+	relative_coord(2, 0): wire_mill_spritelayout_small_shed_1;
+	relative_coord(2, 1): wire_mill_spritelayout_gantry_1;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, wire_mill_industry_layout_2, relative_pos) {
+	relative_coord(0, 0): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(0, 1): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(0, 2): wire_mill_spritelayout_shed_sw_ne_2;
+	relative_coord(1, 0): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(1, 1): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(1, 2): wire_mill_spritelayout_shed_sw_ne_2;
+	relative_coord(2, 0): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(2, 1): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(2, 2): wire_mill_spritelayout_wire_1;
+	relative_coord(3, 0): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(3, 1): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(3, 2): wire_mill_spritelayout_wire_1;
+	relative_coord(4, 0): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(4, 1): wire_mill_spritelayout_small_shed_2;
+	relative_coord(4, 2): wire_mill_spritelayout_gantry_1;
+	relative_coord(5, 0): wire_mill_spritelayout_tanks;
+	relative_coord(5, 1): wire_mill_spritelayout_small_shed_1;
+	relative_coord(5, 2): wire_mill_spritelayout_gantry_1;
+	relative_coord(7, 4): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(7, 5): wire_mill_spritelayout_tanks;
+	relative_coord(8, 4): wire_mill_spritelayout_shed_sw_ne_2;
+	relative_coord(8, 5): wire_mill_spritelayout_small_shed_2;
+	relative_coord(9, 4): wire_mill_spritelayout_small_shed_1;
+	relative_coord(9, 5): wire_mill_spritelayout_gantry_1;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, wire_mill_industry_layout_3, relative_pos) {
+	relative_coord(0, 0): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(0, 1): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(0, 2): wire_mill_spritelayout_shed_sw_ne_2;
+	relative_coord(1, 0): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(1, 1): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(1, 2): wire_mill_spritelayout_shed_sw_ne_2;
+	relative_coord(2, 0): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(2, 1): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(2, 2): wire_mill_spritelayout_wire_1;
+	relative_coord(3, 0): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(3, 1): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(3, 2): wire_mill_spritelayout_wire_1;
+	relative_coord(4, 0): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(4, 1): wire_mill_spritelayout_small_shed_2;
+	relative_coord(4, 2): wire_mill_spritelayout_gantry_1;
+	relative_coord(5, 0): wire_mill_spritelayout_tanks;
+	relative_coord(5, 1): wire_mill_spritelayout_small_shed_1;
+	relative_coord(5, 2): wire_mill_spritelayout_gantry_1;
+	relative_coord(0, 5): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(0, 6): wire_mill_spritelayout_tanks;
+	relative_coord(1, 5): wire_mill_spritelayout_shed_sw_ne_2;
+	relative_coord(1, 6): wire_mill_spritelayout_small_shed_2;
+	relative_coord(2, 5): wire_mill_spritelayout_small_shed_1;
+	relative_coord(2, 6): wire_mill_spritelayout_gantry_1;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, wire_mill_industry_layout_4, relative_pos) {
+	relative_coord(0, 0): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(0, 1): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(0, 2): wire_mill_spritelayout_shed_sw_ne_2;
+	relative_coord(1, 0): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(1, 1): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(1, 2): wire_mill_spritelayout_shed_sw_ne_2;
+	relative_coord(2, 0): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(2, 1): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(2, 2): wire_mill_spritelayout_wire_1;
+	relative_coord(3, 0): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(3, 1): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(3, 2): wire_mill_spritelayout_wire_1;
+	relative_coord(4, 0): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(4, 1): wire_mill_spritelayout_small_shed_2;
+	relative_coord(4, 2): wire_mill_spritelayout_gantry_1;
+	relative_coord(5, 0): wire_mill_spritelayout_tanks;
+	relative_coord(5, 1): wire_mill_spritelayout_small_shed_1;
+	relative_coord(5, 2): wire_mill_spritelayout_gantry_1;
+	relative_coord(8, 0): wire_mill_spritelayout_shed_sw_ne_1;
+	relative_coord(8, 1): wire_mill_spritelayout_tanks;
+	relative_coord(9, 0): wire_mill_spritelayout_shed_sw_ne_2;
+	relative_coord(9, 1): wire_mill_spritelayout_small_shed_2;
+	relative_coord(10, 0): wire_mill_spritelayout_small_shed_1;
+	relative_coord(10, 1): wire_mill_spritelayout_gantry_1;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, wire_mill_industry_layout_5, relative_pos) {
+	relative_coord(3, 4): wire_mill_spritelayout_shed_se_nw_1;
+	relative_coord(3, 5): wire_mill_spritelayout_shed_se_nw_1;
+	relative_coord(3, 6): wire_mill_spritelayout_shed_se_nw_1;
+	relative_coord(3, 7): wire_mill_spritelayout_shed_se_nw_1;
+	relative_coord(3, 8): wire_mill_spritelayout_shed_se_nw_1;
+	relative_coord(3, 9): wire_mill_spritelayout_tanks;
+	relative_coord(4, 4): wire_mill_spritelayout_shed_se_nw_1;
+	relative_coord(4, 5): wire_mill_spritelayout_shed_se_nw_1;
+	relative_coord(4, 6): wire_mill_spritelayout_shed_se_nw_1;
+	relative_coord(4, 7): wire_mill_spritelayout_shed_se_nw_1;
+	relative_coord(4, 8): wire_mill_spritelayout_small_shed_2;
+	relative_coord(4, 9): wire_mill_spritelayout_small_shed_1;
+	relative_coord(5, 4): wire_mill_spritelayout_shed_se_nw_2;
+	relative_coord(5, 5): wire_mill_spritelayout_shed_se_nw_2;
+	relative_coord(5, 6): wire_mill_spritelayout_wire_2;
+	relative_coord(5, 7): wire_mill_spritelayout_wire_2;
+	relative_coord(5, 8): wire_mill_spritelayout_gantry_2;
+	relative_coord(5, 9): wire_mill_spritelayout_gantry_2;
+	relative_coord(0, 0): wire_mill_spritelayout_shed_se_nw_2;
+	relative_coord(0, 1): wire_mill_spritelayout_shed_se_nw_2;
+	relative_coord(0, 2): wire_mill_spritelayout_tanks;
+	relative_coord(1, 0): wire_mill_spritelayout_shed_se_nw_2;
+	relative_coord(1, 1): wire_mill_spritelayout_gantry_2;
+	relative_coord(1, 2): wire_mill_spritelayout_small_shed_2;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, wire_mill_industry_layout_6, relative_pos) {
+	relative_coord(0, 0): wire_mill_spritelayout_shed_se_nw_1;
+	relative_coord(0, 1): wire_mill_spritelayout_shed_se_nw_1;
+	relative_coord(0, 2): wire_mill_spritelayout_shed_se_nw_1;
+	relative_coord(0, 3): wire_mill_spritelayout_shed_se_nw_1;
+	relative_coord(0, 4): wire_mill_spritelayout_shed_se_nw_1;
+	relative_coord(0, 5): wire_mill_spritelayout_tanks;
+	relative_coord(1, 0): wire_mill_spritelayout_shed_se_nw_1;
+	relative_coord(1, 1): wire_mill_spritelayout_shed_se_nw_1;
+	relative_coord(1, 2): wire_mill_spritelayout_shed_se_nw_1;
+	relative_coord(1, 3): wire_mill_spritelayout_shed_se_nw_1;
+	relative_coord(1, 4): wire_mill_spritelayout_small_shed_2;
+	relative_coord(1, 5): wire_mill_spritelayout_small_shed_1;
+	relative_coord(2, 0): wire_mill_spritelayout_shed_se_nw_2;
+	relative_coord(2, 1): wire_mill_spritelayout_shed_se_nw_2;
+	relative_coord(2, 2): wire_mill_spritelayout_wire_2;
+	relative_coord(2, 3): wire_mill_spritelayout_wire_2;
+	relative_coord(2, 4): wire_mill_spritelayout_gantry_2;
+	relative_coord(2, 5): wire_mill_spritelayout_gantry_2;
+	relative_coord(4, 7): wire_mill_spritelayout_shed_se_nw_2;
+	relative_coord(4, 8): wire_mill_spritelayout_shed_se_nw_2;
+	relative_coord(4, 9): wire_mill_spritelayout_tanks;
+	relative_coord(5, 7): wire_mill_spritelayout_shed_se_nw_2;
+	relative_coord(5, 8): wire_mill_spritelayout_gantry_2;
+	relative_coord(5, 9): wire_mill_spritelayout_small_shed_2;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, wire_mill_industry_layout_7, relative_pos) {
+	relative_coord(0, 0): wire_mill_spritelayout_shed_se_nw_1;
+	relative_coord(0, 1): wire_mill_spritelayout_shed_se_nw_1;
+	relative_coord(0, 2): wire_mill_spritelayout_shed_se_nw_1;
+	relative_coord(0, 3): wire_mill_spritelayout_shed_se_nw_1;
+	relative_coord(0, 4): wire_mill_spritelayout_shed_se_nw_1;
+	relative_coord(0, 5): wire_mill_spritelayout_tanks;
+	relative_coord(1, 0): wire_mill_spritelayout_shed_se_nw_1;
+	relative_coord(1, 1): wire_mill_spritelayout_shed_se_nw_1;
+	relative_coord(1, 2): wire_mill_spritelayout_shed_se_nw_1;
+	relative_coord(1, 3): wire_mill_spritelayout_shed_se_nw_1;
+	relative_coord(1, 4): wire_mill_spritelayout_small_shed_2;
+	relative_coord(1, 5): wire_mill_spritelayout_small_shed_1;
+	relative_coord(2, 0): wire_mill_spritelayout_shed_se_nw_2;
+	relative_coord(2, 1): wire_mill_spritelayout_shed_se_nw_2;
+	relative_coord(2, 2): wire_mill_spritelayout_wire_2;
+	relative_coord(2, 3): wire_mill_spritelayout_wire_2;
+	relative_coord(2, 4): wire_mill_spritelayout_gantry_2;
+	relative_coord(2, 5): wire_mill_spritelayout_gantry_2;
+	relative_coord(0, 8): wire_mill_spritelayout_shed_se_nw_2;
+	relative_coord(0, 9): wire_mill_spritelayout_shed_se_nw_2;
+	relative_coord(0, 10): wire_mill_spritelayout_tanks;
+	relative_coord(1, 8): wire_mill_spritelayout_shed_se_nw_2;
+	relative_coord(1, 9): wire_mill_spritelayout_gantry_2;
+	relative_coord(1, 10): wire_mill_spritelayout_small_shed_2;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+switch(FEAT_INDUSTRYTILES, SELF, wire_mill_industry_layout_8, relative_pos) {
+	relative_coord(0, 0): wire_mill_spritelayout_shed_se_nw_1;
+	relative_coord(0, 1): wire_mill_spritelayout_shed_se_nw_1;
+	relative_coord(0, 2): wire_mill_spritelayout_shed_se_nw_1;
+	relative_coord(0, 3): wire_mill_spritelayout_shed_se_nw_1;
+	relative_coord(0, 4): wire_mill_spritelayout_shed_se_nw_1;
+	relative_coord(0, 5): wire_mill_spritelayout_tanks;
+	relative_coord(1, 0): wire_mill_spritelayout_shed_se_nw_1;
+	relative_coord(1, 1): wire_mill_spritelayout_shed_se_nw_1;
+	relative_coord(1, 2): wire_mill_spritelayout_shed_se_nw_1;
+	relative_coord(1, 3): wire_mill_spritelayout_shed_se_nw_1;
+	relative_coord(1, 4): wire_mill_spritelayout_small_shed_2;
+	relative_coord(1, 5): wire_mill_spritelayout_small_shed_1;
+	relative_coord(2, 0): wire_mill_spritelayout_shed_se_nw_2;
+	relative_coord(2, 1): wire_mill_spritelayout_shed_se_nw_2;
+	relative_coord(2, 2): wire_mill_spritelayout_wire_2;
+	relative_coord(2, 3): wire_mill_spritelayout_wire_2;
+	relative_coord(2, 4): wire_mill_spritelayout_gantry_2;
+	relative_coord(2, 5): wire_mill_spritelayout_gantry_2;
+	relative_coord(5, 0): wire_mill_spritelayout_shed_se_nw_2;
+	relative_coord(5, 1): wire_mill_spritelayout_shed_se_nw_2;
+	relative_coord(5, 2): wire_mill_spritelayout_tanks;
+	relative_coord(6, 0): wire_mill_spritelayout_shed_se_nw_2;
+	relative_coord(6, 1): wire_mill_spritelayout_gantry_2;
+	relative_coord(6, 2): wire_mill_spritelayout_small_shed_2;
+	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, wire_mill_industry_graphics_switch_layouts, layout_num) {
+    1: wire_mill_industry_layout_1;
+	2: wire_mill_industry_layout_2;
+	3: wire_mill_industry_layout_3;
+	4: wire_mill_industry_layout_4;
+	5: wire_mill_industry_layout_5;
+	6: wire_mill_industry_layout_6;
+	7: wire_mill_industry_layout_7;
+	8: wire_mill_industry_layout_8;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, wire_mill_switch_graphics_construction_state, construction_state) {
+    0..2: spritelayout_default_construction_states;
+    wire_mill_industry_graphics_switch_layouts; // default
+}
+
+
+switch (FEAT_INDUSTRYTILES, SELF, wire_mill_switch_graphics,
+	[switch_tile_fences(),
+	 switch_terrain_sprite(),switch_graphics_init_temp_registers()
+]) {
+    wire_mill_switch_graphics_construction_state;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// location checks
+//////////////////////////////////////////////////////////////////////////////
+// This check works as follows: calculate height of the northernmost tile of the industry and add 0, 1 or 2 for flat, slope. steep slope
+// Do the same for the current tile and compare the results. If the result is equal, the terrain is effectively flat
+// and industry can be placed.
+// It just looks weird due to the stacked ternary operators needed here
+switch (FEAT_INDUSTRYTILES, SELF, wire_mill_switch_tile_location_check2,
+			(nearby_tile_height(-relative_x, -relative_y) + 
+			(nearby_tile_slope(-relative_x, -relative_y)== SLOPE_FLAT ? 0 : nearby_tile_slope(-relative_x, -relative_y) == bitmask(IS_STEEP_SLOPE) ? 2 : 1)) 
+			== 
+			(nearby_tile_height(0, 0) + (nearby_tile_slope(0, 0) == SLOPE_FLAT ? 0 : nearby_tile_slope(0, 0) == bitmask(IS_STEEP_SLOPE) ? 2 : 1))
+			) {
+	1: return CB_RESULT_LOCATION_ALLOW;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, wire_mill_switch_tile_location_check,
+	is_funded_or_prospected() || (generation_not_forbidden_by_param() && not_next_to_industry() && not_next_to_buildings()))
+{
+	1: wire_mill_switch_tile_location_check2;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// industry tile and layout definition
+//////////////////////////////////////////////////////////////////////////////
+item(FEAT_INDUSTRYTILES, wire_mill_tile, INDUSTRY_TILE_ID_WIRE_MILL) {
+	property {
+		substitute:         0;
+		land_shape_flags:   0;
+		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+		animation_info: [ANIMATION_LOOPING, 71];
+		animation_speed: 2;
+		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
+	}
+	graphics {
+		tile_check: wire_mill_switch_tile_location_check;
+		wire_mill_switch_graphics;
+	}
+}
+
+tilelayout wire_mill_tilelayout_1 {
+	4, 3: wire_mill_tile;
+	4, 4: wire_mill_tile;
+	4, 5: wire_mill_tile;
+	5, 3: wire_mill_tile;
+	5, 4: wire_mill_tile;
+	5, 5: wire_mill_tile;
+	6, 3: wire_mill_tile;
+	6, 4: wire_mill_tile;
+	6, 5: wire_mill_tile;
+	7, 3: wire_mill_tile;
+	7, 4: wire_mill_tile;
+	7, 5: wire_mill_tile;
+	8, 3: wire_mill_tile;
+	8, 4: wire_mill_tile;
+	8, 5: wire_mill_tile;
+	9, 3: wire_mill_tile;
+	9, 4: wire_mill_tile;
+	9, 5: wire_mill_tile;
+	0, 0: wire_mill_tile;
+	0, 1: wire_mill_tile;
+	1, 1: wire_mill_tile;
+	1, 0: wire_mill_tile;
+	2, 0: wire_mill_tile;
+	2, 1: wire_mill_tile;
+}
+
+tilelayout wire_mill_tilelayout_2 {
+	0, 0: wire_mill_tile;
+	0, 1: wire_mill_tile;
+	0, 2: wire_mill_tile;
+	1, 0: wire_mill_tile;
+	1, 1: wire_mill_tile;
+	1, 2: wire_mill_tile;
+	2, 0: wire_mill_tile;
+	2, 1: wire_mill_tile;
+	2, 2: wire_mill_tile;
+	3, 0: wire_mill_tile;
+	3, 1: wire_mill_tile;
+	3, 2: wire_mill_tile;
+	4, 0: wire_mill_tile;
+	4, 1: wire_mill_tile;
+	4, 2: wire_mill_tile;
+	5, 0: wire_mill_tile;
+	5, 1: wire_mill_tile;
+	5, 2: wire_mill_tile;
+	7, 4: wire_mill_tile;
+	7, 5: wire_mill_tile;
+	8, 5: wire_mill_tile;
+	8, 4: wire_mill_tile;
+	9, 4: wire_mill_tile;
+	9, 5: wire_mill_tile;
+}
+
+tilelayout wire_mill_tilelayout_3 {
+	0, 0: wire_mill_tile;
+	0, 1: wire_mill_tile;
+	0, 2: wire_mill_tile;
+	1, 0: wire_mill_tile;
+	1, 1: wire_mill_tile;
+	1, 2: wire_mill_tile;
+	2, 0: wire_mill_tile;
+	2, 1: wire_mill_tile;
+	2, 2: wire_mill_tile;
+	3, 0: wire_mill_tile;
+	3, 1: wire_mill_tile;
+	3, 2: wire_mill_tile;
+	4, 0: wire_mill_tile;
+	4, 1: wire_mill_tile;
+	4, 2: wire_mill_tile;
+	5, 0: wire_mill_tile;
+	5, 1: wire_mill_tile;
+	5, 2: wire_mill_tile;
+	0, 5: wire_mill_tile;
+	0, 6: wire_mill_tile;
+	1, 6: wire_mill_tile;
+	1, 5: wire_mill_tile;
+	2, 5: wire_mill_tile;
+	2, 6: wire_mill_tile;
+}
+
+tilelayout wire_mill_tilelayout_4 {
+	0, 0: wire_mill_tile;
+	0, 1: wire_mill_tile;
+	0, 2: wire_mill_tile;
+	1, 0: wire_mill_tile;
+	1, 1: wire_mill_tile;
+	1, 2: wire_mill_tile;
+	2, 0: wire_mill_tile;
+	2, 1: wire_mill_tile;
+	2, 2: wire_mill_tile;
+	3, 0: wire_mill_tile;
+	3, 1: wire_mill_tile;
+	3, 2: wire_mill_tile;
+	4, 0: wire_mill_tile;
+	4, 1: wire_mill_tile;
+	4, 2: wire_mill_tile;
+	5, 0: wire_mill_tile;
+	5, 1: wire_mill_tile;
+	5, 2: wire_mill_tile;
+	8, 0: wire_mill_tile;
+	8, 1: wire_mill_tile;
+	9, 1: wire_mill_tile;
+	9, 0: wire_mill_tile;
+	10, 0: wire_mill_tile;
+	10, 1: wire_mill_tile;
+}
+
+tilelayout wire_mill_tilelayout_5 {
+	3, 4: wire_mill_tile;
+	3, 5: wire_mill_tile;
+	3, 6: wire_mill_tile;
+	3, 7: wire_mill_tile;
+	3, 8: wire_mill_tile;
+	3, 9: wire_mill_tile;
+	4, 4: wire_mill_tile;
+	4, 5: wire_mill_tile;
+	4, 6: wire_mill_tile;
+	4, 7: wire_mill_tile;
+	4, 8: wire_mill_tile;
+	4, 9: wire_mill_tile;
+	5, 4: wire_mill_tile;
+	5, 5: wire_mill_tile;
+	5, 6: wire_mill_tile;
+	5, 7: wire_mill_tile;
+	5, 8: wire_mill_tile;
+	5, 9: wire_mill_tile;
+	0, 0: wire_mill_tile;
+	0, 1: wire_mill_tile;
+	0, 2: wire_mill_tile;
+	1, 0: wire_mill_tile;
+	1, 1: wire_mill_tile;
+	1, 2: wire_mill_tile;
+}
+
+tilelayout wire_mill_tilelayout_6 {
+	0, 0: wire_mill_tile;
+	0, 1: wire_mill_tile;
+	0, 2: wire_mill_tile;
+	0, 3: wire_mill_tile;
+	0, 4: wire_mill_tile;
+	0, 5: wire_mill_tile;
+	1, 0: wire_mill_tile;
+	1, 1: wire_mill_tile;
+	1, 2: wire_mill_tile;
+	1, 3: wire_mill_tile;
+	1, 4: wire_mill_tile;
+	1, 5: wire_mill_tile;
+	2, 0: wire_mill_tile;
+	2, 1: wire_mill_tile;
+	2, 2: wire_mill_tile;
+	2, 3: wire_mill_tile;
+	2, 4: wire_mill_tile;
+	2, 5: wire_mill_tile;
+	4, 7: wire_mill_tile;
+	4, 8: wire_mill_tile;
+	4, 9: wire_mill_tile;
+	5, 7: wire_mill_tile;
+	5, 8: wire_mill_tile;
+	5, 9: wire_mill_tile;
+}
+
+tilelayout wire_mill_tilelayout_7 {
+	0, 0: wire_mill_tile;
+	0, 1: wire_mill_tile;
+	0, 2: wire_mill_tile;
+	0, 3: wire_mill_tile;
+	0, 4: wire_mill_tile;
+	0, 5: wire_mill_tile;
+	1, 0: wire_mill_tile;
+	1, 1: wire_mill_tile;
+	1, 2: wire_mill_tile;
+	1, 3: wire_mill_tile;
+	1, 4: wire_mill_tile;
+	1, 5: wire_mill_tile;
+	2, 0: wire_mill_tile;
+	2, 1: wire_mill_tile;
+	2, 2: wire_mill_tile;
+	2, 3: wire_mill_tile;
+	2, 4: wire_mill_tile;
+	2, 5: wire_mill_tile;
+	0, 8: wire_mill_tile;
+	0, 9: wire_mill_tile;
+	0, 10: wire_mill_tile;
+	1, 8: wire_mill_tile;
+	1, 9: wire_mill_tile;
+	1, 10: wire_mill_tile;
+}
+
+tilelayout wire_mill_tilelayout_8 {
+	0, 0: wire_mill_tile;
+	0, 1: wire_mill_tile;
+	0, 2: wire_mill_tile;
+	0, 3: wire_mill_tile;
+	0, 4: wire_mill_tile;
+	0, 5: wire_mill_tile;
+	1, 0: wire_mill_tile;
+	1, 1: wire_mill_tile;
+	1, 2: wire_mill_tile;
+	1, 3: wire_mill_tile;
+	1, 4: wire_mill_tile;
+	1, 5: wire_mill_tile;
+	2, 0: wire_mill_tile;
+	2, 1: wire_mill_tile;
+	2, 2: wire_mill_tile;
+	2, 3: wire_mill_tile;
+	2, 4: wire_mill_tile;
+	2, 5: wire_mill_tile;
+	5, 0: wire_mill_tile;
+	5, 1: wire_mill_tile;
+	5, 2: wire_mill_tile;
+	6, 0: wire_mill_tile;
+	6, 1: wire_mill_tile;
+	6, 2: wire_mill_tile;
+}
+
+switch(FEAT_INDUSTRIES, SELF, wire_mill_switch_location_check_industry_distance,
+       [STORE_TEMP(0, TEMP_REGISTER_TOWN_MIN_DISTANCE),
+	    STORE_TEMP(32, TEMP_REGISTER_TOWN_MAX_DISTANCE),
+	    (is_industry_funded_or_prospected()) || (industry_generation_not_forbidden_by_param() && distance_from_town() && 
+		(industry_distance(INDUSTRY_ID_COPPER_SMELTER) >= 32) && 
+		(industry_distance(INDUSTRY_ID_ALUMINIUM_PLANT) >= 32) && 
+		(industry_distance(INDUSTRY_ID_VEHICLE_FACTORY) >= 32) && 
+		(industry_distance(INDUSTRY_ID_SHEET_MILL) >= 32) && 
+		//(industry_distance(INDUSTRY_ID_APPLIANCE_FACTORY) >= 32) && 
+	    (industry_distance(INDUSTRY_ID_WIRE_MILL) >= 16))]) {
+	   1: return CB_RESULT_LOCATION_ALLOW;
+	   return CB_RESULT_LOCATION_DISALLOW;
+}
+
+produce(wire_mill_produce,
+	[COPR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 LYE_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 ACID: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
+	],
+	[STWR: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100,1) : 0;],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, wire_mill_switch_produce, 
+	[STORE_TEMP(incoming_cargo_waiting("COPR"), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+ 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("LYE_"), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 STORE_TEMP(incoming_cargo_waiting("ACID"), TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	 
+	 STORE_TEMP(90 / 100, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2) > 0 ? LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)+1 : LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS), TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 2 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW1),
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW2),
+
+	 store_debug_production_data()
+	]) {
+	wire_mill_produce;
+}
+
+produce(wire_mill_produce_ext_aluminium,
+	[COPR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 ALUM: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 LYE_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
+	 ACID: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW3);
+	],
+	[STWR: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100,1) : 0;],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, wire_mill_switch_produce_ext_aluminium, 
+	[STORE_TEMP(incoming_cargo_waiting("COPR"), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 STORE_TEMP(incoming_cargo_waiting("ALUM"), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+ 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),	 
+	 calculate_number_of_waiting_cargos(),
+	 
+	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (2-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+ 
+	 STORE_TEMP(incoming_cargo_waiting("LYE_"), TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	 STORE_TEMP(incoming_cargo_waiting("ACID"), TEMP_REGISTER_INCOMING_CARGO_WAITING3),
+	 
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2) > 0 ? LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)+1 : LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS), TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 2 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW2),
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING3), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW3),
+
+	 store_debug_production_data()
+	]) {
+	wire_mill_produce_ext_aluminium;
+}
+
+switch(FEAT_INDUSTRIES, SELF, wire_mill_switch_extra_text_fund, 
+	[STORE_TEMP(string(STR_1800), TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	current_year]) {
+	1800..500000: return string(STR_EMPTY);
+	return string(STR_INDUSTRY_NOT_AVAILABLE_BEFORE);
+}
+
+// year < 1800: no creation, 1800 <= year: certain probability
+switch(FEAT_INDUSTRIES, SELF, wire_mill_switch_check_availability, 
+	current_year) {
+	0..1799: return CB_RESULT_IND_NO_CONSTRUCTION;
+	get_construction_probability;
+}
+
+switch(FEAT_INDUSTRIES, SELF, wire_mill_switch_cargo_subtype, getbits(extra_callback_info2, 16, 8)) {
+	ALUM: switch_cargo_subtype;
+	LYE_: switch_cargo_subtype_white;
+	ACID: switch_cargo_subtype_white;
+	COPR: switch_cargo_subtype;
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, wire_mill_switch_update_last_served_date,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("STSH") != 0 || last_month_production("STSH") != 0 || 
+		incoming_cargo_waiting("COPR") != 0 || incoming_cargo_waiting("ACID") != 0 || incoming_cargo_waiting("LYE_") != 0 ||
+		this_month_transported("STSH") != 0 || last_month_transported("STSH") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+switch(FEAT_INDUSTRIES, SELF, wire_mill_switch_update_last_served_date_ext_aluminium,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("STSH") != 0 || last_month_production("STSH") != 0 || 
+		incoming_cargo_waiting("COPR") != 0 || incoming_cargo_waiting("ACID") != 0 || incoming_cargo_waiting("LYE_") != 0 || incoming_cargo_waiting("ALUM") != 0 ||
+		this_month_transported("STSH") != 0 || last_month_transported("STSH") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+if (param_extension_metallurgy && !param_extension_aluminium) {
+	item(FEAT_INDUSTRIES, wire_mill, INDUSTRY_ID_WIRE_MILL) {
+		property {
+			substitute: 0;
+			map_colour: 107;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [wire_mill_tilelayout_1,wire_mill_tilelayout_2,wire_mill_tilelayout_3,wire_mill_tilelayout_4,wire_mill_tilelayout_5,wire_mill_tilelayout_6,wire_mill_tilelayout_7,wire_mill_tilelayout_8];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_WIRE_MILL);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 190;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("COPR"),accept_cargo("ACID"),accept_cargo("LYE_"),produce_cargo("STWR",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_WIRE_MILL));
+		}
+			
+		graphics {
+			construction_probability: wire_mill_switch_check_availability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        wire_mill_switch_produce;
+			monthly_prod_change:      wire_mill_switch_update_last_served_date;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           wire_mill_switch_location_check_industry_distance;
+			extra_text_fund:          wire_mill_switch_extra_text_fund;
+			cargo_subtype_display:    wire_mill_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+
+if (param_extension_metallurgy && param_extension_aluminium) {
+	item(FEAT_INDUSTRIES, wire_mill, INDUSTRY_ID_WIRE_MILL) {
+		property {
+			substitute: 0;
+			map_colour: 107;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [wire_mill_tilelayout_1,wire_mill_tilelayout_2,wire_mill_tilelayout_3,wire_mill_tilelayout_4,wire_mill_tilelayout_5,wire_mill_tilelayout_6,wire_mill_tilelayout_7,wire_mill_tilelayout_8];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_WIRE_MILL);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 190;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("COPR"),accept_cargo("ACID"),accept_cargo("LYE_"),accept_cargo("ALUM"),produce_cargo("STWR",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_WIRE_MILL));
+		}
+			
+		graphics {
+			construction_probability: wire_mill_switch_check_availability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        wire_mill_switch_produce_ext_aluminium;
+			monthly_prod_change:      wire_mill_switch_update_last_served_date_ext_aluminium;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           wire_mill_switch_location_check_industry_distance;
+			extra_text_fund:          wire_mill_switch_extra_text_fund;
+			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO_ANY);
+			cargo_subtype_display:    wire_mill_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}

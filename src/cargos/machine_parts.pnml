@@ -1,0 +1,32 @@
+spriteset(cargoicon_machine_parts) {
+	[10 + 20 * 11, 10 + 20 * 1, 10, 10, 0, 0, "graphics/other/cargoicons.png"]
+}
+
+if (param_extension_metallurgy) {
+	item(FEAT_CARGOS, machine_parts, CARGO_ID_MACHINE_PARTS) {
+		property {
+			type_name: string(STR_CARGO_NAME_MACHINE_PARTS);
+			unit_name: string(STR_CARGO_NAME_MACHINE_PARTS);
+			type_abbreviation: string(STR_CID_MACHINE_PARTS);
+			sprite: NEW_CARGO_SPRITE;
+			weight: 1.0;
+			is_freight: 1;
+			cargo_classes: bitmask(CC_PIECE_GOODS);
+			town_growth_effect: TOWNGROWTH_NONE;
+			town_growth_multiplier: 1.0;
+			units_of_cargo: TTD_STR_TONS;
+			items_of_cargo: string(STR_QUANTITY_MACHINE_PARTS);
+			penalty_lowerbound: 2;
+			single_penalty_length: 32;
+			capacity_multiplier: 1;
+			cargo_payment_list_colour: 42;
+			station_list_colour: 42;
+			price_factor: 178;
+			cargo_label: "ENSP";
+			number: CARGO_ID_MACHINE_PARTS;
+		}
+		graphics {
+			cargoicon_machine_parts;
+		}
+	}
+}

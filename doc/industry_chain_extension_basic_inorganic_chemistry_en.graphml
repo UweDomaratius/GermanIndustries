@@ -242,6 +242,28 @@ Lye is optional<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMod
         </y:ShapeNode>
       </data>
     </node>
+    <node id="n20">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="50.0" width="150.0" x="2350.0" y="475.0"/>
+          <y:Fill color="#8C6C40" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="56.6875" x="46.65625" xml:space="preserve" y="15.6494140625">Sheet Mill<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n21">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="50.0" width="150.0" x="2350.0" y="535.0"/>
+          <y:Fill color="#8C6C40" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="49.990234375" x="50.0048828125" xml:space="preserve" y="15.6494140625">Wire Mill<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
     <edge id="e0" source="n0" target="n1">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
@@ -503,7 +525,6 @@ Lye is optional<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMod
       </data>
     </edge>
     <edge id="e18" source="n5" target="n17">
-      <data key="d9"/>
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="-13.86167146974094" ty="-10.000000000000085">
@@ -519,7 +540,6 @@ Lye is optional<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMod
       </data>
     </edge>
     <edge id="e19" source="n5" target="n16">
-      <data key="d9"/>
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -535,7 +555,6 @@ Lye is optional<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMod
       </data>
     </edge>
     <edge id="e20" source="n18" target="n10">
-      <data key="d9"/>
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="0.7685025936598322" ty="29.999999999999943">
@@ -551,7 +570,6 @@ Lye is optional<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMod
       </data>
     </edge>
     <edge id="e21" source="n19" target="n10">
-      <data key="d9"/>
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="-17.334164841498932" ty="49.99999999999994">
@@ -562,6 +580,38 @@ Lye is optional<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMod
           <y:Arrows source="none" target="delta"/>
           <y:StyleProperties>
             <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#0060d4"/>
+          </y:StyleProperties>
+        </y:GenericEdge>
+      </data>
+    </edge>
+    <edge id="e22" source="n4" target="n20">
+      <data key="d9"/>
+      <data key="d10">
+        <y:GenericEdge configuration="com.yworks.edge.framed">
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="2300.0" y="400.0"/>
+            <y:Point x="2300.0" y="500.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:Arrows source="none" target="delta"/>
+          <y:StyleProperties>
+            <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#78a488"/>
+          </y:StyleProperties>
+        </y:GenericEdge>
+      </data>
+    </edge>
+    <edge id="e23" source="n4" target="n21">
+      <data key="d9"/>
+      <data key="d10">
+        <y:GenericEdge configuration="com.yworks.edge.framed">
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="2300.0" y="400.0"/>
+            <y:Point x="2300.0" y="560.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:Arrows source="none" target="delta"/>
+          <y:StyleProperties>
+            <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#78a488"/>
           </y:StyleProperties>
         </y:GenericEdge>
       </data>

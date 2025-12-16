@@ -580,9 +580,9 @@ switch(FEAT_INDUSTRIES, SELF, farm_switch_location_check_industry_distance,
 
 // before 1920 no proper fertilizer was available, so maximum production was limited
 switch(FEAT_INDUSTRIES, SELF, farm_func_calc_max_prod, 
-	param_economy_model == 0 ? 128 :
+	param_economy_model == 0 ? 255 :
 	  current_year <= 1920 ? 40 : 
-	  128) {
+	  255) {
 	return;
 }
 

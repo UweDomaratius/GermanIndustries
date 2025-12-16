@@ -82,6 +82,13 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_core,
 	return 0x3800 + string(STR_EMPTY);
 }
 
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_ensp, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("ENSP") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	ENSP: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
 switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_fish, 
 	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("FISH") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
 	 getbits(extra_callback_info2, 16, 8)]) {
@@ -257,6 +264,20 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_stel,
 	return 0x3800 + string(STR_EMPTY);
 }
 
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_stsh, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("STSH") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	STSH: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_stwr, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("STWR") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	STWR: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
 switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_sulp, 
 	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("SULP") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
 	 getbits(extra_callback_info2, 16, 8)]) {
@@ -306,6 +327,7 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info,
 	COKE: switch_cargo_subtype_display_info_coke;
 	COPR: switch_cargo_subtype_display_info_copr;
 	CORE: switch_cargo_subtype_display_info_core;
+	ENSP: switch_cargo_subtype_display_info_ensp;
 	FISH: switch_cargo_subtype_display_info_fish;
 	FOOD: switch_cargo_subtype_display_info_food;
 	FRUT: switch_cargo_subtype_display_info_frut;
@@ -331,6 +353,8 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info,
 	SAND: switch_cargo_subtype_display_info_sand;
 	SASH: switch_cargo_subtype_display_info_sash;
 	STEL: switch_cargo_subtype_display_info_stel;
+	STSH: switch_cargo_subtype_display_info_stsh;
+	STWR: switch_cargo_subtype_display_info_stwr;
 	SULP: switch_cargo_subtype_display_info_sulp;
 	TEXT: switch_cargo_subtype_display_info_text;
 	WDPR: switch_cargo_subtype_display_info_wdpr;
@@ -344,6 +368,13 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype,
 	 getbits(extra_callback_info2, 8, 8)) {
 	0: return CB_RESULT_IND_NO_TEXT_NO_AMOUNT;
 	1: switch_cargo_subtype_display_info;
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_acid_white, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("ACID") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	ACID: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_OPTIONAL_CARGO_AVAILABLE);
 	return 0x3800 + string(STR_EMPTY);
 }
 
@@ -398,6 +429,7 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_salt_white,
 
 switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_white, 
 	getbits(extra_callback_info2, 16, 8)) {
+	ACID: switch_cargo_subtype_display_info_acid_white;
 	COAT: switch_cargo_subtype_display_info_coat_white;
 	LYE_: switch_cargo_subtype_display_info_lye_white;
 	MNSP: switch_cargo_subtype_display_info_mnsp_white;

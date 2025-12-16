@@ -1460,15 +1460,15 @@ produce(port_produce_ext_aluminium_ext_painting_industries_ext_coke_sulphur,
 )
 
 switch(FEAT_INDUSTRIES, SELF, port_func_calc_max_prod, 
-	param_economy_model == 0 ? 128 :
-	  4 + max(0,(current_year - 1900))) {
+	param_economy_model == 0 ? 255 :
+	  min(255,4 + 3*max(0,(current_year - 1900)))) {
 	return;
 }
 
 // randomize production at build time based on random bits: 96t min, 152t max
 switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_build,
 	[
-	  STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	  STORE_TEMP(max(port_func_calc_max_prod(),128),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
 	])
 {
 	randomize_initial_production;
