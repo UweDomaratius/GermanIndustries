@@ -505,6 +505,36 @@ switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_produce,
 	steel_mill_produce;
 }
 
+produce(steel_mill_produce_ext_recycling,
+	[COAL: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*57/100,1) : 0;
+	 IORE: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);
+	 SCMT: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 ],
+	[STEL: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*70/100,1) : 0;],
+	0 // do not run again
+)
+
+// steel_mill uses 10% of stockpile for production, if stockpile is big enough
+// if stockpile is < 80t, 8t are produced per 256ticks
+// if stockpile is < 8t, whatever is available is used
+// it stockpile is empty, nothing is produced
+switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_produce_ext_recycling, 
+	[STORE_TEMP(min(incoming_cargo_waiting("COAL"), incoming_cargo_waiting("IORE")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("SCMT"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW1),
+
+	 store_debug_production_data()
+	]) {
+	steel_mill_produce_ext_recycling;
+}
+
 // according to google, about 0.8t coal for 1t steel, 1.4t iron ore for 1t steel, 0.3t quicklime
 produce(steel_mill_produce_ext_glass,
 	[COAL: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*57/100,1) : 0;
@@ -528,6 +558,37 @@ switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_produce_ext_glass,
 	 store_debug_production_data()
 	]) {
 	steel_mill_produce_ext_glass;
+}
+
+produce(steel_mill_produce_ext_glass_ext_recycling,
+	[COAL: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*57/100,1) : 0;
+	 IORE: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);
+	 QLME: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*3/100,1) : 0;
+	 SCMT: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 ],
+	[STEL: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*70/100,1) : 0;],
+	0 // do not run again
+)
+
+// steel_mill uses 10% of stockpile for production, if stockpile is big enough
+// if stockpile is < 80t, 8t are produced per 256ticks
+// if stockpile is < 8t, whatever is available is used
+// it stockpile is empty, nothing is produced
+switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_produce_ext_glass_ext_recycling, 
+	[STORE_TEMP(min(incoming_cargo_waiting("COAL"), incoming_cargo_waiting("IORE"),incoming_cargo_waiting("QLME")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("SCMT"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW1),
+
+	 store_debug_production_data()
+	]) {
+	steel_mill_produce_ext_glass_ext_recycling;
 }
 
 // according to google, about 0.8t coke for 1t steel, 1.4t iron ore for 1t steel
@@ -554,6 +615,36 @@ switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_produce_ext_coke_sulphur,
 	steel_mill_produce_ext_coke_sulphur;
 }
 
+produce(steel_mill_produce_ext_coke_sulphur_ext_recycling,
+	[COKE: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*57/100,1) : 0;
+	 IORE: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);
+	 SCMT: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 ],
+	[STEL: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*70/100,1) : 0;],
+	0 // do not run again
+)
+
+// steel_mill uses 10% of stockpile for production, if stockpile is big enough
+// if stockpile is < 80t, 8t are produced per 256ticks
+// if stockpile is < 8t, whatever is available is used
+// it stockpile is empty, nothing is produced
+switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_produce_ext_coke_sulphur_ext_recycling, 
+	[STORE_TEMP(min(incoming_cargo_waiting("COKE"), incoming_cargo_waiting("IORE")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("SCMT"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW1),
+
+	 store_debug_production_data()
+	]) {
+	steel_mill_produce_ext_coke_sulphur_ext_recycling;
+}
+
 // according to google, about 0.8t coke for 1t steel, 1.4t iron ore for 1t steel, 0.3t quicklime
 produce(steel_mill_produce_ext_glass_ext_coke_sulphur,
 	[COKE: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*57/100,1) : 0;
@@ -577,6 +668,37 @@ switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_produce_ext_glass_ext_coke_sulph
 	 store_debug_production_data()
 	]) {
 	steel_mill_produce_ext_glass_ext_coke_sulphur;
+}
+
+produce(steel_mill_produce_ext_glass_ext_coke_sulphur_ext_recycling,
+	[COKE: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*57/100,1) : 0;
+	 IORE: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);
+	 QLME: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*3/100,1) : 0;
+	 SCMT: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 ],
+	[STEL: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*70/100,1) : 0;],
+	0 // do not run again
+)
+
+// steel_mill uses 10% of stockpile for production, if stockpile is big enough
+// if stockpile is < 80t, 8t are produced per 256ticks
+// if stockpile is < 8t, whatever is available is used
+// it stockpile is empty, nothing is produced
+switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_produce_ext_glass_ext_coke_sulphur_ext_recycling, 
+	[STORE_TEMP(min(incoming_cargo_waiting("COKE"), incoming_cargo_waiting("IORE"),incoming_cargo_waiting("QLME")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("SCMT"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW1),
+
+	 store_debug_production_data()
+	]) {
+	steel_mill_produce_ext_glass_ext_coke_sulphur_ext_recycling;
 }
 
 // according to google, about 0.8t coal for 1t steel, 1.4t iron ore for 1t steel
@@ -611,6 +733,40 @@ switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_produce_ext_ammonia,
 	steel_mill_produce_ext_ammonia;
 }
 
+produce(steel_mill_produce_ext_ammonia_ext_recycling,
+	[COAL: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*57/100,1) : 0;
+	 IORE: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);
+	 O2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 SCMT: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
+	],
+	[STEL: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*70/100,1) : 0;],
+	0 // do not run again
+)
+
+// steel_mill uses 10% of stockpile for production, if stockpile is big enough
+// if stockpile is < 80t, 8t are produced per 256ticks
+// if stockpile is < 8t, whatever is available is used
+// it stockpile is empty, nothing is produced
+switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_produce_ext_ammonia_ext_recycling, 
+	[STORE_TEMP(min(incoming_cargo_waiting("COAL"), incoming_cargo_waiting("IORE")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("O2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 STORE_TEMP(incoming_cargo_waiting("SCMT"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	 
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2) > 0 ? LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) + 1 : LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS), TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 2 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW1),
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW2),
+
+	 store_debug_production_data()
+	]) {
+	steel_mill_produce_ext_ammonia_ext_recycling;
+}
+
 // according to google, about 0.8t coal for 1t steel, 1.4t iron ore for 1t steel, 0.3t quicklime
 produce(steel_mill_produce_ext_glass_ext_ammonia,
 	[COAL: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*57/100,1) : 0;
@@ -641,6 +797,41 @@ switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_produce_ext_glass_ext_ammonia,
 	 store_debug_production_data()
 	]) {
 	steel_mill_produce_ext_glass_ext_ammonia;
+}
+
+produce(steel_mill_produce_ext_glass_ext_ammonia_ext_recycling,
+	[COAL: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*57/100,1) : 0;
+	 IORE: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);
+	 QLME: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*3/100,1) : 0;
+	 O2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 SCMT: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
+	 ],
+	[STEL: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*70/100,1) : 0;],
+	0 // do not run again
+)
+
+// steel_mill uses 10% of stockpile for production, if stockpile is big enough
+// if stockpile is < 80t, 8t are produced per 256ticks
+// if stockpile is < 8t, whatever is available is used
+// it stockpile is empty, nothing is produced
+switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_produce_ext_glass_ext_ammonia_ext_recycling, 
+	[STORE_TEMP(min(incoming_cargo_waiting("COAL"), incoming_cargo_waiting("IORE"),incoming_cargo_waiting("QLME")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("O2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 STORE_TEMP(incoming_cargo_waiting("SCMT"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	 
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2) > 0 ? LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) + 1 : LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS), TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 2 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW1),
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW2),
+
+	 store_debug_production_data()
+	]) {
+	steel_mill_produce_ext_glass_ext_ammonia_ext_recycling;
 }
 
 // according to google, about 0.8t coke for 1t steel, 1.4t iron ore for 1t steel
@@ -675,6 +866,40 @@ switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_produce_ext_coke_sulphur_ext_amm
 	steel_mill_produce_ext_coke_sulphur_ext_ammonia;
 }
 
+produce(steel_mill_produce_ext_coke_sulphur_ext_ammonia_ext_recycling,
+	[COKE: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*57/100,1) : 0;
+	 IORE: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);
+	 O2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 SCMT: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
+	],
+	[STEL: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*70/100,1) : 0;],
+	0 // do not run again
+)
+
+// steel_mill uses 10% of stockpile for production, if stockpile is big enough
+// if stockpile is < 80t, 8t are produced per 256ticks
+// if stockpile is < 8t, whatever is available is used
+// it stockpile is empty, nothing is produced
+switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_produce_ext_coke_sulphur_ext_ammonia_ext_recycling, 
+	[STORE_TEMP(min(incoming_cargo_waiting("COKE"), incoming_cargo_waiting("IORE")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("O2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 STORE_TEMP(incoming_cargo_waiting("SCMT"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	 
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2) > 0 ? LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) + 1 : LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS), TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 2 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW1),
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW2),
+
+	 store_debug_production_data()
+	]) {
+	steel_mill_produce_ext_coke_sulphur_ext_ammonia_ext_recycling;
+}
+
 // according to google, about 0.8t coke for 1t steel, 1.4t iron ore for 1t steel, 0.3t quicklime
 produce(steel_mill_produce_ext_glass_ext_coke_sulphur_ext_ammonia,
 	[COKE: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*57/100,1) : 0;
@@ -707,6 +932,41 @@ switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_produce_ext_glass_ext_coke_sulph
 	steel_mill_produce_ext_glass_ext_coke_sulphur_ext_ammonia;
 }
 
+produce(steel_mill_produce_ext_glass_ext_coke_sulphur_ext_ammonia_ext_recycling,
+	[COKE: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*57/100,1) : 0;
+	 IORE: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);
+	 QLME: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*3/100,1) : 0;
+	 O2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 SCMT: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
+	 ],
+	[STEL: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*70/100,1) : 0;],
+	0 // do not run again
+)
+
+// steel_mill uses 10% of stockpile for production, if stockpile is big enough
+// if stockpile is < 80t, 8t are produced per 256ticks
+// if stockpile is < 8t, whatever is available is used
+// it stockpile is empty, nothing is produced
+switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_produce_ext_glass_ext_coke_sulphur_ext_ammonia_ext_recycling, 
+	[STORE_TEMP(min(incoming_cargo_waiting("COKE"), incoming_cargo_waiting("IORE"),incoming_cargo_waiting("QLME")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("O2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 STORE_TEMP(incoming_cargo_waiting("SCMT"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	 
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2) > 0 ? LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) + 1 : LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS), TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 2 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW1),
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW2),
+
+	 store_debug_production_data()
+	]) {
+	steel_mill_produce_ext_glass_ext_coke_sulphur_ext_ammonia_ext_recycling;
+}
+
 switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_extra_text_fund, 
 	[STORE_TEMP(string(STR_1800), TEMP_REGISTER_EXTRA_TEXT_ARG0),
 	current_year]) {
@@ -727,6 +987,7 @@ switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_cargo_subtype, getbits(extra_cal
 	IORE: switch_cargo_subtype;
 	QLME: switch_cargo_subtype;
 	O2__: switch_cargo_subtype_white;
+	SCMT: switch_cargo_subtype_white;
 	return 0x3800 + string(STR_EMPTY);
 }
 
@@ -810,7 +1071,87 @@ switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_update_last_served_date_ext_glas
 	check_secondary_industry_closure();
 }
 
-if (!param_extension_glass && !param_extension_coke_sulphur && !param_extension_ammonia) {
+switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_update_last_served_date_ext_recycling,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("STEL") != 0 || last_month_production("STEL") != 0 || 
+		incoming_cargo_waiting("COAL") != 0 || incoming_cargo_waiting("IORE") != 0 || incoming_cargo_waiting("SCMT") != 0 ||
+		this_month_transported("STEL") != 0 || last_month_transported("STEL") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_update_last_served_date_ext_glass_ext_recycling,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("STEL") != 0 || last_month_production("STEL") != 0 || 
+		incoming_cargo_waiting("COAL") != 0 || incoming_cargo_waiting("IORE") != 0 || incoming_cargo_waiting("QLME") != 0 || incoming_cargo_waiting("SCMT") != 0 ||
+		this_month_transported("STEL") != 0 || last_month_transported("STEL") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_update_last_served_date_ext_coke_sulphur_ext_recycling,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("STEL") != 0 || last_month_production("STEL") != 0 || 
+		incoming_cargo_waiting("COKE") != 0 || incoming_cargo_waiting("IORE") != 0 || incoming_cargo_waiting("SCMT") != 0 ||
+		this_month_transported("STEL") != 0 || last_month_transported("STEL") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_update_last_served_date_ext_glass_ext_coke_sulphur_ext_recycling,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("STEL") != 0 || last_month_production("STEL") != 0 || 
+		incoming_cargo_waiting("COKE") != 0 || incoming_cargo_waiting("IORE") != 0 || incoming_cargo_waiting("QLME") != 0 || incoming_cargo_waiting("SCMT") != 0 ||
+		this_month_transported("STEL") != 0 || last_month_transported("STEL") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_update_last_served_date_ext_ammonia_ext_recycling,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("STEL") != 0 || last_month_production("STEL") != 0 || 
+		incoming_cargo_waiting("COAL") != 0 || incoming_cargo_waiting("IORE") != 0 || incoming_cargo_waiting("O2__") != 0 || incoming_cargo_waiting("SCMT") != 0 ||
+		this_month_transported("STEL") != 0 || last_month_transported("STEL") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_update_last_served_date_ext_glass_ext_ammonia_ext_recycling,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("STEL") != 0 || last_month_production("STEL") != 0 || 
+		incoming_cargo_waiting("COAL") != 0 || incoming_cargo_waiting("IORE") != 0 || incoming_cargo_waiting("QLME") != 0 || incoming_cargo_waiting("O2__") != 0 || incoming_cargo_waiting("SCMT") != 0 ||
+		this_month_transported("STEL") != 0 || last_month_transported("STEL") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_update_last_served_date_ext_coke_sulphur_ext_ammonia_ext_recycling,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("STEL") != 0 || last_month_production("STEL") != 0 || 
+		incoming_cargo_waiting("COKE") != 0 || incoming_cargo_waiting("IORE") != 0 || incoming_cargo_waiting("O2__") != 0 || incoming_cargo_waiting("SCMT") != 0 ||
+		this_month_transported("STEL") != 0 || last_month_transported("STEL") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_update_last_served_date_ext_glass_ext_coke_sulphur_ext_ammonia_ext_recycling,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("STEL") != 0 || last_month_production("STEL") != 0 || 
+		incoming_cargo_waiting("COKE") != 0 || incoming_cargo_waiting("IORE") != 0 || incoming_cargo_waiting("QLME") != 0 || incoming_cargo_waiting("O2__") != 0 || incoming_cargo_waiting("SCMT") != 0 ||
+		this_month_transported("STEL") != 0 || last_month_transported("STEL") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+if (!param_extension_glass && !param_extension_coke_sulphur && !param_extension_ammonia && !param_extension_recycling) {
 	item(FEAT_INDUSTRIES, steel_mill, INDUSTRY_ID_INTEGRATED_STEEL_MILL) {
 		property {
 			substitute: 0;
@@ -845,7 +1186,7 @@ if (!param_extension_glass && !param_extension_coke_sulphur && !param_extension_
 	}
 }
 
-if (param_extension_glass && !param_extension_coke_sulphur && !param_extension_ammonia) {
+if (param_extension_glass && !param_extension_coke_sulphur && !param_extension_ammonia && !param_extension_recycling) {
 	item(FEAT_INDUSTRIES, steel_mill, INDUSTRY_ID_INTEGRATED_STEEL_MILL) {
 		property {
 			substitute: 0;
@@ -880,7 +1221,7 @@ if (param_extension_glass && !param_extension_coke_sulphur && !param_extension_a
 	}
 }
 
-if (!param_extension_glass && param_extension_coke_sulphur && !param_extension_ammonia) {
+if (!param_extension_glass && param_extension_coke_sulphur && !param_extension_ammonia && !param_extension_recycling) {
 	item(FEAT_INDUSTRIES, steel_mill, INDUSTRY_ID_INTEGRATED_STEEL_MILL) {
 		property {
 			substitute: 0;
@@ -915,7 +1256,7 @@ if (!param_extension_glass && param_extension_coke_sulphur && !param_extension_a
 	}
 }
 
-if (param_extension_glass && param_extension_coke_sulphur && !param_extension_ammonia) {
+if (param_extension_glass && param_extension_coke_sulphur && !param_extension_ammonia && !param_extension_recycling) {
 	item(FEAT_INDUSTRIES, steel_mill, INDUSTRY_ID_INTEGRATED_STEEL_MILL) {
 		property {
 			substitute: 0;
@@ -951,7 +1292,7 @@ if (param_extension_glass && param_extension_coke_sulphur && !param_extension_am
 	}
 }
 
-if (!param_extension_glass && !param_extension_coke_sulphur && param_extension_ammonia) {
+if (!param_extension_glass && !param_extension_coke_sulphur && param_extension_ammonia && !param_extension_recycling) {
 	item(FEAT_INDUSTRIES, steel_mill, INDUSTRY_ID_INTEGRATED_STEEL_MILL) {
 		property {
 			substitute: 0;
@@ -986,7 +1327,7 @@ if (!param_extension_glass && !param_extension_coke_sulphur && param_extension_a
 	}
 }
 
-if (param_extension_glass && !param_extension_coke_sulphur && param_extension_ammonia) {
+if (param_extension_glass && !param_extension_coke_sulphur && param_extension_ammonia && !param_extension_recycling) {
 	item(FEAT_INDUSTRIES, steel_mill, INDUSTRY_ID_INTEGRATED_STEEL_MILL) {
 		property {
 			substitute: 0;
@@ -1021,7 +1362,7 @@ if (param_extension_glass && !param_extension_coke_sulphur && param_extension_am
 	}
 }
 
-if (!param_extension_glass && param_extension_coke_sulphur && param_extension_ammonia) {
+if (!param_extension_glass && param_extension_coke_sulphur && param_extension_ammonia && !param_extension_recycling) {
 	item(FEAT_INDUSTRIES, steel_mill, INDUSTRY_ID_INTEGRATED_STEEL_MILL) {
 		property {
 			substitute: 0;
@@ -1056,7 +1397,7 @@ if (!param_extension_glass && param_extension_coke_sulphur && param_extension_am
 	}
 }
 
-if (param_extension_glass && param_extension_coke_sulphur && param_extension_ammonia) {
+if (param_extension_glass && param_extension_coke_sulphur && param_extension_ammonia && !param_extension_recycling) {
 	item(FEAT_INDUSTRIES, steel_mill, INDUSTRY_ID_INTEGRATED_STEEL_MILL) {
 		property {
 			substitute: 0;
@@ -1082,6 +1423,287 @@ if (param_extension_glass && param_extension_coke_sulphur && param_extension_amm
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        steel_mill_switch_produce_ext_glass_ext_coke_sulphur_ext_ammonia;
 			monthly_prod_change:      steel_mill_switch_update_last_served_date_ext_glass_ext_coke_sulphur_ext_ammonia;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           steel_mill_switch_location_check_industry_distance;
+			extra_text_fund:          steel_mill_switch_extra_text_fund;
+			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+
+if (!param_extension_glass && !param_extension_coke_sulphur && !param_extension_ammonia && param_extension_recycling) {
+	item(FEAT_INDUSTRIES, steel_mill, INDUSTRY_ID_INTEGRATED_STEEL_MILL) {
+		property {
+			substitute: 0;
+			map_colour: 9;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [steel_mill_tilelayout_1, steel_mill_tilelayout_2];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_INTEGRATED_STEEL_MILL);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 190;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("COAL"),accept_cargo("IORE"),accept_cargo("SCMT"),produce_cargo("STEL",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_INTEGRATED_STEEL_MILL));
+		}
+			
+		graphics {
+			construction_probability: steel_mill_switch_check_availability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        steel_mill_switch_produce_ext_recycling;
+			monthly_prod_change:      steel_mill_switch_update_last_served_date_ext_recycling;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           steel_mill_switch_location_check_industry_distance;
+			extra_text_fund:          steel_mill_switch_extra_text_fund;
+			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+
+if (param_extension_glass && !param_extension_coke_sulphur && !param_extension_ammonia && param_extension_recycling) {
+	item(FEAT_INDUSTRIES, steel_mill, INDUSTRY_ID_INTEGRATED_STEEL_MILL) {
+		property {
+			substitute: 0;
+			map_colour: 9;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [steel_mill_tilelayout_1, steel_mill_tilelayout_2];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_INTEGRATED_STEEL_MILL);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 190;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("COAL"),accept_cargo("IORE"),accept_cargo("QLME"),accept_cargo("SCMT"),produce_cargo("STEL",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_INTEGRATED_STEEL_MILL));
+		}
+			
+		graphics {
+			construction_probability: steel_mill_switch_check_availability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        steel_mill_switch_produce_ext_glass_ext_recycling;
+			monthly_prod_change:      steel_mill_switch_update_last_served_date_ext_glass_ext_recycling;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           steel_mill_switch_location_check_industry_distance;
+			extra_text_fund:          steel_mill_switch_extra_text_fund;
+			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+
+if (!param_extension_glass && param_extension_coke_sulphur && !param_extension_ammonia && param_extension_recycling) {
+	item(FEAT_INDUSTRIES, steel_mill, INDUSTRY_ID_INTEGRATED_STEEL_MILL) {
+		property {
+			substitute: 0;
+			map_colour: 9;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [steel_mill_tilelayout_1, steel_mill_tilelayout_2];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_INTEGRATED_STEEL_MILL);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 190;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("COKE"),accept_cargo("IORE"),accept_cargo("SCMT"),produce_cargo("STEL",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_INTEGRATED_STEEL_MILL));
+		}
+			
+		graphics {
+			construction_probability: steel_mill_switch_check_availability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        steel_mill_switch_produce_ext_coke_sulphur_ext_recycling;
+			monthly_prod_change:      steel_mill_switch_update_last_served_date_ext_coke_sulphur_ext_recycling;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           steel_mill_switch_location_check_industry_distance;
+			extra_text_fund:          steel_mill_switch_extra_text_fund;
+			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+
+if (param_extension_glass && param_extension_coke_sulphur && !param_extension_ammonia && param_extension_recycling) {
+	item(FEAT_INDUSTRIES, steel_mill, INDUSTRY_ID_INTEGRATED_STEEL_MILL) {
+		property {
+			substitute: 0;
+			map_colour: 9;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [steel_mill_tilelayout_1, steel_mill_tilelayout_2];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_INTEGRATED_STEEL_MILL);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 190;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("COKE"),accept_cargo("IORE"),accept_cargo("QLME"),accept_cargo("SCMT"),produce_cargo("STEL",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_INTEGRATED_STEEL_MILL));
+		}
+			
+		graphics {
+			construction_probability: steel_mill_switch_check_availability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        steel_mill_switch_produce_ext_glass_ext_coke_sulphur_ext_recycling;
+			monthly_prod_change:      steel_mill_switch_update_last_served_date_ext_glass_ext_coke_sulphur_ext_recycling;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           steel_mill_switch_location_check_industry_distance;
+			extra_text_fund:          steel_mill_switch_extra_text_fund;
+			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO);
+			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+
+if (!param_extension_glass && !param_extension_coke_sulphur && param_extension_ammonia && param_extension_recycling) {
+	item(FEAT_INDUSTRIES, steel_mill, INDUSTRY_ID_INTEGRATED_STEEL_MILL) {
+		property {
+			substitute: 0;
+			map_colour: 9;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [steel_mill_tilelayout_1, steel_mill_tilelayout_2];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_INTEGRATED_STEEL_MILL);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 190;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("COAL"),accept_cargo("IORE"),accept_cargo("O2__"),accept_cargo("SCMT"),produce_cargo("STEL",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_INTEGRATED_STEEL_MILL));
+		}
+			
+		graphics {
+			construction_probability: steel_mill_switch_check_availability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        steel_mill_switch_produce_ext_ammonia_ext_recycling;
+			monthly_prod_change:      steel_mill_switch_update_last_served_date_ext_ammonia_ext_recycling;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           steel_mill_switch_location_check_industry_distance;
+			extra_text_fund:          steel_mill_switch_extra_text_fund;
+			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+
+if (param_extension_glass && !param_extension_coke_sulphur && param_extension_ammonia && param_extension_recycling) {
+	item(FEAT_INDUSTRIES, steel_mill, INDUSTRY_ID_INTEGRATED_STEEL_MILL) {
+		property {
+			substitute: 0;
+			map_colour: 9;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [steel_mill_tilelayout_1, steel_mill_tilelayout_2];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_INTEGRATED_STEEL_MILL);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 190;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("COAL"),accept_cargo("IORE"),accept_cargo("QLME"),accept_cargo("SCMT"),accept_cargo("O2__"),produce_cargo("STEL",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_INTEGRATED_STEEL_MILL));
+		}
+			
+		graphics {
+			construction_probability: steel_mill_switch_check_availability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        steel_mill_switch_produce_ext_glass_ext_ammonia_ext_recycling;
+			monthly_prod_change:      steel_mill_switch_update_last_served_date_ext_glass_ext_ammonia_ext_recycling;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           steel_mill_switch_location_check_industry_distance;
+			extra_text_fund:          steel_mill_switch_extra_text_fund;
+			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+
+if (!param_extension_glass && param_extension_coke_sulphur && param_extension_ammonia && param_extension_recycling) {
+	item(FEAT_INDUSTRIES, steel_mill, INDUSTRY_ID_INTEGRATED_STEEL_MILL) {
+		property {
+			substitute: 0;
+			map_colour: 9;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [steel_mill_tilelayout_1, steel_mill_tilelayout_2];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_INTEGRATED_STEEL_MILL);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 190;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("COKE"),accept_cargo("IORE"),accept_cargo("O2__"),accept_cargo("SCMT"),produce_cargo("STEL",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_INTEGRATED_STEEL_MILL));
+		}
+			
+		graphics {
+			construction_probability: steel_mill_switch_check_availability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        steel_mill_switch_produce_ext_coke_sulphur_ext_ammonia_ext_recycling;
+			monthly_prod_change:      steel_mill_switch_update_last_served_date_ext_coke_sulphur_ext_ammonia_ext_recycling;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           steel_mill_switch_location_check_industry_distance;
+			extra_text_fund:          steel_mill_switch_extra_text_fund;
+			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+
+if (param_extension_glass && param_extension_coke_sulphur && param_extension_ammonia && param_extension_recycling) {
+	item(FEAT_INDUSTRIES, steel_mill, INDUSTRY_ID_INTEGRATED_STEEL_MILL) {
+		property {
+			substitute: 0;
+			map_colour: 9;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [steel_mill_tilelayout_1, steel_mill_tilelayout_2];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_INTEGRATED_STEEL_MILL);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 190;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("COKE"),accept_cargo("IORE"),accept_cargo("QLME"),accept_cargo("SCMT"),accept_cargo("O2__"),produce_cargo("STEL",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_INTEGRATED_STEEL_MILL));
+		}
+			
+		graphics {
+			construction_probability: steel_mill_switch_check_availability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        steel_mill_switch_produce_ext_glass_ext_coke_sulphur_ext_ammonia_ext_recycling;
+			monthly_prod_change:      steel_mill_switch_update_last_served_date_ext_glass_ext_coke_sulphur_ext_ammonia_ext_recycling;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           steel_mill_switch_location_check_industry_distance;
 			extra_text_fund:          steel_mill_switch_extra_text_fund;

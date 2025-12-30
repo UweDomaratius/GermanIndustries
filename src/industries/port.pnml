@@ -758,7 +758,7 @@ spritelayout port_spritelayout_coast_warehouse6 {
 		xoffset: 0;		yoffset: 0;		zoffset: 0;
 		xextent: 16;	yextent: 16;	zextent: 32;
 		always_draw: 1;
-		hide_sprite: (construction_state != 0);
+		hide_sprite: 0;
 	}            
 	building {
 		sprite: port_spriteset_1(0);

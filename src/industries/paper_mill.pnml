@@ -866,6 +866,7 @@ switch(FEAT_INDUSTRIES, SELF, paper_mill_switch_location_check_industry_distance
 		(industry_distance(INDUSTRY_ID_PRINTING_WORKS) >= 32) && 
 		(industry_distance(INDUSTRY_ID_FOREST) >= 32) && 
 		(industry_distance(INDUSTRY_ID_CHLOR_ALKALI_PLANT) >= 32) && 
+		(industry_distance(INDUSTRY_ID_RECYCLING_DEPOT) >= 32) &&
 	    (industry_distance(INDUSTRY_ID_PAPER_MILL) >= 16)))]) {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;
@@ -897,10 +898,44 @@ switch(FEAT_INDUSTRIES, SELF, paper_mill_switch_produce,
 	paper_mill_produce;
 }
 
+produce(paper_mill_produce_ext_recycling,
+	[LYE_: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*80/100,1) : 0;
+	 CHLO: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*80/100,1) : 0;
+	 WOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*80/100,1) : 0;
+	 RCYC: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 ],
+	[PAPR: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*70/100,1) : 0;],
+	0 // do not run again
+)
+
+// steel_mill uses 10% of stockpile for production, if stockpile is big enough
+// if stockpile is < 80t, 8t are produced per 256ticks
+// if stockpile is < 8t, whatever is available is used
+// it stockpile is empty, nothing is produced
+switch(FEAT_INDUSTRIES, SELF, paper_mill_switch_produce_ext_recycling, 
+	[STORE_TEMP(min(incoming_cargo_waiting("LYE_"),incoming_cargo_waiting("CHLO"),incoming_cargo_waiting("WOOD")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 STORE_TEMP(min(incoming_cargo_waiting("LYE_"),incoming_cargo_waiting("CHLO"),incoming_cargo_waiting("WOOD")), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 STORE_TEMP(min(incoming_cargo_waiting("LYE_"),incoming_cargo_waiting("CHLO"),incoming_cargo_waiting("WOOD")), TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("RCYC"), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW1),
+
+	 store_debug_production_data()
+	]) {
+	paper_mill_produce_ext_recycling;
+}
+
 switch(FEAT_INDUSTRIES, SELF, paper_mill_switch_cargo_subtype, getbits(extra_callback_info2, 16, 8)) {
 	LYE_: switch_cargo_subtype;
 	CHLO: switch_cargo_subtype;
 	WOOD: switch_cargo_subtype;
+	RCYC: switch_cargo_subtype_white;
 	return 0x3800 + string(STR_EMPTY);
 }
 
@@ -927,7 +962,18 @@ switch(FEAT_INDUSTRIES, SELF, paper_mill_switch_update_last_served_date,
 {
 	check_secondary_industry_closure();
 }
-if (param_extension_paper) {
+
+switch(FEAT_INDUSTRIES, SELF, paper_mill_switch_update_last_served_date_ext_recycling,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("PAPR") != 0 || last_month_production("PAPR") != 0 || 
+		incoming_cargo_waiting("LYE_") != 0 || incoming_cargo_waiting("CHLO") != 0 || incoming_cargo_waiting("WOOD") != 0 || incoming_cargo_waiting("RCYC") != 0 ||
+		this_month_transported("PAPR") != 0 || last_month_transported("PAPR") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+if (param_extension_paper && !param_extension_recycling) {
 	item(FEAT_INDUSTRIES, paper_mill, INDUSTRY_ID_PAPER_MILL) {
 		property {
 			substitute: 0;
@@ -957,6 +1003,43 @@ if (param_extension_paper) {
 			location_check:           paper_mill_switch_location_check_industry_distance;
 			cargo_subtype_display:    paper_mill_switch_cargo_subtype;
 			extra_text_fund:          paper_mill_switch_extra_text_fund;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+
+
+if (param_extension_paper && param_extension_recycling) {
+	item(FEAT_INDUSTRIES, paper_mill, INDUSTRY_ID_PAPER_MILL) {
+		property {
+			substitute: 0;
+			map_colour: 21;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [paper_mill_tilelayout_1, paper_mill_tilelayout_2, paper_mill_tilelayout_3, paper_mill_tilelayout_4];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: TTD_STR_INDUSTRY_NAME_PAPER_MILL;
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 120;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("LYE_"),accept_cargo("CHLO"),accept_cargo("WOOD"),accept_cargo("RCYC"),produce_cargo("PAPR",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PAPER_MILL));
+		}
+			
+		graphics {
+			construction_probability: paper_mill_switch_check_availability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        paper_mill_switch_produce_ext_recycling;
+			monthly_prod_change:      paper_mill_switch_update_last_served_date_ext_recycling;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           paper_mill_switch_location_check_industry_distance;
+			cargo_subtype_display:    paper_mill_switch_cargo_subtype;
+			extra_text_fund:          paper_mill_switch_extra_text_fund;
+			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO);
 			build_prod_change:        initialize_last_served_date;
 		}
 	}

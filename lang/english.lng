@@ -47,6 +47,8 @@ STR_PARAM_EXT_FRUITS :Extension set "Fruits and Bio Energy"
 STR_PARAM_EXT_FRUITS_DESC :Adds industries and cargos related to the harvesting of fruits and the usage of regenerative energy sources.
 STR_PARAM_EXT_METALLURGY :Extension set "Metallurgy"
 STR_PARAM_EXT_METALLURGY_DESC :Adds industries and cargos related to heavy industries and production of sheets, cables and other metal-based products.
+STR_PARAM_EXT_RECYCLING :Extension set "Recycling"
+STR_PARAM_EXT_RECYCLING_DESC :Adds industries and cargos related to the recycling of scrap materials.
 
 STR_TOWN    :{STRING}
 STR_STATION :{STRING} {STRING}
@@ -96,8 +98,10 @@ STR_CARGO_NAME_PETROL             :Petrol
 STR_CARGO_NAME_PLASTICS           :Plastics
 STR_CARGO_NAME_PYRITE_ORE         :Pyrite Ore
 STR_CARGO_NAME_QUICKLIME          :Quicklime
+STR_CARGO_NAME_RECYCLABLES        :Recyclables
 STR_CARGO_NAME_SALT               :Salt
 STR_CARGO_NAME_SAND               :Sand
+STR_CARGO_NAME_SCRAP_METAL        :Scrap Metal
 STR_CARGO_NAME_SODA               :Soda Ash
 STR_CARGO_NAME_SULPHUR            :Schwefel
 STR_CARGO_NAME_TEXTILES           :Textiles
@@ -140,8 +144,10 @@ STR_QUANTITY_PETROL               :{WEIGHT} of petrol
 STR_QUANTITY_PLASTICS             :{WEIGHT} of plastics
 STR_QUANTITY_PYRITE_ORE           :{WEIGHT} of pyrite ore
 STR_QUANTITY_QUICKLIME            :{WEIGHT} of quicklime
+STR_QUANTITY_RECYCLABLES          :{WEIGHT} of recyclables
 STR_QUANTITY_SALT                 :{WEIGHT} of salt
 STR_QUANTITY_SAND                 :{WEIGHT} of sand
+STR_QUANTITY_SCRAP_METAL          :{WEIGHT} of scrap metal
 STR_QUANTITY_SODA                 :{WEIGHT} of soda ash
 STR_QUANTITY_SULPHUR              :{WEIGHT} of sulphur
 STR_QUANTITY_TEXTILES             :{WEIGHT} of textiles
@@ -185,8 +191,10 @@ STR_CID_PETROL                    :{TINYFONT}PETR
 STR_CID_PLASTICS                  :{TINYFONT}PLAS
 STR_CID_PYRITE_ORE                :{TINYFONT}PORE
 STR_CID_QUICKLIME                 :{TINYFONT}QLME
+STR_CID_RECYCLABLES               :{TINYFONT}RCYC
 STR_CID_SALT                      :{TINYFONT}SALT
 STR_CID_SAND                      :{TINYFONT}SAND
+STR_CID_SCRAP_METAL               :{TINYFONT}SCMT
 STR_CID_SODA                      :{TINYFONT}SODA
 STR_CID_SULPHUR                   :{TINYFONT}SULP
 STR_CID_TEXTILES                  :{TINYFONT}TEXT
@@ -234,8 +242,10 @@ STR_IND_PHARMACEUTICAL_PLANT   :Pharmaceutical Plant
 STR_IND_PLASTICS_PLANT         :Plastics Plant
 STR_IND_PORT                   :Port
 STR_IND_PYRITE_MINE            :Pyrite Mine
+STR_IND_RECYCLING_DEPOT        :Recycling Depot
 STR_IND_SALT_MINE              :Salt Mine
-STR_IND_SANDPIT                :Sand pit
+STR_IND_SANDPIT                :Sand Pit
+STR_IND_SCRAP_YARD             :Scrap Yard
 STR_IND_SHEET_MILL             :Sheet Mill
 STR_IND_SODA_PLANT             :Solvay Plant
 STR_IND_STEAMCRACKER           :Steamcracker
@@ -297,9 +307,11 @@ STR_STATION_PORT                     :Port
 STR_STATION_POWER_PLANT              :Powerplant
 STR_STATION_PYRITE_MINE              :Mining
 STR_STATION_PRINTING_WORKS           :Printing Works
+STR_STATION_RECYCLING_DEPOT          :Recycling Depot
 STR_STATION_SALT_MINE                :Salt Mine
 STR_STATION_SANDPIT                  :Sand Pit
 STR_STATION_SAWMILL                  :Sawmill
+STR_STATION_SCRAP_YARD               :Scrap Yard
 STR_STATION_SHEET_MILL               :Sheet Mill
 STR_STATION_SODA_PLANT               :Solvay Plant
 STR_STATION_STEAMCRACKER             :Steamcracker

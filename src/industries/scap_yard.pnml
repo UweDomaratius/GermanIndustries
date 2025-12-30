@@ -1,0 +1,538 @@
+spriteset(scrap_yard_spriteset_1) {
+	[10, 10, 64, 55, -31, -24, ANIM | NOCROP, "graphics/industries/scrap_yard.png"]
+}
+spriteset(scrap_yard_spriteset_1_snow) {
+	[10, 10, 64, 55, -31, -24, ANIM | NOCROP, "graphics/industries/scrap_yard_snow.png"]
+}
+spriteset(scrap_yard_spriteset_2) {
+	[80, 10, 64, 55, -31, -24, ANIM | NOCROP, "graphics/industries/scrap_yard.png"]
+}
+spriteset(scrap_yard_spriteset_2_snow) {
+	[80, 10, 64, 55, -31, -24, ANIM | NOCROP, "graphics/industries/scrap_yard_snow.png"]
+}
+spriteset(scrap_yard_spriteset_3) {
+	[150, 10, 64, 55, -31, -24, ANIM | NOCROP, "graphics/industries/scrap_yard.png"]
+}
+spriteset(scrap_yard_spriteset_3_snow) {
+	[150, 10, 64, 55, -31, -24, ANIM | NOCROP, "graphics/industries/scrap_yard_snow.png"]
+}
+spriteset(scrap_yard_spriteset_4) {
+	[220, 10, 64, 55, -31, -24, ANIM | NOCROP, "graphics/industries/scrap_yard.png"]
+}
+spriteset(scrap_yard_spriteset_4_snow) {
+	[220, 10, 64, 55, -31, -24, ANIM | NOCROP, "graphics/industries/scrap_yard_snow.png"]
+}
+spriteset(scrap_yard_spriteset_5) {
+	[290, 10, 64, 55, -31, -24, ANIM | NOCROP, "graphics/industries/scrap_yard.png"]
+}
+spriteset(scrap_yard_spriteset_5_snow) {
+	[290, 10, 64, 55, -31, -24, ANIM | NOCROP, "graphics/industries/scrap_yard_snow.png"]
+}
+spriteset(scrap_yard_spriteset_6) {
+	[360, 10, 64, 55, -31, -24, ANIM | NOCROP, "graphics/industries/scrap_yard.png"]
+}
+spriteset(scrap_yard_spriteset_6_snow) {
+	[360, 10, 64, 55, -31, -24, ANIM | NOCROP, "graphics/industries/scrap_yard_snow.png"]
+}
+spriteset(scrap_yard_spriteset_7) {
+	[430, 10, 64, 55, -31, -24, ANIM | NOCROP, "graphics/industries/scrap_yard.png"]
+}
+spriteset(scrap_yard_spriteset_7_snow) {
+	[430, 10, 64, 55, -31, -24, ANIM | NOCROP, "graphics/industries/scrap_yard_snow.png"]
+}
+spriteset(scrap_yard_spriteset_8) {
+	[500, 10, 64, 55, -31, -24, ANIM | NOCROP, "graphics/industries/scrap_yard.png"]
+}
+spriteset(scrap_yard_spriteset_8_snow) {
+	[500, 10, 64, 55, -31, -24, ANIM | NOCROP, "graphics/industries/scrap_yard_snow.png"]
+}
+spriteset(scrap_yard_spriteset_9) {
+	[570, 10, 64, 55, -31, -24, ANIM | NOCROP, "graphics/industries/scrap_yard.png"]
+}
+spriteset(scrap_yard_spriteset_9_snow) {
+	[570, 10, 64, 55, -31, -24, ANIM | NOCROP, "graphics/industries/scrap_yard_snow.png"]
+}
+
+spritelayout scrap_yard_spritelayout_1 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_MUD_TRACK;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: scrap_yard_spriteset_1(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: scrap_yard_spriteset_1_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+}
+spritelayout scrap_yard_spritelayout_2 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_MUD_TRACK;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: scrap_yard_spriteset_2(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: scrap_yard_spriteset_2_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+}
+spritelayout scrap_yard_spritelayout_3 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_MUD_TRACK;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: scrap_yard_spriteset_3(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: scrap_yard_spriteset_3_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+}
+spritelayout scrap_yard_spritelayout_4 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_MUD_TRACK;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: scrap_yard_spriteset_4(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: scrap_yard_spriteset_4_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+}
+spritelayout scrap_yard_spritelayout_5 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_MUD_TRACK;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: scrap_yard_spriteset_5(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: scrap_yard_spriteset_5_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+}
+spritelayout scrap_yard_spritelayout_6 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_MUD_TRACK;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: scrap_yard_spriteset_6(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: scrap_yard_spriteset_6_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+}
+spritelayout scrap_yard_spritelayout_7 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_MUD_TRACK;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: scrap_yard_spriteset_7(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: scrap_yard_spriteset_7_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+}
+spritelayout scrap_yard_spritelayout_8 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_MUD_TRACK;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: scrap_yard_spriteset_8(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: scrap_yard_spriteset_8_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+}
+spritelayout scrap_yard_spritelayout_9 {
+	childsprite {
+		sprite: TTD_GROUND_SPRITE_MUD_TRACK;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: scrap_yard_spriteset_9(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: scrap_yard_spriteset_9_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW));
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// graphics choice switch chain
+//////////////////////////////////////////////////////////////////////////////
+
+switch(FEAT_INDUSTRYTILES, SELF, scrap_yard_switch_graphics_layout_1, relative_pos) {
+	relative_coord(0, 2): scrap_yard_spritelayout_2;
+	relative_coord(1, 1): scrap_yard_spritelayout_2;
+	relative_coord(1, 2): scrap_yard_spritelayout_9;
+	relative_coord(2, 1): scrap_yard_spritelayout_1;
+	relative_coord(2, 2): scrap_yard_spritelayout_8;
+	relative_coord(3, 1): scrap_yard_spritelayout_4;
+	relative_coord(3, 2): scrap_yard_spritelayout_7;
+	relative_coord(4, 0): scrap_yard_spritelayout_5;
+	relative_coord(4, 1): scrap_yard_spritelayout_3;
+	relative_coord(4, 2): scrap_yard_spritelayout_6;
+	return 0;
+}
+switch(FEAT_INDUSTRYTILES, SELF, scrap_yard_switch_graphics_layout_2, relative_pos) {
+	relative_coord(0, 1): scrap_yard_spritelayout_7;
+	relative_coord(1, 1): scrap_yard_spritelayout_1;
+	relative_coord(1, 2): scrap_yard_spritelayout_8;
+	relative_coord(2, 0): scrap_yard_spritelayout_5;
+	relative_coord(2, 1): scrap_yard_spritelayout_3;
+	relative_coord(2, 2): scrap_yard_spritelayout_6;
+	return 0;
+}
+switch(FEAT_INDUSTRYTILES, SELF, scrap_yard_switch_graphics_layout_3, relative_pos) {
+	relative_coord(0, 3): scrap_yard_spritelayout_2;
+	relative_coord(1, 1): scrap_yard_spritelayout_2;
+	relative_coord(1, 3): scrap_yard_spritelayout_9;
+	relative_coord(2, 1): scrap_yard_spritelayout_1;
+	relative_coord(2, 3): scrap_yard_spritelayout_8;
+	relative_coord(3, 1): scrap_yard_spritelayout_4;
+	relative_coord(3, 3): scrap_yard_spritelayout_7;
+	relative_coord(4, 0): scrap_yard_spritelayout_5;
+	relative_coord(4, 1): scrap_yard_spritelayout_3;
+	relative_coord(4, 3): scrap_yard_spritelayout_6;
+	return 0;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, scrap_yard_switch_graphics_layouts, layout_num) {
+	1: scrap_yard_switch_graphics_layout_1;
+	2: scrap_yard_switch_graphics_layout_2;
+	3: scrap_yard_switch_graphics_layout_3;
+    scrap_yard_switch_graphics_layout_1; // default
+}
+switch(FEAT_INDUSTRYTILES, SELF, scrap_yard_switch_graphics_construction_state, construction_state) {
+    0..2: spritelayout_default_construction_states;
+    scrap_yard_switch_graphics_layouts; // default
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, scrap_yard_switch_graphics,
+	[switch_terrain_sprite(),switch_graphics_init_temp_registers()]) {
+    scrap_yard_switch_graphics_construction_state;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// location checks
+//////////////////////////////////////////////////////////////////////////////
+// This check works as follows: calculate height of the northernmost tile of the industry and add 0, 1 or 2 for flat, slope. steep slope
+// Do the same for the current tile and compare the results. If the result is equal, the terrain is effectively flat
+// and industry can be placed.
+// It just looks weird due to the stacked ternary operators needed here
+switch (FEAT_INDUSTRYTILES, SELF, scrap_yard_switch_tile_location_check2,
+			(nearby_tile_height(-relative_x, -relative_y) + 
+			(nearby_tile_slope(-relative_x, -relative_y)== SLOPE_FLAT ? 0 : nearby_tile_slope(-relative_x, -relative_y) == bitmask(IS_STEEP_SLOPE) ? 2 : 1)) 
+			== 
+			(nearby_tile_height(0, 0) + (nearby_tile_slope(0, 0) == SLOPE_FLAT ? 0 : nearby_tile_slope(0, 0) == bitmask(IS_STEEP_SLOPE) ? 2 : 1))
+			) {
+	1: return CB_RESULT_LOCATION_ALLOW;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, scrap_yard_switch_tile_location_check,
+	is_funded_or_prospected() || (generation_not_forbidden_by_param() && not_next_to_industry() && not_next_to_buildings()))
+{
+	1: scrap_yard_switch_tile_location_check2;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// industry tile and layout definition
+//////////////////////////////////////////////////////////////////////////////
+item(FEAT_INDUSTRYTILES, scrap_yard_tile, INDUSTRY_TILE_ID_SCRAP_YARD) {
+	property {
+		substitute:         0;
+        land_shape_flags:   0;
+        special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+        animation_triggers: bitmask();
+	}
+	graphics {
+		tile_check: scrap_yard_switch_tile_location_check;
+		scrap_yard_switch_graphics;
+	}
+}
+
+tilelayout scrap_yard_tilelayout_1 {
+	0, 2: scrap_yard_tile;
+	1, 1: scrap_yard_tile;
+	1, 2: scrap_yard_tile;
+	2, 1: scrap_yard_tile;
+	2, 2: scrap_yard_tile;
+	3, 1: scrap_yard_tile;
+	3, 2: scrap_yard_tile;
+	4, 0: scrap_yard_tile;
+	4, 1: scrap_yard_tile;
+	4, 2: scrap_yard_tile;
+}
+tilelayout scrap_yard_tilelayout_2 {
+	0, 1: scrap_yard_tile;
+	1, 1: scrap_yard_tile;
+	1, 2: scrap_yard_tile;
+	2, 0: scrap_yard_tile;
+	2, 1: scrap_yard_tile;
+	2, 2: scrap_yard_tile;
+}
+tilelayout scrap_yard_tilelayout_3 {
+	0, 3: scrap_yard_tile;
+	1, 1: scrap_yard_tile;
+	1, 3: scrap_yard_tile;
+	2, 1: scrap_yard_tile;
+	2, 3: scrap_yard_tile;
+	3, 1: scrap_yard_tile;
+	3, 3: scrap_yard_tile;
+	4, 0: scrap_yard_tile;
+	4, 1: scrap_yard_tile;
+	4, 3: scrap_yard_tile;
+}
+
+switch(FEAT_INDUSTRIES, SELF, scrap_yard_switch_location_check_industry_distance,
+       [STORE_TEMP(0, TEMP_REGISTER_TOWN_MIN_DISTANCE),
+	    STORE_TEMP(24, TEMP_REGISTER_TOWN_MAX_DISTANCE),
+	    (is_industry_funded_or_prospected()) || (distance_from_town() && 
+	    (industry_distance(INDUSTRY_ID_ALUMINIUM_PLANT) >= 32) &&
+		(industry_distance(INDUSTRY_ID_COPPER_SMELTER) >= 32) &&
+		(industry_distance(INDUSTRY_ID_INTEGRATED_STEEL_MILL) >= 32) && 
+		(industry_distance(INDUSTRY_ID_RECYCLING_DEPOT) >= 32) &&
+	    (industry_distance(INDUSTRY_ID_SCRAP_YARD) >= 16))]) {
+	   1: return CB_RESULT_LOCATION_ALLOW;
+	   return CB_RESULT_LOCATION_DISALLOW;
+}
+
+produce(scrap_yard_produce,
+	[],
+	[SCMT: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
+	0 // do not run again
+)
+
+// production scales with population of related city, min 4, max 255 per 256 ticks
+switch(FEAT_INDUSTRIES, PARENT, scrap_yard_switch_produce, 
+	[ STORE_TEMP(min(max(4,population/42),255), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)	
+	]) {
+	scrap_yard_produce;
+}
+
+if (param_extension_recycling) {
+	item(FEAT_INDUSTRIES, scrap_yard, INDUSTRY_ID_SCRAP_YARD) {
+		property {
+			substitute: 0;
+			map_colour: 130;
+			life_type: IND_LIFE_TYPE_EXTRACTIVE;
+			min_cargo_distr: 1;
+			layouts: [scrap_yard_tilelayout_1,scrap_yard_tilelayout_2,scrap_yard_tilelayout_3];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_SCRAP_YARD);
+			prob_map_gen: 14;
+			prob_in_game: 3;
+			fund_cost_multiplier: 101;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [produce_cargo("SCMT",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_SCRAP_YARD));
+		}
+			
+		graphics {
+		    construction_probability: get_construction_probability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        scrap_yard_switch_produce;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           scrap_yard_switch_location_check_industry_distance;
+		}
+	}
+}
