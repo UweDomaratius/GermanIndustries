@@ -448,15 +448,15 @@ switch(FEAT_INDUSTRIES, SELF, oil_well_switch_extra_text_fund,
 // check creation type (getbits(extra_callback_info2, 0, 8))
 switch(FEAT_INDUSTRIES, SELF, oil_well_switch_check_availability_map_gen, 
 	getbits(extra_callback_info2, 0, 8) == IND_CREATION_GENERATION) {
-	1: return CB_RESULT_IND_NO_CONSTRUCTION;
-	return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+	1: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+	return CB_RESULT_IND_NO_CONSTRUCTION;
 }
 
 // year < 1860: no creation, 1860 <= year < 1950: certain probability, 1985 <= year: no creation (use oil rigs)
 switch(FEAT_INDUSTRIES, SELF, oil_well_switch_check_availability, 
 	current_year) {
 	0..1859: return CB_RESULT_IND_NO_CONSTRUCTION;              // no coal mines before 1860
-	1985..5000000: oil_well_switch_check_availability_map_gen;  // check mode, if the map is generated with that starting year, coal mines should exist
+	1985..5000000: oil_well_switch_check_availability_map_gen;  // check mode, if the map is generated with that starting year, oil wells should exist
 	get_construction_probability;
 }
 
