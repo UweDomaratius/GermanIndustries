@@ -9,6 +9,8 @@ STR_GRF_DESCRIPTION :Deutsche Industrien für OpenTTD{}{COPYRIGHT}2025{}Basiert 
 # Set parameter
 STR_PARAM_PRIMARY_PRODUCTION :Skalierung der Produktion von Primärindustrien
 STR_PARAM_PRIMARY_PRODUCTION_DESC :Skaliert die monatliche Produktion von Primärindustrien. 100% ist voreingestellt und entspricht den originalen Industrien.
+STR_PARAM_PRIMARY_RESOURCE_FACTOR :Skalierung der Ressourcen von Primärindustrien
+STR_PARAM_PRIMARY_RESOURCE_FACTOR_DESC :Skaliert die Menge an Ressourcen, die eine Primärindustrie fördern kann. Wenn die Ressourcen erschöpft sind, schließt die Industrie.
 STR_PARAM_ECONOMY_MODEL :Wirtschaftsmodell
 STR_PARAM_ECONOMY_MODEL_DESC :Das realistische Modell simuliert historische Verfügbarkeiten und Produktivitätsverbesserungen. Das einfache Modell ignoriert die Geschichte der realen Wirtschaft.
 STR_PARAM_ECONOMY_MODEL_SIMPLE :Einfache (konstante) Wirtschaft.
@@ -47,6 +49,8 @@ STR_PARAM_EXT_FRUITS :Erweiterung "Früchte und Bioenergie"
 STR_PARAM_EXT_FRUITS_DESC :Fügt Industrien und Frachten hinzu, die sich mit der Verwertung von Bioabfällen beschäftigen.
 STR_PARAM_EXT_METALLURGY :Erweiterung "Metallurgie"
 STR_PARAM_EXT_METALLURGY_DESC :Fügt Industrien und Frachten hinzu, die sich mit der Herstellung von Metallproduktion beschäftigen.
+STR_PARAM_EXT_RECYCLING :Erweiterung "Recycling"
+STR_PARAM_EXT_RECYCLING_DESC :Fügt Industrien und Frachten hinzu, die sich mit dem Recycling von Wertstoffen beschäftigen.
 
 # Frachten
 STR_CARGO_NAME_ACID               :Säure
@@ -80,8 +84,10 @@ STR_CARGO_NAME_PETROL             :Treibstoff
 STR_CARGO_NAME_PLASTICS           :Kunststoffe
 STR_CARGO_NAME_PYRITE_ORE         :Kupferkies
 STR_CARGO_NAME_QUICKLIME          :Branntkalk
+STR_CARGO_NAME_RECYCLABLES        :Wertstoffe
 STR_CARGO_NAME_SALT               :Salz
 STR_CARGO_NAME_SAND               :Sand
+STR_CARGO_NAME_SCRAP_METAL        :Metallschrott
 STR_CARGO_NAME_SODA               :Soda
 STR_CARGO_NAME_SULPHUR            :Schwefel
 STR_CARGO_NAME_TEXTILES           :Textilien
@@ -124,8 +130,10 @@ STR_QUANTITY_PETROL               :{WEIGHT} Treibstoff
 STR_QUANTITY_PLASTICS             :{WEIGHT} Kunststoffe
 STR_QUANTITY_PYRITE_ORE           :{WEIGHT} Kupferkies
 STR_QUANTITY_QUICKLIME            :{WEIGHT} Branntkalk
+STR_QUANTITY_RECYCLABLES          :{WEIGHT} Wertstoffe
 STR_QUANTITY_SALT                 :{WEIGHT} Salz
 STR_QUANTITY_SAND                 :{WEIGHT} Sand
+STR_QUANTITY_SCRAP_METAL          :{WEIGHT} Metallschrott
 STR_QUANTITY_SODA                 :{WEIGHT} Soda
 STR_QUANTITY_SULPHUR              :{WEIGHT} Schwefel
 STR_QUANTITY_TEXTILES             :{WEIGHT} Textilien
@@ -173,8 +181,10 @@ STR_IND_PHARMACEUTICAL_PLANT     :{G=w}Arzneimittelfabrik
 STR_IND_PLASTICS_PLANT           :Kunststofffabrik
 STR_IND_PORT                     :Hafen
 STR_IND_PYRITE_MINE              :{G=n}Kupferkiesbergwerk
+STR_IND_RECYCLING_DEPOT          :Wertstoffhof
 STR_IND_SALT_MINE                :{G=n}Salzbergwerk
 STR_IND_SANDPIT                  :{G=w}Sandgrube
+STR_IND_SCRAP_YARD               :Schrottplatz
 STR_IND_SHEET_MILL               :{G=n}Walzwerk
 STR_IND_SODA_PLANT               :{G=w}Sodafabrik
 STR_IND_STEAMCRACKER             :Steamcracker
@@ -221,7 +231,7 @@ STR_STATION_HOTEL                    :Hotel
 STR_STATION_INTEGRATED_STEEL_MILL    :Integriertes Stahlwerk
 STR_STATION_IRON_ORE_MINE            :Bergwerk
 STR_STATION_LIME_KILN                :Kalkofen
-STR_STATION_LIMESTONE_MINE           :Kalkeinbergwerk
+STR_STATION_LIMESTONE_MINE           :Kalksteinbergwerk
 STR_STATION_OIL_REFINERY             :Raffinerie
 STR_STATION_OIL_RIG                  :Bohrplattform
 STR_STATION_OIL_WELL                 :Ölquelle
@@ -236,9 +246,11 @@ STR_STATION_PORT                     :Hafen
 STR_STATION_POWER_PLANT              :Kraftwerk
 STR_STATION_PRINTING_WORKS           :Druckerei
 STR_STATION_PYRITE_MINE              :Bergwerk
+STR_STATION_RECYCLING_DEPOT          :Wertstoffhof
 STR_STATION_SALT_MINE                :Salzbergwerk
 STR_STATION_SANDPIT                  :Sandgrube
 STR_STATION_SAWMILL                  :Sägewerk
+STR_STATION_SCRAP_YARD               :Schrottplatz
 STR_STATION_SHEET_MILL               :Walzwerk
 STR_STATION_SODA_PLANT               :Sodafabrik
 STR_STATION_STEAMCRACKER             :Steamcracker

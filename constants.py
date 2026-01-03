@@ -82,6 +82,10 @@ constants = {
     "CARGO_ID_MACHINE_PARTS" : "49",
     "CARGO_ID_METAL_SHEETS" : "50",
     "CARGO_ID_METAL_WIRE" : "51",
+    
+    # CARGO_IDs RECYCLING
+    "CARGO_ID_RECYCLABLES" : "53",
+    "CARGO_ID_SCRAP_METAL" : "52",    
         
     # INDUSTRY IDS 0-20 (with gaps): Base Industries
     "INDUSTRY_ID_BUILDERS_YARD":"17",
@@ -170,10 +174,14 @@ constants = {
     "INDUSTRY_ID_BIOREFINERY":"57",
     
     # Metallurgy Extension
+    "INDUSTRY_ID_APPLIANCE_FACTORY":"61",
     "INDUSTRY_ID_FOUNDRY_FORGE":"58",
     "INDUSTRY_ID_SHEET_MILL":"59",
     "INDUSTRY_ID_WIRE_MILL":"60",
-    "INDUSTRY_ID_APPLIANCE_FACTORY":"61",
+    
+    # Recycling Extension
+    "INDUSTRY_ID_RECYCLING_DEPOT":"63",
+    "INDUSTRY_ID_SCRAP_YARD":"62",
     
     # INDUSTRY TILE IDs for Base Industries
     "INDUSTRY_TILE_ID_BUILDERS_YARD":"22",
@@ -282,10 +290,14 @@ constants = {
     "INDUSTRY_TILE_ID_FRUIT_PLANTATION_2" : "76",
     
     # TILE_IDs for METALLURGY
+    "INDUSTRY_TILE_ID_APPLIANCE_FACTORY": "81",
     "INDUSTRY_TILE_ID_FOUNDRY_FORGE" : "78",
     "INDUSTRY_TILE_ID_SHEET_MILL" : "79",
     "INDUSTRY_TILE_ID_WIRE_MILL": "80",
-    "INDUSTRY_TILE_ID_APPLIANCE_FACTORY": "81",
+    
+    # TILE_IDs for RECYCLING
+    "INDUSTRY_TILE_ID_RECYCLING_DEPOT" : "83",
+    "INDUSTRY_TILE_ID_SCRAP_YARD" : "82",
         
     # TTD sprite IDs
     "TTD_OILRIG_STATION_TILE": "24",

@@ -1,0 +1,32 @@
+spriteset(cargoicon_recyclables) {
+    [10 + 20 * 10, 10 + 20 * 3, 10, 10, 0, 0, "graphics/other/cargoicons.png"]
+}
+
+if (param_extension_recycling) {
+	item(FEAT_CARGOS, recyclables, CARGO_ID_RECYCLABLES) {
+		property {
+			type_name: string(STR_CARGO_NAME_RECYCLABLES);
+			unit_name: string(STR_CARGO_NAME_RECYCLABLES);
+			type_abbreviation: string(STR_CID_RECYCLABLES);
+			sprite: NEW_CARGO_SPRITE;
+			weight: 1.0;
+			is_freight: 1;
+			cargo_classes: bitmask(CC_BULK, CC_PIECE_GOODS);
+			town_growth_effect: TOWNGROWTH_NONE;
+			town_growth_multiplier: 1.0;
+			units_of_cargo: TTD_STR_TONS;
+			items_of_cargo: string(STR_QUANTITY_RECYCLABLES);
+			penalty_lowerbound: 10;
+			single_penalty_length: 128;
+			capacity_multiplier: 1;
+			cargo_payment_list_colour: 132;
+			station_list_colour: 132;
+			price_factor: 100;
+			cargo_label: "RCYC";
+			number: CARGO_ID_RECYCLABLES;
+		}
+		graphics {
+			cargoicon_recyclables;
+		}
+	}
+}

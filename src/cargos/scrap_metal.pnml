@@ -1,0 +1,32 @@
+spriteset(cargoicon_scrap_metal) {
+    [10 + 20 * 2, 10 + 20 * 1, 10, 10, 0, 0, "graphics/other/cargoicons.png"]
+}
+
+if (param_extension_recycling) {
+	item(FEAT_CARGOS, scrap_metal, CARGO_ID_SCRAP_METAL) {
+		property {
+			type_name: string(STR_CARGO_NAME_SCRAP_METAL);
+			unit_name: string(STR_CARGO_NAME_SCRAP_METAL);
+			type_abbreviation: string(STR_CID_SCRAP_METAL);
+			sprite: NEW_CARGO_SPRITE;
+			weight: 1.0;
+			is_freight: 1;
+			cargo_classes: bitmask(CC_BULK, CC_NON_POURABLE);
+			town_growth_effect: TOWNGROWTH_NONE;
+			town_growth_multiplier: 1.0;
+			units_of_cargo: TTD_STR_TONS;
+			items_of_cargo: string(STR_QUANTITY_SCRAP_METAL);
+			penalty_lowerbound: 36;
+			single_penalty_length: 255;
+			capacity_multiplier: 1;
+			cargo_payment_list_colour: 130;
+			station_list_colour: 130;
+			price_factor: 107;
+			cargo_label: "SCMT";
+			number: CARGO_ID_SCRAP_METAL;
+		}
+		graphics {
+			cargoicon_scrap_metal;
+		}
+	}
+}

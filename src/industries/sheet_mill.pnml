@@ -1213,6 +1213,39 @@ switch(FEAT_INDUSTRIES, SELF, sheet_mill_switch_produce,
 	sheet_mill_produce;
 }
 
+produce(sheet_mill_produce_ext_recycling,
+	[STEL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 LYE_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 ACID: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
+	],
+	[STSH: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*80/100,1) : 0;
+	 SCMT: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*20/100,1) : 0;
+	],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, sheet_mill_switch_produce_ext_recycling, 
+	[STORE_TEMP(incoming_cargo_waiting("STEL"), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+ 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("LYE_"), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 STORE_TEMP(incoming_cargo_waiting("ACID"), TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	 
+	 STORE_TEMP(90 / 100, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2) > 0 ? LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)+1 : LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS), TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 2 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW1),
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW2),
+
+	 store_debug_production_data()
+	]) {
+	sheet_mill_produce_ext_recycling;
+}
+
 produce(sheet_mill_produce_ext_aluminium,
 	[STEL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
 	 ALUM: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
@@ -1245,6 +1278,42 @@ switch(FEAT_INDUSTRIES, SELF, sheet_mill_switch_produce_ext_aluminium,
 	 store_debug_production_data()
 	]) {
 	sheet_mill_produce_ext_aluminium;
+}
+
+produce(sheet_mill_produce_ext_aluminium_ext_recycling,
+	[STEL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 ALUM: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 LYE_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
+	 ACID: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW3);
+	],
+	[STSH: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)*80/10000,1) : 0;
+	 SCMT: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)*20/10000,1) : 0;
+	],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, sheet_mill_switch_produce_ext_aluminium_ext_recycling, 
+	[STORE_TEMP(incoming_cargo_waiting("STEL"), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 STORE_TEMP(incoming_cargo_waiting("ALUM"), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+ 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),	 
+	 calculate_number_of_waiting_cargos(),
+	 
+	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (2-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+ 
+	 STORE_TEMP(incoming_cargo_waiting("LYE_"), TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	 STORE_TEMP(incoming_cargo_waiting("ACID"), TEMP_REGISTER_INCOMING_CARGO_WAITING3),
+	 
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2) > 0 ? LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)+1 : LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS), TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 2 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW2),
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING3), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW3),
+
+	 store_debug_production_data()
+	]) {
+	sheet_mill_produce_ext_aluminium_ext_recycling;
 }
 
 switch(FEAT_INDUSTRIES, SELF, sheet_mill_switch_extra_text_fund, 
@@ -1289,7 +1358,7 @@ switch(FEAT_INDUSTRIES, SELF, sheet_mill_switch_update_last_served_date_ext_alum
 	check_secondary_industry_closure();
 }
 
-if (param_extension_metallurgy && !param_extension_aluminium) {
+if (param_extension_metallurgy && !param_extension_aluminium && !param_extension_recycling) {
 	item(FEAT_INDUSTRIES, sheet_mill, INDUSTRY_ID_SHEET_MILL) {
 		property {
 			substitute: 0;
@@ -1324,7 +1393,7 @@ if (param_extension_metallurgy && !param_extension_aluminium) {
 	}
 }
 
-if (param_extension_metallurgy && param_extension_aluminium) {
+if (param_extension_metallurgy && param_extension_aluminium && !param_extension_recycling) {
 	item(FEAT_INDUSTRIES, sheet_mill, INDUSTRY_ID_SHEET_MILL) {
 		property {
 			substitute: 0;
@@ -1349,6 +1418,77 @@ if (param_extension_metallurgy && param_extension_aluminium) {
 			construction_probability: sheet_mill_switch_check_availability;
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        sheet_mill_switch_produce_ext_aluminium;
+			monthly_prod_change:      sheet_mill_switch_update_last_served_date_ext_aluminium;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           sheet_mill_switch_location_check_industry_distance;
+			extra_text_fund:          sheet_mill_switch_extra_text_fund;
+			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO_ANY);
+			cargo_subtype_display:    sheet_mill_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+
+if (param_extension_metallurgy && !param_extension_aluminium && param_extension_recycling) {
+	item(FEAT_INDUSTRIES, sheet_mill, INDUSTRY_ID_SHEET_MILL) {
+		property {
+			substitute: 0;
+			map_colour: 107;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [sheet_mill_tilelayout_1,sheet_mill_tilelayout_2,sheet_mill_tilelayout_3,sheet_mill_tilelayout_4,sheet_mill_tilelayout_5,sheet_mill_tilelayout_6,sheet_mill_tilelayout_7,sheet_mill_tilelayout_8];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_SHEET_MILL);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 190;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("STEL"),accept_cargo("ACID"),accept_cargo("LYE_"),produce_cargo("STSH",0),produce_cargo("SCMT",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_SHEET_MILL));
+		}
+			
+		graphics {
+			construction_probability: sheet_mill_switch_check_availability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        sheet_mill_switch_produce_ext_recycling;
+			monthly_prod_change:      sheet_mill_switch_update_last_served_date;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           sheet_mill_switch_location_check_industry_distance;
+			extra_text_fund:          sheet_mill_switch_extra_text_fund;
+			cargo_subtype_display:    sheet_mill_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+
+if (param_extension_metallurgy && param_extension_aluminium && param_extension_recycling) {
+	item(FEAT_INDUSTRIES, sheet_mill, INDUSTRY_ID_SHEET_MILL) {
+		property {
+			substitute: 0;
+			map_colour: 107;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [sheet_mill_tilelayout_1,sheet_mill_tilelayout_2,sheet_mill_tilelayout_3,sheet_mill_tilelayout_4,sheet_mill_tilelayout_5,sheet_mill_tilelayout_6,sheet_mill_tilelayout_7,sheet_mill_tilelayout_8];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_SHEET_MILL);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 190;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("STEL"),accept_cargo("ACID"),accept_cargo("LYE_"),accept_cargo("ALUM"),produce_cargo("STSH",0),produce_cargo("SCMT",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_SHEET_MILL));
+		}
+			
+		graphics {
+			construction_probability: sheet_mill_switch_check_availability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        sheet_mill_switch_produce_ext_aluminium_ext_recycling;
 			monthly_prod_change:      sheet_mill_switch_update_last_served_date_ext_aluminium;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           sheet_mill_switch_location_check_industry_distance;

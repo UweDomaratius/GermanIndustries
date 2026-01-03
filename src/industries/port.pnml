@@ -758,7 +758,7 @@ spritelayout port_spritelayout_coast_warehouse6 {
 		xoffset: 0;		yoffset: 0;		zoffset: 0;
 		xextent: 16;	yextent: 16;	zextent: 32;
 		always_draw: 1;
-		hide_sprite: (construction_state != 0);
+		hide_sprite: 0;
 	}            
 	building {
 		sprite: port_spriteset_1(0);
@@ -1460,8 +1460,8 @@ produce(port_produce_ext_aluminium_ext_painting_industries_ext_coke_sulphur,
 )
 
 switch(FEAT_INDUSTRIES, SELF, port_func_calc_max_prod, 
-	param_economy_model == 0 ? 255 :
-	  min(255,4 + 3*max(0,(current_year - 1900)))) {
+	param_economy_model == 0 ? 65535 :
+	  min(65535,4 + 20*max(0,(current_year - 1900)))) {
 	return;
 }
 
@@ -1484,7 +1484,7 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_produce,
 	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
 	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
 	 // store the theoretical amount of production (production level * scaling percentage)
-	 STORE_TEMP(production_level * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
 	]) {
 	port_produce;
 }
@@ -1493,7 +1493,7 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_produce_ext_aluminium,
 	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
 	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
 	 // store the theoretical amount of production (production level * scaling percentage)
-	 STORE_TEMP(production_level * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
 	]) {
 	port_produce_ext_aluminium;
 }
@@ -1502,7 +1502,7 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_produce_ext_painting_industries,
 	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
 	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
 	 // store the theoretical amount of production (production level * scaling percentage)
-	 STORE_TEMP(production_level * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
 	]) {
 	port_produce_ext_painting_industries;
 }
@@ -1511,7 +1511,7 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_produce_ext_aluminium_ext_painting_ind
 	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
 	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
 	 // store the theoretical amount of production (production level * scaling percentage)
-	 STORE_TEMP(production_level * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
 	]) {
 	port_produce_ext_aluminium_ext_painting_industries;
 }
@@ -1520,7 +1520,7 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_produce_ext_coke_sulphur,
 	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
 	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
 	 // store the theoretical amount of production (production level * scaling percentage)
-	 STORE_TEMP(production_level * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
 	]) {
 	port_produce_ext_coke_sulphur;
 }
@@ -1529,7 +1529,7 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_produce_ext_aluminium_ext_coke_sulphur
 	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
 	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
 	 // store the theoretical amount of production (production level * scaling percentage)
-	 STORE_TEMP(production_level * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
 	]) {
 	port_produce_ext_aluminium_ext_coke_sulphur;
 }
@@ -1538,7 +1538,7 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_produce_ext_painting_industries_ext_co
 	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
 	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
 	 // store the theoretical amount of production (production level * scaling percentage)
-	 STORE_TEMP(production_level * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
 	]) {
 	port_produce_ext_painting_industries_ext_coke_sulphur;
 }
@@ -1547,7 +1547,7 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_produce_ext_aluminium_ext_painting_ind
 	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
 	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
 	 // store the theoretical amount of production (production level * scaling percentage)
-	 STORE_TEMP(production_level * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
 	]) {
 	port_produce_ext_aluminium_ext_painting_industries_ext_coke_sulphur;
 }
@@ -1628,7 +1628,7 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_aluminium_ext_painting
 // build the industry window text here
 ////////////////////////////////////////////////////////////////////////////////
 switch(FEAT_INDUSTRIES, SELF, port_switch_extra_text, 
-	[STORE_TEMP(128,TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
+	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
 	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
 	 STORE_TEMP(production_level * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
 	 STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),

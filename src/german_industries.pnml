@@ -16,6 +16,16 @@ grf {
 		}
 	}
 	param {
+		param_primary_resource_factor {
+			type: int;
+			name: string(STR_PARAM_PRIMARY_RESOURCE_FACTOR);
+			desc: string(STR_PARAM_PRIMARY_RESOURCE_FACTOR_DESC);
+			min_value: 1;
+			max_value: 50;
+			def_value: 5;
+		}
+	}
+	param {
 		param_economy_model {
 			type: int;
 			name: string(STR_PARAM_ECONOMY_MODEL);
@@ -150,6 +160,13 @@ grf {
 			desc: string(STR_PARAM_EXT_METALLURGY_DESC);
 		}
 	}
+	param {
+		param_extension_recycling {
+			type: bool;
+			name: string(STR_PARAM_EXT_RECYCLING);
+			desc: string(STR_PARAM_EXT_RECYCLING_DESC);
+		}
+	}
 }
 
 if (ttd_platform != PLATFORM_OPENTTD || openttd_version < version_openttd(14, 0)) {
@@ -214,5 +231,6 @@ cargotable {
 	ACID, SULP, PORE, COKE, // ext coke sulphur
 	O2__, N2__, NH3_, SASH, // ext ammonia
 	FRUT, BIOM, // ext fruits
-	ENSP, STSH, STWR // ext metallurgy
+	ENSP, STSH, STWR, // ext metallurgy
+	SCMT, RCYC // ext recycling
 }
