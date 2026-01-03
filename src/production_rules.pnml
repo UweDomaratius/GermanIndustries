@@ -17,7 +17,13 @@ produce(empty_produce, [], [])
 // dynamically computed)
 ////////////////////////////////////////////////////////////////////////////////
 switch(FEAT_INDUSTRIES, SELF, set_new_production, 
-	[ LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 30 ? STORE_TEMP(max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL) - 5,4) << 16, TEMP_REGISTER_CB_RESULT_IND_PROD_SET_BY_0x100) : 
+	[ 
+	  LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 30 ? STORE_PERM(max(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) - 5,4), PERM_REGISTER_PRODUCTION_AMOUNT) : 
+	  LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 40 ? STORE_PERM(max(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) - 1,4), PERM_REGISTER_PRODUCTION_AMOUNT) : 
+	  LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 75 ? STORE_PERM(min(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT)+1,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)), PERM_REGISTER_PRODUCTION_AMOUNT) : 
+	                                                                    STORE_PERM(min(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT)+5,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)), PERM_REGISTER_PRODUCTION_AMOUNT),
+																		
+	  LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 30 ? STORE_TEMP(max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL) - 5,4) << 16, TEMP_REGISTER_CB_RESULT_IND_PROD_SET_BY_0x100) : 
 	  LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 40 ? STORE_TEMP(max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL) - 1,4) << 16, TEMP_REGISTER_CB_RESULT_IND_PROD_SET_BY_0x100) : 
 	  LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 75 ? STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL)+1,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)) << 16, TEMP_REGISTER_CB_RESULT_IND_PROD_SET_BY_0x100) : 
 	  STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL)+5,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)) << 16, TEMP_REGISTER_CB_RESULT_IND_PROD_SET_BY_0x100)
@@ -40,20 +46,24 @@ switch(FEAT_INDUSTRIES, SELF, change_production,
 // Returns the production value in game units (12-19).
 // Value is <= maximum production value, which may also be lower than 12.
 ////////////////////////////////////////////////////////////////////////////////
-switch(FEAT_INDUSTRIES, SELF, randomize_initial_production, extra_callback_info2)
+switch(FEAT_INDUSTRIES, SELF, randomize_initial_production, 
+	[
+	STORE_PERM(min(12+getbits(extra_callback_info2, 0, 3),LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)), PERM_REGISTER_PRODUCTION_AMOUNT),
+	extra_callback_info2
+	])
 {
-	return min(12+getbits(extra_callback_info2, 0, 3),LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION));
+	return LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // Extractive industries have resources which can be depleted. They are
 // initialized upon construction of the industry and updated with every produce
 // command. If the resources are depleted, the industry closes.
-// Stores a value between 750000 and 2500000. TODO: adapt after playtesting
 ////////////////////////////////////////////////////////////////////////////////
 switch(FEAT_INDUSTRIES, SELF, initialize_extractive_resources,
 	[
-	STORE_PERM(250000 + getbits(extra_callback_info2, 3, 3)*250000,PERM_REGISTER_RESOURCES)
+	STORE_TEMP(param_primary_resource_factor == 0 ? 5 : param_primary_resource_factor, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	STORE_PERM(LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)*250000 + getbits(extra_callback_info2, 3, 3)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)*250000,PERM_REGISTER_RESOURCES)
 	]
 )
 {
@@ -67,11 +77,11 @@ switch(FEAT_INDUSTRIES, SELF, init_primary_production,
 [	// load the GRF parameter for production scaling percentage and ensure it's not 0
 	STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
 	 // store the theoretical amount of production (production level * scaling percentage)
-	 STORE_TEMP(production_level * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
 	 // reduce production amount if remaining resources are less than what should be produced
 	 STORE_TEMP(min(LOAD_PERM(PERM_REGISTER_RESOURCES),LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT)),TEMP_REGISTER_PRODUCTION_AMOUNT),
 	 // update the value for remaining resources
-	 STORE_PERM(LOAD_PERM(PERM_REGISTER_RESOURCES) - LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT),PERM_REGISTER_RESOURCES)])
+	 STORE_PERM(max(LOAD_PERM(PERM_REGISTER_RESOURCES) - LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT),0),PERM_REGISTER_RESOURCES)])	 
 { return; }
 
 ////////////////////////////////////////////////////////////////////////////////

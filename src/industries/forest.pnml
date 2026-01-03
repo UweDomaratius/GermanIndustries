@@ -5001,13 +5001,13 @@ switch(FEAT_INDUSTRIES, SELF, forest_switch_location_check_industry_distance,
 	   return CB_RESULT_LOCATION_DISALLOW;
 }
 
-switch(FEAT_INDUSTRIES, SELF, forest_func_calc_max_prod, 255) {
+switch(FEAT_INDUSTRIES, SELF, forest_func_calc_max_prod, 65535) {
 	return;
 }
 
 // if nothing has been transported at all, do not change production (industry might just not be serviced)
 switch(FEAT_INDUSTRIES, SELF, forest_switch_prod_change, 
-	[STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
+	[STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT), TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
 	 STORE_TEMP(transported_last_month_pct("WOOD"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
 	 STORE_TEMP(forest_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)])
 {
@@ -5016,8 +5016,8 @@ switch(FEAT_INDUSTRIES, SELF, forest_switch_prod_change,
 
 // randomize production at build time based on random bits: 96t min, 152t max
 switch(FEAT_INDUSTRIES, SELF, forest_switch_prod_change_build,
-	[initialize_extractive_resources(),
-	 STORE_TEMP(max(forest_func_calc_max_prod(),128),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	[STORE_TEMP(max(forest_func_calc_max_prod(),128),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
+	 initialize_extractive_resources()
 	])
 {
 	randomize_initial_production;
@@ -5030,7 +5030,9 @@ produce(forest_produce,
 )
 
 switch(FEAT_INDUSTRIES, SELF, forest_switch_produce,
-	[init_primary_production()]) {
+	[STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 // store the theoretical amount of production (production level * scaling percentage)
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT)]) {
 	forest_produce;
 }
 
@@ -5040,8 +5042,8 @@ switch(FEAT_INDUSTRIES, SELF, forest_switch_produce,
 switch(FEAT_INDUSTRIES, SELF, forest_switch_extra_text, 
 	[STORE_TEMP(forest_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
 	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 STORE_TEMP(production_level * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
-	 STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT), TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
 	 STORE_TEMP(
 		LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL) < LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION) ? string(STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION) : string(STR_INDUSTRY_PREREQ_KEEP_PRODUCTION) | 
 		string(STR_EMPTY) << 16,

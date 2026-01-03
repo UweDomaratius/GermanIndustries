@@ -16,6 +16,16 @@ grf {
 		}
 	}
 	param {
+		param_primary_resource_factor {
+			type: int;
+			name: string(STR_PARAM_PRIMARY_RESOURCE_FACTOR);
+			desc: string(STR_PARAM_PRIMARY_RESOURCE_FACTOR_DESC);
+			min_value: 1;
+			max_value: 50;
+			def_value: 5;
+		}
+	}
+	param {
 		param_economy_model {
 			type: int;
 			name: string(STR_PARAM_ECONOMY_MODEL);

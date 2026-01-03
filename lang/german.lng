@@ -9,6 +9,8 @@ STR_GRF_DESCRIPTION :Deutsche Industrien für OpenTTD{}{COPYRIGHT}2025{}Basiert 
 # Set parameter
 STR_PARAM_PRIMARY_PRODUCTION :Skalierung der Produktion von Primärindustrien
 STR_PARAM_PRIMARY_PRODUCTION_DESC :Skaliert die monatliche Produktion von Primärindustrien. 100% ist voreingestellt und entspricht den originalen Industrien.
+STR_PARAM_PRIMARY_RESOURCE_FACTOR :Skalierung der Ressourcen von Primärindustrien
+STR_PARAM_PRIMARY_RESOURCE_FACTOR_DESC :Skaliert die Menge an Ressourcen, die eine Primärindustrie fördern kann. Wenn die Ressourcen erschöpft sind, schließt die Industrie.
 STR_PARAM_ECONOMY_MODEL :Wirtschaftsmodell
 STR_PARAM_ECONOMY_MODEL_DESC :Das realistische Modell simuliert historische Verfügbarkeiten und Produktivitätsverbesserungen. Das einfache Modell ignoriert die Geschichte der realen Wirtschaft.
 STR_PARAM_ECONOMY_MODEL_SIMPLE :Einfache (konstante) Wirtschaft.

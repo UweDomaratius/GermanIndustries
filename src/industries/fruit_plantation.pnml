@@ -2113,15 +2113,15 @@ switch(FEAT_INDUSTRIES, SELF, fruit_plantation_switch_location_check_industry_di
 
 // before 1920 no proper fertilizer was available, so maximum production was limited
 switch(FEAT_INDUSTRIES, SELF, fruit_plantation_func_calc_max_prod, 
-	param_economy_model == 0 ? 255 :
+	param_economy_model == 0 ? 65535 :
 	  current_year <= 1920 ? 40 : 
-	  255) {
+	  65535) {
 	return;
 }
 
 // TODO: limit production increase to make it adapt slower (grain and lvst need time to grow)
 switch(FEAT_INDUSTRIES, SELF, fruit_plantation_switch_prod_change, 
-	[STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
+	[STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT), TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
 	 STORE_TEMP(transported_last_month_pct("FRUT"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
 	 STORE_TEMP(fruit_plantation_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)])
 {
@@ -2131,7 +2131,7 @@ switch(FEAT_INDUSTRIES, SELF, fruit_plantation_switch_prod_change,
 // randomize production at build time based on random bits: 96t min, 152t max
 switch(FEAT_INDUSTRIES, SELF, fruit_plantation_switch_prod_change_build,
 	[initialize_extractive_resources(),
-	 STORE_TEMP(fruit_plantation_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	STORE_TEMP(fruit_plantation_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)	 
 	])
 {
 	randomize_initial_production;
@@ -2144,7 +2144,9 @@ produce(fruit_plantation_produce,
 )
 
 switch(FEAT_INDUSTRIES, SELF, fruit_plantation_switch_produce,
-	[init_primary_production()]) {
+	[STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 // store the theoretical amount of production (production level * scaling percentage)
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT)]) {
 	fruit_plantation_produce;
 }
 
@@ -2154,8 +2156,8 @@ switch(FEAT_INDUSTRIES, SELF, fruit_plantation_switch_produce,
 switch(FEAT_INDUSTRIES, SELF, fruit_plantation_switch_extra_text, 
 	[STORE_TEMP(fruit_plantation_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
 	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 STORE_TEMP(production_level * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
-	 STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT), TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
 	 STORE_TEMP(
 		LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL) < LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION) ? string(STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION) : string(STR_INDUSTRY_PREREQ_KEEP_PRODUCTION) | 
 		string(STR_EMPTY) << 16,

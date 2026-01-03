@@ -1142,16 +1142,16 @@ switch(FEAT_INDUSTRIES, SELF, sandpit_switch_location_check_industry_distance,
 
 
 switch(FEAT_INDUSTRIES, SELF, sandpit_func_calc_max_prod, 
-	255) {
+	65535) {
 	return;
 }
 
 // if nothing has been transported at all, do not change production (industry might just not be serviced)
 switch(FEAT_INDUSTRIES, SELF, sandpit_switch_prod_change, 
-	[STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
+	[STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT), TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
 	 STORE_TEMP(transported_last_month_pct("SAND"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
 	 STORE_TEMP(sandpit_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
-	 LOAD_PERM(PERM_REGISTER_RESOURCES) != 0])
+	 LOAD_PERM(PERM_REGISTER_RESOURCES) > 0])
 {
 	1: change_production; // use default rules to adapt production
 	return CB_RESULT_IND_PROD_CLOSE; // resources are depleted - close
@@ -1160,7 +1160,7 @@ switch(FEAT_INDUSTRIES, SELF, sandpit_switch_prod_change,
 // randomize production at build time based on random bits: 96t min, 152t max
 switch(FEAT_INDUSTRIES, SELF, sandpit_switch_prod_change_build,
 	[initialize_extractive_resources(),
-	 STORE_TEMP(sandpit_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	STORE_TEMP(sandpit_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)	
 	])
 {
 	randomize_initial_production;
@@ -1186,8 +1186,8 @@ switch(FEAT_INDUSTRIES, SELF, sandpit_switch_produce,
 switch(FEAT_INDUSTRIES, SELF, sandpit_switch_extra_text, 
 	[STORE_TEMP(sandpit_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
 	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 STORE_TEMP(production_level * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
-	 STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT), TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
 	 STORE_TEMP(
 		LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL) < LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION) ? string(STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION) : string(STR_INDUSTRY_PREREQ_KEEP_PRODUCTION) | 
 		string(STR_EMPTY) << 16,
