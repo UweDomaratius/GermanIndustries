@@ -29,7 +29,7 @@
     <node id="n1">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="50.0" width="150.0" x="1360.0000000000023" y="345.0"/>
+          <y:Geometry height="50.0" width="150.0" x="1360.0000000000023" y="360.0"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="54.677734375" x="47.6611328125" xml:space="preserve" y="8.298828125">Kraftwerk
@@ -64,10 +64,10 @@
     <node id="n4">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="70.0" width="150.0" x="1360.0000000000023" y="265.0"/>
+          <y:Geometry height="90.0" width="150.0" x="1360.0000000000023" y="265.0"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="128.0546875" x="10.97265625" xml:space="preserve" y="18.298828125">Integriertes Hüttenwerk
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="128.0546875" x="10.97265625" xml:space="preserve" y="28.298828125">Integriertes Hüttenwerk
 1800<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
@@ -481,10 +481,10 @@ Verpackungen sind optional<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/><
     <node id="n41">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="50.0" width="150.0" x="2360.000000000002" y="245.0"/>
+          <y:Geometry height="70.0" width="150.0" x="2360.000000000002" y="225.0"/>
           <y:Fill color="#D8D8D8" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="127.380859375" x="11.3095703125" xml:space="preserve" y="15.6494140625">Erweiterung Aluminium<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="127.380859375" x="11.3095703125" xml:space="preserve" y="25.6494140625">Erweiterung Aluminium<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
       </data>
@@ -581,10 +581,10 @@ Anorganische Chemie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:Labe
     <node id="n50">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="170.0" width="150.0" x="1860.0000000000018" y="485.00000000000006"/>
+          <y:Geometry height="190.0" width="150.0" x="1860.0000000000018" y="485.0"/>
           <y:Fill color="#BC546C" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="74.03125" x="37.984375" xml:space="preserve" y="68.29882812499994">Erweiterung
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="74.03125" x="37.984375" xml:space="preserve" y="78.29882812499994">Erweiterung
 Farbindustrie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
@@ -661,10 +661,10 @@ Verpackungsmittelindustrie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/><
     <node id="n57">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="70.0" width="150.0" x="860.0000000000027" y="555.0"/>
+          <y:Geometry height="90.0" width="150.0" x="860.0000000000027" y="555.0"/>
           <y:Fill color="#5840AC" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#FFFFFF" verticalTextPosition="bottom" visible="true" width="96.0390625" x="26.98046875" xml:space="preserve" y="25.6494140625">Erweiterung Glas<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#FFFFFF" verticalTextPosition="bottom" visible="true" width="96.0390625" x="26.98046875" xml:space="preserve" y="35.6494140625">Erweiterung Glas<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
       </data>
@@ -694,10 +694,10 @@ Verpackungsmittelindustrie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/><
     <node id="n60">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="70.0" width="150.0" x="2360.0000000000014" y="355.0"/>
+          <y:Geometry height="90.0" width="150.0" x="2360.0000000000014" y="335.0"/>
           <y:Fill color="#FCFCC0" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="106.052734375" x="21.9736328125" xml:space="preserve" y="25.6494140625">Erweiterung Papier<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="106.052734375" x="21.9736328125" xml:space="preserve" y="35.6494140625">Erweiterung Papier<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
       </data>
@@ -959,6 +959,39 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
         </y:ShapeNode>
       </data>
     </node>
+    <node id="n84">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="70.0" width="150.0" x="360.00000000000273" y="815.0"/>
+          <y:Fill color="#6CB040" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="123.384765625" x="13.3076171875" xml:space="preserve" y="25.6494140625">Erweiterung Recycling<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n85">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="30.0" width="150.0" x="610.0000000000025" y="835.0"/>
+          <y:Fill color="#6CB040" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="72.021484375" x="38.9892578125" xml:space="preserve" y="5.6494140625">Metallschrott<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n86">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="30.0" width="150.0" x="610.0000000000025" y="775.0"/>
+          <y:Fill color="#6CB040" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="58.6796875" x="45.66015625" xml:space="preserve" y="5.6494140625">Wertstoffe<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
     <edge id="e0" source="n3" target="n5">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
@@ -1078,8 +1111,8 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="-14.220428950347923" ty="-20.0">
             <y:Point x="-190.0" y="630.0"/>
-            <y:Point x="-190.0" y="670.0"/>
-            <y:Point x="2330.0" y="670.0"/>
+            <y:Point x="-190.0" y="690.0"/>
+            <y:Point x="2330.0" y="690.0"/>
             <y:Point x="2330.0" y="660.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
@@ -1173,7 +1206,10 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
     <edge id="e16" source="n1" target="n33">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:Path sx="7.77988738237741" sy="5.0" tx="0.0" ty="0.0">
+            <y:Point x="1540.0" y="390.0"/>
+            <y:Point x="1540.0" y="370.0"/>
+          </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
           <y:StyleProperties>
@@ -1185,7 +1221,7 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
     <edge id="e17" source="n4" target="n18">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.8576808693799194" sy="10.0" tx="0.0" ty="0.0"/>
+          <y:Path sx="26.711549333270796" sy="0.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
           <y:StyleProperties>
@@ -1227,8 +1263,8 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
           <y:Path sx="0.0" sy="0.0" tx="-13.34212237452266" ty="0.0">
             <y:Point x="1830.0000000000023" y="370.0"/>
             <y:Point x="1830.0000000000023" y="300.0"/>
-            <y:Point x="2790.0" y="300.0"/>
-            <y:Point x="2790.0000000000023" y="330.0"/>
+            <y:Point x="2810.0" y="300.0"/>
+            <y:Point x="2810.0000000000023" y="330.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -1409,7 +1445,7 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
             <y:Point x="-200.0" y="370.0"/>
             <y:Point x="-200.0" y="290.0"/>
             <y:Point x="1300.0" y="290.0"/>
-            <y:Point x="1300.0" y="350.0"/>
+            <y:Point x="1300.0" y="365.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -1422,7 +1458,7 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
     <edge id="e33" source="n5" target="n4">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-0.8906307460667904" ty="10.0"/>
+          <y:Path sx="0.0" sy="0.0" tx="-14.549765175086577" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
           <y:StyleProperties>
@@ -1434,7 +1470,7 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
     <edge id="e34" source="n6" target="n4">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-15.176545605154388" ty="-10.0">
+          <y:Path sx="0.0" sy="0.0" tx="-19.889464699697328" ty="-20.0">
             <y:Point x="-200.0" y="370.0"/>
             <y:Point x="-200.0" y="290.0"/>
             <y:Point x="1300.0000000000025" y="290.0"/>
@@ -1468,7 +1504,7 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="1.1002183342801004" ty="20.0">
             <y:Point x="1320.0" y="490.0"/>
-            <y:Point x="1320.0" y="390.0"/>
+            <y:Point x="1320.0" y="405.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -1483,8 +1519,8 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="26.240227501062236" sy="25.0" tx="0.0" ty="0.0">
             <y:Point x="4080.0000000000014" y="360.0"/>
-            <y:Point x="4080.0000000000014" y="170.0"/>
-            <y:Point x="-449.9999999999975" y="170.0"/>
+            <y:Point x="4080.0000000000014" y="150.0"/>
+            <y:Point x="-449.9999999999975" y="150.0"/>
             <y:Point x="-449.9999999999975" y="490.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
@@ -1500,8 +1536,8 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="26.240227501062236" sy="15.0" tx="0.0" ty="0.0">
             <y:Point x="4070.0000000000014" y="350.0"/>
-            <y:Point x="4070.0000000000014" y="180.0"/>
-            <y:Point x="-439.9999999999975" y="180.0"/>
+            <y:Point x="4070.0000000000014" y="160.0"/>
+            <y:Point x="-439.9999999999975" y="160.0"/>
             <y:Point x="-439.9999999999975" y="370.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
@@ -1517,8 +1553,8 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="28.97196440019752" sy="5.0" tx="0.0" ty="0.0">
             <y:Point x="4060.0000000000014" y="340.0"/>
-            <y:Point x="4060.0000000000014" y="190.0"/>
-            <y:Point x="-429.9999999999975" y="190.0"/>
+            <y:Point x="4060.0000000000014" y="170.0"/>
+            <y:Point x="-429.9999999999975" y="170.0"/>
             <y:Point x="-429.9999999999975" y="310.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
@@ -1578,8 +1614,8 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="0.6507540437894477" ty="20.0">
             <y:Point x="4300.0" y="740.0"/>
-            <y:Point x="4300.0" y="1000.0"/>
-            <y:Point x="3830.0000000000005" y="1000.0"/>
+            <y:Point x="4300.0" y="1010.0"/>
+            <y:Point x="3830.0000000000005" y="1010.0"/>
             <y:Point x="3830.0000000000005" y="750.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
@@ -1595,8 +1631,8 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="0.8656146224648182" ty="20.0">
             <y:Point x="4310.0" y="690.0"/>
-            <y:Point x="4310.0" y="1010.0"/>
-            <y:Point x="3820.0000000000005" y="1010.0"/>
+            <y:Point x="4310.0" y="1020.0"/>
+            <y:Point x="3820.0000000000005" y="1020.0"/>
             <y:Point x="3820.0000000000005" y="690.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
@@ -1612,8 +1648,8 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
             <y:Point x="4310.0" y="690.0"/>
-            <y:Point x="4310.0" y="1010.0"/>
-            <y:Point x="3820.0000000000005" y="1010.0"/>
+            <y:Point x="4310.0" y="1020.0"/>
+            <y:Point x="3820.0000000000005" y="1020.0"/>
             <y:Point x="3820.0000000000005" y="730.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
@@ -1629,8 +1665,8 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
             <y:Point x="4310.0" y="690.0"/>
-            <y:Point x="4310.0" y="1010.0"/>
-            <y:Point x="-689.9999999999975" y="1010.0"/>
+            <y:Point x="4310.0" y="1020.0"/>
+            <y:Point x="-689.9999999999975" y="1020.0"/>
             <y:Point x="-689.9999999999975" y="430.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
@@ -1770,7 +1806,7 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
     <edge id="e55" source="n42" target="n41">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:Path sx="0.0" sy="0.0" tx="-33.03543796687836" ty="10.0"/>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
           <y:StyleProperties>
@@ -1784,8 +1820,8 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="23.50849060192695" sy="-15.0" tx="0.0" ty="0.0">
             <y:Point x="4040.0000000000005" y="320.0"/>
-            <y:Point x="4040.0000000000005" y="210.0"/>
-            <y:Point x="1560.0000000000025" y="210.0"/>
+            <y:Point x="4040.0000000000005" y="190.0"/>
+            <y:Point x="1560.0000000000025" y="190.0"/>
             <y:Point x="1560.0000000000025" y="270.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
@@ -1799,7 +1835,7 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
     <edge id="e57" source="n41" target="n43">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:Path sx="2.0442641656864" sy="10.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
           <y:StyleProperties>
@@ -1825,7 +1861,7 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
     <edge id="e59" source="n33" target="n41">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-3.226834271661346" ty="-20.0">
+          <y:Path sx="0.0" sy="0.0" tx="-17.865837044688305" ty="-10.0">
             <y:Point x="1830.0000000000023" y="370.0"/>
             <y:Point x="1830.0" y="300.0"/>
             <y:Point x="2280.0" y="300.0"/>
@@ -1844,8 +1880,10 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="-2.4065285902029245" ty="30.0">
             <y:Point x="-170.0" y="590.0"/>
-            <y:Point x="-170.0" y="660.0"/>
-            <y:Point x="2320.0" y="660.0"/>
+            <y:Point x="-170.0" y="680.0"/>
+            <y:Point x="2230.0" y="680.0"/>
+            <y:Point x="2230.0" y="668.5904405062817"/>
+            <y:Point x="2320.0" y="670.0"/>
             <y:Point x="2320.0" y="610.0"/>
             <y:Point x="3320.0" y="610.0"/>
           </y:Path>
@@ -2014,9 +2052,9 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
     <edge id="e71" source="n47" target="n41">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="3.1613203796355265" ty="20.0">
+          <y:Path sx="0.0" sy="0.0" tx="-23.375092413356015" ty="-30.0">
             <y:Point x="2300.0000000000023" y="460.0"/>
-            <y:Point x="2300.0000000000023" y="290.0"/>
+            <y:Point x="2300.0000000000023" y="230.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -2029,7 +2067,7 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
     <edge id="e72" source="n50" target="n51">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="37.1355499436379" sy="30.0" tx="0.0" ty="0.0"/>
+          <y:Path sx="45.19040014263055" sy="20.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
           <y:StyleProperties>
@@ -2091,7 +2129,7 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
     <edge id="e76" source="n5" target="n50">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-24.999334806307388" ty="20.0">
+          <y:Path sx="0.0" sy="0.0" tx="-35.51187676342147" ty="10.0">
             <y:Point x="1310.0" y="310.0"/>
             <y:Point x="1310.0" y="590.0"/>
             <y:Point x="1800.0" y="590.0"/>
@@ -2107,7 +2145,7 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
     <edge id="e77" source="n33" target="n50">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-45.47829605126435" ty="-80.0">
+          <y:Path sx="0.0" sy="0.0" tx="-51.8950457593869" ty="-90.0">
             <y:Point x="1830.0000000000023" y="370.0"/>
             <y:Point x="1830.0000000000023" y="490.0"/>
           </y:Path>
@@ -2122,8 +2160,10 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
     <edge id="e78" source="n52" target="n50">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-34.101095359621695" ty="60.0">
-            <y:Point x="1790.0000000000023" y="640.0"/>
+          <y:Path sx="0.0" sy="0.0" tx="-38.54579694785957" ty="50.0">
+            <y:Point x="780.0" y="640.124684375792"/>
+            <y:Point x="780.0" y="650.0"/>
+            <y:Point x="1790.0000000000023" y="650.0"/>
             <y:Point x="1790.0000000000023" y="630.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
@@ -2152,7 +2192,7 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
     <edge id="e80" source="n9" target="n50">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-40.9274157746072" ty="-60.0">
+          <y:Path sx="0.0" sy="0.0" tx="-53.10861383316205" ty="-70.0">
             <y:Point x="1310.0000000000025" y="490.0"/>
             <y:Point x="1820.0000000000023" y="490.0"/>
             <y:Point x="1820.0000000000023" y="510.0"/>
@@ -2168,7 +2208,7 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
     <edge id="e81" source="n6" target="n50">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-12.105174022445908" ty="40.0">
+          <y:Path sx="0.0" sy="0.0" tx="-30.050820431433067" ty="30.0">
             <y:Point x="-200.0" y="370.0"/>
             <y:Point x="-200.0" y="290.0"/>
             <y:Point x="1300.0" y="290.0"/>
@@ -2186,7 +2226,7 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
     <edge id="e82" source="n53" target="n50">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-30.308695129074067" ty="-20.0">
+          <y:Path sx="0.0" sy="0.0" tx="-37.332228874084194" ty="-30.0">
             <y:Point x="1790.0" y="510.0"/>
             <y:Point x="1790.0" y="550.0"/>
           </y:Path>
@@ -2203,8 +2243,8 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="34.981785578295785" sy="-5.0" tx="0.0" ty="0.0">
             <y:Point x="4050.0000000000014" y="330.0"/>
-            <y:Point x="4050.0000000000014" y="200.0"/>
-            <y:Point x="1550.0000000000025" y="200.0"/>
+            <y:Point x="4050.0000000000014" y="180.0"/>
+            <y:Point x="1550.0000000000025" y="180.0"/>
             <y:Point x="1550.0000000000025" y="510.0"/>
           </y:Path>
           <y:LineStyle color="#444C5C" type="line" width="3.0"/>
@@ -2235,8 +2275,8 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="-7.267336958761007" ty="-10.0">
             <y:Point x="-190.0" y="630.0"/>
-            <y:Point x="-190.0" y="670.0"/>
-            <y:Point x="2330.0" y="670.0"/>
+            <y:Point x="-190.0" y="690.0"/>
+            <y:Point x="2330.0" y="690.0"/>
             <y:Point x="2330.0" y="780.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
@@ -2354,8 +2394,8 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="-12.585762780086498" ty="10.0">
             <y:Point x="3300.0" y="400.0"/>
-            <y:Point x="3300.0" y="240.0"/>
-            <y:Point x="2310.0" y="240.0"/>
+            <y:Point x="3300.0" y="220.0"/>
+            <y:Point x="2310.0" y="220.0"/>
             <y:Point x="2310.0" y="800.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
@@ -2371,8 +2411,8 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="-5.12004058225466" ty="60.0">
             <y:Point x="3300.0" y="400.0"/>
-            <y:Point x="3300.0" y="240.0"/>
-            <y:Point x="2310.0" y="240.0"/>
+            <y:Point x="3300.0" y="220.0"/>
+            <y:Point x="2310.0" y="220.0"/>
             <y:Point x="2310.0" y="740.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
@@ -2388,8 +2428,8 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="-45.47829605126435" ty="-50.0">
             <y:Point x="3300.0" y="400.0"/>
-            <y:Point x="3300.0" y="240.0"/>
-            <y:Point x="1820.0" y="240.0"/>
+            <y:Point x="3300.0" y="220.0"/>
+            <y:Point x="1820.0" y="220.0"/>
             <y:Point x="1820.0" y="320.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
@@ -2403,7 +2443,7 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
     <edge id="e96" source="n52" target="n57">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-27.458709247809793" ty="-10.0">
+          <y:Path sx="0.0" sy="0.0" tx="-33.35684822440271" ty="-20.0">
             <y:Point x="780.0" y="640.0"/>
             <y:Point x="780.0" y="580.0"/>
           </y:Path>
@@ -2418,7 +2458,7 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
     <edge id="e97" source="n38" target="n57">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-32.91976557979831" ty="10.0">
+          <y:Path sx="0.0" sy="0.0" tx="-35.177200335065436" ty="0.0">
             <y:Point x="790.0" y="810.0"/>
             <y:Point x="790.0" y="600.0"/>
           </y:Path>
@@ -2433,7 +2473,7 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
     <edge id="e98" source="n57" target="n58">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="18.050093518760832" sy="-20.0" tx="0.0" ty="0.0">
+          <y:Path sx="17.61301087415643" sy="-30.0" tx="0.0" ty="0.0">
             <y:Point x="1050.0" y="570.0"/>
             <y:Point x="1050.0" y="520.0"/>
           </y:Path>
@@ -2448,7 +2488,7 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
     <edge id="e99" source="n57" target="n59">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:Path sx="-3.0176463800222564" sy="-10.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
           <y:StyleProperties>
@@ -2460,7 +2500,7 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
     <edge id="e100" source="n58" target="n4">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-7.895137162503261" ty="30.0">
+          <y:Path sx="0.0" sy="0.0" tx="-10.666347339005824" ty="20.0">
             <y:Point x="1290.0" y="520.0"/>
             <y:Point x="1290.0" y="330.0"/>
           </y:Path>
@@ -2479,9 +2519,9 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
             <y:Point x="1290.0" y="590.0"/>
             <y:Point x="1290.0" y="810.0"/>
             <y:Point x="2280.0" y="810.0"/>
-            <y:Point x="2280.0" y="350.0"/>
-            <y:Point x="2810.0" y="350.0"/>
-            <y:Point x="2810.0" y="380.0"/>
+            <y:Point x="2280.0" y="330.0"/>
+            <y:Point x="2790.0" y="330.0"/>
+            <y:Point x="2790.0" y="380.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -2515,7 +2555,9 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
             <y:Point x="1290.0" y="590.0"/>
             <y:Point x="1290.0" y="810.0"/>
             <y:Point x="2280.0" y="810.0"/>
-            <y:Point x="2280.0" y="350.0"/>
+            <y:Point x="2280.0" y="330.0"/>
+            <y:Point x="2790.0" y="330.0"/>
+            <y:Point x="2790.0" y="350.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -2528,7 +2570,7 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
     <edge id="e104" source="n60" target="n61">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="10.684013347171913" sy="10.0" tx="0.0" ty="0.0"/>
+          <y:Path sx="11.678382901361601" sy="20.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
           <y:StyleProperties>
@@ -2552,7 +2594,7 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
     <edge id="e106" source="n48" target="n60">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="0.8497605102843409" ty="-30.0">
+          <y:Path sx="0.0" sy="0.0" tx="-2.399006754430502" ty="-20.0">
             <y:Point x="2320.0" y="360.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
@@ -2566,9 +2608,9 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
     <edge id="e107" source="n47" target="n60">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-2.428323768678183" ty="10.0">
+          <y:Path sx="0.0" sy="0.0" tx="-16.43499999145388" ty="-40.0">
             <y:Point x="2300.0" y="460.0"/>
-            <y:Point x="2300.0" y="400.0"/>
+            <y:Point x="2300.0" y="340.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
@@ -2581,9 +2623,9 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
     <edge id="e108" source="n16" target="n60">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-1.3356290090237053" ty="30.0">
-            <y:Point x="1330.0" y="550.0"/>
-            <y:Point x="1330.0" y="470.0"/>
+          <y:Path sx="0.0" sy="0.0" tx="-7.253279049531557" ty="40.0">
+            <y:Point x="1280.0" y="550.0"/>
+            <y:Point x="1280.0" y="470.0"/>
             <y:Point x="2080.0" y="470.0"/>
             <y:Point x="2080.0" y="420.0"/>
           </y:Path>
@@ -2598,7 +2640,7 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
     <edge id="e109" source="n60" target="n21">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="17.24018190509696" sy="20.0" tx="0.0" ty="0.0">
+          <y:Path sx="17.98893688499311" sy="30.0" tx="0.0" ty="0.0">
             <y:Point x="2540.0" y="410.0"/>
             <y:Point x="2540.0" y="620.0"/>
             <y:Point x="3560.0" y="620.0"/>
@@ -2615,10 +2657,10 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
     <edge id="e110" source="n56" target="n60">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-14.038205590004054" ty="-10.0">
+          <y:Path sx="0.0" sy="0.0" tx="-16.96182363973321" ty="0.0">
             <y:Point x="3300.0" y="400.0"/>
-            <y:Point x="3300.0" y="240.0"/>
-            <y:Point x="2310.0" y="240.0"/>
+            <y:Point x="3300.0" y="220.0"/>
+            <y:Point x="2310.0" y="220.0"/>
             <y:Point x="2310.0" y="380.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
@@ -2709,7 +2751,7 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
     <edge id="e116" source="n63" target="n50">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-33.34261531351194" ty="0.0">
+          <y:Path sx="0.0" sy="0.0" tx="-47.64755750117365" ty="-10.0">
             <y:Point x="800.0" y="510.0"/>
             <y:Point x="800.0" y="500.0"/>
             <y:Point x="1540.0" y="500.0"/>
@@ -2793,8 +2835,8 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="31.157353919506022" sy="-25.0" tx="0.0" ty="0.0">
             <y:Point x="4030.0" y="310.0"/>
-            <y:Point x="4030.0" y="220.0"/>
-            <y:Point x="60.0" y="220.0"/>
+            <y:Point x="4030.0" y="200.0"/>
+            <y:Point x="60.0" y="200.0"/>
             <y:Point x="60.0" y="330.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
@@ -2838,10 +2880,10 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
     <edge id="e124" source="n50" target="n67">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="14.441627591386805" sy="-20.0" tx="0.0" ty="0.0">
+          <y:Path sx="23.346174814676488" sy="-30.0" tx="0.0" ty="0.0">
             <y:Point x="2018.53138496965" y="550.0"/>
-            <y:Point x="2020.0" y="220.0"/>
-            <y:Point x="60.0" y="220.0"/>
+            <y:Point x="2020.0" y="200.0"/>
+            <y:Point x="60.0" y="200.0"/>
             <y:Point x="60.0" y="330.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
@@ -2871,10 +2913,10 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
     <edge id="e126" source="n1" target="n69">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="21.269218979718744" sy="-10.0" tx="0.0" ty="0.0">
-            <y:Point x="1540.0" y="360.0"/>
-            <y:Point x="1540.0" y="200.0"/>
-            <y:Point x="50.0" y="200.0"/>
+          <y:Path sx="25.25526764474057" sy="-15.0" tx="0.0" ty="0.0">
+            <y:Point x="1530.0" y="370.0"/>
+            <y:Point x="1530.0" y="180.0"/>
+            <y:Point x="50.0" y="180.0"/>
             <y:Point x="50.0" y="400.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
@@ -2915,7 +2957,7 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
     <edge id="e129" source="n70" target="n50">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-37.893495590169096" ty="-40.0">
+          <y:Path sx="0.0" sy="0.0" tx="-46.4339894273985" ty="-50.0">
             <y:Point x="1280.3819281120104" y="380.0"/>
             <y:Point x="1280.0" y="420.0"/>
             <y:Point x="1810.0" y="420.0"/>
@@ -2983,7 +3025,7 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
     <edge id="e133" source="n68" target="n4">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-31.6431588880846" ty="-30.0">
+          <y:Path sx="0.0" sy="0.0" tx="-35.42313604402034" ty="-40.0">
             <y:Point x="1030.0" y="530.0"/>
             <y:Point x="1030.0" y="270.0"/>
           </y:Path>
@@ -2998,7 +3040,7 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
     <edge id="e134" source="n68" target="n57">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-24.424789063371804" ty="-30.0">
+          <y:Path sx="0.0" sy="0.0" tx="-27.895791892414195" ty="-40.0">
             <y:Point x="800.0" y="530.0"/>
             <y:Point x="800.0" y="560.0"/>
           </y:Path>
@@ -3044,7 +3086,9 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="-25.47575363927581" ty="40.0">
-            <y:Point x="1790.0" y="640.0"/>
+            <y:Point x="780.0" y="640.124684375792"/>
+            <y:Point x="780.0" y="650.0"/>
+            <y:Point x="1790.0" y="650.0"/>
             <y:Point x="1790.0" y="920.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
@@ -3077,8 +3121,8 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="-33.81903414648059" ty="-40.0">
             <y:Point x="3300.0" y="400.0"/>
-            <y:Point x="3300.0" y="240.0"/>
-            <y:Point x="2310.0" y="240.0"/>
+            <y:Point x="3300.0" y="220.0"/>
+            <y:Point x="2310.0" y="220.0"/>
             <y:Point x="2310.0" y="840.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
@@ -3203,7 +3247,7 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
     <edge id="e147" source="n73" target="n50">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-12.863654068554979" ty="80.0">
+          <y:Path sx="0.0" sy="0.0" tx="-27.62368428388254" ty="70.0">
             <y:Point x="2810.0" y="820.0"/>
             <y:Point x="2810.0" y="990.0"/>
             <y:Point x="1800.0" y="990.0"/>
@@ -3273,7 +3317,7 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
     <edge id="e151" source="n75" target="n57">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.0" sy="0.0" tx="-15.28510450775184" ty="30.0">
+          <y:Path sx="0.0" sy="0.0" tx="-16.366895191549702" ty="20.0">
             <y:Point x="2790.0" y="900.0"/>
             <y:Point x="2790.0" y="930.0"/>
             <y:Point x="820.0" y="930.0"/>
@@ -3431,12 +3475,11 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
       </data>
     </edge>
     <edge id="e161" source="n79" target="n21">
-      <data key="d9"/>
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="0.4721680692814516" sy="50.0" tx="0.0" ty="0.0">
-            <y:Point x="3050.0" y="570.0"/>
-            <y:Point x="3050.0" y="620.0"/>
+          <y:Path sx="18.77118013478821" sy="10.0" tx="0.0" ty="0.0">
+            <y:Point x="3070.0" y="530.0"/>
+            <y:Point x="3070.0" y="620.0"/>
             <y:Point x="3560.0" y="620.0"/>
             <y:Point x="3560.0" y="490.0"/>
           </y:Path>
@@ -3449,7 +3492,6 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
       </data>
     </edge>
     <edge id="e162" source="n79" target="n82">
-      <data key="d9"/>
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="14.883288945362438" sy="-50.0" tx="0.0" ty="0.0"/>
@@ -3462,7 +3504,6 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
       </data>
     </edge>
     <edge id="e163" source="n79" target="n80">
-      <data key="d9"/>
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="14.124808899252457" sy="-10.0" tx="0.0" ty="0.0"/>
@@ -3475,7 +3516,6 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
       </data>
     </edge>
     <edge id="e164" source="n79" target="n81">
-      <data key="d9"/>
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="14.883288945362438" sy="30.0" tx="0.0" ty="0.0"/>
@@ -3488,7 +3528,6 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
       </data>
     </edge>
     <edge id="e165" source="n82" target="n26">
-      <data key="d9"/>
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="8.653798962653127" ty="-80.0">
@@ -3504,7 +3543,6 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
       </data>
     </edge>
     <edge id="e166" source="n80" target="n26">
-      <data key="d9"/>
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="-13.34212237452266" ty="-40.0">
@@ -3520,7 +3558,6 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
       </data>
     </edge>
     <edge id="e167" source="n81" target="n26">
-      <data key="d9"/>
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="1.0689985015578714" ty="40.0">
@@ -3536,7 +3573,6 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
       </data>
     </edge>
     <edge id="e168" source="n70" target="n79">
-      <data key="d9"/>
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="-16.926060550889815" ty="70.0">
@@ -3558,14 +3594,13 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
       </data>
     </edge>
     <edge id="e169" source="n68" target="n79">
-      <data key="d9"/>
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="-26.833113590660105" ty="10.0">
             <y:Point x="1030.0" y="530.0"/>
             <y:Point x="1030.0" y="240.0"/>
-            <y:Point x="1810.0" y="240.0"/>
-            <y:Point x="1810.0" y="290.0"/>
+            <y:Point x="2260.0" y="240.0"/>
+            <y:Point x="2260.0" y="290.0"/>
             <y:Point x="2260.0" y="290.0"/>
             <y:Point x="2260.0" y="320.0"/>
             <y:Point x="2780.0" y="320.0"/>
@@ -3580,7 +3615,6 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
       </data>
     </edge>
     <edge id="e170" source="n43" target="n79">
-      <data key="d9"/>
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="-15.455912899015402" ty="-70.0">
@@ -3596,10 +3630,9 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
       </data>
     </edge>
     <edge id="e171" source="n50" target="n83">
-      <data key="d9"/>
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
-          <y:Path sx="12.25740443124596" sy="-10.0" tx="0.0" ty="0.0"/>
+          <y:Path sx="19.098686556463235" sy="-20.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
           <y:StyleProperties>
@@ -3609,7 +3642,6 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
       </data>
     </edge>
     <edge id="e172" source="n83" target="n79">
-      <data key="d9"/>
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="-31.72590245060246" ty="50.0">
@@ -3625,7 +3657,6 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
       </data>
     </edge>
     <edge id="e173" source="n18" target="n79">
-      <data key="d9"/>
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="-13.938952806797715" ty="-50.0">
@@ -3641,7 +3672,6 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
       </data>
     </edge>
     <edge id="e174" source="n47" target="n79">
-      <data key="d9"/>
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="-3.3202321612652668" ty="30.0">
@@ -3657,13 +3687,12 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
       </data>
     </edge>
     <edge id="e175" source="n56" target="n79">
-      <data key="d9"/>
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="-15.455912899017221" ty="-10.0">
             <y:Point x="3300.0" y="400.0"/>
-            <y:Point x="3300.0" y="240.0"/>
-            <y:Point x="2310.0" y="240.0"/>
+            <y:Point x="3300.0" y="220.0"/>
+            <y:Point x="2310.0" y="220.0"/>
             <y:Point x="2310.0" y="450.0"/>
             <y:Point x="2790.0" y="450.0"/>
             <y:Point x="2790.0" y="510.0"/>
@@ -3677,7 +3706,6 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
       </data>
     </edge>
     <edge id="e176" source="n25" target="n79">
-      <data key="d9"/>
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
           <y:Path sx="0.0" sy="0.0" tx="-10.146552576250087" ty="-30.0"/>
@@ -3685,6 +3713,138 @@ und Bioenergie<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelMode
           <y:Arrows source="none" target="delta"/>
           <y:StyleProperties>
             <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#e8d0fc"/>
+          </y:StyleProperties>
+        </y:GenericEdge>
+      </data>
+    </edge>
+    <edge id="e177" source="n84" target="n85">
+      <data key="d9"/>
+      <data key="d10">
+        <y:GenericEdge configuration="com.yworks.edge.framed">
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:Arrows source="none" target="delta"/>
+          <y:StyleProperties>
+            <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#404064"/>
+          </y:StyleProperties>
+        </y:GenericEdge>
+      </data>
+    </edge>
+    <edge id="e178" source="n84" target="n86">
+      <data key="d9"/>
+      <data key="d10">
+        <y:GenericEdge configuration="com.yworks.edge.framed">
+          <y:Path sx="14.813898074250176" sy="-20.0" tx="0.0" ty="0.0">
+            <y:Point x="560.0" y="830.0"/>
+            <y:Point x="560.0" y="790.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:Arrows source="none" target="delta"/>
+          <y:StyleProperties>
+            <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#646488"/>
+          </y:StyleProperties>
+        </y:GenericEdge>
+      </data>
+    </edge>
+    <edge id="e179" source="n86" target="n57">
+      <data key="d9"/>
+      <data key="d10">
+        <y:GenericEdge configuration="com.yworks.edge.framed">
+          <y:Path sx="0.0" sy="0.0" tx="0.9024273745390019" ty="40.0">
+            <y:Point x="830.0" y="790.0"/>
+            <y:Point x="830.0" y="640.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:Arrows source="none" target="delta"/>
+          <y:StyleProperties>
+            <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#646488"/>
+          </y:StyleProperties>
+        </y:GenericEdge>
+      </data>
+    </edge>
+    <edge id="e180" source="n86" target="n60">
+      <data key="d9"/>
+      <data key="d10">
+        <y:GenericEdge configuration="com.yworks.edge.framed">
+          <y:Path sx="0.0" sy="0.0" tx="-14.007863843903579" ty="20.0">
+            <y:Point x="830.0" y="790.0"/>
+            <y:Point x="2060.0" y="790.0"/>
+            <y:Point x="2060.0" y="490.0"/>
+            <y:Point x="2330.0" y="490.0"/>
+            <y:Point x="2330.0" y="400.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:Arrows source="none" target="delta"/>
+          <y:StyleProperties>
+            <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#646488"/>
+          </y:StyleProperties>
+        </y:GenericEdge>
+      </data>
+    </edge>
+    <edge id="e181" source="n85" target="n41">
+      <data key="d9"/>
+      <data key="d10">
+        <y:GenericEdge configuration="com.yworks.edge.framed">
+          <y:Path sx="0.0" sy="0.0" tx="-8.205491491165958" ty="30.0">
+            <y:Point x="1330.0" y="850.0"/>
+            <y:Point x="1330.0" y="670.0"/>
+            <y:Point x="1580.0" y="670.0"/>
+            <y:Point x="1580.0" y="290.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:Arrows source="none" target="delta"/>
+          <y:StyleProperties>
+            <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#404064"/>
+          </y:StyleProperties>
+        </y:GenericEdge>
+      </data>
+    </edge>
+    <edge id="e182" source="n85" target="n4">
+      <data key="d9"/>
+      <data key="d10">
+        <y:GenericEdge configuration="com.yworks.edge.framed">
+          <y:Path sx="0.0" sy="0.0" tx="-6.554852182808645" ty="40.0">
+            <y:Point x="1330.0" y="850.0"/>
+            <y:Point x="1330.0" y="350.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:Arrows source="none" target="delta"/>
+          <y:StyleProperties>
+            <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#404064"/>
+          </y:StyleProperties>
+        </y:GenericEdge>
+      </data>
+    </edge>
+    <edge id="e183" source="n85" target="n50">
+      <data key="d9"/>
+      <data key="d10">
+        <y:GenericEdge configuration="com.yworks.edge.framed">
+          <y:Path sx="0.0" sy="0.0" tx="-12.594722153989778" ty="90.0">
+            <y:Point x="1330.0" y="850.0"/>
+            <y:Point x="1330.0" y="670.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:Arrows source="none" target="delta"/>
+          <y:StyleProperties>
+            <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#404064"/>
+          </y:StyleProperties>
+        </y:GenericEdge>
+      </data>
+    </edge>
+    <edge id="e184" source="n79" target="n85">
+      <data key="d9"/>
+      <data key="d10">
+        <y:GenericEdge configuration="com.yworks.edge.framed">
+          <y:Path sx="26.538015806949716" sy="50.0" tx="0.0" ty="0.0">
+            <y:Point x="3060.0" y="570.0"/>
+            <y:Point x="3060.0" y="1010.0"/>
+            <y:Point x="560.0" y="1010.0"/>
+            <y:Point x="560.0" y="850.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:Arrows source="none" target="delta"/>
+          <y:StyleProperties>
+            <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#404064"/>
           </y:StyleProperties>
         </y:GenericEdge>
       </data>
