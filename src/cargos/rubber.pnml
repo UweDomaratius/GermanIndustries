@@ -1,0 +1,31 @@
+spriteset(cargoicon_rubber) {
+    [10 + 20 * 2, 10 + 20 * 2, 10, 10, 0, 0,  "graphics/other/cargoicons.png"]
+}
+if (param_extension_vehicle) {
+	item(FEAT_CARGOS, rubber, CARGO_ID_RUBBER) {
+		property {
+			type_name: string(STR_CARGO_NAME_RUBBER);
+			unit_name: string(STR_CARGO_NAME_RUBBER);
+			type_abbreviation: string(STR_CID_RUBBER);
+			sprite: NEW_CARGO_SPRITE;
+			weight: 1.0;
+			is_freight: 1;
+			cargo_classes: bitmask(CC_LIQUID);
+			town_growth_effect: TOWNGROWTH_NONE;
+			town_growth_multiplier: 1.0;
+			units_of_cargo: TTD_STR_TONS;
+			items_of_cargo: string(STR_QUANTITY_RUBBER);
+			penalty_lowerbound: 10;
+			single_penalty_length: 36;
+			capacity_multiplier: 1;
+			cargo_payment_list_colour: 198;
+			station_list_colour: 198;
+			price_factor: 110;
+			cargo_label: "RUBR";
+			number: CARGO_ID_RUBBER;
+		}
+		graphics {
+			cargoicon_rubber;
+		}
+	}
+}

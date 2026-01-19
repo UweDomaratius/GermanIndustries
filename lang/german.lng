@@ -51,6 +51,8 @@ STR_PARAM_EXT_METALLURGY :Erweiterung "Metallurgie"
 STR_PARAM_EXT_METALLURGY_DESC :Fügt Industrien und Frachten hinzu, die sich mit der Herstellung von Metallproduktion beschäftigen.
 STR_PARAM_EXT_RECYCLING :Erweiterung "Recycling"
 STR_PARAM_EXT_RECYCLING_DESC :Fügt Industrien und Frachten hinzu, die sich mit dem Recycling von Wertstoffen beschäftigen.
+STR_PARAM_EXT_VEHICLE :Erweiterung "Automobilbau"
+STR_PARAM_EXT_VEHICLE_DESC :Fügt Industrien und Frachten hinzu, die mit Automobilbau zusammenhängen.
 
 # Frachten
 STR_CARGO_NAME_ACID               :Säure
@@ -85,6 +87,7 @@ STR_CARGO_NAME_PLASTICS           :Kunststoffe
 STR_CARGO_NAME_PYRITE_ORE         :Kupferkies
 STR_CARGO_NAME_QUICKLIME          :Branntkalk
 STR_CARGO_NAME_RECYCLABLES        :Wertstoffe
+STR_CARGO_NAME_RUBBER             :Kautschuk
 STR_CARGO_NAME_SALT               :Salz
 STR_CARGO_NAME_SAND               :Sand
 STR_CARGO_NAME_SCRAP_METAL        :Metallschrott
@@ -92,8 +95,13 @@ STR_CARGO_NAME_SODA               :Soda
 STR_CARGO_NAME_SULPHUR            :Schwefel
 STR_CARGO_NAME_TEXTILES           :Textilien
 STR_CARGO_NAME_TIMBER             :Schnittholz
+STR_CARGO_NAME_TYRE               :Reifen
+STR_CARGO_NAME_VEHICLE_BODY       :Karosserien
+STR_CARGO_NAME_VEHICLE_ENGINE     :Motoren
+STR_CARGO_NAME_VEHICLE_PARTS      :Fahrzeugteile
 STR_CARGO_NAME_VEHICLES           :Fahrzeuge
 STR_CARGO_NAME_WOOL               :Wolle
+STR_CARGO_NAME_ZINC               :Zink
 
 # lange Form der Frachtanzeige (x Einheiten Fracht)
 STR_QUANTITY_ACID                 :{WEIGHT} Säure
@@ -131,6 +139,7 @@ STR_QUANTITY_PLASTICS             :{WEIGHT} Kunststoffe
 STR_QUANTITY_PYRITE_ORE           :{WEIGHT} Kupferkies
 STR_QUANTITY_QUICKLIME            :{WEIGHT} Branntkalk
 STR_QUANTITY_RECYCLABLES          :{WEIGHT} Wertstoffe
+STR_QUANTITY_RUBBER               :{WEIGHT} Kautschuk
 STR_QUANTITY_SALT                 :{WEIGHT} Salz
 STR_QUANTITY_SAND                 :{WEIGHT} Sand
 STR_QUANTITY_SCRAP_METAL          :{WEIGHT} Metallschrott
@@ -138,8 +147,13 @@ STR_QUANTITY_SODA                 :{WEIGHT} Soda
 STR_QUANTITY_SULPHUR              :{WEIGHT} Schwefel
 STR_QUANTITY_TEXTILES             :{WEIGHT} Textilien
 STR_QUANTITY_TIMBER               :{WEIGHT} Schnittholz
+STR_QUANTITY_TYRE                 :{WEIGHT} Reifen
+STR_QUANTITY_VEHICLE_BODY         :{WEIGHT} Karosserien
+STR_QUANTITY_VEHICLE_ENGINE       :{WEIGHT} Motoren
+STR_QUANTITY_VEHICLE_PARTS        :{WEIGHT} Fahrzeugteile
 STR_QUANTITY_VEHICLES             :{COMMA} Fahrzeug{P "" e}
 STR_QUANTITY_WOOL                 :{WEIGHT} Wolle
+STR_QUANTITY_ZINC                 :{WEIGHT} Zink
 
 # Industrien
 STR_IND_ACID_PLANT               :{G=w}Säurefabrik
@@ -190,9 +204,14 @@ STR_IND_SODA_PLANT               :{G=w}Sodafabrik
 STR_IND_STEAMCRACKER             :Steamcracker
 STR_IND_STEAMREFORMER            :Dampfreformierer
 STR_IND_STOCKYARD                :Schlachthof
+STR_IND_SYNTHETIC_RUBBER_PLANT   :{G=w}Synthesekautschukfabrik
 STR_IND_TEXTILE_MILL             :{G=w}Textilfabrik
+STR_IND_TYRE_PLANT               :{G=w}Reifenfabrik
+STR_IND_VEHICLE_BODY_PLANT       :{G=w}Karosseriefabrik
 STR_IND_VEHICLE_DISTRIBUTOR      :{G=n}Autohaus
+STR_IND_VEHICLE_ENGINE_PLANT     :{G=n}Motorenwerk
 STR_IND_VEHICLE_FACTORY          :{G=w}Autofabrik
+STR_IND_VEHICLE_PARTS_PLANT      :{G=w}Autoteilefabrik
 STR_IND_WIRE_MILL                :{G=n}Drahtwalzwerk
 
 # Stationsnamen
@@ -256,32 +275,39 @@ STR_STATION_SODA_PLANT               :Sodafabrik
 STR_STATION_STEAMCRACKER             :Steamcracker
 STR_STATION_STEAMREFORMER            :Dampfreformierer
 STR_STATION_STOCKYARD                :Schlachthof
+STR_STATION_SYNTHETIC_RUBBER_PLANT   :Synthesekautschukfabrik
 STR_STATION_TEXTILE_MILL             :Textilfabrik
+STR_STATION_TYRE_PLANT               :Reifenfabrik
+STR_STATION_VEHICLE_BODY_PLANT       :Karosseriefabrik
 STR_STATION_VEHICLE_DISTRIBUTOR      :Autohändler
+STR_STATION_VEHICLE_ENGINE_PLANT     :Motorenwerk
 STR_STATION_VEHICLE_FACTORY          :Autofabrik
+STR_STATION_VEHICLE_PARTS_PLANT      :Autoteilefabrik
 STR_STATION_WIRE_MILL                :Drahtwalzwerk
 
 # Industriefenster
-STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION :Transportiere mehr als 60% der produzierten Fracht um die Produktion zu erhöhen.
-STR_INDUSTRY_PREREQ_KEEP_PRODUCTION     :Industrie produziert am Maximum. Transportiere mehr als 60% der produzierten Fracht um diesen Produktionslevel zu halten.
+STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION :{BLACK}Transportiere mehr als 60% der produzierten Fracht um die Produktion zu erhöhen.
+STR_INDUSTRY_PREREQ_KEEP_PRODUCTION     :{BLACK}Industrie produziert am Maximum. Transportiere mehr als 60% der produzierten Fracht um diesen Produktionslevel zu halten.
 # Extractive Industrien (Bergwerke) zeigen die Info zum Produktionslevel und die Menge der verbleibenden Rohstoffe.
-STR_EXTRACTIVE_INDUSTRY_TEXT:{STRING}{STRING}{}Etwa {YELLOW}{COMMA} kt {BLACK} verbleibend (ca. {YELLOW}{COMMA} Jahre{BLACK} bei aktuellem Produktionslevel)
+STR_EXTRACTIVE_INDUSTRY_TEXT:{STRING}{STRING}{}{BLACK}Etwa {YELLOW}{COMMA} kt {BLACK} verbleibend (ca. {YELLOW}{COMMA} Jahre{BLACK} bei aktuellem Produktionslevel)
 # Secondary industries with optional input requirements
-STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO :Industrie benötigt die in schwarz dargestellten Rohstoffe zur Produktion. In weiß dargestellte Rohstoffe erhöhen die maximale Produktion.
-STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO_ANY :Industrie benötigt wenigstens einen der in schwarz dargestellten Rohstoffe zur Produktion. Die maximale Produktion erhöht sich mit der Anzahl der verfügbaren verschiedenen Rohstoffe. In weiß dargestellte Rohstoffe erhöhen die maximale Produktion noch weiter.
-STR_INDUSTRY_NEEDS_ANY_INPUT :Industrie beginnt Produktion sobald wenigstens ein Rohstoff verfügbar ist. Die maximale Produktion erhöht sich mit der Anzahl der verfügbaren verschiedenen Rohstoffe.
+STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO :{BLACK}Industrie benötigt die in schwarz dargestellten Rohstoffe zur Produktion. In weiß dargestellte Rohstoffe erhöhen die maximale Produktion.
+STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO_ANY :{BLACK}Industrie benötigt wenigstens einen der in schwarz dargestellten Rohstoffe zur Produktion. Die maximale Produktion erhöht sich mit der Anzahl der verfügbaren verschiedenen Rohstoffe. In weiß dargestellte Rohstoffe erhöhen die maximale Produktion noch weiter.
+STR_INDUSTRY_NEEDS_ANY_INPUT :{BLACK}Industrie beginnt Produktion sobald wenigstens ein Rohstoff verfügbar ist. Die maximale Produktion erhöht sich mit der Anzahl der verfügbaren verschiedenen Rohstoffe.
 
 # Texte für Energiewirtschaft, Kraftwerke zeigen die Produktion, Industrien zeigen an wie viel Strom sie benötigen und ob der Bedarf gedeckt ist
-STR_POWER_PLANT_TEXT :Stromproduktion {YELLOW}{COMMA}{BLACK}, Bedarf {YELLOW}{COMMA}{BLACK}
-STR_INDUSTRY_ELECTRICITY_TEXT :Industrie kann {YELLOW}{COMMA}{BLACK} Einheiten produzieren ({YELLOW}{COMMA}{BLACK}% der maximalen Produktion){}Maximale Produktion benötigt {YELLOW}{COMMA}{BLACK} Strom.{}{BLACK}{STRING}
+STR_POWER_PLANT_TEXT :{BLACK}Stromproduktion {YELLOW}{COMMA}{BLACK}, Bedarf {YELLOW}{COMMA}{BLACK}
+STR_INDUSTRY_ELECTRICITY_TEXT :{BLACK}Industrie kann {YELLOW}{COMMA}{BLACK} Einheiten produzieren ({YELLOW}{COMMA}{BLACK}% der maximalen Produktion){}Maximale Produktion benötigt {YELLOW}{COMMA}{BLACK} Strom.{}{BLACK}{STRING}
 STR_INDUSTRY_NO_POWER :{RED}Kein Strom verfügbar, Produktion gestoppt!
 STR_INDUSTRY_NOT_ENOUGH_POWER :{YELLOW}Nicht genug Strom verfügbar, Produktion reduziert!
 STR_INDUSTRY_ENOUGH_POWER :{GREEN}Genug Strom verfügbar.
 # Texte für spezifische Industrien
-STR_ACID_PLANT_HCL_SULP :Industrie benötigt Schwefel oder Wasserstoff + Chlor zur Produktion. Die maximale Produktion erhöht sich, wenn alle drei Rohstoffe verfügbar sind.
-STR_ACID_PLANT_HCL_SULP_NH3 :Industrie benötigt Schwefel + Sauerstoff oder Wasserstoff + Chlor oder Ammoniak + Sauerstoff zur Produktion. Die maximale Produktion erhöht sich, wenn alle fünf Rohstoffe verfügbar sind.
-STR_ACID_PLANT_SULP_NH3 :Industrie benötigt Schwefel + Sauerstoff oder Ammoniak + Sauerstoff zur Produktion. Die maximale Produktion erhöht sich, wenn alle drei Rohstoffe verfügbar sind.
-STR_FOUNDRY_FORGE_ALUM :Industrie benötigt Koks + Stahl oder Koks + Aluminium zur Produktion. Die maximale Produktion erhöht sich, wenn alle drei Rohstoffe verfügbar sind.
+STR_ACID_PLANT_HCL_SULP :{BLACK}Industrie benötigt Schwefel oder Wasserstoff + Chlor zur Produktion. Die maximale Produktion erhöht sich, wenn alle drei Rohstoffe verfügbar sind.
+STR_ACID_PLANT_HCL_SULP_NH3 :{BLACK}Industrie benötigt Schwefel + Sauerstoff oder Wasserstoff + Chlor oder Ammoniak + Sauerstoff zur Produktion. Die maximale Produktion erhöht sich, wenn alle fünf Rohstoffe verfügbar sind.
+STR_ACID_PLANT_SULP_NH3 :{BLACK}Industrie benötigt Schwefel + Sauerstoff oder Ammoniak + Sauerstoff zur Produktion. Die maximale Produktion erhöht sich, wenn alle drei Rohstoffe verfügbar sind.
+STR_FOUNDRY_FORGE_ALUM :{BLACK}Industrie benötigt Koks + Stahl oder Koks + Aluminium zur Produktion. Die maximale Produktion erhöht sich, wenn alle drei Rohstoffe verfügbar sind.
+
+STR_INDUSTRY_ELECTRICITY_OPTIONAL_CARGO_TEXT :{BLACK}Industrie kann {YELLOW}{COMMA}{BLACK} Einheiten produzieren ({YELLOW}{COMMA}{BLACK}% der maximalen Produktion){}Maximale Produktion benötigt {YELLOW}{COMMA}{BLACK} Strom.{}{STRING}{}{BLACK}{STRING}
 
 # Texte für Industriefinanzierung
 STR_INDUSTRY_NOT_AVAILABLE_BEFORE :{}{BLACK}Industrie erst ab {STRING} verfügbar.
@@ -302,3 +328,4 @@ STR_ERR_EXTENSION_SULPHUR_COKE_REQUIRES_OTHER_EXTENSIONS:Erweiterung "Koks und S
 STR_ERR_EXTENSION_AMMONIA_REQUIRES_INORGANIC_CHEMISTRY_BUILDING_MATERIALS:Erweiterung "Ammoniak" erfordert die Erweiterungen "Bauindustrie" und "Grundlegende anorganische Chemie"
 STR_ERR_EXTENSION_FRUITS_REQUIRES_ORGANIC_CHEMISTRY:Erweiterung "Obst und Bioenergie" erfordert die Erweiterung "Organische Chemie"
 STR_ERR_EXTENSION_METALLURGY_REQUIRES_COKE_SULPHUR:Erweiterung "Metallurgie" erfordert Erweiterung "Koks und Schwefel"
+STR_ERR_EXTENSION_VEHICLE_REQUIRES_COKE_SULPHUR:Erweiterung "Automobilbau" erfordert Erweiterung "Koks und Schwefel"

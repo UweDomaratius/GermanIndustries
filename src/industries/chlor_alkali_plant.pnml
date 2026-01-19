@@ -777,13 +777,13 @@ switch(FEAT_INDUSTRIES, SELF, chlor_alkali_plant_switch_location_check_industry_
 }
 
 
-// values for production are based on molar weights (SALT 58.5g/mol, NaOH 40.5g/mol, Cl2: 35g/mol, H2: 2g/mol
+// values for production are based on molar weights (SALT 58.5g/mol, NaOH 40.5g/mol, Cl2: 35g/mol, H2: 2g/mol (H2 production increased for better playability)
 // 2 NaCl+2H2O -> 2 NaOH + Cl2 + H2
 produce(chlor_alkali_plant_produce,
 	[SALT: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
 	[CHLO: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*299/1000,1) : 0;
 	 LYE_: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * 692/1000,1) : 0;
-	 H2__: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*17/1000,1) : 0;], // due to rounding it will often go down to 0, produce at least 1 unit
+	 H2__: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*50/1000,1) : 0;], // due to rounding it will often go down to 0, produce at least 1 unit
 	0 // do not run again
 )
 

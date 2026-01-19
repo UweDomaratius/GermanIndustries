@@ -1,0 +1,31 @@
+spriteset(cargoicon_vehicle_bodies) {
+    [10 + 20 * 9, 10 + 20 * 4, 10, 10, 0, 0,  "graphics/other/cargoicons.png"]
+}
+if (param_extension_vehicle) {
+	item(FEAT_CARGOS, vehicle_bodies, CARGO_ID_VEHICLE_BODY) {
+		property {
+			type_name: string(STR_CARGO_NAME_VEHICLE_BODY);
+			unit_name: string(STR_CARGO_NAME_VEHICLE_BODY);
+			type_abbreviation: string(STR_CID_VEHICLE_BODY);
+			sprite: NEW_CARGO_SPRITE;
+			weight: 1.0;
+			is_freight: 1;
+			cargo_classes: bitmask(CC_PIECE_GOODS, CC_OVERSIZED);
+			town_growth_effect: TOWNGROWTH_NONE;
+			town_growth_multiplier: 1.0;
+			units_of_cargo: TTD_STR_TONS;
+			items_of_cargo: string(STR_QUANTITY_VEHICLE_BODY);
+			penalty_lowerbound: 5;
+			single_penalty_length: 255;
+			capacity_multiplier: 1;
+			cargo_payment_list_colour: 211;
+			station_list_colour: 211;
+			price_factor: 147;
+			cargo_label: "VBOD";
+			number: CARGO_ID_VEHICLE_BODY;
+		}
+		graphics {
+			cargoicon_vehicle_bodies;
+		}
+	}
+}

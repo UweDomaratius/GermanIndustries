@@ -1370,6 +1370,7 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_location_check_industry_distance,
        (industry_distance(INDUSTRY_ID_PAINT_FACTORY) >= 32) && 
 	   (industry_distance(INDUSTRY_ID_PLASTICS_PLANT) >= 32) &&
 	   (industry_distance(INDUSTRY_ID_POWER_PLANT) >= 32) &&
+	   (industry_distance(INDUSTRY_ID_TYRE_PLANT) >= 32) &&
 	   (industry_distance(INDUSTRY_ID_VEHICLE_FACTORY) >= 32) &&	   
 	   (industry_distance(INDUSTRY_ID_PORT) >= 16)))])
 {
@@ -1455,6 +1456,96 @@ produce(port_produce_ext_aluminium_ext_painting_industries_ext_coke_sulphur,
 	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
 	 AORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
 	 PORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	],
+	0 // do not run again
+)
+
+produce(port_produce_ext_vehicle,
+	[],
+	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 RUBR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	],
+	0 // do not run again
+)
+
+produce(port_produce_ext_aluminium_ext_vehicle,
+	[],
+	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 AORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 RUBR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	],
+	0 // do not run again
+)
+
+produce(port_produce_ext_painting_industries_ext_vehicle,
+	[],
+	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 CORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 RUBR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	],
+	0 // do not run again
+)
+
+produce(port_produce_ext_aluminium_ext_painting_industries_ext_vehicle,
+	[],
+	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 AORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 CORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 RUBR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	],
+	0 // do not run again
+)
+
+produce(port_produce_ext_coke_sulphur_ext_vehicle,
+	[],
+	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 PORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 RUBR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	],
+	0 // do not run again
+)
+
+produce(port_produce_ext_aluminium_ext_coke_sulphur_ext_vehicle,
+	[],
+	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 AORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 PORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 RUBR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	],
+	0 // do not run again
+)
+
+produce(port_produce_ext_painting_industries_ext_coke_sulphur_ext_vehicle,
+	[],
+	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 PORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 RUBR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	],
+	0 // do not run again
+)
+
+produce(port_produce_ext_aluminium_ext_painting_industries_ext_coke_sulphur_ext_vehicle,
+	[],
+	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 AORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 PORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 RUBR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
 	],
 	0 // do not run again
 )
@@ -1552,6 +1643,78 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_produce_ext_aluminium_ext_painting_ind
 	port_produce_ext_aluminium_ext_painting_industries_ext_coke_sulphur;
 }
 
+switch(FEAT_INDUSTRIES, SELF, port_switch_produce_ext_vehicle,
+	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
+	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 // store the theoretical amount of production (production level * scaling percentage)
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	]) {
+	port_produce_ext_vehicle;
+}
+
+switch(FEAT_INDUSTRIES, SELF, port_switch_produce_ext_aluminium_ext_vehicle,
+	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
+	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 // store the theoretical amount of production (production level * scaling percentage)
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	]) {
+	port_produce_ext_aluminium_ext_vehicle;
+}
+
+switch(FEAT_INDUSTRIES, SELF, port_switch_produce_ext_painting_industries_ext_vehicle,
+	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
+	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 // store the theoretical amount of production (production level * scaling percentage)
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	]) {
+	port_produce_ext_painting_industries_ext_vehicle;
+}
+
+switch(FEAT_INDUSTRIES, SELF, port_switch_produce_ext_aluminium_ext_painting_industries_ext_vehicle,
+	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
+	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 // store the theoretical amount of production (production level * scaling percentage)
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	]) {
+	port_produce_ext_aluminium_ext_painting_industries_ext_vehicle;
+}
+
+switch(FEAT_INDUSTRIES, SELF, port_switch_produce_ext_coke_sulphur_ext_vehicle,
+	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
+	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 // store the theoretical amount of production (production level * scaling percentage)
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	]) {
+	port_produce_ext_coke_sulphur_ext_vehicle;
+}
+
+switch(FEAT_INDUSTRIES, SELF, port_switch_produce_ext_aluminium_ext_coke_sulphur_ext_vehicle,
+	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
+	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 // store the theoretical amount of production (production level * scaling percentage)
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	]) {
+	port_produce_ext_aluminium_ext_coke_sulphur_ext_vehicle;
+}
+
+switch(FEAT_INDUSTRIES, SELF, port_switch_produce_ext_painting_industries_ext_coke_sulphur_ext_vehicle,
+	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
+	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 // store the theoretical amount of production (production level * scaling percentage)
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	]) {
+	port_produce_ext_painting_industries_ext_coke_sulphur_ext_vehicle;
+}
+
+switch(FEAT_INDUSTRIES, SELF, port_switch_produce_ext_aluminium_ext_painting_industries_ext_coke_sulphur_ext_vehicle,
+	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
+	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 // store the theoretical amount of production (production level * scaling percentage)
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	]) {
+	port_produce_ext_aluminium_ext_painting_industries_ext_coke_sulphur_ext_vehicle;
+}
+
 switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change, 
 	[STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
 	 STORE_TEMP(max(transported_last_month_pct("COAL"),transported_last_month_pct("OIL_"),transported_last_month_pct("IORE")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
@@ -1624,6 +1787,78 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_aluminium_ext_painting
 	change_production;
 }
 
+switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_vehicle, 
+	[STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
+	 STORE_TEMP(max(transported_last_month_pct("COAL"),transported_last_month_pct("OIL_"),transported_last_month_pct("IORE"),transported_last_month_pct("RUBR")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	])
+{
+	change_production;
+}
+
+switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_aluminium_ext_vehicle, 
+	[STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
+	 STORE_TEMP(max(transported_last_month_pct("COAL"),transported_last_month_pct("OIL_"),transported_last_month_pct("IORE"),transported_last_month_pct("AORE"),transported_last_month_pct("RUBR")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	])
+{
+	change_production;
+}
+
+switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_painting_industries_ext_vehicle, 
+	[STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
+	 STORE_TEMP(max(transported_last_month_pct("COAL"),transported_last_month_pct("OIL_"),transported_last_month_pct("IORE"),transported_last_month_pct("CORE"),transported_last_month_pct("RUBR")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	])
+{
+	change_production;
+}
+
+switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_aluminium_ext_painting_industries_ext_vehicle, 
+	[STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
+	 STORE_TEMP(max(transported_last_month_pct("COAL"),transported_last_month_pct("OIL_"),transported_last_month_pct("IORE"),transported_last_month_pct("AORE"),transported_last_month_pct("CORE"),transported_last_month_pct("RUBR")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	])
+{
+	change_production;
+}
+
+switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_coke_sulphur_ext_vehicle, 
+	[STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
+	 STORE_TEMP(max(transported_last_month_pct("COAL"),transported_last_month_pct("OIL_"),transported_last_month_pct("IORE"),transported_last_month_pct("PORE"),transported_last_month_pct("RUBR")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	])
+{
+	change_production;
+}
+
+switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_aluminium_ext_coke_sulphur_ext_vehicle, 
+	[STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
+	 STORE_TEMP(max(transported_last_month_pct("COAL"),transported_last_month_pct("OIL_"),transported_last_month_pct("IORE"),transported_last_month_pct("AORE"),transported_last_month_pct("PORE"),transported_last_month_pct("RUBR")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	])
+{
+	change_production;
+}
+
+switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_painting_industries_ext_coke_sulphur_ext_vehicle, 
+	[STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
+	 STORE_TEMP(max(transported_last_month_pct("COAL"),transported_last_month_pct("OIL_"),transported_last_month_pct("IORE"),transported_last_month_pct("PORE"),transported_last_month_pct("RUBR")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	])
+{
+	change_production;
+}
+
+switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_aluminium_ext_painting_industries_ext_coke_sulphur_ext_vehicle, 
+	[STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
+	 STORE_TEMP(max(transported_last_month_pct("COAL"),transported_last_month_pct("OIL_"),transported_last_month_pct("IORE"),transported_last_month_pct("AORE"),transported_last_month_pct("PORE"),transported_last_month_pct("RUBR")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	])
+{
+	change_production;
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // build the industry window text here
 ////////////////////////////////////////////////////////////////////////////////
@@ -1639,7 +1874,7 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_extra_text,
 	]) {
 	return string(STR_ORGANIC_INDUSTRY_TEXT);
 }
-if (!param_extension_aluminium && !param_extension_painting_industries && !param_extension_coke_sulphur) {
+if (!param_extension_aluminium && !param_extension_painting_industries && !param_extension_coke_sulphur && !param_extension_vehicle) {
 	item(FEAT_INDUSTRIES, port, INDUSTRY_ID_PORT) {
 		property {
 			substitute: 0;
@@ -1676,7 +1911,7 @@ if (!param_extension_aluminium && !param_extension_painting_industries && !param
 	}
 }
 
-if (param_extension_aluminium && !param_extension_painting_industries && !param_extension_coke_sulphur) {
+if (param_extension_aluminium && !param_extension_painting_industries && !param_extension_coke_sulphur && !param_extension_vehicle) {
 	item(FEAT_INDUSTRIES, port, INDUSTRY_ID_PORT) {
 		property {
 			substitute: 0;
@@ -1713,7 +1948,7 @@ if (param_extension_aluminium && !param_extension_painting_industries && !param_
 	}
 }
 
-if (!param_extension_aluminium && param_extension_painting_industries && !param_extension_coke_sulphur) {
+if (!param_extension_aluminium && param_extension_painting_industries && !param_extension_coke_sulphur && !param_extension_vehicle) {
 	item(FEAT_INDUSTRIES, port, INDUSTRY_ID_PORT) {
 		property {
 			substitute: 0;
@@ -1750,7 +1985,7 @@ if (!param_extension_aluminium && param_extension_painting_industries && !param_
 	}
 }
 
-if (param_extension_aluminium && param_extension_painting_industries && !param_extension_coke_sulphur) {
+if (param_extension_aluminium && param_extension_painting_industries && !param_extension_coke_sulphur && !param_extension_vehicle) {
 	item(FEAT_INDUSTRIES, port, INDUSTRY_ID_PORT) {
 		property {
 			substitute: 0;
@@ -1787,7 +2022,7 @@ if (param_extension_aluminium && param_extension_painting_industries && !param_e
 	}
 }
 
-if (!param_extension_aluminium && !param_extension_painting_industries && param_extension_coke_sulphur) {
+if (!param_extension_aluminium && !param_extension_painting_industries && param_extension_coke_sulphur && !param_extension_vehicle) {
 	item(FEAT_INDUSTRIES, port, INDUSTRY_ID_PORT) {
 		property {
 			substitute: 0;
@@ -1824,7 +2059,7 @@ if (!param_extension_aluminium && !param_extension_painting_industries && param_
 	}
 }
 
-if (param_extension_aluminium && !param_extension_painting_industries && param_extension_coke_sulphur) {
+if (param_extension_aluminium && !param_extension_painting_industries && param_extension_coke_sulphur && !param_extension_vehicle) {
 	item(FEAT_INDUSTRIES, port, INDUSTRY_ID_PORT) {
 		property {
 			substitute: 0;
@@ -1861,7 +2096,7 @@ if (param_extension_aluminium && !param_extension_painting_industries && param_e
 	}
 }
 
-if (!param_extension_aluminium && param_extension_painting_industries && param_extension_coke_sulphur) {
+if (!param_extension_aluminium && param_extension_painting_industries && param_extension_coke_sulphur && !param_extension_vehicle) {
 	item(FEAT_INDUSTRIES, port, INDUSTRY_ID_PORT) {
 		property {
 			substitute: 0;
@@ -1898,7 +2133,7 @@ if (!param_extension_aluminium && param_extension_painting_industries && param_e
 	}
 }
 
-if (param_extension_aluminium && param_extension_painting_industries && param_extension_coke_sulphur) {
+if (param_extension_aluminium && param_extension_painting_industries && param_extension_coke_sulphur && !param_extension_vehicle) {
 	item(FEAT_INDUSTRIES, port, INDUSTRY_ID_PORT) {
 		property {
 			substitute: 0;
@@ -1926,6 +2161,301 @@ if (param_extension_aluminium && param_extension_painting_industries && param_ex
 			produce_256_ticks:        port_switch_produce_ext_aluminium_ext_painting_industries_ext_coke_sulphur;
 			monthly_prod_change:      port_switch_prod_change_ext_aluminium_ext_painting_industries_ext_coke_sulphur;
 			random_prod_change:       port_switch_prod_change_ext_aluminium_ext_painting_industries_ext_coke_sulphur;
+			build_prod_change:        port_switch_prod_change_build;
+			location_check:           port_switch_location_check_industry_distance;
+			extra_text_fund:          return string(STR_EMPTY);
+			extra_text_industry:      port_switch_extra_text;
+			cargo_subtype_display:    return CB_RESULT_IND_NO_TEXT_NO_AMOUNT;
+		}
+	}
+}
+if (!param_extension_aluminium && !param_extension_painting_industries && !param_extension_coke_sulphur && param_extension_vehicle) {
+	item(FEAT_INDUSTRIES, port, INDUSTRY_ID_PORT) {
+		property {
+			substitute: 0;
+			map_colour: 186;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [port_tilelayout_1,port_tilelayout_2,port_tilelayout_3,port_tilelayout_4,port_tilelayout_5];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_BUILT_ON_WATER);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_PORT);
+			prob_map_gen: 8;
+			prob_in_game: 1;
+			prospect_chance: 0.75;
+			fund_cost_multiplier: 152;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("RUBR",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
+		}
+			
+		graphics {
+			construction_probability: get_construction_probability;
+			produce_cargo_arrival:    port_produce_cargo_arrival; 
+			produce_256_ticks:        port_switch_produce_ext_vehicle;
+			monthly_prod_change:      port_switch_prod_change_ext_vehicle;
+			random_prod_change:       port_switch_prod_change_ext_vehicle;
+			build_prod_change:        port_switch_prod_change_build;
+			location_check:           port_switch_location_check_industry_distance;
+			extra_text_fund:          return string(STR_EMPTY);
+			extra_text_industry:      port_switch_extra_text;
+			cargo_subtype_display:    return CB_RESULT_IND_NO_TEXT_NO_AMOUNT;
+		}
+	}
+}
+
+if (param_extension_aluminium && !param_extension_painting_industries && !param_extension_coke_sulphur && param_extension_vehicle) {
+	item(FEAT_INDUSTRIES, port, INDUSTRY_ID_PORT) {
+		property {
+			substitute: 0;
+			map_colour: 186;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [port_tilelayout_1,port_tilelayout_2,port_tilelayout_3,port_tilelayout_4,port_tilelayout_5];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_BUILT_ON_WATER);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_PORT);
+			prob_map_gen: 8;
+			prob_in_game: 1;
+			prospect_chance: 0.75;
+			fund_cost_multiplier: 152;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("AORE",0),produce_cargo("RUBR",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
+		}
+			
+		graphics {
+			construction_probability: get_construction_probability;
+			produce_cargo_arrival:    port_produce_cargo_arrival; 
+			produce_256_ticks:        port_switch_produce_ext_aluminium_ext_vehicle;
+			monthly_prod_change:      port_switch_prod_change_ext_aluminium_ext_vehicle;
+			random_prod_change:       port_switch_prod_change_ext_aluminium_ext_vehicle;
+			build_prod_change:        port_switch_prod_change_build;
+			location_check:           port_switch_location_check_industry_distance;
+			extra_text_fund:          return string(STR_EMPTY);
+			extra_text_industry:      port_switch_extra_text;
+			cargo_subtype_display:    return CB_RESULT_IND_NO_TEXT_NO_AMOUNT;
+		}
+	}
+}
+
+if (!param_extension_aluminium && param_extension_painting_industries && !param_extension_coke_sulphur && param_extension_vehicle) {
+	item(FEAT_INDUSTRIES, port, INDUSTRY_ID_PORT) {
+		property {
+			substitute: 0;
+			map_colour: 186;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [port_tilelayout_1,port_tilelayout_2,port_tilelayout_3,port_tilelayout_4,port_tilelayout_5];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_BUILT_ON_WATER);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_PORT);
+			prob_map_gen: 8;
+			prob_in_game: 1;
+			prospect_chance: 0.75;
+			fund_cost_multiplier: 152;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("CORE",0),produce_cargo("RUBR",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
+		}
+			
+		graphics {
+			construction_probability: get_construction_probability;
+			produce_cargo_arrival:    port_produce_cargo_arrival; 
+			produce_256_ticks:        port_switch_produce_ext_painting_industries_ext_vehicle;
+			monthly_prod_change:      port_switch_prod_change_ext_painting_industries_ext_vehicle;
+			random_prod_change:       port_switch_prod_change_ext_painting_industries_ext_vehicle;
+			build_prod_change:        port_switch_prod_change_build;
+			location_check:           port_switch_location_check_industry_distance;
+			extra_text_fund:          return string(STR_EMPTY);
+			extra_text_industry:      port_switch_extra_text;
+			cargo_subtype_display:    return CB_RESULT_IND_NO_TEXT_NO_AMOUNT;
+		}
+	}
+}
+
+if (param_extension_aluminium && param_extension_painting_industries && !param_extension_coke_sulphur && param_extension_vehicle) {
+	item(FEAT_INDUSTRIES, port, INDUSTRY_ID_PORT) {
+		property {
+			substitute: 0;
+			map_colour: 186;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [port_tilelayout_1,port_tilelayout_2,port_tilelayout_3,port_tilelayout_4,port_tilelayout_5];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_BUILT_ON_WATER);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_PORT);
+			prob_map_gen: 8;
+			prob_in_game: 1;
+			prospect_chance: 0.75;
+			fund_cost_multiplier: 152;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("AORE",0),produce_cargo("CORE",0),produce_cargo("RUBR",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
+		}
+			
+		graphics {
+			construction_probability: get_construction_probability;
+			produce_cargo_arrival:    port_produce_cargo_arrival; 
+			produce_256_ticks:        port_switch_produce_ext_aluminium_ext_painting_industries_ext_vehicle;
+			monthly_prod_change:      port_switch_prod_change_ext_aluminium_ext_painting_industries_ext_vehicle;
+			random_prod_change:       port_switch_prod_change_ext_aluminium_ext_painting_industries_ext_vehicle;
+			build_prod_change:        port_switch_prod_change_build;
+			location_check:           port_switch_location_check_industry_distance;
+			extra_text_fund:          return string(STR_EMPTY);
+			extra_text_industry:      port_switch_extra_text;
+			cargo_subtype_display:    return CB_RESULT_IND_NO_TEXT_NO_AMOUNT;
+		}
+	}
+}
+
+if (!param_extension_aluminium && !param_extension_painting_industries && param_extension_coke_sulphur && param_extension_vehicle) {
+	item(FEAT_INDUSTRIES, port, INDUSTRY_ID_PORT) {
+		property {
+			substitute: 0;
+			map_colour: 186;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [port_tilelayout_1,port_tilelayout_2,port_tilelayout_3,port_tilelayout_4,port_tilelayout_5];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_BUILT_ON_WATER);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_PORT);
+			prob_map_gen: 8;
+			prob_in_game: 1;
+			prospect_chance: 0.75;
+			fund_cost_multiplier: 152;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("PORE",0),produce_cargo("RUBR",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
+		}
+			
+		graphics {
+			construction_probability: get_construction_probability;
+			produce_cargo_arrival:    port_produce_cargo_arrival; 
+			produce_256_ticks:        port_switch_produce_ext_coke_sulphur_ext_vehicle;
+			monthly_prod_change:      port_switch_prod_change_ext_coke_sulphur_ext_vehicle;
+			random_prod_change:       port_switch_prod_change_ext_coke_sulphur_ext_vehicle;
+			build_prod_change:        port_switch_prod_change_build;
+			location_check:           port_switch_location_check_industry_distance;
+			extra_text_fund:          return string(STR_EMPTY);
+			extra_text_industry:      port_switch_extra_text;
+			cargo_subtype_display:    return CB_RESULT_IND_NO_TEXT_NO_AMOUNT;
+		}
+	}
+}
+
+if (param_extension_aluminium && !param_extension_painting_industries && param_extension_coke_sulphur && param_extension_vehicle) {
+	item(FEAT_INDUSTRIES, port, INDUSTRY_ID_PORT) {
+		property {
+			substitute: 0;
+			map_colour: 186;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [port_tilelayout_1,port_tilelayout_2,port_tilelayout_3,port_tilelayout_4,port_tilelayout_5];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_BUILT_ON_WATER);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_PORT);
+			prob_map_gen: 8;
+			prob_in_game: 1;
+			prospect_chance: 0.75;
+			fund_cost_multiplier: 152;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("AORE",0),produce_cargo("PORE",0),produce_cargo("RUBR",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
+		}
+			
+		graphics {
+			construction_probability: get_construction_probability;
+			produce_cargo_arrival:    port_produce_cargo_arrival; 
+			produce_256_ticks:        port_switch_produce_ext_aluminium_ext_coke_sulphur_ext_vehicle;
+			monthly_prod_change:      port_switch_prod_change_ext_aluminium_ext_coke_sulphur_ext_vehicle;
+			random_prod_change:       port_switch_prod_change_ext_aluminium_ext_coke_sulphur_ext_vehicle;
+			build_prod_change:        port_switch_prod_change_build;
+			location_check:           port_switch_location_check_industry_distance;
+			extra_text_fund:          return string(STR_EMPTY);
+			extra_text_industry:      port_switch_extra_text;
+			cargo_subtype_display:    return CB_RESULT_IND_NO_TEXT_NO_AMOUNT;
+		}
+	}
+}
+
+if (!param_extension_aluminium && param_extension_painting_industries && param_extension_coke_sulphur && param_extension_vehicle) {
+	item(FEAT_INDUSTRIES, port, INDUSTRY_ID_PORT) {
+		property {
+			substitute: 0;
+			map_colour: 186;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [port_tilelayout_1,port_tilelayout_2,port_tilelayout_3,port_tilelayout_4,port_tilelayout_5];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_BUILT_ON_WATER);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_PORT);
+			prob_map_gen: 8;
+			prob_in_game: 1;
+			prospect_chance: 0.75;
+			fund_cost_multiplier: 152;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("PORE",0),produce_cargo("RUBR",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
+		}
+			
+		graphics {
+			construction_probability: get_construction_probability;
+			produce_cargo_arrival:    port_produce_cargo_arrival; 
+			produce_256_ticks:        port_switch_produce_ext_painting_industries_ext_coke_sulphur_ext_vehicle;
+			monthly_prod_change:      port_switch_prod_change_ext_painting_industries_ext_coke_sulphur_ext_vehicle;
+			random_prod_change:       port_switch_prod_change_ext_painting_industries_ext_coke_sulphur_ext_vehicle;
+			build_prod_change:        port_switch_prod_change_build;
+			location_check:           port_switch_location_check_industry_distance;
+			extra_text_fund:          return string(STR_EMPTY);
+			extra_text_industry:      port_switch_extra_text;
+			cargo_subtype_display:    return CB_RESULT_IND_NO_TEXT_NO_AMOUNT;
+		}
+	}
+}
+
+if (param_extension_aluminium && param_extension_painting_industries && param_extension_coke_sulphur && param_extension_vehicle) {
+	item(FEAT_INDUSTRIES, port, INDUSTRY_ID_PORT) {
+		property {
+			substitute: 0;
+			map_colour: 186;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [port_tilelayout_1,port_tilelayout_2,port_tilelayout_3,port_tilelayout_4,port_tilelayout_5];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_BUILT_ON_WATER);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_PORT);
+			prob_map_gen: 8;
+			prob_in_game: 1;
+			prospect_chance: 0.75;
+			fund_cost_multiplier: 152;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("AORE",0),produce_cargo("PORE",0),produce_cargo("RUBR",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
+		}
+			
+		graphics {
+			construction_probability: get_construction_probability;
+			produce_cargo_arrival:    port_produce_cargo_arrival; 
+			produce_256_ticks:        port_switch_produce_ext_aluminium_ext_painting_industries_ext_coke_sulphur_ext_vehicle;
+			monthly_prod_change:      port_switch_prod_change_ext_aluminium_ext_painting_industries_ext_coke_sulphur_ext_vehicle;
+			random_prod_change:       port_switch_prod_change_ext_aluminium_ext_painting_industries_ext_coke_sulphur_ext_vehicle;
 			build_prod_change:        port_switch_prod_change_build;
 			location_check:           port_switch_location_check_industry_distance;
 			extra_text_fund:          return string(STR_EMPTY);

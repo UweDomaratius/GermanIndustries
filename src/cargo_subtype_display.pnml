@@ -236,6 +236,13 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_rfpr,
 	return 0x3800 + string(STR_EMPTY);
 }
 
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_rubr, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("RUBR") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	RUBR: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
 switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_salt, 
 	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("SALT") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
 	 getbits(extra_callback_info2, 16, 8)]) {
@@ -292,6 +299,13 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_text,
 	return 0x3800 + string(STR_EMPTY);
 }
 
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_tyre, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("TYRE") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	TYRE: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
 switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_wdpr, 
 	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("WDPR") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
 	 getbits(extra_callback_info2, 16, 8)]) {
@@ -310,6 +324,34 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_wool,
 	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("WOOL") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
 	 getbits(extra_callback_info2, 16, 8)]) {
 	WOOL: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_vbod, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("VBOD") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	VBOD: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_veng, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("VENG") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	VENG: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_vpts, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("VPTS") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	VPTS: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_zinc, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("ZINC") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	ZINC: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
 	return 0x3800 + string(STR_EMPTY);
 }
 
@@ -349,6 +391,7 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info,
 	PORE: switch_cargo_subtype_display_info_pore;
 	QLME: switch_cargo_subtype_display_info_qlme;
 	RFPR: switch_cargo_subtype_display_info_rfpr;
+	RUBR: switch_cargo_subtype_display_info_rubr;
 	SALT: switch_cargo_subtype_display_info_salt;
 	SAND: switch_cargo_subtype_display_info_sand;
 	SASH: switch_cargo_subtype_display_info_sash;
@@ -357,9 +400,14 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info,
 	STWR: switch_cargo_subtype_display_info_stwr;
 	SULP: switch_cargo_subtype_display_info_sulp;
 	TEXT: switch_cargo_subtype_display_info_text;
+	TYRE: switch_cargo_subtype_display_info_tyre;
 	WDPR: switch_cargo_subtype_display_info_wdpr;
 	WOOD: switch_cargo_subtype_display_info_wood;
 	WOOL: switch_cargo_subtype_display_info_wool;
+	VBOD: switch_cargo_subtype_display_info_vbod;
+	VENG: switch_cargo_subtype_display_info_veng;
+	VPTS: switch_cargo_subtype_display_info_vpts;
+	ZINC: switch_cargo_subtype_display_info_zinc;
 	return 0x3800 + string(STR_EMPTY);
 }
 

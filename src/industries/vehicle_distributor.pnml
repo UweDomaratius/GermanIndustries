@@ -239,6 +239,8 @@ switch(FEAT_INDUSTRIES, SELF, vehicle_distributor_switch_location_check_industry
        [(is_industry_funded_or_prospected()) || (
 	    (town_euclidean_dist(0,0) < 16) &&
 	    (industry_distance(INDUSTRY_ID_VEHICLE_FACTORY) >= 32) &&
+		(industry_distance(INDUSTRY_ID_VEHICLE_PARTS_PLANT) >= 32) &&
+		(industry_distance(INDUSTRY_ID_TYRE_PLANT) >= 32) &&
 		(industry_distance(INDUSTRY_ID_VEHICLE_DISTRIBUTOR) >= 16))]) {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;
@@ -254,6 +256,23 @@ produce(vehicle_distributor_produce,
 switch(FEAT_INDUSTRIES, SELF, vehicle_distributor_switch_produce,
 	[STORE_TEMP(incoming_cargo_waiting("VEHI"), TEMP_REGISTER_INCOMING_CARGO_WAITING0)]) {
 	vehicle_distributor_produce; 
+}
+
+produce(vehicle_distributor_produce_ext_vehicle,
+	[VEHI: LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0) > 12 ? LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0)-12 : LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0) != 0 ? 1 : 0;
+	 TYRE: LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0) > 48 ? LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0)-48 : LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0) != 0 ? 1 : 0;
+	 VPTS: LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0) > 48 ? LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0)-48 : LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0) != 0 ? 1 : 0;
+	],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, vehicle_distributor_switch_produce_ext_vehicle,
+	[STORE_TEMP(incoming_cargo_waiting("VEHI"), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 STORE_TEMP(incoming_cargo_waiting("VPTS"), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 STORE_TEMP(incoming_cargo_waiting("TYRE"), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	]) {
+	vehicle_distributor_produce_ext_vehicle; 
 }
 
 switch(FEAT_INDUSTRIES, SELF, vehicle_distributor_switch_extra_text_fund, 
@@ -278,38 +297,84 @@ switch(FEAT_INDUSTRIES, SELF, vehicle_distributor_switch_update_last_served_date
 	check_secondary_industry_closure();
 }
 
-item(FEAT_INDUSTRIES, vehicle_distributor, INDUSTRY_ID_VEHICLE_DISTRIBUTOR) {
-	property {
-		substitute: 0;
-		map_colour: 153;
-		life_type: IND_LIFE_TYPE_BLACK_HOLE;
-		min_cargo_distr: 1;
-		layouts: [vehicle_distributor_tilelayout_1, vehicle_distributor_tilelayout_2, vehicle_distributor_tilelayout_3];
-		spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
-		conflicting_ind_types: [];
-		random_sound_effects: [];
-		name: string(STR_IND_VEHICLE_DISTRIBUTOR);
-		prob_map_gen: 24;
-		prob_in_game: 12;
-		prospect_chance: 0.75;
-		fund_cost_multiplier: 15;
-		remove_cost_multiplier: 0;
-		remove_cost_multiplier: 0;
-		cargo_types: [accept_cargo("VEHI")];
-		nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_DISTRIBUTOR));
-	}
-        
-	graphics {
-		construction_probability: vehicle_distributor_switch_check_availability;
-		produce_cargo_arrival:    empty_produce; 
-		produce_256_ticks:        vehicle_distributor_switch_produce;
-		monthly_prod_change:      vehicle_distributor_switch_update_last_served_date;
-		random_prod_change:       CB_RESULT_IND_PROD_NO_CHANGE;
-		location_check:           vehicle_distributor_switch_location_check_industry_distance;
-		extra_text_fund:          vehicle_distributor_switch_extra_text_fund;
-		extra_text_industry:      return CB_RESULT_NO_TEXT;
-		cargo_subtype_display:    return CB_RESULT_IND_NO_TEXT_NO_AMOUNT;
-		build_prod_change:        initialize_last_served_date;
+switch(FEAT_INDUSTRIES, SELF, vehicle_distributor_switch_update_last_served_date_ext_vehicle,
+	[update_last_served_date(),
+	 STORE_PERM(incoming_cargo_waiting("VEHI") != 0 || incoming_cargo_waiting("VPTS") != 0 || incoming_cargo_waiting("TYRE") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+if (!param_extension_vehicle) {
+	item(FEAT_INDUSTRIES, vehicle_distributor, INDUSTRY_ID_VEHICLE_DISTRIBUTOR) {
+		property {
+			substitute: 0;
+			map_colour: 153;
+			life_type: IND_LIFE_TYPE_BLACK_HOLE;
+			min_cargo_distr: 1;
+			layouts: [vehicle_distributor_tilelayout_1, vehicle_distributor_tilelayout_2, vehicle_distributor_tilelayout_3];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_VEHICLE_DISTRIBUTOR);
+			prob_map_gen: 24;
+			prob_in_game: 12;
+			prospect_chance: 0.75;
+			fund_cost_multiplier: 15;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("VEHI")];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_DISTRIBUTOR));
+		}
+			
+		graphics {
+			construction_probability: vehicle_distributor_switch_check_availability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        vehicle_distributor_switch_produce;
+			monthly_prod_change:      vehicle_distributor_switch_update_last_served_date;
+			random_prod_change:       CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           vehicle_distributor_switch_location_check_industry_distance;
+			extra_text_fund:          vehicle_distributor_switch_extra_text_fund;
+			extra_text_industry:      return CB_RESULT_NO_TEXT;
+			cargo_subtype_display:    return CB_RESULT_IND_NO_TEXT_NO_AMOUNT;
+			build_prod_change:        initialize_last_served_date;
+		}
 	}
 }
-    
+
+if (param_extension_vehicle) {
+	item(FEAT_INDUSTRIES, vehicle_distributor, INDUSTRY_ID_VEHICLE_DISTRIBUTOR) {
+		property {
+			substitute: 0;
+			map_colour: 153;
+			life_type: IND_LIFE_TYPE_BLACK_HOLE;
+			min_cargo_distr: 1;
+			layouts: [vehicle_distributor_tilelayout_1, vehicle_distributor_tilelayout_2, vehicle_distributor_tilelayout_3];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_VEHICLE_DISTRIBUTOR);
+			prob_map_gen: 24;
+			prob_in_game: 12;
+			prospect_chance: 0.75;
+			fund_cost_multiplier: 15;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("VEHI"),accept_cargo("TYRE"),accept_cargo("VPTS")];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_DISTRIBUTOR));
+		}
+			
+		graphics {
+			construction_probability: vehicle_distributor_switch_check_availability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        vehicle_distributor_switch_produce_ext_vehicle;
+			monthly_prod_change:      vehicle_distributor_switch_update_last_served_date_ext_vehicle;
+			random_prod_change:       CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           vehicle_distributor_switch_location_check_industry_distance;
+			extra_text_fund:          vehicle_distributor_switch_extra_text_fund;
+			extra_text_industry:      return CB_RESULT_NO_TEXT;
+			cargo_subtype_display:    return CB_RESULT_IND_NO_TEXT_NO_AMOUNT;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
