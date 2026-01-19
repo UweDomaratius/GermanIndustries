@@ -165,7 +165,7 @@ produce(printing_works_produce,
 )
 
 switch(FEAT_INDUSTRIES, SELF, printing_works_switch_produce, 
-	[STORE_TEMP(incoming_cargo_waiting("WOOD"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	[STORE_TEMP(incoming_cargo_waiting("PAPR"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
      calculate_raw_material_usage(),
 	 calculate_total_production(),
 	 store_debug_production_data()
@@ -182,7 +182,7 @@ produce(printing_works_produce_ext_packaging,
 )
 
 switch(FEAT_INDUSTRIES, SELF, printing_works_switch_produce_ext_packaging, 
-	[STORE_TEMP(min(incoming_cargo_waiting("WOOD"),incoming_cargo_waiting("MNSP")),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	[STORE_TEMP(min(incoming_cargo_waiting("PAPR"),incoming_cargo_waiting("MNSP")),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
      calculate_raw_material_usage(),
 	 calculate_total_production(),
 	 store_debug_production_data()
@@ -190,7 +190,6 @@ switch(FEAT_INDUSTRIES, SELF, printing_works_switch_produce_ext_packaging,
 	printing_works_produce_ext_packaging;
 }
 
-// only show stockpile for WOOD and nothing else
 switch(FEAT_INDUSTRIES, SELF, printing_works_switch_cargo_subtype, getbits(extra_callback_info2, 16, 8)) {
 	PAPR: switch_cargo_subtype;
 	MNSP: switch_cargo_subtype;

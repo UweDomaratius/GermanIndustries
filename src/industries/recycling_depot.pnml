@@ -251,7 +251,7 @@ switch(FEAT_INDUSTRIES, SELF, recycling_depot_switch_location_check_industry_dis
 	    (industry_distance(INDUSTRY_ID_GLASS_WORKS) >= 32) &&
 		(industry_distance(INDUSTRY_ID_PAPER_MILL) >= 32) &&
 		(industry_distance(INDUSTRY_ID_SCRAP_YARD) >= 32) && 
-	    (industry_distance(INDUSTRY_ID_SCRAP_YARD) >= 16))]) {
+	    (industry_distance(INDUSTRY_ID_RECYCLING_DEPOT) >= 16))]) {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;
 }
