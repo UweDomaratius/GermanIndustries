@@ -325,30 +325,30 @@ STR_STATION_VEHICLE_FACTORY          :Vehicle Factory
 STR_STATION_WIRE_MILL                :Wire Mill
 
 # Industry window texts
-STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION :Transport more than 60% of the produced cargo to increase production.
-STR_INDUSTRY_PREREQ_KEEP_PRODUCTION     :Industry is at maximum production. Transport more than 60% of the produced cargo to keep this production level.
+STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION :{BLACK}Transport more than 60% of the produced cargo to increase production.
+STR_INDUSTRY_PREREQ_KEEP_PRODUCTION     :{BLACK}Industry is at maximum production. Transport more than 60% of the produced cargo to keep this production level.
 # Organic industries (forests, farms, ...) display the info on production level requirements.
 STR_ORGANIC_INDUSTRY_TEXT:{STRING}{STRING}
 # Extractive Industries (mines) display both the info on production level requirements, as well as the remaining resources.
-STR_EXTRACTIVE_INDUSTRY_TEXT:{STRING}{STRING}{}About {YELLOW}{COMMA} kt {BLACK} remain (est. {YELLOW}{COMMA} years{BLACK} at current production rate)
+STR_EXTRACTIVE_INDUSTRY_TEXT:{STRING}{STRING}{}{BLACK}About {YELLOW}{COMMA} kt {BLACK} remain (est. {YELLOW}{COMMA} years{BLACK} at current production rate)
 # Secondary industries with optional input requirements
-STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO :Industry requires the raw materials printed in black to produce anything. Raw materials printed in white will increase the maximum production level.
-STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO_ANY :Industry starts producing as soon as any raw material printed in black is available. Maximum production level is limited by the number of different raw materials available. Raw materials printed in white will further increase the maximum production level.
-STR_INDUSTRY_NEEDS_ANY_INPUT :Industry starts producing as soon as any raw material is available. Maximum production level is limited by the number of different raw materials available.
+STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO :{BLACK}Industry requires the raw materials printed in black to produce anything. Raw materials printed in white will increase the maximum production level.
+STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO_ANY :{BLACK}Industry starts producing as soon as any raw material printed in black is available. Maximum production level is limited by the number of different raw materials available. Raw materials printed in white will further increase the maximum production level.
+STR_INDUSTRY_NEEDS_ANY_INPUT :{BLACK}Industry starts producing as soon as any raw material is available. Maximum production level is limited by the number of different raw materials available.
 # Text that has to do with energy production, power plant displays how much power is produced and demanded,
 # Industries show much power they need for their current production and if their demand is met
-STR_POWER_PLANT_TEXT:Power produced {YELLOW}{COMMA}{BLACK}, demand {YELLOW}{COMMA}{BLACK}
-STR_INDUSTRY_ELECTRICITY_TEXT :Industry can produce {YELLOW}{COMMA}{BLACK} items ({YELLOW}{COMMA}{BLACK}% of maximum production){}Maximum production requires {YELLOW}{COMMA}{BLACK} power.{}{STRING}
+STR_POWER_PLANT_TEXT:{BLACK}Power produced {YELLOW}{COMMA}{BLACK}, demand {YELLOW}{COMMA}{BLACK}
+STR_INDUSTRY_ELECTRICITY_TEXT :{BLACK}Industry can produce {YELLOW}{COMMA}{BLACK} items ({YELLOW}{COMMA}{BLACK}% of maximum production){}Maximum production requires {YELLOW}{COMMA}{BLACK} power.{}{STRING}
 STR_INDUSTRY_NO_POWER :{RED}No power available, production stopped!
 STR_INDUSTRY_NOT_ENOUGH_POWER :{YELLOW}Not enough power available, production reduced!
 STR_INDUSTRY_ENOUGH_POWER :{GREEN}Enough power available.
 # Custom texts for industries
-STR_ACID_PLANT_HCL_SULP :Industry requires either sulphur or both hydrogen and chlorine to produce anything. Production level will increase if all three are available.
-STR_ACID_PLANT_HCL_SULP_NH3 :Industry requires sulphur + oxygen or hydrogen + chlorine or ammonia + oxygen to produce anything. Production level will increase if all five are available.
-STR_ACID_PLANT_SULP_NH3 :Industry requires sulphur + oxygen or ammonia + oxygen to produce anything. Production level will increase if all three are available.
-STR_FOUNDRY_FORGE_ALUM :Industry requires coke + steel or coke + aluminium to produce anything. Production level will increase if all three are available.
+STR_ACID_PLANT_HCL_SULP :{BLACK}Industry requires either sulphur or both hydrogen and chlorine to produce anything. Production level will increase if all three are available.
+STR_ACID_PLANT_HCL_SULP_NH3 :{BLACK}Industry requires sulphur + oxygen or hydrogen + chlorine or ammonia + oxygen to produce anything. Production level will increase if all five are available.
+STR_ACID_PLANT_SULP_NH3 :{BLACK}Industry requires sulphur + oxygen or ammonia + oxygen to produce anything. Production level will increase if all three are available.
+STR_FOUNDRY_FORGE_ALUM :{BLACK}Industry requires coke + steel or coke + aluminium to produce anything. Production level will increase if all three are available.
 
-STR_INDUSTRY_ELECTRICITY_OPTIONAL_CARGO_TEXT :Industry can produce {YELLOW}{COMMA}{BLACK} items ({YELLOW}{COMMA}{BLACK}% of maximum production){}Maximum production requires {YELLOW}{COMMA}{BLACK} power.{}{STRING}{}{BLACK}{STRING}
+STR_INDUSTRY_ELECTRICITY_OPTIONAL_CARGO_TEXT :{BLACK}Industry can produce {YELLOW}{COMMA}{BLACK} items ({YELLOW}{COMMA}{BLACK}% of maximum production){}Maximum production requires {YELLOW}{COMMA}{BLACK} power.{}{STRING}{}{BLACK}{STRING}
 
 # Funding window text
 STR_INDUSTRY_NOT_AVAILABLE_BEFORE :{}{BLACK}Industry not available before {STRING}.

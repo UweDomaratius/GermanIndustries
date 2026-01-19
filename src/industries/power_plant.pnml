@@ -464,12 +464,12 @@ switch(FEAT_INDUSTRIES, SELF, power_plant_switch_produce,
 	power_plant_set_power_available;
 }
 
-// about 1% sulphur from burning coal/oil
+// about 1% sulphur from burning coal/oil - increased for playability
 produce(power_plant_produce_ext_coke_sulphur,
 	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
 	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
 	],
-	[SULP: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT)*1/100,1) : 0;],
+	[SULP: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT)*5/100,1) : 0;],
 	0
 )
 
@@ -565,13 +565,13 @@ switch(FEAT_INDUSTRIES, SELF, power_plant_switch_produce_ext_fruits,
 	power_plant_set_power_available_ext_fruits;
 }
 
-// about 1% sulphur from burning coal/oil
+// about 1% sulphur from burning coal/oil, increased for playability
 produce(power_plant_produce_ext_coke_sulphur_ext_fruits,
 	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
 	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
 	 BIOM: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
 	],
-	[SULP: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT)*1/100,1) : 0;],
+	[SULP: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT)*5/100,1) : 0;],
 	0
 )
 
