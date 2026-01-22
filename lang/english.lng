@@ -51,6 +51,8 @@ STR_PARAM_EXT_METALLURGY :Extension set "Metallurgy"
 STR_PARAM_EXT_METALLURGY_DESC :Adds industries and cargos related to heavy industries and production of sheets, cables and other metal-based products.
 STR_PARAM_EXT_RECYCLING :Extension set "Recycling"
 STR_PARAM_EXT_RECYCLING_DESC :Adds industries and cargos related to the recycling of scrap materials.
+STR_PARAM_EXT_VEHICLE :Extension set "Vehicle Industries"
+STR_PARAM_EXT_VEHICLE_DESC :Adds industries and cargos related to the creation of vehicles.
 
 STR_TOWN    :{STRING}
 STR_STATION :{STRING} {STRING}
@@ -101,6 +103,7 @@ STR_CARGO_NAME_PLASTICS           :Plastics
 STR_CARGO_NAME_PYRITE_ORE         :Pyrite Ore
 STR_CARGO_NAME_QUICKLIME          :Quicklime
 STR_CARGO_NAME_RECYCLABLES        :Recyclables
+STR_CARGO_NAME_RUBBER             :Rubber
 STR_CARGO_NAME_SALT               :Salt
 STR_CARGO_NAME_SAND               :Sand
 STR_CARGO_NAME_SCRAP_METAL        :Scrap Metal
@@ -108,8 +111,13 @@ STR_CARGO_NAME_SODA               :Soda Ash
 STR_CARGO_NAME_SULPHUR            :Sulphur
 STR_CARGO_NAME_TEXTILES           :Textiles
 STR_CARGO_NAME_TIMBER             :Timber
+STR_CARGO_NAME_TYRE               :Tyres
+STR_CARGO_NAME_VEHICLE_BODY       :Vehicle Bodies
+STR_CARGO_NAME_VEHICLE_ENGINE     :Vehicle Engines
+STR_CARGO_NAME_VEHICLE_PARTS      :Vehicle Parts
 STR_CARGO_NAME_VEHICLES           :Vehicles
 STR_CARGO_NAME_WOOL               :Wool
+STR_CARGO_NAME_ZINC               :Zinc
 
 # cargo long form ("x units of cargo")
 STR_QUANTITY_ACID                 :{WEIGHT} of acid
@@ -147,6 +155,7 @@ STR_QUANTITY_PLASTICS             :{WEIGHT} of plastics
 STR_QUANTITY_PYRITE_ORE           :{WEIGHT} of pyrite ore
 STR_QUANTITY_QUICKLIME            :{WEIGHT} of quicklime
 STR_QUANTITY_RECYCLABLES          :{WEIGHT} of recyclables
+STR_QUANTITY_RUBBER               :{WEIGHT} of rubber
 STR_QUANTITY_SALT                 :{WEIGHT} of salt
 STR_QUANTITY_SAND                 :{WEIGHT} of sand
 STR_QUANTITY_SCRAP_METAL          :{WEIGHT} of scrap metal
@@ -154,8 +163,13 @@ STR_QUANTITY_SODA                 :{WEIGHT} of soda ash
 STR_QUANTITY_SULPHUR              :{WEIGHT} of sulphur
 STR_QUANTITY_TEXTILES             :{WEIGHT} of textiles
 STR_QUANTITY_TIMBER               :{WEIGHT} of timber
+STR_QUANTITY_TYRE                 :{WEIGHT} of tyres
+STR_QUANTITY_VEHICLE_BODY         :{WEIGHT} of vehicle bodies
+STR_QUANTITY_VEHICLE_ENGINE       :{WEIGHT} of vehicle engines
+STR_QUANTITY_VEHICLE_PARTS        :{WEIGHT} of vehicle parts
 STR_QUANTITY_VEHICLES             :{COMMA} vehicle{P "" s}
 STR_QUANTITY_WOOL                 :{WEIGHT} of wool
+STR_QUANTITY_ZINC                 :{WEIGHT} of zinc
 
 # cargo abbreviation (used e.g. in station overview list to denote waiting cargo)
 STR_CID_ACID                      :{TINYFONT}ACID
@@ -194,6 +208,7 @@ STR_CID_PLASTICS                  :{TINYFONT}PLAS
 STR_CID_PYRITE_ORE                :{TINYFONT}PORE
 STR_CID_QUICKLIME                 :{TINYFONT}QLME
 STR_CID_RECYCLABLES               :{TINYFONT}RCYC
+STR_CID_RUBBER                    :{TINYFONT}RUBR
 STR_CID_SALT                      :{TINYFONT}SALT
 STR_CID_SAND                      :{TINYFONT}SAND
 STR_CID_SCRAP_METAL               :{TINYFONT}SCMT
@@ -201,8 +216,13 @@ STR_CID_SODA                      :{TINYFONT}SODA
 STR_CID_SULPHUR                   :{TINYFONT}SULP
 STR_CID_TEXTILES                  :{TINYFONT}TEXT
 STR_CID_TIMBER                    :{TINYFONT}WDPR
+STR_CID_TYRE                      :{TINYFONT}TYRE
+STR_CID_VEHICLE_BODY              :{TINYFONT}VBOD
+STR_CID_VEHICLE_ENGINE            :{TINYFONT}VENG
+STR_CID_VEHICLE_PARTS             :{TINYFONT}VPTS
 STR_CID_VEHICLES                  :{TINYFONT}VEHI
 STR_CID_WOOL                      :{TINYFONT}WOOL
+STR_CID_ZINC                      :{TINYFONT}ZINC
 
 # Industries
 STR_IND_ACID_PLANT             :Acid Plant
@@ -253,9 +273,14 @@ STR_IND_SODA_PLANT             :Solvay Plant
 STR_IND_STEAMCRACKER           :Steamcracker
 STR_IND_STEAMREFORMER          :Steamreformer
 STR_IND_STOCKYARD              :Meatpacking Plant
+STR_IND_SYNTHETIC_RUBBER_PLANT :Synthetic Rubber Plant
 STR_IND_TEXTILE_MILL           :Textile Mill
+STR_IND_TYRE_PLANT             :Tyre Plant
+STR_IND_VEHICLE_BODY_PLANT     :Vehicle Body Factory
 STR_IND_VEHICLE_DISTRIBUTOR    :Vehicle Distributor
+STR_IND_VEHICLE_ENGINE_PLANT   :Engine Factory
 STR_IND_VEHICLE_FACTORY        :Vehicle Factory
+STR_IND_VEHICLE_PARTS_PLANT    :Component Factory
 STR_IND_WIRE_MILL              :Wire Mill
 
 # station names related to industries
@@ -319,9 +344,14 @@ STR_STATION_SODA_PLANT               :Solvay Plant
 STR_STATION_STEAMCRACKER             :Steamcracker
 STR_STATION_STEAMREFORMER            :Steamreformer
 STR_STATION_STOCKYARD                :Stockyard
+STR_STATION_SYNTHETIC_RUBBER_PLANT   :Synthetic Rubber Plant
 STR_STATION_TEXTILE_MILL             :Textile Mill
+STR_STATION_TYRE_PLANT               :Tyre Plant
+STR_STATION_VEHICLE_BODY_PLANT       :Vehicle Body Factory
 STR_STATION_VEHICLE_DISTRIBUTOR      :Vehicle Distributor
+STR_STATION_VEHICLE_ENGINE_PLANT     :Engine Factory
 STR_STATION_VEHICLE_FACTORY          :Vehicle Factory
+STR_STATION_VEHICLE_PARTS_PLANT      :Component Factory
 STR_STATION_WIRE_MILL                :Wire Mill
 
 # Industry window texts
@@ -369,3 +399,4 @@ STR_ERR_EXTENSION_SULPHUR_COKE_REQUIRES_OTHER_EXTENSIONS:Extension "Coke and Sul
 STR_ERR_EXTENSION_AMMONIA_REQUIRES_INORGANIC_CHEMISTRY_BUILDING_MATERIALS:Extension "Ammonia" requires extensions "Building industries" and "Basic inorganic chemistry" to be activated.
 STR_ERR_EXTENSION_FRUITS_REQUIRES_ORGANIC_CHEMISTRY:Extension "Fruits and Bio Energy" requires extension "Organic chemistry" to be activated.
 STR_ERR_EXTENSION_METALLURGY_REQUIRES_COKE_SULPHUR:Extension "Metallurgy" requires extension "Coke and sulphur" to be activated.
+STR_ERR_EXTENSION_VEHICLE_REQUIRES_COKE_SULPHUR:Extension "Vehicle Industries" requires extension "Coke and sulphur" to be activated.

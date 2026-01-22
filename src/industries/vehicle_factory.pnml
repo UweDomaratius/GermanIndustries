@@ -611,6 +611,16 @@ produce(vehicle_factory_produce,
 	0 // do not run again
 )
 
+produce(vehicle_factory_produce_ext_vehicle,
+	[VBOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*70/100,1) : 0;
+	 VENG: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*30/100,1) : 0;
+	 TYRE: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*30/100,1) : 0;
+	 VPTS: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*30/100,1) : 0;
+	 ],	 
+	[VEHI: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100 : 0;],
+	0 // do not run again
+)
+
 produce(vehicle_factory_produce_ext_aluminium,
 	[STEL: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*50/100,1) : 0;
 	 PLAS: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*20/100,1) : 0;
@@ -729,6 +739,16 @@ switch(FEAT_INDUSTRIES, PARENT, vehicle_factory_update_city_persistent_storage,
 )
 {
 	vehicle_factory_produce;
+}
+
+switch(FEAT_INDUSTRIES, PARENT, vehicle_factory_update_city_persistent_storage_ext_vehicle,
+	[
+		STORE_PERM(LOAD_TEMP(TEMP_REGISTER_POWER_DEMAND)+LOAD_PERM(PERM_REGISTER_CITY_POWER_DEMAND), PERM_REGISTER_CITY_POWER_DEMAND),
+		STORE_PERM(LOAD_PERM(PERM_REGISTER_CITY_POWER_AVAILABLE) - LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT), PERM_REGISTER_CITY_POWER_AVAILABLE)
+	]
+)
+{
+	vehicle_factory_produce_ext_vehicle;
 }
 
 switch(FEAT_INDUSTRIES, PARENT, vehicle_factory_update_city_persistent_storage_ext_aluminium,
@@ -854,6 +874,21 @@ switch(FEAT_INDUSTRIES, SELF, vehicle_factory_update_production_according_to_pow
 	])
 {
 	vehicle_factory_update_city_persistent_storage;
+}
+
+switch(FEAT_INDUSTRIES, SELF, vehicle_factory_update_production_according_to_power_ext_vehicle,
+	[
+	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT), PERM_REGISTER_POWER_DEMAND),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT), TEMP_REGISTER_POWER_DEMAND),
+	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT),
+	 // reduce amount of production if not enough electricity is available
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),(city_get_power_available() > LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)) ? city_get_power_available() : 
+		city_get_power_available()/city_get_electric_industries_town_count()), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT), PERM_REGISTER_PRODUCTION_AMOUNT),
+	 STORE_PERM((LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * 100) / LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT), PERM_REGISTER_PRODUCTION_PERCENTAGE),
+	])
+{
+	vehicle_factory_update_city_persistent_storage_ext_vehicle;
 }
 
 switch(FEAT_INDUSTRIES, SELF, vehicle_factory_update_production_according_to_power_ext_aluminium,
@@ -1038,6 +1073,18 @@ switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_produce,
 	]) {
 	1: vehicle_factory_update_production_according_to_power;
 	vehicle_factory_produce;
+}
+
+switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_produce_ext_vehicle, 
+	[STORE_TEMP(min(incoming_cargo_waiting("VBOD"),incoming_cargo_waiting("VENG"),incoming_cargo_waiting("TYRE"),incoming_cargo_waiting("VPTS")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 
+	 store_debug_production_data(),
+	 param_electricity_needed
+	]) {
+	1: vehicle_factory_update_production_according_to_power_ext_vehicle;
+	vehicle_factory_produce_ext_vehicle;
 }
 
 switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_produce_ext_aluminium, 
@@ -1277,6 +1324,10 @@ switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_cargo_subtype, getbits(extr
 	STSH: switch_cargo_subtype;
 	ENSP: switch_cargo_subtype;
 	PLAS: switch_cargo_subtype_white;
+	TYRE: switch_cargo_subtype;
+	VBOD: switch_cargo_subtype;
+	VENG: switch_cargo_subtype;
+	VPTS: switch_cargo_subtype;
 	return 0x3800 + string(STR_EMPTY);
 }
 
@@ -1400,7 +1451,17 @@ switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_update_last_served_date_ext
 	check_secondary_industry_closure();
 }
 
-if (!param_extension_aluminium && !param_extension_painting_industries && !param_extension_glass && !param_extension_metallurgy) {
+switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_update_last_served_date_ext_vehicle,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("VEHI") != 0 || last_month_production("VEHI") != 0 || 
+		incoming_cargo_waiting("VBOD") != 0 || incoming_cargo_waiting("VENG") || incoming_cargo_waiting("TYRE") != 0 || incoming_cargo_waiting("VPTS") != 0 ||
+		this_month_transported("VEHI") != 0 || last_month_transported("VEHI") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+if (!param_extension_aluminium && !param_extension_painting_industries && !param_extension_glass && !param_extension_metallurgy && !param_extension_vehicle) {
 	item(FEAT_INDUSTRIES, vehicle_factory, INDUSTRY_ID_VEHICLE_FACTORY) {
 		property {
 			substitute: 0;
@@ -1435,7 +1496,7 @@ if (!param_extension_aluminium && !param_extension_painting_industries && !param
 		}
 	}
 }
-if (param_extension_aluminium && !param_extension_painting_industries && !param_extension_glass && !param_extension_metallurgy) {
+if (param_extension_aluminium && !param_extension_painting_industries && !param_extension_glass && !param_extension_metallurgy && !param_extension_vehicle) {
 	item(FEAT_INDUSTRIES, vehicle_factory, INDUSTRY_ID_VEHICLE_FACTORY) {
 		property {
 			substitute: 0;
@@ -1470,7 +1531,7 @@ if (param_extension_aluminium && !param_extension_painting_industries && !param_
 		}
 	}
 }
-if (!param_extension_aluminium && param_extension_painting_industries && !param_extension_glass && !param_extension_metallurgy) {
+if (!param_extension_aluminium && param_extension_painting_industries && !param_extension_glass && !param_extension_metallurgy && !param_extension_vehicle) {
 	item(FEAT_INDUSTRIES, vehicle_factory, INDUSTRY_ID_VEHICLE_FACTORY) {
 		property {
 			substitute: 0;
@@ -1506,7 +1567,7 @@ if (!param_extension_aluminium && param_extension_painting_industries && !param_
 	}
 }
 
-if (param_extension_aluminium && param_extension_painting_industries && !param_extension_glass && !param_extension_metallurgy) {
+if (param_extension_aluminium && param_extension_painting_industries && !param_extension_glass && !param_extension_metallurgy && !param_extension_vehicle) {
 	item(FEAT_INDUSTRIES, vehicle_factory, INDUSTRY_ID_VEHICLE_FACTORY) {
 		property {
 			substitute: 0;
@@ -1542,7 +1603,7 @@ if (param_extension_aluminium && param_extension_painting_industries && !param_e
 	}
 }
 
-if (!param_extension_aluminium && !param_extension_painting_industries && param_extension_glass && !param_extension_metallurgy) {
+if (!param_extension_aluminium && !param_extension_painting_industries && param_extension_glass && !param_extension_metallurgy && !param_extension_vehicle) {
 	item(FEAT_INDUSTRIES, vehicle_factory, INDUSTRY_ID_VEHICLE_FACTORY) {
 		property {
 			substitute: 0;
@@ -1577,7 +1638,7 @@ if (!param_extension_aluminium && !param_extension_painting_industries && param_
 		}
 	}
 }
-if (param_extension_aluminium && !param_extension_painting_industries && param_extension_glass && !param_extension_metallurgy) {
+if (param_extension_aluminium && !param_extension_painting_industries && param_extension_glass && !param_extension_metallurgy && !param_extension_vehicle) {
 	item(FEAT_INDUSTRIES, vehicle_factory, INDUSTRY_ID_VEHICLE_FACTORY) {
 		property {
 			substitute: 0;
@@ -1612,7 +1673,7 @@ if (param_extension_aluminium && !param_extension_painting_industries && param_e
 		}
 	}
 }
-if (!param_extension_aluminium && param_extension_painting_industries && param_extension_glass && !param_extension_metallurgy) {
+if (!param_extension_aluminium && param_extension_painting_industries && param_extension_glass && !param_extension_metallurgy && !param_extension_vehicle) {
 	item(FEAT_INDUSTRIES, vehicle_factory, INDUSTRY_ID_VEHICLE_FACTORY) {
 		property {
 			substitute: 0;
@@ -1648,7 +1709,7 @@ if (!param_extension_aluminium && param_extension_painting_industries && param_e
 	}
 }
 
-if (param_extension_aluminium && param_extension_painting_industries && param_extension_glass && !param_extension_metallurgy) {
+if (param_extension_aluminium && param_extension_painting_industries && param_extension_glass && !param_extension_metallurgy && !param_extension_vehicle) {
 	item(FEAT_INDUSTRIES, vehicle_factory, INDUSTRY_ID_VEHICLE_FACTORY) {
 		property {
 			substitute: 0;
@@ -1684,7 +1745,7 @@ if (param_extension_aluminium && param_extension_painting_industries && param_ex
 	}
 }
 
-if (!param_extension_painting_industries && !param_extension_glass && param_extension_metallurgy) {
+if (!param_extension_painting_industries && !param_extension_glass && param_extension_metallurgy && !param_extension_vehicle) {
 	item(FEAT_INDUSTRIES, vehicle_factory, INDUSTRY_ID_VEHICLE_FACTORY) {
 		property {
 			substitute: 0;
@@ -1720,7 +1781,7 @@ if (!param_extension_painting_industries && !param_extension_glass && param_exte
 	}
 }
 
-if (param_extension_painting_industries && !param_extension_glass && param_extension_metallurgy) {
+if (param_extension_painting_industries && !param_extension_glass && param_extension_metallurgy && !param_extension_vehicle) {
 	item(FEAT_INDUSTRIES, vehicle_factory, INDUSTRY_ID_VEHICLE_FACTORY) {
 		property {
 			substitute: 0;
@@ -1756,7 +1817,7 @@ if (param_extension_painting_industries && !param_extension_glass && param_exten
 	}
 }
 
-if (!param_extension_painting_industries && param_extension_glass && param_extension_metallurgy) {
+if (!param_extension_painting_industries && param_extension_glass && param_extension_metallurgy && !param_extension_vehicle) {
 	item(FEAT_INDUSTRIES, vehicle_factory, INDUSTRY_ID_VEHICLE_FACTORY) {
 		property {
 			substitute: 0;
@@ -1791,7 +1852,7 @@ if (!param_extension_painting_industries && param_extension_glass && param_exten
 		}
 	}
 }
-if (param_extension_painting_industries && param_extension_glass && param_extension_metallurgy) {
+if (param_extension_painting_industries && param_extension_glass && param_extension_metallurgy && !param_extension_vehicle) {
 	item(FEAT_INDUSTRIES, vehicle_factory, INDUSTRY_ID_VEHICLE_FACTORY) {
 		property {
 			substitute: 0;
@@ -1817,6 +1878,41 @@ if (param_extension_painting_industries && param_extension_glass && param_extens
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        vehicle_factory_switch_produce_ext_painting_industries_ext_glass_ext_metallurgy;
 			monthly_prod_change:      vehicle_factory_switch_update_last_served_date_ext_painting_industries_ext_glass_ext_metallurgy;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           vehicle_factory_switch_location_check_industry_distance;
+			extra_text_fund:          vehicle_factory_switch_extra_text_fund;
+			extra_text_industry:      vehicle_factory_switch_extra_text;
+			cargo_subtype_display:    vehicle_factory_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+if (param_extension_vehicle) {
+	item(FEAT_INDUSTRIES, vehicle_factory, INDUSTRY_ID_VEHICLE_FACTORY) {
+		property {
+			substitute: 0;
+			map_colour: 145;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [vehicle_factory_tilelayout_1,vehicle_factory_tilelayout_2,vehicle_factory_tilelayout_3,vehicle_factory_tilelayout_4];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_VEHICLE_FACTORY);
+			prob_map_gen: 5;
+			prob_in_game: 1;
+			fund_cost_multiplier: 145;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("VBOD"),accept_cargo("VENG"),accept_cargo("TYRE"),accept_cargo("VPTS"),produce_cargo("VEHI",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_FACTORY));
+		}
+			
+		graphics {
+			construction_probability: vehicle_factory_switch_check_availability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        vehicle_factory_switch_produce_ext_vehicle;
+			monthly_prod_change:      vehicle_factory_switch_update_last_served_date_ext_vehicle;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           vehicle_factory_switch_location_check_industry_distance;
 			extra_text_fund:          vehicle_factory_switch_extra_text_fund;

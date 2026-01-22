@@ -950,6 +950,7 @@ switch(FEAT_INDUSTRIES, SELF, ore_smelter_switch_location_check_industry_distanc
 		(industry_distance(INDUSTRY_ID_COPPER_SMELTER) >= 32) && 
 		(industry_distance(INDUSTRY_ID_COKE_OVEN) >= 32) && 
 		(industry_distance(INDUSTRY_ID_CRYO_PLANT) >= 32) && 
+		(industry_distance(INDUSTRY_ID_VEHICLE_BODY_PLANT) >= 32) &&
 	    (industry_distance(INDUSTRY_ID_ORE_SMELTER) >= 16)))]) {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;
@@ -1061,6 +1062,116 @@ switch(FEAT_INDUSTRIES, SELF, ore_smelter_switch_produce_ext_painting_industries
 	ore_smelter_produce_ext_painting_industries_ext_ammonia;
 }
 
+// 6 CuFeS2 + 10 O2 -> 3Cu2S + 2FeS + 2Fe2O3 + 7 SO2
+produce(ore_smelter_produce_ext_vehicle,
+	[COKE: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),1) : 0;
+	 PORE: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),1) : 0;
+	 ],
+	[IORE: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*30/100,1) : 0;
+	 SULP: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*35/100,1) : 0;
+	 ZINC: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*25/100,1) : 0;
+	],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, ore_smelter_switch_produce_ext_vehicle, 
+	[STORE_TEMP(min(incoming_cargo_waiting("COKE"),incoming_cargo_waiting("PORE")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 STORE_TEMP(min(incoming_cargo_waiting("COKE"),incoming_cargo_waiting("PORE")), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+
+	 store_debug_production_data()
+	]) {
+	ore_smelter_produce_ext_vehicle;
+}
+
+produce(ore_smelter_produce_ext_painting_industries_ext_vehicle,
+	[COKE: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),1) : 0;
+	 PORE: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),1) : 0;
+	 ],
+	[IORE: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*20/100,1) : 0;
+	 SULP: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*30/100,1) : 0;
+	 CORE: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*30/100,1) : 0;
+	 ZINC: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*20/100,1) : 0;
+	],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, ore_smelter_switch_produce_ext_painting_industries_ext_vehicle, 
+	[STORE_TEMP(min(incoming_cargo_waiting("COKE"),incoming_cargo_waiting("PORE")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 STORE_TEMP(min(incoming_cargo_waiting("COKE"),incoming_cargo_waiting("PORE")), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+
+	 store_debug_production_data()
+	]) {
+	ore_smelter_produce_ext_painting_industries_ext_vehicle;
+}
+
+// 6 CuFeS2 + 10 O2 -> 3Cu2S + 2FeS + 2Fe2O3 + 7 SO2
+produce(ore_smelter_produce_ext_ammonia_ext_vehicle,
+	[COKE: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),1) : 0;
+	 PORE: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),1) : 0;
+	 O2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
+	 ],
+	[IORE: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*30/100,1) : 0;
+	 SULP: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*35/100,1) : 0;
+	 ZINC: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*25/100,1) : 0;
+	],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, ore_smelter_switch_produce_ext_ammonia_ext_vehicle, 
+	[STORE_TEMP(min(incoming_cargo_waiting("COKE"),incoming_cargo_waiting("PORE")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 STORE_TEMP(min(incoming_cargo_waiting("COKE"),incoming_cargo_waiting("PORE")), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("O2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	 
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW2),
+
+	 store_debug_production_data()
+	]) {
+	ore_smelter_produce_ext_ammonia_ext_vehicle;
+}
+
+produce(ore_smelter_produce_ext_painting_industries_ext_ammonia_ext_vehicle,
+	[COKE: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),1) : 0;
+	 PORE: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),1) : 0;
+	 O2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
+	 ],
+	[IORE: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*20/100,1) : 0;
+	 SULP: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*30/100,1) : 0;
+	 CORE: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*30/100,1) : 0;
+	 ZINC: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*20/100,1) : 0;
+	],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, ore_smelter_switch_produce_ext_painting_industries_ext_ammonia_ext_vehicle, 
+	[STORE_TEMP(min(incoming_cargo_waiting("COKE"),incoming_cargo_waiting("PORE")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 STORE_TEMP(min(incoming_cargo_waiting("COKE"),incoming_cargo_waiting("PORE")), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("O2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	 
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW2),
+
+	 store_debug_production_data()
+	]) {
+	ore_smelter_produce_ext_painting_industries_ext_ammonia_ext_vehicle;
+}
+
 switch(FEAT_INDUSTRIES, SELF, ore_smelter_switch_cargo_subtype, getbits(extra_callback_info2, 16, 8)) {
 	COKE: switch_cargo_subtype;
 	PORE: switch_cargo_subtype;
@@ -1101,7 +1212,7 @@ switch(FEAT_INDUSTRIES, SELF, ore_smelter_switch_check_availability,
 	get_construction_probability;
 }
 
-if (param_extension_coke_sulphur && !param_extension_painting_industries && !param_extension_ammonia) {
+if (param_extension_coke_sulphur && !param_extension_painting_industries && !param_extension_ammonia && !param_extension_vehicle) {
 	item(FEAT_INDUSTRIES, ore_smelter, INDUSTRY_ID_ORE_SMELTER) {
 		property {
 			substitute: 0;
@@ -1136,7 +1247,7 @@ if (param_extension_coke_sulphur && !param_extension_painting_industries && !par
 	}
 }
 
-if (param_extension_coke_sulphur && param_extension_painting_industries && !param_extension_ammonia) {
+if (param_extension_coke_sulphur && param_extension_painting_industries && !param_extension_ammonia && !param_extension_vehicle) {
 	item(FEAT_INDUSTRIES, ore_smelter, INDUSTRY_ID_ORE_SMELTER) {
 		property {
 			substitute: 0;
@@ -1171,7 +1282,7 @@ if (param_extension_coke_sulphur && param_extension_painting_industries && !para
 	}
 }
 
-if (param_extension_coke_sulphur && !param_extension_painting_industries && param_extension_ammonia) {
+if (param_extension_coke_sulphur && !param_extension_painting_industries && param_extension_ammonia && !param_extension_vehicle) {
 	item(FEAT_INDUSTRIES, ore_smelter, INDUSTRY_ID_ORE_SMELTER) {
 		property {
 			substitute: 0;
@@ -1206,7 +1317,7 @@ if (param_extension_coke_sulphur && !param_extension_painting_industries && para
 	}
 }
 
-if (param_extension_coke_sulphur && param_extension_painting_industries && param_extension_ammonia) {
+if (param_extension_coke_sulphur && param_extension_painting_industries && param_extension_ammonia && !param_extension_vehicle) {
 	item(FEAT_INDUSTRIES, ore_smelter, INDUSTRY_ID_ORE_SMELTER) {
 		property {
 			substitute: 0;
@@ -1231,6 +1342,145 @@ if (param_extension_coke_sulphur && param_extension_painting_industries && param
 			construction_probability: ore_smelter_switch_check_availability;
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        ore_smelter_switch_produce_ext_painting_industries_ext_ammonia;
+			monthly_prod_change:      ore_smelter_switch_update_last_served_date_ext_ammonia;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           ore_smelter_switch_location_check_industry_distance;
+			cargo_subtype_display:    ore_smelter_switch_cargo_subtype;
+			extra_text_fund:          ore_smelter_switch_extra_text_fund;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+if (param_extension_coke_sulphur && !param_extension_painting_industries && !param_extension_ammonia && param_extension_vehicle) {
+	item(FEAT_INDUSTRIES, ore_smelter, INDUSTRY_ID_ORE_SMELTER) {
+		property {
+			substitute: 0;
+			map_colour: 17;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [ore_smelter_tilelayout_1, ore_smelter_tilelayout_2, ore_smelter_tilelayout_3, ore_smelter_tilelayout_4];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_ORE_SMELTER);
+			prob_map_gen: 5;
+			prob_in_game: 1;
+			fund_cost_multiplier: 120;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("COKE"),accept_cargo("PORE"),produce_cargo("IORE",0),produce_cargo("SULP",0),produce_cargo("ZINC",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_ORE_SMELTER));
+		}
+			
+		graphics {
+			construction_probability: ore_smelter_switch_check_availability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        ore_smelter_switch_produce_ext_vehicle;
+			monthly_prod_change:      ore_smelter_switch_update_last_served_date;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           ore_smelter_switch_location_check_industry_distance;
+			cargo_subtype_display:    ore_smelter_switch_cargo_subtype;
+			extra_text_fund:          ore_smelter_switch_extra_text_fund;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+
+if (param_extension_coke_sulphur && param_extension_painting_industries && !param_extension_ammonia && param_extension_vehicle) {
+	item(FEAT_INDUSTRIES, ore_smelter, INDUSTRY_ID_ORE_SMELTER) {
+		property {
+			substitute: 0;
+			map_colour: 17;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [ore_smelter_tilelayout_1, ore_smelter_tilelayout_2, ore_smelter_tilelayout_3, ore_smelter_tilelayout_4];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_ORE_SMELTER);
+			prob_map_gen: 5;
+			prob_in_game: 1;
+			fund_cost_multiplier: 120;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("COKE"),accept_cargo("PORE"),produce_cargo("IORE",0),produce_cargo("SULP",0),produce_cargo("CORE",0),produce_cargo("ZINC",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_ORE_SMELTER));
+		}
+			
+		graphics {
+			construction_probability: ore_smelter_switch_check_availability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        ore_smelter_switch_produce_ext_painting_industries_ext_vehicle;
+			monthly_prod_change:      ore_smelter_switch_update_last_served_date;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           ore_smelter_switch_location_check_industry_distance;
+			cargo_subtype_display:    ore_smelter_switch_cargo_subtype;
+			extra_text_fund:          ore_smelter_switch_extra_text_fund;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+
+if (param_extension_coke_sulphur && !param_extension_painting_industries && param_extension_ammonia && param_extension_vehicle) {
+	item(FEAT_INDUSTRIES, ore_smelter, INDUSTRY_ID_ORE_SMELTER) {
+		property {
+			substitute: 0;
+			map_colour: 17;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [ore_smelter_tilelayout_1, ore_smelter_tilelayout_2, ore_smelter_tilelayout_3, ore_smelter_tilelayout_4];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_ORE_SMELTER);
+			prob_map_gen: 5;
+			prob_in_game: 1;
+			fund_cost_multiplier: 120;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("COKE"),accept_cargo("PORE"),accept_cargo("O2__"),produce_cargo("IORE",0),produce_cargo("SULP",0),produce_cargo("ZINC",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_ORE_SMELTER));
+		}
+			
+		graphics {
+			construction_probability: ore_smelter_switch_check_availability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        ore_smelter_switch_produce_ext_ammonia_ext_vehicle;
+			monthly_prod_change:      ore_smelter_switch_update_last_served_date_ext_ammonia;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           ore_smelter_switch_location_check_industry_distance;
+			cargo_subtype_display:    ore_smelter_switch_cargo_subtype;
+			extra_text_fund:          ore_smelter_switch_extra_text_fund;
+			build_prod_change:        initialize_last_served_date;
+		}
+	}
+}
+
+if (param_extension_coke_sulphur && param_extension_painting_industries && param_extension_ammonia && param_extension_vehicle) {
+	item(FEAT_INDUSTRIES, ore_smelter, INDUSTRY_ID_ORE_SMELTER) {
+		property {
+			substitute: 0;
+			map_colour: 17;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [ore_smelter_tilelayout_1, ore_smelter_tilelayout_2, ore_smelter_tilelayout_3, ore_smelter_tilelayout_4];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_ORE_SMELTER);
+			prob_map_gen: 5;
+			prob_in_game: 1;
+			fund_cost_multiplier: 120;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("COKE"),accept_cargo("PORE"),accept_cargo("O2__"),produce_cargo("IORE",0),produce_cargo("SULP",0),produce_cargo("CORE",0),produce_cargo("ZINC",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_ORE_SMELTER));
+		}
+			
+		graphics {
+			construction_probability: ore_smelter_switch_check_availability;
+			produce_cargo_arrival:    empty_produce; 
+			produce_256_ticks:        ore_smelter_switch_produce_ext_painting_industries_ext_ammonia_ext_vehicle;
 			monthly_prod_change:      ore_smelter_switch_update_last_served_date_ext_ammonia;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           ore_smelter_switch_location_check_industry_distance;

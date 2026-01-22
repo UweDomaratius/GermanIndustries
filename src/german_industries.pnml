@@ -167,6 +167,13 @@ grf {
 			desc: string(STR_PARAM_EXT_RECYCLING_DESC);
 		}
 	}
+	param {
+		param_extension_vehicle {
+			type: bool;
+			name: string(STR_PARAM_EXT_VEHICLE);
+			desc: string(STR_PARAM_EXT_VEHICLE_DESC);
+		}
+	}
 }
 
 if (ttd_platform != PLATFORM_OPENTTD || openttd_version < version_openttd(14, 0)) {
@@ -210,6 +217,11 @@ if (param_extension_metallurgy && !param_extension_coke_sulphur) {
 	exit;
 }
 
+if (param_extension_vehicle && !param_extension_coke_sulphur) {
+	error(FATAL, string(STR_ERR_EXTENSION_VEHICLE_REQUIRES_COKE_SULPHUR));
+	exit;
+}
+
 // TODO: check for incompatible grfs
 
 // disable all default industries
@@ -232,5 +244,6 @@ cargotable {
 	O2__, N2__, NH3_, SASH, // ext ammonia
 	FRUT, BIOM, // ext fruits
 	ENSP, STSH, STWR, // ext metallurgy
-	SCMT, RCYC // ext recycling
+	SCMT, RCYC, // ext recycling
+	RUBR, ZINC, VBOD, VPTS, VENG, TYRE // ext vehicles
 }
