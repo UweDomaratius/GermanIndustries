@@ -483,12 +483,20 @@ tilelayout scrap_yard_tilelayout_3 {
 switch(FEAT_INDUSTRIES, SELF, scrap_yard_switch_location_check_industry_distance,
        [STORE_TEMP(0, TEMP_REGISTER_TOWN_MIN_DISTANCE),
 	    STORE_TEMP(24, TEMP_REGISTER_TOWN_MAX_DISTANCE),
+		count_industries(),
 	    (is_industry_funded_or_prospected()) || (distance_from_town() && 
-	    (industry_distance(INDUSTRY_ID_ALUMINIUM_PLANT) >= 32) &&
-		(industry_distance(INDUSTRY_ID_COPPER_SMELTER) >= 32) &&
-		(industry_distance(INDUSTRY_ID_INTEGRATED_STEEL_MILL) >= 32) && 
-		(industry_distance(INDUSTRY_ID_RECYCLING_DEPOT) >= 32) &&
-	    (industry_distance(INDUSTRY_ID_SCRAP_YARD) >= 16))]) {
+		(param_max_industries_per_type_on_map == 0 || param_max_industries_per_type_on_map > industry_count(INDUSTRY_ID_SCRAP_YARD)) &&
+		(param_max_industries_on_map == 0 || param_max_industries_on_map > LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_INDUSTRIES)) &&
+	    // distance to related producers
+		// distance to related consumers
+		(industry_distance(INDUSTRY_ID_ALUMINIUM_PLANT) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_COPPER_SMELTER) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_INTEGRATED_STEEL_MILL) >= param_min_dist_related_industry) && 
+		// distance between instances of same industry
+		(industry_distance(INDUSTRY_ID_RECYCLING_DEPOT) >= param_min_dist_related_industry) &&
+	    (industry_distance(INDUSTRY_ID_SCRAP_YARD) >= param_min_dist_same_industry)
+		
+		)]) {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;
 }
@@ -533,6 +541,7 @@ if (param_extension_recycling) {
 			produce_256_ticks:        scrap_yard_switch_produce;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           scrap_yard_switch_location_check_industry_distance;
+			build_prod_change:        initialize_last_served_date;
 		}
 	}
 }

@@ -388,6 +388,13 @@ switch (FEAT_INDUSTRYTILES, SELF, sawmill_switch_tile_location_check,
 	return CB_RESULT_LOCATION_DISALLOW;
 }
 
+switch(FEAT_INDUSTRYTILES, PARENT, sawmill_switch_tile_cargo_acceptance, 
+	[STORE_TEMP(incoming_cargo_waiting("WOOD") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0)
+	]
+) {
+	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0);
+}
+
 //////////////////////////////////////////////////////////////////////////////
 // industry tile and layout definition
 //////////////////////////////////////////////////////////////////////////////
@@ -395,11 +402,12 @@ item(FEAT_INDUSTRYTILES, sawmill_tile_1, INDUSTRY_TILE_ID_SAWMILL_1) {
 	property {
 		substitute:         0;
 		land_shape_flags:   0;
-		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+		accepted_cargos: [[WOOD,8]];
 		animation_triggers: bitmask();
 	}
 	graphics {
 		tile_check: sawmill_switch_tile_location_check;
+		cargo_amount_accept: sawmill_switch_tile_cargo_acceptance;
 		sawmill_switch_graphics;
 	}
 }
@@ -419,11 +427,21 @@ tilelayout sawmill_tilelayout_1 {
 switch(FEAT_INDUSTRIES, SELF, sawmill_switch_location_check_industry_distance,
        [STORE_TEMP(32, TEMP_REGISTER_TOWN_MIN_DISTANCE),
 	    STORE_TEMP(64, TEMP_REGISTER_TOWN_MAX_DISTANCE),
-	    (is_industry_funded_or_prospected()) || ((distance_from_town() && 
-	    (industry_distance(INDUSTRY_ID_FOREST) >= 32) &&
-	    (industry_distance(INDUSTRY_ID_FURNITURE_FACTORY) >= 32) &&
-		(industry_distance(INDUSTRY_ID_BUILDERS_YARD) >= 32) && 
-	    (industry_distance(INDUSTRY_ID_SAWMILL) >= 16)))]) {
+		count_industries(),
+	    (is_industry_funded_or_prospected()) || (distance_from_town() && 
+		(param_max_industries_per_type_on_map == 0 || param_max_industries_per_type_on_map > industry_count(INDUSTRY_ID_SAWMILL)) &&
+		(param_max_industries_on_map == 0 || param_max_industries_on_map > LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_INDUSTRIES)) &&
+		// distance to related producers
+		(industry_distance(INDUSTRY_ID_FOREST) >= param_min_dist_related_industry) &&
+		// distance to related consumers		
+	    (industry_distance(INDUSTRY_ID_BIOREFINERY) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_BUILDERS_YARD) >= param_min_dist_related_industry) && 
+	    (industry_distance(INDUSTRY_ID_FURNITURE_FACTORY) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_POWER_PLANT) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_STEAMREFORMER) >= param_min_dist_related_industry) &&		
+		// distance between instances of same industry
+	    (industry_distance(INDUSTRY_ID_SAWMILL) >= param_min_dist_same_industry)		
+		)]) {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;
 }
@@ -486,6 +504,19 @@ switch(FEAT_INDUSTRIES, SELF, sawmill_switch_update_last_served_date_ext_fruits,
 	check_secondary_industry_closure();
 }
 
+produce(sawmill_produce_cap_stockpile,
+	[WOOD: incoming_cargo_waiting("WOOD") > 60000 ? incoming_cargo_waiting("WOOD") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, sawmill_switch_stockpile_check, param_stockpile_cap)
+{
+	1: empty_produce;
+	sawmill_produce_cap_stockpile;
+}
+
 if (!param_extension_fruits) {
 	item(FEAT_INDUSTRIES, sawmill, INDUSTRY_ID_SAWMILL) {
 		property {
@@ -509,13 +540,14 @@ if (!param_extension_fruits) {
 			
 		graphics {
 			construction_probability: get_construction_probability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    sawmill_switch_stockpile_check; 
 			produce_256_ticks:        sawmill_switch_produce;
 			monthly_prod_change:      sawmill_switch_update_last_served_date;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           sawmill_switch_location_check_industry_distance;
 			cargo_subtype_display:    sawmill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -543,13 +575,14 @@ if (param_extension_fruits) {
 			
 		graphics {
 			construction_probability: get_construction_probability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    sawmill_switch_stockpile_check; 
 			produce_256_ticks:        sawmill_switch_produce_ext_fruits;
 			monthly_prod_change:      sawmill_switch_update_last_served_date_ext_fruits;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           sawmill_switch_location_check_industry_distance;
 			cargo_subtype_display:    sawmill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }

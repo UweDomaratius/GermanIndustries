@@ -399,6 +399,15 @@ switch (FEAT_INDUSTRYTILES, SELF, soda_plant_switch_tile_location_check,
 	return CB_RESULT_LOCATION_DISALLOW;
 }
 
+switch(FEAT_INDUSTRYTILES, PARENT, soda_plant_switch_tile_cargo_acceptance, 
+	[STORE_TEMP(incoming_cargo_waiting("NH3_") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0),
+	 STORE_TEMP(incoming_cargo_waiting("LIME") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL1),
+	 STORE_TEMP(incoming_cargo_waiting("SALT") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL2),
+	]
+) {
+	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0) + (LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL1) << 4) + (LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL2) << 8);
+}
+
 //////////////////////////////////////////////////////////////////////////////
 // industry tile and layout definition
 //////////////////////////////////////////////////////////////////////////////
@@ -406,13 +415,14 @@ item(FEAT_INDUSTRYTILES, soda_plant_tile, INDUSTRY_TILE_ID_SODA_PLANT) {
 	property {
 		substitute:         0;
 		land_shape_flags:   0;
-		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+		accepted_cargos: [[NH3_,8],[LIME,8],[SALT,8]];
 		animation_info: [ANIMATION_LOOPING, 7];
 		animation_speed: 3;
 		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
 	}
 	graphics {
 		tile_check: soda_plant_switch_tile_location_check;
+		cargo_amount_accept: soda_plant_switch_tile_cargo_acceptance;
 		soda_plant_switch_graphics;
 	}
 }
@@ -451,12 +461,21 @@ tilelayout soda_plant_tilelayout_3 {
 }
 
 switch(FEAT_INDUSTRIES, SELF, soda_plant_switch_location_check_industry_distance,
-	   (is_industry_funded_or_prospected()) || ((industry_distance(INDUSTRY_ID_AMMONIA_PLANT) >= 32) &&
-	   (industry_distance(INDUSTRY_ID_GLASS_WORKS) >= 32) &&
-	   (industry_distance(INDUSTRY_TILE_ID_CLEANING_PRODUCTS_FACTORY) >= 32) &&
-	   (industry_distance(INDUSTRY_ID_SODA_PLANT) >= 16) &&
-	   (town_euclidean_dist(0,0) > 32)) // should not be near towns
-	   ) 
+	   [count_industries(),
+	   (is_industry_funded_or_prospected()) || (
+	   (town_euclidean_dist(0,0) > 32) && // should not be near towns
+	   (param_max_industries_per_type_on_map == 0 || param_max_industries_per_type_on_map > industry_count(INDUSTRY_ID_SODA_PLANT)) &&
+	   (param_max_industries_on_map == 0 || param_max_industries_on_map > LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_INDUSTRIES)) &&
+	   // distance to related producers
+	   (industry_distance(INDUSTRY_ID_AMMONIA_PLANT) >= param_min_dist_related_industry) &&
+	   (industry_distance(INDUSTRY_ID_LIMESTONE_MINE) >= param_min_dist_related_industry) &&
+	   (industry_distance(INDUSTRY_ID_SALT_MINE) >= param_min_dist_related_industry) &&
+	   // distance to related consumers	   
+	   (industry_distance(INDUSTRY_ID_CLEANING_PRODUCTS_FACTORY) >= param_min_dist_related_industry) &&
+	   (industry_distance(INDUSTRY_ID_GLASS_WORKS) >= param_min_dist_related_industry) &&	   
+	   // distance between instances of same industry
+	   (industry_distance(INDUSTRY_ID_SODA_PLANT) >= param_min_dist_same_industry)
+	   )] )
 {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;
@@ -522,6 +541,20 @@ switch(FEAT_INDUSTRIES, SELF, soda_plant_switch_update_last_served_date,
 	check_secondary_industry_closure();
 }
 
+produce(soda_plant_produce_cap_stockpile,
+	[NH3_: incoming_cargo_waiting("NH3_") > 60000 ? incoming_cargo_waiting("NH3_") - 60000 : 0;
+	 LIME: incoming_cargo_waiting("LIME") > 60000 ? incoming_cargo_waiting("LIME") - 60000 : 0;
+	 SALT: incoming_cargo_waiting("SALT") > 60000 ? incoming_cargo_waiting("SALT") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, soda_plant_switch_stockpile_check, param_stockpile_cap)
+{
+	1: empty_produce;
+	soda_plant_produce_cap_stockpile;
+}
 
 if (param_extension_ammonia) {
 	item(FEAT_INDUSTRIES, soda_plant, INDUSTRY_ID_SODA_PLANT) {
@@ -546,7 +579,7 @@ if (param_extension_ammonia) {
 			
 		graphics {
 			construction_probability: soda_plant_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    soda_plant_switch_stockpile_check; 
 			produce_256_ticks:        soda_plant_switch_produce;
 			monthly_prod_change:      soda_plant_switch_update_last_served_date;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -555,6 +588,7 @@ if (param_extension_ammonia) {
 			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO);
 			cargo_subtype_display:    soda_plant_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }

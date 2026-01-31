@@ -488,6 +488,13 @@ switch (FEAT_INDUSTRYTILES, SELF, oil_refinery_switch_tile_location_check,
 	return CB_RESULT_LOCATION_DISALLOW;
 }
 
+switch(FEAT_INDUSTRYTILES, PARENT, oil_refinery_switch_tile_cargo_acceptance, 
+	[STORE_TEMP(incoming_cargo_waiting("OIL_") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0)
+	]
+) {
+	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0);
+}
+
 //////////////////////////////////////////////////////////////////////////////
 // industry tile and layout definition
 //////////////////////////////////////////////////////////////////////////////
@@ -495,11 +502,12 @@ item(FEAT_INDUSTRYTILES, oil_refinery_tile, INDUSTRY_TILE_ID_OIL_REFINERY) {
     property {
         substitute:         0;
         land_shape_flags:   0;
-        special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+        accepted_cargos: [[OIL_,8]];
         animation_triggers: bitmask();
     }
     graphics {
     	tile_check: oil_refinery_switch_tile_location_check;
+		cargo_amount_accept: oil_refinery_switch_tile_cargo_acceptance;
         oil_refinery_switch_graphics;
     }
 }
@@ -590,16 +598,25 @@ tilelayout oil_refinery_tilelayout_4 {
 switch(FEAT_INDUSTRIES, SELF, oil_refinery_switch_location_check_industry_distance,
 	[STORE_TEMP(32, TEMP_REGISTER_TOWN_MIN_DISTANCE),
 	 STORE_TEMP(64, TEMP_REGISTER_TOWN_MAX_DISTANCE),
-	    (is_industry_funded_or_prospected()) || ((distance_from_town() && 
-        (industry_distance(INDUSTRY_ID_OIL_WELL) >= 32) && 
-		(industry_distance(INDUSTRY_ID_PORT) >= 32) && 
-		(industry_distance(INDUSTRY_ID_OIL_RIG) >= 32) && 
-		(industry_distance(INDUSTRY_ID_STEAMREFORMER) >= 32) && 
-		(industry_distance(INDUSTRY_ID_STEAMCRACKER) >= 32) && 
-	    (industry_distance(INDUSTRY_ID_CARBON_BLACK_PLANT) >= 32) &&
-		(industry_distance(INDUSTRY_ID_PHARMACEUTICAL_PLANT) >= 32) &&
-		(industry_distance(INDUSTRY_ID_PETROL_STATION) >= 32) &&
-	    (industry_distance(INDUSTRY_ID_OIL_REFINERY) >= 16)))]) {
+	 count_industries(),
+	    (is_industry_funded_or_prospected()) || (distance_from_town() && 
+		(param_max_industries_per_type_on_map == 0 || param_max_industries_per_type_on_map > industry_count(INDUSTRY_ID_OIL_REFINERY)) &&
+		(param_max_industries_on_map == 0 || param_max_industries_on_map > LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_INDUSTRIES)) &&
+		// distance to related producers
+		(industry_distance(INDUSTRY_ID_OIL_RIG) >= param_min_dist_related_industry) && 
+		(industry_distance(INDUSTRY_ID_OIL_WELL) >= param_min_dist_related_industry) && 
+		(industry_distance(INDUSTRY_ID_PORT) >= param_min_dist_related_industry) && 
+		// distance to related consumers		
+		(industry_distance(INDUSTRY_ID_ACID_PLANT) >= param_min_dist_related_industry) && 
+		(industry_distance(INDUSTRY_ID_CARBON_BLACK_PLANT) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_PETROL_STATION) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_PHARMACEUTICAL_PLANT) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_STEAMCRACKER) >= param_min_dist_related_industry) && 
+		(industry_distance(INDUSTRY_ID_STEAMREFORMER) >= param_min_dist_related_industry) &&		
+		(industry_distance(INDUSTRY_ID_TYRE_PLANT) >= param_min_dist_related_industry) && 		
+		// distance between instances of same industry
+	    (industry_distance(INDUSTRY_ID_OIL_REFINERY) >= param_min_dist_same_industry)		
+		)]) {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;
 }
@@ -672,6 +689,19 @@ switch(FEAT_INDUSTRIES, SELF, oil_refinery_switch_update_last_served_date,
 	check_secondary_industry_closure();
 }
 
+produce(oil_refinery_produce_cap_stockpile,
+	[OIL_: incoming_cargo_waiting("OIL_") > 60000 ? incoming_cargo_waiting("OIL_") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, oil_refinery_switch_stockpile_check, param_stockpile_cap)
+{
+	1: empty_produce;
+	oil_refinery_produce_cap_stockpile;
+}
+
 if (param_extension_organic_chemistry && !param_extension_coke_sulphur) {
 	item(FEAT_INDUSTRIES, oil_refinery, INDUSTRY_ID_OIL_REFINERY) {
 		property {
@@ -695,7 +725,7 @@ if (param_extension_organic_chemistry && !param_extension_coke_sulphur) {
 			
 		graphics {
 			construction_probability: oil_refinery_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    oil_refinery_switch_stockpile_check; 
 			produce_256_ticks:        oil_refinery_switch_produce;
 			monthly_prod_change:      oil_refinery_switch_update_last_served_date;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -703,6 +733,7 @@ if (param_extension_organic_chemistry && !param_extension_coke_sulphur) {
 			extra_text_fund:          oil_refinery_switch_extra_text_fund;
 			cargo_subtype_display:    oil_refinery_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -730,7 +761,7 @@ if (param_extension_organic_chemistry && param_extension_coke_sulphur) {
 			
 		graphics {
 			construction_probability: oil_refinery_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    oil_refinery_switch_stockpile_check; 
 			produce_256_ticks:        oil_refinery_switch_produce_ext_coke_sulphur;
 			monthly_prod_change:      oil_refinery_switch_update_last_served_date;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -738,6 +769,7 @@ if (param_extension_organic_chemistry && param_extension_coke_sulphur) {
 			extra_text_fund:          oil_refinery_switch_extra_text_fund;
 			cargo_subtype_display:    oil_refinery_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }

@@ -530,83 +530,141 @@ switch (FEAT_INDUSTRYTILES, SELF, furniture_factory_switch_tile_location_check,
 	return CB_RESULT_LOCATION_DISALLOW;
 }
 
+switch(FEAT_INDUSTRYTILES, PARENT, furniture_factory_switch_tile1_cargo_acceptance, 
+	[STORE_TEMP(incoming_cargo_waiting("WDPR") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0),
+	 STORE_TEMP(incoming_cargo_waiting("PLAS") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL1),
+	 STORE_TEMP(incoming_cargo_waiting("TEXT") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL2),
+	]
+) {
+	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0) + (LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL1) << 4) + (LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL2) << 8);
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, furniture_factory_switch_tile2_cargo_acceptance, 
+	[STORE_TEMP(incoming_cargo_waiting("MNSP") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0)
+	]
+) {
+	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0);
+}
+
 //////////////////////////////////////////////////////////////////////////////
 // industry tile and layout definition
 //////////////////////////////////////////////////////////////////////////////
-item(FEAT_INDUSTRYTILES, furniture_factory_tile, INDUSTRY_TILE_ID_FURNITURE_FACTORY) {
-    property {
-        substitute:         0;
-        land_shape_flags:   0;
-        special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
-        animation_triggers: bitmask();
-    }
+item(FEAT_INDUSTRYTILES, furniture_factory_tile_1, INDUSTRY_TILE_ID_FURNITURE_FACTORY_1) {
+    if (param_extension_textile_industries) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [[WDPR,8],[PLAS,8],[TEXT,8]];
+			animation_triggers: bitmask();
+		}
+	}
+	if (!param_extension_textile_industries) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [[WDPR,8],[PLAS,8]];
+			animation_triggers: bitmask();
+		}
+	}
     graphics {
     	tile_check: furniture_factory_switch_tile_location_check;
+		cargo_amount_accept: furniture_factory_switch_tile1_cargo_acceptance;
+        furniture_factory_switch_graphics;
+    }
+}
+item(FEAT_INDUSTRYTILES, furniture_factory_tile_2, INDUSTRY_TILE_ID_FURNITURE_FACTORY_2) {
+    if (param_extension_packaging_industries) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [[MNSP,8]];
+			animation_triggers: bitmask();
+		}
+	}
+	if (!param_extension_packaging_industries) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [];
+			animation_triggers: bitmask();
+		}
+	}
+    graphics {
+    	tile_check: furniture_factory_switch_tile_location_check;
+		cargo_amount_accept: furniture_factory_switch_tile2_cargo_acceptance;
         furniture_factory_switch_graphics;
     }
 }
 
 tilelayout furniture_factory_tilelayout_1 {
-	0, 1: furniture_factory_tile;
-	1, 0: furniture_factory_tile;
-	1, 1: furniture_factory_tile;
-	2, 0: furniture_factory_tile;
-	2, 1: furniture_factory_tile;
+	0, 1: furniture_factory_tile_1;
+	1, 0: furniture_factory_tile_2;
+	1, 1: furniture_factory_tile_1;
+	2, 0: furniture_factory_tile_2;
+	2, 1: furniture_factory_tile_1;
 }
 tilelayout furniture_factory_tilelayout_2 {
-	0, 0: furniture_factory_tile;
-	0, 1: furniture_factory_tile;
-	1, 0: furniture_factory_tile;
-	1, 1: furniture_factory_tile;
-	2, 0: furniture_factory_tile;
-	2, 1: furniture_factory_tile;
+	0, 0: furniture_factory_tile_1;
+	0, 1: furniture_factory_tile_2;
+	1, 0: furniture_factory_tile_1;
+	1, 1: furniture_factory_tile_2;
+	2, 0: furniture_factory_tile_1;
+	2, 1: furniture_factory_tile_2;
 }
 tilelayout furniture_factory_tilelayout_3 {
-	0, 0: furniture_factory_tile;
-	0, 1: furniture_factory_tile;
-	1, 0: furniture_factory_tile;
-	1, 1: furniture_factory_tile;
-	2, 0: furniture_factory_tile;
-	2, 1: furniture_factory_tile;
-	3, 0: furniture_factory_tile;
-	3, 1: furniture_factory_tile;
-	4, 0: furniture_factory_tile;
-	4, 1: furniture_factory_tile;
+	0, 0: furniture_factory_tile_1;
+	0, 1: furniture_factory_tile_2;
+	1, 0: furniture_factory_tile_1;
+	1, 1: furniture_factory_tile_2;
+	2, 0: furniture_factory_tile_1;
+	2, 1: furniture_factory_tile_2;
+	3, 0: furniture_factory_tile_1;
+	3, 1: furniture_factory_tile_2;
+	4, 0: furniture_factory_tile_1;
+	4, 1: furniture_factory_tile_2;
 }
 tilelayout furniture_factory_tilelayout_4 {
-	0, 0: furniture_factory_tile;
-	0, 1: furniture_factory_tile;
-	1, 0: furniture_factory_tile;
-	1, 1: furniture_factory_tile;
-	2, 0: furniture_factory_tile;
-	2, 1: furniture_factory_tile;
-	3, 0: furniture_factory_tile;
-	3, 1: furniture_factory_tile;
-	4, 0: furniture_factory_tile;
-	4, 1: furniture_factory_tile;
+	0, 0: furniture_factory_tile_1;
+	0, 1: furniture_factory_tile_2;
+	1, 0: furniture_factory_tile_1;
+	1, 1: furniture_factory_tile_2;
+	2, 0: furniture_factory_tile_1;
+	2, 1: furniture_factory_tile_2;
+	3, 0: furniture_factory_tile_1;
+	3, 1: furniture_factory_tile_2;
+	4, 0: furniture_factory_tile_1;
+	4, 1: furniture_factory_tile_2;
 }
 tilelayout furniture_factory_tilelayout_5 {
-	0, 0: furniture_factory_tile;
-	0, 1: furniture_factory_tile;
-	0, 2: furniture_factory_tile;
-	1, 0: furniture_factory_tile;
-	1, 1: furniture_factory_tile;
-	1, 2: furniture_factory_tile;
-	2, 0: furniture_factory_tile;
-	2, 1: furniture_factory_tile;
-	2, 2: furniture_factory_tile;
+	0, 0: furniture_factory_tile_1;
+	0, 1: furniture_factory_tile_2;
+	0, 2: furniture_factory_tile_1;
+	1, 0: furniture_factory_tile_2;
+	1, 1: furniture_factory_tile_1;
+	1, 2: furniture_factory_tile_2;
+	2, 0: furniture_factory_tile_1;
+	2, 1: furniture_factory_tile_2;
+	2, 2: furniture_factory_tile_1;
 }
 
 switch(FEAT_INDUSTRIES, SELF, furniture_factory_switch_location_check_industry_distance,
 	[STORE_TEMP(32, TEMP_REGISTER_TOWN_MIN_DISTANCE),
 	 STORE_TEMP(64, TEMP_REGISTER_TOWN_MAX_DISTANCE),
-	    (is_industry_funded_or_prospected()) || ((distance_from_town() && 
-        (industry_distance(INDUSTRY_ID_PLASTICS_PLANT) >= 32) && 
-	    (industry_distance(INDUSTRY_ID_SAWMILL) >= 32) && 
-		(industry_distance(INDUSTRY_ID_TEXTILE_MILL) >= 32) && 
-		(industry_distance(INDUSTRY_ID_PORT) >= 32) && 
-		(industry_distance(INDUSTRY_ID_DEPARTMENT_STORE) >= 32) && 
-	     (industry_distance(INDUSTRY_ID_FURNITURE_FACTORY) >= 16)))]) {
+	 count_industries(),
+	 (is_industry_funded_or_prospected()) || (distance_from_town() && 
+	 (param_max_industries_per_type_on_map == 0 || param_max_industries_per_type_on_map > industry_count(INDUSTRY_ID_FURNITURE_FACTORY)) &&
+	 (param_max_industries_on_map == 0 || param_max_industries_on_map > LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_INDUSTRIES)) &&
+	 // distance to related producers
+	 (industry_distance(INDUSTRY_ID_PACKAGING_PLANT) >= param_min_dist_related_industry) && 
+	 (industry_distance(INDUSTRY_ID_PLASTICS_PLANT) >= param_min_dist_related_industry) && 	 
+	 (industry_distance(INDUSTRY_ID_SAWMILL) >= param_min_dist_related_industry) && 
+	 (industry_distance(INDUSTRY_ID_TEXTILE_MILL) >= param_min_dist_related_industry) && 
+	 // distance to related consumers
+	 (industry_distance(INDUSTRY_ID_DEPARTMENT_STORE) >= param_min_dist_related_industry) && 
+	 (industry_distance(INDUSTRY_ID_PORT) >= param_min_dist_related_industry) && 	 
+	 // distance between instances of same industry
+	 (industry_distance(INDUSTRY_ID_FURNITURE_FACTORY) >= param_min_dist_same_industry)		 
+		 )]) {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;
 }
@@ -618,10 +676,6 @@ produce(furniture_factory_produce,
 	0 // do not run again
 )
 
-// industry uses 10% of stockpile for production, if stockpile is big enough
-// if stockpile is < 80t, 8t are produced per 256ticks
-// if stockpile is < 8t, whatever is available is used
-// it stockpile is empty, nothing is produced
 switch(FEAT_INDUSTRIES, SELF, furniture_factory_switch_produce, 
 	[STORE_TEMP(incoming_cargo_waiting("WDPR"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
      STORE_TEMP(incoming_cargo_waiting("PLAS"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
@@ -649,10 +703,6 @@ produce(furniture_factory_produce_ext_packaging_industries,
 	0 // do not run again
 )
 
-// industry uses 10% of stockpile for production, if stockpile is big enough
-// if stockpile is < 80t, 8t are produced per 256ticks
-// if stockpile is < 8t, whatever is available is used
-// it stockpile is empty, nothing is produced
 switch(FEAT_INDUSTRIES, SELF, furniture_factory_switch_produce_ext_packaging_industries, 
 	[STORE_TEMP(incoming_cargo_waiting("WDPR"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
      STORE_TEMP(incoming_cargo_waiting("PLAS"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
@@ -791,6 +841,66 @@ switch(FEAT_INDUSTRIES, SELF, furniture_factory_switch_update_last_served_date_e
 	check_secondary_industry_closure();
 }
 
+produce(furniture_factory_produce_cap_stockpile_ext_textile_industries,
+	[WDPR: incoming_cargo_waiting("WDPR") > 60000 ? incoming_cargo_waiting("WDPR") - 60000 : 0;
+	 PLAS: incoming_cargo_waiting("PLAS") > 60000 ? incoming_cargo_waiting("PLAS") - 60000 : 0;
+	 TEXT: incoming_cargo_waiting("TEXT") > 60000 ? incoming_cargo_waiting("TEXT") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, furniture_factory_switch_stockpile_check_ext_textile_industries, param_stockpile_cap)
+{
+	1: empty_produce;
+	furniture_factory_produce_cap_stockpile_ext_textile_industries;
+}
+
+produce(furniture_factory_produce_cap_stockpile,
+	[WDPR: incoming_cargo_waiting("WDPR") > 60000 ? incoming_cargo_waiting("WDPR") - 60000 : 0;
+	 PLAS: incoming_cargo_waiting("PLAS") > 60000 ? incoming_cargo_waiting("PLAS") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, furniture_factory_switch_stockpile_check, param_stockpile_cap)
+{
+	1: empty_produce;
+	furniture_factory_produce_cap_stockpile;
+}
+
+produce(furniture_factory_produce_cap_stockpile_ext_packaging_industries,
+	[WDPR: incoming_cargo_waiting("WDPR") > 60000 ? incoming_cargo_waiting("WDPR") - 60000 : 0;
+	 PLAS: incoming_cargo_waiting("PLAS") > 60000 ? incoming_cargo_waiting("PLAS") - 60000 : 0;
+	 MNSP: incoming_cargo_waiting("MNSP") > 60000 ? incoming_cargo_waiting("MNSP") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, furniture_factory_switch_stockpile_check_ext_packaging_industries, param_stockpile_cap)
+{
+	1: empty_produce;
+	furniture_factory_produce_cap_stockpile_ext_packaging_industries;
+}
+
+produce(furniture_factory_produce_cap_stockpile_ext_textile_industries_ext_packaging_industries,
+	[WDPR: incoming_cargo_waiting("WDPR") > 60000 ? incoming_cargo_waiting("WDPR") - 60000 : 0;
+	 PLAS: incoming_cargo_waiting("PLAS") > 60000 ? incoming_cargo_waiting("PLAS") - 60000 : 0;
+	 TEXT: incoming_cargo_waiting("TEXT") > 60000 ? incoming_cargo_waiting("TEXT") - 60000 : 0;
+	 MNSP: incoming_cargo_waiting("MNSP") > 60000 ? incoming_cargo_waiting("MNSP") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, furniture_factory_switch_stockpile_check_ext_textile_industries_ext_packaging_industries, param_stockpile_cap)
+{
+	1: empty_produce;
+	furniture_factory_produce_cap_stockpile_ext_textile_industries_ext_packaging_industries;
+}
+
 if (param_extension_textile_industries && !param_extension_packaging_industries) {
 	item(FEAT_INDUSTRIES, furniture_factory, INDUSTRY_ID_FURNITURE_FACTORY) {
 		property {
@@ -814,7 +924,7 @@ if (param_extension_textile_industries && !param_extension_packaging_industries)
 			
 		graphics {
 			construction_probability: get_construction_probability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    furniture_factory_switch_stockpile_check_ext_textile_industries; 
 			produce_256_ticks:        furniture_factory_switch_produce_extension_textile_industry;
 			monthly_prod_change:      furniture_factory_switch_update_last_served_date_ext_textile_industries;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -823,6 +933,7 @@ if (param_extension_textile_industries && !param_extension_packaging_industries)
 			extra_text_fund:          return CB_RESULT_NO_TEXT;
 			cargo_subtype_display:    furniture_factory_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -850,7 +961,7 @@ if (!param_extension_textile_industries && !param_extension_packaging_industries
 			
 		graphics {
 			construction_probability: get_construction_probability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    furniture_factory_switch_stockpile_check; 
 			produce_256_ticks:        furniture_factory_switch_produce;
 			monthly_prod_change:      furnitury_factory_switch_update_last_served_date;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -859,6 +970,7 @@ if (!param_extension_textile_industries && !param_extension_packaging_industries
 			extra_text_fund:          return CB_RESULT_NO_TEXT;
 			cargo_subtype_display:    furniture_factory_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -886,7 +998,7 @@ if (param_extension_textile_industries && param_extension_packaging_industries) 
 			
 		graphics {
 			construction_probability: get_construction_probability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    furniture_factory_switch_stockpile_check_ext_textile_industries_ext_packaging_industries; 
 			produce_256_ticks:        furniture_factory_switch_produce_extension_textile_industry_ext_packaging_industries;
 			monthly_prod_change:      furniture_factory_switch_update_last_served_date_ext_textile_industries_ext_packaging_industries;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -895,6 +1007,7 @@ if (param_extension_textile_industries && param_extension_packaging_industries) 
 			extra_text_fund:          return CB_RESULT_NO_TEXT;
 			cargo_subtype_display:    furniture_factory_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -922,7 +1035,7 @@ if (!param_extension_textile_industries && param_extension_packaging_industries)
 			
 		graphics {
 			construction_probability: get_construction_probability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    furniture_factory_switch_stockpile_check_ext_packaging_industries; 
 			produce_256_ticks:        furniture_factory_switch_produce_ext_packaging_industries;
 			monthly_prod_change:      furnitury_factory_switch_update_last_served_date_ext_packaging_industries;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -931,6 +1044,7 @@ if (!param_extension_textile_industries && param_extension_packaging_industries)
 			extra_text_fund:          return CB_RESULT_NO_TEXT;
 			cargo_subtype_display:    furniture_factory_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }

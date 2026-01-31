@@ -1130,10 +1130,18 @@ tilelayout sandpit_layout_2_tilelayout {
 }
 
 switch(FEAT_INDUSTRIES, SELF, sandpit_switch_location_check_industry_distance,
-		(is_industry_funded_or_prospected()) || ((industry_distance(INDUSTRY_ID_SANDPIT) >= 16) && 
-		(industry_distance(INDUSTRY_ID_CEMENT_PLANT) >= 32) &&
-		(industry_distance(INDUSTRY_ID_GLASS_WORKS) >= 32) &&
-		(industry_distance(INDUSTRY_ID_BUILDERS_YARD) >= 32))
+		[count_industries(),
+		(is_industry_funded_or_prospected()) || (
+		(param_max_industries_per_type_on_map == 0 || param_max_industries_per_type_on_map > industry_count(INDUSTRY_ID_SANDPIT)) &&
+		(param_max_industries_on_map == 0 || param_max_industries_on_map > LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_INDUSTRIES)) &&
+		// distance to related producers
+		// distance to related consumers
+		(industry_distance(INDUSTRY_ID_BUILDERS_YARD) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_CEMENT_PLANT) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_GLASS_WORKS) >= param_min_dist_related_industry) &&		
+		// distance between instances of same industry
+		(industry_distance(INDUSTRY_ID_SANDPIT) >= param_min_dist_same_industry)
+		)]
 		) 
 { 
 	1: return CB_RESULT_LOCATION_ALLOW;
@@ -1146,7 +1154,6 @@ switch(FEAT_INDUSTRIES, SELF, sandpit_func_calc_max_prod,
 	return;
 }
 
-// if nothing has been transported at all, do not change production (industry might just not be serviced)
 switch(FEAT_INDUSTRIES, SELF, sandpit_switch_prod_change, 
 	[STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT), TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
 	 STORE_TEMP(transported_last_month_pct("SAND"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
@@ -1155,6 +1162,19 @@ switch(FEAT_INDUSTRIES, SELF, sandpit_switch_prod_change,
 {
 	1: change_production; // use default rules to adapt production
 	return CB_RESULT_IND_PROD_CLOSE; // resources are depleted - close
+}
+
+switch(FEAT_INDUSTRIES, SELF, sandpit_switch_random_prod_change, 
+	[STORE_TEMP(param_primary_resource_factor == 0 ? 5 : param_primary_resource_factor, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)*250000 + getbits(extra_callback_info2, 8, 3)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)*250000,TEMP_REGISTER_RESOURCES),
+	 STORE_TEMP((getbits(extra_callback_info2,0,8) < 13) && // 5% of 255
+	(last_month_transported("SAND") > 0) && (LOAD_TEMP(TEMP_REGISTER_RESOURCES) > LOAD_PERM(PERM_REGISTER_RESOURCES)),TEMP_REGISTER_NEW_RESOURCES),
+	LOAD_TEMP(TEMP_REGISTER_NEW_RESOURCES) ? STORE_PERM(LOAD_TEMP(TEMP_REGISTER_RESOURCES), PERM_REGISTER_RESOURCES) : STORE_PERM(LOAD_PERM(PERM_REGISTER_RESOURCES), PERM_REGISTER_RESOURCES),
+	STORE_TEMP(string(STR_NEWS_INDUSTRY_PRODUCTION_NEW_RESOURCES_FOUND), 0x100),
+	LOAD_TEMP(TEMP_REGISTER_NEW_RESOURCES)
+	])
+{
+	return bitmask(8);
 }
 
 // randomize production at build time based on random bits: 96t min, 152t max
@@ -1226,7 +1246,7 @@ item(FEAT_INDUSTRIES, sandpit, INDUSTRY_ID_SANDPIT) {
 		produce_cargo_arrival:    empty_produce; 
 		produce_256_ticks:        sandpit_switch_produce;
 		monthly_prod_change:      sandpit_switch_prod_change;
-		random_prod_change:       sandpit_switch_prod_change;
+		random_prod_change:       sandpit_switch_random_prod_change;
 		build_prod_change:        sandpit_switch_prod_change_build;
 		location_check:           sandpit_switch_location_check_industry_distance;
 		extra_text_industry:      sandpit_switch_extra_text;

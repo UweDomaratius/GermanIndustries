@@ -81,18 +81,29 @@ tilelayout department_store_tilelayout {
 }
 
 switch(FEAT_INDUSTRIES, SELF, department_store_switch_location_check_industry_distance,
-       [(is_industry_funded_or_prospected()) || (
-	    (industry_distance(INDUSTRY_ID_FURNITURE_FACTORY) >= 32) &&
-		(industry_distance(INDUSTRY_ID_CLOTHING_PLANT) >= 32) &&
-	    (industry_distance(INDUSTRY_ID_GENERAL_STORE) >= 16) &&
-		(industry_distance(INDUSTRY_ID_DEPARTMENT_STORE) >= 16))]) {
+       [count_industries(),
+	   (is_industry_funded_or_prospected()) || (
+	    (param_max_industries_per_type_on_map == 0 || param_max_industries_per_type_on_map > industry_count(INDUSTRY_ID_DEPARTMENT_STORE)) &&
+		(param_max_industries_on_map == 0 || param_max_industries_on_map > LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_INDUSTRIES)) &&
+		// distance to related producers
+	    (industry_distance(INDUSTRY_ID_APPLIANCE_FACTORY) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_FURNITURE_FACTORY) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_CLEANING_PRODUCTS_FACTORY) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_CLOTHING_PLANT) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_PHARMACEUTICAL_PLANT) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_PRINTING_WORKS) >= param_min_dist_related_industry) &&
+		// distance to related consumers
+		// distance between instances of same industry
+		(industry_distance(INDUSTRY_ID_DEPARTMENT_STORE) >= param_min_dist_same_industry) &&
+		(industry_distance(INDUSTRY_ID_GENERAL_STORE) >= param_min_dist_same_industry)
+		)]) {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;
 }
 
 // take all incoming cargo and produce nothing
 produce(department_store_produce,
-	[GOOD: LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0) > 12 ? LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0) - 12 : LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0) != 0 ? 1 : 0;],
+	[GOOD: LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0);],
 	[],
 	0 // do not run again
 )

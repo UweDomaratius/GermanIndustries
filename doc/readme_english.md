@@ -99,7 +99,8 @@ will simply be stockpiled, but not used for production.
 
 Some industries have optional raw material. These are marked in white in the stockpile list. Optional raw materials are not needed to produce anything, but they will increase the output.
 
-The maximum size of the stockpile is hard coded in the game at 65.535 units. If you reach that limit, nothing much will happen, the next delivery of raw materials will simply be discarded (but you will get paid).
+The stockpile is capped at 60.000 units. What happens when this limit is reached depends on a parameter in the set options. If set to "discard", anything above the limit is simply thrown away. You can still deliver to the industry and you will get paid, but the delivered cargo will just vanish.
+If the option is set to stop accepting deliveries, the industry will stop accepting that cargo. That in turn means the station next to the industry will temporarily stop accepting the cargo as well. You can make use of that to reroute vehicles by using conditional orders to deliver the freight somewhere else. Once the stockpile has been reduced due to production the industry will accept the cargo again.
 However, since production scales with stockpile size, it should be hard to run into that limit, unless you deliberately miss on delivering relevant raw materials so that nothing will get produced at all.
 
 ## Parameters
@@ -1672,12 +1673,14 @@ Color in the industry chain view: <span style="background-color:#fcfc00;">&nbsp;
 
 | Produced by | Required by |
 | -- | -- |
-| [Farm](#industry_60) | [Animal Farm](#industry_10) |
-| [Farm](#industry_61) | [Animal Farm](#industry_12) |
-| [Farm](#industry_62) | [Brewery](#industry_16) |
-| [Farm](#industry_63) | [Brewery](#industry_17) |
-| [Farm](#industry_64) | [Flour Mill](#industry_67) |
-| [Farm](#industry_65) | [Flour Mill](#industry_68) |
+| [Farm](#industry_60) | [Animal Farm](#industry_9) |
+| [Farm](#industry_61) | [Animal Farm](#industry_10) |
+| [Farm](#industry_62) | [Animal Farm](#industry_11) |
+| [Farm](#industry_63) | [Animal Farm](#industry_12) |
+| [Farm](#industry_64) | [Brewery](#industry_16) |
+| [Farm](#industry_65) | [Brewery](#industry_17) |
+|  | [Flour Mill](#industry_67) |
+|  | [Flour Mill](#industry_68) |
 |  | [Food Processing Plant](#industry_69) |
 |  | [Food Processing Plant](#industry_70) |
 |  | [Food Processing Plant](#industry_73) |
@@ -2062,13 +2065,14 @@ Color in the industry chain view: <span style="background-color:#b87818;">&nbsp;
 | Produced by | Required by |
 | -- | -- |
 | [Packaging Plant](#industry_133) | [Appliance Factory](#industry_14) |
-| [Packaging Plant](#industry_134) | [Cleaning Products Factory](#industry_30) |
-| [Packaging Plant](#industry_135) | [Clothing Plant](#industry_32) |
-| [Packaging Plant](#industry_136) | [Dairy](#industry_53) |
-| [Packaging Plant](#industry_137) | [Dairy](#industry_54) |
-| [Packaging Plant](#industry_138) | [Flour Mill](#industry_68) |
-| [Packaging Plant](#industry_139) | [Food Processing Plant](#industry_73) |
-| [Packaging Plant](#industry_140) | [Food Processing Plant](#industry_74) |
+| [Packaging Plant](#industry_134) | [Cleaning Products Factory](#industry_29) |
+| [Packaging Plant](#industry_135) | [Cleaning Products Factory](#industry_30) |
+| [Packaging Plant](#industry_136) | [Clothing Plant](#industry_32) |
+| [Packaging Plant](#industry_137) | [Dairy](#industry_53) |
+| [Packaging Plant](#industry_138) | [Dairy](#industry_54) |
+| [Packaging Plant](#industry_139) | [Flour Mill](#industry_68) |
+| [Packaging Plant](#industry_140) | [Food Processing Plant](#industry_73) |
+|  | [Food Processing Plant](#industry_74) |
 |  | [Food Processing Plant](#industry_75) |
 |  | [Food Processing Plant](#industry_76) |
 |  | [Food Processing Plant](#industry_79) |
@@ -2961,8 +2965,6 @@ This restriction is also valid for funding the industry.
 
 Color in the overview map: <span style="background-color:#286078;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
-Industry will start producing as soon as any of the required cargos is available. Productivity increases with the number of different available cargos.
-
 | Requires | Produces |
 | -- | -- |
 | [Hydrogen](#cargo_H2__) | [Ammonia](#cargo_NH3_) |
@@ -2985,7 +2987,7 @@ Color in the overview map: <span style="background-color:#90e05c;">&nbsp;&nbsp;&
 
 | Requires | Produces |
 | -- | -- |
-|  | [Livestock](#cargo_LVST) |
+| [Grain](#cargo_GRAI) | [Livestock](#cargo_LVST) |
 |  | [Milk](#cargo_MILK) |
 
 
@@ -3026,7 +3028,7 @@ Color in the overview map: <span style="background-color:#90e05c;">&nbsp;&nbsp;&
 
 | Requires | Produces |
 | -- | -- |
-|  | [Biomass](#cargo_BIOM) |
+| [Grain](#cargo_GRAI) | [Biomass](#cargo_BIOM) |
 |  | [Livestock](#cargo_LVST) |
 |  | [Milk](#cargo_MILK) |
 
@@ -3433,7 +3435,8 @@ Industry requires the raw materials printed in black to produce anything. Raw ma
 
 | Requires | Produces |
 | -- | -- |
-| [Soda Ash](#cargo_SASH) | [Goods](#cargo_GOOD) |
+| [Packaging](#cargo_MNSP) | [Goods](#cargo_GOOD) |
+| [Soda Ash](#cargo_SASH) |  |
 
 
 <a name="industry_30"></a>
@@ -3467,6 +3470,8 @@ Industry requires any of the raw materials printed in black to produce anything.
 The clothing plant is the place where textiles are turned into clothing by means of tailoring and sewing. Historically, there was a rich history of clothing manufacturing in Europe, which has been replaced almost completely by cheaper Asian competitors, although high quality tailors still have their niche. Germany had a considerable clothing manufacturing industry in the 19th century, mainly located in Silesia and Saxony. Today, many different companies exist, some of which are well known internationally like Boss, Triumph or adidas, but production typically has been outsourced to Asia. 
 
 Industry requires extension(s): [Textile Industries](#extension_14) 
+
+Industry is not available with these extension: [Packaging Industries](#extension_10) 
 
 
 Color in the overview map: <span style="background-color:#803828;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>

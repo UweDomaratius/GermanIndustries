@@ -406,10 +406,18 @@ tilelayout iron_ore_mine_industry_layout_1_tilelayout {
 }
 
 switch(FEAT_INDUSTRIES, SELF, iron_ore_mine_switch_location_check_industry_distance,
-        (is_industry_funded_or_prospected()) || ((water_distance > 16) &&
-		(industry_distance(INDUSTRY_ID_IRON_ORE_MINE) >= 16) && 
-		(industry_distance(INDUSTRY_ID_PAINT_FACTORY) >= 16) && 
-		(industry_distance(INDUSTRY_ID_INTEGRATED_STEEL_MILL) >= 32))) 
+        [count_industries(),
+		(is_industry_funded_or_prospected()) || ((water_distance > 16) &&
+		(param_max_industries_per_type_on_map == 0 || param_max_industries_per_type_on_map > industry_count(INDUSTRY_ID_IRON_ORE_MINE)) &&
+		(param_max_industries_on_map == 0 || param_max_industries_on_map > LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_INDUSTRIES)) &&
+		// distance to related producers
+		//(industry_distance(INDUSTRY_ID_EXPLOSIVES_FACTORY) >= param_min_dist_related_industry) && 
+		// distance to related consumers		
+		(industry_distance(INDUSTRY_ID_INTEGRATED_STEEL_MILL) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_PAINT_FACTORY) >= param_min_dist_related_industry) && 
+		// distance between instances of same industry
+		(industry_distance(INDUSTRY_ID_IRON_ORE_MINE) >= param_min_dist_same_industry)
+		)]) 
 { 
 	1: return CB_RESULT_LOCATION_ALLOW;
 	return CB_RESULT_LOCATION_DISALLOW;
@@ -502,6 +510,19 @@ switch(FEAT_INDUSTRIES, SELF, iron_ore_mine_switch_check_availability, current_y
 	get_construction_probability;
 }
 
+switch(FEAT_INDUSTRIES, SELF, iron_ore_mine_switch_random_prod_change, 
+	[STORE_TEMP(param_primary_resource_factor == 0 ? 5 : param_primary_resource_factor, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)*250000 + getbits(extra_callback_info2, 8, 3)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)*250000,TEMP_REGISTER_RESOURCES),
+	 STORE_TEMP((getbits(extra_callback_info2,0,8) < 13) && // 5% of 255
+	(last_month_transported("IORE") > 0) && (LOAD_TEMP(TEMP_REGISTER_RESOURCES) > LOAD_PERM(PERM_REGISTER_RESOURCES)),TEMP_REGISTER_NEW_RESOURCES),
+	LOAD_TEMP(TEMP_REGISTER_NEW_RESOURCES) ? STORE_PERM(LOAD_TEMP(TEMP_REGISTER_RESOURCES), PERM_REGISTER_RESOURCES) : STORE_PERM(LOAD_PERM(PERM_REGISTER_RESOURCES), PERM_REGISTER_RESOURCES),
+	STORE_TEMP(string(STR_NEWS_INDUSTRY_PRODUCTION_NEW_RESOURCES_FOUND), 0x100),
+	LOAD_TEMP(TEMP_REGISTER_NEW_RESOURCES)
+	])
+{
+	return bitmask(8);
+}
+
 item(FEAT_INDUSTRIES, iron_ore_mine, INDUSTRY_ID_IRON_ORE_MINE) {
 	property {
 		substitute: 0x12;
@@ -528,7 +549,7 @@ item(FEAT_INDUSTRIES, iron_ore_mine, INDUSTRY_ID_IRON_ORE_MINE) {
 		produce_cargo_arrival:    empty_produce; 
 		produce_256_ticks:        iron_ore_mine_switch_produce;
 		monthly_prod_change:      iron_ore_mine_switch_prod_change;
-		random_prod_change:       iron_ore_mine_switch_prod_change;
+		random_prod_change:       iron_ore_mine_switch_random_prod_change;
 		build_prod_change:        iron_ore_mine_switch_prod_change_build;
 		location_check:           iron_ore_mine_switch_location_check_industry_distance;
 		extra_text_fund:          iron_ore_mine_switch_extra_text_fund;

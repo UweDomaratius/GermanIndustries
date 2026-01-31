@@ -236,19 +236,26 @@ tilelayout vehicle_distributor_tilelayout_3 {
 }
 
 switch(FEAT_INDUSTRIES, SELF, vehicle_distributor_switch_location_check_industry_distance,
-       [(is_industry_funded_or_prospected()) || (
+       [count_industries(),
+	   (is_industry_funded_or_prospected()) || (
 	    (town_euclidean_dist(0,0) < 16) &&
-	    (industry_distance(INDUSTRY_ID_VEHICLE_FACTORY) >= 32) &&
-		(industry_distance(INDUSTRY_ID_VEHICLE_PARTS_PLANT) >= 32) &&
-		(industry_distance(INDUSTRY_ID_TYRE_PLANT) >= 32) &&
-		(industry_distance(INDUSTRY_ID_VEHICLE_DISTRIBUTOR) >= 16))]) {
+		(param_max_industries_per_type_on_map == 0 || param_max_industries_per_type_on_map > industry_count(INDUSTRY_ID_VEHICLE_DISTRIBUTOR)) &&
+		(param_max_industries_on_map == 0 || param_max_industries_on_map > LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_INDUSTRIES)) &&
+		// distance to related producers
+		(industry_distance(INDUSTRY_ID_TYRE_PLANT) >= param_min_dist_related_industry) &&
+	    (industry_distance(INDUSTRY_ID_VEHICLE_FACTORY) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_VEHICLE_PARTS_PLANT) >= param_min_dist_related_industry) &&
+		// distance to related consumers
+		// distance between instances of same industry
+		(industry_distance(INDUSTRY_ID_VEHICLE_DISTRIBUTOR) >= param_min_dist_same_industry)		
+		)]) {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;
 }
 
 // take all incoming cargo and produce nothing
 produce(vehicle_distributor_produce,
-	[VEHI: LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0) > 12 ? LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0)-12 : LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0) != 0 ? 1 : 0;],
+	[VEHI: LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0);],
 	[],
 	0 // do not run again
 )
@@ -259,9 +266,9 @@ switch(FEAT_INDUSTRIES, SELF, vehicle_distributor_switch_produce,
 }
 
 produce(vehicle_distributor_produce_ext_vehicle,
-	[VEHI: LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0) > 12 ? LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0)-12 : LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0) != 0 ? 1 : 0;
-	 TYRE: LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0) > 48 ? LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0)-48 : LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0) != 0 ? 1 : 0;
-	 VPTS: LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0) > 48 ? LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0)-48 : LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0) != 0 ? 1 : 0;
+	[VEHI: LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0);
+	 TYRE: LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0);
+	 VPTS: LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0);
 	],
 	[],
 	0 // do not run again

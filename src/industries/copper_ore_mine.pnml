@@ -373,9 +373,17 @@ tilelayout copper_ore_mine_industry_layout_1_tilelayout {
 }
 
 switch(FEAT_INDUSTRIES, SELF, copper_ore_mine_switch_location_check_industry_distance,
-        (is_industry_funded_or_prospected()) || ((water_distance > 16) &&
-		(industry_distance(INDUSTRY_ID_COPPER_ORE_MINE) >= 16) && 
-		(industry_distance(INDUSTRY_ID_COPPER_SMELTER) >= 32))) 
+        [count_industries(),
+		(is_industry_funded_or_prospected()) || ((water_distance > 16) &&
+		(param_max_industries_per_type_on_map == 0 || param_max_industries_per_type_on_map > industry_count(INDUSTRY_ID_COPPER_ORE_MINE)) &&
+		(param_max_industries_on_map == 0 || param_max_industries_on_map > LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_INDUSTRIES)) &&
+		// distance to related producers
+		// distance to related consumers
+		(industry_distance(INDUSTRY_ID_COPPER_SMELTER) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_ORE_SMELTER) >= param_min_dist_related_industry) &&
+		// distance between instances of same industry
+		(industry_distance(INDUSTRY_ID_COPPER_ORE_MINE) >= param_min_dist_same_industry)
+		)]) 
 { 
 	1: return CB_RESULT_LOCATION_ALLOW;
 	return CB_RESULT_LOCATION_DISALLOW;
@@ -491,6 +499,32 @@ switch(FEAT_INDUSTRIES, SELF, copper_ore_mine_switch_check_availability, current
 	get_construction_probability;
 }
 
+switch(FEAT_INDUSTRIES, SELF, copper_ore_mine_switch_random_prod_change, 
+	[STORE_TEMP(param_primary_resource_factor == 0 ? 5 : param_primary_resource_factor, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)*250000 + getbits(extra_callback_info2, 8, 3)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)*250000,TEMP_REGISTER_RESOURCES),
+	 STORE_TEMP((getbits(extra_callback_info2,0,8) < 13) && // 5% of 255
+	(last_month_transported("CORE") > 0) && (LOAD_TEMP(TEMP_REGISTER_RESOURCES) > LOAD_PERM(PERM_REGISTER_RESOURCES)),TEMP_REGISTER_NEW_RESOURCES),
+	LOAD_TEMP(TEMP_REGISTER_NEW_RESOURCES) ? STORE_PERM(LOAD_TEMP(TEMP_REGISTER_RESOURCES), PERM_REGISTER_RESOURCES) : STORE_PERM(LOAD_PERM(PERM_REGISTER_RESOURCES), PERM_REGISTER_RESOURCES),
+	STORE_TEMP(string(STR_NEWS_INDUSTRY_PRODUCTION_NEW_RESOURCES_FOUND), 0x100),
+	LOAD_TEMP(TEMP_REGISTER_NEW_RESOURCES)
+	])
+{
+	return bitmask(8);
+}
+
+switch(FEAT_INDUSTRIES, SELF, copper_ore_mine_switch_random_prod_change_ext_coke_sulphur, 
+	[STORE_TEMP(param_primary_resource_factor == 0 ? 5 : param_primary_resource_factor, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)*250000 + getbits(extra_callback_info2, 8, 3)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)*250000,TEMP_REGISTER_RESOURCES),
+	 STORE_TEMP((getbits(extra_callback_info2,0,8) < 13) && // 5% of 255
+	(last_month_production("PORE") > 0) && (LOAD_TEMP(TEMP_REGISTER_RESOURCES) > LOAD_PERM(PERM_REGISTER_RESOURCES)),TEMP_REGISTER_NEW_RESOURCES),
+	LOAD_TEMP(TEMP_REGISTER_NEW_RESOURCES) ? STORE_PERM(LOAD_TEMP(TEMP_REGISTER_RESOURCES), PERM_REGISTER_RESOURCES) : STORE_PERM(LOAD_PERM(PERM_REGISTER_RESOURCES), PERM_REGISTER_RESOURCES),
+	STORE_TEMP(string(STR_NEWS_INDUSTRY_PRODUCTION_NEW_RESOURCES_FOUND), 0x100),
+	LOAD_TEMP(TEMP_REGISTER_NEW_RESOURCES)
+	])
+{
+	return bitmask(8);
+}
+
 if (param_extension_painting_industries && !param_extension_coke_sulphur) {
 	item(FEAT_INDUSTRIES, copper_ore_mine, INDUSTRY_ID_COPPER_ORE_MINE) {
 		property {
@@ -518,7 +552,7 @@ if (param_extension_painting_industries && !param_extension_coke_sulphur) {
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        copper_ore_mine_switch_produce;
 			monthly_prod_change:      copper_ore_mine_switch_prod_change;
-			random_prod_change:       copper_ore_mine_switch_prod_change;
+			random_prod_change:       copper_ore_mine_switch_random_prod_change;
 			build_prod_change:        copper_ore_mine_switch_prod_change_build;
 			location_check:           copper_ore_mine_switch_location_check_industry_distance;
 			extra_text_fund:          copper_ore_mine_switch_extra_text_fund;
@@ -554,7 +588,7 @@ if (param_extension_painting_industries && param_extension_coke_sulphur) {
 			produce_cargo_arrival:    empty_produce; 
 			produce_256_ticks:        copper_ore_mine_switch_produce_ext_coke_sulphur;
 			monthly_prod_change:      copper_ore_mine_switch_prod_change_ext_coke_sulphur;
-			random_prod_change:       copper_ore_mine_switch_prod_change_ext_coke_sulphur;
+			random_prod_change:       copper_ore_mine_switch_random_prod_change_ext_coke_sulphur;
 			build_prod_change:        copper_ore_mine_switch_prod_change_build;
 			location_check:           copper_ore_mine_switch_location_check_industry_distance;
 			extra_text_fund:          copper_ore_mine_switch_extra_text_fund;

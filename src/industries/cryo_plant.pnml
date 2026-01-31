@@ -560,15 +560,22 @@ tilelayout cryo_plant_industry_layout_5_tilelayout {
 }
 
 switch(FEAT_INDUSTRIES, SELF, cryo_plant_switch_location_check_industry_distance,
-	   (is_industry_funded_or_prospected()) || ((industry_distance(INDUSTRY_ID_AMMONIA_PLANT) >= 32) &&
-	   (industry_distance(INDUSTRY_ID_ORE_SMELTER) >= 32) &&
-	   (industry_distance(INDUSTRY_ID_CARBON_BLACK_PLANT) >= 32) &&
-	   (industry_distance(INDUSTRY_ID_INTEGRATED_STEEL_MILL) >= 32) &&
-	   (industry_distance(INDUSTRY_ID_COPPER_SMELTER) >= 32) &&
-	   (industry_distance(INDUSTRY_ID_ACID_PLANT) >= 32) &&
-	   (industry_distance(INDUSTRY_ID_PHARMACEUTICAL_PLANT) >= 32) &&
-	   (industry_distance(INDUSTRY_ID_CRYO_PLANT) >= 16) &&
-	   (town_euclidean_dist(0,0) > 32)) // should not be near towns
+	   [count_industries(),
+	   (is_industry_funded_or_prospected()) || (
+	   (town_euclidean_dist(0,0) > 32) &&
+	   (param_max_industries_per_type_on_map == 0 || param_max_industries_per_type_on_map > industry_count(INDUSTRY_ID_CRYO_PLANT)) &&
+	   (param_max_industries_on_map == 0 || param_max_industries_on_map > LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_INDUSTRIES)) &&
+	   // distance to related producers
+	   // distance to related consumers
+	   (industry_distance(INDUSTRY_ID_ACID_PLANT) >= param_min_dist_related_industry) &&
+	   (industry_distance(INDUSTRY_ID_AMMONIA_PLANT) >= param_min_dist_related_industry) &&
+	   (industry_distance(INDUSTRY_ID_CARBON_BLACK_PLANT) >= param_min_dist_related_industry) &&
+	   (industry_distance(INDUSTRY_ID_INTEGRATED_STEEL_MILL) >= param_min_dist_related_industry) &&
+	   (industry_distance(INDUSTRY_ID_ORE_SMELTER) >= param_min_dist_related_industry) &&	   
+	   (industry_distance(INDUSTRY_ID_PHARMACEUTICAL_PLANT) >= param_min_dist_related_industry) &&
+	   // distance between instances of same industry
+	   (industry_distance(INDUSTRY_ID_CRYO_PLANT) >= param_min_dist_same_industry)
+	   )]
 	   ) 
 {
 	   1: return CB_RESULT_LOCATION_ALLOW;

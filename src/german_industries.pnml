@@ -63,6 +63,60 @@ grf {
 		}
 	}
 	param {
+		param_max_industries_on_map {
+			type: int;
+			name: string(STR_PARAM_MAX_INDUSTRIES_ON_MAP);
+			desc: string(STR_PARAM_MAX_INDUSTRIES_ON_MAP_DESC);
+			min_value: 0;
+			max_value: 16384;
+			def_value: 0;
+		}
+	}
+	param {
+		param_max_industries_per_type_on_map {
+			type: int;
+			name: string(STR_PARAM_MAX_INDUSTRIES_PER_TYPE_ON_MAP);
+			desc: string(STR_PARAM_MAX_INDUSTRIES_PER_TYPE_ON_MAP_DESC);
+			min_value: 0;
+			max_value: 128;
+			def_value: 0;
+		}
+	}
+	param {
+		param_min_dist_same_industry {
+			type: int;
+			name: string(STR_PARAM_MIN_DISTANCE_SAME_INDUSTRY);
+			desc: string(STR_PARAM_MIN_DISTANCE_SAME_INDUSTRY_DESC);
+			min_value: 0;
+			max_value: 128;
+			def_value: 16;
+		}
+	}
+	param {
+		param_min_dist_related_industry {
+			type: int;
+			name: string(STR_PARAM_MIN_DISTANCE_RELATED_INDUSTRY);
+			desc: string(STR_PARAM_MIN_DISTANCE_RELATED_INDUSTRY_DESC);
+			min_value: 0;
+			max_value: 128;
+			def_value: 32;
+		}
+	}
+	param {
+		param_stockpile_cap {
+			type: int;
+			name: string(STR_PARAM_STOCKPILE_CAP);
+			desc: string(STR_PARAM_STOCKPILE_CAP_DESC);
+			min_value: 0;
+			max_value: 1;
+			def_value: 0;
+			names: {
+				0: string(STR_PARAM_STOCKPILE_DISCARD);
+				1: string(STR_PARAM_STOCKPILE_STOP_ACCEPT);
+			};
+		}
+	}
+	param {
 		param_extension_building_materials {
 			type: bool;
 			name: string(STR_PARAM_EXT_BUILDING_MATERIALS);
