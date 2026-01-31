@@ -1061,250 +1061,305 @@ switch (FEAT_INDUSTRYTILES, SELF, wire_mill_switch_tile_location_check,
 	return CB_RESULT_LOCATION_DISALLOW;
 }
 
+switch(FEAT_INDUSTRYTILES, PARENT, wire_mill_switch_tile1_cargo_acceptance, 
+	[STORE_TEMP(incoming_cargo_waiting("COPR") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0),
+	 STORE_TEMP(incoming_cargo_waiting("ACID") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL1),
+	 STORE_TEMP(incoming_cargo_waiting("LYE_") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL2),
+	]
+) {
+	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0) + (LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL1) << 4) + (LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL2) << 8);
+}
+switch(FEAT_INDUSTRYTILES, PARENT, wire_mill_switch_tile2_cargo_acceptance, 
+	[STORE_TEMP(incoming_cargo_waiting("ALUM") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0)
+	]
+) {
+	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0);
+}
+
 //////////////////////////////////////////////////////////////////////////////
 // industry tile and layout definition
 //////////////////////////////////////////////////////////////////////////////
-item(FEAT_INDUSTRYTILES, wire_mill_tile, INDUSTRY_TILE_ID_WIRE_MILL) {
+item(FEAT_INDUSTRYTILES, wire_mill_tile_1, INDUSTRY_TILE_ID_WIRE_MILL_1) {
 	property {
 		substitute:         0;
 		land_shape_flags:   0;
-		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+		accepted_cargos: [[COPR,8],[ACID,8],[LYE_,8]];
 		animation_info: [ANIMATION_LOOPING, 71];
 		animation_speed: 2;
 		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
 	}
 	graphics {
 		tile_check: wire_mill_switch_tile_location_check;
+		cargo_amount_accept: wire_mill_switch_tile1_cargo_acceptance;
+		wire_mill_switch_graphics;
+	}
+}
+item(FEAT_INDUSTRYTILES, wire_mill_tile_2, INDUSTRY_TILE_ID_WIRE_MILL_2) {
+	if (!param_extension_aluminium) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [];
+			animation_info: [ANIMATION_LOOPING, 71];
+			animation_speed: 2;
+			animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
+		}
+	}
+	if (param_extension_aluminium) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [[ALUM,8]];
+			animation_info: [ANIMATION_LOOPING, 71];
+			animation_speed: 2;
+			animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
+		}
+	}
+	graphics {
+		tile_check: wire_mill_switch_tile_location_check;
+		cargo_amount_accept: wire_mill_switch_tile2_cargo_acceptance;
 		wire_mill_switch_graphics;
 	}
 }
 
 tilelayout wire_mill_tilelayout_1 {
-	4, 3: wire_mill_tile;
-	4, 4: wire_mill_tile;
-	4, 5: wire_mill_tile;
-	5, 3: wire_mill_tile;
-	5, 4: wire_mill_tile;
-	5, 5: wire_mill_tile;
-	6, 3: wire_mill_tile;
-	6, 4: wire_mill_tile;
-	6, 5: wire_mill_tile;
-	7, 3: wire_mill_tile;
-	7, 4: wire_mill_tile;
-	7, 5: wire_mill_tile;
-	8, 3: wire_mill_tile;
-	8, 4: wire_mill_tile;
-	8, 5: wire_mill_tile;
-	9, 3: wire_mill_tile;
-	9, 4: wire_mill_tile;
-	9, 5: wire_mill_tile;
-	0, 0: wire_mill_tile;
-	0, 1: wire_mill_tile;
-	1, 1: wire_mill_tile;
-	1, 0: wire_mill_tile;
-	2, 0: wire_mill_tile;
-	2, 1: wire_mill_tile;
+	4, 3: wire_mill_tile_1;
+	4, 4: wire_mill_tile_2;
+	4, 5: wire_mill_tile_1;
+	5, 3: wire_mill_tile_2;
+	5, 4: wire_mill_tile_1;
+	5, 5: wire_mill_tile_2;
+	6, 3: wire_mill_tile_1;
+	6, 4: wire_mill_tile_2;
+	6, 5: wire_mill_tile_1;
+	7, 3: wire_mill_tile_2;
+	7, 4: wire_mill_tile_1;
+	7, 5: wire_mill_tile_2;
+	8, 3: wire_mill_tile_1;
+	8, 4: wire_mill_tile_2;
+	8, 5: wire_mill_tile_1;
+	9, 3: wire_mill_tile_2;
+	9, 4: wire_mill_tile_1;
+	9, 5: wire_mill_tile_2;
+	0, 0: wire_mill_tile_1;
+	0, 1: wire_mill_tile_2;
+	1, 1: wire_mill_tile_1;
+	1, 0: wire_mill_tile_2;
+	2, 0: wire_mill_tile_1;
+	2, 1: wire_mill_tile_2;
 }
 
 tilelayout wire_mill_tilelayout_2 {
-	0, 0: wire_mill_tile;
-	0, 1: wire_mill_tile;
-	0, 2: wire_mill_tile;
-	1, 0: wire_mill_tile;
-	1, 1: wire_mill_tile;
-	1, 2: wire_mill_tile;
-	2, 0: wire_mill_tile;
-	2, 1: wire_mill_tile;
-	2, 2: wire_mill_tile;
-	3, 0: wire_mill_tile;
-	3, 1: wire_mill_tile;
-	3, 2: wire_mill_tile;
-	4, 0: wire_mill_tile;
-	4, 1: wire_mill_tile;
-	4, 2: wire_mill_tile;
-	5, 0: wire_mill_tile;
-	5, 1: wire_mill_tile;
-	5, 2: wire_mill_tile;
-	7, 4: wire_mill_tile;
-	7, 5: wire_mill_tile;
-	8, 5: wire_mill_tile;
-	8, 4: wire_mill_tile;
-	9, 4: wire_mill_tile;
-	9, 5: wire_mill_tile;
+	0, 0: wire_mill_tile_1;
+	0, 1: wire_mill_tile_2;
+	0, 2: wire_mill_tile_1;
+	1, 0: wire_mill_tile_2;
+	1, 1: wire_mill_tile_1;
+	1, 2: wire_mill_tile_2;
+	2, 0: wire_mill_tile_1;
+	2, 1: wire_mill_tile_2;
+	2, 2: wire_mill_tile_1;
+	3, 0: wire_mill_tile_2;
+	3, 1: wire_mill_tile_1;
+	3, 2: wire_mill_tile_2;
+	4, 0: wire_mill_tile_1;
+	4, 1: wire_mill_tile_2;
+	4, 2: wire_mill_tile_1;
+	5, 0: wire_mill_tile_2;
+	5, 1: wire_mill_tile_1;
+	5, 2: wire_mill_tile_2;
+	7, 4: wire_mill_tile_1;
+	7, 5: wire_mill_tile_2;
+	8, 5: wire_mill_tile_1;
+	8, 4: wire_mill_tile_2;
+	9, 4: wire_mill_tile_1;
+	9, 5: wire_mill_tile_2;
 }
 
 tilelayout wire_mill_tilelayout_3 {
-	0, 0: wire_mill_tile;
-	0, 1: wire_mill_tile;
-	0, 2: wire_mill_tile;
-	1, 0: wire_mill_tile;
-	1, 1: wire_mill_tile;
-	1, 2: wire_mill_tile;
-	2, 0: wire_mill_tile;
-	2, 1: wire_mill_tile;
-	2, 2: wire_mill_tile;
-	3, 0: wire_mill_tile;
-	3, 1: wire_mill_tile;
-	3, 2: wire_mill_tile;
-	4, 0: wire_mill_tile;
-	4, 1: wire_mill_tile;
-	4, 2: wire_mill_tile;
-	5, 0: wire_mill_tile;
-	5, 1: wire_mill_tile;
-	5, 2: wire_mill_tile;
-	0, 5: wire_mill_tile;
-	0, 6: wire_mill_tile;
-	1, 6: wire_mill_tile;
-	1, 5: wire_mill_tile;
-	2, 5: wire_mill_tile;
-	2, 6: wire_mill_tile;
+	0, 0: wire_mill_tile_1;
+	0, 1: wire_mill_tile_2;
+	0, 2: wire_mill_tile_1;
+	1, 0: wire_mill_tile_2;
+	1, 1: wire_mill_tile_1;
+	1, 2: wire_mill_tile_2;
+	2, 0: wire_mill_tile_1;
+	2, 1: wire_mill_tile_2;
+	2, 2: wire_mill_tile_1;
+	3, 0: wire_mill_tile_2;
+	3, 1: wire_mill_tile_1;
+	3, 2: wire_mill_tile_2;
+	4, 0: wire_mill_tile_1;
+	4, 1: wire_mill_tile_2;
+	4, 2: wire_mill_tile_1;
+	5, 0: wire_mill_tile_2;
+	5, 1: wire_mill_tile_1;
+	5, 2: wire_mill_tile_2;
+	0, 5: wire_mill_tile_1;
+	0, 6: wire_mill_tile_2;
+	1, 6: wire_mill_tile_1;
+	1, 5: wire_mill_tile_2;
+	2, 5: wire_mill_tile_1;
+	2, 6: wire_mill_tile_2;
 }
 
 tilelayout wire_mill_tilelayout_4 {
-	0, 0: wire_mill_tile;
-	0, 1: wire_mill_tile;
-	0, 2: wire_mill_tile;
-	1, 0: wire_mill_tile;
-	1, 1: wire_mill_tile;
-	1, 2: wire_mill_tile;
-	2, 0: wire_mill_tile;
-	2, 1: wire_mill_tile;
-	2, 2: wire_mill_tile;
-	3, 0: wire_mill_tile;
-	3, 1: wire_mill_tile;
-	3, 2: wire_mill_tile;
-	4, 0: wire_mill_tile;
-	4, 1: wire_mill_tile;
-	4, 2: wire_mill_tile;
-	5, 0: wire_mill_tile;
-	5, 1: wire_mill_tile;
-	5, 2: wire_mill_tile;
-	8, 0: wire_mill_tile;
-	8, 1: wire_mill_tile;
-	9, 1: wire_mill_tile;
-	9, 0: wire_mill_tile;
-	10, 0: wire_mill_tile;
-	10, 1: wire_mill_tile;
+	0, 0: wire_mill_tile_1;
+	0, 1: wire_mill_tile_2;
+	0, 2: wire_mill_tile_1;
+	1, 0: wire_mill_tile_2;
+	1, 1: wire_mill_tile_1;
+	1, 2: wire_mill_tile_2;
+	2, 0: wire_mill_tile_1;
+	2, 1: wire_mill_tile_2;
+	2, 2: wire_mill_tile_1;
+	3, 0: wire_mill_tile_2;
+	3, 1: wire_mill_tile_1;
+	3, 2: wire_mill_tile_2;
+	4, 0: wire_mill_tile_1;
+	4, 1: wire_mill_tile_2;
+	4, 2: wire_mill_tile_1;
+	5, 0: wire_mill_tile_2;
+	5, 1: wire_mill_tile_1;
+	5, 2: wire_mill_tile_2;
+	8, 0: wire_mill_tile_1;
+	8, 1: wire_mill_tile_2;
+	9, 1: wire_mill_tile_1;
+	9, 0: wire_mill_tile_2;
+	10, 0: wire_mill_tile_1;
+	10, 1: wire_mill_tile_2;
 }
 
 tilelayout wire_mill_tilelayout_5 {
-	3, 4: wire_mill_tile;
-	3, 5: wire_mill_tile;
-	3, 6: wire_mill_tile;
-	3, 7: wire_mill_tile;
-	3, 8: wire_mill_tile;
-	3, 9: wire_mill_tile;
-	4, 4: wire_mill_tile;
-	4, 5: wire_mill_tile;
-	4, 6: wire_mill_tile;
-	4, 7: wire_mill_tile;
-	4, 8: wire_mill_tile;
-	4, 9: wire_mill_tile;
-	5, 4: wire_mill_tile;
-	5, 5: wire_mill_tile;
-	5, 6: wire_mill_tile;
-	5, 7: wire_mill_tile;
-	5, 8: wire_mill_tile;
-	5, 9: wire_mill_tile;
-	0, 0: wire_mill_tile;
-	0, 1: wire_mill_tile;
-	0, 2: wire_mill_tile;
-	1, 0: wire_mill_tile;
-	1, 1: wire_mill_tile;
-	1, 2: wire_mill_tile;
+	3, 4: wire_mill_tile_1;
+	3, 5: wire_mill_tile_2;
+	3, 6: wire_mill_tile_1;
+	3, 7: wire_mill_tile_2;
+	3, 8: wire_mill_tile_1;
+	3, 9: wire_mill_tile_2;
+	4, 4: wire_mill_tile_1;
+	4, 5: wire_mill_tile_2;
+	4, 6: wire_mill_tile_1;
+	4, 7: wire_mill_tile_2;
+	4, 8: wire_mill_tile_1;
+	4, 9: wire_mill_tile_2;
+	5, 4: wire_mill_tile_1;
+	5, 5: wire_mill_tile_2;
+	5, 6: wire_mill_tile_1;
+	5, 7: wire_mill_tile_2;
+	5, 8: wire_mill_tile_1;
+	5, 9: wire_mill_tile_2;
+	0, 0: wire_mill_tile_1;
+	0, 1: wire_mill_tile_2;
+	0, 2: wire_mill_tile_1;
+	1, 0: wire_mill_tile_2;
+	1, 1: wire_mill_tile_1;
+	1, 2: wire_mill_tile_2;
 }
 
 tilelayout wire_mill_tilelayout_6 {
-	0, 0: wire_mill_tile;
-	0, 1: wire_mill_tile;
-	0, 2: wire_mill_tile;
-	0, 3: wire_mill_tile;
-	0, 4: wire_mill_tile;
-	0, 5: wire_mill_tile;
-	1, 0: wire_mill_tile;
-	1, 1: wire_mill_tile;
-	1, 2: wire_mill_tile;
-	1, 3: wire_mill_tile;
-	1, 4: wire_mill_tile;
-	1, 5: wire_mill_tile;
-	2, 0: wire_mill_tile;
-	2, 1: wire_mill_tile;
-	2, 2: wire_mill_tile;
-	2, 3: wire_mill_tile;
-	2, 4: wire_mill_tile;
-	2, 5: wire_mill_tile;
-	4, 7: wire_mill_tile;
-	4, 8: wire_mill_tile;
-	4, 9: wire_mill_tile;
-	5, 7: wire_mill_tile;
-	5, 8: wire_mill_tile;
-	5, 9: wire_mill_tile;
+	0, 0: wire_mill_tile_1;
+	0, 1: wire_mill_tile_2;
+	0, 2: wire_mill_tile_1;
+	0, 3: wire_mill_tile_2;
+	0, 4: wire_mill_tile_1;
+	0, 5: wire_mill_tile_2;
+	1, 0: wire_mill_tile_1;
+	1, 1: wire_mill_tile_2;
+	1, 2: wire_mill_tile_1;
+	1, 3: wire_mill_tile_2;
+	1, 4: wire_mill_tile_1;
+	1, 5: wire_mill_tile_2;
+	2, 0: wire_mill_tile_1;
+	2, 1: wire_mill_tile_2;
+	2, 2: wire_mill_tile_1;
+	2, 3: wire_mill_tile_2;
+	2, 4: wire_mill_tile_1;
+	2, 5: wire_mill_tile_2;
+	4, 7: wire_mill_tile_1;
+	4, 8: wire_mill_tile_2;
+	4, 9: wire_mill_tile_1;
+	5, 7: wire_mill_tile_2;
+	5, 8: wire_mill_tile_1;
+	5, 9: wire_mill_tile_2;
 }
 
 tilelayout wire_mill_tilelayout_7 {
-	0, 0: wire_mill_tile;
-	0, 1: wire_mill_tile;
-	0, 2: wire_mill_tile;
-	0, 3: wire_mill_tile;
-	0, 4: wire_mill_tile;
-	0, 5: wire_mill_tile;
-	1, 0: wire_mill_tile;
-	1, 1: wire_mill_tile;
-	1, 2: wire_mill_tile;
-	1, 3: wire_mill_tile;
-	1, 4: wire_mill_tile;
-	1, 5: wire_mill_tile;
-	2, 0: wire_mill_tile;
-	2, 1: wire_mill_tile;
-	2, 2: wire_mill_tile;
-	2, 3: wire_mill_tile;
-	2, 4: wire_mill_tile;
-	2, 5: wire_mill_tile;
-	0, 8: wire_mill_tile;
-	0, 9: wire_mill_tile;
-	0, 10: wire_mill_tile;
-	1, 8: wire_mill_tile;
-	1, 9: wire_mill_tile;
-	1, 10: wire_mill_tile;
+	0, 0: wire_mill_tile_1;
+	0, 1: wire_mill_tile_2;
+	0, 2: wire_mill_tile_1;
+	0, 3: wire_mill_tile_2;
+	0, 4: wire_mill_tile_1;
+	0, 5: wire_mill_tile_2;
+	1, 0: wire_mill_tile_1;
+	1, 1: wire_mill_tile_2;
+	1, 2: wire_mill_tile_1;
+	1, 3: wire_mill_tile_2;
+	1, 4: wire_mill_tile_1;
+	1, 5: wire_mill_tile_2;
+	2, 0: wire_mill_tile_1;
+	2, 1: wire_mill_tile_2;
+	2, 2: wire_mill_tile_1;
+	2, 3: wire_mill_tile_2;
+	2, 4: wire_mill_tile_1;
+	2, 5: wire_mill_tile_2;
+	0, 8: wire_mill_tile_1;
+	0, 9: wire_mill_tile_2;
+	0, 10: wire_mill_tile_1;
+	1, 8: wire_mill_tile_2;
+	1, 9: wire_mill_tile_1;
+	1, 10: wire_mill_tile_2;
 }
 
 tilelayout wire_mill_tilelayout_8 {
-	0, 0: wire_mill_tile;
-	0, 1: wire_mill_tile;
-	0, 2: wire_mill_tile;
-	0, 3: wire_mill_tile;
-	0, 4: wire_mill_tile;
-	0, 5: wire_mill_tile;
-	1, 0: wire_mill_tile;
-	1, 1: wire_mill_tile;
-	1, 2: wire_mill_tile;
-	1, 3: wire_mill_tile;
-	1, 4: wire_mill_tile;
-	1, 5: wire_mill_tile;
-	2, 0: wire_mill_tile;
-	2, 1: wire_mill_tile;
-	2, 2: wire_mill_tile;
-	2, 3: wire_mill_tile;
-	2, 4: wire_mill_tile;
-	2, 5: wire_mill_tile;
-	5, 0: wire_mill_tile;
-	5, 1: wire_mill_tile;
-	5, 2: wire_mill_tile;
-	6, 0: wire_mill_tile;
-	6, 1: wire_mill_tile;
-	6, 2: wire_mill_tile;
+	0, 0: wire_mill_tile_1;
+	0, 1: wire_mill_tile_2;
+	0, 2: wire_mill_tile_1;
+	0, 3: wire_mill_tile_2;
+	0, 4: wire_mill_tile_1;
+	0, 5: wire_mill_tile_2;
+	1, 0: wire_mill_tile_1;
+	1, 1: wire_mill_tile_2;
+	1, 2: wire_mill_tile_1;
+	1, 3: wire_mill_tile_2;
+	1, 4: wire_mill_tile_1;
+	1, 5: wire_mill_tile_2;
+	2, 0: wire_mill_tile_1;
+	2, 1: wire_mill_tile_2;
+	2, 2: wire_mill_tile_1;
+	2, 3: wire_mill_tile_2;
+	2, 4: wire_mill_tile_1;
+	2, 5: wire_mill_tile_2;
+	5, 0: wire_mill_tile_1;
+	5, 1: wire_mill_tile_2;
+	5, 2: wire_mill_tile_1;
+	6, 0: wire_mill_tile_2;
+	6, 1: wire_mill_tile_1;
+	6, 2: wire_mill_tile_2;
 }
 
 switch(FEAT_INDUSTRIES, SELF, wire_mill_switch_location_check_industry_distance,
        [STORE_TEMP(0, TEMP_REGISTER_TOWN_MIN_DISTANCE),
 	    STORE_TEMP(32, TEMP_REGISTER_TOWN_MAX_DISTANCE),
+		count_industries(),
 	    (is_industry_funded_or_prospected()) || (industry_generation_not_forbidden_by_param() && distance_from_town() && 
-		(industry_distance(INDUSTRY_ID_COPPER_SMELTER) >= 32) && 
-		(industry_distance(INDUSTRY_ID_ALUMINIUM_PLANT) >= 32) && 
-		(industry_distance(INDUSTRY_ID_VEHICLE_FACTORY) >= 32) && 
-		(industry_distance(INDUSTRY_ID_SHEET_MILL) >= 32) && 
-		//(industry_distance(INDUSTRY_ID_APPLIANCE_FACTORY) >= 32) && 
-	    (industry_distance(INDUSTRY_ID_WIRE_MILL) >= 16))]) {
+		(param_max_industries_per_type_on_map == 0 || param_max_industries_per_type_on_map > industry_count(INDUSTRY_ID_WIRE_MILL)) &&
+		(param_max_industries_on_map == 0 || param_max_industries_on_map > LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_INDUSTRIES)) &&
+		// distance to related producers
+		(industry_distance(INDUSTRY_ID_ACID_PLANT) >= param_min_dist_related_industry) && 
+		(industry_distance(INDUSTRY_ID_ALUMINIUM_PLANT) >= param_min_dist_related_industry) && 
+		(industry_distance(INDUSTRY_ID_CHLOR_ALKALI_PLANT) >= param_min_dist_related_industry) && 
+		(industry_distance(INDUSTRY_ID_COPPER_SMELTER) >= param_min_dist_related_industry) && 
+		// distance to related consumers
+		(industry_distance(INDUSTRY_ID_APPLIANCE_FACTORY) >= param_min_dist_related_industry) && 
+		(industry_distance(INDUSTRY_ID_COPPER_SMELTER) >= param_min_dist_related_industry) && 
+		(industry_distance(INDUSTRY_ID_INTEGRATED_STEEL_MILL) >= param_min_dist_related_industry) && 
+		(industry_distance(INDUSTRY_ID_VEHICLE_ENGINE_PLANT) >= param_min_dist_related_industry) && 
+		(industry_distance(INDUSTRY_ID_VEHICLE_FACTORY) >= param_min_dist_related_industry) && 
+		(industry_distance(INDUSTRY_ID_VEHICLE_PARTS_PLANT) >= param_min_dist_related_industry) && 
+		// distance between instances of same industry
+	    (industry_distance(INDUSTRY_ID_WIRE_MILL) >= param_min_dist_same_industry)		
+		)]) {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;
 }
@@ -1485,6 +1540,68 @@ switch(FEAT_INDUSTRIES, SELF, wire_mill_switch_update_last_served_date_ext_alumi
 	check_secondary_industry_closure();
 }
 
+produce(wire_mill_produce_cap_stockpile,
+	[COPR: incoming_cargo_waiting("COPR") > 60000 ? incoming_cargo_waiting("COPR") - 60000 : 0;
+	 ACID: incoming_cargo_waiting("ACID") > 60000 ? incoming_cargo_waiting("ACID") - 60000 : 0;
+	 LYE_: incoming_cargo_waiting("LYE_") > 60000 ? incoming_cargo_waiting("LYE_") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, wire_mill_switch_stockpile_check, param_stockpile_cap)
+{
+	1: empty_produce;
+	wire_mill_produce_cap_stockpile;
+}
+
+produce(wire_mill_produce_cap_stockpile_ext_aluminium,
+	[COPR: incoming_cargo_waiting("COPR") > 60000 ? incoming_cargo_waiting("COPR") - 60000 : 0;
+	 ACID: incoming_cargo_waiting("ACID") > 60000 ? incoming_cargo_waiting("ACID") - 60000 : 0;
+	 LYE_: incoming_cargo_waiting("LYE_") > 60000 ? incoming_cargo_waiting("LYE_") - 60000 : 0;
+	 ALUM: incoming_cargo_waiting("ALUM") > 60000 ? incoming_cargo_waiting("ALUM") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, wire_mill_switch_stockpile_check_ext_aluminium, param_stockpile_cap)
+{
+	1: empty_produce;
+	wire_mill_produce_cap_stockpile_ext_aluminium;
+}
+
+produce(wire_mill_produce_cap_stockpile_ext_recycling,
+	[COPR: incoming_cargo_waiting("COPR") > 60000 ? incoming_cargo_waiting("COPR") - 60000 : 0;
+	 ACID: incoming_cargo_waiting("ACID") > 60000 ? incoming_cargo_waiting("ACID") - 60000 : 0;
+	 LYE_: incoming_cargo_waiting("LYE_") > 60000 ? incoming_cargo_waiting("LYE_") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, wire_mill_switch_stockpile_check_ext_recycling, param_stockpile_cap)
+{
+	1: empty_produce;
+	wire_mill_produce_cap_stockpile_ext_recycling;
+}
+
+produce(wire_mill_produce_cap_stockpile_ext_aluminium_ext_recycling,
+	[COPR: incoming_cargo_waiting("COPR") > 60000 ? incoming_cargo_waiting("COPR") - 60000 : 0;
+	 ACID: incoming_cargo_waiting("ACID") > 60000 ? incoming_cargo_waiting("ACID") - 60000 : 0;
+	 LYE_: incoming_cargo_waiting("LYE_") > 60000 ? incoming_cargo_waiting("LYE_") - 60000 : 0;
+	 ALUM: incoming_cargo_waiting("ALUM") > 60000 ? incoming_cargo_waiting("ALUM") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, wire_mill_switch_stockpile_check_ext_aluminium_ext_recycling, param_stockpile_cap)
+{
+	1: empty_produce;
+	wire_mill_produce_cap_stockpile_ext_aluminium_ext_recycling;
+}
+
 if (param_extension_metallurgy && !param_extension_aluminium && !param_extension_recycling) {
 	item(FEAT_INDUSTRIES, wire_mill, INDUSTRY_ID_WIRE_MILL) {
 		property {
@@ -1508,7 +1625,7 @@ if (param_extension_metallurgy && !param_extension_aluminium && !param_extension
 			
 		graphics {
 			construction_probability: wire_mill_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    wire_mill_switch_stockpile_check; 
 			produce_256_ticks:        wire_mill_switch_produce;
 			monthly_prod_change:      wire_mill_switch_update_last_served_date;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1516,6 +1633,7 @@ if (param_extension_metallurgy && !param_extension_aluminium && !param_extension
 			extra_text_fund:          wire_mill_switch_extra_text_fund;
 			cargo_subtype_display:    wire_mill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -1543,7 +1661,7 @@ if (param_extension_metallurgy && param_extension_aluminium && !param_extension_
 			
 		graphics {
 			construction_probability: wire_mill_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    wire_mill_switch_stockpile_check_ext_aluminium; 
 			produce_256_ticks:        wire_mill_switch_produce_ext_aluminium;
 			monthly_prod_change:      wire_mill_switch_update_last_served_date_ext_aluminium;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1552,6 +1670,7 @@ if (param_extension_metallurgy && param_extension_aluminium && !param_extension_
 			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO_ANY);
 			cargo_subtype_display:    wire_mill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -1579,7 +1698,7 @@ if (param_extension_metallurgy && !param_extension_aluminium && param_extension_
 			
 		graphics {
 			construction_probability: wire_mill_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    wire_mill_switch_stockpile_check_ext_recycling; 
 			produce_256_ticks:        wire_mill_switch_produce_ext_recycling;
 			monthly_prod_change:      wire_mill_switch_update_last_served_date;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1587,6 +1706,7 @@ if (param_extension_metallurgy && !param_extension_aluminium && param_extension_
 			extra_text_fund:          wire_mill_switch_extra_text_fund;
 			cargo_subtype_display:    wire_mill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -1614,7 +1734,7 @@ if (param_extension_metallurgy && param_extension_aluminium && param_extension_r
 			
 		graphics {
 			construction_probability: wire_mill_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    wire_mill_switch_stockpile_check_ext_aluminium_ext_recycling; 
 			produce_256_ticks:        wire_mill_switch_produce_ext_aluminium_ext_recycling;
 			monthly_prod_change:      wire_mill_switch_update_last_served_date_ext_aluminium;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1623,6 +1743,7 @@ if (param_extension_metallurgy && param_extension_aluminium && param_extension_r
 			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO_ANY);
 			cargo_subtype_display:    wire_mill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }

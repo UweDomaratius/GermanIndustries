@@ -603,20 +603,41 @@ switch (FEAT_INDUSTRYTILES, SELF, lime_kiln_switch_tile_location_check,
 	return CB_RESULT_LOCATION_DISALLOW;
 }
 
+switch(FEAT_INDUSTRYTILES, PARENT, lime_kiln_switch_tile_cargo_acceptance, 
+	[STORE_TEMP(incoming_cargo_waiting("LIME") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0),
+	 STORE_TEMP(incoming_cargo_waiting("COKE") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL1)
+	]
+) {
+	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0) + (LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL1) << 4);
+}
+
 //////////////////////////////////////////////////////////////////////////////
 // industry tile and layout definition
 //////////////////////////////////////////////////////////////////////////////
 item(FEAT_INDUSTRYTILES, lime_kiln_tile, INDUSTRY_TILE_ID_LIME_KILN) {
-	property {
-		substitute:         0;
-		land_shape_flags:   0;
-		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
-		animation_info: [ANIMATION_LOOPING, 7];
-		animation_speed: 3;
-		animation_triggers: bitmask();
+	if (param_extension_glass && !param_extension_coke_sulphur) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [[LIME,8]];
+			animation_info: [ANIMATION_LOOPING, 7];
+			animation_speed: 3;
+			animation_triggers: bitmask();
+		}
+	}
+	if (param_extension_glass && param_extension_coke_sulphur) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [[LIME,8],[COKE,8]];
+			animation_info: [ANIMATION_LOOPING, 7];
+			animation_speed: 3;
+			animation_triggers: bitmask();
+		}
 	}
 	graphics {
 		tile_check: lime_kiln_switch_tile_location_check;
+		cargo_amount_accept: lime_kiln_switch_tile_cargo_acceptance;
 		lime_kiln_switch_graphics;
 	}
 }
@@ -651,11 +672,20 @@ tilelayout lime_kiln_tilelayout_3 {
 switch(FEAT_INDUSTRIES, SELF, lime_kiln_switch_location_check_industry_distance,
        [STORE_TEMP(32, TEMP_REGISTER_TOWN_MIN_DISTANCE),
 	    STORE_TEMP(64, TEMP_REGISTER_TOWN_MAX_DISTANCE),
-	    (is_industry_funded_or_prospected()) || ((distance_from_town() && 
-	    (industry_distance(INDUSTRY_ID_LIMESTONE_MINE) >= 32) && 
-		(industry_distance(INDUSTRY_ID_INTEGRATED_STEEL_MILL) >= 32) && 
-		(industry_distance(INDUSTRY_ID_GLASS_WORKS) >= 32) && 
-	    (industry_distance(INDUSTRY_ID_LIME_KILN) >= 16)))]) {
+		count_industries(),
+	    (is_industry_funded_or_prospected()) || (distance_from_town() && 
+		(param_max_industries_per_type_on_map == 0 || param_max_industries_per_type_on_map > industry_count(INDUSTRY_ID_LIME_KILN)) &&
+		(param_max_industries_on_map == 0 || param_max_industries_on_map > LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_INDUSTRIES)) &&
+		// distance to related producers
+		(industry_distance(INDUSTRY_ID_COKE_OVEN) >= param_min_dist_related_industry) && 
+		(industry_distance(INDUSTRY_ID_LIMESTONE_MINE) >= param_min_dist_related_industry) && 
+		// distance to related consumers
+		(industry_distance(INDUSTRY_ID_INTEGRATED_STEEL_MILL) >= param_min_dist_related_industry) && 
+		//(industry_distance(INDUSTRY_ID_FERTILIZER_PLANT) >= param_min_dist_related_industry) && 
+		(industry_distance(INDUSTRY_ID_GLASS_WORKS) >= param_min_dist_related_industry) &&
+		// distance between instances of same industry
+	    (industry_distance(INDUSTRY_ID_LIME_KILN) >= param_min_dist_same_industry)		
+		)]) {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;
 }
@@ -668,10 +698,6 @@ produce(lime_kiln_produce,
 	0 // do not run again
 )
 
-// steel_mill uses 10% of stockpile for production, if stockpile is big enough
-// if stockpile is < 80t, 8t are produced per 256ticks
-// if stockpile is < 8t, whatever is available is used
-// it stockpile is empty, nothing is produced
 switch(FEAT_INDUSTRIES, SELF, lime_kiln_switch_produce, 
 	[STORE_TEMP(incoming_cargo_waiting("LIME"), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
 	 
@@ -692,10 +718,6 @@ produce(lime_kiln_produce_ext_coke_sulphur,
 	0 // do not run again
 )
 
-// steel_mill uses 10% of stockpile for production, if stockpile is big enough
-// if stockpile is < 80t, 8t are produced per 256ticks
-// if stockpile is < 8t, whatever is available is used
-// it stockpile is empty, nothing is produced
 switch(FEAT_INDUSTRIES, SELF, lime_kiln_switch_produce_ext_coke_sulphur, 
 	[STORE_TEMP(min(incoming_cargo_waiting("LIME"),incoming_cargo_waiting("COKE")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
 	 
@@ -732,6 +754,34 @@ switch(FEAT_INDUSTRIES, SELF, lime_kiln_switch_update_last_served_date_ext_coke_
 {
 	check_secondary_industry_closure();
 }
+
+produce(lime_kiln_produce_cap_stockpile,
+	[LIME: incoming_cargo_waiting("LIME") > 60000 ? incoming_cargo_waiting("LIME") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, lime_kiln_switch_stockpile_check, param_stockpile_cap)
+{
+	1: empty_produce;
+	lime_kiln_produce_cap_stockpile;
+}
+
+produce(lime_kiln_produce_cap_stockpile_ext_coke_sulphur,
+	[LIME: incoming_cargo_waiting("LIME") > 60000 ? incoming_cargo_waiting("LIME") - 60000 : 0;
+	 COKE: incoming_cargo_waiting("COKE") > 60000 ? incoming_cargo_waiting("COKE") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, lime_kiln_switch_stockpile_check_ext_coke_sulphur, param_stockpile_cap)
+{
+	1: empty_produce;
+	lime_kiln_produce_cap_stockpile_ext_coke_sulphur;
+}
+
 if (param_extension_glass && !param_extension_coke_sulphur) {
 	item(FEAT_INDUSTRIES, lime_kiln, INDUSTRY_ID_LIME_KILN) {
 		property {
@@ -755,7 +805,7 @@ if (param_extension_glass && !param_extension_coke_sulphur) {
 			
 		graphics {
 			construction_probability: get_construction_probability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    lime_kiln_switch_stockpile_check; 
 			produce_256_ticks:        lime_kiln_switch_produce;
 			monthly_prod_change:      lime_kiln_switch_update_last_served_date;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -763,6 +813,7 @@ if (param_extension_glass && !param_extension_coke_sulphur) {
 			cargo_subtype_display:    lime_kiln_switch_cargo_subtype;
 			extra_text_fund:          return string(STR_EMPTY);
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -790,7 +841,7 @@ if (param_extension_glass && param_extension_coke_sulphur) {
 			
 		graphics {
 			construction_probability: get_construction_probability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    lime_kiln_switch_stockpile_check_ext_coke_sulphur; 
 			produce_256_ticks:        lime_kiln_switch_produce_ext_coke_sulphur;
 			monthly_prod_change:      lime_kiln_switch_update_last_served_date_ext_coke_sulphur;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -798,6 +849,7 @@ if (param_extension_glass && param_extension_coke_sulphur) {
 			cargo_subtype_display:    lime_kiln_switch_cargo_subtype;
 			extra_text_fund:          return string(STR_EMPTY);
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }

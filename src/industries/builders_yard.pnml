@@ -289,13 +289,20 @@ tilelayout builders_yard_tilelayout_4 {
 }
 
 switch(FEAT_INDUSTRIES, SELF, builders_yard_switch_location_check_industry_distance,
-       [(is_industry_funded_or_prospected()) || (
-	    (industry_distance(INDUSTRY_ID_CEMENT_PLANT) >= 32) &&
-		(industry_distance(INDUSTRY_ID_BRICK_WORKS) >= 32) &&
-		(town_euclidean_dist(0,0) < 16) &&
-	    (industry_distance(INDUSTRY_ID_SAWMILL) >= 32) &&
-		(industry_distance(INDUSTRY_ID_SANDPIT) >= 32) &&
-		(industry_distance(INDUSTRY_ID_BUILDERS_YARD) >= 16))]) {
+       [count_industries(),
+	   (is_industry_funded_or_prospected()) || (
+	    (town_euclidean_dist(0,0) < 16) &&
+		(param_max_industries_per_type_on_map == 0 || param_max_industries_per_type_on_map > industry_count(INDUSTRY_ID_BRICK_WORKS)) &&
+		(param_max_industries_on_map == 0 || param_max_industries_on_map > LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_INDUSTRIES)) &&
+		// distance to related producers
+		(industry_distance(INDUSTRY_ID_BRICK_WORKS) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_CEMENT_PLANT) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_SANDPIT) >= param_min_dist_related_industry) &&
+	    (industry_distance(INDUSTRY_ID_SAWMILL) >= param_min_dist_related_industry) &&
+		// distance to related consumers
+		// distance between instances of same industry
+		(industry_distance(INDUSTRY_ID_BUILDERS_YARD) >= param_min_dist_same_industry)
+		)]) {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;
 }

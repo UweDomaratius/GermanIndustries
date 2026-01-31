@@ -777,97 +777,149 @@ switch (FEAT_INDUSTRYTILES, SELF, paper_mill_switch_tile_location_check,
 	return CB_RESULT_LOCATION_DISALLOW;
 }
 
+switch(FEAT_INDUSTRYTILES, PARENT, paper_mill_switch_tile1_cargo_acceptance, 
+	[STORE_TEMP(incoming_cargo_waiting("LYE_") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0),
+	 STORE_TEMP(incoming_cargo_waiting("CHLO") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL1),
+	 STORE_TEMP(incoming_cargo_waiting("WOOD") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL2),
+	]
+) {
+	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0) + (LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL1) << 4) + (LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL2) << 8);
+}
+switch(FEAT_INDUSTRYTILES, PARENT, paper_mill_switch_tile2_cargo_acceptance, 
+	[STORE_TEMP(incoming_cargo_waiting("RCYC") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0)
+	]
+) {
+	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0);
+}
+
 //////////////////////////////////////////////////////////////////////////////
 // industry tile and layout definition
 //////////////////////////////////////////////////////////////////////////////
-item(FEAT_INDUSTRYTILES, paper_mill_tile, INDUSTRY_TILE_ID_PAPER_MILL) {
+item(FEAT_INDUSTRYTILES, paper_mill_tile1, INDUSTRY_TILE_ID_PAPER_MILL_1) {
 	property {
 		substitute:         0;
 		land_shape_flags:   0;
-		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+		accepted_cargos: [[LYE_,8],[CHLO,8],[WOOD,8]];
 		animation_info: [ANIMATION_LOOPING, 7];
 		animation_speed: 3;
 		animation_triggers: bitmask();
 	}
 	graphics {
 		tile_check: paper_mill_switch_tile_location_check;
+		cargo_amount_accept: paper_mill_switch_tile1_cargo_acceptance;
+		paper_mill_switch_graphics;
+	}
+}
+item(FEAT_INDUSTRYTILES, paper_mill_tile2, INDUSTRY_TILE_ID_PAPER_MILL_2) {
+	if (!param_extension_recycling)
+	{
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [];
+			animation_info: [ANIMATION_LOOPING, 7];
+			animation_speed: 3;
+			animation_triggers: bitmask();
+		}
+	}
+	if (param_extension_recycling)
+	{
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [[RCYC,8]];
+			animation_info: [ANIMATION_LOOPING, 7];
+			animation_speed: 3;
+			animation_triggers: bitmask();
+		}
+	}
+	graphics {
+		tile_check: paper_mill_switch_tile_location_check;
+		cargo_amount_accept: paper_mill_switch_tile2_cargo_acceptance;
 		paper_mill_switch_graphics;
 	}
 }
 
 tilelayout paper_mill_tilelayout_1 {
-	0, 0: paper_mill_tile;
-	0, 1: paper_mill_tile;
-	0, 2: paper_mill_tile;
-	1, 0: paper_mill_tile;
-	1, 1: paper_mill_tile;
-	1, 2: paper_mill_tile;
-	2, 0: paper_mill_tile;
-	2, 1: paper_mill_tile;
-	2, 2: paper_mill_tile;
-	3, 0: paper_mill_tile;
-	3, 1: paper_mill_tile;
-	3, 2: paper_mill_tile;
-	4, 0: paper_mill_tile;
-	4, 1: paper_mill_tile;
-	4, 2: paper_mill_tile;
+	0, 0: paper_mill_tile1;
+	0, 1: paper_mill_tile2;
+	0, 2: paper_mill_tile1;
+	1, 0: paper_mill_tile2;
+	1, 1: paper_mill_tile1;
+	1, 2: paper_mill_tile2;
+	2, 0: paper_mill_tile1;
+	2, 1: paper_mill_tile2;
+	2, 2: paper_mill_tile1;
+	3, 0: paper_mill_tile2;
+	3, 1: paper_mill_tile1;
+	3, 2: paper_mill_tile2;
+	4, 0: paper_mill_tile1;
+	4, 1: paper_mill_tile2;
+	4, 2: paper_mill_tile1;
 }
 tilelayout paper_mill_tilelayout_2 {
-	0, 0: paper_mill_tile;
-	0, 1: paper_mill_tile;
-	0, 2: paper_mill_tile;
-	1, 0: paper_mill_tile;
-	1, 1: paper_mill_tile;
-	1, 2: paper_mill_tile;
-	2, 0: paper_mill_tile;
-	2, 1: paper_mill_tile;
-	2, 2: paper_mill_tile;
-	3, 0: paper_mill_tile;
-	3, 1: paper_mill_tile;
-	3, 2: paper_mill_tile;
+	0, 0: paper_mill_tile1;
+	0, 1: paper_mill_tile2;
+	0, 2: paper_mill_tile1;
+	1, 0: paper_mill_tile2;
+	1, 1: paper_mill_tile1;
+	1, 2: paper_mill_tile2;
+	2, 0: paper_mill_tile1;
+	2, 1: paper_mill_tile2;
+	2, 2: paper_mill_tile1;
+	3, 0: paper_mill_tile2;
+	3, 1: paper_mill_tile1;
+	3, 2: paper_mill_tile2;
 }
 tilelayout paper_mill_tilelayout_3 {
-	0, 0: paper_mill_tile;
-	0, 1: paper_mill_tile;
-	0, 2: paper_mill_tile;
-	0, 3: paper_mill_tile;
-	1, 0: paper_mill_tile;
-	1, 1: paper_mill_tile;
-	1, 2: paper_mill_tile;
-	1, 3: paper_mill_tile;
-	2, 0: paper_mill_tile;
-	2, 1: paper_mill_tile;
-	2, 2: paper_mill_tile;
-	2, 3: paper_mill_tile;
+	0, 0: paper_mill_tile1;
+	0, 1: paper_mill_tile2;
+	0, 2: paper_mill_tile1;
+	0, 3: paper_mill_tile2;
+	1, 0: paper_mill_tile1;
+	1, 1: paper_mill_tile2;
+	1, 2: paper_mill_tile1;
+	1, 3: paper_mill_tile2;
+	2, 0: paper_mill_tile1;
+	2, 1: paper_mill_tile2;
+	2, 2: paper_mill_tile1;
+	2, 3: paper_mill_tile2;
 }
 tilelayout paper_mill_tilelayout_4 {
-	0, 0: paper_mill_tile;
-	0, 1: paper_mill_tile;
-	0, 2: paper_mill_tile;
-	0, 3: paper_mill_tile;
-	1, 0: paper_mill_tile;
-	1, 1: paper_mill_tile;
-	1, 2: paper_mill_tile;
-	1, 3: paper_mill_tile;
-	2, 0: paper_mill_tile;
-	2, 1: paper_mill_tile;
-	2, 2: paper_mill_tile;
-	2, 3: paper_mill_tile;
-	3, 0: paper_mill_tile;
-	3, 1: paper_mill_tile;
-	3, 2: paper_mill_tile;
+	0, 0: paper_mill_tile1;
+	0, 1: paper_mill_tile2;
+	0, 2: paper_mill_tile1;
+	0, 3: paper_mill_tile2;
+	1, 0: paper_mill_tile1;
+	1, 1: paper_mill_tile2;
+	1, 2: paper_mill_tile1;
+	1, 3: paper_mill_tile2;
+	2, 0: paper_mill_tile1;
+	2, 1: paper_mill_tile2;
+	2, 2: paper_mill_tile1;
+	2, 3: paper_mill_tile2;
+	3, 0: paper_mill_tile1;
+	3, 1: paper_mill_tile2;
+	3, 2: paper_mill_tile1;
 }
 
 switch(FEAT_INDUSTRIES, SELF, paper_mill_switch_location_check_industry_distance,
        [STORE_TEMP(0, TEMP_REGISTER_TOWN_MIN_DISTANCE),
 	    STORE_TEMP(32, TEMP_REGISTER_TOWN_MAX_DISTANCE),
-	    (is_industry_funded_or_prospected()) || ((distance_from_town() && 
-		(industry_distance(INDUSTRY_ID_PACKAGING_PLANT) >= 32) && 
-		(industry_distance(INDUSTRY_ID_PRINTING_WORKS) >= 32) && 
-		(industry_distance(INDUSTRY_ID_FOREST) >= 32) && 
-		(industry_distance(INDUSTRY_ID_CHLOR_ALKALI_PLANT) >= 32) && 
-		(industry_distance(INDUSTRY_ID_RECYCLING_DEPOT) >= 32) &&
-	    (industry_distance(INDUSTRY_ID_PAPER_MILL) >= 16)))]) {
+		count_industries(),
+	    (is_industry_funded_or_prospected()) || (distance_from_town() && 
+		(param_max_industries_per_type_on_map == 0 || param_max_industries_per_type_on_map > industry_count(INDUSTRY_ID_PAPER_MILL)) &&
+		(param_max_industries_on_map == 0 || param_max_industries_on_map > LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_INDUSTRIES)) &&
+		// distance to related producers
+		(industry_distance(INDUSTRY_ID_CHLOR_ALKALI_PLANT) >= param_min_dist_related_industry) && 
+		(industry_distance(INDUSTRY_ID_FOREST) >= param_min_dist_related_industry) && 
+		(industry_distance(INDUSTRY_ID_RECYCLING_DEPOT) >= param_min_dist_related_industry) &&
+		// distance to related consumers
+		(industry_distance(INDUSTRY_ID_PACKAGING_PLANT) >= param_min_dist_related_industry) && 
+		(industry_distance(INDUSTRY_ID_PRINTING_WORKS) >= param_min_dist_related_industry) && 		
+		// distance between instances of same industry
+	    (industry_distance(INDUSTRY_ID_PAPER_MILL) >= param_min_dist_same_industry)		
+		)]) {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;
 }
@@ -881,10 +933,6 @@ produce(paper_mill_produce,
 	0 // do not run again
 )
 
-// steel_mill uses 10% of stockpile for production, if stockpile is big enough
-// if stockpile is < 80t, 8t are produced per 256ticks
-// if stockpile is < 8t, whatever is available is used
-// it stockpile is empty, nothing is produced
 switch(FEAT_INDUSTRIES, SELF, paper_mill_switch_produce, 
 	[STORE_TEMP(min(incoming_cargo_waiting("LYE_"),incoming_cargo_waiting("CHLO"),incoming_cargo_waiting("WOOD")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
 	STORE_TEMP(min(incoming_cargo_waiting("LYE_"),incoming_cargo_waiting("CHLO"),incoming_cargo_waiting("WOOD")), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
@@ -908,10 +956,6 @@ produce(paper_mill_produce_ext_recycling,
 	0 // do not run again
 )
 
-// steel_mill uses 10% of stockpile for production, if stockpile is big enough
-// if stockpile is < 80t, 8t are produced per 256ticks
-// if stockpile is < 8t, whatever is available is used
-// it stockpile is empty, nothing is produced
 switch(FEAT_INDUSTRIES, SELF, paper_mill_switch_produce_ext_recycling, 
 	[STORE_TEMP(min(incoming_cargo_waiting("LYE_"),incoming_cargo_waiting("CHLO"),incoming_cargo_waiting("WOOD")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
 	 STORE_TEMP(min(incoming_cargo_waiting("LYE_"),incoming_cargo_waiting("CHLO"),incoming_cargo_waiting("WOOD")), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
@@ -973,6 +1017,37 @@ switch(FEAT_INDUSTRIES, SELF, paper_mill_switch_update_last_served_date_ext_recy
 	check_secondary_industry_closure();
 }
 
+produce(paper_mill_produce_cap_stockpile,
+	[LYE_: incoming_cargo_waiting("LYE_") > 60000 ? incoming_cargo_waiting("LYE_") - 60000 : 0;
+	 CHLO: incoming_cargo_waiting("CHLO") > 60000 ? incoming_cargo_waiting("CHLO") - 60000 : 0;
+	 WOOD: incoming_cargo_waiting("WOOD") > 60000 ? incoming_cargo_waiting("WOOD") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, paper_mill_switch_stockpile_check, param_stockpile_cap)
+{
+	1: empty_produce;
+	paper_mill_produce_cap_stockpile;
+}
+
+produce(paper_mill_produce_cap_stockpile_ext_recycling,
+	[LYE_: incoming_cargo_waiting("LYE_") > 60000 ? incoming_cargo_waiting("LYE_") - 60000 : 0;
+	 CHLO: incoming_cargo_waiting("CHLO") > 60000 ? incoming_cargo_waiting("CHLO") - 60000 : 0;
+	 WOOD: incoming_cargo_waiting("WOOD") > 60000 ? incoming_cargo_waiting("WOOD") - 60000 : 0;
+	 RCYC: incoming_cargo_waiting("RCYC") > 60000 ? incoming_cargo_waiting("RCYC") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, paper_mill_switch_stockpile_check_ext_recycling, param_stockpile_cap)
+{
+	1: empty_produce;
+	paper_mill_produce_cap_stockpile_ext_recycling;
+}
+
 if (param_extension_paper && !param_extension_recycling) {
 	item(FEAT_INDUSTRIES, paper_mill, INDUSTRY_ID_PAPER_MILL) {
 		property {
@@ -996,7 +1071,7 @@ if (param_extension_paper && !param_extension_recycling) {
 			
 		graphics {
 			construction_probability: paper_mill_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    paper_mill_switch_stockpile_check; 
 			produce_256_ticks:        paper_mill_switch_produce;
 			monthly_prod_change:      paper_mill_switch_update_last_served_date;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1004,6 +1079,7 @@ if (param_extension_paper && !param_extension_recycling) {
 			cargo_subtype_display:    paper_mill_switch_cargo_subtype;
 			extra_text_fund:          paper_mill_switch_extra_text_fund;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -1032,7 +1108,7 @@ if (param_extension_paper && param_extension_recycling) {
 			
 		graphics {
 			construction_probability: paper_mill_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    paper_mill_switch_stockpile_check_ext_recycling; 
 			produce_256_ticks:        paper_mill_switch_produce_ext_recycling;
 			monthly_prod_change:      paper_mill_switch_update_last_served_date_ext_recycling;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1041,6 +1117,7 @@ if (param_extension_paper && param_extension_recycling) {
 			extra_text_fund:          paper_mill_switch_extra_text_fund;
 			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO);
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }

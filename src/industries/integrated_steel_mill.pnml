@@ -382,6 +382,43 @@ switch (FEAT_INDUSTRYTILES, SELF, steel_mill_switch_tile_location_check,
 	return CB_RESULT_LOCATION_DISALLOW;
 }
 
+switch(FEAT_INDUSTRYTILES, PARENT, integrated_steel_mill_switch_tile1_cargo_acceptance, 
+	[STORE_TEMP(incoming_cargo_waiting("IORE") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0)
+	]
+) {
+	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0);
+}
+switch(FEAT_INDUSTRYTILES, PARENT, integrated_steel_mill_switch_tile2_cargo_acceptance, 
+	[STORE_TEMP(incoming_cargo_waiting("COAL") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0)
+	]
+) {
+	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0);
+}
+switch(FEAT_INDUSTRYTILES, PARENT, integrated_steel_mill_switch_tile3_cargo_acceptance, 
+	[STORE_TEMP(incoming_cargo_waiting("COKE") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0)
+	]
+) {
+	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0);
+}
+switch(FEAT_INDUSTRYTILES, PARENT, integrated_steel_mill_switch_tile4_cargo_acceptance, 
+	[STORE_TEMP(incoming_cargo_waiting("QLME") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0)
+	]
+) {
+	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0);
+}
+switch(FEAT_INDUSTRYTILES, PARENT, integrated_steel_mill_switch_tile5_cargo_acceptance, 
+	[STORE_TEMP(incoming_cargo_waiting("O2__") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0)
+	]
+) {
+	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0);
+}
+switch(FEAT_INDUSTRYTILES, PARENT, integrated_steel_mill_switch_tile6_cargo_acceptance, 
+	[STORE_TEMP(incoming_cargo_waiting("SCMT") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0)
+	]
+) {
+	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0);
+}
+
 //////////////////////////////////////////////////////////////////////////////
 // industry tile and layout definition
 //////////////////////////////////////////////////////////////////////////////
@@ -389,94 +426,233 @@ item(FEAT_INDUSTRYTILES, steel_mill_tile_1, INDUSTRY_TILE_ID_INTEGRATED_STEEL_MI
 	property {
 		substitute:         0;
 		land_shape_flags:   0;
-		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+		accepted_cargos: [[IORE,8]];
 		animation_info: [ANIMATION_LOOPING, 7];
 		animation_speed: 3;
 		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
 	}
 	graphics {
 		tile_check: steel_mill_switch_tile_location_check;
+		cargo_amount_accept: integrated_steel_mill_switch_tile1_cargo_acceptance;
 		steel_mill_switch_graphics;
 	}
 }
 item(FEAT_INDUSTRYTILES, steel_mill_tile_2, INDUSTRY_TILE_ID_INTEGRATED_STEEL_MILL_2) {
-	property {
-		substitute:         0;
-		land_shape_flags:   0;
-		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
-		animation_info: [ANIMATION_LOOPING, 30];
-		animation_speed: 4;
-		animation_triggers: bitmask();
+	if (!param_extension_coke_sulphur) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [[COAL,8]];
+			animation_info: [ANIMATION_LOOPING, 30];
+			animation_speed: 4;
+			animation_triggers: bitmask();
+		}
+	}
+	if (param_extension_coke_sulphur) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [];
+			animation_info: [ANIMATION_LOOPING, 30];
+			animation_speed: 4;
+			animation_triggers: bitmask();
+		}
 	}
 	graphics {
 		tile_check: steel_mill_switch_tile_location_check;
+		cargo_amount_accept: integrated_steel_mill_switch_tile2_cargo_acceptance;
+		steel_mill_switch_graphics;
+	}
+}
+item(FEAT_INDUSTRYTILES, steel_mill_tile_3, INDUSTRY_TILE_ID_INTEGRATED_STEEL_MILL_3) {
+	if (!param_extension_coke_sulphur) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [];
+			animation_info: [ANIMATION_LOOPING, 7];
+			animation_speed: 3;
+			animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
+		}
+	}
+	if (!param_extension_coke_sulphur) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [[COKE,8]];
+			animation_info: [ANIMATION_LOOPING, 7];
+			animation_speed: 3;
+			animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
+		}
+	}
+	graphics {
+		tile_check: steel_mill_switch_tile_location_check;
+		cargo_amount_accept: integrated_steel_mill_switch_tile3_cargo_acceptance;
+		steel_mill_switch_graphics;
+	}
+}
+item(FEAT_INDUSTRYTILES, steel_mill_tile_4, INDUSTRY_TILE_ID_INTEGRATED_STEEL_MILL_4) {
+	if (!param_extension_glass) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [];
+			animation_info: [ANIMATION_LOOPING, 7];
+			animation_speed: 3;
+			animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
+		}
+	}
+	if (param_extension_glass) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [[QLME,8]];
+			animation_info: [ANIMATION_LOOPING, 7];
+			animation_speed: 3;
+			animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
+		}
+	}
+	graphics {
+		tile_check: steel_mill_switch_tile_location_check;
+		cargo_amount_accept: integrated_steel_mill_switch_tile4_cargo_acceptance;
+		steel_mill_switch_graphics;
+	}
+}
+item(FEAT_INDUSTRYTILES, steel_mill_tile_5, INDUSTRY_TILE_ID_INTEGRATED_STEEL_MILL_5) {
+	if (!param_extension_ammonia) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [];
+			animation_info: [ANIMATION_LOOPING, 7];
+			animation_speed: 3;
+			animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
+		}
+	}
+	if (param_extension_ammonia) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [[O2__,8]];
+			animation_info: [ANIMATION_LOOPING, 7];
+			animation_speed: 3;
+			animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
+		}
+	}
+	graphics {
+		tile_check: steel_mill_switch_tile_location_check;
+		cargo_amount_accept: integrated_steel_mill_switch_tile5_cargo_acceptance;
+		steel_mill_switch_graphics;
+	}
+}
+item(FEAT_INDUSTRYTILES, steel_mill_tile_6, INDUSTRY_TILE_ID_INTEGRATED_STEEL_MILL_6) {
+	if (!param_extension_recycling) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [];
+			animation_info: [ANIMATION_LOOPING, 7];
+			animation_speed: 3;
+			animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
+		}
+	}
+	if (param_extension_recycling) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [[SCMT,8]];
+			animation_info: [ANIMATION_LOOPING, 7];
+			animation_speed: 3;
+			animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
+		}
+	}
+	graphics {
+		tile_check: steel_mill_switch_tile_location_check;
+		cargo_amount_accept: integrated_steel_mill_switch_tile6_cargo_acceptance;
 		steel_mill_switch_graphics;
 	}
 }
 
 tilelayout steel_mill_tilelayout_1 {
 	0, 0: steel_mill_tile_1;
-	0, 1: steel_mill_tile_1;
-	0, 2: steel_mill_tile_1;
-	0, 3: steel_mill_tile_1;
-	1, 0: steel_mill_tile_1;
+	0, 1: steel_mill_tile_3;
+	0, 2: steel_mill_tile_4;
+	0, 3: steel_mill_tile_5;
+	1, 0: steel_mill_tile_6;
 	1, 1: steel_mill_tile_1;
-	1, 2: steel_mill_tile_1;
-	1, 3: steel_mill_tile_1;
-	2, 0: steel_mill_tile_1;
-	2, 1: steel_mill_tile_1;
+	1, 2: steel_mill_tile_3;
+	1, 3: steel_mill_tile_4;
+	2, 0: steel_mill_tile_5;
+	2, 1: steel_mill_tile_6;
 	2, 2: steel_mill_tile_1;
-	2, 3: steel_mill_tile_1;
-	3, 0: steel_mill_tile_1;
-	3, 1: steel_mill_tile_1;
-	3, 2: steel_mill_tile_1;
+	2, 3: steel_mill_tile_3;
+	3, 0: steel_mill_tile_4;
+	3, 1: steel_mill_tile_5;
+	3, 2: steel_mill_tile_6;
 	3, 3: steel_mill_tile_1;
-	4, 0: steel_mill_tile_1;
+	4, 0: steel_mill_tile_3;
 	4, 1: steel_mill_tile_2;
-	4, 2: steel_mill_tile_1;
-	4, 3: steel_mill_tile_1;
+	4, 2: steel_mill_tile_4;
+	4, 3: steel_mill_tile_5;
 	5, 0: steel_mill_tile_2;
 	5, 1: steel_mill_tile_2;
-	5, 2: steel_mill_tile_1;
+	5, 2: steel_mill_tile_6;
 	5, 3: steel_mill_tile_1;
 }
 tilelayout steel_mill_tilelayout_2 {
 	0, 0: steel_mill_tile_1;
 	0, 1: steel_mill_tile_2;
-	0, 2: steel_mill_tile_1;
-	0, 3: steel_mill_tile_1;
-	0, 4: steel_mill_tile_1;
-	0, 5: steel_mill_tile_1;
+	0, 2: steel_mill_tile_3;
+	0, 3: steel_mill_tile_4;
+	0, 4: steel_mill_tile_5;
+	0, 5: steel_mill_tile_6;
 	1, 0: steel_mill_tile_2;
 	1, 1: steel_mill_tile_2;
 	1, 2: steel_mill_tile_1;
-	1, 3: steel_mill_tile_1;
-	1, 4: steel_mill_tile_1;
-	1, 5: steel_mill_tile_1;
-	2, 0: steel_mill_tile_1;
+	1, 3: steel_mill_tile_3;
+	1, 4: steel_mill_tile_4;
+	1, 5: steel_mill_tile_5;
+	2, 0: steel_mill_tile_6;
 	2, 1: steel_mill_tile_2;
 	2, 2: steel_mill_tile_1;
-	2, 3: steel_mill_tile_1;
-	2, 4: steel_mill_tile_1;
-	2, 5: steel_mill_tile_1;
+	2, 3: steel_mill_tile_3;
+	2, 4: steel_mill_tile_4;
+	2, 5: steel_mill_tile_5;
 	3, 0: steel_mill_tile_2;
 	3, 1: steel_mill_tile_2;
-	3, 2: steel_mill_tile_1;
+	3, 2: steel_mill_tile_6;
 	3, 3: steel_mill_tile_1;
-	3, 4: steel_mill_tile_1;
-	3, 5: steel_mill_tile_1;
+	3, 4: steel_mill_tile_3;
+	3, 5: steel_mill_tile_4;
 }
 
 switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_location_check_industry_distance,
        [STORE_TEMP(32, TEMP_REGISTER_TOWN_MIN_DISTANCE),
 	    STORE_TEMP(64, TEMP_REGISTER_TOWN_MAX_DISTANCE),
-	    (is_industry_funded_or_prospected()) || ((distance_from_town() && 
-	    (industry_distance(INDUSTRY_ID_COAL_MINE) >= 32) && 
-		(industry_distance(INDUSTRY_ID_IRON_ORE_MINE) >= 32) && 
-		(industry_distance(INDUSTRY_ID_PORT) >= 32) && 
-		(industry_distance(INDUSTRY_ID_LIME_KILN) >= 32) && 
-		(industry_distance(INDUSTRY_ID_VEHICLE_FACTORY) >= 32) && 
-	    (industry_distance(INDUSTRY_ID_INTEGRATED_STEEL_MILL) >= 16)))]) {
+		count_industries(),
+	    (is_industry_funded_or_prospected()) || (distance_from_town() && 
+		(param_max_industries_per_type_on_map == 0 || param_max_industries_per_type_on_map > industry_count(INDUSTRY_ID_INTEGRATED_STEEL_MILL)) &&
+		(param_max_industries_on_map == 0 || param_max_industries_on_map > LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_INDUSTRIES)) &&
+		// distance to related producers
+	    (industry_distance(INDUSTRY_ID_COAL_MINE) >= param_min_dist_related_industry) && 
+		(industry_distance(INDUSTRY_ID_COKE_OVEN) >= param_min_dist_related_industry) && 
+		(industry_distance(INDUSTRY_ID_CRYO_PLANT) >= param_min_dist_related_industry) && 
+		(industry_distance(INDUSTRY_ID_FOUNDRY_FORGE) >= param_min_dist_related_industry) && 
+		(industry_distance(INDUSTRY_ID_IRON_ORE_MINE) >= param_min_dist_related_industry) && 
+		(industry_distance(INDUSTRY_ID_LIME_KILN) >= param_min_dist_related_industry) && 
+		(industry_distance(INDUSTRY_ID_ORE_SMELTER) >= param_min_dist_related_industry) && 
+		(industry_distance(INDUSTRY_ID_PORT) >= param_min_dist_related_industry) && 
+		(industry_distance(INDUSTRY_ID_SCRAP_YARD) >= param_min_dist_related_industry) && 
+		(industry_distance(INDUSTRY_ID_SHEET_MILL) >= param_min_dist_related_industry) && 
+		(industry_distance(INDUSTRY_ID_WIRE_MILL) >= param_min_dist_related_industry) && 
+		// distance to related consumers
+		(industry_distance(INDUSTRY_ID_VEHICLE_BODY_PLANT) >= param_min_dist_related_industry) && 
+		(industry_distance(INDUSTRY_ID_VEHICLE_ENGINE_PLANT) >= param_min_dist_related_industry) && 
+		(industry_distance(INDUSTRY_ID_VEHICLE_FACTORY) >= param_min_dist_related_industry) && 
+		// distance between instances of same industry
+	    (industry_distance(INDUSTRY_ID_INTEGRATED_STEEL_MILL) >= param_min_dist_same_industry)
+		
+		)]) {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;
 }
@@ -680,10 +856,6 @@ produce(steel_mill_produce_ext_ammonia,
 	0 // do not run again
 )
 
-// steel_mill uses 10% of stockpile for production, if stockpile is big enough
-// if stockpile is < 80t, 8t are produced per 256ticks
-// if stockpile is < 8t, whatever is available is used
-// it stockpile is empty, nothing is produced
 switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_produce_ext_ammonia, 
 	[STORE_TEMP(min(incoming_cargo_waiting("COAL"), incoming_cargo_waiting("IORE")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
 	 
@@ -711,10 +883,6 @@ produce(steel_mill_produce_ext_ammonia_ext_recycling,
 	0 // do not run again
 )
 
-// steel_mill uses 10% of stockpile for production, if stockpile is big enough
-// if stockpile is < 80t, 8t are produced per 256ticks
-// if stockpile is < 8t, whatever is available is used
-// it stockpile is empty, nothing is produced
 switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_produce_ext_ammonia_ext_recycling, 
 	[STORE_TEMP(min(incoming_cargo_waiting("COAL"), incoming_cargo_waiting("IORE")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
 	 
@@ -746,10 +914,6 @@ produce(steel_mill_produce_ext_glass_ext_ammonia,
 	0 // do not run again
 )
 
-// steel_mill uses 10% of stockpile for production, if stockpile is big enough
-// if stockpile is < 80t, 8t are produced per 256ticks
-// if stockpile is < 8t, whatever is available is used
-// it stockpile is empty, nothing is produced
 switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_produce_ext_glass_ext_ammonia, 
 	[STORE_TEMP(min(incoming_cargo_waiting("COAL"), incoming_cargo_waiting("IORE"),incoming_cargo_waiting("QLME")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
 	 
@@ -778,10 +942,6 @@ produce(steel_mill_produce_ext_glass_ext_ammonia_ext_recycling,
 	0 // do not run again
 )
 
-// steel_mill uses 10% of stockpile for production, if stockpile is big enough
-// if stockpile is < 80t, 8t are produced per 256ticks
-// if stockpile is < 8t, whatever is available is used
-// it stockpile is empty, nothing is produced
 switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_produce_ext_glass_ext_ammonia_ext_recycling, 
 	[STORE_TEMP(min(incoming_cargo_waiting("COAL"), incoming_cargo_waiting("IORE"),incoming_cargo_waiting("QLME")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
 	 
@@ -813,10 +973,6 @@ produce(steel_mill_produce_ext_coke_sulphur_ext_ammonia,
 	0 // do not run again
 )
 
-// steel_mill uses 10% of stockpile for production, if stockpile is big enough
-// if stockpile is < 80t, 8t are produced per 256ticks
-// if stockpile is < 8t, whatever is available is used
-// it stockpile is empty, nothing is produced
 switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_produce_ext_coke_sulphur_ext_ammonia, 
 	[STORE_TEMP(min(incoming_cargo_waiting("COKE"), incoming_cargo_waiting("IORE")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
 	 
@@ -844,10 +1000,6 @@ produce(steel_mill_produce_ext_coke_sulphur_ext_ammonia_ext_recycling,
 	0 // do not run again
 )
 
-// steel_mill uses 10% of stockpile for production, if stockpile is big enough
-// if stockpile is < 80t, 8t are produced per 256ticks
-// if stockpile is < 8t, whatever is available is used
-// it stockpile is empty, nothing is produced
 switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_produce_ext_coke_sulphur_ext_ammonia_ext_recycling, 
 	[STORE_TEMP(min(incoming_cargo_waiting("COKE"), incoming_cargo_waiting("IORE")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
 	 
@@ -879,10 +1031,6 @@ produce(steel_mill_produce_ext_glass_ext_coke_sulphur_ext_ammonia,
 	0 // do not run again
 )
 
-// steel_mill uses 10% of stockpile for production, if stockpile is big enough
-// if stockpile is < 80t, 8t are produced per 256ticks
-// if stockpile is < 8t, whatever is available is used
-// it stockpile is empty, nothing is produced
 switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_produce_ext_glass_ext_coke_sulphur_ext_ammonia, 
 	[STORE_TEMP(min(incoming_cargo_waiting("COKE"), incoming_cargo_waiting("IORE"),incoming_cargo_waiting("QLME")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
 	 
@@ -911,10 +1059,6 @@ produce(steel_mill_produce_ext_glass_ext_coke_sulphur_ext_ammonia_ext_recycling,
 	0 // do not run again
 )
 
-// steel_mill uses 10% of stockpile for production, if stockpile is big enough
-// if stockpile is < 80t, 8t are produced per 256ticks
-// if stockpile is < 8t, whatever is available is used
-// it stockpile is empty, nothing is produced
 switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_produce_ext_glass_ext_coke_sulphur_ext_ammonia_ext_recycling, 
 	[STORE_TEMP(min(incoming_cargo_waiting("COKE"), incoming_cargo_waiting("IORE"),incoming_cargo_waiting("QLME")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
 	 
@@ -1119,6 +1263,254 @@ switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_update_last_served_date_ext_glas
 	check_secondary_industry_closure();
 }
 
+produce(integrated_steel_mill_produce_cap_stockpile,
+	[COAL: incoming_cargo_waiting("COAL") > 60000 ? incoming_cargo_waiting("COAL") - 60000 : 0;
+	 IORE: incoming_cargo_waiting("IORE") > 60000 ? incoming_cargo_waiting("IORE") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, integrated_steel_mill_switch_stockpile_check, param_stockpile_cap)
+{
+	1: empty_produce;
+	integrated_steel_mill_produce_cap_stockpile;
+}
+
+produce(integrated_steel_mill_produce_cap_stockpile_ext_glass,
+	[COAL: incoming_cargo_waiting("COAL") > 60000 ? incoming_cargo_waiting("COAL") - 60000 : 0;
+	 IORE: incoming_cargo_waiting("IORE") > 60000 ? incoming_cargo_waiting("IORE") - 60000 : 0;
+	 QLME: incoming_cargo_waiting("QLME") > 60000 ? incoming_cargo_waiting("QLME") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, integrated_steel_mill_switch_stockpile_check_ext_glass, param_stockpile_cap)
+{
+	1: empty_produce;
+	integrated_steel_mill_produce_cap_stockpile_ext_glass;
+}
+
+produce(integrated_steel_mill_produce_cap_stockpile_ext_coke_sulphur,
+	[COKE: incoming_cargo_waiting("COKE") > 60000 ? incoming_cargo_waiting("COKE") - 60000 : 0;
+	 IORE: incoming_cargo_waiting("IORE") > 60000 ? incoming_cargo_waiting("IORE") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, integrated_steel_mill_switch_stockpile_check_ext_coke_sulphur, param_stockpile_cap)
+{
+	1: empty_produce;
+	integrated_steel_mill_produce_cap_stockpile_ext_coke_sulphur;
+}
+
+produce(integrated_steel_mill_produce_cap_stockpile_ext_glass_ext_coke_sulphur,
+	[COKE: incoming_cargo_waiting("COKE") > 60000 ? incoming_cargo_waiting("COKE") - 60000 : 0;
+	 IORE: incoming_cargo_waiting("IORE") > 60000 ? incoming_cargo_waiting("IORE") - 60000 : 0;
+	 QLME: incoming_cargo_waiting("QLME") > 60000 ? incoming_cargo_waiting("QLME") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, integrated_steel_mill_switch_stockpile_check_ext_glass_ext_coke_sulphur, param_stockpile_cap)
+{
+	1: empty_produce;
+	integrated_steel_mill_produce_cap_stockpile_ext_glass_ext_coke_sulphur;
+}
+
+produce(integrated_steel_mill_produce_cap_stockpile_ext_ammonia,
+	[COAL: incoming_cargo_waiting("COAL") > 60000 ? incoming_cargo_waiting("COAL") - 60000 : 0;
+	 IORE: incoming_cargo_waiting("IORE") > 60000 ? incoming_cargo_waiting("IORE") - 60000 : 0;
+	 O2__: incoming_cargo_waiting("O2__") > 60000 ? incoming_cargo_waiting("O2__") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, integrated_steel_mill_switch_stockpile_check_ext_ammonia, param_stockpile_cap)
+{
+	1: empty_produce;
+	integrated_steel_mill_produce_cap_stockpile_ext_ammonia;
+}
+
+produce(integrated_steel_mill_produce_cap_stockpile_ext_glass_ext_ammonia,
+	[COAL: incoming_cargo_waiting("COAL") > 60000 ? incoming_cargo_waiting("COAL") - 60000 : 0;
+	 IORE: incoming_cargo_waiting("IORE") > 60000 ? incoming_cargo_waiting("IORE") - 60000 : 0;
+	 O2__: incoming_cargo_waiting("O2__") > 60000 ? incoming_cargo_waiting("O2__") - 60000 : 0;
+	 QLME: incoming_cargo_waiting("QLME") > 60000 ? incoming_cargo_waiting("QLME") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, integrated_steel_mill_switch_stockpile_check_ext_glass_ext_ammonia, param_stockpile_cap)
+{
+	1: empty_produce;
+	integrated_steel_mill_produce_cap_stockpile_ext_glass_ext_ammonia;
+}
+
+produce(integrated_steel_mill_produce_cap_stockpile_ext_coke_sulphur_ext_ammonia,
+	[COKE: incoming_cargo_waiting("COKE") > 60000 ? incoming_cargo_waiting("COKE") - 60000 : 0;
+	 IORE: incoming_cargo_waiting("IORE") > 60000 ? incoming_cargo_waiting("IORE") - 60000 : 0;
+	 O2__: incoming_cargo_waiting("O2__") > 60000 ? incoming_cargo_waiting("O2__") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, integrated_steel_mill_switch_stockpile_check_ext_coke_sulphur_ext_ammonia, param_stockpile_cap)
+{
+	1: empty_produce;
+	integrated_steel_mill_produce_cap_stockpile_ext_coke_sulphur_ext_ammonia;
+}
+
+produce(integrated_steel_mill_produce_cap_stockpile_ext_glass_ext_coke_sulphur_ext_ammonia,
+	[COKE: incoming_cargo_waiting("COKE") > 60000 ? incoming_cargo_waiting("COKE") - 60000 : 0;
+	 IORE: incoming_cargo_waiting("IORE") > 60000 ? incoming_cargo_waiting("IORE") - 60000 : 0;
+	 O2__: incoming_cargo_waiting("O2__") > 60000 ? incoming_cargo_waiting("O2__") - 60000 : 0;
+	 QLME: incoming_cargo_waiting("QLME") > 60000 ? incoming_cargo_waiting("QLME") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, integrated_steel_mill_switch_stockpile_check_ext_glass_ext_coke_sulphur_ext_ammonia, param_stockpile_cap)
+{
+	1: empty_produce;
+	integrated_steel_mill_produce_cap_stockpile_ext_glass_ext_coke_sulphur_ext_ammonia;
+}
+
+produce(integrated_steel_mill_produce_cap_stockpile_ext_recycling,
+	[COAL: incoming_cargo_waiting("COAL") > 60000 ? incoming_cargo_waiting("COAL") - 60000 : 0;
+	 IORE: incoming_cargo_waiting("IORE") > 60000 ? incoming_cargo_waiting("IORE") - 60000 : 0;
+	 SCMT: incoming_cargo_waiting("SCMT") > 60000 ? incoming_cargo_waiting("SCMT") - 60000 : 0;	 
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, integrated_steel_mill_switch_stockpile_check_ext_recycling, param_stockpile_cap)
+{
+	1: empty_produce;
+	integrated_steel_mill_produce_cap_stockpile_ext_recycling;
+}
+
+produce(integrated_steel_mill_produce_cap_stockpile_ext_glass_ext_recycling,
+	[COAL: incoming_cargo_waiting("COAL") > 60000 ? incoming_cargo_waiting("COAL") - 60000 : 0;
+	 IORE: incoming_cargo_waiting("IORE") > 60000 ? incoming_cargo_waiting("IORE") - 60000 : 0;
+	 SCMT: incoming_cargo_waiting("SCMT") > 60000 ? incoming_cargo_waiting("SCMT") - 60000 : 0;	 
+	 QLME: incoming_cargo_waiting("QLME") > 60000 ? incoming_cargo_waiting("QLME") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, integrated_steel_mill_switch_stockpile_check_ext_glass_ext_recycling, param_stockpile_cap)
+{
+	1: empty_produce;
+	integrated_steel_mill_produce_cap_stockpile_ext_glass_ext_recycling;
+}
+
+produce(integrated_steel_mill_produce_cap_stockpile_ext_coke_sulphur_ext_recycling,
+	[COKE: incoming_cargo_waiting("COKE") > 60000 ? incoming_cargo_waiting("COKE") - 60000 : 0;
+	 IORE: incoming_cargo_waiting("IORE") > 60000 ? incoming_cargo_waiting("IORE") - 60000 : 0;
+	 SCMT: incoming_cargo_waiting("SCMT") > 60000 ? incoming_cargo_waiting("SCMT") - 60000 : 0;	 
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, integrated_steel_mill_switch_stockpile_check_ext_coke_sulphur_ext_recycling, param_stockpile_cap)
+{
+	1: empty_produce;
+	integrated_steel_mill_produce_cap_stockpile_ext_coke_sulphur_ext_recycling;
+}
+
+produce(integrated_steel_mill_produce_cap_stockpile_ext_glass_ext_coke_sulphur_ext_recycling,
+	[COKE: incoming_cargo_waiting("COKE") > 60000 ? incoming_cargo_waiting("COKE") - 60000 : 0;
+	 IORE: incoming_cargo_waiting("IORE") > 60000 ? incoming_cargo_waiting("IORE") - 60000 : 0;
+	 SCMT: incoming_cargo_waiting("SCMT") > 60000 ? incoming_cargo_waiting("SCMT") - 60000 : 0;	 
+	 QLME: incoming_cargo_waiting("QLME") > 60000 ? incoming_cargo_waiting("QLME") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, integrated_steel_mill_switch_stockpile_check_ext_glass_ext_coke_sulphur_ext_recycling, param_stockpile_cap)
+{
+	1: empty_produce;
+	integrated_steel_mill_produce_cap_stockpile_ext_glass_ext_coke_sulphur_ext_recycling;
+}
+
+produce(integrated_steel_mill_produce_cap_stockpile_ext_ammonia_ext_recycling,
+	[COAL: incoming_cargo_waiting("COAL") > 60000 ? incoming_cargo_waiting("COAL") - 60000 : 0;
+	 IORE: incoming_cargo_waiting("IORE") > 60000 ? incoming_cargo_waiting("IORE") - 60000 : 0;
+	 SCMT: incoming_cargo_waiting("SCMT") > 60000 ? incoming_cargo_waiting("SCMT") - 60000 : 0;	 
+	 O2__: incoming_cargo_waiting("O2__") > 60000 ? incoming_cargo_waiting("O2__") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, integrated_steel_mill_switch_stockpile_check_ext_ammonia_ext_recycling, param_stockpile_cap)
+{
+	1: empty_produce;
+	integrated_steel_mill_produce_cap_stockpile_ext_ammonia_ext_recycling;
+}
+
+produce(integrated_steel_mill_produce_cap_stockpile_ext_glass_ext_ammonia_ext_recycling,
+	[COAL: incoming_cargo_waiting("COAL") > 60000 ? incoming_cargo_waiting("COAL") - 60000 : 0;
+	 IORE: incoming_cargo_waiting("IORE") > 60000 ? incoming_cargo_waiting("IORE") - 60000 : 0;
+	 SCMT: incoming_cargo_waiting("SCMT") > 60000 ? incoming_cargo_waiting("SCMT") - 60000 : 0;	 
+	 O2__: incoming_cargo_waiting("O2__") > 60000 ? incoming_cargo_waiting("O2__") - 60000 : 0;
+	 QLME: incoming_cargo_waiting("QLME") > 60000 ? incoming_cargo_waiting("QLME") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, integrated_steel_mill_switch_stockpile_check_ext_glass_ext_ammonia_ext_recycling, param_stockpile_cap)
+{
+	1: empty_produce;
+	integrated_steel_mill_produce_cap_stockpile_ext_glass_ext_ammonia_ext_recycling;
+}
+
+produce(integrated_steel_mill_produce_cap_stockpile_ext_coke_sulphur_ext_ammonia_ext_recycling,
+	[COKE: incoming_cargo_waiting("COKE") > 60000 ? incoming_cargo_waiting("COKE") - 60000 : 0;
+	 IORE: incoming_cargo_waiting("IORE") > 60000 ? incoming_cargo_waiting("IORE") - 60000 : 0;
+	 SCMT: incoming_cargo_waiting("SCMT") > 60000 ? incoming_cargo_waiting("SCMT") - 60000 : 0;	 
+	 O2__: incoming_cargo_waiting("O2__") > 60000 ? incoming_cargo_waiting("O2__") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, integrated_steel_mill_switch_stockpile_check_ext_coke_sulphur_ext_ammonia_ext_recycling, param_stockpile_cap)
+{
+	1: empty_produce;
+	integrated_steel_mill_produce_cap_stockpile_ext_coke_sulphur_ext_ammonia_ext_recycling;
+}
+
+produce(integrated_steel_mill_produce_cap_stockpile_ext_glass_ext_coke_sulphur_ext_ammonia_ext_recycling,
+	[COKE: incoming_cargo_waiting("COKE") > 60000 ? incoming_cargo_waiting("COKE") - 60000 : 0;
+	 IORE: incoming_cargo_waiting("IORE") > 60000 ? incoming_cargo_waiting("IORE") - 60000 : 0;
+	 SCMT: incoming_cargo_waiting("SCMT") > 60000 ? incoming_cargo_waiting("SCMT") - 60000 : 0;	 
+	 O2__: incoming_cargo_waiting("O2__") > 60000 ? incoming_cargo_waiting("O2__") - 60000 : 0;
+	 QLME: incoming_cargo_waiting("QLME") > 60000 ? incoming_cargo_waiting("QLME") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, integrated_steel_mill_switch_stockpile_check_ext_glass_ext_coke_sulphur_ext_ammonia_ext_recycling, param_stockpile_cap)
+{
+	1: empty_produce;
+	integrated_steel_mill_produce_cap_stockpile_ext_glass_ext_coke_sulphur_ext_ammonia_ext_recycling;
+}
+
 if (!param_extension_glass && !param_extension_coke_sulphur && !param_extension_ammonia && !param_extension_recycling) {
 	item(FEAT_INDUSTRIES, steel_mill, INDUSTRY_ID_INTEGRATED_STEEL_MILL) {
 		property {
@@ -1142,7 +1534,7 @@ if (!param_extension_glass && !param_extension_coke_sulphur && !param_extension_
 			
 		graphics {
 			construction_probability: steel_mill_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    integrated_steel_mill_switch_stockpile_check; 
 			produce_256_ticks:        steel_mill_switch_produce;
 			monthly_prod_change:      steel_mill_switch_update_last_served_date;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1150,6 +1542,7 @@ if (!param_extension_glass && !param_extension_coke_sulphur && !param_extension_
 			extra_text_fund:          steel_mill_switch_extra_text_fund;
 			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -1177,7 +1570,7 @@ if (param_extension_glass && !param_extension_coke_sulphur && !param_extension_a
 			
 		graphics {
 			construction_probability: steel_mill_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    integrated_steel_mill_switch_stockpile_check_ext_glass; 
 			produce_256_ticks:        steel_mill_switch_produce_ext_glass;
 			monthly_prod_change:      steel_mill_switch_update_last_served_date_ext_glass;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1185,6 +1578,7 @@ if (param_extension_glass && !param_extension_coke_sulphur && !param_extension_a
 			extra_text_fund:          steel_mill_switch_extra_text_fund;
 			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -1212,7 +1606,7 @@ if (!param_extension_glass && param_extension_coke_sulphur && !param_extension_a
 			
 		graphics {
 			construction_probability: steel_mill_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    integrated_steel_mill_switch_stockpile_check_ext_coke_sulphur; 
 			produce_256_ticks:        steel_mill_switch_produce_ext_coke_sulphur;
 			monthly_prod_change:      steel_mill_switch_update_last_served_date_ext_coke_sulphur;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1220,6 +1614,7 @@ if (!param_extension_glass && param_extension_coke_sulphur && !param_extension_a
 			extra_text_fund:          steel_mill_switch_extra_text_fund;
 			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -1247,7 +1642,7 @@ if (param_extension_glass && param_extension_coke_sulphur && !param_extension_am
 			
 		graphics {
 			construction_probability: steel_mill_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    integrated_steel_mill_switch_stockpile_check_ext_glass_ext_coke_sulphur; 
 			produce_256_ticks:        steel_mill_switch_produce_ext_glass_ext_coke_sulphur;
 			monthly_prod_change:      steel_mill_switch_update_last_served_date_ext_glass_ext_coke_sulphur;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1256,6 +1651,7 @@ if (param_extension_glass && param_extension_coke_sulphur && !param_extension_am
 			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO);
 			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -1283,7 +1679,7 @@ if (!param_extension_glass && !param_extension_coke_sulphur && param_extension_a
 			
 		graphics {
 			construction_probability: steel_mill_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    integrated_steel_mill_switch_stockpile_check_ext_ammonia; 
 			produce_256_ticks:        steel_mill_switch_produce_ext_ammonia;
 			monthly_prod_change:      steel_mill_switch_update_last_served_date_ext_ammonia;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1291,6 +1687,7 @@ if (!param_extension_glass && !param_extension_coke_sulphur && param_extension_a
 			extra_text_fund:          steel_mill_switch_extra_text_fund;
 			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -1318,7 +1715,7 @@ if (param_extension_glass && !param_extension_coke_sulphur && param_extension_am
 			
 		graphics {
 			construction_probability: steel_mill_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    integrated_steel_mill_switch_stockpile_check_ext_glass_ext_ammonia; 
 			produce_256_ticks:        steel_mill_switch_produce_ext_glass_ext_ammonia;
 			monthly_prod_change:      steel_mill_switch_update_last_served_date_ext_glass_ext_ammonia;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1326,6 +1723,7 @@ if (param_extension_glass && !param_extension_coke_sulphur && param_extension_am
 			extra_text_fund:          steel_mill_switch_extra_text_fund;
 			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -1353,7 +1751,7 @@ if (!param_extension_glass && param_extension_coke_sulphur && param_extension_am
 			
 		graphics {
 			construction_probability: steel_mill_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    integrated_steel_mill_switch_stockpile_check_ext_coke_sulphur_ext_ammonia; 
 			produce_256_ticks:        steel_mill_switch_produce_ext_coke_sulphur_ext_ammonia;
 			monthly_prod_change:      steel_mill_switch_update_last_served_date_ext_coke_sulphur_ext_ammonia;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1361,6 +1759,7 @@ if (!param_extension_glass && param_extension_coke_sulphur && param_extension_am
 			extra_text_fund:          steel_mill_switch_extra_text_fund;
 			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -1388,7 +1787,7 @@ if (param_extension_glass && param_extension_coke_sulphur && param_extension_amm
 			
 		graphics {
 			construction_probability: steel_mill_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    integrated_steel_mill_switch_stockpile_check_ext_glass_ext_coke_sulphur_ext_ammonia; 
 			produce_256_ticks:        steel_mill_switch_produce_ext_glass_ext_coke_sulphur_ext_ammonia;
 			monthly_prod_change:      steel_mill_switch_update_last_served_date_ext_glass_ext_coke_sulphur_ext_ammonia;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1396,6 +1795,7 @@ if (param_extension_glass && param_extension_coke_sulphur && param_extension_amm
 			extra_text_fund:          steel_mill_switch_extra_text_fund;
 			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -1423,7 +1823,7 @@ if (!param_extension_glass && !param_extension_coke_sulphur && !param_extension_
 			
 		graphics {
 			construction_probability: steel_mill_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    integrated_steel_mill_switch_stockpile_check_ext_recycling; 
 			produce_256_ticks:        steel_mill_switch_produce_ext_recycling;
 			monthly_prod_change:      steel_mill_switch_update_last_served_date_ext_recycling;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1431,6 +1831,7 @@ if (!param_extension_glass && !param_extension_coke_sulphur && !param_extension_
 			extra_text_fund:          steel_mill_switch_extra_text_fund;
 			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -1458,7 +1859,7 @@ if (param_extension_glass && !param_extension_coke_sulphur && !param_extension_a
 			
 		graphics {
 			construction_probability: steel_mill_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    integrated_steel_mill_switch_stockpile_check_ext_glass_ext_recycling; 
 			produce_256_ticks:        steel_mill_switch_produce_ext_glass_ext_recycling;
 			monthly_prod_change:      steel_mill_switch_update_last_served_date_ext_glass_ext_recycling;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1466,6 +1867,7 @@ if (param_extension_glass && !param_extension_coke_sulphur && !param_extension_a
 			extra_text_fund:          steel_mill_switch_extra_text_fund;
 			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -1493,7 +1895,7 @@ if (!param_extension_glass && param_extension_coke_sulphur && !param_extension_a
 			
 		graphics {
 			construction_probability: steel_mill_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    integrated_steel_mill_switch_stockpile_check_ext_coke_sulphur_ext_recycling; 
 			produce_256_ticks:        steel_mill_switch_produce_ext_coke_sulphur_ext_recycling;
 			monthly_prod_change:      steel_mill_switch_update_last_served_date_ext_coke_sulphur_ext_recycling;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1501,6 +1903,7 @@ if (!param_extension_glass && param_extension_coke_sulphur && !param_extension_a
 			extra_text_fund:          steel_mill_switch_extra_text_fund;
 			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -1528,7 +1931,7 @@ if (param_extension_glass && param_extension_coke_sulphur && !param_extension_am
 			
 		graphics {
 			construction_probability: steel_mill_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    integrated_steel_mill_switch_stockpile_check_ext_glass_ext_coke_sulphur_ext_recycling; 
 			produce_256_ticks:        steel_mill_switch_produce_ext_glass_ext_coke_sulphur_ext_recycling;
 			monthly_prod_change:      steel_mill_switch_update_last_served_date_ext_glass_ext_coke_sulphur_ext_recycling;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1537,6 +1940,7 @@ if (param_extension_glass && param_extension_coke_sulphur && !param_extension_am
 			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO);
 			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -1564,7 +1968,7 @@ if (!param_extension_glass && !param_extension_coke_sulphur && param_extension_a
 			
 		graphics {
 			construction_probability: steel_mill_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    integrated_steel_mill_switch_stockpile_check_ext_ammonia_ext_recycling; 
 			produce_256_ticks:        steel_mill_switch_produce_ext_ammonia_ext_recycling;
 			monthly_prod_change:      steel_mill_switch_update_last_served_date_ext_ammonia_ext_recycling;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1572,6 +1976,7 @@ if (!param_extension_glass && !param_extension_coke_sulphur && param_extension_a
 			extra_text_fund:          steel_mill_switch_extra_text_fund;
 			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -1599,7 +2004,7 @@ if (param_extension_glass && !param_extension_coke_sulphur && param_extension_am
 			
 		graphics {
 			construction_probability: steel_mill_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    integrated_steel_mill_switch_stockpile_check_ext_glass_ext_ammonia_ext_recycling; 
 			produce_256_ticks:        steel_mill_switch_produce_ext_glass_ext_ammonia_ext_recycling;
 			monthly_prod_change:      steel_mill_switch_update_last_served_date_ext_glass_ext_ammonia_ext_recycling;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1607,6 +2012,7 @@ if (param_extension_glass && !param_extension_coke_sulphur && param_extension_am
 			extra_text_fund:          steel_mill_switch_extra_text_fund;
 			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -1634,7 +2040,7 @@ if (!param_extension_glass && param_extension_coke_sulphur && param_extension_am
 			
 		graphics {
 			construction_probability: steel_mill_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    integrated_steel_mill_switch_stockpile_check_ext_coke_sulphur_ext_ammonia_ext_recycling; 
 			produce_256_ticks:        steel_mill_switch_produce_ext_coke_sulphur_ext_ammonia_ext_recycling;
 			monthly_prod_change:      steel_mill_switch_update_last_served_date_ext_coke_sulphur_ext_ammonia_ext_recycling;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1642,6 +2048,7 @@ if (!param_extension_glass && param_extension_coke_sulphur && param_extension_am
 			extra_text_fund:          steel_mill_switch_extra_text_fund;
 			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -1669,7 +2076,7 @@ if (param_extension_glass && param_extension_coke_sulphur && param_extension_amm
 			
 		graphics {
 			construction_probability: steel_mill_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    integrated_steel_mill_switch_stockpile_check_ext_glass_ext_coke_sulphur_ext_ammonia_ext_recycling; 
 			produce_256_ticks:        steel_mill_switch_produce_ext_glass_ext_coke_sulphur_ext_ammonia_ext_recycling;
 			monthly_prod_change:      steel_mill_switch_update_last_served_date_ext_glass_ext_coke_sulphur_ext_ammonia_ext_recycling;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1677,6 +2084,7 @@ if (param_extension_glass && param_extension_coke_sulphur && param_extension_amm
 			extra_text_fund:          steel_mill_switch_extra_text_fund;
 			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }

@@ -695,101 +695,156 @@ switch (FEAT_INDUSTRYTILES, SELF, appliance_factory_switch_tile_location_check,
 	return CB_RESULT_LOCATION_DISALLOW;
 }
 
+switch(FEAT_INDUSTRYTILES, PARENT, power_plant_switch_tile1_cargo_acceptance, 
+	[STORE_TEMP(incoming_cargo_waiting("ENSP") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0),
+	 STORE_TEMP(incoming_cargo_waiting("STWR") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL1),
+	 STORE_TEMP(incoming_cargo_waiting("PLAS") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL2),
+	]
+) {
+	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0) + (LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL1) << 4) + (LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL2) << 8);
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, power_plant_switch_tile2_cargo_acceptance, 
+	[STORE_TEMP(incoming_cargo_waiting("STWR") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0),
+	 STORE_TEMP(incoming_cargo_waiting("PLAS") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL1),
+	 STORE_TEMP(incoming_cargo_waiting("MNSP") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL2),
+	]
+) {
+	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0) + (LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL1) << 4) + (LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL2) << 8);
+}
+
 //////////////////////////////////////////////////////////////////////////////
 // industry tile and layout definition
 //////////////////////////////////////////////////////////////////////////////
-item(FEAT_INDUSTRYTILES, appliance_factory_tile, INDUSTRY_TILE_ID_APPLIANCE_FACTORY) {
+item(FEAT_INDUSTRYTILES, appliance_factory_tile1, INDUSTRY_TILE_ID_APPLIANCE_FACTORY_1) {
 	property {
 		substitute:         0;
 		land_shape_flags:   0;
-		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+		accepted_cargos: [[ENSP,8],[STWR,8],[PLAS,8]];
 		animation_info: [ANIMATION_LOOPING, 71];
 		animation_speed: 2;
 		animation_triggers: bitmask();
+	}	
+	graphics {
+		tile_check: appliance_factory_switch_tile_location_check;
+		cargo_amount_accept: power_plant_switch_tile1_cargo_acceptance;
+		appliance_factory_switch_graphics;
+	}
+}
+item(FEAT_INDUSTRYTILES, appliance_factory_tile2, INDUSTRY_TILE_ID_APPLIANCE_FACTORY_2) {
+	if (param_extension_metallurgy && !param_extension_packaging_industries) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [[STWR,8],[PLAS,8]];
+			animation_info: [ANIMATION_LOOPING, 71];
+			animation_speed: 2;
+			animation_triggers: bitmask();
+		}
+	}
+	if (param_extension_metallurgy && param_extension_packaging_industries) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [[STWR,8],[PLAS,8],[MNSP,8]];
+			animation_info: [ANIMATION_LOOPING, 71];
+			animation_speed: 2;
+			animation_triggers: bitmask();
+		}
 	}
 	graphics {
 		tile_check: appliance_factory_switch_tile_location_check;
+		cargo_amount_accept: power_plant_switch_tile2_cargo_acceptance;
 		appliance_factory_switch_graphics;
 	}
 }
 
 tilelayout appliance_factory_tilelayout_1 {
-	0, 0: appliance_factory_tile;
-	0, 1: appliance_factory_tile;
-	0, 2: appliance_factory_tile;
-	0, 3: appliance_factory_tile;
-	1, 0: appliance_factory_tile;
-	1, 1: appliance_factory_tile;
-	1, 2: appliance_factory_tile;
-	1, 3: appliance_factory_tile;
-	2, 0: appliance_factory_tile;
-	2, 1: appliance_factory_tile;
-	2, 2: appliance_factory_tile;
-	2, 3: appliance_factory_tile;
-	3, 0: appliance_factory_tile;
-	3, 1: appliance_factory_tile;
-	3, 2: appliance_factory_tile;
-	3, 3: appliance_factory_tile;
-	4, 0: appliance_factory_tile;
-	4, 1: appliance_factory_tile;
-	4, 2: appliance_factory_tile;
-	4, 3: appliance_factory_tile;
+	0, 0: appliance_factory_tile1;
+	0, 1: appliance_factory_tile2;
+	0, 2: appliance_factory_tile1;
+	0, 3: appliance_factory_tile2;
+	1, 0: appliance_factory_tile1;
+	1, 1: appliance_factory_tile2;
+	1, 2: appliance_factory_tile1;
+	1, 3: appliance_factory_tile2;
+	2, 0: appliance_factory_tile1;
+	2, 1: appliance_factory_tile2;
+	2, 2: appliance_factory_tile1;
+	2, 3: appliance_factory_tile2;
+	3, 0: appliance_factory_tile1;
+	3, 1: appliance_factory_tile2;
+	3, 2: appliance_factory_tile1;
+	3, 3: appliance_factory_tile2;
+	4, 0: appliance_factory_tile1;
+	4, 1: appliance_factory_tile2;
+	4, 2: appliance_factory_tile1;
+	4, 3: appliance_factory_tile2;
 }
 
 tilelayout appliance_factory_tilelayout_2 {
-	0, 0: appliance_factory_tile;
-	0, 1: appliance_factory_tile;
-	0, 2: appliance_factory_tile;
-	0, 3: appliance_factory_tile;
-	0, 4: appliance_factory_tile;
-	1, 0: appliance_factory_tile;
-	1, 1: appliance_factory_tile;
-	1, 2: appliance_factory_tile;
-	1, 3: appliance_factory_tile;
-	1, 4: appliance_factory_tile;
-	2, 0: appliance_factory_tile;
-	2, 1: appliance_factory_tile;
-	2, 2: appliance_factory_tile;
-	2, 3: appliance_factory_tile;
-	2, 4: appliance_factory_tile;
-	3, 0: appliance_factory_tile;
-	3, 1: appliance_factory_tile;
-	3, 2: appliance_factory_tile;
-	3, 3: appliance_factory_tile;
+	0, 0: appliance_factory_tile1;
+	0, 1: appliance_factory_tile2;
+	0, 2: appliance_factory_tile1;
+	0, 3: appliance_factory_tile2;
+	0, 4: appliance_factory_tile1;
+	1, 0: appliance_factory_tile2;
+	1, 1: appliance_factory_tile1;
+	1, 2: appliance_factory_tile2;
+	1, 3: appliance_factory_tile1;
+	1, 4: appliance_factory_tile2;
+	2, 0: appliance_factory_tile1;
+	2, 1: appliance_factory_tile2;
+	2, 2: appliance_factory_tile1;
+	2, 3: appliance_factory_tile2;
+	2, 4: appliance_factory_tile1;
+	3, 0: appliance_factory_tile2;
+	3, 1: appliance_factory_tile1;
+	3, 2: appliance_factory_tile2;
+	3, 3: appliance_factory_tile1;
 }
 
 tilelayout appliance_factory_tilelayout_3 {
-	0, 0: appliance_factory_tile;
-	0, 1: appliance_factory_tile;
-	0, 2: appliance_factory_tile;
-	0, 3: appliance_factory_tile;
-	1, 0: appliance_factory_tile;
-	1, 1: appliance_factory_tile;
-	1, 2: appliance_factory_tile;
-	1, 3: appliance_factory_tile;
-	2, 0: appliance_factory_tile;
-	2, 1: appliance_factory_tile;
-	2, 2: appliance_factory_tile;
-	2, 3: appliance_factory_tile;
-	3, 0: appliance_factory_tile;
-	3, 1: appliance_factory_tile;
-	3, 2: appliance_factory_tile;
-	3, 3: appliance_factory_tile;
-	4, 0: appliance_factory_tile;
-	4, 1: appliance_factory_tile;
-	4, 2: appliance_factory_tile;
-	4, 3: appliance_factory_tile;
+	0, 0: appliance_factory_tile1;
+	0, 1: appliance_factory_tile2;
+	0, 2: appliance_factory_tile1;
+	0, 3: appliance_factory_tile2;
+	1, 0: appliance_factory_tile1;
+	1, 1: appliance_factory_tile2;
+	1, 2: appliance_factory_tile1;
+	1, 3: appliance_factory_tile2;
+	2, 0: appliance_factory_tile1;
+	2, 1: appliance_factory_tile2;
+	2, 2: appliance_factory_tile1;
+	2, 3: appliance_factory_tile2;
+	3, 0: appliance_factory_tile1;
+	3, 1: appliance_factory_tile2;
+	3, 2: appliance_factory_tile1;
+	3, 3: appliance_factory_tile2;
+	4, 0: appliance_factory_tile1;
+	4, 1: appliance_factory_tile2;
+	4, 2: appliance_factory_tile1;
+	4, 3: appliance_factory_tile2;
 }
 
 switch(FEAT_INDUSTRIES, SELF, appliance_factory_switch_location_check_industry_distance,
        [STORE_TEMP(0, TEMP_REGISTER_TOWN_MIN_DISTANCE),
 	    STORE_TEMP(32, TEMP_REGISTER_TOWN_MAX_DISTANCE),
+		count_industries(),
 	    (is_industry_funded_or_prospected()) || (industry_generation_not_forbidden_by_param() && distance_from_town() && 
-	    (industry_distance(INDUSTRY_ID_PACKAGING_PLANT) >= 32) && 
-		(industry_distance(INDUSTRY_ID_PLASTICS_PLANT) >= 32) && 
-		(industry_distance(INDUSTRY_ID_FOUNDRY_FORGE) >= 32) && 
-		(industry_distance(INDUSTRY_ID_WIRE_MILL) >= 32) && 
-	    (industry_distance(INDUSTRY_ID_APPLIANCE_FACTORY) >= 16))]) {
+		(param_max_industries_per_type_on_map == 0 || param_max_industries_per_type_on_map > industry_count(INDUSTRY_ID_APPLIANCE_FACTORY)) &&
+		(param_max_industries_on_map == 0 || param_max_industries_on_map > LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_INDUSTRIES)) &&
+		// distance to related producers
+		(industry_distance(INDUSTRY_ID_FOUNDRY_FORGE) >= param_min_dist_related_industry) && 
+		(industry_distance(INDUSTRY_ID_PACKAGING_PLANT) >= param_min_dist_related_industry) && 
+		(industry_distance(INDUSTRY_ID_PLASTICS_PLANT) >= param_min_dist_related_industry) && 
+		(industry_distance(INDUSTRY_ID_WIRE_MILL) >= param_min_dist_related_industry) &&
+		// distance to related consumers
+		(industry_distance(INDUSTRY_ID_DEPARTMENT_STORE) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_PORT) >= param_min_dist_related_industry) &&		
+		// distance between instances of same industry
+		(industry_distance(INDUSTRY_ID_APPLIANCE_FACTORY) >= param_min_dist_same_industry)	
+		)]) {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;
 }
@@ -894,6 +949,37 @@ switch(FEAT_INDUSTRIES, SELF, appliance_factory_switch_update_last_served_date_e
 	check_secondary_industry_closure();
 }
 
+produce(appliance_factory_produce_cap_stockpile,
+	[ENSP: incoming_cargo_waiting("ENSP") > 60000 ? incoming_cargo_waiting("ENSP") - 60000 : 0;
+	 PLAS: incoming_cargo_waiting("PLAS") > 60000 ? incoming_cargo_waiting("PLAS") - 60000 : 0;
+	 STWR: incoming_cargo_waiting("STWR") > 60000 ? incoming_cargo_waiting("STWR") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, appliance_factory_switch_stockpile_check, param_stockpile_cap)
+{
+	1: empty_produce;
+	appliance_factory_produce_cap_stockpile;
+}
+
+produce(appliance_factory_produce_cap_stockpile_ext_packaging,
+	[ENSP: incoming_cargo_waiting("ENSP") > 60000 ? incoming_cargo_waiting("ENSP") - 60000 : 0;
+	 PLAS: incoming_cargo_waiting("PLAS") > 60000 ? incoming_cargo_waiting("PLAS") - 60000 : 0;
+	 STWR: incoming_cargo_waiting("STWR") > 60000 ? incoming_cargo_waiting("STWR") - 60000 : 0;
+	 MNSP: incoming_cargo_waiting("MNSP") > 60000 ? incoming_cargo_waiting("MNSP") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, appliance_factory_switch_stockpile_check_ext_packaging, param_stockpile_cap)
+{
+	1: empty_produce;
+	appliance_factory_produce_cap_stockpile_ext_packaging;
+}
+
 if (param_extension_metallurgy && !param_extension_packaging_industries) {
 	item(FEAT_INDUSTRIES, appliance_factory, INDUSTRY_ID_APPLIANCE_FACTORY) {
 		property {
@@ -917,7 +1003,7 @@ if (param_extension_metallurgy && !param_extension_packaging_industries) {
 			
 		graphics {
 			construction_probability: appliance_factory_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    appliance_factory_switch_stockpile_check; 
 			produce_256_ticks:        appliance_factory_switch_produce;
 			monthly_prod_change:      appliance_factory_switch_update_last_served_date;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -926,6 +1012,7 @@ if (param_extension_metallurgy && !param_extension_packaging_industries) {
 			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO);
 			cargo_subtype_display:    appliance_factory_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -953,7 +1040,7 @@ if (param_extension_metallurgy && param_extension_packaging_industries) {
 			
 		graphics {
 			construction_probability: appliance_factory_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    appliance_factory_switch_stockpile_check_ext_packaging; 
 			produce_256_ticks:        appliance_factory_switch_produce_ext_packaging;
 			monthly_prod_change:      appliance_factory_switch_update_last_served_date_ext_packaging;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -962,6 +1049,7 @@ if (param_extension_metallurgy && param_extension_packaging_industries) {
 			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO);
 			cargo_subtype_display:    appliance_factory_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }

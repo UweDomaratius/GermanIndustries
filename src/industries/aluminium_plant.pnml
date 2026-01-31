@@ -1121,20 +1121,62 @@ switch (FEAT_INDUSTRYTILES, SELF, aluminium_plant_switch_tile_location_check,
 	return CB_RESULT_LOCATION_DISALLOW;
 }
 
+switch(FEAT_INDUSTRYTILES, PARENT, aluminium_plant_switch_tile_cargo_acceptance, 
+	[STORE_TEMP(incoming_cargo_waiting("AORE") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0),
+	 STORE_TEMP(incoming_cargo_waiting("LYE_") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL1),
+	 STORE_TEMP(incoming_cargo_waiting("SCMT") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL2),
+	]
+) {
+	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0) + (LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL1) << 4) + (LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL2) << 8);
+}
+
 //////////////////////////////////////////////////////////////////////////////
 // industry tile and layout definition
 //////////////////////////////////////////////////////////////////////////////
 item(FEAT_INDUSTRYTILES, aluminium_plant_tile, INDUSTRY_TILE_ID_ALUMINIUM_PLANT) {
+if (param_extension_aluminium && !param_extension_basic_inorganic_chemistry && !param_extension_recycling) {
 	property {
 		substitute:         0;
 		land_shape_flags:   0;
-		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
 		animation_info: [ANIMATION_LOOPING, 47];
         animation_speed: 2;
 		animation_triggers: bitmask();
+		accepted_cargos: [[AORE,8]];
 	}
+}
+if (param_extension_aluminium && param_extension_basic_inorganic_chemistry && !param_extension_recycling) {
+	property {
+		substitute:         0;
+		land_shape_flags:   0;
+		animation_info: [ANIMATION_LOOPING, 47];
+        animation_speed: 2;
+		animation_triggers: bitmask();
+		accepted_cargos: [[AORE,8],[LYE_,8]];
+	}
+}
+if (param_extension_aluminium && !param_extension_basic_inorganic_chemistry && param_extension_recycling) {
+	property {
+		substitute:         0;
+		land_shape_flags:   0;
+		animation_info: [ANIMATION_LOOPING, 47];
+        animation_speed: 2;
+		animation_triggers: bitmask();
+		accepted_cargos: [[AORE,8],[SCMT,8]];
+	}
+}
+if (param_extension_aluminium && param_extension_basic_inorganic_chemistry && param_extension_recycling) {
+	property {
+		substitute:         0;
+		land_shape_flags:   0;
+		animation_info: [ANIMATION_LOOPING, 47];
+        animation_speed: 2;
+		animation_triggers: bitmask();
+		accepted_cargos: [[AORE,8],[LYE_,8],[SCMT,8]];
+	}
+}
 	graphics {
 		tile_check: aluminium_plant_switch_tile_location_check;
+		cargo_amount_accept: aluminium_plant_switch_tile_cargo_acceptance;
 		aluminium_plant_switch_graphics;
 	}
 }
@@ -1214,12 +1256,29 @@ tilelayout aluminium_plant_tilelayout_3 {
 switch(FEAT_INDUSTRIES, SELF, aluminium_plant_switch_location_check_industry_distance,
        [STORE_TEMP(32, TEMP_REGISTER_TOWN_MIN_DISTANCE),
 	    STORE_TEMP(64, TEMP_REGISTER_TOWN_MAX_DISTANCE),
+		count_industries(),
 	    (is_industry_funded_or_prospected()) || (distance_from_town() && 
 		(industry_town_count(INDUSTRY_ID_POWER_PLANT) > 0) && // industry requires a power plant in the city
 		(industry_town_count(INDUSTRY_ID_ALUMINIUM_PLANT) == 0) && // only allow one plant per city
-		(industry_distance(INDUSTRY_ID_PORT) >= 32) && 
-		(industry_distance(INDUSTRY_ID_VEHICLE_FACTORY) >= 32) && 
-	    (industry_distance(INDUSTRY_ID_ALUMINIUM_PLANT) >= 16))]) {
+		(param_max_industries_per_type_on_map == 0 || param_max_industries_per_type_on_map > industry_count(INDUSTRY_ID_ALUMINIUM_PLANT)) &&
+		(param_max_industries_on_map == 0 || param_max_industries_on_map > LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_INDUSTRIES)) &&
+		// distance to related producers
+		(industry_distance(INDUSTRY_ID_CHLOR_ALKALI_PLANT) >= param_min_dist_related_industry) && // LYE_
+		(industry_distance(INDUSTRY_ID_FOUNDRY_FORGE) >= param_min_dist_related_industry) && 	  // SCMT, also consumer
+		(industry_distance(INDUSTRY_ID_PORT) >= param_min_dist_related_industry) && 			  // AORE
+		(industry_distance(INDUSTRY_ID_SCRAP_YARD) >= param_min_dist_related_industry) && 		  // SCMT
+		(industry_distance(INDUSTRY_ID_SHEET_MILL) >= param_min_dist_related_industry) && 		  // SCMT, also consumer
+		(industry_distance(INDUSTRY_ID_VEHICLE_FACTORY) >= param_min_dist_related_industry) && 	  // SCMT, also consumer
+		(industry_distance(INDUSTRY_ID_WIRE_MILL) >= param_min_dist_related_industry) &&		  // SCMT, also consumer
+		// distance to related consumers
+		(industry_distance(INDUSTRY_ID_PACKAGING_PLANT) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_VEHICLE_BODY_PLANT) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_VEHICLE_ENGINE_PLANT) >= param_min_dist_related_industry) &&
+		//(industry_distance(INDUSTRY_ID_EXPLOSIVES_FACTORY) >= param_min_dist_related_industry) &&
+		// distance between instances of same industry
+		(industry_distance(INDUSTRY_ID_ALUMINIUM_PLANT) >= param_min_dist_same_industry)
+		
+		)]) {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;
 }
@@ -1534,6 +1593,62 @@ switch(FEAT_INDUSTRIES, SELF, aluminium_plant_switch_cargo_subtype, getbits(extr
 	return 0x3800 + string(STR_EMPTY);
 }
 
+produce(aluminium_plant_produce_cap_stockpile,
+	[AORE: incoming_cargo_waiting("AORE") > 60000 ? incoming_cargo_waiting("AORE") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, aluminium_plant_switch_stockpile_check, param_stockpile_cap)
+{
+	1: empty_produce;
+	aluminium_plant_produce_cap_stockpile;
+}
+
+produce(aluminium_plant_produce_cap_stockpile_basic_inorganic_chemistry,
+	[AORE: incoming_cargo_waiting("AORE") > 60000 ? incoming_cargo_waiting("AORE") - 60000 : 0;
+	 LYE_: incoming_cargo_waiting("LYE_") > 60000 ? incoming_cargo_waiting("LYE_") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, aluminium_plant_switch_stockpile_check_basic_inorganic_chemistry, param_stockpile_cap)
+{
+	1: empty_produce;
+	aluminium_plant_produce_cap_stockpile_basic_inorganic_chemistry;
+}
+
+produce(aluminium_plant_produce_cap_stockpile_ext_recycling,
+	[AORE: incoming_cargo_waiting("AORE") > 60000 ? incoming_cargo_waiting("AORE") - 60000 : 0;
+	 SCMT: incoming_cargo_waiting("SCMT") > 60000 ? incoming_cargo_waiting("SCMT") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, aluminium_plant_switch_stockpile_check_ext_recycling, param_stockpile_cap)
+{
+	1: empty_produce;
+	aluminium_plant_produce_cap_stockpile_ext_recycling;
+}
+
+produce(aluminium_plant_produce_cap_stockpile_basic_inorganic_chemistry_ext_recycling,
+	[AORE: incoming_cargo_waiting("AORE") > 60000 ? incoming_cargo_waiting("AORE") - 60000 : 0;
+	 LYE_: incoming_cargo_waiting("LYE_") > 60000 ? incoming_cargo_waiting("LYE_") - 60000 : 0;
+	 SCMT: incoming_cargo_waiting("SCMT") > 60000 ? incoming_cargo_waiting("SCMT") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, aluminium_plant_switch_stockpile_check_basic_inorganic_chemistry_ext_recycling, param_stockpile_cap)
+{
+	1: empty_produce;
+	aluminium_plant_produce_cap_stockpile_basic_inorganic_chemistry_ext_recycling;
+}
+
 if (param_extension_aluminium && !param_extension_basic_inorganic_chemistry && !param_extension_recycling) {
 	item(FEAT_INDUSTRIES, aluminium_plant, INDUSTRY_ID_ALUMINIUM_PLANT) {
 		property {
@@ -1557,7 +1672,7 @@ if (param_extension_aluminium && !param_extension_basic_inorganic_chemistry && !
 			
 		graphics {
 			construction_probability: aluminium_plant_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    aluminium_plant_switch_stockpile_check; 
 			produce_256_ticks:        aluminium_plant_switch_produce;
 			monthly_prod_change:      aluminium_plant_switch_update_last_served_date;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1566,6 +1681,7 @@ if (param_extension_aluminium && !param_extension_basic_inorganic_chemistry && !
 			extra_text_industry:      aluminium_plant_switch_extra_text;
 			cargo_subtype_display:    aluminium_plant_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -1592,7 +1708,7 @@ if (param_extension_aluminium && param_extension_basic_inorganic_chemistry && !p
 			
 		graphics {
 			construction_probability: aluminium_plant_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    aluminium_plant_switch_stockpile_check_basic_inorganic_chemistry; 
 			produce_256_ticks:        aluminium_plant_switch_produce_basic_inorganic_chemistry;
 			monthly_prod_change:      aluminium_plant_switch_update_last_served_date_basic_inorganic_chemistry;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1601,6 +1717,7 @@ if (param_extension_aluminium && param_extension_basic_inorganic_chemistry && !p
 			extra_text_industry:      aluminium_plant_switch_extra_text;
 			cargo_subtype_display:    aluminium_plant_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -1628,7 +1745,7 @@ if (param_extension_aluminium && !param_extension_basic_inorganic_chemistry && p
 			
 		graphics {
 			construction_probability: aluminium_plant_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    aluminium_plant_switch_stockpile_check_ext_recycling; 
 			produce_256_ticks:        aluminium_plant_switch_produce_ext_recycling;
 			monthly_prod_change:      aluminium_plant_switch_update_last_served_date_ext_recycling;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1637,6 +1754,7 @@ if (param_extension_aluminium && !param_extension_basic_inorganic_chemistry && p
 			extra_text_industry:      aluminium_plant_switch_extra_text_electricity_ext_recycling;
 			cargo_subtype_display:    aluminium_plant_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -1663,7 +1781,7 @@ if (param_extension_aluminium && param_extension_basic_inorganic_chemistry && pa
 			
 		graphics {
 			construction_probability: aluminium_plant_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    aluminium_plant_switch_stockpile_check_basic_inorganic_chemistry_ext_recycling; 
 			produce_256_ticks:        aluminium_plant_switch_produce_basic_inorganic_chemistry_ext_recycling;
 			monthly_prod_change:      aluminium_plant_switch_update_last_served_date_basic_inorganic_chemistry_ext_recycling;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1672,6 +1790,7 @@ if (param_extension_aluminium && param_extension_basic_inorganic_chemistry && pa
 			extra_text_industry:      aluminium_plant_switch_extra_text_electricity_ext_recycling;
 			cargo_subtype_display:    aluminium_plant_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }

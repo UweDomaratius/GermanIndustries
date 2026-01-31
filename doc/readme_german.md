@@ -102,8 +102,10 @@ aber nichts produziert, solange Kohle fehlt.
 
 Einige Industrien haben optionale Rohstoffe. Diese sind in der Liste in weiß dargestellt. Sie werden nicht zur Produktion benötigt, vergrößern aber die produzierten Mengen.
 
-Die Vorräte können maximal 65.535 Einheiten speichern, das ist eine Limitierung des Spiels. Wenn man dieses Limit erreicht passiert aber nicht viel, die nächste Lieferung wird einfach für die Vorratshaltung ignoriert
-(man erhält aber das Geld für die Lieferung). Da die Produktion mit der Menge der Vorräte skaliert sollte es schwierig sein, an diese Limitierungen zu stoßen, wenn man es nicht gerade darauf anlegt, weil man nicht alle notwendigen Rohstoffe bereitstellt.
+Die Vorräte können maximal 60.000 Einheiten speichern. Was passiert wenn man dieses Limit erreicht, hängt von den Einstellungen des Sets ab. Wenn das Verhalten auf "Verwerfen" gestellt ist, wird Fracht oberhalb des Limits einfach weggeworfen. Man kann weiterhin liefern und wird dafür bezahlt, die Fracht ist dann aber einfach weg.
+Wenn man die Option auf "Annahme verweigern" stellt, wird die Industrie die Annahme der Fracht verweigern. Das bedeutet dann, dass auch der Bahnhof/Haltestelle neben der Industrie die Fracht nicht mehr akzeptiert. Man kann nun seine Fahrzeuge mittels bedingter Sprünge in der Auftragsliste zu anderen Industrien schicken. Sobald der Vorrat bei der Industrie gesunken ist, wird sie die Fracht auch wieder akzeptieren.
+
+Da die Produktion mit der Menge der Vorräte skaliert sollte es schwierig sein, an diese Limitierungen zu stoßen, wenn man es nicht gerade darauf anlegt, weil man nicht alle notwendigen Rohstoffe bereitstellt.
 
 ## Parameter
 
@@ -1557,7 +1559,9 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#fcfc00;
 |  | [Nahrungsmittelfabrik](#industry_178) |
 |  | [Nahrungsmittelfabrik](#industry_180) |
 |  | [Nahrungsmittelfabrik](#industry_182) |
+|  | [Viehzucht](#industry_223) |
 |  | [Viehzucht](#industry_224) |
+|  | [Viehzucht](#industry_225) |
 |  | [Viehzucht](#industry_226) |
 
 <a name="cargo_GLAS"></a>
@@ -2517,6 +2521,7 @@ Farbe in der Wirtschaftsketten-Übersicht:<span style="background-color:#b87818;
 |  | [Nahrungsmittelfabrik](#industry_179) |
 |  | [Nahrungsmittelfabrik](#industry_182) |
 |  | [Nahrungsmittelfabrik](#industry_183) |
+|  | [Reinigungsmittelfabrik](#industry_191) |
 |  | [Reinigungsmittelfabrik](#industry_192) |
 |  | [Schlachthof](#industry_200) |
 
@@ -2873,8 +2878,6 @@ Industry ist erst ab 1910 verfügbar.
 Diese Beschränkung betrifft auch das Finanzieren der Industrie.
 
 Farbe in der Übersichtskarte:<span style="background-color:#286078;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-
-Die Industrie beginnt mit der Produktion sobald irgendein Rohstoff verfügbar ist. Die maximale Produktion erhöht sich mit der Anzahl der verfügbaren verschiedenen Rohstoffe.
 
 | Benötigt | Produziert |
 | -- | -- |
@@ -4052,6 +4055,8 @@ Farbe in der Übersichtskarte:<span style="background-color:#acacc0;">&nbsp;&nbs
 Die Bekleidungsfabrik ist der Ort, an dem aus Stoffen Kleidungsstücke gefertigt werden. Europa hat eine reichhaltige Geschichte der Bekleidungsindustrie, die allerdings quasi komplett durch billigere asiatische Konkurrenz ersetzt wurde. Spezialgeschäfte für hochwertige Bekleidung haben noch ihre eigene Nische. Deutschland hatte im 19. Jahrhundert eine bedeutende Bekleidungsindustrie, hauptsächlich in Schlesien und Sachsen. Heute existieren zwar noch viele Firmen, teilweise auch international sehr bekannte wie Boss, Triumph oder adidas, aber die Produktion wurde üblicherweise nach Asien verlagert. 
 
 Diese Industrie benötigt Extension: [Textilindustrie](#extension_14) 
+
+Diese Industrie ist nicht aktiv wenn folgende Erweiterungen aktiv sind: [Verpackungsmittelindustrie](#extension_15) 
 
 
 Farbe in der Übersichtskarte:<span style="background-color:#803828;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -7241,7 +7246,8 @@ Industrie benötigt die in schwarz dargestellten Rohmaterialien zur Produktion. 
 
 | Benötigt | Produziert |
 | -- | -- |
-| [Soda](#cargo_SASH) | [Waren](#cargo_GOOD) |
+| [Verpackungen](#cargo_MNSP) | [Waren](#cargo_GOOD) |
+| [Soda](#cargo_SASH) |  |
 
 
 <a name="industry_192"></a>
@@ -7941,7 +7947,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#90e05c;">&nbsp;&nbs
 
 | Benötigt | Produziert |
 | -- | -- |
-|  | [Vieh](#cargo_LVST) |
+| [Getreide](#cargo_GRAI) | [Vieh](#cargo_LVST) |
 |  | [Milch](#cargo_MILK) |
 
 
@@ -7982,7 +7988,7 @@ Farbe in der Übersichtskarte:<span style="background-color:#90e05c;">&nbsp;&nbs
 
 | Benötigt | Produziert |
 | -- | -- |
-|  | [Biomasse](#cargo_BIOM) |
+| [Getreide](#cargo_GRAI) | [Biomasse](#cargo_BIOM) |
 |  | [Vieh](#cargo_LVST) |
 |  | [Milch](#cargo_MILK) |
 

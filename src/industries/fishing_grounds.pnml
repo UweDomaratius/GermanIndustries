@@ -220,10 +220,16 @@ tilelayout fishing_grounds_industry_layout_4_tilelayout {
 }
 
 switch(FEAT_INDUSTRIES, SELF, fishing_grounds_switch_location_check_industry_distance,
-	   (is_industry_funded_or_prospected()) || ((industry_distance(INDUSTRY_ID_FISHING_GROUNDS) >= 16) 
-	   && is_near_map_edge(32)
-	   && (industry_distance(INDUSTRY_ID_FOOD_PROCESSOR) >= 32)
-	   ) )
+	   [count_industries(),
+	   (is_industry_funded_or_prospected()) || (is_near_map_edge(32) &&
+	   (param_max_industries_per_type_on_map == 0 || param_max_industries_per_type_on_map > industry_count(INDUSTRY_ID_FISHING_GROUNDS)) &&
+	   (param_max_industries_on_map == 0 || param_max_industries_on_map > LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_INDUSTRIES)) &&
+	   // distance to related producers
+	   // distance to related consumers
+	   (industry_distance(INDUSTRY_ID_FOOD_PROCESSOR) >= param_min_dist_related_industry) &&
+	   // distance between instances of same industry
+	   (industry_distance(INDUSTRY_ID_FISHING_GROUNDS) >= param_min_dist_same_industry) 	   
+	   )] )
 	   {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;

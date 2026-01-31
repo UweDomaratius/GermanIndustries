@@ -21,6 +21,19 @@ STR_PARAM_FORBID_INDUSTRY_GENERATION :Verbiete Erzeugung von Industrien
 STR_PARAM_FORBID_INDUSTRY_GENERATION_DESC :Wenn diese Option aktiviert ist, werden Industrien nur noch während des Spielstarts zusammen mit der Karte generiert. Der Spieler kann weiterhin neue Industrien finanzieren.
 STR_PARAM_FORBID_INDUSTRY_CLOSURE :Verbiete das Schließen von Industrien.
 STR_PARAM_FORBID_INDUSTRY_CLOSURE_DESC :Wenn diese Option aktiviert ist, werden Industrien nicht schließen. Minen und ähnliche Industrien werden trotzdem schließen, wenn sie keine Materialien mehr fördern können. Selbst wenn Schließungen erlaubt sind, werden keine Industrien schließen solange sie beliefert werden.
+STR_PARAM_STOCKPILE_CAP :Setze das Verhalten wenn zu viele Rohstoffe in einer Industrie warten
+STR_PARAM_STOCKPILE_CAP_DESC :Bestimmt das Verhalten für den Fall, dass das Lagerlimit für eine Industrie erreicht wird. Wenn man es auf Verwerfen stellt, werden weitere angelieferter Güter verworfen. Die Anlieferung wird aber bezahlt. Wenn man es auf Annahme verweigern stellt, wird die Industrie die Lieferung nicht akzeptieren, das liefernde Fahrzeug kann dann nicht abladen. Die Dokumentation enthält eine genauere Beschreibung.
+STR_PARAM_STOCKPILE_DISCARD :Verwerfen
+STR_PARAM_STOCKPILE_STOP_ACCEPT :Annahme verweigern
+STR_PARAM_MAX_INDUSTRIES_ON_MAP :Begrenze die Anzahl der Industrien.
+STR_PARAM_MAX_INDUSTRIES_ON_MAP_DESC :Wenn ein Wert größer als 0 gesetzt ist, wird die Anzahl der Industrien auf der Karte durch diesen Wert begrenzt. Es werden alle Industrien auf der Karte gezählt, das Limit betrifft nur die zufällige Gründung neuer Industrien während des Spiels.
+STR_PARAM_MAX_INDUSTRIES_PER_TYPE_ON_MAP :Begrenze die Anzahl der Industrien pro Industrietyp.
+STR_PARAM_MAX_INDUSTRIES_PER_TYPE_ON_MAP_DESC :Wenn ein Wert größer als 0 gesetzt ist, wird die Anzahl der Industrien auf der Karte durch diesen Wert begrenzt. Es wird für jeden Industrietyp einzeln gezählt, das Limit betrifft nur die zufällige Gründung neuer Industrien während des Spiels.
+STR_PARAM_MIN_DISTANCE_SAME_INDUSTRY :Mindestabstand zweier Industrien des gleichen Typs.
+STR_PARAM_MIN_DISTANCE_SAME_INDUSTRY_DESC :Mindestabstand zweier Industrien des gleichen Typs.
+STR_PARAM_MIN_DISTANCE_RELATED_INDUSTRY :Mindestabstand zweier verbundener Industrien
+STR_PARAM_MIN_DISTANCE_RELATED_INDUSTRY_DESC :Mindestabstand zweier verbundener Industrien. Verbunden bedeutet, dass eine Industrie etwas produziert, was die andere akzeptiert, so dass es zwischen beiden eine mögliche Transportverbindung gibt. Größere Werte können dafür sorgen, dass bei der Kartengenerierung nicht alle Industrien platziert werden können.
+
 STR_PARAM_EXT_BUILDING_MATERIALS :Erweiterung "Bauindustrie"
 STR_PARAM_EXT_BUILDING_MATERIALS_DESC :Fügt Frachten wie Kalkstein und Zement und passende Industrien hinzu.
 STR_PARAM_EXT_TEXTILE_INDUSTRIES :Erweiterung "Textilindustrie"
@@ -192,7 +205,7 @@ STR_IND_PACKAGING_PLANT          :{G=n}Verpackungsmittelfabrik
 STR_IND_PAINT_FACTORY            :{G=w}Farbenfabrik
 STR_IND_PETROL_STATION           :{G=w}Tankstelle
 STR_IND_PHARMACEUTICAL_PLANT     :{G=w}Arzneimittelfabrik
-STR_IND_PLASTICS_PLANT           :Kunststofffabrik
+STR_IND_PLASTICS_PLANT           :{G=w}Kunststofffabrik
 STR_IND_PORT                     :Hafen
 STR_IND_PYRITE_MINE              :{G=n}Kupferkiesbergwerk
 STR_IND_RECYCLING_DEPOT          :Wertstoffhof
@@ -316,6 +329,9 @@ STR_INDUSTRY_AVAILABLE_TIMEFRAME  :{}{BLACK}Industrie nur zwischen {STRING} und 
 # Display für Vorratsanzeige
 STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE          :{BLACK} ({CARGO_SHORT} vorrätig)
 STR_CARGO_SUBTYPE_DISPLAY_OPTIONAL_CARGO_AVAILABLE :{WHITE} ({CARGO_SHORT} vorrätig)
+
+# News messages
+STR_NEWS_INDUSTRY_PRODUCTION_NEW_RESOURCES_FOUND :Neue Ressourcen für Industrie gefunden!
 
 # Fehlertexte
 STR_ERR_OPENTTD_VERSION             :{ORANGE}E00: {TITLE} benötigt OpenTTD 14.0 oder neuer

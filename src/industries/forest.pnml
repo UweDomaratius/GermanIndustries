@@ -4993,9 +4993,18 @@ tilelayout forest_layout_4_tilelayout {
 }
 
 switch(FEAT_INDUSTRIES, SELF, forest_switch_location_check_industry_distance,
-       (is_industry_funded_or_prospected()) || ((industry_distance(INDUSTRY_ID_FOREST) >= 16) 
-	   && (industry_distance(INDUSTRY_ID_SAWMILL) >= 32))
-		) 
+       [count_industries(),
+	   (is_industry_funded_or_prospected()) || (
+	   (param_max_industries_per_type_on_map == 0 || param_max_industries_per_type_on_map > industry_count(INDUSTRY_ID_FOREST))) &&
+	   (param_max_industries_on_map == 0 || param_max_industries_on_map > LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_INDUSTRIES)) &&
+	   // distance to related producers
+	   //(industry_distance(INDUSTRY_ID_FERTILIZER_PLANT) >= param_min_dist_related_industry) &&
+	   // distance to related consumers
+	   (industry_distance(INDUSTRY_ID_PAPER_MILL) >= param_min_dist_related_industry) &&
+	   (industry_distance(INDUSTRY_ID_SAWMILL) >= param_min_dist_related_industry) &&
+	   // distance between instances of same industry
+	   (industry_distance(INDUSTRY_ID_FOREST) >= param_min_dist_same_industry) 
+		]) 
 {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;

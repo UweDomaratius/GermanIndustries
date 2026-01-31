@@ -147,18 +147,26 @@ tilelayout petrol_station_tilelayout_2 {
 }
 
 switch(FEAT_INDUSTRIES, SELF, petrol_station_switch_location_check_industry_distance,
-       [(is_industry_funded_or_prospected()) || (
-	    (industry_distance(INDUSTRY_ID_COAL_LIQUEFACTION_PLANT) >= 32) &&
-		(industry_distance(INDUSTRY_ID_OIL_REFINERY) >= 32) &&
-		(industry_distance(INDUSTRY_ID_STEAMCRACKER) >= 32) &&
-	    (industry_distance(INDUSTRY_ID_PETROL_STATION) >= 16))]) {
+       [count_industries(),
+	   (is_industry_funded_or_prospected()) || (
+	    (param_max_industries_per_type_on_map == 0 || param_max_industries_per_type_on_map > industry_count(INDUSTRY_ID_PETROL_STATION)) &&
+		(param_max_industries_on_map == 0 || param_max_industries_on_map > LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_INDUSTRIES)) &&
+		// distance to related producers
+		(industry_distance(INDUSTRY_ID_BIOREFINERY) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_COAL_LIQUEFACTION_PLANT) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_OIL_REFINERY) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_STEAMCRACKER) >= param_min_dist_related_industry) &&
+		// distance to related consumers		
+		// distance between instances of same industry
+	    (industry_distance(INDUSTRY_ID_PETROL_STATION) >= param_min_dist_same_industry)		
+		)]) {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;
 }
 
 // take all incoming cargo and produce nothing
 produce(petrol_station_produce,
-	[PETR: LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0) > 12 ? LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0) - 12 : LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0) != 0 ? 1 : 0;],
+	[PETR: LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0);],
 	[],
 	0 // do not run again
 )

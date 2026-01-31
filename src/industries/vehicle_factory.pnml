@@ -486,119 +486,337 @@ switch (FEAT_INDUSTRYTILES, SELF, vehicle_factory_switch_tile_location_check,
 	return CB_RESULT_LOCATION_DISALLOW;
 }
 
+switch(FEAT_INDUSTRYTILES, PARENT, vehicle_factory_switch_tile1_cargo_acceptance, 
+	[STORE_TEMP(incoming_cargo_waiting("PLAS") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0),
+	 STORE_TEMP(incoming_cargo_waiting("STEL") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL1)
+	]
+) {
+	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0) + (LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL1) << 4);
+}
+switch(FEAT_INDUSTRYTILES, PARENT, vehicle_factory_switch_tile2_cargo_acceptance, 
+	[STORE_TEMP(incoming_cargo_waiting("ALUM") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0)
+	]
+) {
+	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0);
+}
+switch(FEAT_INDUSTRYTILES, PARENT, vehicle_factory_switch_tile3_cargo_acceptance, 
+	[STORE_TEMP(incoming_cargo_waiting("COAT") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0)
+	]
+) {
+	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0);
+}
+switch(FEAT_INDUSTRYTILES, PARENT, vehicle_factory_switch_tile4_cargo_acceptance, 
+	[STORE_TEMP(incoming_cargo_waiting("GLAS") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0)
+	]
+) {
+	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0);
+}
+switch(FEAT_INDUSTRYTILES, PARENT, vehicle_factory_switch_tile5_cargo_acceptance, 
+	[STORE_TEMP(incoming_cargo_waiting("STSH") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0),
+	 STORE_TEMP(incoming_cargo_waiting("STWR") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL1),
+	 STORE_TEMP(incoming_cargo_waiting("ENSP") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL2),
+	]
+) {
+	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0) + (LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL1) << 4) + (LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL2) << 8);
+}
+switch(FEAT_INDUSTRYTILES, PARENT, vehicle_factory_switch_tile6_cargo_acceptance, 
+	[STORE_TEMP(incoming_cargo_waiting("VBOD") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0),
+	 STORE_TEMP(incoming_cargo_waiting("VENG") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL1),
+	 STORE_TEMP(incoming_cargo_waiting("TYRE") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL2),
+	]
+) {
+	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0) + (LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL1) << 4) + (LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL2) << 8);
+}
+switch(FEAT_INDUSTRYTILES, PARENT, vehicle_factory_switch_tile7_cargo_acceptance, 
+	[STORE_TEMP(incoming_cargo_waiting("VPTS") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0)
+	]
+) {
+	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0);
+}
+
 //////////////////////////////////////////////////////////////////////////////
 // industry tile and layout definition
 //////////////////////////////////////////////////////////////////////////////
-item(FEAT_INDUSTRYTILES, vehicle_factory_tile, INDUSTRY_TILE_ID_VEHICLE_FACTORY) {
-	property {
-		substitute:         0;
-		land_shape_flags:   0;
-		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
-		animation_triggers: bitmask();
+item(FEAT_INDUSTRYTILES, vehicle_factory_tile_1, INDUSTRY_TILE_ID_VEHICLE_FACTORY_1) {
+	if (!param_extension_vehicle && !param_extension_metallurgy) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [[PLAS,8],[STEL,8]];
+			animation_triggers: bitmask();
+		}
+	}
+	if (!param_extension_vehicle && param_extension_metallurgy) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [[PLAS,8]];
+			animation_triggers: bitmask();
+		}
+	}
+	if (param_extension_vehicle) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [];
+			animation_triggers: bitmask();
+		}
 	}
 	graphics {
 		tile_check: vehicle_factory_switch_tile_location_check;
+		cargo_amount_accept: vehicle_factory_switch_tile1_cargo_acceptance;
+		vehicle_factory_switch_graphics;
+	}
+}
+item(FEAT_INDUSTRYTILES, vehicle_factory_tile_2, INDUSTRY_TILE_ID_VEHICLE_FACTORY_2) {
+	if (!param_extension_aluminium || param_extension_metallurgy || param_extension_vehicle) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [];
+			animation_triggers: bitmask();
+		}
+	}
+	if (param_extension_aluminium && !param_extension_metallurgy && !param_extension_vehicle) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [[ALUM,8]];
+			animation_triggers: bitmask();
+		}
+	}
+	graphics {
+		tile_check: vehicle_factory_switch_tile_location_check;
+		cargo_amount_accept: vehicle_factory_switch_tile2_cargo_acceptance;
+		vehicle_factory_switch_graphics;
+	}
+}
+item(FEAT_INDUSTRYTILES, vehicle_factory_tile_3, INDUSTRY_TILE_ID_VEHICLE_FACTORY_3) {
+	if (!param_extension_painting_industries || param_extension_vehicle) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [];
+			animation_triggers: bitmask();
+		}
+	}
+	if (param_extension_painting_industries && !param_extension_vehicle) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [[COAT,8]];
+			animation_triggers: bitmask();
+		}
+	}
+	graphics {
+		tile_check: vehicle_factory_switch_tile_location_check;
+		cargo_amount_accept: vehicle_factory_switch_tile3_cargo_acceptance;
+		vehicle_factory_switch_graphics;
+	}
+}
+item(FEAT_INDUSTRYTILES, vehicle_factory_tile_4, INDUSTRY_TILE_ID_VEHICLE_FACTORY_4) {
+	if (!param_extension_glass || param_extension_vehicle) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [];
+			animation_triggers: bitmask();
+		}
+	}
+	if (param_extension_glass && !param_extension_vehicle) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [[GLAS,8]];
+			animation_triggers: bitmask();
+		}
+	}
+	graphics {
+		tile_check: vehicle_factory_switch_tile_location_check;
+		cargo_amount_accept: vehicle_factory_switch_tile4_cargo_acceptance;
+		vehicle_factory_switch_graphics;
+	}
+}
+item(FEAT_INDUSTRYTILES, vehicle_factory_tile_5, INDUSTRY_TILE_ID_VEHICLE_FACTORY_5) {
+	if (!param_extension_metallurgy || param_extension_vehicle) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [];
+			animation_triggers: bitmask();
+		}
+	}
+	if (param_extension_metallurgy && !param_extension_vehicle) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [[STSH,8],[STWR,8],[ENSP,8]];
+			animation_triggers: bitmask();
+		}
+	}
+	graphics {
+		tile_check: vehicle_factory_switch_tile_location_check;
+		cargo_amount_accept: vehicle_factory_switch_tile5_cargo_acceptance;
+		vehicle_factory_switch_graphics;
+	}
+}
+item(FEAT_INDUSTRYTILES, vehicle_factory_tile_6, INDUSTRY_TILE_ID_VEHICLE_FACTORY_6) {
+	if (!param_extension_vehicle) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [];
+			animation_triggers: bitmask();
+		}
+	}
+	if (param_extension_vehicle) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [[VBOD,8],[VENG,8],[TYRE,8]];
+			animation_triggers: bitmask();
+		}
+	}
+	graphics {
+		tile_check: vehicle_factory_switch_tile_location_check;
+		cargo_amount_accept: vehicle_factory_switch_tile6_cargo_acceptance;
+		vehicle_factory_switch_graphics;
+	}
+}
+item(FEAT_INDUSTRYTILES, vehicle_factory_tile_7, INDUSTRY_TILE_ID_VEHICLE_FACTORY_7) {
+	if (!param_extension_vehicle) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [];
+			animation_triggers: bitmask();
+		}
+	}
+	if (param_extension_vehicle) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [[VPTS,8]];
+			animation_triggers: bitmask();
+		}
+	}
+	graphics {
+		tile_check: vehicle_factory_switch_tile_location_check;
+		cargo_amount_accept: vehicle_factory_switch_tile7_cargo_acceptance;
 		vehicle_factory_switch_graphics;
 	}
 }
 
 tilelayout vehicle_factory_tilelayout_1 {
-	3, 4: vehicle_factory_tile;
-    3, 5: vehicle_factory_tile;
-    3, 6: vehicle_factory_tile;
-    3, 7: vehicle_factory_tile;
-    4, 4: vehicle_factory_tile;
-    4, 5: vehicle_factory_tile;
-    4, 6: vehicle_factory_tile;
-    4, 7: vehicle_factory_tile;
-    5, 4: vehicle_factory_tile;
-    5, 5: vehicle_factory_tile;
-    5, 6: vehicle_factory_tile;
-    5, 7: vehicle_factory_tile;
-    0, 0: vehicle_factory_tile;
-    0, 1: vehicle_factory_tile;
-    0, 2: vehicle_factory_tile;
-    1, 0: vehicle_factory_tile;
-    1, 1: vehicle_factory_tile;
-    1, 2: vehicle_factory_tile;
+	3, 4: vehicle_factory_tile_1;
+    3, 5: vehicle_factory_tile_2;
+    3, 6: vehicle_factory_tile_3;
+    3, 7: vehicle_factory_tile_4;
+    4, 4: vehicle_factory_tile_5;
+    4, 5: vehicle_factory_tile_6;
+    4, 6: vehicle_factory_tile_7;
+    4, 7: vehicle_factory_tile_1;
+    5, 4: vehicle_factory_tile_2;
+    5, 5: vehicle_factory_tile_3;
+    5, 6: vehicle_factory_tile_4;
+    5, 7: vehicle_factory_tile_5;
+    0, 0: vehicle_factory_tile_6;
+    0, 1: vehicle_factory_tile_7;
+    0, 2: vehicle_factory_tile_1;
+    1, 0: vehicle_factory_tile_2;
+    1, 1: vehicle_factory_tile_3;
+    1, 2: vehicle_factory_tile_4;
 }
 tilelayout vehicle_factory_tilelayout_2 {
-	0, 0: vehicle_factory_tile;
-    0, 1: vehicle_factory_tile;
-    0, 2: vehicle_factory_tile;
-    0, 3: vehicle_factory_tile;
-    1, 0: vehicle_factory_tile;
-    1, 1: vehicle_factory_tile;
-    1, 2: vehicle_factory_tile;
-    1, 3: vehicle_factory_tile;
-    2, 0: vehicle_factory_tile;
-    2, 1: vehicle_factory_tile;
-    2, 2: vehicle_factory_tile;
-    2, 3: vehicle_factory_tile;
-    4, 5: vehicle_factory_tile;
-    4, 6: vehicle_factory_tile;
-    4, 7: vehicle_factory_tile;
-    5, 5: vehicle_factory_tile;
-    5, 6: vehicle_factory_tile;
-    5, 7: vehicle_factory_tile;
+	0, 0: vehicle_factory_tile_1;
+    0, 1: vehicle_factory_tile_2;
+    0, 2: vehicle_factory_tile_3;
+    0, 3: vehicle_factory_tile_4;
+    1, 0: vehicle_factory_tile_5;
+    1, 1: vehicle_factory_tile_6;
+    1, 2: vehicle_factory_tile_7;
+    1, 3: vehicle_factory_tile_1;
+    2, 0: vehicle_factory_tile_2;
+    2, 1: vehicle_factory_tile_3;
+    2, 2: vehicle_factory_tile_4;
+    2, 3: vehicle_factory_tile_5;
+    4, 5: vehicle_factory_tile_6;
+    4, 6: vehicle_factory_tile_7;
+    4, 7: vehicle_factory_tile_1;
+    5, 5: vehicle_factory_tile_2;
+    5, 6: vehicle_factory_tile_3;
+    5, 7: vehicle_factory_tile_4;
 }
 
 tilelayout vehicle_factory_tilelayout_3 {
-	0, 0: vehicle_factory_tile;
-    0, 1: vehicle_factory_tile;
-    0, 2: vehicle_factory_tile;
-    0, 3: vehicle_factory_tile;
-    1, 0: vehicle_factory_tile;
-    1, 1: vehicle_factory_tile;
-    1, 2: vehicle_factory_tile;
-    1, 3: vehicle_factory_tile;
-    2, 0: vehicle_factory_tile;
-    2, 1: vehicle_factory_tile;
-    2, 2: vehicle_factory_tile;
-    2, 3: vehicle_factory_tile;
-    0, 6: vehicle_factory_tile;
-    0, 7: vehicle_factory_tile;
-    0, 8: vehicle_factory_tile;
-    1, 6: vehicle_factory_tile;
-    1, 7: vehicle_factory_tile;
-    1, 8: vehicle_factory_tile;
+	0, 0: vehicle_factory_tile_1;
+    0, 1: vehicle_factory_tile_2;
+    0, 2: vehicle_factory_tile_3;
+    0, 3: vehicle_factory_tile_4;
+    1, 0: vehicle_factory_tile_5;
+    1, 1: vehicle_factory_tile_6;
+    1, 2: vehicle_factory_tile_7;
+    1, 3: vehicle_factory_tile_1;
+    2, 0: vehicle_factory_tile_2;
+    2, 1: vehicle_factory_tile_3;
+    2, 2: vehicle_factory_tile_4;
+    2, 3: vehicle_factory_tile_5;
+    0, 6: vehicle_factory_tile_6;
+    0, 7: vehicle_factory_tile_7;
+    0, 8: vehicle_factory_tile_1;
+    1, 6: vehicle_factory_tile_2;
+    1, 7: vehicle_factory_tile_3;
+    1, 8: vehicle_factory_tile_4;
 }
 
 tilelayout vehicle_factory_tilelayout_4 {
-	0, 0: vehicle_factory_tile;
-    0, 1: vehicle_factory_tile;
-    0, 2: vehicle_factory_tile;
-    0, 3: vehicle_factory_tile;
-    1, 0: vehicle_factory_tile;
-    1, 1: vehicle_factory_tile;
-    1, 2: vehicle_factory_tile;
-    1, 3: vehicle_factory_tile;
-    2, 0: vehicle_factory_tile;
-    2, 1: vehicle_factory_tile;
-    2, 2: vehicle_factory_tile;
-    2, 3: vehicle_factory_tile;
-    5, 0: vehicle_factory_tile;
-    5, 1: vehicle_factory_tile;
-    5, 2: vehicle_factory_tile;
-    6, 0: vehicle_factory_tile;
-    6, 1: vehicle_factory_tile;
-    6, 2: vehicle_factory_tile;
+	0, 0: vehicle_factory_tile_1;
+    0, 1: vehicle_factory_tile_2;
+    0, 2: vehicle_factory_tile_3;
+    0, 3: vehicle_factory_tile_4;
+    1, 0: vehicle_factory_tile_5;
+    1, 1: vehicle_factory_tile_6;
+    1, 2: vehicle_factory_tile_7;
+    1, 3: vehicle_factory_tile_1;
+    2, 0: vehicle_factory_tile_2;
+    2, 1: vehicle_factory_tile_3;
+    2, 2: vehicle_factory_tile_4;
+    2, 3: vehicle_factory_tile_5;
+    5, 0: vehicle_factory_tile_6;
+    5, 1: vehicle_factory_tile_7;
+    5, 2: vehicle_factory_tile_1;
+    6, 0: vehicle_factory_tile_2;
+    6, 1: vehicle_factory_tile_3;
+    6, 2: vehicle_factory_tile_4;
 }
 
 switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_location_check_industry_distance,
        [STORE_TEMP(24, TEMP_REGISTER_TOWN_MIN_DISTANCE),
 	    STORE_TEMP(128, TEMP_REGISTER_TOWN_MAX_DISTANCE),
+		count_industries(),
 	    (is_industry_funded_or_prospected()) || (distance_from_town() && 
 		(industry_town_count(INDUSTRY_ID_POWER_PLANT) > 0) && // industry requires a power plant in the city
 		(industry_town_count(INDUSTRY_ID_VEHICLE_FACTORY) == 0) && // only allow one factory per city
-		(industry_distance(INDUSTRY_ID_INTEGRATED_STEEL_MILL) >= 32) &&
-		(industry_distance(INDUSTRY_ID_PLASTICS_PLANT) >= 32) &&
-		(industry_distance(INDUSTRY_ID_PAINT_FACTORY) >= 32) &&
-		(industry_distance(INDUSTRY_ID_PORT) >= 32) &&
-		(industry_distance(INDUSTRY_ID_VEHICLE_DISTRIBUTOR) >= 32) &&
-		(industry_distance(INDUSTRY_ID_ALUMINIUM_PLANT) >= 32) &&
-		(industry_distance(INDUSTRY_ID_GLASS_WORKS) >= 32) &&
-	    (industry_distance(INDUSTRY_ID_VEHICLE_FACTORY) >= 16)
+		(param_max_industries_per_type_on_map == 0 || param_max_industries_per_type_on_map > industry_count(INDUSTRY_ID_VEHICLE_FACTORY)) &&
+		(param_max_industries_on_map == 0 || param_max_industries_on_map > LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_INDUSTRIES)) &&
+		// distance to related producers
+		(industry_distance(INDUSTRY_ID_ALUMINIUM_PLANT) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_FOUNDRY_FORGE) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_GLASS_WORKS) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_INTEGRATED_STEEL_MILL) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_PAINT_FACTORY) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_PLASTICS_PLANT) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_TYRE_PLANT) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_VEHICLE_BODY_PLANT) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_VEHICLE_ENGINE_PLANT) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_VEHICLE_PARTS_PLANT) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_SHEET_MILL) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_WIRE_MILL) >= param_min_dist_related_industry) &&
+		// distance to related consumers
+		(industry_distance(INDUSTRY_ID_PORT) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_VEHICLE_DISTRIBUTOR) >= param_min_dist_related_industry) &&		
+		// distance between instances of same industry
+	    (industry_distance(INDUSTRY_ID_VEHICLE_FACTORY) >= param_min_dist_same_industry)		
 		)]) {
 	   1: return CB_RESULT_LOCATION_ALLOW;
 	   return CB_RESULT_LOCATION_DISALLOW;
@@ -1461,6 +1679,214 @@ switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_update_last_served_date_ext
 	check_secondary_industry_closure();
 }
 
+produce(vehicle_factory_produce_cap_stockpile,
+	[STEL: incoming_cargo_waiting("STEL") > 60000 ? incoming_cargo_waiting("STEL") - 60000 : 0;
+	 PLAS: incoming_cargo_waiting("PLAS") > 60000 ? incoming_cargo_waiting("PLAS") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_stockpile_check, param_stockpile_cap)
+{
+	1: empty_produce;
+	vehicle_factory_produce_cap_stockpile;
+}
+
+produce(vehicle_factory_produce_cap_stockpile_ext_aluminium,
+	[STEL: incoming_cargo_waiting("STEL") > 60000 ? incoming_cargo_waiting("STEL") - 60000 : 0;
+	 PLAS: incoming_cargo_waiting("PLAS") > 60000 ? incoming_cargo_waiting("PLAS") - 60000 : 0;
+	 ALUM: incoming_cargo_waiting("ALUM") > 60000 ? incoming_cargo_waiting("ALUM") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_stockpile_check_ext_aluminium, param_stockpile_cap)
+{
+	1: empty_produce;
+	vehicle_factory_produce_cap_stockpile_ext_aluminium;
+}
+
+produce(vehicle_factory_produce_cap_stockpile_ext_painting_industries,
+	[STEL: incoming_cargo_waiting("STEL") > 60000 ? incoming_cargo_waiting("STEL") - 60000 : 0;
+	 PLAS: incoming_cargo_waiting("PLAS") > 60000 ? incoming_cargo_waiting("PLAS") - 60000 : 0;
+	 COAT: incoming_cargo_waiting("COAT") > 60000 ? incoming_cargo_waiting("COAT") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_stockpile_check_ext_painting_industries, param_stockpile_cap)
+{
+	1: empty_produce;
+	vehicle_factory_produce_cap_stockpile_ext_painting_industries;
+}
+
+produce(vehicle_factory_produce_cap_stockpile_ext_aluminium_ext_painting_industries,
+	[STEL: incoming_cargo_waiting("STEL") > 60000 ? incoming_cargo_waiting("STEL") - 60000 : 0;
+	 PLAS: incoming_cargo_waiting("PLAS") > 60000 ? incoming_cargo_waiting("PLAS") - 60000 : 0;
+	 COAT: incoming_cargo_waiting("COAT") > 60000 ? incoming_cargo_waiting("COAT") - 60000 : 0;
+	 ALUM: incoming_cargo_waiting("ALUM") > 60000 ? incoming_cargo_waiting("ALUM") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_stockpile_check_ext_aluminium_ext_painting_industries, param_stockpile_cap)
+{
+	1: empty_produce;
+	vehicle_factory_produce_cap_stockpile_ext_aluminium_ext_painting_industries;
+}
+
+produce(vehicle_factory_produce_cap_stockpile_ext_glass,
+	[STEL: incoming_cargo_waiting("STEL") > 60000 ? incoming_cargo_waiting("STEL") - 60000 : 0;
+	 PLAS: incoming_cargo_waiting("PLAS") > 60000 ? incoming_cargo_waiting("PLAS") - 60000 : 0;
+	 GLAS: incoming_cargo_waiting("GLAS") > 60000 ? incoming_cargo_waiting("GLAS") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_stockpile_check_ext_glass, param_stockpile_cap)
+{
+	1: empty_produce;
+	vehicle_factory_produce_cap_stockpile_ext_glass;
+}
+
+produce(vehicle_factory_produce_cap_stockpile_ext_aluminium_ext_glass,
+	[STEL: incoming_cargo_waiting("STEL") > 60000 ? incoming_cargo_waiting("STEL") - 60000 : 0;
+	 PLAS: incoming_cargo_waiting("PLAS") > 60000 ? incoming_cargo_waiting("PLAS") - 60000 : 0;
+	 GLAS: incoming_cargo_waiting("GLAS") > 60000 ? incoming_cargo_waiting("GLAS") - 60000 : 0;
+	 ALUM: incoming_cargo_waiting("ALUM") > 60000 ? incoming_cargo_waiting("ALUM") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_stockpile_check_ext_aluminium_ext_glass, param_stockpile_cap)
+{
+	1: empty_produce;
+	vehicle_factory_produce_cap_stockpile_ext_aluminium_ext_glass;
+}
+
+produce(vehicle_factory_produce_cap_stockpile_ext_painting_industries_ext_glass,
+	[STEL: incoming_cargo_waiting("STEL") > 60000 ? incoming_cargo_waiting("STEL") - 60000 : 0;
+	 PLAS: incoming_cargo_waiting("PLAS") > 60000 ? incoming_cargo_waiting("PLAS") - 60000 : 0;
+	 GLAS: incoming_cargo_waiting("GLAS") > 60000 ? incoming_cargo_waiting("GLAS") - 60000 : 0;
+	 COAT: incoming_cargo_waiting("COAT") > 60000 ? incoming_cargo_waiting("COAT") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_stockpile_check_ext_painting_industries_ext_glass, param_stockpile_cap)
+{
+	1: empty_produce;
+	vehicle_factory_produce_cap_stockpile_ext_painting_industries_ext_glass;
+}
+
+produce(vehicle_factory_produce_cap_stockpile_ext_aluminium_ext_painting_industries_ext_glass,
+	[STEL: incoming_cargo_waiting("STEL") > 60000 ? incoming_cargo_waiting("STEL") - 60000 : 0;
+	 PLAS: incoming_cargo_waiting("PLAS") > 60000 ? incoming_cargo_waiting("PLAS") - 60000 : 0;
+	 GLAS: incoming_cargo_waiting("GLAS") > 60000 ? incoming_cargo_waiting("GLAS") - 60000 : 0;
+	 COAT: incoming_cargo_waiting("COAT") > 60000 ? incoming_cargo_waiting("COAT") - 60000 : 0;
+	 ALUM: incoming_cargo_waiting("ALUM") > 60000 ? incoming_cargo_waiting("ALUM") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_stockpile_check_ext_aluminium_ext_painting_industries_ext_glass, param_stockpile_cap)
+{
+	1: empty_produce;
+	vehicle_factory_produce_cap_stockpile_ext_aluminium_ext_painting_industries_ext_glass;
+}
+
+produce(vehicle_factory_produce_cap_stockpile_ext_metallurgy,
+	[STSH: incoming_cargo_waiting("STSH") > 60000 ? incoming_cargo_waiting("STSH") - 60000 : 0;
+	 PLAS: incoming_cargo_waiting("PLAS") > 60000 ? incoming_cargo_waiting("PLAS") - 60000 : 0;
+	 STWR: incoming_cargo_waiting("STWR") > 60000 ? incoming_cargo_waiting("STWR") - 60000 : 0;
+	 ENSP: incoming_cargo_waiting("ENSP") > 60000 ? incoming_cargo_waiting("ENSP") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_stockpile_check_ext_metallurgy, param_stockpile_cap)
+{
+	1: empty_produce;
+	vehicle_factory_produce_cap_stockpile_ext_metallurgy;
+}
+
+produce(vehicle_factory_produce_cap_stockpile_ext_metallurgy_ext_painting_industries,
+	[STSH: incoming_cargo_waiting("STSH") > 60000 ? incoming_cargo_waiting("STSH") - 60000 : 0;
+	 PLAS: incoming_cargo_waiting("PLAS") > 60000 ? incoming_cargo_waiting("PLAS") - 60000 : 0;
+	 STWR: incoming_cargo_waiting("STWR") > 60000 ? incoming_cargo_waiting("STWR") - 60000 : 0;
+	 ENSP: incoming_cargo_waiting("ENSP") > 60000 ? incoming_cargo_waiting("ENSP") - 60000 : 0;
+	 COAT: incoming_cargo_waiting("COAT") > 60000 ? incoming_cargo_waiting("COAT") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_stockpile_check_ext_metallurgy_ext_painting_industries, param_stockpile_cap)
+{
+	1: empty_produce;
+	vehicle_factory_produce_cap_stockpile_ext_metallurgy_ext_painting_industries;
+}
+
+produce(vehicle_factory_produce_cap_stockpile_ext_metallurgy_ext_glass,
+	[STSH: incoming_cargo_waiting("STSH") > 60000 ? incoming_cargo_waiting("STSH") - 60000 : 0;
+	 PLAS: incoming_cargo_waiting("PLAS") > 60000 ? incoming_cargo_waiting("PLAS") - 60000 : 0;
+	 STWR: incoming_cargo_waiting("STWR") > 60000 ? incoming_cargo_waiting("STWR") - 60000 : 0;
+	 ENSP: incoming_cargo_waiting("ENSP") > 60000 ? incoming_cargo_waiting("ENSP") - 60000 : 0;
+	 GLAS: incoming_cargo_waiting("GLAS") > 60000 ? incoming_cargo_waiting("GLAS") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_stockpile_check_ext_metallurgy_ext_glass, param_stockpile_cap)
+{
+	1: empty_produce;
+	vehicle_factory_produce_cap_stockpile_ext_metallurgy_ext_glass;
+}
+
+produce(vehicle_factory_produce_cap_stockpile_ext_painting_industries_ext_glass_ext_metallurgy,
+	[STSH: incoming_cargo_waiting("STSH") > 60000 ? incoming_cargo_waiting("STSH") - 60000 : 0;
+	 PLAS: incoming_cargo_waiting("PLAS") > 60000 ? incoming_cargo_waiting("PLAS") - 60000 : 0;
+	 STWR: incoming_cargo_waiting("STWR") > 60000 ? incoming_cargo_waiting("STWR") - 60000 : 0;
+	 ENSP: incoming_cargo_waiting("ENSP") > 60000 ? incoming_cargo_waiting("ENSP") - 60000 : 0;
+	 GLAS: incoming_cargo_waiting("GLAS") > 60000 ? incoming_cargo_waiting("GLAS") - 60000 : 0;
+	 COAT: incoming_cargo_waiting("COAT") > 60000 ? incoming_cargo_waiting("COAT") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_stockpile_check_ext_painting_industries_ext_glass_ext_metallurgy, param_stockpile_cap)
+{
+	1: empty_produce;
+	vehicle_factory_produce_cap_stockpile_ext_painting_industries_ext_glass_ext_metallurgy;
+}
+
+produce(vehicle_factory_produce_cap_stockpile_ext_vehicle,
+	[VBOD: incoming_cargo_waiting("VBOD") > 60000 ? incoming_cargo_waiting("VBOD") - 60000 : 0;
+	 VENG: incoming_cargo_waiting("VENG") > 60000 ? incoming_cargo_waiting("VENG") - 60000 : 0;
+	 TYRE: incoming_cargo_waiting("TYRE") > 60000 ? incoming_cargo_waiting("TYRE") - 60000 : 0;
+	 VPTS: incoming_cargo_waiting("VPTS") > 60000 ? incoming_cargo_waiting("VPTS") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_stockpile_check_ext_vehicle, param_stockpile_cap)
+{
+	1: empty_produce;
+	vehicle_factory_produce_cap_stockpile_ext_vehicle;
+}
+
 if (!param_extension_aluminium && !param_extension_painting_industries && !param_extension_glass && !param_extension_metallurgy && !param_extension_vehicle) {
 	item(FEAT_INDUSTRIES, vehicle_factory, INDUSTRY_ID_VEHICLE_FACTORY) {
 		property {
@@ -1484,7 +1910,7 @@ if (!param_extension_aluminium && !param_extension_painting_industries && !param
 			
 		graphics {
 			construction_probability: vehicle_factory_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    vehicle_factory_switch_stockpile_check; 
 			produce_256_ticks:        vehicle_factory_switch_produce;
 			monthly_prod_change:      vehicle_factory_switch_update_last_served_date;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1493,6 +1919,7 @@ if (!param_extension_aluminium && !param_extension_painting_industries && !param
 			extra_text_industry:      vehicle_factory_switch_extra_text;
 			cargo_subtype_display:    vehicle_factory_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -1519,7 +1946,7 @@ if (param_extension_aluminium && !param_extension_painting_industries && !param_
 			
 		graphics {
 			construction_probability: vehicle_factory_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    vehicle_factory_switch_stockpile_check_ext_aluminium; 
 			produce_256_ticks:        vehicle_factory_switch_produce_ext_aluminium;
 			monthly_prod_change:      vehicle_factory_switch_update_last_served_date_ext_aluminium;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1528,6 +1955,7 @@ if (param_extension_aluminium && !param_extension_painting_industries && !param_
 			extra_text_industry:      vehicle_factory_switch_extra_text;
 			cargo_subtype_display:    vehicle_factory_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -1554,7 +1982,7 @@ if (!param_extension_aluminium && param_extension_painting_industries && !param_
 			
 		graphics {
 			construction_probability: vehicle_factory_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    vehicle_factory_switch_stockpile_check_ext_painting_industries; 
 			produce_256_ticks:        vehicle_factory_switch_produce_ext_painting_industries;
 			monthly_prod_change:      vehicle_factory_switch_update_last_served_date_ext_painting_industries;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1563,6 +1991,7 @@ if (!param_extension_aluminium && param_extension_painting_industries && !param_
 			extra_text_industry:      vehicle_factory_switch_extra_text;
 			cargo_subtype_display:    vehicle_factory_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -1590,7 +2019,7 @@ if (param_extension_aluminium && param_extension_painting_industries && !param_e
 			
 		graphics {
 			construction_probability: vehicle_factory_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    vehicle_factory_switch_stockpile_check_ext_aluminium_ext_painting_industries; 
 			produce_256_ticks:        vehicle_factory_switch_produce_ext_aluminium_ext_painting_industries;
 			monthly_prod_change:      vehicle_factory_switch_update_last_served_date_ext_aluminium_ext_painting_industries;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1599,6 +2028,7 @@ if (param_extension_aluminium && param_extension_painting_industries && !param_e
 			extra_text_industry:      vehicle_factory_switch_extra_text;
 			cargo_subtype_display:    vehicle_factory_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -1626,7 +2056,7 @@ if (!param_extension_aluminium && !param_extension_painting_industries && param_
 			
 		graphics {
 			construction_probability: vehicle_factory_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    vehicle_factory_switch_stockpile_check_ext_glass; 
 			produce_256_ticks:        vehicle_factory_switch_produce_ext_glass;
 			monthly_prod_change:      vehicle_factory_switch_update_last_served_date_ext_glass;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1635,6 +2065,7 @@ if (!param_extension_aluminium && !param_extension_painting_industries && param_
 			extra_text_industry:      vehicle_factory_switch_extra_text;
 			cargo_subtype_display:    vehicle_factory_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -1661,7 +2092,7 @@ if (param_extension_aluminium && !param_extension_painting_industries && param_e
 			
 		graphics {
 			construction_probability: vehicle_factory_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    vehicle_factory_switch_stockpile_check_ext_aluminium_ext_glass; 
 			produce_256_ticks:        vehicle_factory_switch_produce_ext_aluminium_ext_glass;
 			monthly_prod_change:      vehicle_factory_switch_update_last_served_date_ext_aluminium_ext_glass;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1670,6 +2101,7 @@ if (param_extension_aluminium && !param_extension_painting_industries && param_e
 			extra_text_industry:      vehicle_factory_switch_extra_text;
 			cargo_subtype_display:    vehicle_factory_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -1696,7 +2128,7 @@ if (!param_extension_aluminium && param_extension_painting_industries && param_e
 			
 		graphics {
 			construction_probability: vehicle_factory_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    vehicle_factory_switch_stockpile_check_ext_painting_industries_ext_glass; 
 			produce_256_ticks:        vehicle_factory_switch_produce_ext_painting_industries_ext_glass;
 			monthly_prod_change:      vehicle_factory_switch_update_last_served_date_ext_painting_industries_ext_glass;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1705,6 +2137,7 @@ if (!param_extension_aluminium && param_extension_painting_industries && param_e
 			extra_text_industry:      vehicle_factory_switch_extra_text;
 			cargo_subtype_display:    vehicle_factory_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -1732,7 +2165,7 @@ if (param_extension_aluminium && param_extension_painting_industries && param_ex
 			
 		graphics {
 			construction_probability: vehicle_factory_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    vehicle_factory_switch_stockpile_check_ext_aluminium_ext_painting_industries_ext_glass; 
 			produce_256_ticks:        vehicle_factory_switch_produce_ext_aluminium_ext_painting_industries_ext_glass;
 			monthly_prod_change:      vehicle_factory_switch_update_last_served_date_ext_aluminium_ext_painting_industries_ext_glass;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1741,6 +2174,7 @@ if (param_extension_aluminium && param_extension_painting_industries && param_ex
 			extra_text_industry:      vehicle_factory_switch_extra_text;
 			cargo_subtype_display:    vehicle_factory_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -1768,7 +2202,7 @@ if (!param_extension_painting_industries && !param_extension_glass && param_exte
 			
 		graphics {
 			construction_probability: vehicle_factory_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    vehicle_factory_switch_stockpile_check_ext_metallurgy; 
 			produce_256_ticks:        vehicle_factory_switch_produce_ext_metallurgy;
 			monthly_prod_change:      vehicle_factory_switch_update_last_served_date_ext_metallurgy;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1777,6 +2211,7 @@ if (!param_extension_painting_industries && !param_extension_glass && param_exte
 			extra_text_industry:      vehicle_factory_switch_extra_text;
 			cargo_subtype_display:    vehicle_factory_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -1804,7 +2239,7 @@ if (param_extension_painting_industries && !param_extension_glass && param_exten
 			
 		graphics {
 			construction_probability: vehicle_factory_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    vehicle_factory_switch_stockpile_check_ext_metallurgy_ext_painting_industries; 
 			produce_256_ticks:        vehicle_factory_switch_produce_ext_metallurgy_ext_painting_industries;
 			monthly_prod_change:      vehicle_factory_switch_update_last_served_date_ext_metallurgy_ext_painting_industries;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1813,6 +2248,7 @@ if (param_extension_painting_industries && !param_extension_glass && param_exten
 			extra_text_industry:      vehicle_factory_switch_extra_text;
 			cargo_subtype_display:    vehicle_factory_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -1840,7 +2276,7 @@ if (!param_extension_painting_industries && param_extension_glass && param_exten
 			
 		graphics {
 			construction_probability: vehicle_factory_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    vehicle_factory_switch_stockpile_check_ext_metallurgy_ext_glass; 
 			produce_256_ticks:        vehicle_factory_switch_produce_ext_metallurgy_ext_glass;
 			monthly_prod_change:      vehicle_factory_switch_update_last_served_date_ext_metallurgy_ext_glass;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1849,6 +2285,7 @@ if (!param_extension_painting_industries && param_extension_glass && param_exten
 			extra_text_industry:      vehicle_factory_switch_extra_text;
 			cargo_subtype_display:    vehicle_factory_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -1875,7 +2312,7 @@ if (param_extension_painting_industries && param_extension_glass && param_extens
 			
 		graphics {
 			construction_probability: vehicle_factory_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    vehicle_factory_switch_stockpile_check_ext_painting_industries_ext_glass_ext_metallurgy; 
 			produce_256_ticks:        vehicle_factory_switch_produce_ext_painting_industries_ext_glass_ext_metallurgy;
 			monthly_prod_change:      vehicle_factory_switch_update_last_served_date_ext_painting_industries_ext_glass_ext_metallurgy;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1884,6 +2321,7 @@ if (param_extension_painting_industries && param_extension_glass && param_extens
 			extra_text_industry:      vehicle_factory_switch_extra_text;
 			cargo_subtype_display:    vehicle_factory_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
@@ -1910,7 +2348,7 @@ if (param_extension_vehicle) {
 			
 		graphics {
 			construction_probability: vehicle_factory_switch_check_availability;
-			produce_cargo_arrival:    empty_produce; 
+			produce_cargo_arrival:    vehicle_factory_switch_stockpile_check_ext_vehicle; 
 			produce_256_ticks:        vehicle_factory_switch_produce_ext_vehicle;
 			monthly_prod_change:      vehicle_factory_switch_update_last_served_date_ext_vehicle;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -1919,6 +2357,7 @@ if (param_extension_vehicle) {
 			extra_text_industry:      vehicle_factory_switch_extra_text;
 			cargo_subtype_display:    vehicle_factory_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }

@@ -2099,12 +2099,21 @@ tilelayout fruit_plantation_industry_layout_5_tilelayout {
 }
 
 switch(FEAT_INDUSTRIES, SELF, fruit_plantation_switch_location_check_industry_distance,
-	   (is_industry_funded_or_prospected()) || ((industry_distance(INDUSTRY_ID_GENERAL_STORE) >= 32) &&
-	   (industry_distance(INDUSTRY_ID_HOTEL) >= 32) &&
-	   (industry_distance(INDUSTRY_ID_FOOD_PROCESSOR) >= 32) &&
-	   //(industry_distance(INDUSTRY_ID_BIOREFINERY) >= 32) &&
-	   (industry_distance(INDUSTRY_ID_FRUIT_PLANTATION) >= 16) &&
-	   (town_euclidean_dist(0,0) > 32)) // should not be near towns
+	   [count_industries(),
+	   (is_industry_funded_or_prospected()) || (
+	   (town_euclidean_dist(0,0) > 32) && // should not be near towns
+	   (param_max_industries_per_type_on_map == 0 || param_max_industries_per_type_on_map > industry_count(INDUSTRY_ID_FRUIT_PLANTATION)) &&
+	   (param_max_industries_on_map == 0 || param_max_industries_on_map > LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_INDUSTRIES)) &&
+	   // distance to related producers
+	   //(industry_distance(INDUSTRY_ID_FERTILIZER_PLANT) >= param_min_dist_related_industry) &&
+	   // distance to related consumers
+	   (industry_distance(INDUSTRY_ID_BIOREFINERY) >= param_min_dist_related_industry) &&
+	   (industry_distance(INDUSTRY_ID_FOOD_PROCESSOR) >= param_min_dist_related_industry) &&
+	   (industry_distance(INDUSTRY_ID_GENERAL_STORE) >= param_min_dist_related_industry) &&
+	   (industry_distance(INDUSTRY_ID_HOTEL) >= param_min_dist_related_industry) &&	   
+	   // distance between instances of same industry
+	   (industry_distance(INDUSTRY_ID_FRUIT_PLANTATION) >= param_min_dist_same_industry)	   
+	   )]
 	   ) 
 {
 	   1: return CB_RESULT_LOCATION_ALLOW;
