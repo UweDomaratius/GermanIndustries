@@ -335,6 +335,7 @@ STR_NEWS_INDUSTRY_PRODUCTION_NEW_RESOURCES_FOUND :Neue Ressourcen für Industrie
 
 # Fehlertexte
 STR_ERR_OPENTTD_VERSION             :{ORANGE}E00: {TITLE} benötigt OpenTTD 14.0 oder neuer
+STR_ERR_INCOMPATIBLE_SET:{ORANGE}E01: {YELLOW}Inkompatibles Set: {ORANGE}{STRING}
 STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE :muss unterhalb der Schneegrenze platziert werden
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE :kann nicht auf steilen Hängen platziert werden
 STR_ERR_EXTENSION_GLASS_REQUIRES_EXTENSION_BUILDING_INDUSTRIES:Erweiterung "Glas" erfordert Erweiterung "Bauindustrie".
