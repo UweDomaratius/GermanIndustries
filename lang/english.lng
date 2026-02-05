@@ -406,6 +406,7 @@ STR_NEWS_INDUSTRY_PRODUCTION_NEW_RESOURCES_FOUND :Industry has found new resourc
 
 # Error texts
 STR_ERR_OPENTTD_VERSION:{ORANGE}E00:{TITLE} requires OpenTTD 14.0 or newer
+STR_ERR_INCOMPATIBLE_SET:{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}{STRING}
 STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE :must be placed below the snow line.
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE :cannot be placed on steep slopes.
 STR_ERR_EXTENSION_GLASS_REQUIRES_EXTENSION_BUILDING_INDUSTRIES:Extension "Glass" requires extension "Building Industries" to be activated.
