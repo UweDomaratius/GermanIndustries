@@ -538,7 +538,7 @@ switch(FEAT_INDUSTRYTILES, SELF, tyre_plant_switch_graphics_construction_state, 
 }
 
 switch (FEAT_INDUSTRYTILES, SELF, tyre_plant_switch_graphics,
-	[switch_terrain_sprite(),switch_graphics_init_temp_registers()
+	[switch_tile_fences(),switch_terrain_sprite(),switch_graphics_init_temp_registers()
 	]) {
     tyre_plant_switch_graphics_construction_state;
 }
@@ -681,38 +681,37 @@ switch(FEAT_INDUSTRIES, SELF, tyre_plant_switch_location_check_industry_distance
 }
 
 produce(tyre_plant_produce,
-	[RUBR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
-	 SULP: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	[RUBR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 SULP: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
 	],
-	[TYRE: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100) : 0;],
+	[TYRE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);],
 	0 // do not run again
 )
 
 switch(FEAT_INDUSTRIES, SELF, tyre_plant_switch_produce, 
 	[STORE_TEMP(min(incoming_cargo_waiting("RUBR"),incoming_cargo_waiting("SULP")),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
-	 STORE_TEMP(min(incoming_cargo_waiting("RUBR"),incoming_cargo_waiting("SULP")),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
      calculate_raw_material_usage(),
 	 calculate_total_production(),
+	 STORE_TEMP(percentage_of_production(90), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()
 	]) {
 	tyre_plant_produce;
 }
 
 produce(tyre_plant_produce_ext_painting_industries,
-	[RUBR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
-	 SULP: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
-	 CBLK: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
+	[RUBR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 SULP: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 CBLK: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
 	],
-	[TYRE: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100) : 0;],
+	[TYRE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);],
 	0 // do not run again
 )
 
 switch(FEAT_INDUSTRIES, SELF, tyre_plant_switch_produce_ext_painting_industries, 
 	[STORE_TEMP(min(incoming_cargo_waiting("RUBR"),incoming_cargo_waiting("SULP"),incoming_cargo_waiting("CBLK")),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
-	 STORE_TEMP(min(incoming_cargo_waiting("RUBR"),incoming_cargo_waiting("SULP"),incoming_cargo_waiting("CBLK")),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
-	 STORE_TEMP(min(incoming_cargo_waiting("RUBR"),incoming_cargo_waiting("SULP"),incoming_cargo_waiting("CBLK")),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
      calculate_raw_material_usage(),
 	 calculate_total_production(),
+	 STORE_TEMP(percentage_of_production(90), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()
 	]) {
 	tyre_plant_produce_ext_painting_industries;
@@ -739,11 +738,17 @@ switch(FEAT_INDUSTRIES, SELF, tyre_plant_switch_check_availability,
 	get_construction_probability;
 }
 
+switch(FEAT_INDUSTRIES, SELF, tyre_plant_check_production,
+	[this_month_production("TYRE") != 0 || last_month_production("TYRE") != 0 || 
+		incoming_cargo_waiting("SULP") != 0 || incoming_cargo_waiting("RUBR") != 0 ||
+		this_month_transported("TYRE") != 0 || last_month_transported("TYRE") != 0
+	])
+{
+}
+
 switch(FEAT_INDUSTRIES, SELF, tyre_plant_switch_update_last_served_date,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("TYRE") != 0 || last_month_production("TYRE") != 0 || 
-		incoming_cargo_waiting("SULP") != 0 || incoming_cargo_waiting("RUBR") != 0 ||
-		this_month_transported("TYRE") != 0 || last_month_transported("TYRE") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(tyre_plant_check_production(), PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
@@ -751,9 +756,7 @@ switch(FEAT_INDUSTRIES, SELF, tyre_plant_switch_update_last_served_date,
 
 switch(FEAT_INDUSTRIES, SELF, tyre_plant_switch_update_last_served_date_ext_painting_industries,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("TYRE") != 0 || last_month_production("TYRE") != 0 || 
-		incoming_cargo_waiting("SULP") != 0 || incoming_cargo_waiting("RUBR") != 0 || incoming_cargo_waiting("CBLK") != 0 ||
-		this_month_transported("TYRE") != 0 || last_month_transported("TYRE") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(tyre_plant_check_production() || incoming_cargo_waiting("CBLK") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();

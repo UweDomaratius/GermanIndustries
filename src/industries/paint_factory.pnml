@@ -639,7 +639,8 @@ produce(paint_factory_produce,
 	 COPR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
 	 CBLK: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
 	 ],
-	[COAT: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
+	[COAT: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	],
 	0 // do not run again
 )
 
@@ -648,14 +649,8 @@ switch(FEAT_INDUSTRIES, SELF, paint_factory_switch_produce,
      STORE_TEMP(incoming_cargo_waiting("COPR"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
 	 STORE_TEMP(incoming_cargo_waiting("CBLK"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
 	 
-	 calculate_raw_material_usage(),
-	 calculate_total_production(),
-	 calculate_number_of_waiting_cargos(),
-	 
-	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
-	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
-	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (3-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 
+	 calculate_productivity_any_input(3),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1), 
 	 store_debug_production_data()
 	 ])
 {
@@ -668,7 +663,8 @@ produce(paint_factory_produce_ext_building_industries,
 	 CBLK: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
 	 LIME: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW3);
 	 ],
-	[COAT: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
+	[COAT: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	],
 	0 // do not run again
 )
 
@@ -678,14 +674,8 @@ switch(FEAT_INDUSTRIES, SELF, paint_factory_switch_produce_ext_building_industri
 	 STORE_TEMP(incoming_cargo_waiting("CBLK"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
 	 STORE_TEMP(incoming_cargo_waiting("LIME"),TEMP_REGISTER_INCOMING_CARGO_WAITING3),
 	 
-	 calculate_raw_material_usage(),
-	 calculate_total_production(),
-	 calculate_number_of_waiting_cargos(),
-	 
-	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
-	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
-	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (4-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 
+	 calculate_productivity_any_input(4),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1), 
 	 store_debug_production_data()
 	 ])
 {
@@ -698,7 +688,8 @@ produce(paint_factory_produce_ext_coke_sulphur,
 	 CBLK: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
 	 ACID: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW3);
 	 ],
-	[COAT: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
+	[COAT: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	],
 	0 // do not run again
 )
 
@@ -708,14 +699,8 @@ switch(FEAT_INDUSTRIES, SELF, paint_factory_switch_produce_ext_coke_sulphur,
 	 STORE_TEMP(incoming_cargo_waiting("CBLK"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
 	 STORE_TEMP(incoming_cargo_waiting("ACID"),TEMP_REGISTER_INCOMING_CARGO_WAITING3),
 	 
-	 calculate_raw_material_usage(),
-	 calculate_total_production(),
-	 calculate_number_of_waiting_cargos(),
-	 
-	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
-	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
-	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (4-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 
+	 calculate_productivity_any_input(4),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1), 
 	 store_debug_production_data()
 	 ])
 {
@@ -729,7 +714,8 @@ produce(paint_factory_produce_ext_building_industries_ext_coke_sulphur,
 	 LIME: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW3);
 	 ACID: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW4);
 	 ],
-	[COAT: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
+	[COAT: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	],
 	0 // do not run again
 )
 
@@ -740,14 +726,8 @@ switch(FEAT_INDUSTRIES, SELF, paint_factory_switch_produce_ext_building_industri
 	 STORE_TEMP(incoming_cargo_waiting("LIME"),TEMP_REGISTER_INCOMING_CARGO_WAITING3),
 	 STORE_TEMP(incoming_cargo_waiting("ACID"),TEMP_REGISTER_INCOMING_CARGO_WAITING4),
 	 
-	 calculate_raw_material_usage(),
-	 calculate_total_production(),
-	 calculate_number_of_waiting_cargos(),
-	 
-	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
-	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
-	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (5-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 
+	 calculate_productivity_any_input(5),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1), 
 	 store_debug_production_data()
 	 ])
 {
@@ -777,11 +757,17 @@ switch(FEAT_INDUSTRIES, SELF, paint_factory_switch_check_availability,
 	get_construction_probability;
 }
 
+switch(FEAT_INDUSTRIES, SELF, paint_factory_check_production,
+	[this_month_production("COAT") != 0 || last_month_production("COAT") != 0 || 
+		incoming_cargo_waiting("IORE") != 0 || incoming_cargo_waiting("COPR") != 0 || incoming_cargo_waiting("CBLK") != 0 ||
+		this_month_transported("COAT") != 0 || last_month_transported("COAT") != 0
+	])
+{
+}
+
 switch(FEAT_INDUSTRIES, SELF, paint_factory_switch_update_last_served_date,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("COAT") != 0 || last_month_production("COAT") != 0 || 
-		incoming_cargo_waiting("IORE") != 0 || incoming_cargo_waiting("COPR") != 0 || incoming_cargo_waiting("CBLK") != 0 ||
-		this_month_transported("COAT") != 0 || last_month_transported("COAT") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(paint_factory_check_production(), PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
@@ -789,9 +775,7 @@ switch(FEAT_INDUSTRIES, SELF, paint_factory_switch_update_last_served_date,
 
 switch(FEAT_INDUSTRIES, SELF, paint_factory_switch_update_last_served_date_ext_building_industries,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("COAT") != 0 || last_month_production("COAT") != 0 || 
-		incoming_cargo_waiting("IORE") != 0 || incoming_cargo_waiting("COPR") != 0 || incoming_cargo_waiting("CBLK") != 0 || incoming_cargo_waiting("LIME") != 0 ||
-		this_month_transported("COAT") != 0 || last_month_transported("COAT") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(paint_factory_check_production() || incoming_cargo_waiting("LIME") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
@@ -799,9 +783,7 @@ switch(FEAT_INDUSTRIES, SELF, paint_factory_switch_update_last_served_date_ext_b
 
 switch(FEAT_INDUSTRIES, SELF, paint_factory_switch_update_last_served_date_ext_coke_sulphur,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("COAT") != 0 || last_month_production("COAT") != 0 || 
-		incoming_cargo_waiting("IORE") != 0 || incoming_cargo_waiting("COPR") != 0 || incoming_cargo_waiting("CBLK") != 0 || incoming_cargo_waiting("ACID") != 0 ||
-		this_month_transported("COAT") != 0 || last_month_transported("COAT") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(paint_factory_check_production() || incoming_cargo_waiting("ACID") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
@@ -809,9 +791,7 @@ switch(FEAT_INDUSTRIES, SELF, paint_factory_switch_update_last_served_date_ext_c
 
 switch(FEAT_INDUSTRIES, SELF, paint_factory_switch_update_last_served_date_ext_building_industries_ext_coke_sulphur,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("COAT") != 0 || last_month_production("COAT") != 0 || 
-		incoming_cargo_waiting("IORE") != 0 || incoming_cargo_waiting("COPR") != 0 || incoming_cargo_waiting("CBLK") != 0 || incoming_cargo_waiting("LIME") != 0 || incoming_cargo_waiting("ACID") != 0 ||
-		this_month_transported("COAT") != 0 || last_month_transported("COAT") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(paint_factory_check_production() || incoming_cargo_waiting("LIME") != 0 || incoming_cargo_waiting("ACID") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();

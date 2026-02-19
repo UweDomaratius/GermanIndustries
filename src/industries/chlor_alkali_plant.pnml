@@ -801,34 +801,33 @@ switch(FEAT_INDUSTRIES, SELF, chlor_alkali_plant_switch_location_check_industry_
 // values for production are based on molar weights (SALT 58.5g/mol, NaOH 40.5g/mol, Cl2: 35g/mol, H2: 2g/mol (H2 production increased for better playability)
 // 2 NaCl+2H2O -> 2 NaOH + Cl2 + H2
 produce(chlor_alkali_plant_produce,
-	[SALT: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
-	[CHLO: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*299/1000,1) : 0;
-	 LYE_: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * 692/1000,1) : 0;
-	 H2__: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*50/1000,1) : 0;], // due to rounding it will often go down to 0, produce at least 1 unit
+	[SALT: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);],
+	[CHLO: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 LYE_: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
+	 H2__: LOAD_TEMP(TEMP_REGISTER_PRODUCT_3);
+	 ],
 	0 // do not run again
 )
 
-switch(FEAT_INDUSTRIES, PARENT, chlor_alkali_plant_update_city_persistent_storage,
-	[
-		STORE_PERM(LOAD_TEMP(TEMP_REGISTER_POWER_DEMAND)+LOAD_PERM(PERM_REGISTER_CITY_POWER_DEMAND), PERM_REGISTER_CITY_POWER_DEMAND),
-		STORE_PERM(LOAD_PERM(PERM_REGISTER_CITY_POWER_AVAILABLE) - LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT), PERM_REGISTER_CITY_POWER_AVAILABLE)
-	]
-)
+switch(FEAT_INDUSTRIES, SELF, chlor_alkali_plant_calculate_production,
+	[STORE_TEMP(percentage_of_production(30), TEMP_REGISTER_PRODUCT_1), // CHLO
+	 STORE_TEMP(percentage_of_production(70), TEMP_REGISTER_PRODUCT_2), // LYE
+	 STORE_TEMP(percentage_of_production(5), TEMP_REGISTER_PRODUCT_3), // H2
+	])
 {
 	chlor_alkali_plant_produce;
 }
 
-// TODO: factor in how much energy is needed to produce one item - currently it's 1:1
+switch(FEAT_INDUSTRIES, PARENT, chlor_alkali_plant_update_city_persistent_storage,
+	[industry_update_city_persistent_storage()
+	]
+)
+{
+	chlor_alkali_plant_calculate_production;
+}
+
 switch(FEAT_INDUSTRIES, SELF, chlor_alkali_plant_update_production_according_to_power,
-	[
-	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT), PERM_REGISTER_POWER_DEMAND),
-	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT), TEMP_REGISTER_POWER_DEMAND),
-	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT),
-	 // reduce amount of production if not enough electricity is available
-	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),(city_get_power_available() > LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)) ? city_get_power_available() : 
-		city_get_power_available()/city_get_electric_industries_town_count()), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
-	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT), PERM_REGISTER_PRODUCTION_AMOUNT),
-	 STORE_PERM((LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * 100) / LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT), PERM_REGISTER_PRODUCTION_PERCENTAGE),
+	[limit_production_due_to_power(),
 	])
 {
 	chlor_alkali_plant_update_city_persistent_storage;
@@ -843,7 +842,7 @@ switch(FEAT_INDUSTRIES, SELF, chlor_alkali_plant_switch_produce,
 	 param_electricity_needed
 	]) {
 	1: chlor_alkali_plant_update_production_according_to_power;
-	chlor_alkali_plant_produce;
+	chlor_alkali_plant_calculate_production;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -855,16 +854,16 @@ switch(FEAT_INDUSTRIES, SELF, chlor_alkali_plant_switch_extra_text_electricity,
 	 // now store the relevant values in the different registers
 	 STORE_TEMP(city_get_power_available(), TEMP_REGISTER_POWER_AVAILABLE),
 	 
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT), TEMP_REGISTER_EXTRA_TEXT_ARG0), 
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_PERCENTAGE), TEMP_REGISTER_EXTRA_TEXT_ARG1), 
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0), TEMP_REGISTER_EXTRA_TEXT_ARG0), 
+	 STORE_TEMP((LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) * 100) / LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0), TEMP_REGISTER_EXTRA_TEXT_ARG1), 
 	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_POWER_DEMAND), TEMP_REGISTER_EXTRA_TEXT_ARG2),
 	 
 	 // if (power_available_from_city == 0) -> STR_INDUSTRY_NO_POWER
 	 // else if (production_percentage == 100 && max_production > 0) -> STR_ENOUGH_POWER
 	 // else -> STR_NOT_ENOUGH_POWER
-	 STORE_TEMP((LOAD_PERM(PERM_REGISTER_PRODUCTION_PERCENTAGE) == 0 && LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT) > 0) ? string(STR_INDUSTRY_NO_POWER) :
-	 ((LOAD_PERM(PERM_REGISTER_PRODUCTION_PERCENTAGE) == 100 && LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT) > 0) ? string(STR_INDUSTRY_ENOUGH_POWER) :
-	 ((LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT) > 0) ? string(STR_INDUSTRY_NOT_ENOUGH_POWER) : string(STR_EMPTY)))
+	 STORE_TEMP(((LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) * 100) / LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0) == 0 && LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0) > 0) ? string(STR_INDUSTRY_NO_POWER) :
+	 (((LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) * 100) / LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0) == 100 && LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0) > 0) ? string(STR_INDUSTRY_ENOUGH_POWER) :
+	 ((LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0) > 0) ? string(STR_INDUSTRY_NOT_ENOUGH_POWER) : string(STR_EMPTY)))
 	 | string(STR_EMPTY) << 16, TEMP_REGISTER_EXTRA_TEXT_ARG3)
 	])
 {

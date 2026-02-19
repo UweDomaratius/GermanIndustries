@@ -470,18 +470,37 @@ switch(FEAT_INDUSTRYTILES, SELF, farm_switch_tile_location_check,
 	return CB_RESULT_LOCATION_DISALLOW;
 }
 
+switch(FEAT_INDUSTRYTILES, PARENT, farm_switch_tile_cargo_acceptance, 
+	[STORE_TEMP(incoming_cargo_waiting("FERT") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0)
+	]
+)
+{
+	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0);
+}
+
 //////////////////////////////////////////////////////////////////////////////
 // industry tile and layout definition
 //////////////////////////////////////////////////////////////////////////////
 item(FEAT_INDUSTRYTILES, farm_tile, INDUSTRY_TILE_ID_FARM) {
-	property {
-		substitute:         0;
-		land_shape_flags:   0;
-		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
-		animation_triggers: bitmask();
+	if (!param_extension_production_boost) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [];
+			animation_triggers: bitmask();
+		}
+	}
+	if (param_extension_production_boost) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [[FERT,8]];
+			animation_triggers: bitmask();
+		}
 	}
 	graphics {
 		tile_check: farm_switch_tile_location_check;
+		cargo_amount_accept: farm_switch_tile_cargo_acceptance;
 		farm_switch_graphics;
 	}
 }
@@ -572,7 +591,7 @@ switch(FEAT_INDUSTRIES, SELF, farm_switch_location_check_industry_distance,
 	   (param_max_industries_per_type_on_map == 0 || param_max_industries_per_type_on_map > industry_count(INDUSTRY_ID_FARM)) &&
 	   (param_max_industries_on_map == 0 || param_max_industries_on_map > LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_INDUSTRIES)) &&
 	   // distance to related producers
-	   //(industry_distance(INDUSTRY_ID_FERTILIZER_PLANT) >= param_min_dist_related_industry) &&
+	   (industry_distance(INDUSTRY_ID_FERTILIZER_PLANT) >= param_min_dist_related_industry) &&
 	   // distance to related consumers
 	   (industry_distance(INDUSTRY_ID_ANIMAL_FARM) >= param_min_dist_related_industry) &&
 	   (industry_distance(INDUSTRY_ID_BIOREFINERY) >= param_min_dist_related_industry) &&
@@ -602,57 +621,50 @@ switch(FEAT_INDUSTRIES, SELF, farm_func_calc_max_prod,
 
 // TODO: limit production increase to make it adapt slower (grain and lvst need time to grow)
 switch(FEAT_INDUSTRIES, SELF, farm_switch_prod_change, 
-	[STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT), TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
-	 STORE_TEMP(max(transported_last_month_pct("LVST"),transported_last_month_pct("GRAI")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
-	 STORE_TEMP(farm_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)])
+	[STORE_TEMP(max(transported_last_month_pct("LVST"),transported_last_month_pct("GRAI")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 STORE_TEMP(farm_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION)])
 {
 	change_production; // use default rules to adapt production
 }
 
 switch(FEAT_INDUSTRIES, SELF, farm_switch_prod_change_extension_textile_industry, 
-	[STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT), TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
-	 STORE_TEMP(max(transported_last_month_pct("LVST"),transported_last_month_pct("GRAI"),transported_last_month_pct("WOOL")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
-	 STORE_TEMP(farm_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)])
+	[STORE_TEMP(max(transported_last_month_pct("LVST"),transported_last_month_pct("GRAI"),transported_last_month_pct("WOOL")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 STORE_TEMP(farm_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION)])
 {
 	change_production; // use default rules to adapt production
 }
 
 switch(FEAT_INDUSTRIES, SELF, farm_switch_prod_change_extension_food_industry, 
-	[STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT), TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
-	 STORE_TEMP(transported_last_month_pct("GRAI"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
-	 STORE_TEMP(farm_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)])
+	[STORE_TEMP(transported_last_month_pct("GRAI"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 STORE_TEMP(farm_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION)])
 {
 	change_production; // use default rules to adapt production
 }
 
 switch(FEAT_INDUSTRIES, SELF, farm_switch_prod_change_extension_textile_industry_ext_fruits, 
-	[STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT), TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
-	 STORE_TEMP(max(transported_last_month_pct("LVST"),transported_last_month_pct("GRAI"),transported_last_month_pct("WOOL"),transported_last_month_pct("BIOM")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
-	 STORE_TEMP(farm_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)])
+	[STORE_TEMP(max(transported_last_month_pct("LVST"),transported_last_month_pct("GRAI"),transported_last_month_pct("WOOL"),transported_last_month_pct("BIOM")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 STORE_TEMP(farm_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION)])
 {
 	change_production; // use default rules to adapt production
 }
 
 switch(FEAT_INDUSTRIES, SELF, farm_switch_prod_change_ext_fruits, 
-	[STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT), TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
-	 STORE_TEMP(max(transported_last_month_pct("LVST"),transported_last_month_pct("GRAI"),transported_last_month_pct("BIOM")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
-	 STORE_TEMP(farm_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)])
+	[STORE_TEMP(max(transported_last_month_pct("LVST"),transported_last_month_pct("GRAI"),transported_last_month_pct("BIOM")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 STORE_TEMP(farm_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION)])
 {
 	change_production; // use default rules to adapt production
 }
 
 switch(FEAT_INDUSTRIES, SELF, farm_switch_prod_change_ext_food_industry_ext_fruits, 
-	[STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT), TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
-	 STORE_TEMP(max(transported_last_month_pct("BIOM"),transported_last_month_pct("GRAI")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
-	 STORE_TEMP(farm_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)])
+	[STORE_TEMP(max(transported_last_month_pct("BIOM"),transported_last_month_pct("GRAI")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 STORE_TEMP(farm_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION)])
 {
 	change_production; // use default rules to adapt production
 }
 
 // randomize production at build time based on random bits: 96t min, 152t max
 switch(FEAT_INDUSTRIES, SELF, farm_switch_prod_change_build,
-	[initialize_extractive_resources(),
-	STORE_TEMP(farm_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)	
+	[STORE_TEMP(farm_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION)	
 	])
 {
 	randomize_initial_production;
@@ -665,10 +677,31 @@ produce(farm_produce_extension_textile_industry,
 )
 
 switch(FEAT_INDUSTRIES, SELF, farm_switch_produce_extension_textile_industry,
-	[STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 // store the theoretical amount of production (production level * scaling percentage)
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT)]) {
+	[init_primary_production(),
+	 update_permanent_storage_production_values()
+	 ])
+{
 	farm_produce_extension_textile_industry;
+}
+
+produce(farm_produce_extension_textile_industry_ext_production_boost,
+	[FERT: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);],
+	[LVST: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);GRAI: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);WOOL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, farm_switch_produce_extension_textile_industry_extension_production_boost,
+	[init_primary_production(),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("FERT"), TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING0),
+	 
+	 limit_production_optional_cargo(1),
+	 
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING0), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 10), TEMP_REGISTER_PRODUCTION_RAW0),
+	 
+	 update_permanent_storage_production_values()
+	 ]) {
+	farm_produce_extension_textile_industry_ext_production_boost;
 }
 
 produce(farm_produce_extension_food_industry,
@@ -678,10 +711,31 @@ produce(farm_produce_extension_food_industry,
 )
 
 switch(FEAT_INDUSTRIES, SELF, farm_switch_produce_extension_food_industry,
-	[STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 // store the theoretical amount of production (production level * scaling percentage)
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT)]) {
+	[init_primary_production(),
+	 update_permanent_storage_production_values()
+	])
+{
 	farm_produce_extension_food_industry;
+}
+
+produce(farm_produce_extension_food_industry_ext_production_boost,
+	[FERT: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);],
+	[GRAI: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, farm_switch_produce_extension_food_industry_extension_production_boost,
+	[init_primary_production(),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("FERT"), TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING0),
+	 
+	 limit_production_optional_cargo(1),
+	 
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING0), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW0),
+	 
+	 update_permanent_storage_production_values()
+	 ]) {
+	farm_produce_extension_food_industry_ext_production_boost;
 }
 
 produce(farm_produce,
@@ -691,10 +745,31 @@ produce(farm_produce,
 )
 
 switch(FEAT_INDUSTRIES, SELF, farm_switch_produce,
-	[STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 // store the theoretical amount of production (production level * scaling percentage)
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT)]) {
+	[init_primary_production(),
+	 update_permanent_storage_production_values()
+	])
+{
 	farm_produce;
+}
+
+produce(farm_produce_extension_production_boost,
+	[FERT: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);],
+	[LVST: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);GRAI: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, farm_switch_produce_extension_production_boost,
+	[init_primary_production(),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("FERT"), TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING0),
+	 
+	 limit_production_optional_cargo(1),
+	 
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING0), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW0),
+	 
+	 update_permanent_storage_production_values()
+	 ]) {
+	farm_produce_extension_production_boost;
 }
 
 produce(farm_produce_extension_textile_industry_ext_fruits,
@@ -703,11 +778,32 @@ produce(farm_produce_extension_textile_industry_ext_fruits,
 	0 // do not run again
 )
 
+produce(farm_produce_extension_textile_industry_ext_fruits_ext_production_boost,
+	[FERT: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);],
+	[LVST: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);GRAI: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);WOOL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);BIOM: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);],
+	0 // do not run again
+)
+
 switch(FEAT_INDUSTRIES, SELF, farm_switch_produce_extension_textile_industry_ext_fruits,
-	[STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 // store the theoretical amount of production (production level * scaling percentage)
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT)]) {
+	[init_primary_production(),
+	 update_permanent_storage_production_values()
+	 ])
+{
 	farm_produce_extension_textile_industry_ext_fruits;
+}
+
+switch(FEAT_INDUSTRIES, SELF, farm_switch_produce_extension_textile_industry_ext_fruits_extension_production_boost,
+	[init_primary_production(),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("FERT"), TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING0),
+	 
+	 limit_production_optional_cargo(1),
+	 
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING0), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW0),
+	 
+	 update_permanent_storage_production_values()
+	 ]) {
+	farm_produce_extension_textile_industry_ext_fruits_ext_production_boost;
 }
 
 produce(farm_produce_extension_food_industry_ext_fruits,
@@ -717,10 +813,31 @@ produce(farm_produce_extension_food_industry_ext_fruits,
 )
 
 switch(FEAT_INDUSTRIES, SELF, farm_switch_produce_extension_food_industry_ext_fruits,
-	[STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 // store the theoretical amount of production (production level * scaling percentage)
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT)]) {
+	[init_primary_production(),
+	 update_permanent_storage_production_values()
+	])
+{
 	farm_produce_extension_food_industry_ext_fruits;
+}
+
+produce(farm_produce_extension_food_industry_ext_fruits_ext_production_boost,
+	[FERT: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);],
+	[GRAI: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);BIOM: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, farm_switch_produce_extension_food_industry_ext_fruits_extension_production_boost,
+	[init_primary_production(),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("FERT"), TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING0),
+	 
+	 limit_production_optional_cargo(1),
+	 
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING0), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW0),
+	 
+	 update_permanent_storage_production_values()
+	 ]) {
+	farm_produce_extension_food_industry_ext_fruits_ext_production_boost;
 }
 
 produce(farm_produce_ext_fruits,
@@ -730,28 +847,96 @@ produce(farm_produce_ext_fruits,
 )
 
 switch(FEAT_INDUSTRIES, SELF, farm_switch_produce_ext_fruits,
-	[STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 // store the theoretical amount of production (production level * scaling percentage)
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT)]) {
+	[init_primary_production(),
+	 update_permanent_storage_production_values()
+	])
+{
 	farm_produce_ext_fruits;
+}
+
+produce(farm_produce_ext_fruits_ext_production_boost,
+	[FERT: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);],
+	[LVST: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);GRAI: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);BIOM: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, farm_switch_produce_ext_fruits_extension_production_boost,
+	[init_primary_production(),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("FERT"), TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING0),
+	 
+	 limit_production_optional_cargo(1),
+	 
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING0), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW0),
+	 
+	 update_permanent_storage_production_values()
+	 ]) {
+	farm_produce_ext_fruits_ext_production_boost;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // build the industry window text here
 ////////////////////////////////////////////////////////////////////////////////
 switch(FEAT_INDUSTRIES, SELF, farm_switch_extra_text, 
-	[STORE_TEMP(farm_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
-	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT), TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
+	[STORE_TEMP(farm_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
 	 STORE_TEMP(
-		LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL) < LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION) ? string(STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION) : string(STR_INDUSTRY_PREREQ_KEEP_PRODUCTION) | 
+		LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) < LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION) ? string(STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION) : string(STR_INDUSTRY_PREREQ_KEEP_PRODUCTION) | 
 		string(STR_EMPTY) << 16,
 		TEMP_REGISTER_EXTRA_TEXT_ARG0)
 	]) {
 	return string(STR_ORGANIC_INDUSTRY_TEXT);
 }
-if (param_extension_textile_industries && !param_extension_food_industries && !param_extension_fruits) {
+
+switch(FEAT_INDUSTRIES, SELF, industry_switch_extra_text_organic, 
+	[STORE_TEMP(
+		LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) < LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION) ? string(STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION) : string(STR_INDUSTRY_PREREQ_KEEP_PRODUCTION) | 
+		string(STR_EMPTY) << 16,
+		TEMP_REGISTER_EXTRA_TEXT_ARG0)
+	])
+{
+	return string(STR_ORGANIC_INDUSTRY_TEXT);
+}
+
+switch(FEAT_INDUSTRIES, SELF, industry_switch_extra_text_missing_optional_cargo_organic, 
+	[STORE_TEMP(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0),TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0),TEMP_REGISTER_EXTRA_TEXT_ARG1),
+	 STORE_TEMP(string(STR_ORGANIC_INDUSTRY_TEXT_PRODUCTION_BOOST),TEMP_REGISTER_EXTRA_TEXT_ARG2),
+	 STORE_TEMP(
+		LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) < LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION) ? string(STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION) : string(STR_INDUSTRY_PREREQ_KEEP_PRODUCTION) | 
+		string(STR_EMPTY) << 16,
+		TEMP_REGISTER_EXTRA_TEXT_ARG3)
+	])
+{
+	return string(STR_PRODUCTION_LIMITED_DUE_TO_MISSING_OPTIONAL_CARGO);
+}
+
+switch(FEAT_INDUSTRIES, SELF, farm_switch_extra_text_ext_production_boost, 
+	[STORE_TEMP(farm_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
+	(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0)>LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0))?1:0])
+{
+	1: industry_switch_extra_text_missing_optional_cargo_organic;
+	industry_switch_extra_text_organic;
+}
+
+switch(FEAT_INDUSTRIES, SELF, farm_switch_cargo_subtype, getbits(extra_callback_info2, 16, 8)) {
+	FERT: switch_cargo_subtype_white;
+	return 0x3800 + string(STR_EMPTY);
+}
+
+produce(farm_produce_cap_stockpile,
+	[FERT: incoming_cargo_waiting("FERT") > 60000 ? incoming_cargo_waiting("FERT") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, farm_switch_stockpile_check, param_stockpile_cap)
+{
+	1: empty_produce;
+	farm_produce_cap_stockpile;
+}
+
+if (param_extension_textile_industries && !param_extension_food_industries && !param_extension_fruits && !param_extension_production_boost) {
 	item(FEAT_INDUSTRIES, farm, INDUSTRY_ID_FARM) {
 		property {
 			substitute: 0;
@@ -786,7 +971,7 @@ if (param_extension_textile_industries && !param_extension_food_industries && !p
 		}
 	}
 }
-if (!param_extension_textile_industries && !param_extension_food_industries && !param_extension_fruits) {
+if (!param_extension_textile_industries && !param_extension_food_industries && !param_extension_fruits && !param_extension_production_boost) {
 	// default farm
 	item(FEAT_INDUSTRIES, farm, INDUSTRY_ID_FARM) {
 		property {
@@ -823,7 +1008,7 @@ if (!param_extension_textile_industries && !param_extension_food_industries && !
 	}
 }
 
-if (param_extension_food_industries && !param_extension_fruits) {
+if (param_extension_food_industries && !param_extension_fruits && !param_extension_production_boost) {
 	item(FEAT_INDUSTRIES, farm, INDUSTRY_ID_FARM) {
 		property {
 			substitute: 0;
@@ -859,7 +1044,7 @@ if (param_extension_food_industries && !param_extension_fruits) {
 	}
 }
 
-if (param_extension_textile_industries && !param_extension_food_industries && param_extension_fruits) {
+if (param_extension_textile_industries && !param_extension_food_industries && param_extension_fruits && !param_extension_production_boost) {
 	item(FEAT_INDUSTRIES, farm, INDUSTRY_ID_FARM) {
 		property {
 			substitute: 0;
@@ -894,7 +1079,7 @@ if (param_extension_textile_industries && !param_extension_food_industries && pa
 		}
 	}
 }
-if (!param_extension_textile_industries && !param_extension_food_industries && param_extension_fruits) {
+if (!param_extension_textile_industries && !param_extension_food_industries && param_extension_fruits && !param_extension_production_boost) {
 	// default farm
 	item(FEAT_INDUSTRIES, farm, INDUSTRY_ID_FARM) {
 		property {
@@ -931,7 +1116,7 @@ if (!param_extension_textile_industries && !param_extension_food_industries && p
 	}
 }
 
-if (param_extension_food_industries && param_extension_fruits) {
+if (param_extension_food_industries && param_extension_fruits && !param_extension_production_boost) {
 	item(FEAT_INDUSTRIES, farm, INDUSTRY_ID_FARM) {
 		property {
 			substitute: 0;
@@ -965,4 +1150,232 @@ if (param_extension_food_industries && param_extension_fruits) {
 			extra_text_industry:      farm_switch_extra_text;
 		}
 	}
-}   
+}
+
+if (param_extension_textile_industries && !param_extension_food_industries && !param_extension_fruits && param_extension_production_boost) {
+	item(FEAT_INDUSTRIES, farm, INDUSTRY_ID_FARM) {
+		property {
+			substitute: 0;
+			map_colour: 0x30;
+			life_type: IND_LIFE_TYPE_ORGANIC;
+			min_cargo_distr: 1;
+			layouts: [farm_industry_layout_1_tilelayout,farm_industry_layout_2_tilelayout,farm_industry_layout_3_tilelayout];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_PLANT_FIELDS_PERIODICALLY,IND_FLAG_PLANT_FIELDS_WHEN_BUILT);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: TTD_STR_INDUSTRY_NAME_FARM;
+			prob_map_gen: 10;
+			prob_in_game: 10;
+			prospect_chance: 0.75;
+			fund_cost_multiplier: 8;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("FERT"),produce_cargo("LVST",0), produce_cargo("GRAI",0), produce_cargo("WOOL",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FARM));
+		}
+	
+		graphics {
+			construction_probability: get_construction_probability;
+			produce_cargo_arrival:    farm_switch_stockpile_check; 
+			produce_256_ticks:        farm_switch_produce_extension_textile_industry_extension_production_boost;
+			monthly_prod_change:      farm_switch_prod_change_extension_textile_industry;
+			random_prod_change:       farm_switch_prod_change_extension_textile_industry;
+			build_prod_change:        farm_switch_prod_change_build;
+			location_check:           farm_switch_location_check_industry_distance;
+			cargo_subtype_display:    farm_switch_cargo_subtype;
+			extra_text_fund:          return string(STR_EMPTY);
+			extra_text_industry:      farm_switch_extra_text_ext_production_boost;
+			stop_accept_cargo:        switch_stop_accept_cargo;
+		}
+	}
+}
+if (!param_extension_textile_industries && !param_extension_food_industries && !param_extension_fruits && param_extension_production_boost) {
+	// default farm
+	item(FEAT_INDUSTRIES, farm, INDUSTRY_ID_FARM) {
+		property {
+			substitute: 0;
+			map_colour: 0x30;
+			life_type: IND_LIFE_TYPE_ORGANIC;
+			min_cargo_distr: 1;
+			layouts: [farm_industry_layout_1_tilelayout,farm_industry_layout_2_tilelayout,farm_industry_layout_3_tilelayout];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_PLANT_FIELDS_PERIODICALLY,IND_FLAG_PLANT_FIELDS_WHEN_BUILT);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: TTD_STR_INDUSTRY_NAME_FARM;
+			prob_map_gen: 10;
+			prob_in_game: 10;
+			prospect_chance: 0.75;
+			fund_cost_multiplier: 8;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("FERT"),produce_cargo("LVST",0), produce_cargo("GRAI",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FARM));
+		}
+	
+		graphics {
+			construction_probability: get_construction_probability;
+			produce_cargo_arrival:    farm_switch_stockpile_check; 
+			produce_256_ticks:        farm_switch_produce_extension_production_boost;
+			monthly_prod_change:      farm_switch_prod_change;
+			random_prod_change:       farm_switch_prod_change;
+			build_prod_change:        farm_switch_prod_change_build;
+			location_check:           farm_switch_location_check_industry_distance;
+			cargo_subtype_display:    farm_switch_cargo_subtype;
+			extra_text_fund:          return string(STR_EMPTY);
+			extra_text_industry:      farm_switch_extra_text_ext_production_boost;
+			stop_accept_cargo:        switch_stop_accept_cargo;
+		}
+	}
+}
+
+if (param_extension_food_industries && !param_extension_fruits && param_extension_production_boost) {
+	item(FEAT_INDUSTRIES, farm, INDUSTRY_ID_FARM) {
+		property {
+			substitute: 0;
+			map_colour: 0x30;
+			life_type: IND_LIFE_TYPE_ORGANIC;
+			min_cargo_distr: 1;
+			layouts: [farm_industry_layout_4_tilelayout,farm_industry_layout_5_tilelayout,farm_industry_layout_6_tilelayout];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_PLANT_FIELDS_PERIODICALLY,IND_FLAG_PLANT_FIELDS_WHEN_BUILT);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: TTD_STR_INDUSTRY_NAME_FARM;
+			prob_map_gen: 10;
+			prob_in_game: 10;
+			prospect_chance: 0.75;
+			fund_cost_multiplier: 8;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("FERT"),produce_cargo("GRAI",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FARM));
+		}
+	
+		graphics {
+			construction_probability: get_construction_probability;
+			produce_cargo_arrival:    farm_switch_stockpile_check; 
+			produce_256_ticks:        farm_switch_produce_extension_food_industry_extension_production_boost;
+			monthly_prod_change:      farm_switch_prod_change_extension_food_industry;
+			random_prod_change:       farm_switch_prod_change_extension_food_industry;
+			build_prod_change:        farm_switch_prod_change_build;
+			location_check:           farm_switch_location_check_industry_distance;
+			cargo_subtype_display:    farm_switch_cargo_subtype;
+			extra_text_fund:          return string(STR_EMPTY);
+			extra_text_industry:      farm_switch_extra_text_ext_production_boost;
+			stop_accept_cargo:        switch_stop_accept_cargo;
+		}
+	}
+}
+
+if (param_extension_textile_industries && !param_extension_food_industries && param_extension_fruits && param_extension_production_boost) {
+	item(FEAT_INDUSTRIES, farm, INDUSTRY_ID_FARM) {
+		property {
+			substitute: 0;
+			map_colour: 0x30;
+			life_type: IND_LIFE_TYPE_ORGANIC;
+			min_cargo_distr: 1;
+			layouts: [farm_industry_layout_1_tilelayout,farm_industry_layout_2_tilelayout,farm_industry_layout_3_tilelayout];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_PLANT_FIELDS_PERIODICALLY,IND_FLAG_PLANT_FIELDS_WHEN_BUILT);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: TTD_STR_INDUSTRY_NAME_FARM;
+			prob_map_gen: 10;
+			prob_in_game: 10;
+			prospect_chance: 0.75;
+			fund_cost_multiplier: 8;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("FERT"),produce_cargo("LVST",0), produce_cargo("GRAI",0), produce_cargo("WOOL",0),produce_cargo("BIOM",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FARM));
+		}
+	
+		graphics {
+			construction_probability: get_construction_probability;
+			produce_cargo_arrival:    farm_switch_stockpile_check; 
+			produce_256_ticks:        farm_switch_produce_extension_textile_industry_ext_fruits_extension_production_boost;
+			monthly_prod_change:      farm_switch_prod_change_extension_textile_industry_ext_fruits;
+			random_prod_change:       farm_switch_prod_change_extension_textile_industry_ext_fruits;
+			build_prod_change:        farm_switch_prod_change_build;
+			location_check:           farm_switch_location_check_industry_distance;
+			cargo_subtype_display:    farm_switch_cargo_subtype;
+			extra_text_fund:          return string(STR_EMPTY);
+			extra_text_industry:      farm_switch_extra_text_ext_production_boost;
+			stop_accept_cargo:        switch_stop_accept_cargo;
+		}
+	}
+}
+if (!param_extension_textile_industries && !param_extension_food_industries && param_extension_fruits && param_extension_production_boost) {
+	// default farm
+	item(FEAT_INDUSTRIES, farm, INDUSTRY_ID_FARM) {
+		property {
+			substitute: 0;
+			map_colour: 0x30;
+			life_type: IND_LIFE_TYPE_ORGANIC;
+			min_cargo_distr: 1;
+			layouts: [farm_industry_layout_1_tilelayout,farm_industry_layout_2_tilelayout,farm_industry_layout_3_tilelayout];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_PLANT_FIELDS_PERIODICALLY,IND_FLAG_PLANT_FIELDS_WHEN_BUILT);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: TTD_STR_INDUSTRY_NAME_FARM;
+			prob_map_gen: 10;
+			prob_in_game: 10;
+			prospect_chance: 0.75;
+			fund_cost_multiplier: 8;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("FERT"),produce_cargo("LVST",0), produce_cargo("GRAI",0),produce_cargo("BIOM",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FARM));
+		}
+	
+		graphics {
+			construction_probability: get_construction_probability;
+			produce_cargo_arrival:    farm_switch_stockpile_check; 
+			produce_256_ticks:        farm_switch_produce_ext_fruits_extension_production_boost;
+			monthly_prod_change:      farm_switch_prod_change_ext_fruits;
+			random_prod_change:       farm_switch_prod_change_ext_fruits;
+			build_prod_change:        farm_switch_prod_change_build;
+			location_check:           farm_switch_location_check_industry_distance;
+			cargo_subtype_display:    farm_switch_cargo_subtype;
+			extra_text_fund:          return string(STR_EMPTY);
+			extra_text_industry:      farm_switch_extra_text_ext_production_boost;
+			stop_accept_cargo:        switch_stop_accept_cargo;
+		}
+	}
+}
+
+if (param_extension_food_industries && param_extension_fruits && param_extension_production_boost) {
+	item(FEAT_INDUSTRIES, farm, INDUSTRY_ID_FARM) {
+		property {
+			substitute: 0;
+			map_colour: 0x30;
+			life_type: IND_LIFE_TYPE_ORGANIC;
+			min_cargo_distr: 1;
+			layouts: [farm_industry_layout_4_tilelayout,farm_industry_layout_5_tilelayout,farm_industry_layout_6_tilelayout];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_PLANT_FIELDS_PERIODICALLY,IND_FLAG_PLANT_FIELDS_WHEN_BUILT);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: TTD_STR_INDUSTRY_NAME_FARM;
+			prob_map_gen: 10;
+			prob_in_game: 10;
+			prospect_chance: 0.75;
+			fund_cost_multiplier: 8;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("FERT"),produce_cargo("GRAI",0),produce_cargo("BIOM",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FARM));
+		}
+	
+		graphics {
+			construction_probability: get_construction_probability;
+			produce_cargo_arrival:    farm_switch_stockpile_check; 
+			produce_256_ticks:        farm_switch_produce_extension_food_industry_ext_fruits_extension_production_boost;
+			monthly_prod_change:      farm_switch_prod_change_ext_food_industry_ext_fruits;
+			random_prod_change:       farm_switch_prod_change_ext_food_industry_ext_fruits;
+			build_prod_change:        farm_switch_prod_change_build;
+			location_check:           farm_switch_location_check_industry_distance;
+			cargo_subtype_display:    farm_switch_cargo_subtype;
+			extra_text_fund:          return string(STR_EMPTY);
+			extra_text_industry:      farm_switch_extra_text_ext_production_boost;
+			stop_accept_cargo:        switch_stop_accept_cargo;
+		}
+	}
+}

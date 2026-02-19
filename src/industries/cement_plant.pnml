@@ -983,9 +983,10 @@ switch(FEAT_INDUSTRIES, SELF, cement_plant_switch_location_check_industry_distan
 
 // 1 SAND + 1 LIMESTONE => 0.63 CEMENT
 produce(cement_plant_produce,
-	[SAND: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
-	 LIME: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);],
-	[CMNT: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*63/100,1) : 0;],
+	[SAND: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 LIME: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);],
+	[CMNT: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	],
 	0 // do not run again
 )
 
@@ -995,9 +996,10 @@ produce(cement_plant_produce,
 // it stockpile is empty, nothing is produced
 switch(FEAT_INDUSTRIES, SELF, cement_plant_switch_produce, 
 	[STORE_TEMP(min(incoming_cargo_waiting("SAND"),incoming_cargo_waiting("LIME")),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
-	STORE_TEMP(min(incoming_cargo_waiting("SAND"),incoming_cargo_waiting("LIME")),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
-     calculate_raw_material_usage(),
+     
+	 calculate_raw_material_usage(),
 	 calculate_total_production(),
+	 STORE_TEMP(percentage_of_production(63), TEMP_REGISTER_PRODUCT_1),
 
      store_debug_production_data()	 
 	]) {

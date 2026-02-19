@@ -1189,8 +1189,10 @@ switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_location_check_industry_dist
 }
 
 produce(plastics_plant_produce,
-	[OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);],
-	[PLAS: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100,1) : 0;],
+	[OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);],
+	[//PLAS: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT)*90/100,1) : 0;
+	PLAS: percentage_of_production(90);
+	],
 	0 // do not run again
 )
 
@@ -1198,14 +1200,16 @@ switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_produce,
 	[STORE_TEMP(incoming_cargo_waiting("OIL_"), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
 	 calculate_raw_material_usage(),
 	 calculate_total_production(),
+	 STORE_TEMP(percentage_of_production(90), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()	 
 	]) {
 	plastics_plant_produce;
 }
 
 produce(plastics_plant_produce_ext_organic_chemistry,
-	[C2H4: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);],
-	[PLAS: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100,1) : 0;],
+	[C2H4: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);],
+	[PLAS: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	],
 	0 // do not run again
 )
 
@@ -1213,39 +1217,43 @@ switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_produce_ext_organic_chemistr
 	[STORE_TEMP(incoming_cargo_waiting("C2H4"), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
 	 calculate_raw_material_usage(),
 	 calculate_total_production(),
+	 STORE_TEMP(percentage_of_production(90), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()	 
 	]) {
 	plastics_plant_produce_ext_organic_chemistry;
 }
 
 produce(plastics_plant_produce_ext_basic_inorganic_chemistry,
-	[OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
-	 CHLO: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);],
-	[PLAS: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100,1) : 0;],
+	[OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 CHLO: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);],
+	[PLAS: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	],
 	0 // do not run again
 )
 
 produce(plastics_plant_produce_ext_painting_industries,
-	[OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
-	 COAT: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);],
-	[PLAS: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100,1) : 0;],
+	[OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 COAT: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);],
+	[PLAS: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	],
 	0 // do not run again
 )
 
 produce(plastics_plant_produce_ext_basic_inorganic_chemistry_ext_painting_industries,
-	[OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
-	 CHLO: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
-	 COAT: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2) != 0 ? max(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0)*30/100,1) : 0;
+	[OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 CHLO: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 COAT: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
 	 ],
-	[PLAS: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100,1) : 0;],
+	[PLAS: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
+	],
 	0 // do not run again
 )
 
 switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_produce_ext_basic_inorganic_chemistry, 
 	[STORE_TEMP(min(incoming_cargo_waiting("OIL_"),incoming_cargo_waiting("CHLO")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
-	STORE_TEMP(min(incoming_cargo_waiting("OIL_"),incoming_cargo_waiting("CHLO")), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
 	 calculate_raw_material_usage(),
 	 calculate_total_production(),
+	 STORE_TEMP(percentage_of_production(90), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()	 
 	]) {
 	plastics_plant_produce_ext_basic_inorganic_chemistry;
@@ -1253,9 +1261,9 @@ switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_produce_ext_basic_inorganic_
 
 switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_produce_ext_painting_industries, 
 	[STORE_TEMP(min(incoming_cargo_waiting("OIL_"),incoming_cargo_waiting("COAT")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
-	 STORE_TEMP(min(incoming_cargo_waiting("OIL_"),incoming_cargo_waiting("COAT")), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
 	 calculate_raw_material_usage(),
 	 calculate_total_production(),
+	 STORE_TEMP(percentage_of_production(90), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()	 
 	]) {
 	plastics_plant_produce_ext_painting_industries;
@@ -1263,43 +1271,46 @@ switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_produce_ext_painting_industr
 
 switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_produce_ext_basic_inorganic_chemistry_ext_painting_industries, 
 	[STORE_TEMP(min(incoming_cargo_waiting("OIL_"),incoming_cargo_waiting("COAT"),incoming_cargo_waiting("CHLO")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
-	STORE_TEMP(min(incoming_cargo_waiting("OIL_"),incoming_cargo_waiting("COAT"),incoming_cargo_waiting("CHLO")), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
-	STORE_TEMP(min(incoming_cargo_waiting("OIL_"),incoming_cargo_waiting("COAT"),incoming_cargo_waiting("CHLO")), TEMP_REGISTER_INCOMING_CARGO_WAITING2),
 	 calculate_raw_material_usage(),
 	 calculate_total_production(),
+	 STORE_TEMP(percentage_of_production(30), TEMP_REGISTER_PRODUCT_1),
+	 STORE_TEMP(percentage_of_production(90), TEMP_REGISTER_PRODUCT_2),
 	 store_debug_production_data()
 	]) {
 	plastics_plant_produce_ext_basic_inorganic_chemistry_ext_painting_industries;
 }
 
 produce(plastics_plant_produce_ext_basic_inorganic_chemistry_ext_organic_chemistry,
-	[C2H4: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
-	 CHLO: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);],
-	[PLAS: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100,1) : 0;],
+	[C2H4: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 CHLO: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);],
+	[PLAS: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	],
 	0 // do not run again
 )
 
 produce(plastics_plant_produce_ext_painting_industries_ext_organic_chemistry,
-	[C2H4: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
-	 COAT: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);],
-	[PLAS: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100,1) : 0;],
+	[C2H4: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 COAT: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);],
+	[PLAS: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	],
 	0 // do not run again
 )
 
 produce(plastics_plant_produce_ext_basic_inorganic_chemistry_ext_painting_industries_ext_organic_chemistry,
-	[C2H4: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
-	 CHLO: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
-	 COAT: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2) != 0 ? max(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0)*30/100,1) : 0;
+	[C2H4: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 CHLO: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 COAT: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
 	 ],
-	[PLAS: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100,1) : 0;],
+	[PLAS: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
+	],
 	0 // do not run again
 )
 
 switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_produce_ext_basic_inorganic_chemistry_ext_organic_chemistry, 
 	[STORE_TEMP(min(incoming_cargo_waiting("C2H4"),incoming_cargo_waiting("CHLO")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
-	STORE_TEMP(min(incoming_cargo_waiting("C2H4"),incoming_cargo_waiting("CHLO")), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
 	 calculate_raw_material_usage(),
 	 calculate_total_production(),
+	 STORE_TEMP(percentage_of_production(90), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()	 
 	]) {
 	plastics_plant_produce_ext_basic_inorganic_chemistry_ext_organic_chemistry;
@@ -1307,9 +1318,9 @@ switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_produce_ext_basic_inorganic_
 
 switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_produce_ext_painting_industries_ext_organic_chemistry, 
 	[STORE_TEMP(min(incoming_cargo_waiting("C2H4"),incoming_cargo_waiting("COAT")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
-	 STORE_TEMP(min(incoming_cargo_waiting("C2H4"),incoming_cargo_waiting("COAT")), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
 	 calculate_raw_material_usage(),
 	 calculate_total_production(),
+	 STORE_TEMP(percentage_of_production(90), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()	 
 	]) {
 	plastics_plant_produce_ext_painting_industries_ext_organic_chemistry;
@@ -1317,10 +1328,10 @@ switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_produce_ext_painting_industr
 
 switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_produce_ext_basic_inorganic_chemistry_ext_painting_industries_ext_organic_chemistry, 
 	[STORE_TEMP(min(incoming_cargo_waiting("C2H4"),incoming_cargo_waiting("COAT"),incoming_cargo_waiting("CHLO")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
-	STORE_TEMP(min(incoming_cargo_waiting("C2H4"),incoming_cargo_waiting("COAT"),incoming_cargo_waiting("CHLO")), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
-	STORE_TEMP(min(incoming_cargo_waiting("C2H4"),incoming_cargo_waiting("COAT"),incoming_cargo_waiting("CHLO")), TEMP_REGISTER_INCOMING_CARGO_WAITING2),
 	 calculate_raw_material_usage(),
 	 calculate_total_production(),
+	 STORE_TEMP(percentage_of_production(30), TEMP_REGISTER_PRODUCT_1),
+	 STORE_TEMP(percentage_of_production(90), TEMP_REGISTER_PRODUCT_2),
 	 store_debug_production_data()
 	]) {
 	plastics_plant_produce_ext_basic_inorganic_chemistry_ext_painting_industries_ext_organic_chemistry;
@@ -1351,11 +1362,15 @@ switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_cargo_subtype, getbits(extra
 	return 0x3800 + string(STR_EMPTY);
 }
 
+switch(FEAT_INDUSTRIES, SELF, plastics_plant_check_production,
+	[this_month_production("PLAS") != 0 || last_month_production("PLAS") != 0 || this_month_transported("PLAS") != 0 || last_month_transported("PLAS") != 0
+	])
+{
+}
+
 switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_update_last_served_date,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("PLAS") != 0 || last_month_production("PLAS") != 0 || 
-		incoming_cargo_waiting("OIL_") != 0 || 
-		this_month_transported("PLAS") != 0 || last_month_transported("PLAS") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(plastics_plant_check_production() || incoming_cargo_waiting("OIL_") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
@@ -1363,9 +1378,7 @@ switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_update_last_served_date,
 
 switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_update_last_served_date_ext_basic_inorganic_chemistry,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("PLAS") != 0 || last_month_production("PLAS") != 0 || 
-		incoming_cargo_waiting("OIL_") != 0 || incoming_cargo_waiting("CHLO") != 0||
-		this_month_transported("PLAS") != 0 || last_month_transported("PLAS") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(plastics_plant_check_production() || incoming_cargo_waiting("OIL_") != 0 || incoming_cargo_waiting("CHLO") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
@@ -1373,9 +1386,7 @@ switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_update_last_served_date_ext_
 
 switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_update_last_served_date_ext_painting_industries,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("PLAS") != 0 || last_month_production("PLAS") != 0 || 
-		incoming_cargo_waiting("OIL_") != 0 || incoming_cargo_waiting("COAT") != 0||
-		this_month_transported("PLAS") != 0 || last_month_transported("PLAS") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(plastics_plant_check_production() || incoming_cargo_waiting("OIL_") != 0 || incoming_cargo_waiting("COAT") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
@@ -1383,9 +1394,7 @@ switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_update_last_served_date_ext_
 
 switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_update_last_served_date_ext_basic_inorganic_chemistry_ext_painting_industries,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("PLAS") != 0 || last_month_production("PLAS") != 0 || 
-		incoming_cargo_waiting("OIL_") != 0 || incoming_cargo_waiting("COAT") != 0 || incoming_cargo_waiting("CHLO") != 0 ||
-		this_month_transported("PLAS") != 0 || last_month_transported("PLAS") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(plastics_plant_check_production() || incoming_cargo_waiting("OIL_") != 0 || incoming_cargo_waiting("COAT") != 0 || incoming_cargo_waiting("CHLO") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
@@ -1393,9 +1402,7 @@ switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_update_last_served_date_ext_
 
 switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_update_last_served_date_ext_organic_chemistry,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("PLAS") != 0 || last_month_production("PLAS") != 0 || 
-		incoming_cargo_waiting("C2H4") != 0 || 
-		this_month_transported("PLAS") != 0 || last_month_transported("PLAS") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(plastics_plant_check_production() || incoming_cargo_waiting("C2H4") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
@@ -1403,9 +1410,7 @@ switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_update_last_served_date_ext_
 
 switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_update_last_served_date_ext_basic_inorganic_chemistry_ext_organic_chemistry,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("PLAS") != 0 || last_month_production("PLAS") != 0 || 
-		incoming_cargo_waiting("C2H4") != 0 || incoming_cargo_waiting("CHLO") != 0||
-		this_month_transported("PLAS") != 0 || last_month_transported("PLAS") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(plastics_plant_check_production() || incoming_cargo_waiting("C2H4") != 0 || incoming_cargo_waiting("CHLO") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
@@ -1413,9 +1418,7 @@ switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_update_last_served_date_ext_
 
 switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_update_last_served_date_ext_painting_industries_ext_organic_chemistry,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("PLAS") != 0 || last_month_production("PLAS") != 0 || 
-		incoming_cargo_waiting("C2H4") != 0 || incoming_cargo_waiting("COAT") != 0||
-		this_month_transported("PLAS") != 0 || last_month_transported("PLAS") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(plastics_plant_check_production() || incoming_cargo_waiting("C2H4") != 0 || incoming_cargo_waiting("COAT") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
@@ -1423,9 +1426,7 @@ switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_update_last_served_date_ext_
 
 switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_update_last_served_date_ext_basic_inorganic_chemistry_ext_painting_industries_ext_organic_chemistry,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("PLAS") != 0 || last_month_production("PLAS") != 0 || 
-		incoming_cargo_waiting("C2H4") != 0 || incoming_cargo_waiting("COAT") != 0 || incoming_cargo_waiting("CHLO") != 0 ||
-		this_month_transported("PLAS") != 0 || last_month_transported("PLAS") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(plastics_plant_check_production() || incoming_cargo_waiting("C2H4") != 0 || incoming_cargo_waiting("COAT") != 0 || incoming_cargo_waiting("CHLO") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();

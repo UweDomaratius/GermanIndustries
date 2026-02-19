@@ -1116,9 +1116,10 @@ switch(FEAT_INDUSTRIES, SELF, steamreformer_switch_location_check_industry_dista
 
 // acording to google, one needs 1.8t lime to produce 1t of quicklime
 produce(steamreformer_produce,
-	[RFPR: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),1) : 0;
+	[RFPR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
 	 ],
-	[H2__: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*70/100,1) : 0;],
+	[H2__: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	],
 	0 // do not run again
 )
 
@@ -1127,7 +1128,7 @@ switch(FEAT_INDUSTRIES, SELF, steamreformer_switch_produce,
 	 
 	 calculate_raw_material_usage(),
 	 calculate_total_production(),
-
+	 STORE_TEMP(percentage_of_production(70), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()
 	]) {
 	steamreformer_produce;
@@ -1135,9 +1136,10 @@ switch(FEAT_INDUSTRIES, SELF, steamreformer_switch_produce,
 
 produce(steamreformer_produce_ext_fruits,
 	[RFPR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
- 	BIOM: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+ 	 BIOM: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
 	 ],
-	[H2__: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
+	[H2__: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	],
 	0 // do not run again
 )
 
@@ -1145,14 +1147,8 @@ switch(FEAT_INDUSTRIES, SELF, steamreformer_switch_produce_ext_fruits,
 	[STORE_TEMP(incoming_cargo_waiting("RFPR"), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
 	 STORE_TEMP(incoming_cargo_waiting("BIOM"), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
 	 
-	 calculate_raw_material_usage(),
-	 calculate_total_production(),
-	 calculate_number_of_waiting_cargos(),
-	 
-	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
-	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
-	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (2-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-
+	 calculate_productivity_any_input(2),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()
 	]) {
 	steamreformer_produce_ext_fruits;
@@ -1177,11 +1173,17 @@ switch(FEAT_INDUSTRIES, SELF, steamreformer_switch_check_availability,
 	get_construction_probability;
 }
 
+switch(FEAT_INDUSTRIES, SELF, steamreformer_check_production,
+	[this_month_production("H2__") != 0 || last_month_production("H2__") != 0 || 
+		incoming_cargo_waiting("RFPR") != 0 ||
+		this_month_transported("H2__") != 0 || last_month_transported("H2__") != 0
+	])
+{
+}
+
 switch(FEAT_INDUSTRIES, SELF, steamreformer_switch_update_last_served_date,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("H2__") != 0 || last_month_production("H2__") != 0 || 
-		incoming_cargo_waiting("RFPR") != 0 ||
-		this_month_transported("H2__") != 0 || last_month_transported("H2__") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(steamreformer_check_production(), PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
@@ -1189,9 +1191,7 @@ switch(FEAT_INDUSTRIES, SELF, steamreformer_switch_update_last_served_date,
 
 switch(FEAT_INDUSTRIES, SELF, steamreformer_switch_update_last_served_date_ext_fruits,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("H2__") != 0 || last_month_production("H2__") != 0 || 
-		incoming_cargo_waiting("RFPR") != 0 || incoming_cargo_waiting("BIOM") != 0 ||
-		this_month_transported("H2__") != 0 || last_month_transported("H2__") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(steamreformer_check_production() || incoming_cargo_waiting("BIOM") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();

@@ -495,7 +495,8 @@ produce(vehicle_parts_plant_produce,
 	[STEL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
 	 PLAS: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
 	],
-	[VPTS: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
+	[VPTS: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	],
 	0 // do not run again
 )
 
@@ -503,10 +504,8 @@ switch(FEAT_INDUSTRIES, SELF, vehicle_parts_plant_switch_produce,
 	[STORE_TEMP(incoming_cargo_waiting("STEL"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
 	 STORE_TEMP(incoming_cargo_waiting("PLAS"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
 	 
-	 calculate_raw_material_usage(),
-	 calculate_total_production(),
-	 calculate_number_of_waiting_cargos(),
-	 
+	 calculate_productivity_any_input(2),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()
 	])
 {
@@ -518,7 +517,8 @@ produce(vehicle_parts_plant_produce_ext_textile_industries,
 	 TEXT: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
 	 STEL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
 	],
-	[VPTS: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
+	[VPTS: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	],
 	0 // do not run again
 )
 
@@ -527,14 +527,8 @@ switch(FEAT_INDUSTRIES, SELF, vehicle_parts_plant_switch_produce_ext_textile_ind
 	 STORE_TEMP(incoming_cargo_waiting("TEXT"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
 	 STORE_TEMP(incoming_cargo_waiting("STEL"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
 	 
-	 calculate_raw_material_usage(),
-	 calculate_total_production(),
-	 calculate_number_of_waiting_cargos(),
-	 
-	 // calculate productivity: 50% with 1 waiting cargo, 90% with 3 waiting cargos
-	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
-	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (3-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 
+	 calculate_productivity_any_input(3),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()
 	])
 {
@@ -546,7 +540,8 @@ produce(vehicle_parts_plant_produce_ext_glass,
 	 GLAS: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
 	 STEL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
 	],
-	[VPTS: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
+	[VPTS: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	],
 	0 // do not run again
 )
 
@@ -555,13 +550,8 @@ switch(FEAT_INDUSTRIES, SELF, vehicle_parts_plant_switch_produce_ext_glass,
 	 STORE_TEMP(incoming_cargo_waiting("GLAS"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
 	 STORE_TEMP(incoming_cargo_waiting("STEL"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
 	 
-	 calculate_raw_material_usage(),
-	 calculate_total_production(),
-	 calculate_number_of_waiting_cargos(),
-	 
-	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
-	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (3-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 
+	 calculate_productivity_any_input(3),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()
 	])
 {
@@ -573,7 +563,8 @@ produce(vehicle_parts_plant_produce_ext_metallurgy,
 	 STWR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
 	 STEL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
 	],
-	[VPTS: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
+	[VPTS: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	],
 	0 // do not run again
 )
 
@@ -582,13 +573,8 @@ switch(FEAT_INDUSTRIES, SELF, vehicle_parts_plant_switch_produce_ext_metallurgy,
 	 STORE_TEMP(incoming_cargo_waiting("STWR"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
 	 STORE_TEMP(incoming_cargo_waiting("STEL"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
 	 
-	 calculate_raw_material_usage(),
-	 calculate_total_production(),
-	 calculate_number_of_waiting_cargos(),
-	 
-	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
-	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (3-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 
+	 calculate_productivity_any_input(3),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()
 	])
 {
@@ -601,7 +587,8 @@ produce(vehicle_parts_plant_produce_ext_textile_industries_ext_glass,
 	 GLAS: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
 	 STEL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW3);
 	],
-	[VPTS: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
+	[VPTS: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	],
 	0 // do not run again
 )
 
@@ -611,13 +598,8 @@ switch(FEAT_INDUSTRIES, SELF, vehicle_parts_plant_switch_produce_ext_textile_ind
 	 STORE_TEMP(incoming_cargo_waiting("GLAS"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
 	 STORE_TEMP(incoming_cargo_waiting("STEL"),TEMP_REGISTER_INCOMING_CARGO_WAITING3),
 	 
-	 calculate_raw_material_usage(),
-	 calculate_total_production(),
-	 calculate_number_of_waiting_cargos(),
-	 
-	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
-	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (4-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 
+	 calculate_productivity_any_input(4),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()
 	])
 {
@@ -630,7 +612,8 @@ produce(vehicle_parts_plant_produce_ext_textile_industries_ext_metallurgy,
 	 STWR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
 	 STEL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW3);
 	],
-	[VPTS: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
+	[VPTS: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	],
 	0 // do not run again
 )
 
@@ -640,13 +623,8 @@ switch(FEAT_INDUSTRIES, SELF, vehicle_parts_plant_switch_produce_ext_textile_ind
 	 STORE_TEMP(incoming_cargo_waiting("STWR"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
 	 STORE_TEMP(incoming_cargo_waiting("STEL"),TEMP_REGISTER_INCOMING_CARGO_WAITING3),
 	 
-	 calculate_raw_material_usage(),
-	 calculate_total_production(),
-	 calculate_number_of_waiting_cargos(),
-	 
-	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
-	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (4-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 
+	 calculate_productivity_any_input(4),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()
 	])
 {
@@ -659,7 +637,8 @@ produce(vehicle_parts_plant_produce_ext_glass_ext_metallurgy,
 	 GLAS: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
 	 STEL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
 	],
-	[VPTS: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
+	[VPTS: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	],
 	0 // do not run again
 )
 
@@ -669,13 +648,8 @@ switch(FEAT_INDUSTRIES, SELF, vehicle_parts_plant_switch_produce_ext_glass_ext_m
 	 STORE_TEMP(incoming_cargo_waiting("GLAS"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
 	 STORE_TEMP(incoming_cargo_waiting("STEL"),TEMP_REGISTER_INCOMING_CARGO_WAITING3),
 	 
-	 calculate_raw_material_usage(),
-	 calculate_total_production(),
-	 calculate_number_of_waiting_cargos(),
-	 
-	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
-	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (4-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 
+	 calculate_productivity_any_input(4),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()
 	])
 {
@@ -689,24 +663,20 @@ produce(vehicle_parts_plant_produce_ext_textile_industries_ext_glass_ext_metallu
 	 STWR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW3);
 	 STEL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW4);
 	],
-	[VPTS: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
+	[VPTS: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	],
 	0 // do not run again
 )
 
 switch(FEAT_INDUSTRIES, SELF, vehicle_parts_plant_switch_produce_ext_textile_industries_ext_glass_ext_metallurgy, 
 	[STORE_TEMP(incoming_cargo_waiting("PLAS"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
-	STORE_TEMP(incoming_cargo_waiting("TEXT"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
-	STORE_TEMP(incoming_cargo_waiting("GLAS"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
-	STORE_TEMP(incoming_cargo_waiting("STWR"),TEMP_REGISTER_INCOMING_CARGO_WAITING3),
-	STORE_TEMP(incoming_cargo_waiting("STEL"),TEMP_REGISTER_INCOMING_CARGO_WAITING4),
+	 STORE_TEMP(incoming_cargo_waiting("TEXT"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 STORE_TEMP(incoming_cargo_waiting("GLAS"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	 STORE_TEMP(incoming_cargo_waiting("STWR"),TEMP_REGISTER_INCOMING_CARGO_WAITING3),
+	 STORE_TEMP(incoming_cargo_waiting("STEL"),TEMP_REGISTER_INCOMING_CARGO_WAITING4),
 	 
-	 calculate_raw_material_usage(),
-	 calculate_total_production(),
-	 calculate_number_of_waiting_cargos(),
-	 
-	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
-	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (5-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 
+	 calculate_productivity_any_input(5),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()
 	])
 {
@@ -736,81 +706,74 @@ switch(FEAT_INDUSTRIES, SELF, vehicle_parts_plant_switch_cargo_subtype, getbits(
 	return 0x3800 + string(STR_EMPTY);
 }
 
-switch(FEAT_INDUSTRIES, SELF,vehicle_parts_plant_switch_update_last_served_date,
-	[update_last_served_date(),
-	 STORE_PERM(this_month_production("VPTS") != 0 || last_month_production("VPTS") != 0 || 
+switch(FEAT_INDUSTRIES, SELF, vehicle_parts_plant_check_production,
+	[this_month_production("VPTS") != 0 || last_month_production("VPTS") != 0 || 
 		incoming_cargo_waiting("PLAS") != 0 || incoming_cargo_waiting("STEL") != 0 ||
-		this_month_transported("VPTS") != 0 || last_month_transported("VPTS") != 0, PERM_REGISTER_LAST_SERVED11)
+		this_month_transported("VPTS") != 0 || last_month_transported("VPTS") != 0
+	])
+{
+}
+
+switch(FEAT_INDUSTRIES, SELF, vehicle_parts_plant_switch_update_last_served_date,
+	[update_last_served_date(),
+	 STORE_PERM(vehicle_parts_plant_check_production(), PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
-switch(FEAT_INDUSTRIES, SELF,vehicle_parts_plant_switch_update_last_served_date_ext_textile_industries,
+switch(FEAT_INDUSTRIES, SELF, vehicle_parts_plant_switch_update_last_served_date_ext_textile_industries,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("VPTS") != 0 || last_month_production("VPTS") != 0 || 
-		incoming_cargo_waiting("PLAS") != 0 || incoming_cargo_waiting("TEXT") != 0 || incoming_cargo_waiting("STEL") != 0 ||
-		this_month_transported("VPTS") != 0 || last_month_transported("VPTS") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(vehicle_parts_plant_check_production() || incoming_cargo_waiting("TEXT") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
-switch(FEAT_INDUSTRIES, SELF,vehicle_parts_plant_switch_update_last_served_date_ext_glass,
+switch(FEAT_INDUSTRIES, SELF, vehicle_parts_plant_switch_update_last_served_date_ext_glass,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("VPTS") != 0 || last_month_production("VPTS") != 0 || 
-		incoming_cargo_waiting("PLAS") != 0 || incoming_cargo_waiting("GLAS") != 0 || incoming_cargo_waiting("STEL") != 0 ||
-		this_month_transported("VPTS") != 0 || last_month_transported("VPTS") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(vehicle_parts_plant_check_production() || incoming_cargo_waiting("GLAS") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
-switch(FEAT_INDUSTRIES, SELF,vehicle_parts_plant_switch_update_last_served_date_ext_textile_industries_ext_glass,
+switch(FEAT_INDUSTRIES, SELF, vehicle_parts_plant_switch_update_last_served_date_ext_textile_industries_ext_glass,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("VPTS") != 0 || last_month_production("VPTS") != 0 || 
-		incoming_cargo_waiting("PLAS") != 0 || incoming_cargo_waiting("TEXT") != 0 || incoming_cargo_waiting("GLAS") != 0 || incoming_cargo_waiting("STEL") != 0 ||
-		this_month_transported("VPTS") != 0 || last_month_transported("VPTS") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(vehicle_parts_plant_check_production() || incoming_cargo_waiting("TEXT") != 0 || incoming_cargo_waiting("GLAS") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
-switch(FEAT_INDUSTRIES, SELF,vehicle_parts_plant_switch_update_last_served_date_ext_metallurgy,
+switch(FEAT_INDUSTRIES, SELF, vehicle_parts_plant_switch_update_last_served_date_ext_metallurgy,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("VPTS") != 0 || last_month_production("VPTS") != 0 || 
-		incoming_cargo_waiting("PLAS") != 0 || incoming_cargo_waiting("STWR") != 0 || incoming_cargo_waiting("STEL") != 0 ||
-		this_month_transported("VPTS") != 0 || last_month_transported("VPTS") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(vehicle_parts_plant_check_production() || incoming_cargo_waiting("STWR") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
-switch(FEAT_INDUSTRIES, SELF,vehicle_parts_plant_switch_update_last_served_date_ext_textile_industries_ext_metallurgy,
+switch(FEAT_INDUSTRIES, SELF, vehicle_parts_plant_switch_update_last_served_date_ext_textile_industries_ext_metallurgy,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("VPTS") != 0 || last_month_production("VPTS") != 0 || 
-		incoming_cargo_waiting("PLAS") != 0 || incoming_cargo_waiting("TEXT") != 0 || incoming_cargo_waiting("STWR") != 0 || incoming_cargo_waiting("STEL") != 0 ||
-		this_month_transported("VPTS") != 0 || last_month_transported("VPTS") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(vehicle_parts_plant_check_production() || incoming_cargo_waiting("TEXT") != 0 || incoming_cargo_waiting("STWR") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
-switch(FEAT_INDUSTRIES, SELF,vehicle_parts_plant_switch_update_last_served_date_ext_glass_ext_metallurgy,
+switch(FEAT_INDUSTRIES, SELF, vehicle_parts_plant_switch_update_last_served_date_ext_glass_ext_metallurgy,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("VPTS") != 0 || last_month_production("VPTS") != 0 || 
-		incoming_cargo_waiting("PLAS") != 0 || incoming_cargo_waiting("GLAS") != 0 || incoming_cargo_waiting("STWR") != 0 || incoming_cargo_waiting("STEL") != 0 ||
-		this_month_transported("VPTS") != 0 || last_month_transported("VPTS") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(vehicle_parts_plant_check_production() || incoming_cargo_waiting("GLAS") != 0 || incoming_cargo_waiting("STWR") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
-switch(FEAT_INDUSTRIES, SELF,vehicle_parts_plant_switch_update_last_served_date_ext_textile_industries_ext_glass_ext_metallurgy,
+switch(FEAT_INDUSTRIES, SELF, vehicle_parts_plant_switch_update_last_served_date_ext_textile_industries_ext_glass_ext_metallurgy,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("VPTS") != 0 || last_month_production("VPTS") != 0 || 
-		incoming_cargo_waiting("PLAS") != 0 || incoming_cargo_waiting("TEXT") != 0 || incoming_cargo_waiting("GLAS") != 0 || incoming_cargo_waiting("STWR") != 0 || incoming_cargo_waiting("STEL") != 0 ||
-		this_month_transported("VPTS") != 0 || last_month_transported("VPTS") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(vehicle_parts_plant_check_production() || incoming_cargo_waiting("TEXT") != 0 || incoming_cargo_waiting("GLAS") != 0 || 
+	 incoming_cargo_waiting("STWR") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();

@@ -1,0 +1,903 @@
+spriteset(ammonium_nitrate_plant_spriteset_2) {
+	[150, 10, 64, 114, -31, -83, ANIM | NOCROP, "graphics/industries/chemical_plant.png"]
+}
+spriteset(ammonium_nitrate_plant_spriteset_3) {
+	[220, 10, 64, 114, -31, -83, ANIM | NOCROP, "graphics/industries/chemical_plant.png"]
+}
+spriteset(ammonium_nitrate_plant_spriteset_4) {
+	[290, 10, 64, 114, -31, -83, ANIM | NOCROP, "graphics/industries/chemical_plant.png"]
+}
+spriteset(ammonium_nitrate_plant_spriteset_5) {
+	[360, 10, 64, 114, -31, -83, ANIM | NOCROP, "graphics/industries/chemical_plant.png"]
+}
+spriteset(ammonium_nitrate_plant_spriteset_6) {
+	[430, 10, 64, 114, -31, -83, ANIM | NOCROP, "graphics/industries/chemical_plant.png"]
+}
+spriteset(ammonium_nitrate_plant_spriteset_7) {
+	[500, 10, 64, 66, -31, -35, ANIM | NOCROP, "graphics/industries/chemical_plant.png"]
+}
+spriteset(ammonium_nitrate_plant_spriteset_8) {
+	[570, 10, 64, 66, -31, -35, ANIM | NOCROP, "graphics/industries/chemical_plant.png"]
+}
+spriteset(ammonium_nitrate_plant_spriteset_9) {
+	[710, 10, 64, 66, -31, -35, ANIM | NOCROP, "graphics/industries/chemical_plant.png"]
+}
+
+spritelayout ammonium_nitrate_plant_spritelayout_horizontal_tanks {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+    building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: ammonium_nitrate_plant_spriteset_2(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: ammonium_nitrate_plant_spriteset_2(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: 0;
+	}
+    building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout ammonium_nitrate_plant_spritelayout_frac_columns {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+    building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: ammonium_nitrate_plant_spriteset_3(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+    building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout ammonium_nitrate_plant_spritelayout_drop_tower_and_thin_chimney {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+    building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: ammonium_nitrate_plant_spriteset_4(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout ammonium_nitrate_plant_spritelayout_large_building {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+    building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: ammonium_nitrate_plant_spriteset_5(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset: 16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout ammonium_nitrate_plant_spritelayout_fat_chimney {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+    building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: ammonium_nitrate_plant_spriteset_6(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+	building {
+		sprite: TTD_SMOKE_SPRITE_WHITE_SMALL + (animation_frame / 4);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 6;
+		yoffset: 0;
+		zoffset: 60+ animation_frame;
+		xextent: 11;
+		yextent: 16;
+		zextent: 7;
+		hide_sprite: animation_frame > 19;
+	}
+	building {
+		sprite: TTD_SMOKE_SPRITE_WHITE_SMALL + (animation_frame / 4);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 6;
+		yoffset: 3;
+		zoffset: 60+ animation_frame;
+		xextent: 11;
+		yextent: 16;
+		zextent: 7;
+		hide_sprite: animation_frame > 19;
+	}
+	building {
+		sprite: TTD_SMOKE_SPRITE_WHITE_SMALL + (animation_frame / 4);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 3;
+		yoffset: 0;
+		zoffset: 60+ animation_frame;
+		xextent: 11;
+		yextent: 16;
+		zextent: 7;
+		hide_sprite: animation_frame > 19;
+	}
+	building {
+		sprite: TTD_SMOKE_SPRITE_WHITE_SMALL + (animation_frame / 4);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 3;
+		yoffset: 3;
+		zoffset: 60+ animation_frame;
+		xextent: 11;
+		yextent: 16;
+		zextent: 7;
+		hide_sprite: animation_frame > 19;
+	}
+    building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout ammonium_nitrate_plant_spritelayout_spherical_tanks {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+    building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: ammonium_nitrate_plant_spriteset_7(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+    building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout ammonium_nitrate_plant_spritelayout_vertical_tanks {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+    building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: ammonium_nitrate_plant_spriteset_8(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+    building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+
+spritelayout ammonium_nitrate_plant_spritelayout_barrels {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+    building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: ammonium_nitrate_plant_spriteset_9(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;		yoffset: 0;		zoffset: 0;
+		xextent: 16;	yextent: 16;	zextent: 32;
+		always_draw: 0;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+	}
+    building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// graphics choice switch chain
+//////////////////////////////////////////////////////////////////////////////
+
+switch(FEAT_INDUSTRYTILES, SELF, ammonium_nitrate_plant_switch_graphics_layout_1, relative_pos) {
+	relative_coord(0, 0): ammonium_nitrate_plant_spritelayout_fat_chimney;
+	relative_coord(0, 1): ammonium_nitrate_plant_spritelayout_fat_chimney;
+	relative_coord(0, 2): ammonium_nitrate_plant_spritelayout_spherical_tanks;
+	relative_coord(1, 0): ammonium_nitrate_plant_spritelayout_large_building;
+	relative_coord(1, 1): ammonium_nitrate_plant_spritelayout_large_building;
+	relative_coord(1, 2): ammonium_nitrate_plant_spritelayout_barrels;
+	relative_coord(2, 0): ammonium_nitrate_plant_spritelayout_horizontal_tanks;
+	relative_coord(2, 1): ammonium_nitrate_plant_spritelayout_horizontal_tanks;
+	relative_coord(2, 2): ammonium_nitrate_plant_spritelayout_barrels;
+	relative_coord(3, 0): ammonium_nitrate_plant_spritelayout_frac_columns;
+	relative_coord(3, 1): ammonium_nitrate_plant_spritelayout_frac_columns;
+	relative_coord(3, 2): ammonium_nitrate_plant_spritelayout_vertical_tanks;
+	relative_coord(4, 0): ammonium_nitrate_plant_spritelayout_drop_tower_and_thin_chimney;
+	relative_coord(4, 1): ammonium_nitrate_plant_spritelayout_horizontal_tanks;
+	relative_coord(4, 2): ammonium_nitrate_plant_spritelayout_vertical_tanks;
+	return 0;
+}
+switch(FEAT_INDUSTRYTILES, SELF, ammonium_nitrate_plant_switch_graphics_layout_2, relative_pos) {
+	relative_coord(0, 1): ammonium_nitrate_plant_spritelayout_drop_tower_and_thin_chimney;
+	relative_coord(0, 2): ammonium_nitrate_plant_spritelayout_horizontal_tanks;
+	relative_coord(0, 3): ammonium_nitrate_plant_spritelayout_fat_chimney;
+	relative_coord(0, 4): ammonium_nitrate_plant_spritelayout_fat_chimney;
+	relative_coord(1, 0): ammonium_nitrate_plant_spritelayout_horizontal_tanks;
+	relative_coord(1, 1): ammonium_nitrate_plant_spritelayout_frac_columns;
+	relative_coord(1, 2): ammonium_nitrate_plant_spritelayout_horizontal_tanks;
+	relative_coord(1, 3): ammonium_nitrate_plant_spritelayout_large_building;
+	relative_coord(1, 4): ammonium_nitrate_plant_spritelayout_large_building;
+	relative_coord(2, 0): ammonium_nitrate_plant_spritelayout_vertical_tanks;
+	relative_coord(2, 1): ammonium_nitrate_plant_spritelayout_vertical_tanks;
+	relative_coord(2, 2): ammonium_nitrate_plant_spritelayout_barrels;
+	relative_coord(2, 3): ammonium_nitrate_plant_spritelayout_spherical_tanks;
+	relative_coord(2, 4): ammonium_nitrate_plant_spritelayout_spherical_tanks;
+	return 0;
+}
+switch(FEAT_INDUSTRYTILES, SELF, ammonium_nitrate_plant_switch_graphics_layout_3, relative_pos) {
+	relative_coord(0, 0): ammonium_nitrate_plant_spritelayout_fat_chimney;
+	relative_coord(0, 1): ammonium_nitrate_plant_spritelayout_fat_chimney;
+	relative_coord(0, 2): ammonium_nitrate_plant_spritelayout_horizontal_tanks;
+	relative_coord(0, 3): ammonium_nitrate_plant_spritelayout_frac_columns;
+	relative_coord(0, 4): ammonium_nitrate_plant_spritelayout_horizontal_tanks;
+	relative_coord(1, 0): ammonium_nitrate_plant_spritelayout_large_building;
+	relative_coord(1, 1): ammonium_nitrate_plant_spritelayout_large_building;
+	relative_coord(1, 2): ammonium_nitrate_plant_spritelayout_horizontal_tanks;
+	relative_coord(1, 3): ammonium_nitrate_plant_spritelayout_frac_columns;
+	relative_coord(1, 4): ammonium_nitrate_plant_spritelayout_drop_tower_and_thin_chimney;
+	relative_coord(2, 0): ammonium_nitrate_plant_spritelayout_spherical_tanks;
+	relative_coord(2, 1): ammonium_nitrate_plant_spritelayout_barrels;
+	relative_coord(2, 2): ammonium_nitrate_plant_spritelayout_barrels;
+	relative_coord(2, 3): ammonium_nitrate_plant_spritelayout_vertical_tanks;
+	relative_coord(2, 4): ammonium_nitrate_plant_spritelayout_vertical_tanks;
+	return 0;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, ammonium_nitrate_plant_switch_graphics_layout_4, relative_pos) {
+	relative_coord(0, 0): ammonium_nitrate_plant_spritelayout_vertical_tanks;
+	relative_coord(0, 1): ammonium_nitrate_plant_spritelayout_vertical_tanks;
+	relative_coord(1, 0): ammonium_nitrate_plant_spritelayout_frac_columns;
+	relative_coord(1, 1): ammonium_nitrate_plant_spritelayout_frac_columns;
+	relative_coord(2, 0): ammonium_nitrate_plant_spritelayout_horizontal_tanks;
+	relative_coord(2, 1): ammonium_nitrate_plant_spritelayout_horizontal_tanks;
+	relative_coord(3, 0): ammonium_nitrate_plant_spritelayout_fat_chimney;
+	relative_coord(3, 1): ammonium_nitrate_plant_spritelayout_fat_chimney;
+	relative_coord(4, 0): ammonium_nitrate_plant_spritelayout_large_building;
+	relative_coord(4, 1): ammonium_nitrate_plant_spritelayout_large_building;
+	relative_coord(5, 0): ammonium_nitrate_plant_spritelayout_drop_tower_and_thin_chimney;
+	relative_coord(5, 1): ammonium_nitrate_plant_spritelayout_barrels;
+	relative_coord(6, 0): ammonium_nitrate_plant_spritelayout_spherical_tanks;
+	relative_coord(6, 1): ammonium_nitrate_plant_spritelayout_spherical_tanks;
+	return 0;
+}
+switch(FEAT_INDUSTRYTILES, SELF, ammonium_nitrate_plant_switch_graphics_layout_5, relative_pos) {
+	relative_coord(0, 0): ammonium_nitrate_plant_spritelayout_horizontal_tanks;
+	relative_coord(0, 1): ammonium_nitrate_plant_spritelayout_horizontal_tanks;
+	relative_coord(0, 2): ammonium_nitrate_plant_spritelayout_fat_chimney;
+	relative_coord(0, 3): ammonium_nitrate_plant_spritelayout_fat_chimney;
+	relative_coord(1, 0): ammonium_nitrate_plant_spritelayout_drop_tower_and_thin_chimney;
+	relative_coord(1, 1): ammonium_nitrate_plant_spritelayout_frac_columns;
+	relative_coord(1, 2): ammonium_nitrate_plant_spritelayout_large_building;
+	relative_coord(1, 3): ammonium_nitrate_plant_spritelayout_large_building;
+	relative_coord(2, 0): ammonium_nitrate_plant_spritelayout_horizontal_tanks;
+	relative_coord(2, 1): ammonium_nitrate_plant_spritelayout_horizontal_tanks;
+	relative_coord(2, 2): ammonium_nitrate_plant_spritelayout_barrels;
+	relative_coord(2, 3): ammonium_nitrate_plant_spritelayout_spherical_tanks;
+	relative_coord(3, 0): ammonium_nitrate_plant_spritelayout_vertical_tanks;
+	relative_coord(3, 1): ammonium_nitrate_plant_spritelayout_vertical_tanks;
+	relative_coord(3, 2): ammonium_nitrate_plant_spritelayout_barrels;
+	relative_coord(3, 3): ammonium_nitrate_plant_spritelayout_spherical_tanks;
+	return 0;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, ammonium_nitrate_plant_switch_graphics_layout_6, relative_pos) {
+	relative_coord(0, 0): ammonium_nitrate_plant_spritelayout_fat_chimney;
+	relative_coord(0, 1): ammonium_nitrate_plant_spritelayout_frac_columns;
+	relative_coord(0, 2): ammonium_nitrate_plant_spritelayout_vertical_tanks;
+	relative_coord(0, 3): ammonium_nitrate_plant_spritelayout_vertical_tanks;
+	relative_coord(1, 0): ammonium_nitrate_plant_spritelayout_large_building;
+	relative_coord(1, 1): ammonium_nitrate_plant_spritelayout_horizontal_tanks;
+	relative_coord(1, 2): ammonium_nitrate_plant_spritelayout_drop_tower_and_thin_chimney;
+	relative_coord(1, 3): ammonium_nitrate_plant_spritelayout_horizontal_tanks;
+	relative_coord(2, 0): ammonium_nitrate_plant_spritelayout_fat_chimney;
+	relative_coord(2, 1): ammonium_nitrate_plant_spritelayout_horizontal_tanks;
+	relative_coord(2, 2): ammonium_nitrate_plant_spritelayout_frac_columns;
+	relative_coord(2, 3): ammonium_nitrate_plant_spritelayout_horizontal_tanks;
+	relative_coord(3, 0): ammonium_nitrate_plant_spritelayout_large_building;
+	relative_coord(3, 1): ammonium_nitrate_plant_spritelayout_barrels;
+	relative_coord(3, 2): ammonium_nitrate_plant_spritelayout_spherical_tanks;
+	relative_coord(3, 3): ammonium_nitrate_plant_spritelayout_spherical_tanks;
+	return 0;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, ammonium_nitrate_plant_switch_graphics_layout, layout_num) {
+    1: ammonium_nitrate_plant_switch_graphics_layout_1;
+    2: ammonium_nitrate_plant_switch_graphics_layout_2;
+    3: ammonium_nitrate_plant_switch_graphics_layout_3;
+	4: ammonium_nitrate_plant_switch_graphics_layout_4;
+	5: ammonium_nitrate_plant_switch_graphics_layout_5;
+	6: ammonium_nitrate_plant_switch_graphics_layout_6;
+    ammonium_nitrate_plant_switch_graphics_layout_1; // default
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, ammonium_nitrate_plant_switch_graphics_construction_state, construction_state) {
+    0..2: spritelayout_default_construction_states;
+    ammonium_nitrate_plant_switch_graphics_layout; // default
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, ammonium_nitrate_plant_switch_graphics,
+	[switch_tile_fences(),switch_terrain_sprite(),switch_graphics_init_temp_registers()
+	]) {
+    ammonium_nitrate_plant_switch_graphics_construction_state;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// location checks
+//////////////////////////////////////////////////////////////////////////////
+// This check works as follows: calculate height of the northernmost tile of the industry and add 0, 1 or 2 for flat, slope. steep slope
+// Do the same for the current tile and compare the results. If the result is equal, the terrain is effectively flat
+// and industry can be placed.
+// It just looks weird due to the stacked ternary operators needed here
+switch (FEAT_INDUSTRYTILES, SELF, ammonium_nitrate_plant_switch_tile_location_check2,
+			(nearby_tile_height(-relative_x, -relative_y) + 
+			(nearby_tile_slope(-relative_x, -relative_y)== SLOPE_FLAT ? 0 : nearby_tile_slope(-relative_x, -relative_y) == bitmask(IS_STEEP_SLOPE) ? 2 : 1)) 
+			== 
+			(nearby_tile_height(0, 0) + (nearby_tile_slope(0, 0) == SLOPE_FLAT ? 0 : nearby_tile_slope(0, 0) == bitmask(IS_STEEP_SLOPE) ? 2 : 1))
+			) {
+	1: return CB_RESULT_LOCATION_ALLOW;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, ammonium_nitrate_plant_switch_tile_location_check,
+	is_funded_or_prospected() || (generation_not_forbidden_by_param() && not_next_to_industry() && not_next_to_buildings()))
+{
+	1: ammonium_nitrate_plant_switch_tile_location_check2;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, ammonium_nitrate_plant_switch_tile_cargo_acceptance, 
+	[STORE_TEMP(incoming_cargo_waiting("ACID") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0),
+	 STORE_TEMP(incoming_cargo_waiting("NH3_") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL1),
+	]
+) {
+	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0) + (LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL1) << 4);
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// industry tile and layout definition
+//////////////////////////////////////////////////////////////////////////////
+item(FEAT_INDUSTRYTILES, ammonium_nitrate_plant_tile_1, INDUSTRY_TILE_ID_AMMONIUM_NITRATE_PLANT_1) {
+	property {
+		substitute:         0;
+		land_shape_flags:   0;
+		animation_info: [ANIMATION_LOOPING, 7];
+		animation_speed: 3;
+		animation_triggers: bitmask();
+		accepted_cargos: [[ACID, 8],[NH3_,8]];
+	}
+	graphics {
+		tile_check: ammonium_nitrate_plant_switch_tile_location_check;
+		cargo_amount_accept: ammonium_nitrate_plant_switch_tile_cargo_acceptance;
+		ammonium_nitrate_plant_switch_graphics;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, ammonium_nitrate_plant_tile_2, INDUSTRY_TILE_ID_AMMONIUM_NITRATE_PLANT_2) {
+	property {
+		substitute:         0;
+		land_shape_flags:   0;
+		accepted_cargos: [[ACID, 8],[NH3_,8]];
+		animation_info: [ANIMATION_LOOPING, 47];
+		animation_speed: 2;
+		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
+	}
+	graphics {
+		tile_check: ammonium_nitrate_plant_switch_tile_location_check;
+		cargo_amount_accept: ammonium_nitrate_plant_switch_tile_cargo_acceptance;
+		ammonium_nitrate_plant_switch_graphics;
+	}
+}
+
+tilelayout ammonium_nitrate_plant_tilelayout_1 {
+	0, 0: ammonium_nitrate_plant_tile_2;
+	0, 1: ammonium_nitrate_plant_tile_2;
+	0, 2: ammonium_nitrate_plant_tile_1;
+	1, 0: ammonium_nitrate_plant_tile_2;
+	1, 1: ammonium_nitrate_plant_tile_2;
+	1, 2: ammonium_nitrate_plant_tile_1;
+	2, 0: ammonium_nitrate_plant_tile_1;
+	2, 1: ammonium_nitrate_plant_tile_1;
+	2, 2: ammonium_nitrate_plant_tile_1;
+	3, 0: ammonium_nitrate_plant_tile_1;
+	3, 1: ammonium_nitrate_plant_tile_1;
+	3, 2: ammonium_nitrate_plant_tile_1;
+	4, 0: ammonium_nitrate_plant_tile_1;
+	4, 1: ammonium_nitrate_plant_tile_1;
+	4, 2: ammonium_nitrate_plant_tile_1;
+}
+tilelayout ammonium_nitrate_plant_tilelayout_2 {
+	0, 1: ammonium_nitrate_plant_tile_1;
+	0, 2: ammonium_nitrate_plant_tile_1;
+	0, 3: ammonium_nitrate_plant_tile_2;
+	0, 4: ammonium_nitrate_plant_tile_2;
+	1, 0: ammonium_nitrate_plant_tile_1;
+	1, 1: ammonium_nitrate_plant_tile_1;
+	1, 2: ammonium_nitrate_plant_tile_1;
+	1, 3: ammonium_nitrate_plant_tile_2;
+	1, 4: ammonium_nitrate_plant_tile_2;
+	2, 0: ammonium_nitrate_plant_tile_1;
+	2, 1: ammonium_nitrate_plant_tile_1;
+	2, 2: ammonium_nitrate_plant_tile_1;
+	2, 3: ammonium_nitrate_plant_tile_1;
+	2, 4: ammonium_nitrate_plant_tile_1;
+}
+
+tilelayout ammonium_nitrate_plant_tilelayout_3 {
+	0, 0: ammonium_nitrate_plant_tile_2;
+	0, 1: ammonium_nitrate_plant_tile_2;
+	0, 2: ammonium_nitrate_plant_tile_1;
+	0, 3: ammonium_nitrate_plant_tile_1;
+	0, 4: ammonium_nitrate_plant_tile_1;
+	1, 0: ammonium_nitrate_plant_tile_2;
+	1, 1: ammonium_nitrate_plant_tile_2;
+	1, 2: ammonium_nitrate_plant_tile_1;
+	1, 3: ammonium_nitrate_plant_tile_1;
+	1, 4: ammonium_nitrate_plant_tile_1;
+	2, 0: ammonium_nitrate_plant_tile_2;
+	2, 1: ammonium_nitrate_plant_tile_2;
+	2, 2: ammonium_nitrate_plant_tile_2;
+	2, 3: ammonium_nitrate_plant_tile_2;
+	2, 4: ammonium_nitrate_plant_tile_2;
+}
+
+tilelayout ammonium_nitrate_plant_tilelayout_4 {
+	0, 0: ammonium_nitrate_plant_tile_1;
+	0, 1: ammonium_nitrate_plant_tile_1;
+	1, 0: ammonium_nitrate_plant_tile_1;
+	1, 1: ammonium_nitrate_plant_tile_1;
+	2, 0: ammonium_nitrate_plant_tile_1;
+	2, 1: ammonium_nitrate_plant_tile_1;
+	3, 0: ammonium_nitrate_plant_tile_2;
+	3, 1: ammonium_nitrate_plant_tile_2;
+	4, 0: ammonium_nitrate_plant_tile_2;
+	4, 1: ammonium_nitrate_plant_tile_2;
+	5, 0: ammonium_nitrate_plant_tile_1;
+	5, 1: ammonium_nitrate_plant_tile_1;
+	6, 0: ammonium_nitrate_plant_tile_1;
+	6, 1: ammonium_nitrate_plant_tile_1;
+}
+tilelayout ammonium_nitrate_plant_tilelayout_5 {
+	0, 0: ammonium_nitrate_plant_tile_1;
+	0, 1: ammonium_nitrate_plant_tile_1;
+	0, 2: ammonium_nitrate_plant_tile_2;
+	0, 3: ammonium_nitrate_plant_tile_2;
+	1, 0: ammonium_nitrate_plant_tile_1;
+	1, 1: ammonium_nitrate_plant_tile_1;
+	1, 2: ammonium_nitrate_plant_tile_2;
+	1, 3: ammonium_nitrate_plant_tile_2;
+	2, 0: ammonium_nitrate_plant_tile_1;
+	2, 1: ammonium_nitrate_plant_tile_1;
+	2, 2: ammonium_nitrate_plant_tile_1;
+	2, 3: ammonium_nitrate_plant_tile_1;
+	3, 0: ammonium_nitrate_plant_tile_1;
+	3, 1: ammonium_nitrate_plant_tile_1;
+	3, 2: ammonium_nitrate_plant_tile_1;
+	3, 3: ammonium_nitrate_plant_tile_1;
+}
+
+tilelayout ammonium_nitrate_plant_tilelayout_6 {
+	0, 0: ammonium_nitrate_plant_tile_2;
+	0, 1: ammonium_nitrate_plant_tile_1;
+	0, 2: ammonium_nitrate_plant_tile_1;
+	0, 3: ammonium_nitrate_plant_tile_1;
+	1, 0: ammonium_nitrate_plant_tile_2;
+	1, 1: ammonium_nitrate_plant_tile_1;
+	1, 2: ammonium_nitrate_plant_tile_1;
+	1, 3: ammonium_nitrate_plant_tile_1;
+	2, 0: ammonium_nitrate_plant_tile_2;
+	2, 1: ammonium_nitrate_plant_tile_1;
+	2, 2: ammonium_nitrate_plant_tile_1;
+	2, 3: ammonium_nitrate_plant_tile_1;
+	3, 0: ammonium_nitrate_plant_tile_2;
+	3, 1: ammonium_nitrate_plant_tile_1;
+	3, 2: ammonium_nitrate_plant_tile_1;
+	3, 3: ammonium_nitrate_plant_tile_1;
+}
+
+switch(FEAT_INDUSTRIES, SELF, ammonium_nitrate_plant_switch_location_check_industry_distance,
+	   [STORE_TEMP(32, TEMP_REGISTER_TOWN_MIN_DISTANCE),
+	    STORE_TEMP(64, TEMP_REGISTER_TOWN_MAX_DISTANCE),
+		count_industries(),
+	    (is_industry_funded_or_prospected()) || ((distance_from_town() && 
+	    (param_max_industries_per_type_on_map == 0 || param_max_industries_per_type_on_map > industry_count(INDUSTRY_ID_AMMONIA_PLANT)) &&
+		(param_max_industries_on_map == 0 || param_max_industries_on_map > LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_INDUSTRIES)) &&
+		// distance to related producers
+		(industry_distance(INDUSTRY_ID_AMMONIA_PLANT) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_ACID_PLANT) >= param_min_dist_related_industry) &&
+		// distance to related consumers
+		(industry_distance(INDUSTRY_ID_FERTILIZER_PLANT) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_EXPLOSIVES_FACTORY) >= param_min_dist_related_industry) &&
+		// distance between instances of same industry
+	    (industry_distance(INDUSTRY_ID_AMMONIUM_NITRATE_PLANT) >= param_min_dist_same_industry))
+		)])
+{
+	   1: return CB_RESULT_LOCATION_ALLOW;
+	   return CB_RESULT_LOCATION_DISALLOW;
+}
+
+// NH3 + HNO3 -> NH4NO3
+// 17,03g/mol + 63,01g/mol -> 80,04g/mol
+produce(ammonium_nitrate_plant_produce,
+	[ACID: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 NH3_: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
+	],
+	[NHNO: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, ammonium_nitrate_plant_switch_produce, 
+	[STORE_TEMP(min(incoming_cargo_waiting("ACID"),incoming_cargo_waiting("NH3_")),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 
+	 STORE_TEMP(percentage_of_production(79), TEMP_REGISTER_PRODUCT_1), // ACID
+	 STORE_TEMP(percentage_of_production(21), TEMP_REGISTER_PRODUCT_2), // NH3
+	 
+	 store_debug_production_data()
+	 ])
+{
+	ammonium_nitrate_plant_produce;
+}
+
+switch(FEAT_INDUSTRIES, SELF, ammonium_nitrate_plant_switch_cargo_subtype, getbits(extra_callback_info2, 16, 8)) {
+	ACID: switch_cargo_subtype;
+	NH3_: switch_cargo_subtype;
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, ammonium_nitrate_plant_switch_extra_text_fund, 
+	[STORE_TEMP(string(STR_1880), TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	current_year]) {
+	1880..500000: return string(STR_EMPTY);
+	return string(STR_INDUSTRY_NOT_AVAILABLE_BEFORE);
+}
+
+switch(FEAT_INDUSTRIES, SELF, ammonium_nitrate_plant_switch_check_availability, 
+	current_year) {
+	0..1879: return CB_RESULT_IND_NO_CONSTRUCTION;
+	get_construction_probability;
+}
+
+switch(FEAT_INDUSTRIES, SELF, ammonium_nitrate_plant_switch_update_last_served_date,
+	[update_last_served_date(),
+	 STORE_PERM(this_month_production("NHNO") != 0 || last_month_production("NHNO") != 0 || 
+		incoming_cargo_waiting("ACID") != 0 || incoming_cargo_waiting("NH3_") != 0 || 
+		this_month_transported("NHNO") != 0 || last_month_transported("NHNO") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+produce(ammonium_nitrate_plant_produce_cap_stockpile,
+	[ACID: incoming_cargo_waiting("ACID") > 60000 ? incoming_cargo_waiting("ACID") - 60000 : 0;
+	 NH3_: incoming_cargo_waiting("NH3_") > 60000 ? incoming_cargo_waiting("NH3_") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, ammonium_nitrate_plant_switch_stockpile_check, param_stockpile_cap)
+{
+	1: empty_produce;
+	ammonium_nitrate_plant_produce_cap_stockpile;
+}
+
+if (param_extension_production_boost) {
+	item(FEAT_INDUSTRIES, ammonium_nitrate_plant, INDUSTRY_ID_AMMONIUM_NITRATE_PLANT) {
+		property {
+			substitute: 0;
+			map_colour: 64;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [ammonium_nitrate_plant_tilelayout_1,ammonium_nitrate_plant_tilelayout_2,ammonium_nitrate_plant_tilelayout_3,ammonium_nitrate_plant_tilelayout_4,ammonium_nitrate_plant_tilelayout_5,ammonium_nitrate_plant_tilelayout_6];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_AMMONIUM_NITRATE_PLANT);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 170;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("ACID"),accept_cargo("NH3_"),produce_cargo("NHNO",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_AMMONIUM_NITRATE_PLANT));
+		}
+			
+		graphics {
+			construction_probability: ammonium_nitrate_plant_switch_check_availability;
+			produce_cargo_arrival:    ammonium_nitrate_plant_switch_stockpile_check; 
+			produce_256_ticks:        ammonium_nitrate_plant_switch_produce;
+			monthly_prod_change:      ammonium_nitrate_plant_switch_update_last_served_date;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           ammonium_nitrate_plant_switch_location_check_industry_distance;
+			extra_text_fund:          ammonium_nitrate_plant_switch_extra_text_fund;
+			cargo_subtype_display:    ammonium_nitrate_plant_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
+		}
+	}
+}
+   

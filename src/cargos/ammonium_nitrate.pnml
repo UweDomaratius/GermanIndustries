@@ -1,0 +1,31 @@
+spriteset(cargoicon_ammonium_nitrate) {
+    [10 + 20 * 15, 10 + 20 * 5, 10, 10, 0, 0, "graphics/other/cargoicons.png"]
+}
+if (param_extension_production_boost) {
+	item(FEAT_CARGOS, ammonium_nitrate, CARGO_ID_AMMONIUM_NITRATE) {
+		property {
+			type_name: string(STR_CARGO_NAME_AMMONIUM_NITRATE);
+			unit_name: string(STR_CARGO_NAME_AMMONIUM_NITRATE);
+			type_abbreviation: string(STR_CID_AMMONIUM_NITRATE);
+			sprite: NEW_CARGO_SPRITE;
+			weight: 1.0;
+			is_freight: 1;
+			cargo_classes: bitmask(CC_BULK, CC_PIECE_GOODS, CC_HAZARDOUS);
+			town_growth_effect: TOWNGROWTH_NONE;
+			town_growth_multiplier: 1.0;
+			units_of_cargo: TTD_STR_TONS;
+			items_of_cargo: string(STR_QUANTITY_AMMONIUM_NITRATE);
+			penalty_lowerbound: 32;
+			single_penalty_length: 64;
+			capacity_multiplier: 1;
+			cargo_payment_list_colour: 64;
+			station_list_colour: 64;
+			price_factor: 111;
+			cargo_label: "NHNO";
+			number: CARGO_ID_AMMONIUM_NITRATE;
+		}
+		graphics {
+			cargoicon_ammonium_nitrate;
+		}
+	}
+}

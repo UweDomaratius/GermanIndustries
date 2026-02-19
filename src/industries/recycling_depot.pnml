@@ -265,13 +265,13 @@ switch(FEAT_INDUSTRIES, SELF, recycling_depot_switch_location_check_industry_dis
 
 produce(recycling_depot_produce,
 	[],
-	[RCYC: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
+	[RCYC: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);],
 	0 // do not run again
 )
 
 // production scales with population of related city, min 4, max 255 per 256 ticks
 switch(FEAT_INDUSTRIES, PARENT, recycling_depot_switch_produce, 
-	[ STORE_TEMP(min(max(4,population/42),255), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)	
+	[ STORE_TEMP(min(max(4,population/42),255), TEMP_REGISTER_PRODUCTION_AMOUNT)	
 	]) {
 	recycling_depot_produce;
 }
@@ -281,7 +281,7 @@ if (param_extension_recycling && (param_extension_glass || param_extension_paper
 		property {
 			substitute: 0;
 			map_colour: 132;
-			life_type: IND_LIFE_TYPE_EXTRACTIVE;
+			life_type: IND_LIFE_TYPE_ORGANIC;
 			min_cargo_distr: 1;
 			layouts: [recycling_depot_tilelayout];
 			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);

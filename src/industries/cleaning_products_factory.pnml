@@ -641,7 +641,7 @@ switch(FEAT_INDUSTRYTILES, SELF, cleaning_products_factory_switch_graphics_const
 }
 
 switch (FEAT_INDUSTRYTILES, SELF, cleaning_products_factory_switch_graphics,
-	[switch_terrain_sprite(),switch_graphics_init_temp_registers()
+	[switch_tile_fences(),switch_terrain_sprite(),switch_graphics_init_temp_registers()
 	]) {
     cleaning_products_factory_switch_graphics_construction_state;
 }
@@ -680,6 +680,12 @@ switch(FEAT_INDUSTRYTILES, PARENT, cleaning_products_factory_switch_tile1_cargo_
 
 switch(FEAT_INDUSTRYTILES, PARENT, cleaning_products_factory_switch_tile2_cargo_acceptance, 
 	[STORE_TEMP(incoming_cargo_waiting("MNSP") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0)
+	]
+) {
+	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0);
+}
+switch(FEAT_INDUSTRYTILES, PARENT, cleaning_products_factory_switch_tile3_cargo_acceptance, 
+	[STORE_TEMP(incoming_cargo_waiting("POTA") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0)
 	]
 ) {
 	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0);
@@ -742,63 +748,90 @@ item(FEAT_INDUSTRYTILES, cleaning_products_factory_tile_2, INDUSTRY_TILE_ID_CLEA
 		cleaning_products_factory_switch_graphics;
 	}	
 }
+item(FEAT_INDUSTRYTILES, cleaning_products_factory_tile_3, INDUSTRY_TILE_ID_CLEANING_PRODUCTS_FACTORY_3) {
+	if (!param_extension_production_boost) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [];
+			animation_info: [ANIMATION_LOOPING, 42];
+			animation_speed: 3;
+			animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
+		}
+	}
+	if (param_extension_production_boost) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [[POTA,8]];
+			animation_info: [ANIMATION_LOOPING, 42];
+			animation_speed: 3;
+			animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
+		}
+	}
+	graphics {
+		tile_check: cleaning_products_factory_switch_tile_location_check;
+		cargo_amount_accept: cleaning_products_factory_switch_tile3_cargo_acceptance;
+		cleaning_products_factory_switch_graphics;
+	}	
+}
 
 tilelayout cleaning_products_factory_tilelayout_1 {
 	0, 0: cleaning_products_factory_tile_1;
 	0, 1: cleaning_products_factory_tile_2;
-	0, 2: cleaning_products_factory_tile_1;
-	0, 3: cleaning_products_factory_tile_2;
-	1, 0: cleaning_products_factory_tile_1;
-	1, 1: cleaning_products_factory_tile_2;
+	0, 2: cleaning_products_factory_tile_3;
+	0, 3: cleaning_products_factory_tile_1;
+	1, 0: cleaning_products_factory_tile_2;
+	1, 1: cleaning_products_factory_tile_3;
 	1, 2: cleaning_products_factory_tile_1;
 	1, 3: cleaning_products_factory_tile_2;
-	2, 0: cleaning_products_factory_tile_1;
-	2, 1: cleaning_products_factory_tile_2;
-	2, 2: cleaning_products_factory_tile_1;
-	2, 3: cleaning_products_factory_tile_2;
+	2, 0: cleaning_products_factory_tile_3;
+	2, 1: cleaning_products_factory_tile_1;
+	2, 2: cleaning_products_factory_tile_2;
+	2, 3: cleaning_products_factory_tile_3;
 	3, 0: cleaning_products_factory_tile_1;
 	3, 1: cleaning_products_factory_tile_2;
 }
 tilelayout cleaning_products_factory_tilelayout_2 {
 	0, 1: cleaning_products_factory_tile_1;
 	0, 2: cleaning_products_factory_tile_2;
-	1, 1: cleaning_products_factory_tile_1;
-	1, 2: cleaning_products_factory_tile_2;
-	2, 0: cleaning_products_factory_tile_1;
-	2, 1: cleaning_products_factory_tile_2;
+	1, 1: cleaning_products_factory_tile_3;
+	1, 2: cleaning_products_factory_tile_1;
+	2, 0: cleaning_products_factory_tile_2;
+	2, 1: cleaning_products_factory_tile_3;
 	2, 2: cleaning_products_factory_tile_1;
 	3, 0: cleaning_products_factory_tile_2;
-	3, 1: cleaning_products_factory_tile_1;
-	3, 2: cleaning_products_factory_tile_2;
+	3, 1: cleaning_products_factory_tile_3;
+	3, 2: cleaning_products_factory_tile_1;
 }
 
 tilelayout cleaning_products_factory_tilelayout_3 {
 	0, 0: cleaning_products_factory_tile_1;
 	0, 1: cleaning_products_factory_tile_2;
-	0, 2: cleaning_products_factory_tile_1;
-	1, 0: cleaning_products_factory_tile_2;
-	1, 1: cleaning_products_factory_tile_1;
-	1, 2: cleaning_products_factory_tile_2;
+	0, 2: cleaning_products_factory_tile_3;
+	1, 0: cleaning_products_factory_tile_1;
+	1, 1: cleaning_products_factory_tile_2;
+	1, 2: cleaning_products_factory_tile_3;
 	2, 0: cleaning_products_factory_tile_1;
 	2, 1: cleaning_products_factory_tile_2;
-	2, 2: cleaning_products_factory_tile_1;
-	3, 1: cleaning_products_factory_tile_2;
-	3, 2: cleaning_products_factory_tile_1;
+	2, 2: cleaning_products_factory_tile_3;
+	3, 1: cleaning_products_factory_tile_1;
+	3, 2: cleaning_products_factory_tile_2;
 }
 
 tilelayout cleaning_products_factory_tilelayout_4 {
 	0, 0: cleaning_products_factory_tile_1;
 	0, 1: cleaning_products_factory_tile_2;
-	0, 2: cleaning_products_factory_tile_1;
-	0, 3: cleaning_products_factory_tile_2;
-	1, 0: cleaning_products_factory_tile_1;
-	1, 1: cleaning_products_factory_tile_2;
+	0, 2: cleaning_products_factory_tile_3;
+	0, 3: cleaning_products_factory_tile_1;
+	1, 0: cleaning_products_factory_tile_2;
+	1, 1: cleaning_products_factory_tile_3;
 	1, 2: cleaning_products_factory_tile_1;
 	1, 3: cleaning_products_factory_tile_2;
-	2, 0: cleaning_products_factory_tile_1;
-	2, 1: cleaning_products_factory_tile_2;
-	2, 2: cleaning_products_factory_tile_1;
-	2, 3: cleaning_products_factory_tile_2;
+	2, 0: cleaning_products_factory_tile_3;
+	2, 1: cleaning_products_factory_tile_1;
+	2, 2: cleaning_products_factory_tile_2;
+	2, 3: cleaning_products_factory_tile_3;
 	3, 1: cleaning_products_factory_tile_1;
 	3, 2: cleaning_products_factory_tile_2;
 }
@@ -811,7 +844,7 @@ switch(FEAT_INDUSTRIES, SELF, cleaning_products_factory_switch_location_check_in
 	   // distance to related producers
 	   (industry_distance(INDUSTRY_ID_ACID_PLANT) >= param_min_dist_related_industry) &&
 	   (industry_distance(INDUSTRY_ID_PACKAGING_PLANT) >= param_min_dist_related_industry) &&
-	   //(industry_distance(INDUSTRY_ID_POTASH_MINE) >= param_min_dist_related_industry) &&
+	   (industry_distance(INDUSTRY_ID_POTASH_MINE) >= param_min_dist_related_industry) &&
 	   (industry_distance(INDUSTRY_ID_SODA_PLANT) >= param_min_dist_related_industry) &&
 	   // distance to related consumers
 	   (industry_distance(INDUSTRY_ID_DEPARTMENT_STORE) >= param_min_dist_related_industry) &&
@@ -825,9 +858,10 @@ switch(FEAT_INDUSTRIES, SELF, cleaning_products_factory_switch_location_check_in
 }
 
 produce(cleaning_products_factory_produce,
-	[SASH: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);
+	[SASH: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
 	],
-	[GOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*80/100,1) : 0;],
+	[GOOD: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	],
 	0 // do not run again
 )
 
@@ -837,6 +871,8 @@ switch(FEAT_INDUSTRIES, SELF, cleaning_products_factory_switch_produce,
 	 calculate_raw_material_usage(),
 	 calculate_total_production(),
 	 
+	 STORE_TEMP(percentage_of_production(80), TEMP_REGISTER_PRODUCT_1),
+	 
 	 store_debug_production_data()
 	]) {
 	cleaning_products_factory_produce;
@@ -845,7 +881,8 @@ switch(FEAT_INDUSTRIES, SELF, cleaning_products_factory_switch_produce,
 produce(cleaning_products_factory_produce_ext_coke_sulphur,
 	[SASH: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
 	 ACID: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);],
-	[GOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
+	[GOOD: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	],
 	0 // do not run again
 )
 
@@ -853,46 +890,108 @@ switch(FEAT_INDUSTRIES, SELF, cleaning_products_factory_switch_produce_ext_coke_
 	[STORE_TEMP(incoming_cargo_waiting("SASH"), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
 	 STORE_TEMP(incoming_cargo_waiting("ACID"), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
 	 
-	 calculate_raw_material_usage(),
-	 calculate_total_production(),
-	 calculate_number_of_waiting_cargos(),
+	 calculate_productivity_any_input(2),
 	 
-	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (2-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1),
 	 
 	 store_debug_production_data()
 	]) {
 	cleaning_products_factory_produce_ext_coke_sulphur;
 }
 
+produce(cleaning_products_factory_produce_ext_coke_sulphur_ext_production_boost,
+	[SASH: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 ACID: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 POTA: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
+	 ],
+	[GOOD: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, cleaning_products_factory_switch_produce_ext_coke_sulphur_ext_production_boost, 
+	[STORE_TEMP(incoming_cargo_waiting("SASH"), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 STORE_TEMP(incoming_cargo_waiting("ACID"), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 STORE_TEMP(incoming_cargo_waiting("POTA"), TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	 
+	 calculate_productivity_any_input(3),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1),
+	 store_debug_production_data()
+	]) {
+	cleaning_products_factory_produce_ext_coke_sulphur_ext_production_boost;
+}
+
+produce(cleaning_products_factory_produce_ext_production_boost,
+	[SASH: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 POTA: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);],
+	[GOOD: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, cleaning_products_factory_switch_produce_ext_production_boost, 
+	[STORE_TEMP(incoming_cargo_waiting("SASH"), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 STORE_TEMP(incoming_cargo_waiting("POTA"), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 
+	 calculate_productivity_any_input(2),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1),
+	 store_debug_production_data()
+	]) {
+	cleaning_products_factory_produce_ext_production_boost;
+}
+
 produce(cleaning_products_factory_produce_ext_packaging,
 	[SASH: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
 	 MNSP: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
 	],
-	[GOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
+	[GOOD: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	],
 	0 // do not run again
 )
 
 switch(FEAT_INDUSTRIES, SELF, cleaning_products_factory_switch_produce_ext_packaging, 
 	[STORE_TEMP(incoming_cargo_waiting("SASH"), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
 	 
-	 calculate_raw_material_usage(),
-	 calculate_total_production(),
-	 calculate_number_of_waiting_cargos(),
+	 calculate_productivity_any_input(1),
 	 
-	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
-	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
-	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (2-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 STORE_TEMP(incoming_cargo_waiting("MNSP"), TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING0),
 	 
-	 STORE_TEMP(incoming_cargo_waiting("MNSP"), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 limit_production_optional_cargo(1),
+	 update_permanent_storage_production_values(),
 	 
-	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
-	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
-	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW1),
-
-	 
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING0), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW1),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()
 	]) {
 	cleaning_products_factory_produce_ext_packaging;
+}
+
+produce(cleaning_products_factory_produce_ext_packaging_ext_production_boost,
+	[SASH: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 POTA: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 MNSP: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
+	],
+	[GOOD: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, cleaning_products_factory_switch_produce_ext_packaging_ext_production_boost, 
+	[STORE_TEMP(incoming_cargo_waiting("SASH"), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 STORE_TEMP(incoming_cargo_waiting("POTA"), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 
+	 calculate_productivity_any_input(2),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("MNSP"), TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING0),
+	 
+	 limit_production_optional_cargo(1),
+	 update_permanent_storage_production_values(),
+	 
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING0), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW2),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1),
+	 store_debug_production_data()
+	]) {
+	cleaning_products_factory_produce_ext_packaging_ext_production_boost;
 }
 
 produce(cleaning_products_factory_produce_ext_coke_sulphur_ext_packaging,
@@ -900,7 +999,8 @@ produce(cleaning_products_factory_produce_ext_coke_sulphur_ext_packaging,
 	 ACID: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
 	 MNSP: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
 	],
-	[GOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
+	[GOOD: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	],
 	0 // do not run again
 )
 
@@ -908,27 +1008,54 @@ switch(FEAT_INDUSTRIES, SELF, cleaning_products_factory_switch_produce_ext_coke_
 	[STORE_TEMP(incoming_cargo_waiting("SASH"), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
 	 STORE_TEMP(incoming_cargo_waiting("ACID"), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
 	 
-	 calculate_raw_material_usage(),
-	 calculate_total_production(),
-	 calculate_number_of_waiting_cargos(),
+	 calculate_productivity_any_input(2),
 	 
-	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (2-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 STORE_TEMP(incoming_cargo_waiting("MNSP"), TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING0),
 	 
-	 STORE_TEMP(incoming_cargo_waiting("MNSP"), TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	 limit_production_optional_cargo(1),
+	 update_permanent_storage_production_values(),
 	 
-	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2) > 0 ? LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)+1 : LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS), TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
-	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 3 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
-	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW2),
-
-	 
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING0), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW2),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()
 	]) {
 	cleaning_products_factory_produce_ext_coke_sulphur_ext_packaging;
 }
 
+produce(cleaning_products_factory_produce_ext_coke_sulphur_ext_packaging_ext_production_boost,
+	[SASH: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 ACID: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 POTA: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
+	 MNSP: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW3);
+	],
+	[GOOD: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, cleaning_products_factory_switch_produce_ext_coke_sulphur_ext_packaging_ext_production_boost, 
+	[STORE_TEMP(incoming_cargo_waiting("SASH"), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 STORE_TEMP(incoming_cargo_waiting("ACID"), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 STORE_TEMP(incoming_cargo_waiting("POTA"), TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	 
+	 calculate_productivity_any_input(3),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("MNSP"), TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING0),
+	 
+	 limit_production_optional_cargo(1),
+	 update_permanent_storage_production_values(),
+	 
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING0), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW3),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1),
+	 store_debug_production_data()
+	]) {
+	cleaning_products_factory_produce_ext_coke_sulphur_ext_packaging_ext_production_boost;
+}
+
 switch(FEAT_INDUSTRIES, SELF, cleaning_products_factory_switch_cargo_subtype, getbits(extra_callback_info2, 16, 8)) {
-	SASH: switch_cargo_subtype;
 	ACID: switch_cargo_subtype;
+	POTA: switch_cargo_subtype;
+	SASH: switch_cargo_subtype;
 	MNSP: switch_cargo_subtype_white;
 	return 0x3800 + string(STR_EMPTY);
 }
@@ -946,11 +1073,23 @@ switch(FEAT_INDUSTRIES, SELF, cleaning_products_factory_switch_check_availabilit
 	get_construction_probability;
 }
 
+switch(FEAT_INDUSTRIES, SELF, cleaning_products_factory_check_production,
+	[this_month_production("GOOD") != 0 || last_month_production("GOOD") != 0 || this_month_transported("GOOD") != 0 || last_month_transported("GOOD") != 0 || incoming_cargo_waiting("SASH") != 0
+	])
+{
+}
+
 switch(FEAT_INDUSTRIES, SELF, cleaning_products_factory_switch_update_last_served_date,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("GOOD") != 0 || last_month_production("GOOD") != 0 || 
-		incoming_cargo_waiting("SASH") != 0 ||
-		this_month_transported("GOOD") != 0 || last_month_transported("GOOD") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(cleaning_products_factory_check_production(), PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+switch(FEAT_INDUSTRIES, SELF, cleaning_products_factory_switch_update_last_served_date_ext_production_boost,
+	[update_last_served_date(),
+	 STORE_PERM(cleaning_products_factory_check_production() || incoming_cargo_waiting("POTA") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
@@ -958,9 +1097,15 @@ switch(FEAT_INDUSTRIES, SELF, cleaning_products_factory_switch_update_last_serve
 
 switch(FEAT_INDUSTRIES, SELF, cleaning_products_factory_switch_update_last_served_date_ext_packaging,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("GOOD") != 0 || last_month_production("GOOD") != 0 || 
-		incoming_cargo_waiting("SASH") != 0 || incoming_cargo_waiting("MNSP") != 0 ||
-		this_month_transported("GOOD") != 0 || last_month_transported("GOOD") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(cleaning_products_factory_check_production() || incoming_cargo_waiting("MNSP") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+switch(FEAT_INDUSTRIES, SELF, cleaning_products_factory_switch_update_last_served_date_ext_packaging_ext_production_boost,
+	[update_last_served_date(),
+	 STORE_PERM(cleaning_products_factory_check_production() || incoming_cargo_waiting("MNSP") != 0 || incoming_cargo_waiting("POTA") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
@@ -968,9 +1113,15 @@ switch(FEAT_INDUSTRIES, SELF, cleaning_products_factory_switch_update_last_serve
 
 switch(FEAT_INDUSTRIES, SELF, cleaning_products_factory_switch_update_last_served_date_ext_coke_sulphur,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("GOOD") != 0 || last_month_production("GOOD") != 0 || 
-		incoming_cargo_waiting("SASH") != 0 || incoming_cargo_waiting("ACID") != 0 ||
-		this_month_transported("GOOD") != 0 || last_month_transported("GOOD") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(cleaning_products_factory_check_production() || incoming_cargo_waiting("ACID") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+switch(FEAT_INDUSTRIES, SELF, cleaning_products_factory_switch_update_last_served_date_ext_coke_sulphur_ext_production_boost,
+	[update_last_served_date(),
+	 STORE_PERM(cleaning_products_factory_check_production() || incoming_cargo_waiting("ACID") != 0 || incoming_cargo_waiting("POTA") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
@@ -978,9 +1129,15 @@ switch(FEAT_INDUSTRIES, SELF, cleaning_products_factory_switch_update_last_serve
 
 switch(FEAT_INDUSTRIES, SELF, cleaning_products_factory_switch_update_last_served_date_ext_coke_sulphur_ext_packaging,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("GOOD") != 0 || last_month_production("GOOD") != 0 || 
-		incoming_cargo_waiting("SASH") != 0 || incoming_cargo_waiting("ACID") != 0 || incoming_cargo_waiting("MNSP") != 0 ||
-		this_month_transported("GOOD") != 0 || last_month_transported("GOOD") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(cleaning_products_factory_check_production() ||incoming_cargo_waiting("ACID") != 0 || incoming_cargo_waiting("MNSP") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+switch(FEAT_INDUSTRIES, SELF, cleaning_products_factory_switch_update_last_served_date_ext_coke_sulphur_ext_packaging_ext_production_boost,
+	[update_last_served_date(),
+	 STORE_PERM(cleaning_products_factory_check_production() || incoming_cargo_waiting("ACID") != 0 || incoming_cargo_waiting("MNSP") != 0 || incoming_cargo_waiting("POTA") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
@@ -999,6 +1156,20 @@ switch(FEAT_INDUSTRIES, SELF, cleaning_products_factory_switch_stockpile_check, 
 	cleaning_products_factory_produce_cap_stockpile;
 }
 
+produce(cleaning_products_factory_produce_cap_stockpile_ext_production_boost,
+	[SASH: incoming_cargo_waiting("SASH") > 60000 ? incoming_cargo_waiting("SASH") - 60000 : 0;
+	 POTA: incoming_cargo_waiting("POTA") > 60000 ? incoming_cargo_waiting("POTA") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, cleaning_products_factory_switch_stockpile_check_ext_production_boost, param_stockpile_cap)
+{
+	1: empty_produce;
+	cleaning_products_factory_produce_cap_stockpile_ext_production_boost;
+}
+
 produce(cleaning_products_factory_produce_cap_stockpile_ext_coke_sulphur,
 	[SASH: incoming_cargo_waiting("SASH") > 60000 ? incoming_cargo_waiting("SASH") - 60000 : 0;
 	 ACID: incoming_cargo_waiting("ACID") > 60000 ? incoming_cargo_waiting("ACID") - 60000 : 0;
@@ -1013,6 +1184,21 @@ switch(FEAT_INDUSTRIES, SELF, cleaning_products_factory_switch_stockpile_check_e
 	cleaning_products_factory_produce_cap_stockpile_ext_coke_sulphur;
 }
 
+produce(cleaning_products_factory_produce_cap_stockpile_ext_coke_sulphur_ext_production_boost,
+	[SASH: incoming_cargo_waiting("SASH") > 60000 ? incoming_cargo_waiting("SASH") - 60000 : 0;
+	 ACID: incoming_cargo_waiting("ACID") > 60000 ? incoming_cargo_waiting("ACID") - 60000 : 0;
+	 POTA: incoming_cargo_waiting("POTA") > 60000 ? incoming_cargo_waiting("POTA") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, cleaning_products_factory_switch_stockpile_check_ext_coke_sulphur_ext_production_boost, param_stockpile_cap)
+{
+	1: empty_produce;
+	cleaning_products_factory_produce_cap_stockpile_ext_coke_sulphur_ext_production_boost;
+}
+
 produce(cleaning_products_factory_produce_cap_stockpile_ext_packaging,
 	[SASH: incoming_cargo_waiting("SASH") > 60000 ? incoming_cargo_waiting("SASH") - 60000 : 0;
 	 MNSP: incoming_cargo_waiting("MNSP") > 60000 ? incoming_cargo_waiting("MNSP") - 60000 : 0;
@@ -1025,6 +1211,21 @@ switch(FEAT_INDUSTRIES, SELF, cleaning_products_factory_switch_stockpile_check_e
 {
 	1: empty_produce;
 	cleaning_products_factory_produce_cap_stockpile_ext_packaging;
+}
+
+produce(cleaning_products_factory_produce_cap_stockpile_ext_packaging_ext_production_boost,
+	[SASH: incoming_cargo_waiting("SASH") > 60000 ? incoming_cargo_waiting("SASH") - 60000 : 0;
+	 MNSP: incoming_cargo_waiting("MNSP") > 60000 ? incoming_cargo_waiting("MNSP") - 60000 : 0;
+	 POTA: incoming_cargo_waiting("POTA") > 60000 ? incoming_cargo_waiting("POTA") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, cleaning_products_factory_switch_stockpile_check_ext_packaging_ext_production_boost, param_stockpile_cap)
+{
+	1: empty_produce;
+	cleaning_products_factory_produce_cap_stockpile_ext_packaging_ext_production_boost;
 }
 
 produce(cleaning_products_factory_produce_cap_stockpile_ext_coke_sulphur_ext_packaging,
@@ -1042,7 +1243,23 @@ switch(FEAT_INDUSTRIES, SELF, cleaning_products_factory_switch_stockpile_check_e
 	cleaning_products_factory_produce_cap_stockpile_ext_coke_sulphur_ext_packaging;
 }
 
-if (param_extension_ammonia && !param_extension_coke_sulphur && !param_extension_packaging_industries) {
+produce(cleaning_products_factory_produce_cap_stockpile_ext_coke_sulphur_ext_packaging_ext_production_boost,
+	[SASH: incoming_cargo_waiting("SASH") > 60000 ? incoming_cargo_waiting("SASH") - 60000 : 0;
+	 ACID: incoming_cargo_waiting("ACID") > 60000 ? incoming_cargo_waiting("ACID") - 60000 : 0;
+	 MNSP: incoming_cargo_waiting("MNSP") > 60000 ? incoming_cargo_waiting("MNSP") - 60000 : 0;
+	 POTA: incoming_cargo_waiting("POTA") > 60000 ? incoming_cargo_waiting("POTA") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, cleaning_products_factory_switch_stockpile_check_ext_coke_sulphur_ext_packaging_ext_production_boost, param_stockpile_cap)
+{
+	1: empty_produce;
+	cleaning_products_factory_produce_cap_stockpile_ext_coke_sulphur_ext_packaging_ext_production_boost;
+}
+
+if (param_extension_ammonia && !param_extension_coke_sulphur && !param_extension_packaging_industries && !param_extension_production_boost) {
 	item(FEAT_INDUSTRIES, cleaning_products_factory, INDUSTRY_ID_CLEANING_PRODUCTS_FACTORY) {
 		property {
 			substitute: 0;
@@ -1071,7 +1288,6 @@ if (param_extension_ammonia && !param_extension_coke_sulphur && !param_extension
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           cleaning_products_factory_switch_location_check_industry_distance;
 			extra_text_fund:          cleaning_products_factory_switch_extra_text_fund;
-			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO);
 			cargo_subtype_display:    cleaning_products_factory_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
@@ -1079,7 +1295,7 @@ if (param_extension_ammonia && !param_extension_coke_sulphur && !param_extension
 	}
 }
  
-if (param_extension_ammonia && param_extension_coke_sulphur && !param_extension_packaging_industries) {
+if (param_extension_ammonia && param_extension_coke_sulphur && !param_extension_packaging_industries && !param_extension_production_boost) {
 	item(FEAT_INDUSTRIES, cleaning_products_factory, INDUSTRY_ID_CLEANING_PRODUCTS_FACTORY) {
 		property {
 			substitute: 0;
@@ -1116,7 +1332,7 @@ if (param_extension_ammonia && param_extension_coke_sulphur && !param_extension_
 	}
 } 
 
-if (param_extension_ammonia && !param_extension_coke_sulphur && param_extension_packaging_industries) {
+if (param_extension_ammonia && !param_extension_coke_sulphur && param_extension_packaging_industries && !param_extension_production_boost) {
 	item(FEAT_INDUSTRIES, cleaning_products_factory, INDUSTRY_ID_CLEANING_PRODUCTS_FACTORY) {
 		property {
 			substitute: 0;
@@ -1145,7 +1361,7 @@ if (param_extension_ammonia && !param_extension_coke_sulphur && param_extension_
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           cleaning_products_factory_switch_location_check_industry_distance;
 			extra_text_fund:          cleaning_products_factory_switch_extra_text_fund;
-			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO);
+			extra_text_industry:      industry_switch_extra_text_industry_optional_cargo;
 			cargo_subtype_display:    cleaning_products_factory_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
@@ -1153,7 +1369,7 @@ if (param_extension_ammonia && !param_extension_coke_sulphur && param_extension_
 	}
 }
  
-if (param_extension_ammonia && param_extension_coke_sulphur && param_extension_packaging_industries) {
+if (param_extension_ammonia && param_extension_coke_sulphur && param_extension_packaging_industries && !param_extension_production_boost) {
 	item(FEAT_INDUSTRIES, cleaning_products_factory, INDUSTRY_ID_CLEANING_PRODUCTS_FACTORY) {
 		property {
 			substitute: 0;
@@ -1182,7 +1398,155 @@ if (param_extension_ammonia && param_extension_coke_sulphur && param_extension_p
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           cleaning_products_factory_switch_location_check_industry_distance;
 			extra_text_fund:          cleaning_products_factory_switch_extra_text_fund;
-			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO_ANY);
+			extra_text_industry:      industry_switch_extra_text_industry_optional_cargo_any;
+			cargo_subtype_display:    cleaning_products_factory_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
+		}
+	}
+} 
+
+if (param_extension_ammonia && !param_extension_coke_sulphur && !param_extension_packaging_industries && param_extension_production_boost) {
+	item(FEAT_INDUSTRIES, cleaning_products_factory, INDUSTRY_ID_CLEANING_PRODUCTS_FACTORY) {
+		property {
+			substitute: 0;
+			map_colour: 172;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [cleaning_products_factory_tilelayout_1,cleaning_products_factory_tilelayout_2,cleaning_products_factory_tilelayout_3,cleaning_products_factory_tilelayout_4];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_CLEANING_PRODUCTS_FACTORY);
+			prob_map_gen: 8;
+			prob_in_game: 7;
+			fund_cost_multiplier: 95;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("SASH"),accept_cargo("POTA"),produce_cargo("GOOD",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_CLEANING_PRODUCTS_FACTORY));
+		}
+			
+		graphics {
+			construction_probability: cleaning_products_factory_switch_check_availability;
+			produce_cargo_arrival:    cleaning_products_factory_switch_stockpile_check_ext_production_boost; 
+			produce_256_ticks:        cleaning_products_factory_switch_produce_ext_production_boost;
+			monthly_prod_change:      cleaning_products_factory_switch_update_last_served_date_ext_production_boost;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           cleaning_products_factory_switch_location_check_industry_distance;
+			extra_text_fund:          cleaning_products_factory_switch_extra_text_fund;
+			extra_text_industry:      return string(STR_INDUSTRY_NEEDS_ANY_INPUT);
+			cargo_subtype_display:    cleaning_products_factory_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
+		}
+	}
+}
+ 
+if (param_extension_ammonia && param_extension_coke_sulphur && !param_extension_packaging_industries && param_extension_production_boost) {
+	item(FEAT_INDUSTRIES, cleaning_products_factory, INDUSTRY_ID_CLEANING_PRODUCTS_FACTORY) {
+		property {
+			substitute: 0;
+			map_colour: 172;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [cleaning_products_factory_tilelayout_1,cleaning_products_factory_tilelayout_2,cleaning_products_factory_tilelayout_3,cleaning_products_factory_tilelayout_4];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_CLEANING_PRODUCTS_FACTORY);
+			prob_map_gen: 8;
+			prob_in_game: 7;
+			fund_cost_multiplier: 95;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("SASH"),accept_cargo("ACID"),accept_cargo("POTA"),produce_cargo("GOOD",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_CLEANING_PRODUCTS_FACTORY));
+		}
+			
+		graphics {
+			construction_probability: cleaning_products_factory_switch_check_availability;
+			produce_cargo_arrival:    cleaning_products_factory_switch_stockpile_check_ext_coke_sulphur_ext_production_boost; 
+			produce_256_ticks:        cleaning_products_factory_switch_produce_ext_coke_sulphur_ext_production_boost;
+			monthly_prod_change:      cleaning_products_factory_switch_update_last_served_date_ext_coke_sulphur_ext_production_boost;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           cleaning_products_factory_switch_location_check_industry_distance;
+			extra_text_fund:          cleaning_products_factory_switch_extra_text_fund;
+			extra_text_industry:      return string(STR_INDUSTRY_NEEDS_ANY_INPUT);
+			cargo_subtype_display:    cleaning_products_factory_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
+		}
+	}
+} 
+
+if (param_extension_ammonia && !param_extension_coke_sulphur && param_extension_packaging_industries && param_extension_production_boost) {
+	item(FEAT_INDUSTRIES, cleaning_products_factory, INDUSTRY_ID_CLEANING_PRODUCTS_FACTORY) {
+		property {
+			substitute: 0;
+			map_colour: 172;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [cleaning_products_factory_tilelayout_1,cleaning_products_factory_tilelayout_2,cleaning_products_factory_tilelayout_3,cleaning_products_factory_tilelayout_4];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_CLEANING_PRODUCTS_FACTORY);
+			prob_map_gen: 8;
+			prob_in_game: 7;
+			fund_cost_multiplier: 95;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("SASH"),accept_cargo("MNSP"),accept_cargo("POTA"),produce_cargo("GOOD",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_CLEANING_PRODUCTS_FACTORY));
+		}
+			
+		graphics {
+			construction_probability: cleaning_products_factory_switch_check_availability;
+			produce_cargo_arrival:    cleaning_products_factory_switch_stockpile_check_ext_packaging_ext_production_boost; 
+			produce_256_ticks:        cleaning_products_factory_switch_produce_ext_packaging_ext_production_boost;
+			monthly_prod_change:      cleaning_products_factory_switch_update_last_served_date_ext_packaging_ext_production_boost;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           cleaning_products_factory_switch_location_check_industry_distance;
+			extra_text_fund:          cleaning_products_factory_switch_extra_text_fund;
+			extra_text_industry:      industry_switch_extra_text_industry_optional_cargo_any;
+			cargo_subtype_display:    cleaning_products_factory_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
+		}
+	}
+}
+ 
+if (param_extension_ammonia && param_extension_coke_sulphur && param_extension_packaging_industries && param_extension_production_boost) {
+	item(FEAT_INDUSTRIES, cleaning_products_factory, INDUSTRY_ID_CLEANING_PRODUCTS_FACTORY) {
+		property {
+			substitute: 0;
+			map_colour: 172;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [cleaning_products_factory_tilelayout_1,cleaning_products_factory_tilelayout_2,cleaning_products_factory_tilelayout_3,cleaning_products_factory_tilelayout_4];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_CLEANING_PRODUCTS_FACTORY);
+			prob_map_gen: 8;
+			prob_in_game: 7;
+			fund_cost_multiplier: 95;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("SASH"),accept_cargo("ACID"),accept_cargo("MNSP"),accept_cargo("POTA"),produce_cargo("GOOD",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_CLEANING_PRODUCTS_FACTORY));
+		}
+			
+		graphics {
+			construction_probability: cleaning_products_factory_switch_check_availability;
+			produce_cargo_arrival:    cleaning_products_factory_switch_stockpile_check_ext_coke_sulphur_ext_packaging_ext_production_boost; 
+			produce_256_ticks:        cleaning_products_factory_switch_produce_ext_coke_sulphur_ext_packaging_ext_production_boost;
+			monthly_prod_change:      cleaning_products_factory_switch_update_last_served_date_ext_coke_sulphur_ext_packaging_ext_production_boost;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           cleaning_products_factory_switch_location_check_industry_distance;
+			extra_text_fund:          cleaning_products_factory_switch_extra_text_fund;
+			extra_text_industry:      industry_switch_extra_text_industry_optional_cargo_any;
 			cargo_subtype_display:    cleaning_products_factory_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;

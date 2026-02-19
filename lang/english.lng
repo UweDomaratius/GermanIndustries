@@ -12,7 +12,7 @@ STR_PARAM_PRIMARY_PRODUCTION_DESC :Scales the monthly production scale of primar
 STR_PARAM_PRIMARY_RESOURCE_FACTOR :Primary industry resources factor
 STR_PARAM_PRIMARY_RESOURCE_FACTOR_DESC :Scales the amount of resources that a primary industry can excavate. Once the resources are depleted the industry will close.
 STR_PARAM_ECONOMY_MODEL :Economy model
-STR_PARAM_ECONOMY_MODEL_DESC :The realistic economy model models historic industry availability and productivity improvements. The simple economy does not restrict industries based on real economic history.
+STR_PARAM_ECONOMY_MODEL_DESC :The realistic economy model models historic industry availability and productivity improvements. The simple economy does not restrict industries based on real economic history. More detailed information can be found in the documentation.
 STR_PARAM_ECONOMY_MODEL_SIMPLE :Simple (constant) economy.
 STR_PARAM_ECONOMY_MODEL_REALISTIC :Realistic economy.
 STR_PARAM_ELECTRICITY_NEEDED :Industries may require electricity
@@ -21,7 +21,7 @@ STR_PARAM_FORBID_INDUSTRY_GENERATION :Forbid industry generation
 STR_PARAM_FORBID_INDUSTRY_GENERATION_DESC :When enabled, no industries will spawn during gameplay. Industries will be generated at map generation and can be funded/prospected by the player.
 STR_PARAM_FORBID_INDUSTRY_CLOSURE :Forbid industry closure
 STR_PARAM_FORBID_INDUSTRY_CLOSURE_DESC :When enabled, no industries will close during gameplay. Extractive industries like mines will still close once they run out of materials to produce. Even with closures enabled, industries that are being served will not close.
-STR_PARAM_STOCKPILE_CAP :Set behavior when reaching stockpile limit
+STR_PARAM_STOCKPILE_CAP :Behavior when reaching stockpile limit
 STR_PARAM_STOCKPILE_CAP_DESC :Define what to do when the stockpile limit is reached. When set to discard, incoming freight will be discarded. The delivery will be paid, the cargo will simply vanish. When set to stop acceptance, the industry will stop simply not accept the cargo, the vehicle will not be able to unload. See documentation for more details.
 STR_PARAM_STOCKPILE_DISCARD :Discard
 STR_PARAM_STOCKPILE_STOP_ACCEPT :Stop acceptance
@@ -66,6 +66,8 @@ STR_PARAM_EXT_RECYCLING :Extension set "Recycling"
 STR_PARAM_EXT_RECYCLING_DESC :Adds industries and cargos related to the recycling of scrap materials.
 STR_PARAM_EXT_VEHICLE :Extension set "Vehicle Industries"
 STR_PARAM_EXT_VEHICLE_DESC :Adds industries and cargos related to the creation of vehicles.
+STR_PARAM_EXT_PRODUCTION_BOOST :Erweiterung "Production boost"
+STR_PARAM_EXT_PRODUCTION_BOOST_DESC :Adds industries to that support the production of fertilizers and explosives, which in turn are used to increase production of primary industries.
 
 STR_TOWN    :{STRING}
 STR_STATION :{STRING} {STRING}
@@ -86,6 +88,7 @@ STR_1985:1985
 STR_CARGO_NAME_ACID               :Acid
 STR_CARGO_NAME_ALUMINIUM          :Aluminium
 STR_CARGO_NAME_AMMONIA            :Ammonia
+STR_CARGO_NAME_AMMONIUM_NITRATE   :Ammonium Nitrate
 STR_CARGO_NAME_BAUXITE            :Bauxite
 STR_CARGO_NAME_BIOMASS            :Biomass
 STR_CARGO_NAME_BUILDING_MATERIALS :Bricks
@@ -96,6 +99,8 @@ STR_CARGO_NAME_COKE               :Coke
 STR_CARGO_NAME_COPPER             :Copper
 STR_CARGO_NAME_COPPER_ORE         :Copper Ore
 STR_CARGO_NAME_ETHYLENE           :Ethylene
+STR_CARGO_NAME_EXPLOSIVES         :Explosives
+STR_CARGO_NAME_FERTILIZER         :Fertilizer
 STR_CARGO_NAME_FISH               :Fish
 STR_CARGO_NAME_FRUITS             :Fruits
 STR_CARGO_NAME_GLASS              :Glass
@@ -113,6 +118,7 @@ STR_CARGO_NAME_PACKAGING          :Packaging
 STR_CARGO_NAME_PAINT              :Paint
 STR_CARGO_NAME_PETROL             :Petrol
 STR_CARGO_NAME_PLASTICS           :Plastics
+STR_CARGO_NAME_POTASH             :Potash
 STR_CARGO_NAME_PYRITE_ORE         :Pyrite Ore
 STR_CARGO_NAME_QUICKLIME          :Quicklime
 STR_CARGO_NAME_RECYCLABLES        :Recyclables
@@ -136,6 +142,7 @@ STR_CARGO_NAME_ZINC               :Zinc
 STR_QUANTITY_ACID                 :{WEIGHT} of acid
 STR_QUANTITY_ALUMINIUM            :{WEIGHT} of aluminium
 STR_QUANTITY_AMMONIA              :{WEIGHT} of ammonia
+STR_QUANTITY_AMMONIUM_NITRATE     :{WEIGHT} of ammonium nitrate
 STR_QUANTITY_BAUXITE              :{WEIGHT} of bauxite
 STR_QUANTITY_BIOMASS              :{WEIGHT} of biomass
 STR_QUANTITY_BUILDING_MATERIALS   :{WEIGHT} of bricks
@@ -146,6 +153,8 @@ STR_QUANTITY_COKE                 :{WEIGHT} of coke
 STR_QUANTITY_COPPER               :{WEIGHT} of copper
 STR_QUANTITY_COPPER_ORE           :{WEIGHT} of copper ore
 STR_QUANTITY_ETHYLENE             :{WEIGHT} of ethylene
+STR_QUANTITY_EXPLOSIVES           :{WEIGHT} of explosives
+STR_QUANTITY_FERTILIZER           :{WEIGHT} of fertilizer
 STR_QUANTITY_FISH                 :{WEIGHT} of fish
 STR_QUANTITY_FRUITS               :{WEIGHT} of fruits
 STR_QUANTITY_GLASS                :{WEIGHT} of glass
@@ -165,6 +174,7 @@ STR_QUANTITY_PACKAGING            :{WEIGHT} of packaging
 STR_QUANTITY_PAINT                :{WEIGHT} of paint
 STR_QUANTITY_PETROL               :{WEIGHT} of petrol
 STR_QUANTITY_PLASTICS             :{WEIGHT} of plastics
+STR_QUANTITY_POTASH               :{WEIGHT} of potash
 STR_QUANTITY_PYRITE_ORE           :{WEIGHT} of pyrite ore
 STR_QUANTITY_QUICKLIME            :{WEIGHT} of quicklime
 STR_QUANTITY_RECYCLABLES          :{WEIGHT} of recyclables
@@ -188,6 +198,7 @@ STR_QUANTITY_ZINC                 :{WEIGHT} of zinc
 STR_CID_ACID                      :{TINYFONT}ACID
 STR_CID_ALUMINIUM                 :{TINYFONT}ALUM
 STR_CID_AMMONIA                   :{TINYFONT}NH3
+STR_CID_AMMONIUM_NITRATE          :{TINYFONT}NHNO
 STR_CID_BAUXITE                   :{TINYFONT}AORE
 STR_CID_BIOMASS                   :{TINYFONT}BIOM
 STR_CID_BUILDING_MATERIALS        :{TINYFONT}BDMT
@@ -198,6 +209,8 @@ STR_CID_COKE                      :{TINYFONT}COKE
 STR_CID_COPPER                    :{TINYFONT}COPR
 STR_CID_COPPER_ORE                :{TINYFONT}CORE
 STR_CID_ETHYLENE                  :{TINYFONT}C2H4
+STR_CID_EXPLOSIVES                :{TINYFONT}BOOM
+STR_CID_FERTILIZER                :{TINYFONT}FERT
 STR_CID_FISH                      :{TINYFONT}FISH
 STR_CID_FOOD                      :{TINYFONT}FOOD
 STR_CID_FRUITS                    :{TINYFONT}FRUT
@@ -218,6 +231,7 @@ STR_CID_PACKAGING                 :{TINYFONT}PACK
 STR_CID_PAINT                     :{TINYFONT}COAT
 STR_CID_PETROL                    :{TINYFONT}PETR
 STR_CID_PLASTICS                  :{TINYFONT}PLAS
+STR_CID_POTASH                    :{TINYFONT}POTA
 STR_CID_PYRITE_ORE                :{TINYFONT}PORE
 STR_CID_QUICKLIME                 :{TINYFONT}QLME
 STR_CID_RECYCLABLES               :{TINYFONT}RCYC
@@ -241,6 +255,7 @@ STR_CID_ZINC                      :{TINYFONT}ZINC
 STR_IND_ACID_PLANT             :Acid Plant
 STR_IND_ALUMINIUM_PLANT        :Aluminium Plant
 STR_IND_AMMONIA_PLANT          :Ammonia Plant
+STR_IND_AMMONIUM_NITRATE_PLANT :Ammonium Nitrate Plant
 STR_IND_ANIMAL_FARM            :Animal Farm
 STR_IND_APPLIANCE_FACTORY      :Appliance Factory
 STR_IND_BIOREFINERY            :Biorefinery
@@ -258,6 +273,8 @@ STR_IND_COPPER_SMELTER         :Copper Smelter
 STR_IND_CRYO_PLANT             :Cryo Plant
 STR_IND_DAIRY                  :Dairy
 STR_IND_DEPARTMENT_STORE       :Department Store
+STR_IND_EXPLOSIVES_FACTORY     :Explosives Factory
+STR_IND_FERTILIZER_PLANT       :Fertilizer Plant
 STR_IND_FISHING_GROUNDS        :Fishing Grounds
 STR_IND_FLOUR_MILL             :Flour Mill
 STR_IND_FOUNDRY_FORGE          :Foundry/Forge
@@ -276,6 +293,7 @@ STR_IND_PETROL_STATION         :Petrol Station
 STR_IND_PHARMACEUTICAL_PLANT   :Pharmaceutical Plant
 STR_IND_PLASTICS_PLANT         :Plastics Plant
 STR_IND_PORT                   :Port
+STR_IND_POTASH_MINE            :Potash Mine
 STR_IND_PYRITE_MINE            :Pyrite Mine
 STR_IND_RECYCLING_DEPOT        :Recycling Depot
 STR_IND_SALT_MINE              :Salt Mine
@@ -299,6 +317,7 @@ STR_IND_WIRE_MILL              :Wire Mill
 # station names related to industries
 STR_STATION_ALUMINIUM_PLANT          :Aluminium Plant
 STR_STATION_AMMONIA_PLANT            :Ammonia Plant
+STR_STATION_AMMONIUM_NITRATE_PLANT   :Ammonium Nitrate Plant
 STR_STATION_ANIMAL_FARM              :Animal Farm
 STR_STATION_APPLIANCE_FACTORY        :Appliance Factory
 STR_STATION_BIOREFINERY              :Biorefinery
@@ -318,7 +337,9 @@ STR_STATION_COPPER_SMELTER           :Copper Smelter
 STR_STATION_CRYO_PLANT               :Cryo Plant
 STR_STATION_DAIRY                    :Dairy
 STR_STATION_DEPARTMENT_STORE         :Department Store
+STR_STATION_EXPLOSIVES_FACTORY       :Explosives Factory
 STR_STATION_FARM                     :Farm
+STR_STATION_FERTILIZER_PLANT         :Fertilizer Plant
 STR_STATION_FISHING_GROUNDS          :Fishing Grounds
 STR_STATION_FLOUR_MILL               :Flour Mill
 STR_STATION_FOOD_PROCESSOR           :Food Processor
@@ -344,6 +365,7 @@ STR_STATION_PETROL_STATION           :Petrol Station
 STR_STATION_PHARMACEUTICAL_PLANT     :Pharmaceutical Plant
 STR_STATION_PLASTICS_PLANT           :Plastics Plant
 STR_STATION_PORT                     :Port
+STR_STATION_POTASH_MINE              :Potash Mine
 STR_STATION_POWER_PLANT              :Powerplant
 STR_STATION_PYRITE_MINE              :Mining
 STR_STATION_PRINTING_WORKS           :Printing Works
@@ -371,13 +393,16 @@ STR_STATION_WIRE_MILL                :Wire Mill
 STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION :{BLACK}Transport more than 60% of the produced cargo to increase production.
 STR_INDUSTRY_PREREQ_KEEP_PRODUCTION     :{BLACK}Industry is at maximum production. Transport more than 60% of the produced cargo to keep this production level.
 # Organic industries (forests, farms, ...) display the info on production level requirements.
-STR_ORGANIC_INDUSTRY_TEXT:{STRING}{STRING}
+STR_ORGANIC_INDUSTRY_TEXT:{STRING}{}{STRING}
+STR_ORGANIC_INDUSTRY_TEXT_PRODUCTION_BOOST:{BLACK}Raw materials printed in white will increase the maximum production level.
 # Extractive Industries (mines) display both the info on production level requirements, as well as the remaining resources.
-STR_EXTRACTIVE_INDUSTRY_TEXT:{STRING}{STRING}{}{BLACK}About {YELLOW}{COMMA} kt {BLACK} remain (est. {YELLOW}{COMMA} years{BLACK} at current production rate)
+STR_EXTRACTIVE_INDUSTRY_TEXT:{STRING}{}{STRING}{}{BLACK}About {YELLOW}{COMMA} kt {BLACK} remain (est. {YELLOW}{COMMA} years{BLACK} at current production rate)
 # Secondary industries with optional input requirements
 STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO :{BLACK}Industry requires the raw materials printed in black to produce anything. Raw materials printed in white will increase the maximum production level.
 STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO_ANY :{BLACK}Industry starts producing as soon as any raw material printed in black is available. Maximum production level is limited by the number of different raw materials available. Raw materials printed in white will further increase the maximum production level.
 STR_INDUSTRY_NEEDS_ANY_INPUT :{BLACK}Industry starts producing as soon as any raw material is available. Maximum production level is limited by the number of different raw materials available.
+STR_PRODUCTION_LIMITED_DUE_TO_MISSING_OPTIONAL_CARGO :{}{YELLOW}Production is limited by missing optional raw materials!
+
 # Text that has to do with energy production, power plant displays how much power is produced and demanded,
 # Industries show much power they need for their current production and if their demand is met
 STR_POWER_PLANT_TEXT:{BLACK}Power produced {YELLOW}{COMMA}{BLACK}, demand {YELLOW}{COMMA}{BLACK}
@@ -406,6 +431,7 @@ STR_NEWS_INDUSTRY_PRODUCTION_NEW_RESOURCES_FOUND :Industry has found new resourc
 
 # Error texts
 STR_ERR_OPENTTD_VERSION:{ORANGE}E00:{TITLE} requires OpenTTD 14.0 or newer
+STR_ERR_INCOMPATIBLE_SET:{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}{STRING}
 STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE :must be placed below the snow line.
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE :cannot be placed on steep slopes.
 STR_ERR_EXTENSION_GLASS_REQUIRES_EXTENSION_BUILDING_INDUSTRIES:Extension "Glass" requires extension "Building Industries" to be activated.
@@ -416,3 +442,4 @@ STR_ERR_EXTENSION_AMMONIA_REQUIRES_INORGANIC_CHEMISTRY_BUILDING_MATERIALS:Extens
 STR_ERR_EXTENSION_FRUITS_REQUIRES_ORGANIC_CHEMISTRY:Extension "Fruits and Bio Energy" requires extension "Organic chemistry" to be activated.
 STR_ERR_EXTENSION_METALLURGY_REQUIRES_COKE_SULPHUR:Extension "Metallurgy" requires extension "Coke and sulphur" to be activated.
 STR_ERR_EXTENSION_VEHICLE_REQUIRES_COKE_SULPHUR:Extension "Vehicle Industries" requires extension "Coke and sulphur" to be activated.
+STR_ERR_EXTENSION_PRODUCTION_BOOST_REQUIRES_AMMONIA_COKE_SULPHUR:Extension "Production boost" requires extension "Ammonia" or "Coke and sulphur" to be activated.

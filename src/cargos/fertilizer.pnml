@@ -1,0 +1,31 @@
+spriteset(cargoicon_fertilizer) {
+    [10 + 20 * 3, 10 + 20 * 3, 10, 10, 0, 0, "graphics/other/cargoicons.png"]
+}
+if (param_extension_production_boost) {
+	item(FEAT_CARGOS, fertilizer, CARGO_ID_FERTILIZER) {
+		property {
+			type_name: string(STR_CARGO_NAME_FERTILIZER);
+			unit_name: string(STR_CARGO_NAME_FERTILIZER);
+			type_abbreviation: string(STR_CID_FERTILIZER);
+			sprite: NEW_CARGO_SPRITE;
+			weight: 1.0;
+			is_freight: 1;
+			cargo_classes: bitmask(CC_PIECE_GOODS, CC_BULK, CC_COVERED);
+			town_growth_effect: TOWNGROWTH_NONE;
+			town_growth_multiplier: 1.0;
+			units_of_cargo: TTD_STR_TONS;
+			items_of_cargo: string(STR_QUANTITY_FERTILIZER);
+			penalty_lowerbound: 22;
+			single_penalty_length: 44;
+			capacity_multiplier: 1;
+			cargo_payment_list_colour: 166;
+			station_list_colour: 166;
+			price_factor: 123;
+			cargo_label: "FERT";
+			number: CARGO_ID_FERTILIZER;
+		}
+		graphics {
+			cargoicon_fertilizer;
+		}
+	}
+}

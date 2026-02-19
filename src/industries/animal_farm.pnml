@@ -359,17 +359,17 @@ switch(FEAT_INDUSTRIES, SELF, animal_farm_switch_location_check_industry_distanc
 }
 
 produce(animal_farm_produce,
-	[GRAI: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);],
-	[LVST: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*60/100) : 0;
-	 MILK: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*60/100) : 0;],
+	[GRAI: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);],
+	[LVST: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 MILK: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT)*60/100) : 0;],
 	0 // do not run again
 )
 
 produce(animal_farm_produce_ext_textile_industries,
-	[GRAI: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);],
-	[LVST: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*60/100) : 0;
-	 MILK: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*60/100) : 0;
-	 WOOL: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*80/100) : 0;],
+	[GRAI: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);],
+	[LVST: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 MILK: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 WOOL: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);],
 	0 // do not run again
 )
 
@@ -377,6 +377,8 @@ switch(FEAT_INDUSTRIES, SELF, animal_farm_switch_produce,
 	[STORE_TEMP(incoming_cargo_waiting("GRAI"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
      calculate_raw_material_usage(),
 	 calculate_total_production(),
+	 
+	 STORE_TEMP(percentage_of_production(60), TEMP_REGISTER_PRODUCT_1), // LVST, MILK
 	 
 	 store_debug_production_data()
 	]) {
@@ -388,26 +390,29 @@ switch(FEAT_INDUSTRIES, SELF, animal_farm_switch_produce_ext_textile_industries,
      calculate_raw_material_usage(),
 	 calculate_total_production(),
 	 
+	 STORE_TEMP(percentage_of_production(60), TEMP_REGISTER_PRODUCT_1), // LVST, MILK
+	 STORE_TEMP(percentage_of_production(80), TEMP_REGISTER_PRODUCT_2), // WOOL
+	 
 	 store_debug_production_data()
 	]) {
 	animal_farm_produce_ext_textile_industries;
 }
 
 produce(animal_farm_produce_ext_fruits,
-	[GRAI: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);],
-	[LVST: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*60/100) : 0;
-	 MILK: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*60/100) : 0;
-	 BIOM: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*50/100) : 0;
+	[GRAI: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);],
+	[LVST: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 MILK: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 BIOM: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
 	],
 	0 // do not run again
 )
 
 produce(animal_farm_produce_ext_textile_industries_ext_fruits,
-	[GRAI: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);],
-	[LVST: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*60/100) : 0;
-	 MILK: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*60/100) : 0;
-	 WOOL: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*80/100) : 0;
-	 BIOM: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*50/100) : 0;
+	[GRAI: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);],
+	[LVST: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 MILK: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 WOOL: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
+	 BIOM: LOAD_TEMP(TEMP_REGISTER_PRODUCT_3);
 	 ],
 	0 // do not run again
 )
@@ -416,6 +421,9 @@ switch(FEAT_INDUSTRIES, SELF, animal_farm_switch_produce_ext_fruits,
 	[STORE_TEMP(incoming_cargo_waiting("GRAI"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
      calculate_raw_material_usage(),
 	 calculate_total_production(),
+	 
+	 STORE_TEMP(percentage_of_production(60), TEMP_REGISTER_PRODUCT_1), // LVST, MILK
+	 STORE_TEMP(percentage_of_production(50), TEMP_REGISTER_PRODUCT_2), // BIOM
 	 
 	 store_debug_production_data()
 	]) {
@@ -427,6 +435,10 @@ switch(FEAT_INDUSTRIES, SELF, animal_farm_switch_produce_ext_textile_industries_
      calculate_raw_material_usage(),
 	 calculate_total_production(),
 	 
+	 STORE_TEMP(percentage_of_production(60), TEMP_REGISTER_PRODUCT_1), // LVST, MILK
+	 STORE_TEMP(percentage_of_production(80), TEMP_REGISTER_PRODUCT_2), // WOOL
+	 STORE_TEMP(percentage_of_production(50), TEMP_REGISTER_PRODUCT_3), // BIOM
+	 
 	 store_debug_production_data()
 	]) {
 	animal_farm_produce_ext_textile_industries_ext_fruits;
@@ -437,12 +449,14 @@ switch(FEAT_INDUSTRIES, SELF, animal_farm_switch_cargo_subtype, getbits(extra_ca
 	return 0x3800 + string(STR_EMPTY);
 }
 
+switch(FEAT_INDUSTRIES, SELF, animal_farm_check_production,
+	[incoming_cargo_waiting("GRAI") != 0 || this_month_production("LVST") != 0 || last_month_production("LVST") != 0 || this_month_transported("MILK") != 0 || last_month_transported("MILK") != 0 || this_month_transported("LVST") != 0 || last_month_transported("LVST") != 0])
+{
+}
+
 switch(FEAT_INDUSTRIES, SELF, animal_farm_switch_update_last_served_date,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("LVST") != 0 || last_month_production("LVST") != 0 ||
-		incoming_cargo_waiting("GRAI") != 0 ||
-		this_month_transported("LVST") != 0 || last_month_transported("LVST") != 0 ||
-		this_month_transported("MILK") != 0 || last_month_transported("MILK") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(animal_farm_check_production(), PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
@@ -450,11 +464,7 @@ switch(FEAT_INDUSTRIES, SELF, animal_farm_switch_update_last_served_date,
 
 switch(FEAT_INDUSTRIES, SELF, animal_farm_switch_update_last_served_date_ext_textile_industries,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("LVST") != 0 || last_month_production("LVST") != 0 ||
-		incoming_cargo_waiting("GRAI") != 0 ||
-		this_month_transported("LVST") != 0 || last_month_transported("LVST") != 0 ||
-		this_month_transported("MILK") != 0 || last_month_transported("MILK") != 0 ||
-		this_month_transported("WOOL") != 0 || last_month_transported("WOOL") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(animal_farm_check_production() || this_month_transported("WOOL") != 0 || last_month_transported("WOOL") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();

@@ -339,9 +339,15 @@ switch(FEAT_INDUSTRIES, SELF, builders_yard_switch_produce_extension_building_in
 	builders_yard_produce_extension_building_industry; 
 }
 
+switch(FEAT_INDUSTRIES, SELF, builders_yard_check_production,
+	[incoming_cargo_waiting("WDPR") != 0
+	])
+{
+}
+
 switch(FEAT_INDUSTRIES, SELF, builders_yard_switch_update_last_served_date,
 	[update_last_served_date(),
-	 STORE_PERM(incoming_cargo_waiting("WDPR") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(builders_yard_check_production(), PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
@@ -349,7 +355,7 @@ switch(FEAT_INDUSTRIES, SELF, builders_yard_switch_update_last_served_date,
 
 switch(FEAT_INDUSTRIES, SELF, builders_yard_switch_update_last_served_date_extension_building_industry,
 	[update_last_served_date(),
-	 STORE_PERM(incoming_cargo_waiting("WDPR") != 0 || incoming_cargo_waiting("CMNT") != 0 || incoming_cargo_waiting("SAND") != 0 || incoming_cargo_waiting("BDMT") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(builders_yard_check_production() || incoming_cargo_waiting("CMNT") != 0 || incoming_cargo_waiting("SAND") != 0 || incoming_cargo_waiting("BDMT") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();

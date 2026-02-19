@@ -570,7 +570,8 @@ switch(FEAT_INDUSTRIES, SELF, carbon_black_plant_switch_location_check_industry_
 produce(carbon_black_plant_produce,
 	[OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
 	 COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);],
-	[CBLK: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
+	[CBLK: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	],
 	0 // do not run again
 )
 
@@ -578,14 +579,8 @@ switch(FEAT_INDUSTRIES, SELF, carbon_black_plant_switch_produce,
 	[STORE_TEMP(incoming_cargo_waiting("OIL_"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
      STORE_TEMP(incoming_cargo_waiting("COAL"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
 	 
-	 calculate_raw_material_usage(),
-	 calculate_total_production(),
-	 calculate_number_of_waiting_cargos(),
-	 
-	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
-	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
-	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (2-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 
+	 calculate_productivity_any_input(2),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()
 	 ])
 {
@@ -595,7 +590,8 @@ switch(FEAT_INDUSTRIES, SELF, carbon_black_plant_switch_produce,
 produce(carbon_black_plant_produce_ext_organic_chemistry,
 	[RFPR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
 	 COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);],
-	[CBLK: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
+	[CBLK: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	],
 	0 // do not run again
 )
 
@@ -603,14 +599,8 @@ switch(FEAT_INDUSTRIES, SELF, carbon_black_plant_switch_produce_ext_organic_chem
 	[STORE_TEMP(incoming_cargo_waiting("RFPR"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
      STORE_TEMP(incoming_cargo_waiting("COAL"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
 	 
-	 calculate_raw_material_usage(),
-	 calculate_total_production(),
-	 calculate_number_of_waiting_cargos(),
-	 
-	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
-	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
-	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (2-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 
+	 calculate_productivity_any_input(2),
+     STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1),	 
 	 store_debug_production_data()
 	 ])
 {
@@ -622,7 +612,8 @@ produce(carbon_black_plant_produce_ext_ammonia,
 	 COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
 	 O2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
 	],
-	[CBLK: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
+	[CBLK: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	],
 	0 // do not run again
 )
 
@@ -630,20 +621,15 @@ switch(FEAT_INDUSTRIES, SELF, carbon_black_plant_switch_produce_ext_ammonia,
 	[STORE_TEMP(incoming_cargo_waiting("OIL_"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
      STORE_TEMP(incoming_cargo_waiting("COAL"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
 	 
-	 calculate_raw_material_usage(),
-	 calculate_total_production(),
-	 calculate_number_of_waiting_cargos(),
+	 calculate_productivity_any_input(2),
 	 
-	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
-	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
-	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (2-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 STORE_TEMP(incoming_cargo_waiting("O2__"),TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING0),
 	 
-	 STORE_TEMP(incoming_cargo_waiting("O2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	 limit_production_optional_cargo(1),	 
+	 update_permanent_storage_production_values(),
 	 
-	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
-	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
-	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW2),
-	 
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW2),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()
 	 ])
 {
@@ -655,7 +641,8 @@ produce(carbon_black_plant_produce_ext_organic_chemistry_ext_ammonia,
 	 COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
 	 O2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
 	],
-	[CBLK: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
+	[CBLK: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	],
 	0 // do not run again
 )
 
@@ -663,20 +650,15 @@ switch(FEAT_INDUSTRIES, SELF, carbon_black_plant_switch_produce_ext_organic_chem
 	[STORE_TEMP(incoming_cargo_waiting("RFPR"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
      STORE_TEMP(incoming_cargo_waiting("COAL"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
 	 
-	 calculate_raw_material_usage(),
-	 calculate_total_production(),
-	 calculate_number_of_waiting_cargos(),
+	 calculate_productivity_any_input(2),
 	 
-	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
-	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
-	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (2-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 STORE_TEMP(incoming_cargo_waiting("O2__"),TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING0),
 	 
-	 STORE_TEMP(incoming_cargo_waiting("O2__"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	 limit_production_optional_cargo(1),	 
+	 update_permanent_storage_production_values(),
 	 
-	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
-	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
-	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW2),
-	 
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING0), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW2),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()
 	 ])
 {
@@ -705,11 +687,15 @@ switch(FEAT_INDUSTRIES, SELF, carbon_black_plant_switch_check_availability,
 	get_construction_probability;
 }
 
+switch(FEAT_INDUSTRIES, SELF, carbon_black_plant_check_production,
+	[this_month_production("CBLK") != 0 || last_month_production("CBLK") != 0 || this_month_transported("CBLK") != 0 || last_month_transported("CBLK") != 0 || incoming_cargo_waiting("COAL") != 0
+	])
+{
+}
+
 switch(FEAT_INDUSTRIES, SELF, carbon_black_plant_switch_update_last_served_date,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("CBLK") != 0 || last_month_production("CBLK") != 0 || 
-		incoming_cargo_waiting("OIL_") != 0 || incoming_cargo_waiting("COAL") != 0 || 
-		this_month_transported("CBLK") != 0 || last_month_transported("CBLK") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(carbon_black_plant_check_production() || incoming_cargo_waiting("OIL_") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
@@ -717,9 +703,7 @@ switch(FEAT_INDUSTRIES, SELF, carbon_black_plant_switch_update_last_served_date,
 
 switch(FEAT_INDUSTRIES, SELF, carbon_black_plant_switch_update_last_served_date_ext_organic_chemistry,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("CBLK") != 0 || last_month_production("CBLK") != 0 || 
-		incoming_cargo_waiting("RFPR") != 0 || incoming_cargo_waiting("COAL") != 0 || 
-		this_month_transported("CBLK") != 0 || last_month_transported("CBLK") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(carbon_black_plant_check_production() || incoming_cargo_waiting("RFPR") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
@@ -727,9 +711,7 @@ switch(FEAT_INDUSTRIES, SELF, carbon_black_plant_switch_update_last_served_date_
 
 switch(FEAT_INDUSTRIES, SELF, carbon_black_plant_switch_update_last_served_date_ext_ammonia,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("CBLK") != 0 || last_month_production("CBLK") != 0 || 
-		incoming_cargo_waiting("OIL_") != 0 || incoming_cargo_waiting("COAL") != 0 || incoming_cargo_waiting("O2__") != 0 ||
-		this_month_transported("CBLK") != 0 || last_month_transported("CBLK") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(carbon_black_plant_check_production() || incoming_cargo_waiting("OIL_") != 0 || incoming_cargo_waiting("O2__") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
@@ -737,9 +719,7 @@ switch(FEAT_INDUSTRIES, SELF, carbon_black_plant_switch_update_last_served_date_
 
 switch(FEAT_INDUSTRIES, SELF, carbon_black_plant_switch_update_last_served_date_ext_organic_chemistry_ext_ammonia,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("CBLK") != 0 || last_month_production("CBLK") != 0 || 
-		incoming_cargo_waiting("RFPR") != 0 || incoming_cargo_waiting("COAL") != 0 || incoming_cargo_waiting("O2__") != 0 ||
-		this_month_transported("CBLK") != 0 || last_month_transported("CBLK") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(carbon_black_plant_check_production() || incoming_cargo_waiting("RFPR") != 0 || incoming_cargo_waiting("O2__") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
@@ -905,7 +885,7 @@ if (param_extension_painting_industries && !param_extension_organic_chemistry &&
 			monthly_prod_change:      carbon_black_plant_switch_update_last_served_date_ext_ammonia;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           carbon_black_plant_switch_location_check_industry_distance;
-			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO_ANY);
+			extra_text_industry:      industry_switch_extra_text_industry_optional_cargo_any;
 			extra_text_fund:          carbon_black_plant_switch_extra_text_fund;
 			cargo_subtype_display:    carbon_black_plant_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
@@ -942,7 +922,7 @@ if (param_extension_painting_industries && param_extension_organic_chemistry && 
 			monthly_prod_change:      carbon_black_plant_switch_update_last_served_date_ext_organic_chemistry_ext_ammonia;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           carbon_black_plant_switch_location_check_industry_distance;
-			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO_ANY);
+			extra_text_industry:      industry_switch_extra_text_industry_optional_cargo_any;
 			extra_text_fund:          carbon_black_plant_switch_extra_text_fund;
 			cargo_subtype_display:    carbon_black_plant_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;

@@ -180,6 +180,13 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_nh3,
 	return 0x3800 + string(STR_EMPTY);
 }
 
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_nhno, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("NHNO") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	NHNO: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
 switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_n2, 
 	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("N2__") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
 	 getbits(extra_callback_info2, 16, 8)]) {
@@ -219,6 +226,13 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_pore,
 	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("PORE") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
 	 getbits(extra_callback_info2, 16, 8)]) {
 	PORE: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_pota, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("POTA") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	POTA: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE);
 	return 0x3800 + string(STR_EMPTY);
 }
 
@@ -383,12 +397,14 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info,
 	MILK: switch_cargo_subtype_display_info_milk;
 	MNSP: switch_cargo_subtype_display_info_mnsp;
 	NH3_: switch_cargo_subtype_display_info_nh3;
+	NHNO: switch_cargo_subtype_display_info_nhno;
 	N2__: switch_cargo_subtype_display_info_n2;
 	O2__: switch_cargo_subtype_display_info_o2;
 	OIL_: switch_cargo_subtype_display_info_oil;
 	PAPR: switch_cargo_subtype_display_info_papr;
 	PLAS: switch_cargo_subtype_display_info_plas;	
 	PORE: switch_cargo_subtype_display_info_pore;
+	POTA: switch_cargo_subtype_display_info_pota;
 	QLME: switch_cargo_subtype_display_info_qlme;
 	RFPR: switch_cargo_subtype_display_info_rfpr;
 	RUBR: switch_cargo_subtype_display_info_rubr;
@@ -426,10 +442,38 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_acid_white,
 	return 0x3800 + string(STR_EMPTY);
 }
 
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_alum_white, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("ALUM") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	ALUM: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_OPTIONAL_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_boom_white, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("BOOM") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	BOOM: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_OPTIONAL_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
 switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_coat_white, 
 	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("COAT") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
 	 getbits(extra_callback_info2, 16, 8)]) {
 	COAT: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_OPTIONAL_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_fert_white, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("FERT") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	FERT: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_OPTIONAL_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_glas_white, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("GLAS") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	GLAS: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_OPTIONAL_CARGO_AVAILABLE);
 	return 0x3800 + string(STR_EMPTY);
 }
 
@@ -458,6 +502,13 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_o2_white,
 	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("O2__") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
 	 getbits(extra_callback_info2, 16, 8)]) {
 	O2__: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_OPTIONAL_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_petr_white, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("PETR") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	PETR: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_OPTIONAL_CARGO_AVAILABLE);
 	return 0x3800 + string(STR_EMPTY);
 }
 
@@ -492,11 +543,16 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_scmt_white,
 switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_white, 
 	getbits(extra_callback_info2, 16, 8)) {
 	ACID: switch_cargo_subtype_display_info_acid_white;
+	ALUM: switch_cargo_subtype_display_info_alum_white;
+	BOOM: switch_cargo_subtype_display_info_boom_white;
 	COAT: switch_cargo_subtype_display_info_coat_white;
+	FERT: switch_cargo_subtype_display_info_fert_white;
+	GLAS: switch_cargo_subtype_display_info_glas_white;
 	LYE_: switch_cargo_subtype_display_info_lye_white;
 	MNSP: switch_cargo_subtype_display_info_mnsp_white;
 	NH3_: switch_cargo_subtype_display_info_nh3_white;
 	O2__: switch_cargo_subtype_display_info_o2_white;
+	PETR: switch_cargo_subtype_display_info_petr_white;
 	PLAS: switch_cargo_subtype_display_info_plas_white;
 	RCYC: switch_cargo_subtype_display_info_rcyc_white;
 	SALT: switch_cargo_subtype_display_info_salt_white;

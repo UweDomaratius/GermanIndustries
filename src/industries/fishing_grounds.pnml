@@ -236,18 +236,15 @@ switch(FEAT_INDUSTRIES, SELF, fishing_grounds_switch_location_check_industry_dis
 }
 
 switch(FEAT_INDUSTRIES, SELF, fishing_grounds_switch_prod_change, 
-	[STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT), TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
-	 STORE_TEMP(transported_last_month_pct("FISH"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
-	 STORE_TEMP(255,TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)])
+	[STORE_TEMP(transported_last_month_pct("FISH"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 STORE_TEMP(255,TEMP_REGISTER_MAXIMUM_PRODUCTION)])
 {
 	change_production; // use default rules to adapt production
 }
 
 // randomize production at build time based on random bits: 96t min, 152t max
 switch(FEAT_INDUSTRIES, SELF, fishing_grounds_switch_prod_change_build,
-	[STORE_TEMP(128,TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
-	 initialize_extractive_resources()
-	])
+	[STORE_TEMP(128,TEMP_REGISTER_MAXIMUM_PRODUCTION)])
 {
 	randomize_initial_production;
 }
@@ -259,9 +256,9 @@ produce(fishing_grounds_produce,
 )
 
 switch(FEAT_INDUSTRIES, SELF, fishing_grounds_switch_produce,
-	[STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 // store the theoretical amount of production (production level * scaling percentage)
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT)]) {
+	[init_primary_production(),
+	 update_permanent_storage_production_values()
+	]) {
 	fishing_grounds_produce;
 }
 
@@ -269,16 +266,9 @@ switch(FEAT_INDUSTRIES, SELF, fishing_grounds_switch_produce,
 // build the industry window text here
 ////////////////////////////////////////////////////////////////////////////////
 switch(FEAT_INDUSTRIES, SELF, fishing_grounds_switch_extra_text, 
-	[STORE_TEMP(128,TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
-	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT), TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
-	 STORE_TEMP(
-		LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL) < LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION) ? string(STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION) : string(STR_INDUSTRY_PREREQ_KEEP_PRODUCTION) | 
-		string(STR_EMPTY) << 16,
-		TEMP_REGISTER_EXTRA_TEXT_ARG0)
-	]) {
-	return string(STR_ORGANIC_INDUSTRY_TEXT);
+	[STORE_TEMP(65535,TEMP_REGISTER_MAXIMUM_PRODUCTION)])
+{
+	create_organic_industry_text;
 }
 
 item(FEAT_INDUSTRIES, fishing_grounds, INDUSTRY_ID_FISHING_GROUNDS) {

@@ -386,9 +386,8 @@ switch(FEAT_INDUSTRIES, SELF, oil_rig_switch_location_check_industry_distance,
 
 // if nothing has been transported at all, do not change production (industry might just not be serviced)
 switch(FEAT_INDUSTRIES, SELF, oil_rig_switch_prod_change, 
-	[STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT), TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
-	 STORE_TEMP(transported_last_month_pct("OIL_"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
-	 STORE_TEMP(255,TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
+	[STORE_TEMP(transported_last_month_pct("OIL_"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 STORE_TEMP(255,TEMP_REGISTER_MAXIMUM_PRODUCTION),
 	 LOAD_PERM(PERM_REGISTER_RESOURCES) > 0])
 {
 	1: change_production; // use default rules to adapt production
@@ -398,7 +397,7 @@ switch(FEAT_INDUSTRIES, SELF, oil_rig_switch_prod_change,
 // randomize production at build time based on random bits: 96t min, 152t max
 switch(FEAT_INDUSTRIES, SELF, oil_rig_switch_prod_change_build,
 	[initialize_extractive_resources(),
-	STORE_TEMP(128,TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	STORE_TEMP(128,TEMP_REGISTER_MAXIMUM_PRODUCTION)
 	])
 {
 	randomize_initial_production;
@@ -415,6 +414,7 @@ produce(oil_rig_produce,
 ////////////////////////////////////////////////////////////////////////////////
 switch(FEAT_INDUSTRIES, SELF, oil_rig_switch_produce,
 	[init_primary_production(),
+	 update_permanent_storage_production_values(),
 	 STORE_TEMP(incoming_cargo_waiting("PASS"), TEMP_REGISTER_INCOMING_CARGO_WAITING0)
 	]) {
 	oil_rig_produce;
@@ -424,18 +424,9 @@ switch(FEAT_INDUSTRIES, SELF, oil_rig_switch_produce,
 // build the industry window text here
 ////////////////////////////////////////////////////////////////////////////////
 switch(FEAT_INDUSTRIES, SELF, oil_rig_switch_extra_text, 
-	[STORE_TEMP(128,TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
-	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT), TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
-	 STORE_TEMP(
-		LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL) < LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION) ? string(STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION) : string(STR_INDUSTRY_PREREQ_KEEP_PRODUCTION) | 
-		string(STR_EMPTY) << 16,
-		TEMP_REGISTER_EXTRA_TEXT_ARG0),
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_RESOURCES) / 1000,TEMP_REGISTER_EXTRA_TEXT_ARG1),
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_RESOURCES) / (LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT)*8*12),TEMP_REGISTER_EXTRA_TEXT_ARG2)
-	]) {
-	return string(STR_EXTRACTIVE_INDUSTRY_TEXT);
+	[STORE_TEMP(65535,TEMP_REGISTER_MAXIMUM_PRODUCTION)])
+{
+	create_extractive_industry_text();
 }
 
 switch(FEAT_INDUSTRIES, SELF, oil_rig_switch_extra_text_fund, 
@@ -453,16 +444,8 @@ switch(FEAT_INDUSTRIES, SELF, oil_rig_switch_check_availability,
 }
 
 switch(FEAT_INDUSTRIES, SELF, oil_rig_switch_random_prod_change, 
-	[STORE_TEMP(param_primary_resource_factor == 0 ? 5 : param_primary_resource_factor, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)*250000 + getbits(extra_callback_info2, 8, 3)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)*250000,TEMP_REGISTER_RESOURCES),
-	 STORE_TEMP((getbits(extra_callback_info2,0,8) < 13) && // 5% of 255
-	(last_month_transported("OIL_") > 0) && (LOAD_TEMP(TEMP_REGISTER_RESOURCES) > LOAD_PERM(PERM_REGISTER_RESOURCES)),TEMP_REGISTER_NEW_RESOURCES),
-	LOAD_TEMP(TEMP_REGISTER_NEW_RESOURCES) ? STORE_PERM(LOAD_TEMP(TEMP_REGISTER_RESOURCES), PERM_REGISTER_RESOURCES) : STORE_PERM(LOAD_PERM(PERM_REGISTER_RESOURCES), PERM_REGISTER_RESOURCES),
-	STORE_TEMP(string(STR_NEWS_INDUSTRY_PRODUCTION_NEW_RESOURCES_FOUND), 0x100),
-	LOAD_TEMP(TEMP_REGISTER_NEW_RESOURCES)
-	])
-{
-	return bitmask(8);
+	[STORE_TEMP(last_month_transported("OIL_"),TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0)]) {
+	extractive_industry_switch_random_prod_change;
 }
 
 item(FEAT_INDUSTRIES, oil_rig, INDUSTRY_ID_OIL_RIG) {
