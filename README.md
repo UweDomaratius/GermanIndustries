@@ -3,6 +3,15 @@
 The German Industries Set is (as the name implies) an industry set for Open Transport Tycoon.
 It includes a variety of industries, focusing on key areas of German industry such as vehicles and chemistry.
 
+Key features include:
+- up to 64 cargos
+- stockpiling
+- electricity requirements for certain industries
+- extractive industries with depletable raw material ressources
+- huge configurability to adapt the complexity of the industry chains
+
+For more information, head over into the [documentation folder](https://github.com/UweDomaratius/GermanIndustries/tree/main/doc/README.md)
+
 ## Usage
 
 To use the set in your game, head over to [Releases](https://github.com/UweDomaratius/GermanIndustries/releases) and download the latest version.
@@ -11,9 +20,7 @@ Start the game and the set should show up in the list of the NewGRF settings.
 
 ## Contributing
 
-If you think you found a bug or the set is missing something, check the [Issues](https://github.com/UweDomaratius/GermanIndustries/issues) section and create a new issue if necessary.
-
-In case you feel like contributing to the set development, feel free to fork the repository and provide your input as a new [pull request](https://github.com/UweDomaratius/GermanIndustries/pulls).
+See [CONTRIBUTING](https://github.com/UweDomaratius/GermanIndustries/blob/main/CONTRIBUTING.md).
 
 ## Compiling from source
 
@@ -28,6 +35,10 @@ A new grf will be created in a subfolder named `build`.
 
 The set is licensed under the [Creative Commons](https://creativecommons.org/licenses/by-nc-sa/4.0/) CC-BY-NC-SA license.
 
-All graphics are copied from FIRS v5 by andythenorth et al.
+All graphics are copied from FIRS v4, FIRS v5, or AXIS.
+AXIS can be found [here](https://github.com/EmperorJake/AXIS).
 FIRS v5 can be found [here](https://github.com/andythenorth/firs).
+
+All graphics are done by the FIRS team, with additions by Emperor Jake and GarryG.
+
 The graphics are licensed according to GPLv2, see the copyright note in the graphics folder.

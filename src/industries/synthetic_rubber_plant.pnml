@@ -742,7 +742,7 @@ switch(FEAT_INDUSTRYTILES, SELF, synthetic_rubber_plant_switch_graphics_construc
 }
 
 switch (FEAT_INDUSTRYTILES, SELF, synthetic_rubber_plant_switch_graphics,
-	[switch_terrain_sprite(),switch_graphics_init_temp_registers()
+	[switch_tile_fences(),switch_terrain_sprite(),switch_graphics_init_temp_registers()
 	]) {
     synthetic_rubber_plant_switch_graphics_construction_state;
 }
@@ -964,7 +964,7 @@ switch(FEAT_INDUSTRIES, SELF, synthetic_rubber_plant_switch_location_check_indus
 
 produce(synthetic_rubber_plant_produce,
 	[OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);],
-	[RUBR: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100) : 0;],
+	[RUBR: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);],
 	0 // do not run again
 )
 
@@ -972,6 +972,7 @@ switch(FEAT_INDUSTRIES, SELF, synthetic_rubber_plant_switch_produce,
 	[STORE_TEMP(incoming_cargo_waiting("OIL_"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
      calculate_raw_material_usage(),
 	 calculate_total_production(),
+	 STORE_TEMP(percentage_of_production(90), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()
 	]) {
 	synthetic_rubber_plant_produce;
@@ -979,7 +980,7 @@ switch(FEAT_INDUSTRIES, SELF, synthetic_rubber_plant_switch_produce,
 
 produce(synthetic_rubber_plant_produce_ext_organic_chemistry,
 	[C2H4: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);],
-	[RUBR: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100) : 0;],
+	[RUBR: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);],
 	0 // do not run again
 )
 
@@ -987,6 +988,7 @@ switch(FEAT_INDUSTRIES, SELF, synthetic_rubber_plant_switch_produce_ext_organic_
 	[STORE_TEMP(incoming_cargo_waiting("C2H4"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
      calculate_raw_material_usage(),
 	 calculate_total_production(),
+	 STORE_TEMP(percentage_of_production(90), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()
 	]) {
 	synthetic_rubber_plant_produce_ext_organic_chemistry;
@@ -1012,11 +1014,15 @@ switch(FEAT_INDUSTRIES, SELF, synthetic_rubber_plant_switch_check_availability,
 	get_construction_probability;
 }
 
+switch(FEAT_INDUSTRIES, SELF, synthetic_rubber_plant_check_production,
+	[this_month_production("RUBR") != 0 || last_month_production("RUBR") != 0 || this_month_transported("RUBR") != 0 || last_month_transported("RUBR") != 0
+	])
+{
+}
+
 switch(FEAT_INDUSTRIES, SELF, synthetic_rubber_plant_switch_update_last_served_date,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("RUBR") != 0 || last_month_production("RUBR") != 0 || 
-		incoming_cargo_waiting("OIL_") != 0 || 
-		this_month_transported("RUBR") != 0 || last_month_transported("RUBR") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(synthetic_rubber_plant_check_production() || incoming_cargo_waiting("OIL_") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
@@ -1024,9 +1030,7 @@ switch(FEAT_INDUSTRIES, SELF, synthetic_rubber_plant_switch_update_last_served_d
 
 switch(FEAT_INDUSTRIES, SELF, synthetic_rubber_plant_switch_update_last_served_date_ext_organic_chemistry,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("RUBR") != 0 || last_month_production("RUBR") != 0 || 
-		incoming_cargo_waiting("C2H4") != 0 ||
-		this_month_transported("RUBR") != 0 || last_month_transported("RUBR") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(synthetic_rubber_plant_check_production() || incoming_cargo_waiting("C2H4") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();

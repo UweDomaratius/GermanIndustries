@@ -1,0 +1,1356 @@
+spriteset(fertilizer_plant_spriteset_2_0) {
+	[80, 10, 64, 114, -31, -88, ANIM | NOCROP, "graphics/industries/fertiliser_plant_1.png"]
+}
+spriteset(fertilizer_plant_spriteset_2_0_snow) {
+	[80, 10, 64, 114, -31, -88, ANIM | NOCROP, "graphics/industries/fertiliser_plant_1_snow.png"]
+}
+spriteset(fertilizer_plant_spriteset_3_0) {
+	[150, 10, 64, 114, -31, -83, ANIM | NOCROP, "graphics/industries/fertiliser_plant_1.png"]
+}
+spriteset(fertilizer_plant_spriteset_3_0_snow) {
+	[150, 10, 64, 114, -31, -83, ANIM | NOCROP, "graphics/industries/fertiliser_plant_1_snow.png"]
+}
+spriteset(fertilizer_plant_spriteset_4_0) {
+	[220, 10, 64, 114, -31, -83, ANIM | NOCROP, "graphics/industries/fertiliser_plant_1.png"]
+}
+spriteset(fertilizer_plant_spriteset_4_0_snow) {
+	[220, 10, 64, 114, -31, -83, ANIM | NOCROP, "graphics/industries/fertiliser_plant_1_snow.png"]
+}
+spriteset(fertilizer_plant_spriteset_5_0) {
+	[290, 10, 64, 114, -31, -83, ANIM | NOCROP, "graphics/industries/fertiliser_plant_1.png"]
+}
+spriteset(fertilizer_plant_spriteset_5_0_snow) {
+	[290, 10, 64, 114, -31, -83, ANIM | NOCROP, "graphics/industries/fertiliser_plant_1_snow.png"]
+}
+spriteset(fertilizer_plant_spriteset_6_0) {
+	[360, 10, 64, 66, -31, -35, ANIM | NOCROP, "graphics/industries/fertiliser_plant_1.png"]
+}
+spriteset(fertilizer_plant_spriteset_6_0_snow) {
+	[360, 10, 64, 66, -31, -35, ANIM | NOCROP, "graphics/industries/fertiliser_plant_1_snow.png"]
+}
+spriteset(fertilizer_plant_spriteset_7_0) {
+	[430, 10, 64, 66, -31, -35, ANIM | NOCROP, "graphics/industries/fertiliser_plant_1.png"]
+}
+spriteset(fertilizer_plant_spriteset_7_0_snow) {
+	[430, 10, 64, 66, -31, -35, ANIM | NOCROP, "graphics/industries/fertiliser_plant_1_snow.png"]
+}
+spriteset(fertilizer_plant_spriteset_8_0) {
+	[500, 10, 64, 66, -31, -35, ANIM | NOCROP, "graphics/industries/fertiliser_plant_1.png"]
+}
+spriteset(fertilizer_plant_spriteset_8_0_snow) {
+	[500, 10, 64, 66, -31, -35, ANIM | NOCROP, "graphics/industries/fertiliser_plant_1_snow.png"]
+}
+spriteset(fertilizer_plant_spriteset_9_0) {
+	[570, 10, 64, 66, -31, -35, ANIM | NOCROP, "graphics/industries/fertiliser_plant_1.png"]
+}
+spriteset(fertilizer_plant_spriteset_9_0_snow) {
+	[570, 10, 64, 66, -31, -35, ANIM | NOCROP, "graphics/industries/fertiliser_plant_1_snow.png"]
+}
+spriteset(fertilizer_plant_spriteset_10_0) {
+	[640, 10, 64, 66, -31, -35, ANIM | NOCROP, "graphics/industries/fertiliser_plant_1.png"]
+}
+spriteset(fertilizer_plant_spriteset_10_0_snow) {
+	[640, 10, 64, 66, -31, -35, ANIM | NOCROP, "graphics/industries/fertiliser_plant_1_snow.png"]
+}
+spriteset(fertilizer_plant_spriteset_11_0) {
+	[710, 10, 64, 66, -31, -35, ANIM | NOCROP, "graphics/industries/fertiliser_plant_1.png"]
+}
+spriteset(fertilizer_plant_spriteset_11_0_snow) {
+	[710, 10, 64, 66, -31, -35, ANIM | NOCROP, "graphics/industries/fertiliser_plant_1_snow.png"]
+}
+
+spritelayout fertilizer_plant_spritelayout_1 {
+	childsprite {
+		sprite: default_spriteset_ground_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: fertilizer_plant_spriteset_2_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+	}
+	building {
+		sprite: fertilizer_plant_spriteset_2_0_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW);
+	}
+	building {
+		sprite: TTD_SMOKE_SPRITE_WHITE_BIG + ((animation_frame + 1)%8);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 5;
+		yoffset: 0;
+		zoffset: 69;
+		xextent: 15;
+		yextent: 7;
+		zextent: 7;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: TTD_SMOKE_SPRITE_WHITE_BIG + ((animation_frame + 0)%8);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 9;
+		yoffset: 0;
+		zoffset: 69;
+		xextent: 15;
+		yextent: 7;
+		zextent: 7;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout fertilizer_plant_spritelayout_2 {
+	childsprite {
+		sprite: default_spriteset_ground_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: fertilizer_plant_spriteset_3_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+	}
+	building {
+		sprite: fertilizer_plant_spriteset_3_0_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW);
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout fertilizer_plant_spritelayout_3 {
+	childsprite {
+		sprite: default_spriteset_ground_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: fertilizer_plant_spriteset_4_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+	}
+	building {
+		sprite: fertilizer_plant_spriteset_4_0_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW);
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout fertilizer_plant_spritelayout_4 {
+	childsprite {
+		sprite: default_spriteset_ground_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: fertilizer_plant_spriteset_5_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+	}
+	building {
+		sprite: fertilizer_plant_spriteset_5_0_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW);
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout fertilizer_plant_spritelayout_5 {
+	childsprite {
+		sprite: default_spriteset_ground_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: fertilizer_plant_spriteset_6_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+	}
+	building {
+		sprite: fertilizer_plant_spriteset_6_0_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW);
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout fertilizer_plant_spritelayout_6 {
+	childsprite {
+		sprite: default_spriteset_ground_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: fertilizer_plant_spriteset_7_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+	}
+	building {
+		sprite: fertilizer_plant_spriteset_7_0_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW);
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout fertilizer_plant_spritelayout_7 {
+	childsprite {
+		sprite: default_spriteset_ground_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: fertilizer_plant_spriteset_8_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+	}
+	building {
+		sprite: fertilizer_plant_spriteset_8_0_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW);
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout fertilizer_plant_spritelayout_8 {
+	childsprite {
+		sprite: default_spriteset_ground_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: fertilizer_plant_spriteset_9_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+	}
+	building {
+		sprite: fertilizer_plant_spriteset_9_0_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW);
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout fertilizer_plant_spritelayout_9 {
+	childsprite {
+		sprite: default_spriteset_ground_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: fertilizer_plant_spriteset_10_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+	}
+	building {
+		sprite: fertilizer_plant_spriteset_10_0_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW);
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout fertilizer_plant_spritelayout_10 {
+	childsprite {
+		sprite: default_spriteset_ground_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: fertilizer_plant_spriteset_11_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+	}
+	building {
+		sprite: fertilizer_plant_spriteset_11_0_snow(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE_SNOW);
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout fertilizer_plant_spritelayout_concrete {
+	childsprite {
+		sprite: default_spriteset_ground_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+	
+//////////////////////////////////////////////////////////////////////////////
+// graphics choice switch chain
+//////////////////////////////////////////////////////////////////////////////
+
+switch(FEAT_INDUSTRYTILES, SELF, fertilizer_plant_switch_graphics_layout_1, relative_pos) {
+	relative_coord(0, 0): fertilizer_plant_spritelayout_1;
+	relative_coord(0, 1): fertilizer_plant_spritelayout_4;
+	relative_coord(0, 2): fertilizer_plant_spritelayout_8;
+	relative_coord(1, 0): fertilizer_plant_spritelayout_6;
+	relative_coord(1, 1): fertilizer_plant_spritelayout_3;
+	relative_coord(1, 2): fertilizer_plant_spritelayout_9;
+	relative_coord(2, 0): fertilizer_plant_spritelayout_5;
+	relative_coord(2, 1): fertilizer_plant_spritelayout_2;
+	relative_coord(2, 2): fertilizer_plant_spritelayout_7;
+	relative_coord(3, 0): fertilizer_plant_spritelayout_10;
+	relative_coord(3, 1): fertilizer_plant_spritelayout_concrete;
+	relative_coord(3, 2): fertilizer_plant_spritelayout_7;
+	return 0;
+}
+switch(FEAT_INDUSTRYTILES, SELF, fertilizer_plant_switch_graphics_layout_2, relative_pos) {
+	relative_coord(0, 0): fertilizer_plant_spritelayout_1;
+	relative_coord(0, 1): fertilizer_plant_spritelayout_6;
+	relative_coord(1, 0): fertilizer_plant_spritelayout_4;
+	relative_coord(1, 1): fertilizer_plant_spritelayout_5;
+	relative_coord(2, 0): fertilizer_plant_spritelayout_3;
+	relative_coord(2, 1): fertilizer_plant_spritelayout_10;
+	relative_coord(3, 0): fertilizer_plant_spritelayout_2;
+	relative_coord(3, 1): fertilizer_plant_spritelayout_7;
+	relative_coord(4, 0): fertilizer_plant_spritelayout_8;
+	relative_coord(4, 1): fertilizer_plant_spritelayout_9;
+	return 0;
+}
+switch(FEAT_INDUSTRYTILES, SELF, fertilizer_plant_switch_graphics_layout_3, relative_pos) {
+	relative_coord(0, 1): fertilizer_plant_spritelayout_4;
+	relative_coord(1, 0): fertilizer_plant_spritelayout_8;
+	relative_coord(1, 1): fertilizer_plant_spritelayout_3;
+	relative_coord(1, 2): fertilizer_plant_spritelayout_7;
+	relative_coord(1, 3): fertilizer_plant_spritelayout_6;
+	relative_coord(2, 0): fertilizer_plant_spritelayout_9;
+	relative_coord(2, 1): fertilizer_plant_spritelayout_2;
+	relative_coord(2, 2): fertilizer_plant_spritelayout_1;
+	relative_coord(2, 3): fertilizer_plant_spritelayout_5;
+	return 0;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, fertilizer_plant_switch_graphics_layout_4, relative_pos) {
+	relative_coord(0, 1): fertilizer_plant_spritelayout_4;
+	relative_coord(1, 0): fertilizer_plant_spritelayout_1;
+	relative_coord(1, 1): fertilizer_plant_spritelayout_3;
+	relative_coord(1, 2): fertilizer_plant_spritelayout_6;
+	relative_coord(1, 3): fertilizer_plant_spritelayout_8;
+	relative_coord(2, 0): fertilizer_plant_spritelayout_7;
+	relative_coord(2, 1): fertilizer_plant_spritelayout_2;
+	relative_coord(2, 2): fertilizer_plant_spritelayout_5;
+	relative_coord(2, 3): fertilizer_plant_spritelayout_9;
+	return 0;
+}
+switch(FEAT_INDUSTRYTILES, SELF, fertilizer_plant_switch_graphics_layout_5, relative_pos) {
+	relative_coord(0, 0): fertilizer_plant_spritelayout_4;
+	relative_coord(0, 1): fertilizer_plant_spritelayout_7;
+	relative_coord(1, 0): fertilizer_plant_spritelayout_3;
+	relative_coord(1, 1): fertilizer_plant_spritelayout_7;
+	relative_coord(2, 0): fertilizer_plant_spritelayout_2;
+	relative_coord(2, 1): fertilizer_plant_spritelayout_6;
+	relative_coord(3, 0): fertilizer_plant_spritelayout_1;
+	relative_coord(3, 1): fertilizer_plant_spritelayout_5;
+	relative_coord(4, 0): fertilizer_plant_spritelayout_8;
+	relative_coord(4, 1): fertilizer_plant_spritelayout_6;
+	relative_coord(5, 0): fertilizer_plant_spritelayout_8;
+	relative_coord(5, 1): fertilizer_plant_spritelayout_5;
+	relative_coord(6, 0): fertilizer_plant_spritelayout_9;
+	relative_coord(6, 1): fertilizer_plant_spritelayout_10;
+	return 0;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, fertilizer_plant_switch_graphics_layout_6, relative_pos) {
+	relative_coord(0, 0): fertilizer_plant_spritelayout_4;
+	relative_coord(0, 1): fertilizer_plant_spritelayout_8;
+	relative_coord(0, 2): fertilizer_plant_spritelayout_8;
+	relative_coord(1, 0): fertilizer_plant_spritelayout_3;
+	relative_coord(1, 1): fertilizer_plant_spritelayout_6;
+	relative_coord(1, 2): fertilizer_plant_spritelayout_6;
+	relative_coord(2, 0): fertilizer_plant_spritelayout_2;
+	relative_coord(2, 1): fertilizer_plant_spritelayout_5;
+	relative_coord(2, 2): fertilizer_plant_spritelayout_5;
+	relative_coord(3, 0): fertilizer_plant_spritelayout_1;
+	relative_coord(3, 1): fertilizer_plant_spritelayout_10;
+	relative_coord(3, 2): fertilizer_plant_spritelayout_concrete;
+	relative_coord(4, 0): fertilizer_plant_spritelayout_7;
+	relative_coord(4, 1): fertilizer_plant_spritelayout_7;
+	relative_coord(4, 2): fertilizer_plant_spritelayout_9;
+	return 0;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, fertilizer_plant_switch_graphics_layout_7, relative_pos) {
+	relative_coord(0, 0): fertilizer_plant_spritelayout_4;
+	relative_coord(0, 1): fertilizer_plant_spritelayout_1;
+	relative_coord(0, 2): fertilizer_plant_spritelayout_8;
+	relative_coord(0, 3): fertilizer_plant_spritelayout_10;
+	relative_coord(1, 0): fertilizer_plant_spritelayout_3;
+	relative_coord(1, 1): fertilizer_plant_spritelayout_6;
+	relative_coord(1, 2): fertilizer_plant_spritelayout_8;
+	relative_coord(1, 3): fertilizer_plant_spritelayout_6;
+	relative_coord(2, 0): fertilizer_plant_spritelayout_2;
+	relative_coord(2, 1): fertilizer_plant_spritelayout_5;
+	relative_coord(2, 2): fertilizer_plant_spritelayout_9;
+	relative_coord(2, 3): fertilizer_plant_spritelayout_5;
+	relative_coord(3, 0): fertilizer_plant_spritelayout_7;
+	relative_coord(3, 1): fertilizer_plant_spritelayout_7;
+	relative_coord(3, 2): fertilizer_plant_spritelayout_9;
+	relative_coord(3, 3): fertilizer_plant_spritelayout_10;
+	return 0;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, fertilizer_plant_switch_graphics_layout, layout_num) {
+    1: fertilizer_plant_switch_graphics_layout_1;
+    2: fertilizer_plant_switch_graphics_layout_2;
+    3: fertilizer_plant_switch_graphics_layout_3;
+	4: fertilizer_plant_switch_graphics_layout_4;
+	5: fertilizer_plant_switch_graphics_layout_5;
+	6: fertilizer_plant_switch_graphics_layout_6;
+	7: fertilizer_plant_switch_graphics_layout_7;
+    fertilizer_plant_switch_graphics_layout_1; // default
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, fertilizer_plant_switch_graphics_construction_state, construction_state) {
+    0..2: spritelayout_default_construction_states;
+    fertilizer_plant_switch_graphics_layout; // default
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, fertilizer_plant_switch_graphics,
+	[switch_tile_fences(),switch_terrain_sprite(),switch_graphics_init_temp_registers()
+	]) {
+    fertilizer_plant_switch_graphics_construction_state;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// location checks
+//////////////////////////////////////////////////////////////////////////////
+// This check works as follows: calculate height of the northernmost tile of the industry and add 0, 1 or 2 for flat, slope. steep slope
+// Do the same for the current tile and compare the results. If the result is equal, the terrain is effectively flat
+// and industry can be placed.
+// It just looks weird due to the stacked ternary operators needed here
+switch (FEAT_INDUSTRYTILES, SELF, fertilizer_plant_switch_tile_location_check2,
+			(nearby_tile_height(-relative_x, -relative_y) + 
+			(nearby_tile_slope(-relative_x, -relative_y)== SLOPE_FLAT ? 0 : nearby_tile_slope(-relative_x, -relative_y) == bitmask(IS_STEEP_SLOPE) ? 2 : 1)) 
+			== 
+			(nearby_tile_height(0, 0) + (nearby_tile_slope(0, 0) == SLOPE_FLAT ? 0 : nearby_tile_slope(0, 0) == bitmask(IS_STEEP_SLOPE) ? 2 : 1))
+			) {
+	1: return CB_RESULT_LOCATION_ALLOW;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, fertilizer_plant_switch_tile_location_check,
+	is_funded_or_prospected() || (generation_not_forbidden_by_param() && not_next_to_industry() && not_next_to_buildings()))
+{
+	1: fertilizer_plant_switch_tile_location_check2;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, fertilizer_plant_switch_tile1_cargo_acceptance, 
+	[STORE_TEMP(incoming_cargo_waiting("POTA") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0),
+	 STORE_TEMP(incoming_cargo_waiting("ACID") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL1),
+	 
+	]
+) {
+	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0) + (LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL1) << 4);
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, fertilizer_plant_switch_tile2_cargo_acceptance, 
+	[STORE_TEMP(incoming_cargo_waiting("NH3_") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0),
+	 STORE_TEMP(incoming_cargo_waiting("NHNO") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL1),
+	]
+) {
+	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0) + (LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL1) << 4);
+}
+switch(FEAT_INDUSTRYTILES, PARENT, fertilizer_plant_switch_tile3_cargo_acceptance, 
+	[STORE_TEMP(incoming_cargo_waiting("QLME") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0)
+	]
+) {
+	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0);
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// industry tile and layout definition
+//////////////////////////////////////////////////////////////////////////////
+item(FEAT_INDUSTRYTILES, fertilizer_plant_tile_1, INDUSTRY_TILE_ID_FERTILIZER_PLANT_1) {
+	property {
+		substitute:         0;
+		land_shape_flags:   0;
+		animation_info: [ANIMATION_LOOPING, 7];
+		animation_speed: 3;
+		animation_triggers: bitmask();
+		accepted_cargos: [[POTA, 8],[ACID,8]];
+	}
+	graphics {
+		tile_check: fertilizer_plant_switch_tile_location_check;
+		cargo_amount_accept: fertilizer_plant_switch_tile1_cargo_acceptance;
+		fertilizer_plant_switch_graphics;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, fertilizer_plant_tile_2, INDUSTRY_TILE_ID_FERTILIZER_PLANT_2) {
+	property {
+		substitute:         0;
+		land_shape_flags:   0;
+		accepted_cargos: [[NH3_,8],[NHNO,8]];
+		animation_info: [ANIMATION_LOOPING, 47];
+		animation_speed: 2;
+		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
+	}
+	graphics {
+		tile_check: fertilizer_plant_switch_tile_location_check;
+		cargo_amount_accept: fertilizer_plant_switch_tile2_cargo_acceptance;
+		fertilizer_plant_switch_graphics;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, fertilizer_plant_tile_3, INDUSTRY_TILE_ID_FERTILIZER_PLANT_3) {
+	if (!param_extension_glass) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [];
+			animation_info: [ANIMATION_LOOPING, 47];
+			animation_speed: 2;
+			animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
+		}
+	}
+	if (param_extension_glass) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [[QLME,8]];
+			animation_info: [ANIMATION_LOOPING, 47];
+			animation_speed: 2;
+			animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
+		}
+	}
+	graphics {
+		tile_check: fertilizer_plant_switch_tile_location_check;
+		cargo_amount_accept: fertilizer_plant_switch_tile3_cargo_acceptance;
+		fertilizer_plant_switch_graphics;
+	}
+}
+
+tilelayout fertilizer_plant_tilelayout_1 {
+	0, 0: fertilizer_plant_tile_1;
+	0, 1: fertilizer_plant_tile_2;
+	0, 2: fertilizer_plant_tile_3;
+	1, 0: fertilizer_plant_tile_1;
+	1, 1: fertilizer_plant_tile_2;
+	1, 2: fertilizer_plant_tile_3;
+	2, 0: fertilizer_plant_tile_1;
+	2, 1: fertilizer_plant_tile_2;
+	2, 2: fertilizer_plant_tile_3;
+	3, 0: fertilizer_plant_tile_1;
+	3, 1: fertilizer_plant_tile_2;
+	3, 2: fertilizer_plant_tile_3;
+}
+tilelayout fertilizer_plant_tilelayout_2 {
+	0, 0: fertilizer_plant_tile_1;
+	0, 1: fertilizer_plant_tile_2;
+	1, 0: fertilizer_plant_tile_3;
+	1, 1: fertilizer_plant_tile_1;
+	2, 0: fertilizer_plant_tile_2;
+	2, 1: fertilizer_plant_tile_3;
+	3, 0: fertilizer_plant_tile_1;
+	3, 1: fertilizer_plant_tile_2;
+	4, 0: fertilizer_plant_tile_3;
+	4, 1: fertilizer_plant_tile_1;
+}
+
+tilelayout fertilizer_plant_tilelayout_3 {
+	0, 1: fertilizer_plant_tile_1;
+	1, 0: fertilizer_plant_tile_2;
+	1, 1: fertilizer_plant_tile_3;
+	1, 2: fertilizer_plant_tile_1;
+	1, 3: fertilizer_plant_tile_2;
+	2, 0: fertilizer_plant_tile_3;
+	2, 1: fertilizer_plant_tile_1;
+	2, 2: fertilizer_plant_tile_2;
+	2, 3: fertilizer_plant_tile_3;
+}
+
+tilelayout fertilizer_plant_tilelayout_4 {
+	0, 1: fertilizer_plant_tile_1;
+	1, 0: fertilizer_plant_tile_2;
+	1, 1: fertilizer_plant_tile_3;
+	1, 2: fertilizer_plant_tile_1;
+	1, 3: fertilizer_plant_tile_2;
+	2, 0: fertilizer_plant_tile_3;
+	2, 1: fertilizer_plant_tile_1;
+	2, 2: fertilizer_plant_tile_2;
+	2, 3: fertilizer_plant_tile_3;
+}
+tilelayout fertilizer_plant_tilelayout_5 {
+	0, 0: fertilizer_plant_tile_1;
+	0, 1: fertilizer_plant_tile_2;
+	1, 0: fertilizer_plant_tile_3;
+	1, 1: fertilizer_plant_tile_1;
+	2, 0: fertilizer_plant_tile_2;
+	2, 1: fertilizer_plant_tile_3;
+	3, 0: fertilizer_plant_tile_1;
+	3, 1: fertilizer_plant_tile_2;
+	4, 0: fertilizer_plant_tile_3;
+	4, 1: fertilizer_plant_tile_1;
+	5, 0: fertilizer_plant_tile_2;
+	5, 1: fertilizer_plant_tile_3;
+	6, 0: fertilizer_plant_tile_1;
+	6, 1: fertilizer_plant_tile_2;
+}
+
+tilelayout fertilizer_plant_tilelayout_6 {
+	0, 0: fertilizer_plant_tile_1;
+	0, 1: fertilizer_plant_tile_2;
+	0, 2: fertilizer_plant_tile_3;
+	1, 0: fertilizer_plant_tile_1;
+	1, 1: fertilizer_plant_tile_2;
+	1, 2: fertilizer_plant_tile_3;
+	2, 0: fertilizer_plant_tile_1;
+	2, 1: fertilizer_plant_tile_2;
+	2, 2: fertilizer_plant_tile_3;
+	3, 0: fertilizer_plant_tile_1;
+	3, 1: fertilizer_plant_tile_2;
+	3, 2: fertilizer_plant_tile_3;
+	4, 0: fertilizer_plant_tile_1;
+	4, 1: fertilizer_plant_tile_2;
+	4, 2: fertilizer_plant_tile_3;
+}
+
+tilelayout fertilizer_plant_tilelayout_7 {
+	0, 0: fertilizer_plant_tile_1;
+	0, 1: fertilizer_plant_tile_2;
+	0, 2: fertilizer_plant_tile_3;
+	0, 3: fertilizer_plant_tile_1;
+	1, 0: fertilizer_plant_tile_2;
+	1, 1: fertilizer_plant_tile_3;
+	1, 2: fertilizer_plant_tile_1;
+	1, 3: fertilizer_plant_tile_2;
+	2, 0: fertilizer_plant_tile_3;
+	2, 1: fertilizer_plant_tile_1;
+	2, 2: fertilizer_plant_tile_2;
+	2, 3: fertilizer_plant_tile_3;
+	3, 0: fertilizer_plant_tile_1;
+	3, 1: fertilizer_plant_tile_2;
+	3, 2: fertilizer_plant_tile_3;
+	3, 3: fertilizer_plant_tile_1;
+}
+
+switch(FEAT_INDUSTRIES, SELF, fertilizer_plant_switch_location_check_industry_distance,
+	   [STORE_TEMP(32, TEMP_REGISTER_TOWN_MIN_DISTANCE),
+	    STORE_TEMP(64, TEMP_REGISTER_TOWN_MAX_DISTANCE),
+		count_industries(),
+	    (is_industry_funded_or_prospected()) || ((distance_from_town() && 
+	    (param_max_industries_per_type_on_map == 0 || param_max_industries_per_type_on_map > industry_count(INDUSTRY_ID_AMMONIA_PLANT)) &&
+		(param_max_industries_on_map == 0 || param_max_industries_on_map > LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_INDUSTRIES)) &&
+		// distance to related producers
+		(industry_distance(INDUSTRY_ID_POTASH_MINE) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_ACID_PLANT) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_LIME_KILN) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_AMMONIA_PLANT) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_AMMONIUM_NITRATE_PLANT) >= param_min_dist_related_industry) &&
+		// distance to related consumers
+		(industry_distance(INDUSTRY_ID_FARM) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_FOREST) >= param_min_dist_related_industry) &&
+		// distance between instances of same industry
+	    (industry_distance(INDUSTRY_ID_FERTILIZER_PLANT) >= param_min_dist_same_industry))
+		)])
+{
+	   1: return CB_RESULT_LOCATION_ALLOW;
+	   return CB_RESULT_LOCATION_DISALLOW;
+}
+
+produce(fertilizer_plant_produce,
+	[POTA: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 NH3_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 ACID: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
+	 NHNO: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW3);
+	],
+	[FERT: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, fertilizer_plant_switch_produce, 
+	[STORE_TEMP(incoming_cargo_waiting("POTA"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 STORE_TEMP(incoming_cargo_waiting("NH3_"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 STORE_TEMP(incoming_cargo_waiting("ACID"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	 STORE_TEMP(incoming_cargo_waiting("NHNO"),TEMP_REGISTER_INCOMING_CARGO_WAITING3),
+	 
+	 calculate_productivity_any_input(4),
+	 
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1),
+	 
+	 store_debug_production_data()
+	])
+{
+	fertilizer_plant_produce;
+}
+
+produce(fertilizer_plant_produce_ext_glass,
+	[POTA: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
+	 NH3_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 ACID: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
+	 NHNO: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW3);
+	 QLME: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW4);
+	],
+	[FERT: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, fertilizer_plant_switch_produce_ext_glass, 
+	[STORE_TEMP(incoming_cargo_waiting("POTA"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 STORE_TEMP(incoming_cargo_waiting("NH3_"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 STORE_TEMP(incoming_cargo_waiting("ACID"),TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	 STORE_TEMP(incoming_cargo_waiting("NHNO"),TEMP_REGISTER_INCOMING_CARGO_WAITING3),
+	 STORE_TEMP(incoming_cargo_waiting("QLME"),TEMP_REGISTER_INCOMING_CARGO_WAITING4),
+	 
+	 calculate_productivity_any_input(5),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1),
+	 
+	 store_debug_production_data()
+	])
+{
+	fertilizer_plant_produce_ext_glass;
+}
+
+switch(FEAT_INDUSTRIES, SELF, fertilizer_plant_switch_cargo_subtype, getbits(extra_callback_info2, 16, 8)) {
+	ACID: switch_cargo_subtype;
+	ALUM: switch_cargo_subtype;
+	NH3_: switch_cargo_subtype;
+	NHNO: switch_cargo_subtype;
+	POTA: switch_cargo_subtype;
+	QLME: switch_cargo_subtype;
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, fertilizer_plant_switch_extra_text_fund, 
+	[STORE_TEMP(string(STR_1880), TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	current_year]) {
+	1880..500000: return string(STR_EMPTY);
+	return string(STR_INDUSTRY_NOT_AVAILABLE_BEFORE);
+}
+
+switch(FEAT_INDUSTRIES, SELF, fertilizer_plant_switch_check_availability, 
+	current_year) {
+	0..1879: return CB_RESULT_IND_NO_CONSTRUCTION;
+	get_construction_probability;
+}
+
+switch(FEAT_INDUSTRIES, SELF, fertilizer_plant_check_production,
+	[this_month_production("FERT") != 0 || last_month_production("FERT") != 0 || this_month_transported("FERT") != 0 || last_month_transported("FERT") != 0 || incoming_cargo_waiting("ACID") != 0 || incoming_cargo_waiting("NH3_") != 0 || incoming_cargo_waiting("NHNO") != 0 || incoming_cargo_waiting("POTA") != 0
+	])
+{
+}
+
+switch(FEAT_INDUSTRIES, SELF, fertilizer_plant_switch_update_last_served_date,
+	[update_last_served_date(),
+	 STORE_PERM(fertilizer_plant_check_production(), PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+switch(FEAT_INDUSTRIES, SELF, fertilizer_plant_switch_update_last_served_date_ext_glass,
+	[update_last_served_date(),
+	 STORE_PERM(fertilizer_plant_check_production() || incoming_cargo_waiting("QLME") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+produce(fertilizer_plant_produce_cap_stockpile,
+	[ACID: incoming_cargo_waiting("ACID") > 60000 ? incoming_cargo_waiting("ACID") - 60000 : 0;
+	 NH3_: incoming_cargo_waiting("NH3_") > 60000 ? incoming_cargo_waiting("NH3_") - 60000 : 0;
+	 NHNO: incoming_cargo_waiting("NHNO") > 60000 ? incoming_cargo_waiting("NHNO") - 60000 : 0;
+	 POTA: incoming_cargo_waiting("POTA") > 60000 ? incoming_cargo_waiting("POTA") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, fertilizer_plant_switch_stockpile_check, param_stockpile_cap)
+{
+	1: empty_produce;
+	fertilizer_plant_produce_cap_stockpile;
+}
+
+produce(fertilizer_plant_produce_cap_stockpile_ext_glass,
+	[ACID: incoming_cargo_waiting("ACID") > 60000 ? incoming_cargo_waiting("ACID") - 60000 : 0;
+	 NH3_: incoming_cargo_waiting("NH3_") > 60000 ? incoming_cargo_waiting("NH3_") - 60000 : 0;
+	 NHNO: incoming_cargo_waiting("NHNO") > 60000 ? incoming_cargo_waiting("NHNO") - 60000 : 0;
+	 POTA: incoming_cargo_waiting("POTA") > 60000 ? incoming_cargo_waiting("POTA") - 60000 : 0;
+	 QLME: incoming_cargo_waiting("QLME") > 60000 ? incoming_cargo_waiting("QLME") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, fertilizer_plant_switch_stockpile_check_ext_glass, param_stockpile_cap)
+{
+	1: empty_produce;
+	fertilizer_plant_produce_cap_stockpile_ext_glass;
+}
+
+if (param_extension_production_boost && !param_extension_glass) {
+	item(FEAT_INDUSTRIES, fertilizer_plant, INDUSTRY_ID_FERTILIZER_PLANT) {
+		property {
+			substitute: 0;
+			map_colour: 166;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [fertilizer_plant_tilelayout_1,fertilizer_plant_tilelayout_2,fertilizer_plant_tilelayout_3,fertilizer_plant_tilelayout_4,fertilizer_plant_tilelayout_5,fertilizer_plant_tilelayout_6,fertilizer_plant_tilelayout_7];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_FERTILIZER_PLANT);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 170;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("ACID"),accept_cargo("NH3_"),accept_cargo("NHNO"),accept_cargo("POTA"),produce_cargo("FERT",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FERTILIZER_PLANT));
+		}
+			
+		graphics {
+			construction_probability: fertilizer_plant_switch_check_availability;
+			produce_cargo_arrival:    fertilizer_plant_switch_stockpile_check; 
+			produce_256_ticks:        fertilizer_plant_switch_produce;
+			monthly_prod_change:      fertilizer_plant_switch_update_last_served_date;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           fertilizer_plant_switch_location_check_industry_distance;
+			extra_text_fund:          fertilizer_plant_switch_extra_text_fund;
+			extra_text_industry:      return string(STR_INDUSTRY_NEEDS_ANY_INPUT);
+			cargo_subtype_display:    fertilizer_plant_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
+		}
+	}
+}
+
+if (param_extension_production_boost && param_extension_glass) {
+	item(FEAT_INDUSTRIES, fertilizer_plant, INDUSTRY_ID_FERTILIZER_PLANT) {
+		property {
+			substitute: 0;
+			map_colour: 166;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [fertilizer_plant_tilelayout_1,fertilizer_plant_tilelayout_2,fertilizer_plant_tilelayout_3,fertilizer_plant_tilelayout_4,fertilizer_plant_tilelayout_5,fertilizer_plant_tilelayout_6,fertilizer_plant_tilelayout_7];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_FERTILIZER_PLANT);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 170;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("ACID"),accept_cargo("NH3_"),accept_cargo("NHNO"),accept_cargo("POTA"),accept_cargo("QLME"),produce_cargo("FERT",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FERTILIZER_PLANT));
+		}
+			
+		graphics {
+			construction_probability: fertilizer_plant_switch_check_availability;
+			produce_cargo_arrival:    fertilizer_plant_switch_stockpile_check_ext_glass; 
+			produce_256_ticks:        fertilizer_plant_switch_produce_ext_glass;
+			monthly_prod_change:      fertilizer_plant_switch_update_last_served_date_ext_glass;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           fertilizer_plant_switch_location_check_industry_distance;
+			extra_text_fund:          fertilizer_plant_switch_extra_text_fund;
+			extra_text_industry:      return string(STR_INDUSTRY_NEEDS_ANY_INPUT);
+			cargo_subtype_display:    fertilizer_plant_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
+		}
+	}
+}
+   

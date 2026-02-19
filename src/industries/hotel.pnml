@@ -409,7 +409,7 @@ produce(hotel_produce,
 
 switch(FEAT_INDUSTRIES, SELF, hotel_switch_produce,
 	[STORE_TEMP(incoming_cargo_waiting("PASS"), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
-	STORE_TEMP(incoming_cargo_waiting("FOOD"), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
+	 STORE_TEMP(incoming_cargo_waiting("FOOD"), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
 	]) {
 	hotel_produce; 
 }
@@ -431,9 +431,15 @@ switch(FEAT_INDUSTRIES, SELF, hotel_switch_produce_ext_fruits,
 	hotel_produce_ext_fruits; 
 }
 
+switch(FEAT_INDUSTRIES, SELF, hotel_check_production,
+	[incoming_cargo_waiting("PASS") != 0 || incoming_cargo_waiting("FOOD") != 0
+	])
+{
+}
+
 switch(FEAT_INDUSTRIES, SELF, hotel_switch_update_last_served_date,
 	[update_last_served_date(),
-	 STORE_PERM(incoming_cargo_waiting("PASS") != 0 || incoming_cargo_waiting("FOOD"), PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(hotel_check_production(), PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
@@ -441,7 +447,7 @@ switch(FEAT_INDUSTRIES, SELF, hotel_switch_update_last_served_date,
 
 switch(FEAT_INDUSTRIES, SELF, hotel_switch_update_last_served_date_ext_fruits,
 	[update_last_served_date(),
-	 STORE_PERM(incoming_cargo_waiting("PASS") != 0 || incoming_cargo_waiting("FOOD") != 0 || incoming_cargo_waiting("FRUT") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(hotel_check_production() || incoming_cargo_waiting("FRUT") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();

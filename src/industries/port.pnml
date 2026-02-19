@@ -1159,7 +1159,7 @@ switch(FEAT_INDUSTRYTILES, SELF, port_switch_graphics_layout_1, relative_pos) {
 	relative_coord(1, 4): port_spritelayout_coast_warehouse;
 	relative_coord(2, 1): port_spritelayout_24;
 	relative_coord(2, 2): port_spritelayout_24;
-	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+	return 0;
 }
 switch(FEAT_INDUSTRYTILES, SELF, port_switch_graphics_layout_2, relative_pos) {
 	relative_coord(1, 0): port_spritelayout_23;
@@ -1169,7 +1169,7 @@ switch(FEAT_INDUSTRYTILES, SELF, port_switch_graphics_layout_2, relative_pos) {
 	relative_coord(2, 2): port_spritelayout_21;
 	relative_coord(3, 1): port_spritelayout_coast_warehouse;
 	relative_coord(3, 2): port_spritelayout_coast_truck;
-	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+	return 0;
 }
 switch(FEAT_INDUSTRYTILES, SELF, port_switch_graphics_layout_3, relative_pos) {
 	relative_coord(0, 0): port_spritelayout_coast_warehouse;
@@ -1180,7 +1180,7 @@ switch(FEAT_INDUSTRYTILES, SELF, port_switch_graphics_layout_3, relative_pos) {
 	relative_coord(2, 1): port_spritelayout_26;
 	relative_coord(2, 2): port_spritelayout_28;
 	relative_coord(2, 3): port_spritelayout_22;
-	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+	return 0;
 }
 switch(FEAT_INDUSTRYTILES, SELF, port_switch_graphics_layout_4, relative_pos) {
 	relative_coord(0, 0): port_spritelayout_coast_warehouse;
@@ -1192,7 +1192,7 @@ switch(FEAT_INDUSTRYTILES, SELF, port_switch_graphics_layout_4, relative_pos) {
 	relative_coord(1, 1): port_spritelayout_28;
 	relative_coord(1, 2): port_spritelayout_25;
 	relative_coord(1, 4): port_spritelayout_25;
-	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+	return 0;
 }
 switch(FEAT_INDUSTRYTILES, SELF, port_switch_graphics_layout_5, relative_pos) {
 	relative_coord(0, 0): port_spritelayout_coast_warehouse;
@@ -1206,7 +1206,7 @@ switch(FEAT_INDUSTRYTILES, SELF, port_switch_graphics_layout_5, relative_pos) {
 	relative_coord(4, 0): port_spritelayout_13;
 	relative_coord(4, 1): port_spritelayout_24;
 	relative_coord(4, 2): port_spritelayout_24;
-	return 0; // a default is needed, but should never be reached, layout definitions are explicit
+	return 0;
 }
 switch(FEAT_INDUSTRYTILES, PARENT, port_switch_graphics_layouts, layout_num) {
 	1: port_switch_graphics_layout_1;
@@ -1389,172 +1389,172 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_location_check_industry_distance,
 
 produce(port_produce,
 	[],
-	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
+	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_3);
 	],
 	0 // do not run again
 )
 
 produce(port_produce_ext_aluminium,
 	[],
-	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 AORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
+	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_3);
+	 AORE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_4);
 	],
 	0 // do not run again
 )
 
 produce(port_produce_ext_painting_industries,
 	[],
-	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 CORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
+	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_3);
+	 CORE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_4);
 	],
 	0 // do not run again
 )
 
 produce(port_produce_ext_aluminium_ext_painting_industries,
 	[],
-	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 AORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 CORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
+	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_3);
+	 AORE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_4);
+	 CORE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_5);
 	],
 	0 // do not run again
 )
 
 produce(port_produce_ext_coke_sulphur,
 	[],
-	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 PORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
+	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_3);
+	 PORE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_4);
 	],
 	0 // do not run again
 )
 
 produce(port_produce_ext_aluminium_ext_coke_sulphur,
 	[],
-	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 AORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 PORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
+	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_3);
+	 AORE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_4);
+	 PORE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_5);
 	],
 	0 // do not run again
 )
 
 produce(port_produce_ext_painting_industries_ext_coke_sulphur,
 	[],
-	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 PORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
+	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_3);
+	 PORE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_4);
 	],
 	0 // do not run again
 )
 
 produce(port_produce_ext_aluminium_ext_painting_industries_ext_coke_sulphur,
 	[],
-	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 AORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 PORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
+	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_3);
+	 AORE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_4);
+	 PORE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_5);
 	],
 	0 // do not run again
 )
 
 produce(port_produce_ext_vehicle,
 	[],
-	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 RUBR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
+	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_3);
+	 RUBR: LOAD_TEMP(TEMP_REGISTER_PRODUCT_4);
 	],
 	0 // do not run again
 )
 
 produce(port_produce_ext_aluminium_ext_vehicle,
 	[],
-	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 AORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 RUBR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
+	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_3);
+	 AORE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_4);
+	 RUBR: LOAD_TEMP(TEMP_REGISTER_PRODUCT_5);
 	],
 	0 // do not run again
 )
 
 produce(port_produce_ext_painting_industries_ext_vehicle,
 	[],
-	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 CORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 RUBR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
+	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_3);
+	 CORE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_4);
+	 RUBR: LOAD_TEMP(TEMP_REGISTER_PRODUCT_5);
 	],
 	0 // do not run again
 )
 
 produce(port_produce_ext_aluminium_ext_painting_industries_ext_vehicle,
 	[],
-	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 AORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 CORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 RUBR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
+	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_3);
+	 AORE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_4);
+	 CORE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_5);
+	 RUBR: LOAD_TEMP(TEMP_REGISTER_PRODUCT_6);
 	],
 	0 // do not run again
 )
 
 produce(port_produce_ext_coke_sulphur_ext_vehicle,
 	[],
-	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 PORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 RUBR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
+	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_3);
+	 PORE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_4);
+	 RUBR: LOAD_TEMP(TEMP_REGISTER_PRODUCT_5);
 	],
 	0 // do not run again
 )
 
 produce(port_produce_ext_aluminium_ext_coke_sulphur_ext_vehicle,
 	[],
-	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 AORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 PORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 RUBR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
+	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_3);
+	 AORE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_4);
+	 PORE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_5);
+	 RUBR: LOAD_TEMP(TEMP_REGISTER_PRODUCT_6);
 	],
 	0 // do not run again
 )
 
 produce(port_produce_ext_painting_industries_ext_coke_sulphur_ext_vehicle,
 	[],
-	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 PORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 RUBR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
+	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_3);
+	 PORE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_4);
+	 RUBR: LOAD_TEMP(TEMP_REGISTER_PRODUCT_5);
 	],
 	0 // do not run again
 )
 
 produce(port_produce_ext_aluminium_ext_painting_industries_ext_coke_sulphur_ext_vehicle,
 	[],
-	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 AORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 PORE: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
-	 RUBR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
+	 IORE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_3);
+	 AORE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_4);
+	 PORE: LOAD_TEMP(TEMP_REGISTER_PRODUCT_5);
+	 RUBR: LOAD_TEMP(TEMP_REGISTER_PRODUCT_6);
 	],
 	0 // do not run again
 )
@@ -1568,10 +1568,22 @@ switch(FEAT_INDUSTRIES, SELF, port_func_calc_max_prod,
 // randomize production at build time based on random bits: 96t min, 152t max
 switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_build,
 	[
-	  STORE_TEMP(max(port_func_calc_max_prod(),128),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	  STORE_TEMP(max(port_func_calc_max_prod(),128),TEMP_REGISTER_MAXIMUM_PRODUCTION),
+	  STORE_PERM(min(12+getbits(extra_callback_info2, 0, 3),LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0),
+	  STORE_PERM(min(12+getbits(extra_callback_info2, 0, 3),LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT1),
+	  STORE_PERM(min(12+getbits(extra_callback_info2, 0, 3),LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT2),
+	  STORE_PERM(min(12+getbits(extra_callback_info2, 0, 3),LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT3),
+	  STORE_PERM(min(12+getbits(extra_callback_info2, 0, 3),LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT4),
+	  STORE_PERM(min(12+getbits(extra_callback_info2, 0, 3),LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT5),	  
+	  STORE_PERM(min(12+getbits(extra_callback_info2, 0, 3),LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_PRODUCTION_AMOUNT0),
+	  STORE_PERM(min(12+getbits(extra_callback_info2, 0, 3),LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_PRODUCTION_AMOUNT1),
+	  STORE_PERM(min(12+getbits(extra_callback_info2, 0, 3),LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_PRODUCTION_AMOUNT2),
+	  STORE_PERM(min(12+getbits(extra_callback_info2, 0, 3),LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_PRODUCTION_AMOUNT3),
+	  STORE_PERM(min(12+getbits(extra_callback_info2, 0, 3),LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_PRODUCTION_AMOUNT4),
+	  STORE_PERM(min(12+getbits(extra_callback_info2, 0, 3),LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_PRODUCTION_AMOUNT5),
 	])
 {
-	randomize_initial_production;
+	return LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0);
 }
 
 produce(port_produce_cargo_arrival,
@@ -1580,304 +1592,505 @@ produce(port_produce_cargo_arrival,
 	0
 )
 
+switch(FEAT_INDUSTRIES, SELF, init_port_production,
+	[STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PRODUCTIVITY_SCALE),
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0) * LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE) / 100, TEMP_REGISTER_PRODUCT_1),
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT1) * LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE) / 100, TEMP_REGISTER_PRODUCT_2),
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT2) * LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE) / 100, TEMP_REGISTER_PRODUCT_3),
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT3) * LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE) / 100, TEMP_REGISTER_PRODUCT_4),
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT4) * LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE) / 100, TEMP_REGISTER_PRODUCT_5),
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT5) * LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE) / 100, TEMP_REGISTER_PRODUCT_6),
+	])
+{
+}
+
 switch(FEAT_INDUSTRIES, SELF, port_switch_produce,
-	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
-	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 // store the theoretical amount of production (production level * scaling percentage)
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	[init_port_production()
 	]) {
 	port_produce;
 }
 
 switch(FEAT_INDUSTRIES, SELF, port_switch_produce_ext_aluminium,
-	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
-	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 // store the theoretical amount of production (production level * scaling percentage)
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	[init_port_production()
 	]) {
 	port_produce_ext_aluminium;
 }
 
 switch(FEAT_INDUSTRIES, SELF, port_switch_produce_ext_painting_industries,
-	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
-	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 // store the theoretical amount of production (production level * scaling percentage)
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	[init_port_production()
 	]) {
 	port_produce_ext_painting_industries;
 }
 
 switch(FEAT_INDUSTRIES, SELF, port_switch_produce_ext_aluminium_ext_painting_industries,
-	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
-	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 // store the theoretical amount of production (production level * scaling percentage)
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	[init_port_production()
 	]) {
 	port_produce_ext_aluminium_ext_painting_industries;
 }
 
 switch(FEAT_INDUSTRIES, SELF, port_switch_produce_ext_coke_sulphur,
-	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
-	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 // store the theoretical amount of production (production level * scaling percentage)
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	[init_port_production()
 	]) {
 	port_produce_ext_coke_sulphur;
 }
 
 switch(FEAT_INDUSTRIES, SELF, port_switch_produce_ext_aluminium_ext_coke_sulphur,
-	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
-	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 // store the theoretical amount of production (production level * scaling percentage)
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	[init_port_production()
 	]) {
 	port_produce_ext_aluminium_ext_coke_sulphur;
 }
 
 switch(FEAT_INDUSTRIES, SELF, port_switch_produce_ext_painting_industries_ext_coke_sulphur,
-	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
-	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 // store the theoretical amount of production (production level * scaling percentage)
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	[init_port_production()
 	]) {
 	port_produce_ext_painting_industries_ext_coke_sulphur;
 }
 
 switch(FEAT_INDUSTRIES, SELF, port_switch_produce_ext_aluminium_ext_painting_industries_ext_coke_sulphur,
-	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
-	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 // store the theoretical amount of production (production level * scaling percentage)
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	[init_port_production()
 	]) {
 	port_produce_ext_aluminium_ext_painting_industries_ext_coke_sulphur;
 }
 
 switch(FEAT_INDUSTRIES, SELF, port_switch_produce_ext_vehicle,
-	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
-	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 // store the theoretical amount of production (production level * scaling percentage)
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	[init_port_production()
 	]) {
 	port_produce_ext_vehicle;
 }
 
 switch(FEAT_INDUSTRIES, SELF, port_switch_produce_ext_aluminium_ext_vehicle,
-	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
-	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 // store the theoretical amount of production (production level * scaling percentage)
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	[init_port_production()
 	]) {
 	port_produce_ext_aluminium_ext_vehicle;
 }
 
 switch(FEAT_INDUSTRIES, SELF, port_switch_produce_ext_painting_industries_ext_vehicle,
-	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
-	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 // store the theoretical amount of production (production level * scaling percentage)
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	[init_port_production()
 	]) {
 	port_produce_ext_painting_industries_ext_vehicle;
 }
 
 switch(FEAT_INDUSTRIES, SELF, port_switch_produce_ext_aluminium_ext_painting_industries_ext_vehicle,
-	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
-	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 // store the theoretical amount of production (production level * scaling percentage)
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	[init_port_production()
 	]) {
 	port_produce_ext_aluminium_ext_painting_industries_ext_vehicle;
 }
 
 switch(FEAT_INDUSTRIES, SELF, port_switch_produce_ext_coke_sulphur_ext_vehicle,
-	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
-	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 // store the theoretical amount of production (production level * scaling percentage)
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	[init_port_production()
 	]) {
 	port_produce_ext_coke_sulphur_ext_vehicle;
 }
 
 switch(FEAT_INDUSTRIES, SELF, port_switch_produce_ext_aluminium_ext_coke_sulphur_ext_vehicle,
-	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
-	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 // store the theoretical amount of production (production level * scaling percentage)
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	[init_port_production()
 	]) {
 	port_produce_ext_aluminium_ext_coke_sulphur_ext_vehicle;
 }
 
 switch(FEAT_INDUSTRIES, SELF, port_switch_produce_ext_painting_industries_ext_coke_sulphur_ext_vehicle,
-	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
-	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 // store the theoretical amount of production (production level * scaling percentage)
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	[init_port_production()
 	]) {
 	port_produce_ext_painting_industries_ext_coke_sulphur_ext_vehicle;
 }
 
 switch(FEAT_INDUSTRIES, SELF, port_switch_produce_ext_aluminium_ext_painting_industries_ext_coke_sulphur_ext_vehicle,
-	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
-	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 // store the theoretical amount of production (production level * scaling percentage)
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
+	[init_port_production()
 	]) {
 	port_produce_ext_aluminium_ext_painting_industries_ext_coke_sulphur_ext_vehicle;
 }
 
-switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change, 
-	[STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
-	 STORE_TEMP(max(transported_last_month_pct("COAL"),transported_last_month_pct("OIL_"),transported_last_month_pct("IORE")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
-	 STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
-	])
+switch(FEAT_INDUSTRIES, SELF, port_set_new_production0,
+	[ LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 30 ? STORE_PERM(max(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0) - 5,4), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0) : 
+	  LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 40 ? STORE_PERM(max(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0) - 1,4), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0) : 
+	  LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 75 ? STORE_PERM(min(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0)+1,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0) : 
+	                                                                    STORE_PERM(min(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0)+5,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0),
+
+	  STORE_TEMP(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0)<<16,TEMP_REGISTER_CB_RESULT_IND_PROD_SET_BY_0x100)
+	]) {
+	return CB_RESULT_IND_PROD_SET_BY_0x100;
+}
+
+switch(FEAT_INDUSTRIES, SELF, port_change_production0,
+	[(LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) != 0 && 
+	((LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 40) || LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) > 59)	 
+	 )])
 {
-	change_production;
+	1: port_set_new_production0();
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, port_set_new_production1,
+	[ LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 30 ? STORE_PERM(max(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT1) - 5,4), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT1) : 
+	  LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 40 ? STORE_PERM(max(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT1) - 1,4), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT1) : 
+	  LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 75 ? STORE_PERM(min(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT1)+1,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT1) : 
+	                                                                    STORE_PERM(min(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT1)+5,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT1),
+
+	  STORE_TEMP(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT1)<<16,TEMP_REGISTER_CB_RESULT_IND_PROD_SET_BY_0x100)
+	]) {
+	return CB_RESULT_IND_PROD_SET_BY_0x100;
+}
+
+switch(FEAT_INDUSTRIES, SELF, port_change_production1,
+	[(LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) != 0 && 
+	((LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 40) || LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) > 59)	 
+	 )])
+{
+	1: port_set_new_production1();
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, port_set_new_production2,
+	[ LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 30 ? STORE_PERM(max(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT2) - 5,4), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT2) : 
+	  LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 40 ? STORE_PERM(max(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT2) - 1,4), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT2) : 
+	  LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 75 ? STORE_PERM(min(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT2)+1,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT2) : 
+	                                                                    STORE_PERM(min(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT2)+5,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT2),
+
+	  STORE_TEMP(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT2)<<16,TEMP_REGISTER_CB_RESULT_IND_PROD_SET_BY_0x100)
+	]) {
+	return CB_RESULT_IND_PROD_SET_BY_0x100;
+}
+
+switch(FEAT_INDUSTRIES, SELF, port_change_production2,
+	[(LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) != 0 && 
+	((LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 40) || LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) > 59)	 
+	 )])
+{
+	1: port_set_new_production2();
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, port_set_new_production3,
+	[ LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 30 ? STORE_PERM(max(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT3) - 5,4), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT3) : 
+	  LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 40 ? STORE_PERM(max(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT3) - 1,4), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT3) : 
+	  LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 75 ? STORE_PERM(min(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT3)+1,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT3) : 
+	                                                                    STORE_PERM(min(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT3)+5,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT3),
+
+	  STORE_TEMP(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT2)<<16,TEMP_REGISTER_CB_RESULT_IND_PROD_SET_BY_0x100)
+	]) {
+	return CB_RESULT_IND_PROD_SET_BY_0x100;
+}
+
+switch(FEAT_INDUSTRIES, SELF, port_change_production3,
+	[(LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) != 0 && 
+	((LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 40) || LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) > 59)	 
+	 )])
+{
+	1: port_set_new_production3();
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, port_set_new_production4,
+	[ LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 30 ? STORE_PERM(max(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT4) - 5,4), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT4) : 
+	  LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 40 ? STORE_PERM(max(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT4) - 1,4), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT4) : 
+	  LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 75 ? STORE_PERM(min(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT4)+1,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT4) : 
+	                                                                    STORE_PERM(min(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT4)+5,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT4),
+
+	  STORE_TEMP(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT2)<<16,TEMP_REGISTER_CB_RESULT_IND_PROD_SET_BY_0x100)
+	]) {
+	return CB_RESULT_IND_PROD_SET_BY_0x100;
+}
+
+switch(FEAT_INDUSTRIES, SELF, port_change_production4,
+	[(LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) != 0 && 
+	((LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 40) || LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) > 59)	 
+	 )])
+{
+	1: port_set_new_production4();
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, port_set_new_production5,
+	[ LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 30 ? STORE_PERM(max(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT5) - 5,4), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT5) : 
+	  LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 40 ? STORE_PERM(max(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT5) - 1,4), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT5) : 
+	  LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 75 ? STORE_PERM(min(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT5)+1,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT5) : 
+	                                                                    STORE_PERM(min(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT5)+5,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT5),
+
+	  STORE_TEMP(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT2)<<16,TEMP_REGISTER_CB_RESULT_IND_PROD_SET_BY_0x100)
+	]) {
+	return CB_RESULT_IND_PROD_SET_BY_0x100;
+}
+
+switch(FEAT_INDUSTRIES, SELF, port_change_production5,
+	[(LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) != 0 && 
+	((LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 40) || LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) > 59)	 
+	 )])
+{
+	1: port_set_new_production5();
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change, 
+	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
+	 STORE_TEMP(transported_last_month_pct("COAL"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production0(),
+	 STORE_TEMP(transported_last_month_pct("OIL_"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production1(),
+	 STORE_TEMP(transported_last_month_pct("IORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production2(),
+	])	
+{
+	return CB_RESULT_IND_PROD_NO_CHANGE;
 }
 
 switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_aluminium, 
-	[STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
-	 STORE_TEMP(max(transported_last_month_pct("COAL"),transported_last_month_pct("OIL_"),transported_last_month_pct("IORE"),transported_last_month_pct("AORE")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
-	 STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
+	 STORE_TEMP(transported_last_month_pct("COAL"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production0(),
+	 STORE_TEMP(transported_last_month_pct("OIL_"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production1(),
+	 STORE_TEMP(transported_last_month_pct("IORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production2(),
+	 STORE_TEMP(transported_last_month_pct("AORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production3(),
 	])
 {
-	change_production;
+	return CB_RESULT_IND_PROD_NO_CHANGE;
 }
 
 switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_painting_industries, 
-	[STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
-	 STORE_TEMP(max(transported_last_month_pct("COAL"),transported_last_month_pct("OIL_"),transported_last_month_pct("IORE"),transported_last_month_pct("CORE")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
-	 STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
+	 STORE_TEMP(transported_last_month_pct("COAL"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production0(),
+	 STORE_TEMP(transported_last_month_pct("OIL_"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production1(),
+	 STORE_TEMP(transported_last_month_pct("IORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production2(),
+	 STORE_TEMP(transported_last_month_pct("CORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production3(),
 	])
 {
-	change_production;
+	return CB_RESULT_IND_PROD_NO_CHANGE;
 }
 
 switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_aluminium_ext_painting_industries, 
-	[STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
-	 STORE_TEMP(max(transported_last_month_pct("COAL"),transported_last_month_pct("OIL_"),transported_last_month_pct("IORE"),transported_last_month_pct("AORE"),transported_last_month_pct("CORE")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
-	 STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
+	 STORE_TEMP(transported_last_month_pct("COAL"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production0(),
+	 STORE_TEMP(transported_last_month_pct("OIL_"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production1(),
+	 STORE_TEMP(transported_last_month_pct("IORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production2(),
+	 STORE_TEMP(transported_last_month_pct("AORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production3(),
+	 STORE_TEMP(transported_last_month_pct("CORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),	 
+	 port_change_production4(),
 	])
 {
-	change_production;
+	return CB_RESULT_IND_PROD_NO_CHANGE;
 }
 
 switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_coke_sulphur, 
-	[STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
-	 STORE_TEMP(max(transported_last_month_pct("COAL"),transported_last_month_pct("OIL_"),transported_last_month_pct("IORE"),transported_last_month_pct("PORE")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
-	 STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
+	 STORE_TEMP(transported_last_month_pct("COAL"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production0(),
+	 STORE_TEMP(transported_last_month_pct("OIL_"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production1(),
+	 STORE_TEMP(transported_last_month_pct("IORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production2(),
+	 STORE_TEMP(transported_last_month_pct("PORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production3(),
 	])
 {
-	change_production;
+	return CB_RESULT_IND_PROD_NO_CHANGE;
 }
 
 switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_aluminium_ext_coke_sulphur, 
-	[STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
-	 STORE_TEMP(max(transported_last_month_pct("COAL"),transported_last_month_pct("OIL_"),transported_last_month_pct("IORE"),transported_last_month_pct("AORE"),transported_last_month_pct("PORE")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
-	 STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
+	 STORE_TEMP(transported_last_month_pct("COAL"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production0(),
+	 STORE_TEMP(transported_last_month_pct("OIL_"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production1(),
+	 STORE_TEMP(transported_last_month_pct("IORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production2(),
+	 STORE_TEMP(transported_last_month_pct("AORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production3(),
+	 STORE_TEMP(transported_last_month_pct("PORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),	 
+	 port_change_production4(),
 	])
 {
-	change_production;
+	return CB_RESULT_IND_PROD_NO_CHANGE;
 }
 
 switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_painting_industries_ext_coke_sulphur, 
-	[STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
-	 STORE_TEMP(max(transported_last_month_pct("COAL"),transported_last_month_pct("OIL_"),transported_last_month_pct("IORE"),transported_last_month_pct("PORE")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
-	 STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
+	 STORE_TEMP(transported_last_month_pct("COAL"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production0(),
+	 STORE_TEMP(transported_last_month_pct("OIL_"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production1(),
+	 STORE_TEMP(transported_last_month_pct("IORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production2(),
+	 STORE_TEMP(transported_last_month_pct("PORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production3(),
 	])
 {
-	change_production;
+	return CB_RESULT_IND_PROD_NO_CHANGE;
 }
 
 switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_aluminium_ext_painting_industries_ext_coke_sulphur, 
-	[STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
-	 STORE_TEMP(max(transported_last_month_pct("COAL"),transported_last_month_pct("OIL_"),transported_last_month_pct("IORE"),transported_last_month_pct("AORE"),transported_last_month_pct("PORE")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
-	 STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
+	 STORE_TEMP(transported_last_month_pct("COAL"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production0(),
+	 STORE_TEMP(transported_last_month_pct("OIL_"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production1(),
+	 STORE_TEMP(transported_last_month_pct("IORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production2(),
+	 STORE_TEMP(transported_last_month_pct("AORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production3(),
+	 STORE_TEMP(transported_last_month_pct("PORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),	 
+	 port_change_production4(),
 	])
 {
-	change_production;
+	return CB_RESULT_IND_PROD_NO_CHANGE;
 }
 
 switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_vehicle, 
-	[STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
-	 STORE_TEMP(max(transported_last_month_pct("COAL"),transported_last_month_pct("OIL_"),transported_last_month_pct("IORE"),transported_last_month_pct("RUBR")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
-	 STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
+	 STORE_TEMP(transported_last_month_pct("COAL"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production0(),
+	 STORE_TEMP(transported_last_month_pct("OIL_"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production1(),
+	 STORE_TEMP(transported_last_month_pct("IORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production2(),
+	 STORE_TEMP(transported_last_month_pct("RUBR"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production3(),
 	])
 {
-	change_production;
+	return CB_RESULT_IND_PROD_NO_CHANGE;
 }
 
 switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_aluminium_ext_vehicle, 
-	[STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
-	 STORE_TEMP(max(transported_last_month_pct("COAL"),transported_last_month_pct("OIL_"),transported_last_month_pct("IORE"),transported_last_month_pct("AORE"),transported_last_month_pct("RUBR")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
-	 STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
+	 STORE_TEMP(transported_last_month_pct("COAL"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production0(),
+	 STORE_TEMP(transported_last_month_pct("OIL_"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production1(),
+	 STORE_TEMP(transported_last_month_pct("IORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production2(),
+	 STORE_TEMP(transported_last_month_pct("AORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production3(),
+	 STORE_TEMP(transported_last_month_pct("RUBR"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),	 
+	 port_change_production4(),
 	])
 {
-	change_production;
+	return CB_RESULT_IND_PROD_NO_CHANGE;
 }
 
 switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_painting_industries_ext_vehicle, 
-	[STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
-	 STORE_TEMP(max(transported_last_month_pct("COAL"),transported_last_month_pct("OIL_"),transported_last_month_pct("IORE"),transported_last_month_pct("CORE"),transported_last_month_pct("RUBR")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
-	 STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
+	 STORE_TEMP(transported_last_month_pct("COAL"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production0(),
+	 STORE_TEMP(transported_last_month_pct("OIL_"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production1(),
+	 STORE_TEMP(transported_last_month_pct("IORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production2(),
+	 STORE_TEMP(transported_last_month_pct("CORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production3(),
+	 STORE_TEMP(transported_last_month_pct("RUBR"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),	 
+	 port_change_production4(),
 	])
 {
-	change_production;
+	return CB_RESULT_IND_PROD_NO_CHANGE;
 }
 
 switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_aluminium_ext_painting_industries_ext_vehicle, 
-	[STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
-	 STORE_TEMP(max(transported_last_month_pct("COAL"),transported_last_month_pct("OIL_"),transported_last_month_pct("IORE"),transported_last_month_pct("AORE"),transported_last_month_pct("CORE"),transported_last_month_pct("RUBR")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
-	 STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
+	 STORE_TEMP(transported_last_month_pct("COAL"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production0(),
+	 STORE_TEMP(transported_last_month_pct("OIL_"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production1(),
+	 STORE_TEMP(transported_last_month_pct("IORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production2(),
+	 STORE_TEMP(transported_last_month_pct("AORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production3(),
+	 STORE_TEMP(transported_last_month_pct("CORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),	 
+	 port_change_production4(),
+	 STORE_TEMP(transported_last_month_pct("RUBR"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),	 
+	 port_change_production5(),
 	])
 {
-	change_production;
+	return CB_RESULT_IND_PROD_NO_CHANGE;
 }
 
 switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_coke_sulphur_ext_vehicle, 
-	[STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
-	 STORE_TEMP(max(transported_last_month_pct("COAL"),transported_last_month_pct("OIL_"),transported_last_month_pct("IORE"),transported_last_month_pct("PORE"),transported_last_month_pct("RUBR")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
-	 STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
+	 STORE_TEMP(transported_last_month_pct("COAL"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production0(),
+	 STORE_TEMP(transported_last_month_pct("OIL_"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production1(),
+	 STORE_TEMP(transported_last_month_pct("IORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production2(),
+	 STORE_TEMP(transported_last_month_pct("PORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production3(),
+	 STORE_TEMP(transported_last_month_pct("RUBR"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),	 
+	 port_change_production4(),
 	])
 {
-	change_production;
+	return CB_RESULT_IND_PROD_NO_CHANGE;
 }
 
 switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_aluminium_ext_coke_sulphur_ext_vehicle, 
-	[STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
-	 STORE_TEMP(max(transported_last_month_pct("COAL"),transported_last_month_pct("OIL_"),transported_last_month_pct("IORE"),transported_last_month_pct("AORE"),transported_last_month_pct("PORE"),transported_last_month_pct("RUBR")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
-	 STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
+	 STORE_TEMP(transported_last_month_pct("COAL"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production0(),
+	 STORE_TEMP(transported_last_month_pct("OIL_"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production1(),
+	 STORE_TEMP(transported_last_month_pct("IORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production2(),
+	 STORE_TEMP(transported_last_month_pct("AORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production3(),
+	 STORE_TEMP(transported_last_month_pct("PORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),	 
+	 port_change_production4(),
+	 STORE_TEMP(transported_last_month_pct("RUBR"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),	 
+	 port_change_production5(),
 	])
 {
-	change_production;
+	return CB_RESULT_IND_PROD_NO_CHANGE;
 }
 
 switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_painting_industries_ext_coke_sulphur_ext_vehicle, 
-	[STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
-	 STORE_TEMP(max(transported_last_month_pct("COAL"),transported_last_month_pct("OIL_"),transported_last_month_pct("IORE"),transported_last_month_pct("PORE"),transported_last_month_pct("RUBR")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
-	 STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
+	 STORE_TEMP(transported_last_month_pct("COAL"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production0(),
+	 STORE_TEMP(transported_last_month_pct("OIL_"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production1(),
+	 STORE_TEMP(transported_last_month_pct("IORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production2(),
+	 STORE_TEMP(transported_last_month_pct("PORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production3(),
+	 STORE_TEMP(transported_last_month_pct("RUBR"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),	 
+	 port_change_production4(),
 	])
 {
-	change_production;
+	return CB_RESULT_IND_PROD_NO_CHANGE;
 }
 
 switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_aluminium_ext_painting_industries_ext_coke_sulphur_ext_vehicle, 
-	[STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
-	 STORE_TEMP(max(transported_last_month_pct("COAL"),transported_last_month_pct("OIL_"),transported_last_month_pct("IORE"),transported_last_month_pct("AORE"),transported_last_month_pct("PORE"),transported_last_month_pct("RUBR")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
-	 STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
+	 STORE_TEMP(transported_last_month_pct("COAL"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production0(),
+	 STORE_TEMP(transported_last_month_pct("OIL_"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production1(),
+	 STORE_TEMP(transported_last_month_pct("IORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production2(),
+	 STORE_TEMP(transported_last_month_pct("AORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 port_change_production3(),
+	 STORE_TEMP(transported_last_month_pct("PORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),	 
+	 port_change_production4(),
+	 STORE_TEMP(transported_last_month_pct("RUBR"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),	 
+	 port_change_production5(),
 	])
 {
-	change_production;
+	return CB_RESULT_IND_PROD_NO_CHANGE;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // build the industry window text here
 ////////////////////////////////////////////////////////////////////////////////
 switch(FEAT_INDUSTRIES, SELF, port_switch_extra_text, 
-	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
-	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 STORE_TEMP(production_level * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
-	 STORE_TEMP(production_level, TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
+	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
 	 STORE_TEMP(
-		LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL) < LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION) ? string(STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION) : string(STR_INDUSTRY_PREREQ_KEEP_PRODUCTION) | 
+		LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) < LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION) ? string(STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION) : string(STR_INDUSTRY_PREREQ_KEEP_PRODUCTION) | 
 		string(STR_EMPTY) << 16,
 		TEMP_REGISTER_EXTRA_TEXT_ARG0)
 	]) {

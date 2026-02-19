@@ -359,7 +359,8 @@ switch(FEAT_INDUSTRIES, SELF, clothing_plant_switch_location_check_industry_dist
 
 produce(clothing_plant_produce,
 	[TEXT: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);],
-	[GOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100) : 0;],
+	[GOOD: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	],
 	0 // do not run again
 )
 
@@ -367,7 +368,7 @@ switch(FEAT_INDUSTRIES, SELF, clothing_plant_switch_produce,
 	[STORE_TEMP(incoming_cargo_waiting("TEXT"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
      calculate_raw_material_usage(),
 	 calculate_total_production(),
-
+	 STORE_TEMP(percentage_of_production(90), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()	 
 	 ])
 	{
@@ -378,7 +379,8 @@ produce(clothing_plant_produce_ext_packaging_industries,
 	[TEXT: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
 	 MNSP: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
 	],
-	[GOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;],
+	[GOOD: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	],
 	0 // do not run again
 )
 
@@ -386,17 +388,13 @@ switch(FEAT_INDUSTRIES, SELF, clothing_plant_switch_produce_ext_packaging_indust
 	[STORE_TEMP(incoming_cargo_waiting("TEXT"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
      calculate_raw_material_usage(),
 	 calculate_total_production(),
-	 calculate_number_of_waiting_cargos(),
-
-	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
-	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
-	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (2-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
 	 
-	 STORE_TEMP(incoming_cargo_waiting("MNSP"),TEMP_REGISTER_INCOMING_CARGO_WAITING1),
-	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
-	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
-	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW1),
+	 STORE_TEMP(incoming_cargo_waiting("MNSP"),TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING0),
+	 limit_production_optional_cargo(1),
+	 update_permanent_storage_production_values(),
 	 
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING0), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW1),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()
 	 ])
 	{
@@ -409,9 +407,15 @@ switch(FEAT_INDUSTRIES, SELF, clothing_plant_switch_cargo_subtype, getbits(extra
 	return 0x3800 + string(STR_EMPTY);
 }
 
+switch(FEAT_INDUSTRIES, SELF, clothing_plant_check_production,
+	[this_month_production("GOOD") != 0 || last_month_production("GOOD") != 0 || this_month_transported("GOOD") != 0 || last_month_transported("GOOD") != 0 || incoming_cargo_waiting("TEXT") != 0
+	])
+{
+}
+
 switch(FEAT_INDUSTRIES, SELF, clothing_plant_switch_update_last_served_date,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("GOOD") != 0 || last_month_production("GOOD") != 0 || incoming_cargo_waiting("TEXT") != 0 || this_month_transported("GOOD") != 0 || last_month_transported("GOOD") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(clothing_plant_check_production(), PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
@@ -419,9 +423,7 @@ switch(FEAT_INDUSTRIES, SELF, clothing_plant_switch_update_last_served_date,
 
 switch(FEAT_INDUSTRIES, SELF, clothing_plant_switch_update_last_served_date_ext_packaging_industries,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("GOOD") != 0 || last_month_production("GOOD") != 0 || 
-		incoming_cargo_waiting("TEXT") != 0 || incoming_cargo_waiting("MNSP") != 0 ||
-		this_month_transported("GOOD") != 0 || last_month_transported("GOOD") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(clothing_plant_check_production() || incoming_cargo_waiting("MNSP") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
@@ -518,7 +520,7 @@ if (param_extension_textile_industries && param_extension_packaging_industries) 
 			monthly_prod_change:      clothing_plant_switch_update_last_served_date_ext_packaging_industries;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           clothing_plant_switch_location_check_industry_distance;
-			extra_text_fund:          return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO);
+			extra_text_fund:          industry_switch_extra_text_industry_optional_cargo;
 			cargo_subtype_display:    clothing_plant_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;

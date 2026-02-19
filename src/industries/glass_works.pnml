@@ -558,6 +558,12 @@ switch(FEAT_INDUSTRYTILES, PARENT, glass_works_switch_tile3_cargo_acceptance,
 ) {
 	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0);
 }
+switch(FEAT_INDUSTRYTILES, PARENT, glass_works_switch_tile4_cargo_acceptance, 
+	[STORE_TEMP(incoming_cargo_waiting("POTA") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0)
+	]
+) {
+	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0);
+}
 
 //////////////////////////////////////////////////////////////////////////////
 // industry tile and layout definition
@@ -633,52 +639,79 @@ item(FEAT_INDUSTRYTILES, glass_works_tile_3, INDUSTRY_TILE_ID_GLASS_WORKS_3) {
 		glass_works_switch_graphics;
 	}
 }
+item(FEAT_INDUSTRYTILES, glass_works_tile_4, INDUSTRY_TILE_ID_GLASS_WORKS_4) {
+	if (!param_extension_production_boost) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [];
+			animation_info: [ANIMATION_LOOPING, 71];
+			animation_speed: 2;
+			animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
+		}
+	}
+	if (param_extension_production_boost) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [[POTA,8]];
+			animation_info: [ANIMATION_LOOPING, 71];
+			animation_speed: 2;
+			animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
+		}
+	}
+	graphics {
+		tile_check: glass_works_switch_tile_location_check;
+		cargo_amount_accept: glass_works_switch_tile4_cargo_acceptance;
+		glass_works_switch_graphics;
+	}
+}
 
 tilelayout glass_works_tilelayout_1 {
 	0, 0: glass_works_tile_1;
 	0, 1: glass_works_tile_2;
 	0, 2: glass_works_tile_3;
-	0, 3: glass_works_tile_1;
-	1, 0: glass_works_tile_2;
-	1, 1: glass_works_tile_3;
-	1, 2: glass_works_tile_1;
-	1, 3: glass_works_tile_2;
-	2, 0: glass_works_tile_3;
-	2, 1: glass_works_tile_1;
-	2, 2: glass_works_tile_2;
-	2, 3: glass_works_tile_3;
+	0, 3: glass_works_tile_4;
+	1, 0: glass_works_tile_1;
+	1, 1: glass_works_tile_2;
+	1, 2: glass_works_tile_3;
+	1, 3: glass_works_tile_4;
+	2, 0: glass_works_tile_1;
+	2, 1: glass_works_tile_2;
+	2, 2: glass_works_tile_3;
+	2, 3: glass_works_tile_4;
 	3, 0: glass_works_tile_1;
 	3, 1: glass_works_tile_2;
 	3, 2: glass_works_tile_3;
-	3, 3: glass_works_tile_1;
+	3, 3: glass_works_tile_4;
 }
 tilelayout glass_works_tilelayout_2 {
 	0, 0: glass_works_tile_1;
 	0, 1: glass_works_tile_2;
 	1, 0: glass_works_tile_3;
-	1, 1: glass_works_tile_1;
-	1, 2: glass_works_tile_2;
-	1, 3: glass_works_tile_3;
-	2, 0: glass_works_tile_1;
-	2, 1: glass_works_tile_2;
-	2, 2: glass_works_tile_3;
-	2, 3: glass_works_tile_1;
-	3, 0: glass_works_tile_2;
-	3, 1: glass_works_tile_3;
+	1, 1: glass_works_tile_4;
+	1, 2: glass_works_tile_1;
+	1, 3: glass_works_tile_2;
+	2, 0: glass_works_tile_3;
+	2, 1: glass_works_tile_4;
+	2, 2: glass_works_tile_1;
+	2, 3: glass_works_tile_2;
+	3, 0: glass_works_tile_3;
+	3, 1: glass_works_tile_4;
 }
 tilelayout glass_works_tilelayout_3 {
 	0, 0: glass_works_tile_1;
 	0, 1: glass_works_tile_2;
 	0, 2: glass_works_tile_3;
-	0, 3: glass_works_tile_1;
-	1, 0: glass_works_tile_2;
-	1, 1: glass_works_tile_3;
-	1, 2: glass_works_tile_1;
-	1, 3: glass_works_tile_2;
-	2, 1: glass_works_tile_3;
-	2, 2: glass_works_tile_1;
-	3, 1: glass_works_tile_2;
-	3, 2: glass_works_tile_3;
+	0, 3: glass_works_tile_4;
+	1, 0: glass_works_tile_1;
+	1, 1: glass_works_tile_2;
+	1, 2: glass_works_tile_3;
+	1, 3: glass_works_tile_4;
+	2, 1: glass_works_tile_1;
+	2, 2: glass_works_tile_2;
+	3, 1: glass_works_tile_3;
+	3, 2: glass_works_tile_4;
 }
 
 switch(FEAT_INDUSTRIES, SELF, glass_works_switch_location_check_industry_distance,
@@ -690,7 +723,7 @@ switch(FEAT_INDUSTRIES, SELF, glass_works_switch_location_check_industry_distanc
 		(param_max_industries_on_map == 0 || param_max_industries_on_map > LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_INDUSTRIES)) &&
 		// distance to related producers
 		(industry_distance(INDUSTRY_ID_LIME_KILN) >= param_min_dist_related_industry) && 
-		//(industry_distance(INDUSTRY_ID_POTASH_MINE) >= param_min_dist_related_industry) && 
+		(industry_distance(INDUSTRY_ID_POTASH_MINE) >= param_min_dist_related_industry) && 
 		(industry_distance(INDUSTRY_ID_RECYCLING_DEPOT) >= param_min_dist_related_industry) && 
 		(industry_distance(INDUSTRY_ID_SANDPIT) >= param_min_dist_related_industry) && 
 		(industry_distance(INDUSTRY_ID_SODA_PLANT) >= param_min_dist_related_industry) && 
@@ -708,104 +741,225 @@ switch(FEAT_INDUSTRIES, SELF, glass_works_switch_location_check_industry_distanc
 }
 
 produce(glass_works_produce,
-	[QLME: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*30/100,1) : 0;
-	 SAND: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*70/100,1) : 0;
+	[QLME: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 SAND: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
 	 ],
-	[GLAS: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100,1) : 0;],
+	[GLAS: LOAD_TEMP(TEMP_REGISTER_PRODUCT_3);
+	],
 	0 // do not run again
 )
 
 switch(FEAT_INDUSTRIES, SELF, glass_works_switch_produce, 
 	[STORE_TEMP(min(incoming_cargo_waiting("QLME"),incoming_cargo_waiting("SAND")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
-	STORE_TEMP(min(incoming_cargo_waiting("QLME"),incoming_cargo_waiting("SAND")), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
 	 
 	 calculate_raw_material_usage(),
 	 calculate_total_production(),
-
+	 STORE_TEMP(percentage_of_production(30), TEMP_REGISTER_PRODUCT_1),
+	 STORE_TEMP(percentage_of_production(70), TEMP_REGISTER_PRODUCT_2),
+	 STORE_TEMP(percentage_of_production(90), TEMP_REGISTER_PRODUCT_3),
 	 store_debug_production_data()
 	]) {
 	glass_works_produce;
 }
 
 produce(glass_works_produce_ext_recycling,
-	[QLME: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*30/100,1) : 0;
-	 SAND: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*70/100,1) : 0;
+	[QLME: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 SAND: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
 	 RCYC: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
 	 ],
-	[GLAS: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100,1) : 0;],
+	[GLAS: LOAD_TEMP(TEMP_REGISTER_PRODUCT_3);
+	],
 	0 // do not run again
 )
 
 switch(FEAT_INDUSTRIES, SELF, glass_works_switch_produce_ext_recycling, 
 	[STORE_TEMP(min(incoming_cargo_waiting("QLME"),incoming_cargo_waiting("SAND")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
-	STORE_TEMP(min(incoming_cargo_waiting("QLME"),incoming_cargo_waiting("SAND")), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
 	 
 	 calculate_raw_material_usage(),
 	 calculate_total_production(),
 	 
-	 STORE_TEMP(incoming_cargo_waiting("RCYC"), TEMP_REGISTER_INCOMING_CARGO_WAITING2),
+	 STORE_TEMP(incoming_cargo_waiting("RCYC"), TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING2),
+	 limit_production_optional_cargo(1),
+	 update_permanent_storage_production_values(),
 	 
-	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
-	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
-	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING2), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW2),
-
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING2), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW2),
+	 STORE_TEMP(percentage_of_production(30), TEMP_REGISTER_PRODUCT_1),
+	 STORE_TEMP(percentage_of_production(70), TEMP_REGISTER_PRODUCT_2),
+	 STORE_TEMP(percentage_of_production(90), TEMP_REGISTER_PRODUCT_3),
 	 store_debug_production_data()
 	]) {
 	glass_works_produce_ext_recycling;
 }
 
-produce(glass_works_produce_ext_ammonia,
-	[QLME: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*20/100,1) : 0;
-	 SAND: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*70/100,1) : 0;
-	 SASH: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*30/100,1) : 0;
+produce(glass_works_produce_ext_recycling_ext_production_boost,
+	[QLME: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 SAND: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
+	 POTA: LOAD_TEMP(TEMP_REGISTER_PRODUCT_3);
+	 RCYC: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW3);
 	 ],
-	[GLAS: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100,1) : 0;],
+	[GLAS: LOAD_TEMP(TEMP_REGISTER_PRODUCT_4);
+	],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, glass_works_switch_produce_ext_recycling_ext_production_boost, 
+	[STORE_TEMP(min(incoming_cargo_waiting("QLME"),incoming_cargo_waiting("SAND"),incoming_cargo_waiting("POTA")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("RCYC"), TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING3),
+	 limit_production_optional_cargo(1),
+	 update_permanent_storage_production_values(),
+	 
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING3), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW3),
+	 STORE_TEMP(percentage_of_production(20), TEMP_REGISTER_PRODUCT_1),
+	 STORE_TEMP(percentage_of_production(70), TEMP_REGISTER_PRODUCT_2),
+	 STORE_TEMP(percentage_of_production(30), TEMP_REGISTER_PRODUCT_3),
+	 STORE_TEMP(percentage_of_production(90), TEMP_REGISTER_PRODUCT_4),
+	 store_debug_production_data()
+	]) {
+	glass_works_produce_ext_recycling_ext_production_boost;
+}
+
+produce(glass_works_produce_ext_ammonia,
+	[QLME: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 SAND: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
+	 SASH: LOAD_TEMP(TEMP_REGISTER_PRODUCT_3);
+	 ],
+	[GLAS: LOAD_TEMP(TEMP_REGISTER_PRODUCT_4);
+	],
 	0 // do not run again
 )
 
 switch(FEAT_INDUSTRIES, SELF, glass_works_switch_produce_ext_ammonia, 
 	[STORE_TEMP(min(incoming_cargo_waiting("QLME"),incoming_cargo_waiting("SAND"),incoming_cargo_waiting("SASH")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
-	STORE_TEMP(min(incoming_cargo_waiting("QLME"),incoming_cargo_waiting("SAND"),incoming_cargo_waiting("SASH")), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
-	STORE_TEMP(min(incoming_cargo_waiting("QLME"),incoming_cargo_waiting("SAND"),incoming_cargo_waiting("SASH")), TEMP_REGISTER_INCOMING_CARGO_WAITING2),
 	 
 	 calculate_raw_material_usage(),
 	 calculate_total_production(),
-
+	 STORE_TEMP(percentage_of_production(20), TEMP_REGISTER_PRODUCT_1),
+	 STORE_TEMP(percentage_of_production(70), TEMP_REGISTER_PRODUCT_2),
+	 STORE_TEMP(percentage_of_production(30), TEMP_REGISTER_PRODUCT_3),
+	 STORE_TEMP(percentage_of_production(90), TEMP_REGISTER_PRODUCT_4),
 	 store_debug_production_data()
 	]) {
 	glass_works_produce_ext_ammonia;
 }
 
+produce(glass_works_produce_ext_production_boost,
+	[QLME: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 SAND: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
+	 POTA: LOAD_TEMP(TEMP_REGISTER_PRODUCT_3);
+	 ],
+	[GLAS: LOAD_TEMP(TEMP_REGISTER_PRODUCT_4);
+	],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, glass_works_switch_produce_ext_production_boost, 
+	[STORE_TEMP(min(incoming_cargo_waiting("QLME"),incoming_cargo_waiting("SAND"),incoming_cargo_waiting("POTA")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 STORE_TEMP(percentage_of_production(20), TEMP_REGISTER_PRODUCT_1),
+	 STORE_TEMP(percentage_of_production(70), TEMP_REGISTER_PRODUCT_2),
+	 STORE_TEMP(percentage_of_production(30), TEMP_REGISTER_PRODUCT_3),
+	 STORE_TEMP(percentage_of_production(90), TEMP_REGISTER_PRODUCT_4),
+	 store_debug_production_data()
+	]) {
+	glass_works_produce_ext_production_boost;
+}
+
+produce(glass_works_produce_ext_ammonia_ext_production_boost,
+	[QLME: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 SAND: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
+	 SASH: LOAD_TEMP(TEMP_REGISTER_PRODUCT_3);
+	 POTA: LOAD_TEMP(TEMP_REGISTER_PRODUCT_3);
+	 ],
+	[GLAS: LOAD_TEMP(TEMP_REGISTER_PRODUCT_4);
+	],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, glass_works_switch_produce_ext_ammonia_ext_production_boost, 
+	[STORE_TEMP(min(incoming_cargo_waiting("QLME"),incoming_cargo_waiting("SAND"),incoming_cargo_waiting("SASH"),incoming_cargo_waiting("POTA")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 STORE_TEMP(percentage_of_production(20), TEMP_REGISTER_PRODUCT_1),
+	 STORE_TEMP(percentage_of_production(70), TEMP_REGISTER_PRODUCT_2),
+	 STORE_TEMP(percentage_of_production(30), TEMP_REGISTER_PRODUCT_3),
+	 STORE_TEMP(percentage_of_production(90), TEMP_REGISTER_PRODUCT_4),
+	 store_debug_production_data()
+	]) {
+	glass_works_produce_ext_ammonia_ext_production_boost;
+}
+
 produce(glass_works_produce_ext_ammonia_ext_recycling,
-	[QLME: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*20/100,1) : 0;
-	 SAND: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*70/100,1) : 0;
-	 SASH: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*30/100,1) : 0;
+	[QLME: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 SAND: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
+	 SASH: LOAD_TEMP(TEMP_REGISTER_PRODUCT_3);
 	 RCYC: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW3);
 	 ],
-	[GLAS: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100,1) : 0;],
+	[GLAS: LOAD_TEMP(TEMP_REGISTER_PRODUCT_4);
+	],
 	0 // do not run again
 )
 
 switch(FEAT_INDUSTRIES, SELF, glass_works_switch_produce_ext_ammonia_ext_recycling, 
 	[STORE_TEMP(min(incoming_cargo_waiting("QLME"),incoming_cargo_waiting("SAND"),incoming_cargo_waiting("SASH")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
-	 STORE_TEMP(min(incoming_cargo_waiting("QLME"),incoming_cargo_waiting("SAND"),incoming_cargo_waiting("SASH")), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
-	 STORE_TEMP(min(incoming_cargo_waiting("QLME"),incoming_cargo_waiting("SAND"),incoming_cargo_waiting("SASH")), TEMP_REGISTER_INCOMING_CARGO_WAITING2),
 	 
 	 calculate_raw_material_usage(),
 	 calculate_total_production(),
 	 
-	 STORE_TEMP(incoming_cargo_waiting("RCYC"), TEMP_REGISTER_INCOMING_CARGO_WAITING3),
+	 STORE_TEMP(incoming_cargo_waiting("RCYC"), TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING3),
+	 limit_production_optional_cargo(1),
+	 update_permanent_storage_production_values(),
 	 
-	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING3) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
-	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
-	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING3), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW3),
-
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING3), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW3),
+	 STORE_TEMP(percentage_of_production(20), TEMP_REGISTER_PRODUCT_1),
+	 STORE_TEMP(percentage_of_production(70), TEMP_REGISTER_PRODUCT_2),
+	 STORE_TEMP(percentage_of_production(30), TEMP_REGISTER_PRODUCT_3),
+	 STORE_TEMP(percentage_of_production(90), TEMP_REGISTER_PRODUCT_4),
 	 store_debug_production_data()
 	]) {
 	glass_works_produce_ext_ammonia_ext_recycling;
 }
 
+produce(glass_works_produce_ext_ammonia_ext_recycling_ext_production_boost,
+	[QLME: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 SAND: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
+	 SASH: LOAD_TEMP(TEMP_REGISTER_PRODUCT_3);
+	 POTA: LOAD_TEMP(TEMP_REGISTER_PRODUCT_3);
+	 RCYC: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW4);
+	 ],
+	[GLAS: LOAD_TEMP(TEMP_REGISTER_PRODUCT_4);
+	],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, glass_works_switch_produce_ext_ammonia_ext_recycling_ext_production_boost, 
+	[STORE_TEMP(min(incoming_cargo_waiting("QLME"),incoming_cargo_waiting("SAND"),incoming_cargo_waiting("SASH"),incoming_cargo_waiting("POTA")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("RCYC"), TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING4),
+	 limit_production_optional_cargo(1),
+	 update_permanent_storage_production_values(),
+	 
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING4), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW4),
+	 STORE_TEMP(percentage_of_production(20), TEMP_REGISTER_PRODUCT_1),
+	 STORE_TEMP(percentage_of_production(70), TEMP_REGISTER_PRODUCT_2),
+	 STORE_TEMP(percentage_of_production(30), TEMP_REGISTER_PRODUCT_3),
+	 STORE_TEMP(percentage_of_production(90), TEMP_REGISTER_PRODUCT_4),
+	 store_debug_production_data()
+	]) {
+	glass_works_produce_ext_ammonia_ext_recycling_ext_production_boost;
+}
+
 switch(FEAT_INDUSTRIES, SELF, glass_works_switch_cargo_subtype, getbits(extra_callback_info2, 16, 8)) {
+	POTA: switch_cargo_subtype;
 	QLME: switch_cargo_subtype;
 	SAND: switch_cargo_subtype;
 	SASH: switch_cargo_subtype;
@@ -813,11 +967,16 @@ switch(FEAT_INDUSTRIES, SELF, glass_works_switch_cargo_subtype, getbits(extra_ca
 	return 0x3800 + string(STR_EMPTY);
 }
 
+switch(FEAT_INDUSTRIES, SELF, glass_works_check_production,
+	[this_month_production("GLAS") != 0 || last_month_production("GLAS") != 0 || this_month_transported("GLAS") != 0 || last_month_transported("GLAS") != 0 ||
+	incoming_cargo_waiting("QLME") != 0 || incoming_cargo_waiting("SAND") != 0
+	])
+{
+}
+
 switch(FEAT_INDUSTRIES, SELF, glass_works_switch_update_last_served_date,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("GLAS") != 0 || last_month_production("GLAS") != 0 || 
-		incoming_cargo_waiting("QLME") != 0 || incoming_cargo_waiting("SAND") != 0 ||
-		this_month_transported("GLAS") != 0 || last_month_transported("GLAS") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(glass_works_check_production(), PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
@@ -825,9 +984,23 @@ switch(FEAT_INDUSTRIES, SELF, glass_works_switch_update_last_served_date,
 
 switch(FEAT_INDUSTRIES, SELF, glass_works_switch_update_last_served_date_ext_ammonia,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("GLAS") != 0 || last_month_production("GLAS") != 0 || 
-		incoming_cargo_waiting("QLME") != 0 || incoming_cargo_waiting("SAND") != 0 || incoming_cargo_waiting("SASH") != 0 ||
-		this_month_transported("GLAS") != 0 || last_month_transported("GLAS") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(glass_works_check_production() || incoming_cargo_waiting("SASH") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+switch(FEAT_INDUSTRIES, SELF, glass_works_switch_update_last_served_date_ext_production_boost,
+	[update_last_served_date(),
+	 STORE_PERM(glass_works_check_production() || incoming_cargo_waiting("POTA") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+switch(FEAT_INDUSTRIES, SELF, glass_works_switch_update_last_served_date_ext_ammonia_ext_production_boost,
+	[update_last_served_date(),
+	 STORE_PERM(glass_works_check_production() || incoming_cargo_waiting("SASH") != 0 || incoming_cargo_waiting("POTA") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
@@ -835,9 +1008,15 @@ switch(FEAT_INDUSTRIES, SELF, glass_works_switch_update_last_served_date_ext_amm
 
 switch(FEAT_INDUSTRIES, SELF, glass_works_switch_update_last_served_date_ext_recycling,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("GLAS") != 0 || last_month_production("GLAS") != 0 || 
-		incoming_cargo_waiting("QLME") != 0 || incoming_cargo_waiting("SAND") != 0 || incoming_cargo_waiting("RCYC") != 0 ||
-		this_month_transported("GLAS") != 0 || last_month_transported("GLAS") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(glass_works_check_production() || incoming_cargo_waiting("RCYC") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+switch(FEAT_INDUSTRIES, SELF, glass_works_switch_update_last_served_date_ext_recycling_ext_production_boost,
+	[update_last_served_date(),
+	 STORE_PERM(glass_works_check_production() || incoming_cargo_waiting("RCYC") != 0 || incoming_cargo_waiting("POTA") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
@@ -845,9 +1024,15 @@ switch(FEAT_INDUSTRIES, SELF, glass_works_switch_update_last_served_date_ext_rec
 
 switch(FEAT_INDUSTRIES, SELF, glass_works_switch_update_last_served_date_ext_ammonia_ext_recycling,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("GLAS") != 0 || last_month_production("GLAS") != 0 || 
-		incoming_cargo_waiting("QLME") != 0 || incoming_cargo_waiting("SAND") != 0 || incoming_cargo_waiting("SASH") != 0 || incoming_cargo_waiting("RCYC") != 0 ||
-		this_month_transported("GLAS") != 0 || last_month_transported("GLAS") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(glass_works_check_production() || incoming_cargo_waiting("SASH") != 0 || incoming_cargo_waiting("RCYC") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+switch(FEAT_INDUSTRIES, SELF, glass_works_switch_update_last_served_date_ext_ammonia_ext_recycling_ext_production_boost,
+	[update_last_served_date(),
+	 STORE_PERM(glass_works_check_production() || incoming_cargo_waiting("SASH") != 0 || incoming_cargo_waiting("RCYC") != 0 || incoming_cargo_waiting("POTA") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
@@ -882,6 +1067,22 @@ switch(FEAT_INDUSTRIES, SELF, glass_works_switch_stockpile_check_ext_ammonia, pa
 	glass_works_produce_cap_stockpile_ext_ammonia;
 }
 
+produce(glass_works_produce_cap_stockpile_ext_ammonia_ext_production_boost,
+	[SAND: incoming_cargo_waiting("SAND") > 60000 ? incoming_cargo_waiting("SAND") - 60000 : 0;
+	 QLME: incoming_cargo_waiting("QLME") > 60000 ? incoming_cargo_waiting("QLME") - 60000 : 0;
+	 SASH: incoming_cargo_waiting("SASH") > 60000 ? incoming_cargo_waiting("SASH") - 60000 : 0;
+	 POTA: incoming_cargo_waiting("POTA") > 60000 ? incoming_cargo_waiting("POTA") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, glass_works_switch_stockpile_check_ext_ammonia_ext_production_boost, param_stockpile_cap)
+{
+	1: empty_produce;
+	glass_works_produce_cap_stockpile_ext_ammonia_ext_production_boost;
+}
+
 produce(glass_works_produce_cap_stockpile_ext_recycling,
 	[SAND: incoming_cargo_waiting("SAND") > 60000 ? incoming_cargo_waiting("SAND") - 60000 : 0;
 	 QLME: incoming_cargo_waiting("QLME") > 60000 ? incoming_cargo_waiting("QLME") - 60000 : 0;
@@ -895,6 +1096,22 @@ switch(FEAT_INDUSTRIES, SELF, glass_works_switch_stockpile_check_ext_recycling, 
 {
 	1: empty_produce;
 	glass_works_produce_cap_stockpile_ext_recycling;
+}
+
+produce(glass_works_produce_cap_stockpile_ext_recycling_ext_production_boost,
+	[SAND: incoming_cargo_waiting("SAND") > 60000 ? incoming_cargo_waiting("SAND") - 60000 : 0;
+	 QLME: incoming_cargo_waiting("QLME") > 60000 ? incoming_cargo_waiting("QLME") - 60000 : 0;
+	 RCYC: incoming_cargo_waiting("RCYC") > 60000 ? incoming_cargo_waiting("RCYC") - 60000 : 0;
+	 POTA: incoming_cargo_waiting("POTA") > 60000 ? incoming_cargo_waiting("POTA") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, glass_works_switch_stockpile_check_ext_recycling_ext_production_boost, param_stockpile_cap)
+{
+	1: empty_produce;
+	glass_works_produce_cap_stockpile_ext_recycling_ext_production_boost;
 }
 
 produce(glass_works_produce_cap_stockpile_ext_ammonia_ext_recycling,
@@ -913,7 +1130,39 @@ switch(FEAT_INDUSTRIES, SELF, glass_works_switch_stockpile_check_ext_ammonia_ext
 	glass_works_produce_cap_stockpile_ext_ammonia_ext_recycling;
 }
 
-if (param_extension_glass && !param_extension_ammonia && !param_extension_recycling) {
+produce(glass_works_produce_cap_stockpile_ext_ammonia_ext_recycling_ext_production_boost,
+	[SAND: incoming_cargo_waiting("SAND") > 60000 ? incoming_cargo_waiting("SAND") - 60000 : 0;
+	 QLME: incoming_cargo_waiting("QLME") > 60000 ? incoming_cargo_waiting("QLME") - 60000 : 0;
+	 SASH: incoming_cargo_waiting("SASH") > 60000 ? incoming_cargo_waiting("SASH") - 60000 : 0;
+	 POTA: incoming_cargo_waiting("POTA") > 60000 ? incoming_cargo_waiting("POTA") - 60000 : 0;
+	 RCYC: incoming_cargo_waiting("RCYC") > 60000 ? incoming_cargo_waiting("RCYC") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, glass_works_switch_stockpile_check_ext_ammonia_ext_recycling_ext_production_boost, param_stockpile_cap)
+{
+	1: empty_produce;
+	glass_works_produce_cap_stockpile_ext_ammonia_ext_recycling_ext_production_boost;
+}
+
+produce(glass_works_produce_cap_stockpile_ext_production_boost,
+	[SAND: incoming_cargo_waiting("SAND") > 60000 ? incoming_cargo_waiting("SAND") - 60000 : 0;
+	 QLME: incoming_cargo_waiting("QLME") > 60000 ? incoming_cargo_waiting("QLME") - 60000 : 0;
+	 POTA: incoming_cargo_waiting("POTA") > 60000 ? incoming_cargo_waiting("POTA") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, glass_works_switch_stockpile_check_ext_production_boost, param_stockpile_cap)
+{
+	1: empty_produce;
+	glass_works_produce_cap_stockpile_ext_production_boost;
+}
+
+if (param_extension_glass && !param_extension_ammonia && !param_extension_recycling && !param_extension_production_boost) {
 	item(FEAT_INDUSTRIES, glass_works, INDUSTRY_ID_GLASS_WORKS) {
 		property {
 			substitute: 0;
@@ -949,7 +1198,7 @@ if (param_extension_glass && !param_extension_ammonia && !param_extension_recycl
 	}
 }
 
-if (param_extension_glass && param_extension_ammonia && !param_extension_recycling) {
+if (param_extension_glass && param_extension_ammonia && !param_extension_recycling && !param_extension_production_boost) {
 	item(FEAT_INDUSTRIES, glass_works, INDUSTRY_ID_GLASS_WORKS) {
 		property {
 			substitute: 0;
@@ -986,7 +1235,7 @@ if (param_extension_glass && param_extension_ammonia && !param_extension_recycli
 }
 
 
-if (param_extension_glass && !param_extension_ammonia && param_extension_recycling) {
+if (param_extension_glass && !param_extension_ammonia && param_extension_recycling && !param_extension_production_boost) {
 	item(FEAT_INDUSTRIES, glass_works, INDUSTRY_ID_GLASS_WORKS) {
 		property {
 			substitute: 0;
@@ -1015,14 +1264,14 @@ if (param_extension_glass && !param_extension_ammonia && param_extension_recycli
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           glass_works_switch_location_check_industry_distance;
 			cargo_subtype_display:    glass_works_switch_cargo_subtype;
-			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO);
+			extra_text_industry:      industry_switch_extra_text_industry_optional_cargo;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }
 
-if (param_extension_glass && param_extension_ammonia && param_extension_recycling) {
+if (param_extension_glass && param_extension_ammonia && param_extension_recycling && !param_extension_production_boost) {
 	item(FEAT_INDUSTRIES, glass_works, INDUSTRY_ID_GLASS_WORKS) {
 		property {
 			substitute: 0;
@@ -1051,7 +1300,152 @@ if (param_extension_glass && param_extension_ammonia && param_extension_recyclin
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           glass_works_switch_location_check_industry_distance;
 			cargo_subtype_display:    glass_works_switch_cargo_subtype;
-			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO);
+			extra_text_industry:      industry_switch_extra_text_industry_optional_cargo;
+			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
+		}
+	}
+}
+
+if (param_extension_glass && !param_extension_ammonia && !param_extension_recycling && param_extension_production_boost) {
+	item(FEAT_INDUSTRIES, glass_works, INDUSTRY_ID_GLASS_WORKS) {
+		property {
+			substitute: 0;
+			map_colour: 138;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [glass_works_tilelayout_1, glass_works_tilelayout_2, glass_works_tilelayout_3];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_GLASS_WORKS);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 190;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("SAND"),accept_cargo("QLME"),accept_cargo("POTA"),produce_cargo("GLAS",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_GLASS_WORKS));
+		}
+			
+		graphics {
+			construction_probability: get_construction_probability;
+			produce_cargo_arrival:    glass_works_switch_stockpile_check_ext_production_boost; 
+			produce_256_ticks:        glass_works_switch_produce_ext_production_boost;
+			monthly_prod_change:      glass_works_switch_update_last_served_date_ext_production_boost;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           glass_works_switch_location_check_industry_distance;
+			cargo_subtype_display:    glass_works_switch_cargo_subtype;
+			extra_text_fund:          return string(STR_EMPTY);
+			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
+		}
+	}
+}
+
+if (param_extension_glass && param_extension_ammonia && !param_extension_recycling && param_extension_production_boost) {
+	item(FEAT_INDUSTRIES, glass_works, INDUSTRY_ID_GLASS_WORKS) {
+		property {
+			substitute: 0;
+			map_colour: 138;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [glass_works_tilelayout_1, glass_works_tilelayout_2, glass_works_tilelayout_3];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_GLASS_WORKS);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 190;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("SAND"),accept_cargo("QLME"),accept_cargo("SASH"),accept_cargo("POTA"),produce_cargo("GLAS",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_GLASS_WORKS));
+		}
+			
+		graphics {
+			construction_probability: get_construction_probability;
+			produce_cargo_arrival:    glass_works_switch_stockpile_check_ext_ammonia_ext_production_boost; 
+			produce_256_ticks:        glass_works_switch_produce_ext_ammonia_ext_production_boost;
+			monthly_prod_change:      glass_works_switch_update_last_served_date_ext_ammonia_ext_production_boost;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           glass_works_switch_location_check_industry_distance;
+			cargo_subtype_display:    glass_works_switch_cargo_subtype;
+			extra_text_fund:          return string(STR_EMPTY);
+			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
+		}
+	}
+}
+
+
+if (param_extension_glass && !param_extension_ammonia && param_extension_recycling && param_extension_production_boost) {
+	item(FEAT_INDUSTRIES, glass_works, INDUSTRY_ID_GLASS_WORKS) {
+		property {
+			substitute: 0;
+			map_colour: 138;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [glass_works_tilelayout_1, glass_works_tilelayout_2, glass_works_tilelayout_3];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_GLASS_WORKS);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 190;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("SAND"),accept_cargo("QLME"),accept_cargo("RCYC"),accept_cargo("POTA"),produce_cargo("GLAS",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_GLASS_WORKS));
+		}
+			
+		graphics {
+			construction_probability: get_construction_probability;
+			produce_cargo_arrival:    glass_works_switch_stockpile_check_ext_recycling_ext_production_boost; 
+			produce_256_ticks:        glass_works_switch_produce_ext_recycling_ext_production_boost;
+			monthly_prod_change:      glass_works_switch_update_last_served_date_ext_recycling_ext_production_boost;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           glass_works_switch_location_check_industry_distance;
+			cargo_subtype_display:    glass_works_switch_cargo_subtype;
+			extra_text_industry:      industry_switch_extra_text_industry_optional_cargo;
+			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
+		}
+	}
+}
+
+if (param_extension_glass && param_extension_ammonia && param_extension_recycling && param_extension_production_boost) {
+	item(FEAT_INDUSTRIES, glass_works, INDUSTRY_ID_GLASS_WORKS) {
+		property {
+			substitute: 0;
+			map_colour: 138;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [glass_works_tilelayout_1, glass_works_tilelayout_2, glass_works_tilelayout_3];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_GLASS_WORKS);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 190;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("SAND"),accept_cargo("QLME"),accept_cargo("SASH"),accept_cargo("RCYC"),accept_cargo("POTA"),produce_cargo("GLAS",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_GLASS_WORKS));
+		}
+			
+		graphics {
+			construction_probability: get_construction_probability;
+			produce_cargo_arrival:    glass_works_switch_stockpile_check_ext_ammonia_ext_recycling_ext_production_boost; 
+			produce_256_ticks:        glass_works_switch_produce_ext_ammonia_ext_recycling_ext_production_boost;
+			monthly_prod_change:      glass_works_switch_update_last_served_date_ext_ammonia_ext_recycling_ext_production_boost;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           glass_works_switch_location_check_industry_distance;
+			cargo_subtype_display:    glass_works_switch_cargo_subtype;
+			extra_text_industry:      industry_switch_extra_text_industry_optional_cargo;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
 		}

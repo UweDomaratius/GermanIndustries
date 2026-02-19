@@ -187,7 +187,7 @@ switch(FEAT_INDUSTRIES, SELF, printing_works_switch_location_check_industry_dist
 
 produce(printing_works_produce,
 	[PAPR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);],
-	[GOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100) : 0;],
+	[GOOD: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);],
 	0 // do not run again
 )
 
@@ -195,16 +195,17 @@ switch(FEAT_INDUSTRIES, SELF, printing_works_switch_produce,
 	[STORE_TEMP(incoming_cargo_waiting("PAPR"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
      calculate_raw_material_usage(),
 	 calculate_total_production(),
+	 STORE_TEMP(percentage_of_production(90), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()
 	]) {
 	printing_works_produce;
 }
 
 produce(printing_works_produce_ext_packaging,
-	[PAPR: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)) : 0;
-	 MNSP: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*25/100) : 0;
+	[PAPR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT)) : 0;
+	 MNSP: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
 	],
-	[GOOD: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100) : 0;],
+	[GOOD: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);],
 	0 // do not run again
 )
 
@@ -212,6 +213,8 @@ switch(FEAT_INDUSTRIES, SELF, printing_works_switch_produce_ext_packaging,
 	[STORE_TEMP(min(incoming_cargo_waiting("PAPR"),incoming_cargo_waiting("MNSP")),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
      calculate_raw_material_usage(),
 	 calculate_total_production(),
+	 STORE_TEMP(percentage_of_production(25), TEMP_REGISTER_PRODUCT_1),
+	 STORE_TEMP(percentage_of_production(90), TEMP_REGISTER_PRODUCT_2),
 	 store_debug_production_data()
 	]) {
 	printing_works_produce_ext_packaging;
@@ -237,11 +240,16 @@ switch(FEAT_INDUSTRIES, SELF, printing_works_switch_check_availability,
 	get_construction_probability;
 }
 
+switch(FEAT_INDUSTRIES, SELF, printing_works_check_production,
+	[this_month_production("GOOD") != 0 || last_month_production("GOOD") != 0 || this_month_transported("GOOD") != 0 || last_month_transported("GOOD") != 0 ||
+		incoming_cargo_waiting("PAPR") != 0		
+	])
+{
+}
+
 switch(FEAT_INDUSTRIES, SELF, printing_works_switch_update_last_served_date,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("GOOD") != 0 || last_month_production("GOOD") != 0 || 
-		incoming_cargo_waiting("PAPR") != 0 || 
-		this_month_transported("GOOD") != 0 || last_month_transported("GOOD") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(printing_works_check_production(), PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
@@ -249,9 +257,7 @@ switch(FEAT_INDUSTRIES, SELF, printing_works_switch_update_last_served_date,
 
 switch(FEAT_INDUSTRIES, SELF, printing_works_switch_update_last_served_date_ext_packaging,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("GOOD") != 0 || last_month_production("GOOD") != 0 || 
-		incoming_cargo_waiting("PAPR") != 0 || incoming_cargo_waiting("MNSP") != 0 ||
-		this_month_transported("GOOD") != 0 || last_month_transported("GOOD") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(printing_works_check_production() || incoming_cargo_waiting("MNSP") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();

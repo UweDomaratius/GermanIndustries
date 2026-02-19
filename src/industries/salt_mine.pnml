@@ -405,49 +405,94 @@ switch (FEAT_INDUSTRYTILES, SELF, salt_mine_switch_tile_location_check,
 	1: salt_mine_switch_tile_location_check2;
 	return CB_RESULT_LOCATION_DISALLOW;
 }
+
+switch(FEAT_INDUSTRYTILES, PARENT, salt_mine_switch_tile_cargo_acceptance, 
+	[STORE_TEMP(incoming_cargo_waiting("BOOM") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0)
+	]
+)
+{
+	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0);
+}
 	
 //////////////////////////////////////////////////////////////////////////////
 // industry tile and layout definition
 //////////////////////////////////////////////////////////////////////////////
 item(FEAT_INDUSTRYTILES, salt_mine_tile_animated_headgear, INDUSTRY_TILE_ID_SALT_MINE_1) {
-	property {
-		substitute:         0;
-		land_shape_flags:   0;
-		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
-		animation_info: [ANIMATION_LOOPING, 81];
-        animation_speed: 1;
-        animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_TILE_LOOP);
+	if (!param_extension_production_boost) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [];
+			animation_info: [ANIMATION_LOOPING, 81];
+			animation_speed: 1;
+			animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_TILE_LOOP);
+		}
+	}
+	if (param_extension_production_boost) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [[BOOM,8]];
+			animation_info: [ANIMATION_LOOPING, 81];
+			animation_speed: 1;
+			animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_TILE_LOOP);
+		}
 	}
 	graphics {
 		tile_check: salt_mine_switch_tile_location_check;
+		cargo_amount_accept: salt_mine_switch_tile_cargo_acceptance;
 		salt_mine_switch_graphics;
 	}
 }
 
 item(FEAT_INDUSTRYTILES, salt_mine_tile_animated_smoke, INDUSTRY_TILE_ID_SALT_MINE_2) {
-	property {
-		substitute:         0;
-		land_shape_flags:   0;
-		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
-		animation_info: [ANIMATION_LOOPING, 71];
-        animation_speed: 2;
-		animation_triggers: bitmask();
+	if (!param_extension_production_boost) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [];
+			animation_info: [ANIMATION_LOOPING, 71];
+			animation_speed: 2;
+			animation_triggers: bitmask();
+		}
+	}
+	if (param_extension_production_boost) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [[BOOM,8]];
+			animation_info: [ANIMATION_LOOPING, 71];
+			animation_speed: 2;
+			animation_triggers: bitmask();
+		}
 	}
 	graphics {
 		tile_check: salt_mine_switch_tile_location_check;
+		cargo_amount_accept: salt_mine_switch_tile_cargo_acceptance;
 		salt_mine_switch_graphics;
 	}
 }
 
 item(FEAT_INDUSTRYTILES, salt_mine_tile_non_animated, INDUSTRY_TILE_ID_SALT_MINE_3) {
-	property {
-		substitute:         0;
-		land_shape_flags:   0;
-		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
-		animation_triggers: bitmask();
+	if (!param_extension_production_boost) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [];
+			animation_triggers: bitmask();
+		}
+	}
+	if (param_extension_production_boost) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [[BOOM,8]];
+			animation_triggers: bitmask();
+		}
 	}
 	graphics {
 		tile_check: salt_mine_switch_tile_location_check;
+		cargo_amount_accept: salt_mine_switch_tile_cargo_acceptance;
 		salt_mine_switch_graphics;
 	}
 }
@@ -529,7 +574,7 @@ switch(FEAT_INDUSTRIES, SELF, salt_mine_switch_location_check_industry_distance,
 		(param_max_industries_per_type_on_map == 0 || param_max_industries_per_type_on_map > industry_count(INDUSTRY_ID_SALT_MINE)) &&
 		(param_max_industries_on_map == 0 || param_max_industries_on_map > LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_INDUSTRIES)) &&
 		// distance to related producers
-		//(industry_distance(INDUSTRY_ID_EXPLOSIVES_FACTORY) >= param_min_dist_related_industry) && 
+		(industry_distance(INDUSTRY_ID_EXPLOSIVES_FACTORY) >= param_min_dist_related_industry) && 
 		// distance to related consumers
 		(industry_distance(INDUSTRY_ID_CHLOR_ALKALI_PLANT) >= param_min_dist_related_industry) &&
 		(industry_distance(INDUSTRY_ID_FOOD_PROCESSOR) >= param_min_dist_related_industry) && 
@@ -555,9 +600,8 @@ switch(FEAT_INDUSTRIES, SELF, salt_mine_func_calc_max_prod,
 
 // if nothing has been transported at all, do not change production (industry might just not be serviced)
 switch(FEAT_INDUSTRIES, SELF, salt_mine_switch_prod_change, 
-	[STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT), TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
-	 STORE_TEMP(transported_last_month_pct("SALT"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
-	 STORE_TEMP(salt_mine_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
+	[STORE_TEMP(transported_last_month_pct("SALT"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 STORE_TEMP(salt_mine_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
 	 LOAD_PERM(PERM_REGISTER_RESOURCES) > 0])
 {
 	1: change_production; // use default rules to adapt production
@@ -567,7 +611,7 @@ switch(FEAT_INDUSTRIES, SELF, salt_mine_switch_prod_change,
 // randomize production at build time based on random bits: 96t min, 152t max
 switch(FEAT_INDUSTRIES, SELF, salt_mine_switch_prod_change_build,
 	[initialize_extractive_resources(),
-	STORE_TEMP(salt_mine_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)	
+	STORE_TEMP(salt_mine_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION)	
 	])
 {
 	randomize_initial_production;
@@ -583,26 +627,44 @@ produce(salt_mine_produce,
 // calculate how much to produce, based on remaining reserves, current production level etc.
 ////////////////////////////////////////////////////////////////////////////////
 switch(FEAT_INDUSTRIES, SELF, salt_mine_switch_produce,
-	[init_primary_production()]) {
+	[init_primary_production(),
+	 update_permanent_storage_production_values(),
+	 reduce_primary_resources()
+	])
+{
 	salt_mine_produce;
+}
+
+produce(salt_mine_produce_ext_production_boost,
+	[BOOM: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);],
+	[SALT: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);],
+	0 // do not run again
+)
+
+////////////////////////////////////////////////////////////////////////////////
+// calculate how much to produce, based on remaining reserves, current production level etc.
+////////////////////////////////////////////////////////////////////////////////
+switch(FEAT_INDUSTRIES, SELF, salt_mine_switch_produce_ext_production_boost,
+	[init_primary_production(),
+	 STORE_TEMP(incoming_cargo_waiting("BOOM"), TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING0),
+	 
+	 limit_production_optional_cargo(1),
+
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING0), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 10), TEMP_REGISTER_PRODUCTION_RAW0),
+	 
+	 update_permanent_storage_production_values(),
+	 reduce_primary_resources()
+	]) {
+	salt_mine_produce_ext_production_boost;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // build the industry window text here
 ////////////////////////////////////////////////////////////////////////////////
 switch(FEAT_INDUSTRIES, SELF, salt_mine_switch_extra_text, 
-	[STORE_TEMP(salt_mine_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
-	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT), TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
-	 STORE_TEMP(
-		LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL) < LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION) ? string(STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION) : string(STR_INDUSTRY_PREREQ_KEEP_PRODUCTION) | 
-		string(STR_EMPTY) << 16,
-		TEMP_REGISTER_EXTRA_TEXT_ARG0),
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_RESOURCES) / 1000,TEMP_REGISTER_EXTRA_TEXT_ARG1),
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_RESOURCES) / (LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT)*8*12),TEMP_REGISTER_EXTRA_TEXT_ARG2)
-	]) {
-	return string(STR_EXTRACTIVE_INDUSTRY_TEXT);
+	[STORE_TEMP(salt_mine_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION)])
+{
+	 create_extractive_industry_text();
 }
 
 switch(FEAT_INDUSTRIES, SELF, salt_mine_switch_extra_text_fund, 
@@ -613,16 +675,8 @@ switch(FEAT_INDUSTRIES, SELF, salt_mine_switch_extra_text_fund,
 }
 
 switch(FEAT_INDUSTRIES, SELF, salt_mine_switch_random_prod_change, 
-	[STORE_TEMP(param_primary_resource_factor == 0 ? 5 : param_primary_resource_factor, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)*250000 + getbits(extra_callback_info2, 8, 3)*LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE)*250000,TEMP_REGISTER_RESOURCES),
-	 STORE_TEMP((getbits(extra_callback_info2,0,8) < 13) && // 5% of 255
-	(last_month_transported("SALT") > 0) && (LOAD_TEMP(TEMP_REGISTER_RESOURCES) > LOAD_PERM(PERM_REGISTER_RESOURCES)),TEMP_REGISTER_NEW_RESOURCES),
-	LOAD_TEMP(TEMP_REGISTER_NEW_RESOURCES) ? STORE_PERM(LOAD_TEMP(TEMP_REGISTER_RESOURCES), PERM_REGISTER_RESOURCES) : STORE_PERM(LOAD_PERM(PERM_REGISTER_RESOURCES), PERM_REGISTER_RESOURCES),
-	STORE_TEMP(string(STR_NEWS_INDUSTRY_PRODUCTION_NEW_RESOURCES_FOUND), 0x100),
-	LOAD_TEMP(TEMP_REGISTER_NEW_RESOURCES)
-	])
-{
-	return bitmask(8);
+	[STORE_TEMP(last_month_transported("SALT"),TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0)]) {
+	extractive_industry_switch_random_prod_change;
 }
 
 // year < 1800: no creation, 1800 <= year: certain probability
@@ -631,7 +685,25 @@ switch(FEAT_INDUSTRIES, SELF, salt_mine_switch_check_availability, current_year)
 	get_construction_probability;
 }
 
-if (param_extension_basic_inorganic_chemistry) {
+switch(FEAT_INDUSTRIES, SELF, salt_mine_switch_cargo_subtype, getbits(extra_callback_info2, 16, 8)) {
+	BOOM: switch_cargo_subtype_white;
+	return 0x3800 + string(STR_EMPTY);
+}
+
+produce(salt_mine_produce_cap_stockpile,
+	[BOOM: incoming_cargo_waiting("BOOM") > 60000 ? incoming_cargo_waiting("BOOM") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, salt_mine_switch_stockpile_check, param_stockpile_cap)
+{
+	1: empty_produce;
+	salt_mine_produce_cap_stockpile;
+}
+
+if (param_extension_basic_inorganic_chemistry && !param_extension_production_boost) {
 	item(FEAT_INDUSTRIES, salt_mine, INDUSTRY_ID_SALT_MINE) {
 		property {
 			substitute: 0;
@@ -663,6 +735,44 @@ if (param_extension_basic_inorganic_chemistry) {
 			location_check:           salt_mine_switch_location_check_industry_distance;
 			extra_text_fund:          salt_mine_switch_extra_text_fund;
 			extra_text_industry:      salt_mine_switch_extra_text;
+		}
+	}
+}
+
+if (param_extension_basic_inorganic_chemistry && param_extension_production_boost) {
+	item(FEAT_INDUSTRIES, salt_mine, INDUSTRY_ID_SALT_MINE) {
+		property {
+			substitute: 0;
+			map_colour: 135;
+			life_type: IND_LIFE_TYPE_EXTRACTIVE;
+			min_cargo_distr: 1;
+			layouts: [salt_mine_industry_layout_1_tilelayout,salt_mine_industry_layout_2_tilelayout,salt_mine_industry_layout_3_tilelayout,salt_mine_industry_layout_4_tilelayout];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_SALT_MINE);
+			prob_map_gen: 14;
+			prob_in_game: 14;
+			prospect_chance: 0.75;
+			fund_cost_multiplier: 8;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("BOOM"),produce_cargo("SALT",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_SALT_MINE));
+		}
+
+		graphics {
+			construction_probability: salt_mine_switch_check_availability;
+			produce_cargo_arrival:    salt_mine_switch_stockpile_check; 
+			produce_256_ticks:        salt_mine_switch_produce_ext_production_boost;
+			monthly_prod_change:      salt_mine_switch_prod_change;
+			random_prod_change:       salt_mine_switch_random_prod_change;
+			build_prod_change:        salt_mine_switch_prod_change_build;
+			cargo_subtype_display:    salt_mine_switch_cargo_subtype;
+			location_check:           salt_mine_switch_location_check_industry_distance;
+			extra_text_fund:          salt_mine_switch_extra_text_fund;
+			extra_text_industry:      salt_mine_switch_extra_text;
+			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
 }

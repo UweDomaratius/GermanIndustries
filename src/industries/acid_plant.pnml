@@ -1006,20 +1006,22 @@ switch(FEAT_INDUSTRIES, SELF, acid_plant_switch_location_check_industry_distance
 
 
 produce(acid_plant_produce,
-	[SULP: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),1) : 0;
-	 ],
-	[ACID: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100,1) : 0;
+	[SULP: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);],
+	[ACID: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
 	],
-	0 // do not run again
+	0
 )
 
 switch(FEAT_INDUSTRIES, SELF, acid_plant_switch_produce, 
 	[STORE_TEMP(incoming_cargo_waiting("SULP"), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
 	 
+	 // could use calculate_productivity_any_input(1) here, but that would calculate a couple of more things that are not needed
 	 calculate_raw_material_usage(),
 	 calculate_total_production(),
+	 update_permanent_storage_production_values(),
 
-	 store_debug_production_data()
+	 store_debug_production_data(),
+	 STORE_TEMP(percentage_of_production(90), TEMP_REGISTER_PRODUCT_1) // ACID
 	]) {
 	acid_plant_produce;
 }
@@ -1029,9 +1031,9 @@ produce(acid_plant_produce_ext_ammonia,
 	 NH3_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
 	 O2__: (LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1)*34/100) + (LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW3)*43/100);
 	 ],
-	[ACID: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;
+	[ACID: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
 	],
-	0 // do not run again
+	0
 )
 
 switch(FEAT_INDUSTRIES, SELF, acid_plant_switch_produce_ext_ammonia, 
@@ -1040,15 +1042,11 @@ switch(FEAT_INDUSTRIES, SELF, acid_plant_switch_produce_ext_ammonia,
 	 STORE_TEMP(min(incoming_cargo_waiting("O2__")-LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0),incoming_cargo_waiting("NH3_")), TEMP_REGISTER_INCOMING_CARGO_WAITING2),
 	 STORE_TEMP(min(incoming_cargo_waiting("O2__")-LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0),incoming_cargo_waiting("NH3_")), TEMP_REGISTER_INCOMING_CARGO_WAITING3),
 	 
-	 calculate_raw_material_usage(),
-	 calculate_total_production(),
-	 calculate_number_of_waiting_cargos(),
-	 
-	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
-	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
-	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (4-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 calculate_productivity_any_input(4),
+	 update_permanent_storage_production_values(),
 
-	 store_debug_production_data()
+	 store_debug_production_data(),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1) // ACID
 	]) {
 	acid_plant_produce_ext_ammonia;
 }
@@ -1058,9 +1056,9 @@ produce(acid_plant_produce_ext_basic_inorganic_chemistry,
 	 H2__: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
 	 CHLO: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
 	 ],
-	[ACID: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;
+	[ACID: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
 	],
-	0 // do not run again
+	0
 )
 
 switch(FEAT_INDUSTRIES, SELF, acid_plant_switch_produce_ext_basic_inorganic_chemistry, 
@@ -1068,15 +1066,11 @@ switch(FEAT_INDUSTRIES, SELF, acid_plant_switch_produce_ext_basic_inorganic_chem
 	 STORE_TEMP(min(incoming_cargo_waiting("CHLO"),incoming_cargo_waiting("H2__")), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
 	 STORE_TEMP(min(incoming_cargo_waiting("CHLO"),incoming_cargo_waiting("H2__")), TEMP_REGISTER_INCOMING_CARGO_WAITING2),
 	 
-	 calculate_raw_material_usage(),
-	 calculate_total_production(),
-	 calculate_number_of_waiting_cargos(),
-	 
-	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
-	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
-	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (2-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 calculate_productivity_any_input(2),
+	 update_permanent_storage_production_values(),
 
-	 store_debug_production_data()
+	 store_debug_production_data(),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1) // ACID
 	]) {
 	acid_plant_produce_ext_basic_inorganic_chemistry;
 }
@@ -1088,9 +1082,9 @@ produce(acid_plant_produce_ext_basic_inorganic_chemistry_ext_ammonia,
 	 NH3_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW4);
 	 O2__: (LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1)*34/100)+(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW5)*43/100);
 	 ],
-	[ACID: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100,1) : 0;
+	[ACID: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
 	],
-	0 // do not run again
+	0
 )
 
 switch(FEAT_INDUSTRIES, SELF, acid_plant_switch_produce_ext_basic_inorganic_chemistry_ext_ammonia, 
@@ -1101,15 +1095,11 @@ switch(FEAT_INDUSTRIES, SELF, acid_plant_switch_produce_ext_basic_inorganic_chem
 	 STORE_TEMP(min(incoming_cargo_waiting("O2__")-LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0),incoming_cargo_waiting("NH3_")), TEMP_REGISTER_INCOMING_CARGO_WAITING4),
 	 STORE_TEMP(min(incoming_cargo_waiting("O2__")-LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING0),incoming_cargo_waiting("NH3_")), TEMP_REGISTER_INCOMING_CARGO_WAITING5),
 	 
-	 calculate_raw_material_usage(),
-	 calculate_total_production(),
-	 calculate_number_of_waiting_cargos(),
-	 
-	 // calculate productivity: 50% with 1 waiting cargo, 90% with 2 waiting cargos
-	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
-	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (6-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
+	 calculate_productivity_any_input(6),
+	 update_permanent_storage_production_values(),
 
-	 store_debug_production_data()
+	 store_debug_production_data(),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1) // ACID
 	]) {
 	acid_plant_produce_ext_basic_inorganic_chemistry_ext_ammonia;
 }
@@ -1123,11 +1113,15 @@ switch(FEAT_INDUSTRIES, SELF, acid_plant_switch_cargo_subtype, getbits(extra_cal
 	return 0x3800 + string(STR_EMPTY);
 }
 
+switch(FEAT_INDUSTRIES, SELF, acid_plant_check_last_production,
+	[this_month_production("ACID") != 0 || last_month_production("ACID") != 0 || this_month_transported("ACID") != 0 || last_month_transported("ACID") != 0
+	])
+{
+}
+
 switch(FEAT_INDUSTRIES, SELF, acid_plant_switch_update_last_served_date,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("ACID") != 0 || last_month_production("ACID") != 0 || 
-		incoming_cargo_waiting("SULP") != 0 ||
-		this_month_transported("ACID") != 0 || last_month_transported("ACID") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(acid_plant_check_last_production() || incoming_cargo_waiting("SULP") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
@@ -1135,9 +1129,7 @@ switch(FEAT_INDUSTRIES, SELF, acid_plant_switch_update_last_served_date,
 
 switch(FEAT_INDUSTRIES, SELF, acid_plant_switch_update_last_served_date_ext_basic_inorganic_chemistry,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("ACID") != 0 || last_month_production("ACID") != 0 || 
-		incoming_cargo_waiting("SULP") != 0 || incoming_cargo_waiting("CHLO") != 0 || incoming_cargo_waiting("H2__") != 0 ||
-		this_month_transported("ACID") != 0 || last_month_transported("ACID") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(acid_plant_check_last_production() || incoming_cargo_waiting("SULP") != 0 || incoming_cargo_waiting("CHLO") != 0 || incoming_cargo_waiting("H2__") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
@@ -1145,9 +1137,7 @@ switch(FEAT_INDUSTRIES, SELF, acid_plant_switch_update_last_served_date_ext_basi
 
 switch(FEAT_INDUSTRIES, SELF, acid_plant_switch_update_last_served_date_ext_ammonia,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("ACID") != 0 || last_month_production("ACID") != 0 || 
-		incoming_cargo_waiting("SULP") != 0 || incoming_cargo_waiting("O2__") != 0 || incoming_cargo_waiting("NH3_") != 0 ||
-		this_month_transported("ACID") != 0 || last_month_transported("ACID") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(acid_plant_check_last_production() || incoming_cargo_waiting("SULP") != 0 || incoming_cargo_waiting("O2__") != 0 || incoming_cargo_waiting("NH3_") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();
@@ -1155,9 +1145,7 @@ switch(FEAT_INDUSTRIES, SELF, acid_plant_switch_update_last_served_date_ext_ammo
 
 switch(FEAT_INDUSTRIES, SELF, acid_plant_switch_update_last_served_date_ext_basic_inorganic_chemistry_ext_ammonia,
 	[update_last_served_date(),
-	 STORE_PERM(this_month_production("ACID") != 0 || last_month_production("ACID") != 0 || 
-		incoming_cargo_waiting("SULP") != 0 || incoming_cargo_waiting("CHLO") != 0 || incoming_cargo_waiting("H2__") != 0 || incoming_cargo_waiting("O2__") != 0 || incoming_cargo_waiting("NH3_") != 0 ||
-		this_month_transported("ACID") != 0 || last_month_transported("ACID") != 0, PERM_REGISTER_LAST_SERVED11)
+	 STORE_PERM(acid_plant_check_last_production() || incoming_cargo_waiting("SULP") != 0 || incoming_cargo_waiting("CHLO") != 0 || incoming_cargo_waiting("H2__") != 0 || incoming_cargo_waiting("O2__") != 0 || incoming_cargo_waiting("NH3_") != 0, PERM_REGISTER_LAST_SERVED11)
 	])
 {
 	check_secondary_industry_closure();

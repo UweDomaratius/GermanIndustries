@@ -1,0 +1,1201 @@
+spriteset(explosives_factory_spriteset_2_0) {
+	[80, 10, 64, 64, -31, -33, ANIM | NOCROP, "graphics/industries/civil_explosives_facility_1.png"]
+}
+
+spriteset(explosives_factory_spriteset_3_0) {
+	[150, 10, 64, 64, -31, -33, ANIM | NOCROP, "graphics/industries/civil_explosives_facility_1.png"]
+}
+
+spriteset(explosives_factory_spriteset_4_0) {
+	[220, 10, 64, 64, -31, -33, ANIM | NOCROP, "graphics/industries/civil_explosives_facility_1.png"]
+}
+
+spriteset(explosives_factory_spriteset_5_0) {
+	[290, 10, 64, 64, -31, -33, ANIM | NOCROP, "graphics/industries/civil_explosives_facility_1.png"]
+}
+
+spriteset(explosives_factory_spriteset_6_0) {
+	[360, 10, 64, 64, -31, -33, ANIM | NOCROP, "graphics/industries/civil_explosives_facility_1.png"]
+}
+
+spriteset(explosives_factory_spriteset_7_0) {
+	[10, 84, 64, 120, -31, -89, ANIM | NOCROP, "graphics/industries/civil_explosives_facility_1.png"]
+}
+
+spriteset(explosives_factory_spriteset_8_0) {
+	[80, 84, 64, 120, -31, -89, ANIM | NOCROP, "graphics/industries/civil_explosives_facility_1.png"]
+}
+
+spriteset(explosives_factory_spriteset_9_0) {
+	[150, 84, 64, 120, -31, -89, ANIM | NOCROP, "graphics/industries/civil_explosives_facility_1.png"]
+}
+
+spriteset(explosives_factory_spriteset_10_0) {
+	[220, 84, 64, 120, -31, -89, ANIM | NOCROP, "graphics/industries/civil_explosives_facility_1.png"]
+}
+            
+spritelayout explosives_factory_spritelayout_paper_store_empty {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}	
+	building {
+		sprite: explosives_factory_spriteset_2_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	
+}
+spritelayout explosives_factory_spritelayout_paper_store_full {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: explosives_factory_spriteset_3_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout explosives_factory_spritelayout_wood_store_forklift {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: explosives_factory_spriteset_4_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout explosives_factory_spritelayout_wood_store_full {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: explosives_factory_spriteset_5_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout explosives_factory_spritelayout_chemical_tanks {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: explosives_factory_spriteset_6_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout explosives_factory_spritelayout_tall_building_1 {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: explosives_factory_spriteset_7_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout explosives_factory_spritelayout_tall_building_2 {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: explosives_factory_spriteset_8_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout explosives_factory_spritelayout_pulp_processor {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: explosives_factory_spriteset_9_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+	}
+	building {
+		sprite: TTD_SMOKE_SPRITE_WHITE_BIG + ((animation_frame + 0)%8);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: -1;
+		yoffset: 0;
+		zoffset: 73;
+		xextent: 15;
+		yextent: 7;
+		zextent: 7;
+		hide_sprite: 0;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+spritelayout explosives_factory_spritelayout_boilerhouse {
+	childsprite {
+		sprite: default_spriteset_ground_dirty_concrete;
+		hide_sprite: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NE) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_NW) == 0);
+		xoffset:  0;	yoffset:  0;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: explosives_factory_spriteset_10_0(0);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xoffset: 0;
+		yoffset: 0;
+		zoffset: 0;
+		xextent: 16;
+		yextent: 16;
+		zextent: 32;
+		always_draw: 0;
+		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+	}
+	building {
+		sprite: TTD_FENCE_X;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SE) == 0);
+		xoffset: 0;		yoffset:  16;	zoffset:  0;
+		xextent: 16;	yextent: 1;		zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+	building {
+		sprite: TTD_FENCE_Y;
+		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_FENCE_SW) == 0);
+		xoffset: 16;	yoffset:  0;	zoffset:  0;
+		xextent: 1;		yextent: 16;	zextent: 6;
+		recolour_mode: RECOLOUR_REMAP;
+		palette:       PALETTE_USE_DEFAULT;
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// graphics choice switch chain
+//////////////////////////////////////////////////////////////////////////////
+
+switch(FEAT_INDUSTRYTILES, SELF, explosives_factory_switch_graphics_layout_1, relative_pos) {
+	relative_coord(0, 0): explosives_factory_spritelayout_tall_building_1;
+	relative_coord(0, 1): explosives_factory_spritelayout_tall_building_1;
+	relative_coord(0, 2): explosives_factory_spritelayout_paper_store_full;
+	relative_coord(1, 0): explosives_factory_spritelayout_tall_building_2;
+	relative_coord(1, 1): explosives_factory_spritelayout_pulp_processor;
+	relative_coord(1, 2): explosives_factory_spritelayout_paper_store_empty;
+	relative_coord(2, 0): explosives_factory_spritelayout_tall_building_1;
+	relative_coord(2, 1): explosives_factory_spritelayout_chemical_tanks;
+	relative_coord(2, 2): explosives_factory_spritelayout_paper_store_full;
+	relative_coord(3, 0): explosives_factory_spritelayout_tall_building_2;
+	relative_coord(3, 1): explosives_factory_spritelayout_wood_store_forklift;
+	relative_coord(3, 2): explosives_factory_spritelayout_wood_store_full;
+	relative_coord(4, 0): explosives_factory_spritelayout_boilerhouse;
+	relative_coord(4, 1): explosives_factory_spritelayout_wood_store_full;
+	relative_coord(4, 2): explosives_factory_spritelayout_wood_store_forklift;
+	return 0;
+}
+switch(FEAT_INDUSTRYTILES, SELF, explosives_factory_switch_graphics_layout_2, relative_pos) {
+	relative_coord(0, 0): explosives_factory_spritelayout_tall_building_1;
+	relative_coord(0, 1): explosives_factory_spritelayout_tall_building_1;
+	relative_coord(0, 2): explosives_factory_spritelayout_chemical_tanks;
+	relative_coord(1, 0): explosives_factory_spritelayout_tall_building_2;
+	relative_coord(1, 1): explosives_factory_spritelayout_tall_building_2;
+	relative_coord(1, 2): explosives_factory_spritelayout_paper_store_empty;
+	relative_coord(2, 0): explosives_factory_spritelayout_boilerhouse;
+	relative_coord(2, 1): explosives_factory_spritelayout_pulp_processor;
+	relative_coord(2, 2): explosives_factory_spritelayout_paper_store_full;
+	relative_coord(3, 0): explosives_factory_spritelayout_wood_store_forklift;
+	relative_coord(3, 1): explosives_factory_spritelayout_wood_store_full;
+	relative_coord(3, 2): explosives_factory_spritelayout_wood_store_full;
+	return 0;
+}
+switch(FEAT_INDUSTRYTILES, SELF, explosives_factory_switch_graphics_layout_3, relative_pos) {
+	relative_coord(0, 0): explosives_factory_spritelayout_tall_building_1;
+	relative_coord(0, 1): explosives_factory_spritelayout_tall_building_1;
+	relative_coord(0, 2): explosives_factory_spritelayout_pulp_processor;
+	relative_coord(0, 3): explosives_factory_spritelayout_chemical_tanks;
+	relative_coord(1, 0): explosives_factory_spritelayout_tall_building_2;
+	relative_coord(1, 1): explosives_factory_spritelayout_tall_building_2;
+	relative_coord(1, 2): explosives_factory_spritelayout_boilerhouse;
+	relative_coord(1, 3): explosives_factory_spritelayout_wood_store_forklift;
+	relative_coord(2, 0): explosives_factory_spritelayout_paper_store_full;
+	relative_coord(2, 1): explosives_factory_spritelayout_paper_store_empty;
+	relative_coord(2, 2): explosives_factory_spritelayout_wood_store_forklift;
+	relative_coord(2, 3): explosives_factory_spritelayout_wood_store_full;
+	return 0;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, explosives_factory_switch_graphics_layout_4, relative_pos) {
+	relative_coord(0, 0): explosives_factory_spritelayout_tall_building_1;
+	relative_coord(0, 1): explosives_factory_spritelayout_tall_building_1;
+	relative_coord(0, 2): explosives_factory_spritelayout_tall_building_2;
+	relative_coord(0, 3): explosives_factory_spritelayout_wood_store_forklift;
+	relative_coord(1, 0): explosives_factory_spritelayout_tall_building_2;
+	relative_coord(1, 1): explosives_factory_spritelayout_tall_building_2;
+	relative_coord(1, 2): explosives_factory_spritelayout_boilerhouse;
+	relative_coord(1, 3): explosives_factory_spritelayout_wood_store_full;
+	relative_coord(2, 0): explosives_factory_spritelayout_pulp_processor;
+	relative_coord(2, 1): explosives_factory_spritelayout_paper_store_full;
+	relative_coord(2, 2): explosives_factory_spritelayout_wood_store_forklift;
+	relative_coord(2, 3): explosives_factory_spritelayout_wood_store_full;
+	relative_coord(3, 0): explosives_factory_spritelayout_chemical_tanks;
+	relative_coord(3, 1): explosives_factory_spritelayout_paper_store_empty;
+	relative_coord(3, 2): explosives_factory_spritelayout_paper_store_full;
+	return 0;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, explosives_factory_switch_graphics_layout, layout_num) {
+    1: explosives_factory_switch_graphics_layout_1;
+    2: explosives_factory_switch_graphics_layout_2;
+    3: explosives_factory_switch_graphics_layout_3;
+	4: explosives_factory_switch_graphics_layout_4;
+    explosives_factory_switch_graphics_layout_1; // default
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, explosives_factory_switch_graphics_construction_state, construction_state) {
+    0..2: spritelayout_default_construction_states;
+    explosives_factory_switch_graphics_layout; // default
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, explosives_factory_switch_graphics,
+	[switch_tile_fences(),switch_terrain_sprite(),switch_graphics_init_temp_registers()
+	]) {
+    explosives_factory_switch_graphics_construction_state;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// location checks
+//////////////////////////////////////////////////////////////////////////////
+// This check works as follows: calculate height of the northernmost tile of the industry and add 0, 1 or 2 for flat, slope. steep slope
+// Do the same for the current tile and compare the results. If the result is equal, the terrain is effectively flat
+// and industry can be placed.
+// It just looks weird due to the stacked ternary operators needed here
+switch (FEAT_INDUSTRYTILES, SELF, explosives_factory_switch_tile_location_check2,
+			(nearby_tile_height(-relative_x, -relative_y) + 
+			(nearby_tile_slope(-relative_x, -relative_y)== SLOPE_FLAT ? 0 : nearby_tile_slope(-relative_x, -relative_y) == bitmask(IS_STEEP_SLOPE) ? 2 : 1)) 
+			== 
+			(nearby_tile_height(0, 0) + (nearby_tile_slope(0, 0) == SLOPE_FLAT ? 0 : nearby_tile_slope(0, 0) == bitmask(IS_STEEP_SLOPE) ? 2 : 1))
+			) {
+	1: return CB_RESULT_LOCATION_ALLOW;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, explosives_factory_switch_tile_location_check,
+	is_funded_or_prospected() || (generation_not_forbidden_by_param() && not_next_to_industry() && not_next_to_buildings()))
+{
+	1: explosives_factory_switch_tile_location_check2;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, explosives_factory_switch_tile1_cargo_acceptance, 
+	[STORE_TEMP(incoming_cargo_waiting("ACID") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0),
+	 STORE_TEMP(incoming_cargo_waiting("NHNO") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL1),
+	]
+) {
+	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0) + (LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL1) << 4);
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, explosives_factory_switch_tile2_cargo_acceptance, 
+	[STORE_TEMP(incoming_cargo_waiting("ALUM") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0)
+	]
+) {
+	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0);
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, explosives_factory_switch_tile3_cargo_acceptance, 
+	[STORE_TEMP(incoming_cargo_waiting("PETR") > 60000 ? 0 : 8,TEMP_REGISTER_STOCKPILE_FULL0)
+	]
+) {
+	return LOAD_TEMP(TEMP_REGISTER_STOCKPILE_FULL0);
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// industry tile and layout definition
+//////////////////////////////////////////////////////////////////////////////
+item(FEAT_INDUSTRYTILES, explosives_factory_tile_1, INDUSTRY_TILE_ID_EXPLOSIVES_FACTORY_1) {
+	property {
+		substitute:         0;
+		land_shape_flags:   0;
+		animation_info: [ANIMATION_LOOPING, 7];
+		animation_speed: 2;
+		animation_triggers: bitmask();
+		accepted_cargos: [[ACID, 8],[NHNO,8]];
+	}
+	graphics {
+		tile_check: explosives_factory_switch_tile_location_check;
+		cargo_amount_accept: explosives_factory_switch_tile1_cargo_acceptance;
+		explosives_factory_switch_graphics;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, explosives_factory_tile_2, INDUSTRY_TILE_ID_EXPLOSIVES_FACTORY_2) {
+	if (!param_extension_aluminium) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [];
+			animation_info: [ANIMATION_LOOPING, 47];
+			animation_speed: 2;
+			animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
+		}
+	}
+	if (param_extension_aluminium) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [[ALUM, 8]];
+			animation_info: [ANIMATION_LOOPING, 47];
+			animation_speed: 2;
+			animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
+		}
+	}
+	graphics {
+		tile_check: explosives_factory_switch_tile_location_check;
+		cargo_amount_accept: explosives_factory_switch_tile2_cargo_acceptance;
+		explosives_factory_switch_graphics;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, explosives_factory_tile_3, INDUSTRY_TILE_ID_EXPLOSIVES_FACTORY_2) {
+	if (!param_extension_organic_chemistry) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [];
+			animation_info: [ANIMATION_LOOPING, 47];
+			animation_speed: 2;
+			animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
+		}
+	}
+	if (param_extension_organic_chemistry) {
+		property {
+			substitute:         0;
+			land_shape_flags:   0;
+			accepted_cargos: [[PETR, 8]];
+			animation_info: [ANIMATION_LOOPING, 47];
+			animation_speed: 2;
+			animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
+		}
+	}
+	graphics {
+		tile_check: explosives_factory_switch_tile_location_check;
+		cargo_amount_accept: explosives_factory_switch_tile3_cargo_acceptance;
+		explosives_factory_switch_graphics;
+	}
+}
+
+tilelayout explosives_factory_tilelayout_1 {
+	0, 0: explosives_factory_tile_1;
+	0, 1: explosives_factory_tile_2;
+	0, 2: explosives_factory_tile_3;
+	1, 0: explosives_factory_tile_1;
+	1, 1: explosives_factory_tile_2;
+	1, 2: explosives_factory_tile_3;
+	2, 0: explosives_factory_tile_1;
+	2, 1: explosives_factory_tile_2;
+	2, 2: explosives_factory_tile_3;
+	3, 0: explosives_factory_tile_1;
+	3, 1: explosives_factory_tile_2;
+	3, 2: explosives_factory_tile_3;
+	4, 0: explosives_factory_tile_1;
+	4, 1: explosives_factory_tile_2;
+	4, 2: explosives_factory_tile_3;
+}
+tilelayout explosives_factory_tilelayout_2 {
+	0, 0: explosives_factory_tile_1;
+	0, 1: explosives_factory_tile_2;
+	0, 2: explosives_factory_tile_3;
+	1, 0: explosives_factory_tile_1;
+	1, 1: explosives_factory_tile_2;
+	1, 2: explosives_factory_tile_3;
+	2, 0: explosives_factory_tile_1;
+	2, 1: explosives_factory_tile_2;
+	2, 2: explosives_factory_tile_3;
+	3, 0: explosives_factory_tile_1;
+	3, 1: explosives_factory_tile_2;
+	3, 2: explosives_factory_tile_3;
+}
+
+tilelayout explosives_factory_tilelayout_3 {
+	0, 0: explosives_factory_tile_1;
+	0, 1: explosives_factory_tile_2;
+	0, 2: explosives_factory_tile_3;
+	0, 3: explosives_factory_tile_1;
+	1, 0: explosives_factory_tile_2;
+	1, 1: explosives_factory_tile_3;
+	1, 2: explosives_factory_tile_1;
+	1, 3: explosives_factory_tile_2;
+	2, 0: explosives_factory_tile_3;
+	2, 1: explosives_factory_tile_1;
+	2, 2: explosives_factory_tile_2;
+	2, 3: explosives_factory_tile_3;
+}
+
+tilelayout explosives_factory_tilelayout_4 {
+	0, 0: explosives_factory_tile_1;
+	0, 1: explosives_factory_tile_2;
+	0, 2: explosives_factory_tile_3;
+	0, 3: explosives_factory_tile_1;
+	1, 0: explosives_factory_tile_2;
+	1, 1: explosives_factory_tile_3;
+	1, 2: explosives_factory_tile_1;
+	1, 3: explosives_factory_tile_2;
+	2, 0: explosives_factory_tile_3;
+	2, 1: explosives_factory_tile_1;
+	2, 2: explosives_factory_tile_2;
+	2, 3: explosives_factory_tile_3;
+	3, 0: explosives_factory_tile_1;
+	3, 1: explosives_factory_tile_2;
+	3, 2: explosives_factory_tile_3;
+}
+
+switch(FEAT_INDUSTRIES, SELF, explosives_factory_switch_location_check_industry_distance,
+	   [STORE_TEMP(32, TEMP_REGISTER_TOWN_MIN_DISTANCE),
+	    STORE_TEMP(64, TEMP_REGISTER_TOWN_MAX_DISTANCE),
+		count_industries(),
+	    (is_industry_funded_or_prospected()) || ((distance_from_town() && 
+	    (param_max_industries_per_type_on_map == 0 || param_max_industries_per_type_on_map > industry_count(INDUSTRY_ID_AMMONIA_PLANT)) &&
+		(param_max_industries_on_map == 0 || param_max_industries_on_map > LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_INDUSTRIES)) &&
+		// distance to related producers
+		(industry_distance(INDUSTRY_ID_AMMONIUM_NITRATE_PLANT) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_ACID_PLANT) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_ALUMINIUM_PLANT) >= param_min_dist_related_industry) &&
+		// distance to related consumers
+		(industry_distance(INDUSTRY_ID_LIMESTONE_MINE) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_COPPER_ORE_MINE) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_SALT_MINE) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_IRON_ORE_MINE) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_COAL_MINE) >= param_min_dist_related_industry) &&
+		// distance between instances of same industry
+	    (industry_distance(INDUSTRY_ID_EXPLOSIVES_FACTORY) >= param_min_dist_same_industry))
+		)])
+{
+	   1: return CB_RESULT_LOCATION_ALLOW;
+	   return CB_RESULT_LOCATION_DISALLOW;
+}
+
+produce(explosives_factory_produce,
+	[ACID: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 NHNO: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
+	],
+	[BOOM: LOAD_TEMP(TEMP_REGISTER_PRODUCT_3);
+	],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, explosives_factory_switch_produce, 
+	[STORE_TEMP(min(incoming_cargo_waiting("ACID"),incoming_cargo_waiting("NHNO")),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 
+	 STORE_TEMP(percentage_of_production(50), TEMP_REGISTER_PRODUCT_1), // ACID
+	 STORE_TEMP(percentage_of_production(50), TEMP_REGISTER_PRODUCT_2), // NHNO
+	 STORE_TEMP(percentage_of_production(90), TEMP_REGISTER_PRODUCT_3), // BOOM
+	 
+	 store_debug_production_data()
+	 ])
+{
+	explosives_factory_produce;
+}
+
+produce(explosives_factory_produce_ext_aluminium,
+	[ACID: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 ALUM: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 NHNO: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
+	],
+	[BOOM: LOAD_TEMP(TEMP_REGISTER_PRODUCT_3);
+	],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, explosives_factory_switch_produce_ext_aluminium, 
+	[STORE_TEMP(min(incoming_cargo_waiting("ACID"),incoming_cargo_waiting("NHNO")),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("ALUM"),TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING0),
+	 limit_production_optional_cargo(1),
+	 
+	 STORE_TEMP(percentage_of_production(50), TEMP_REGISTER_PRODUCT_1), // ACID
+	 STORE_TEMP(percentage_of_production(50), TEMP_REGISTER_PRODUCT_2), // NHNO
+	 STORE_TEMP(percentage_of_production(90), TEMP_REGISTER_PRODUCT_3), // BOOM
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING0), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW1),
+	 
+	 store_debug_production_data()
+	 ])
+{
+	explosives_factory_produce_ext_aluminium;
+}
+
+produce(explosives_factory_produce_ext_organic_chemistry,
+	[ACID: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 NHNO: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
+	 PETR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	],
+	[BOOM: LOAD_TEMP(TEMP_REGISTER_PRODUCT_3);
+	],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, explosives_factory_switch_produce_ext_organic_chemistry, 
+	[STORE_TEMP(min(incoming_cargo_waiting("ACID"),incoming_cargo_waiting("NHNO")),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("PETR"),TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING0),
+	 limit_production_optional_cargo(1),
+	 
+	 STORE_TEMP(percentage_of_production(50), TEMP_REGISTER_PRODUCT_1), // ACID
+	 STORE_TEMP(percentage_of_production(50), TEMP_REGISTER_PRODUCT_2), // NHNO
+	 STORE_TEMP(percentage_of_production(90), TEMP_REGISTER_PRODUCT_3), // BOOM
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING0), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW1), // PETR
+	 store_debug_production_data()
+	 ])
+{
+	explosives_factory_produce_ext_organic_chemistry;
+}
+
+produce(explosives_factory_produce_ext_organic_chemistry_ext_aluminium,
+	[ACID: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 ALUM: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW1);
+	 NHNO: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
+	 PETR: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
+	],
+	[BOOM: LOAD_TEMP(TEMP_REGISTER_PRODUCT_3);
+	],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, explosives_factory_switch_produce_ext_organic_chemistry_ext_aluminium, 
+	[STORE_TEMP(min(incoming_cargo_waiting("ACID"),incoming_cargo_waiting("NHNO")),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
+	 
+	 calculate_raw_material_usage(),
+	 calculate_total_production(),
+	 
+	 STORE_TEMP(incoming_cargo_waiting("ALUM"),TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING0),
+	 STORE_TEMP(incoming_cargo_waiting("PETR"),TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING1),
+	 limit_production_optional_cargo(2),
+	 
+	 STORE_TEMP(percentage_of_production(50), TEMP_REGISTER_PRODUCT_1), // ACID
+	 STORE_TEMP(percentage_of_production(50), TEMP_REGISTER_PRODUCT_2), // NHNO
+	 STORE_TEMP(percentage_of_production(90), TEMP_REGISTER_PRODUCT_3), // BOOM
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING0), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW1),
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING1), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW2),
+	 
+	 store_debug_production_data()
+	 ])
+{
+	explosives_factory_produce_ext_organic_chemistry_ext_aluminium;
+}
+
+switch(FEAT_INDUSTRIES, SELF, explosives_factory_switch_cargo_subtype, getbits(extra_callback_info2, 16, 8)) {
+	ACID: switch_cargo_subtype;
+	ALUM: switch_cargo_subtype_white;
+	PETR: switch_cargo_subtype_white;
+	NHNO: switch_cargo_subtype;
+	return 0x3800 + string(STR_EMPTY);
+}
+
+switch(FEAT_INDUSTRIES, SELF, explosives_factory_switch_extra_text_fund, 
+	[STORE_TEMP(string(STR_1880), TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	current_year]) {
+	1880..500000: return string(STR_EMPTY);
+	return string(STR_INDUSTRY_NOT_AVAILABLE_BEFORE);
+}
+
+switch(FEAT_INDUSTRIES, SELF, explosives_factory_switch_check_availability, 
+	current_year) {
+	0..1879: return CB_RESULT_IND_NO_CONSTRUCTION;
+	get_construction_probability;
+}
+
+switch(FEAT_INDUSTRIES, SELF, explosives_factory_check_production,
+	[this_month_production("BOOM") != 0 || last_month_production("BOOM") != 0 || this_month_transported("BOOM") != 0 || last_month_transported("BOOM") != 0 || 
+	incoming_cargo_waiting("ACID") != 0 || incoming_cargo_waiting("NHNO") != 0
+	])
+{
+}
+
+switch(FEAT_INDUSTRIES, SELF, explosives_factory_switch_update_last_served_date,
+	[update_last_served_date(),
+	 STORE_PERM(explosives_factory_check_production(), PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+switch(FEAT_INDUSTRIES, SELF, explosives_factory_switch_update_last_served_date_ext_aluminium,
+	[update_last_served_date(),
+	 STORE_PERM(explosives_factory_check_production() || incoming_cargo_waiting("ALUM") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+switch(FEAT_INDUSTRIES, SELF, explosives_factory_switch_update_last_served_date_ext_organic_chemistry,
+	[update_last_served_date(),
+	 STORE_PERM(explosives_factory_check_production() || incoming_cargo_waiting("PETR") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+switch(FEAT_INDUSTRIES, SELF, explosives_factory_switch_update_last_served_date_ext_organic_chemistry_ext_aluminium,
+	[update_last_served_date(),
+	 STORE_PERM(explosives_factory_check_production() || incoming_cargo_waiting("PETR") != 0 || incoming_cargo_waiting("ALUM") != 0, PERM_REGISTER_LAST_SERVED11)
+	])
+{
+	check_secondary_industry_closure();
+}
+
+produce(explosives_factory_produce_cap_stockpile,
+	[ACID: incoming_cargo_waiting("ACID") > 60000 ? incoming_cargo_waiting("ACID") - 60000 : 0;
+	 NH3_: incoming_cargo_waiting("NH3_") > 60000 ? incoming_cargo_waiting("NH3_") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, explosives_factory_switch_stockpile_check, param_stockpile_cap)
+{
+	1: empty_produce;
+	explosives_factory_produce_cap_stockpile;
+}
+
+produce(explosives_factory_produce_cap_stockpile_ext_aluminium,
+	[ACID: incoming_cargo_waiting("ACID") > 60000 ? incoming_cargo_waiting("ACID") - 60000 : 0;
+	 ALUM: incoming_cargo_waiting("ALUM") > 60000 ? incoming_cargo_waiting("ALUM") - 60000 : 0;
+	 NH3_: incoming_cargo_waiting("NH3_") > 60000 ? incoming_cargo_waiting("NH3_") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, explosives_factory_switch_stockpile_check_ext_aluminium, param_stockpile_cap)
+{
+	1: empty_produce;
+	explosives_factory_produce_cap_stockpile_ext_aluminium;
+}
+
+produce(explosives_factory_produce_cap_stockpile_ext_organic_chemistry,
+	[ACID: incoming_cargo_waiting("ACID") > 60000 ? incoming_cargo_waiting("ACID") - 60000 : 0;
+	 NH3_: incoming_cargo_waiting("NH3_") > 60000 ? incoming_cargo_waiting("NH3_") - 60000 : 0;
+	 PETR: incoming_cargo_waiting("PETR") > 60000 ? incoming_cargo_waiting("PETR") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, explosives_factory_switch_stockpile_check_ext_organic_chemistry, param_stockpile_cap)
+{
+	1: empty_produce;
+	explosives_factory_produce_cap_stockpile_ext_organic_chemistry;
+}
+
+produce(explosives_factory_produce_cap_stockpile_ext_organic_chemistry_ext_aluminium,
+	[ACID: incoming_cargo_waiting("ACID") > 60000 ? incoming_cargo_waiting("ACID") - 60000 : 0;
+	 ALUM: incoming_cargo_waiting("ALUM") > 60000 ? incoming_cargo_waiting("ALUM") - 60000 : 0;
+	 PETR: incoming_cargo_waiting("PETR") > 60000 ? incoming_cargo_waiting("PETR") - 60000 : 0;
+	 NH3_: incoming_cargo_waiting("NH3_") > 60000 ? incoming_cargo_waiting("NH3_") - 60000 : 0;
+	 ],
+	[],
+	0 // do not run again
+)
+
+switch(FEAT_INDUSTRIES, SELF, explosives_factory_switch_stockpile_check_ext_organic_chemistry_ext_aluminium, param_stockpile_cap)
+{
+	1: empty_produce;
+	explosives_factory_produce_cap_stockpile_ext_organic_chemistry_ext_aluminium;
+}
+
+if (param_extension_production_boost && !param_extension_organic_chemistry && !param_extension_aluminium) {
+	item(FEAT_INDUSTRIES, exposives_factory, INDUSTRY_ID_EXPLOSIVES_FACTORY) {
+		property {
+			substitute: 0;
+			map_colour: 163;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [explosives_factory_tilelayout_1,explosives_factory_tilelayout_2,explosives_factory_tilelayout_3,explosives_factory_tilelayout_4];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_EXPLOSIVES_FACTORY);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 170;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("ACID"),accept_cargo("NHNO"),produce_cargo("BOOM",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_EXPLOSIVES_FACTORY));
+		}
+			
+		graphics {
+			construction_probability: explosives_factory_switch_check_availability;
+			produce_cargo_arrival:    explosives_factory_switch_stockpile_check; 
+			produce_256_ticks:        explosives_factory_switch_produce;
+			monthly_prod_change:      explosives_factory_switch_update_last_served_date;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           explosives_factory_switch_location_check_industry_distance;
+			extra_text_fund:          explosives_factory_switch_extra_text_fund;
+			cargo_subtype_display:    explosives_factory_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
+		}
+	}
+}
+
+if (param_extension_production_boost && !param_extension_organic_chemistry && param_extension_aluminium) {
+	item(FEAT_INDUSTRIES, exposives_factory, INDUSTRY_ID_EXPLOSIVES_FACTORY) {
+		property {
+			substitute: 0;
+			map_colour: 163;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [explosives_factory_tilelayout_1,explosives_factory_tilelayout_2,explosives_factory_tilelayout_3,explosives_factory_tilelayout_4];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_EXPLOSIVES_FACTORY);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 170;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("ACID"),accept_cargo("NHNO"),accept_cargo("ALUM"),produce_cargo("BOOM",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_EXPLOSIVES_FACTORY));
+		}
+			
+		graphics {
+			construction_probability: explosives_factory_switch_check_availability;
+			produce_cargo_arrival:    explosives_factory_switch_stockpile_check_ext_aluminium; 
+			produce_256_ticks:        explosives_factory_switch_produce_ext_aluminium;
+			monthly_prod_change:      explosives_factory_switch_update_last_served_date_ext_aluminium;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           explosives_factory_switch_location_check_industry_distance;
+			extra_text_fund:          explosives_factory_switch_extra_text_fund;
+			cargo_subtype_display:    explosives_factory_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
+		}
+	}
+}
+
+if (param_extension_production_boost && param_extension_organic_chemistry && !param_extension_aluminium) {
+	item(FEAT_INDUSTRIES, exposives_factory, INDUSTRY_ID_EXPLOSIVES_FACTORY) {
+		property {
+			substitute: 0;
+			map_colour: 64;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [explosives_factory_tilelayout_1,explosives_factory_tilelayout_2,explosives_factory_tilelayout_3,explosives_factory_tilelayout_4];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_EXPLOSIVES_FACTORY);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 170;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("ACID"),accept_cargo("NHNO"),accept_cargo("PETR"),produce_cargo("BOOM",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_EXPLOSIVES_FACTORY));
+		}
+			
+		graphics {
+			construction_probability: explosives_factory_switch_check_availability;
+			produce_cargo_arrival:    explosives_factory_switch_stockpile_check_ext_organic_chemistry; 
+			produce_256_ticks:        explosives_factory_switch_produce_ext_organic_chemistry;
+			monthly_prod_change:      explosives_factory_switch_update_last_served_date_ext_organic_chemistry;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           explosives_factory_switch_location_check_industry_distance;
+			extra_text_fund:          explosives_factory_switch_extra_text_fund;
+			cargo_subtype_display:    explosives_factory_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
+		}
+	}
+}
+
+if (param_extension_production_boost && param_extension_organic_chemistry && param_extension_aluminium) {
+	item(FEAT_INDUSTRIES, exposives_factory, INDUSTRY_ID_EXPLOSIVES_FACTORY) {
+		property {
+			substitute: 0;
+			map_colour: 163;
+			life_type: IND_LIFE_TYPE_PROCESSING;
+			min_cargo_distr: 1;
+			layouts: [explosives_factory_tilelayout_1,explosives_factory_tilelayout_2,explosives_factory_tilelayout_3,explosives_factory_tilelayout_4];
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			conflicting_ind_types: [];
+			random_sound_effects: [];
+			name: string(STR_IND_EXPLOSIVES_FACTORY);
+			prob_map_gen: 5;
+			prob_in_game: 3;
+			fund_cost_multiplier: 170;
+			remove_cost_multiplier: 0;
+			remove_cost_multiplier: 0;
+			cargo_types: [accept_cargo("ACID"),accept_cargo("NHNO"),accept_cargo("ALUM"),accept_cargo("PETR"),produce_cargo("BOOM",0)];
+			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_EXPLOSIVES_FACTORY));
+		}
+			
+		graphics {
+			construction_probability: explosives_factory_switch_check_availability;
+			produce_cargo_arrival:    explosives_factory_switch_stockpile_check_ext_organic_chemistry_ext_aluminium; 
+			produce_256_ticks:        explosives_factory_switch_produce_ext_organic_chemistry_ext_aluminium;
+			monthly_prod_change:      explosives_factory_switch_update_last_served_date_ext_organic_chemistry_ext_aluminium;
+			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
+			location_check:           explosives_factory_switch_location_check_industry_distance;
+			extra_text_fund:          explosives_factory_switch_extra_text_fund;
+			cargo_subtype_display:    explosives_factory_switch_cargo_subtype;
+			build_prod_change:        initialize_last_served_date;
+			stop_accept_cargo:        switch_stop_accept_cargo;
+		}
+	}
+}
+   

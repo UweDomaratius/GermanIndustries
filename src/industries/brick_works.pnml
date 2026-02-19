@@ -565,8 +565,9 @@ switch(FEAT_INDUSTRIES, SELF, brick_works_switch_location_check_industry_distanc
 
 // 1 COAL => 1 BDMT
 produce(brick_works_produce,
-	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);],
-	[BDMT: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100) : 0;],
+	[COAL: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);],
+	[BDMT: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	],
 	0 // do not run again
 )
 
@@ -574,6 +575,7 @@ switch(FEAT_INDUSTRIES, SELF, brick_works_switch_produce,
 	[STORE_TEMP(incoming_cargo_waiting("COAL"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
      calculate_raw_material_usage(),
 	 calculate_total_production(),
+	 STORE_TEMP(percentage_of_production(90), TEMP_REGISTER_PRODUCT_1),
      store_debug_production_data()	 
 	]) {
 	brick_works_produce;

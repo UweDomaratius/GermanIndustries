@@ -448,7 +448,7 @@ switch(FEAT_INDUSTRIES, SELF, sawmill_switch_location_check_industry_distance,
 
 produce(sawmill_produce,
 	[WOOD: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);],
-	[WDPR: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*90/100) : 0;],
+	[WDPR: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);],
 	0 // do not run again
 )
 
@@ -456,6 +456,7 @@ switch(FEAT_INDUSTRIES, SELF, sawmill_switch_produce,
 	[STORE_TEMP(incoming_cargo_waiting("WOOD"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
      calculate_raw_material_usage(),
 	 calculate_total_production(),
+	 STORE_TEMP(percentage_of_production(90), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()
 	]) {
 	sawmill_produce;
@@ -463,8 +464,8 @@ switch(FEAT_INDUSTRIES, SELF, sawmill_switch_produce,
 
 produce(sawmill_produce_ext_fruits,
 	[WOOD: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);],
-	[WDPR: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*80/100) : 0;
-	 BIOM: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(1,LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*30/100) : 0;
+	[WDPR: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 BIOM: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
 	],
 	0 // do not run again
 )
@@ -473,6 +474,8 @@ switch(FEAT_INDUSTRIES, SELF, sawmill_switch_produce_ext_fruits,
 	[STORE_TEMP(incoming_cargo_waiting("WOOD"),TEMP_REGISTER_INCOMING_CARGO_WAITING0),
      calculate_raw_material_usage(),
 	 calculate_total_production(),
+	 STORE_TEMP(percentage_of_production(80), TEMP_REGISTER_PRODUCT_1),
+	 STORE_TEMP(percentage_of_production(30), TEMP_REGISTER_PRODUCT_2),
 	 store_debug_production_data()
 	]) {
 	sawmill_produce_ext_fruits;
@@ -494,15 +497,7 @@ switch(FEAT_INDUSTRIES, SELF, sawmill_switch_update_last_served_date,
 	check_secondary_industry_closure();
 }
 
-switch(FEAT_INDUSTRIES, SELF, sawmill_switch_update_last_served_date_ext_fruits,
-	[update_last_served_date(),
-	 STORE_PERM(this_month_production("WDPR") != 0 || last_month_production("WDPR") != 0 || last_month_production("BIOM") != 0 ||
-		incoming_cargo_waiting("WOOD") != 0 || 
-		this_month_transported("WDPR") != 0 || last_month_transported("WDPR") != 0, PERM_REGISTER_LAST_SERVED11)
-	])
-{
-	check_secondary_industry_closure();
-}
+
 
 produce(sawmill_produce_cap_stockpile,
 	[WOOD: incoming_cargo_waiting("WOOD") > 60000 ? incoming_cargo_waiting("WOOD") - 60000 : 0;
@@ -577,7 +572,7 @@ if (param_extension_fruits) {
 			construction_probability: get_construction_probability;
 			produce_cargo_arrival:    sawmill_switch_stockpile_check; 
 			produce_256_ticks:        sawmill_switch_produce_ext_fruits;
-			monthly_prod_change:      sawmill_switch_update_last_served_date_ext_fruits;
+			monthly_prod_change:      sawmill_switch_update_last_served_date;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           sawmill_switch_location_check_industry_distance;
 			cargo_subtype_display:    sawmill_switch_cargo_subtype;

@@ -622,9 +622,9 @@ switch(FEAT_INDUSTRIES, SELF, oil_refinery_switch_location_check_industry_distan
 }
 
 produce(oil_refinery_produce,
-	[OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);],
-	[RFPR: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*70/100,1) : 0;
-	 PETR: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*20/100,1) : 0;
+	[OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);],
+	[RFPR: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 PETR: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
 	],
 	0 // do not run again
 )
@@ -633,7 +633,9 @@ switch(FEAT_INDUSTRIES, SELF, oil_refinery_switch_produce,
 	[STORE_TEMP(incoming_cargo_waiting("OIL_"), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
 	 calculate_raw_material_usage(),
 	 calculate_total_production(),
-	 store_debug_production_data()	 
+	 store_debug_production_data(),
+	 STORE_TEMP(percentage_of_production(70), TEMP_REGISTER_PRODUCT_1),
+	 STORE_TEMP(percentage_of_production(20), TEMP_REGISTER_PRODUCT_2),
 	]) {
 	oil_refinery_produce;
 }
@@ -641,10 +643,10 @@ switch(FEAT_INDUSTRIES, SELF, oil_refinery_switch_produce,
 // sulphur is usually produced from natural gas, but we don't have that in the set, so the sulphur output has been increased here,
 // normally the amount of sulphur in crude oil is in the low single digit percentage
 produce(oil_refinery_produce_ext_coke_sulphur,
-	[OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);],
-	[RFPR: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*70/100,1) : 0;
-	 PETR: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*20/100,1) : 0;
-	 SULP: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*10/100,1) : 0;
+	[OIL_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);],
+	[RFPR: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 PETR: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
+	 SULP: LOAD_TEMP(TEMP_REGISTER_PRODUCT_3);
 	],
 	0 // do not run again
 )
@@ -653,7 +655,10 @@ switch(FEAT_INDUSTRIES, SELF, oil_refinery_switch_produce_ext_coke_sulphur,
 	[STORE_TEMP(incoming_cargo_waiting("OIL_"), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
 	 calculate_raw_material_usage(),
 	 calculate_total_production(),
-	 store_debug_production_data()	 
+	 store_debug_production_data(),
+	 STORE_TEMP(percentage_of_production(70), TEMP_REGISTER_PRODUCT_1), // RFPR
+	 STORE_TEMP(percentage_of_production(20), TEMP_REGISTER_PRODUCT_2), // PETR
+	 STORE_TEMP(percentage_of_production(10), TEMP_REGISTER_PRODUCT_3), // SULP
 	]) {
 	oil_refinery_produce_ext_coke_sulphur;
 }

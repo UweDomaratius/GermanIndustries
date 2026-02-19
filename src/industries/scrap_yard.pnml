@@ -503,13 +503,13 @@ switch(FEAT_INDUSTRIES, SELF, scrap_yard_switch_location_check_industry_distance
 
 produce(scrap_yard_produce,
 	[],
-	[SCMT: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT);],
+	[SCMT: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);],
 	0 // do not run again
 )
 
 // production scales with population of related city, min 4, max 255 per 256 ticks
 switch(FEAT_INDUSTRIES, PARENT, scrap_yard_switch_produce, 
-	[ STORE_TEMP(min(max(4,population/42),255), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)	
+	[ STORE_TEMP(min(max(4,population/42),255), TEMP_REGISTER_PRODUCTION_AMOUNT)	
 	]) {
 	scrap_yard_produce;
 }
@@ -519,7 +519,7 @@ if (param_extension_recycling) {
 		property {
 			substitute: 0;
 			map_colour: 130;
-			life_type: IND_LIFE_TYPE_EXTRACTIVE;
+			life_type: IND_LIFE_TYPE_ORGANIC;
 			min_cargo_distr: 1;
 			layouts: [scrap_yard_tilelayout_1,scrap_yard_tilelayout_2,scrap_yard_tilelayout_3];
 			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);

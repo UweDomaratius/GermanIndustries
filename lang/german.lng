@@ -12,7 +12,7 @@ STR_PARAM_PRIMARY_PRODUCTION_DESC :Skaliert die monatliche Produktion von Primä
 STR_PARAM_PRIMARY_RESOURCE_FACTOR :Skalierung der Ressourcen von Primärindustrien
 STR_PARAM_PRIMARY_RESOURCE_FACTOR_DESC :Skaliert die Menge an Ressourcen, die eine Primärindustrie fördern kann. Wenn die Ressourcen erschöpft sind, schließt die Industrie.
 STR_PARAM_ECONOMY_MODEL :Wirtschaftsmodell
-STR_PARAM_ECONOMY_MODEL_DESC :Das realistische Modell simuliert historische Verfügbarkeiten und Produktivitätsverbesserungen. Das einfache Modell ignoriert die Geschichte der realen Wirtschaft.
+STR_PARAM_ECONOMY_MODEL_DESC :Das realistische Modell simuliert historische Verfügbarkeiten und Produktivitätsverbesserungen. Das einfache Modell ignoriert die Geschichte der realen Wirtschaft. Genauere Informationen können in der Doku nachgelesen werden.
 STR_PARAM_ECONOMY_MODEL_SIMPLE :Einfache (konstante) Wirtschaft.
 STR_PARAM_ECONOMY_MODEL_REALISTIC :Realistische Wirtschaft
 STR_PARAM_ELECTRICITY_NEEDED :Industrien benötigen elektrische Energie.
@@ -21,7 +21,7 @@ STR_PARAM_FORBID_INDUSTRY_GENERATION :Verbiete Erzeugung von Industrien
 STR_PARAM_FORBID_INDUSTRY_GENERATION_DESC :Wenn diese Option aktiviert ist, werden Industrien nur noch während des Spielstarts zusammen mit der Karte generiert. Der Spieler kann weiterhin neue Industrien finanzieren.
 STR_PARAM_FORBID_INDUSTRY_CLOSURE :Verbiete das Schließen von Industrien.
 STR_PARAM_FORBID_INDUSTRY_CLOSURE_DESC :Wenn diese Option aktiviert ist, werden Industrien nicht schließen. Minen und ähnliche Industrien werden trotzdem schließen, wenn sie keine Materialien mehr fördern können. Selbst wenn Schließungen erlaubt sind, werden keine Industrien schließen solange sie beliefert werden.
-STR_PARAM_STOCKPILE_CAP :Setze das Verhalten wenn zu viele Rohstoffe in einer Industrie warten
+STR_PARAM_STOCKPILE_CAP :Verhalten wenn zu viele Rohstoffe in einer Industrie warten
 STR_PARAM_STOCKPILE_CAP_DESC :Bestimmt das Verhalten für den Fall, dass das Lagerlimit für eine Industrie erreicht wird. Wenn man es auf Verwerfen stellt, werden weitere angelieferter Güter verworfen. Die Anlieferung wird aber bezahlt. Wenn man es auf Annahme verweigern stellt, wird die Industrie die Lieferung nicht akzeptieren, das liefernde Fahrzeug kann dann nicht abladen. Die Dokumentation enthält eine genauere Beschreibung.
 STR_PARAM_STOCKPILE_DISCARD :Verwerfen
 STR_PARAM_STOCKPILE_STOP_ACCEPT :Annahme verweigern
@@ -66,10 +66,13 @@ STR_PARAM_EXT_RECYCLING :Erweiterung "Recycling"
 STR_PARAM_EXT_RECYCLING_DESC :Fügt Industrien und Frachten hinzu, die sich mit dem Recycling von Wertstoffen beschäftigen.
 STR_PARAM_EXT_VEHICLE :Erweiterung "Automobilbau"
 STR_PARAM_EXT_VEHICLE_DESC :Fügt Industrien und Frachten hinzu, die mit Automobilbau zusammenhängen.
+STR_PARAM_EXT_PRODUCTION_BOOST :Erweiterung "Produktionsbooster"
+STR_PARAM_EXT_PRODUCTION_BOOST_DESC :Fügt Industrien hinzu, die der Produktion von Dünger und Sprengstoff dienen, mit denen man die Produktion von Primärindustrien erhöhen kann.
 
 # Frachten
 STR_CARGO_NAME_ACID               :Säure
 STR_CARGO_NAME_AMMONIA            :Ammoniak
+STR_CARGO_NAME_AMMONIUM_NITRATE   :Ammoniumnitrat
 STR_CARGO_NAME_BAUXITE            :Bauxit
 STR_CARGO_NAME_BIOMASS            :Biomasse
 STR_CARGO_NAME_BUILDING_MATERIALS :Ziegel
@@ -80,6 +83,8 @@ STR_CARGO_NAME_COKE               :Koks
 STR_CARGO_NAME_COPPER             :Kupfer
 STR_CARGO_NAME_COPPER_ORE         :Kupfererz
 STR_CARGO_NAME_ETHYLENE           :Ethylen
+STR_CARGO_NAME_EXPLOSIVES         :Sprengstoff
+STR_CARGO_NAME_FERTILIZER         :Düngemittel
 STR_CARGO_NAME_FISH               :Fisch
 STR_CARGO_NAME_FRUITS             :Früchte
 STR_CARGO_NAME_GLASS              :Glas
@@ -97,6 +102,7 @@ STR_CARGO_NAME_PACKAGING          :Verpackungen
 STR_CARGO_NAME_PAINT              :Farbe
 STR_CARGO_NAME_PETROL             :Treibstoff
 STR_CARGO_NAME_PLASTICS           :Kunststoffe
+STR_CARGO_NAME_POTASH             :Kalisalz
 STR_CARGO_NAME_PYRITE_ORE         :Kupferkies
 STR_CARGO_NAME_QUICKLIME          :Branntkalk
 STR_CARGO_NAME_RECYCLABLES        :Wertstoffe
@@ -120,6 +126,7 @@ STR_CARGO_NAME_ZINC               :Zink
 STR_QUANTITY_ACID                 :{WEIGHT} Säure
 STR_QUANTITY_ALUMINIUM            :{WEIGHT} Aluminium
 STR_QUANTITY_AMMONIA              :{WEIGHT} Ammoniak
+STR_QUANTITY_AMMONIUM_NITRATE     :{WEIGHT} Ammoniumnitrat
 STR_QUANTITY_BAUXITE              :{WEIGHT} Bauxit
 STR_QUANTITY_BIOMASS              :{WEIGHT} Biomasse
 STR_QUANTITY_BUILDING_MATERIALS   :{WEIGHT} Ziegel
@@ -130,6 +137,8 @@ STR_QUANTITY_COKE                 :{WEIGHT} Koks
 STR_QUANTITY_COPPER               :{WEIGHT} Kupfer
 STR_QUANTITY_COPPER_ORE           :{WEIGHT} Kupfererz
 STR_QUANTITY_ETHYLENE             :{WEIGHT} Ethylen
+STR_QUANTITY_EXPLOSIVES           :{WEIGHT} Sprengstoff
+STR_QUANTITY_FERTILIZER           :{WEIGHT} Düngemittel
 STR_QUANTITY_FISH                 :{WEIGHT} Fisch
 STR_QUANTITY_FRUITS               :{WEIGHT} Früchte
 STR_QUANTITY_GLASS                :{WEIGHT} Glas
@@ -149,6 +158,7 @@ STR_QUANTITY_PACKAGING            :{WEIGHT} Verpackungen
 STR_QUANTITY_PAINT                :{WEIGHT} Farbe
 STR_QUANTITY_PETROL               :{WEIGHT} Treibstoff
 STR_QUANTITY_PLASTICS             :{WEIGHT} Kunststoffe
+STR_QUANTITY_POTASH               :{WEIGHT} Kalisalz
 STR_QUANTITY_PYRITE_ORE           :{WEIGHT} Kupferkies
 STR_QUANTITY_QUICKLIME            :{WEIGHT} Branntkalk
 STR_QUANTITY_RECYCLABLES          :{WEIGHT} Wertstoffe
@@ -172,6 +182,7 @@ STR_QUANTITY_ZINC                 :{WEIGHT} Zink
 STR_IND_ACID_PLANT               :{G=w}Säurefabrik
 STR_IND_ALUMINIUM_PLANT          :{G=w}Aluhütte
 STR_IND_AMMONIA_PLANT            :Ammoniakreaktor
+STR_IND_AMMONIUM_NITRATE_PLANT   :{G=w}Ammoniumnitratfabrik
 STR_IND_ANIMAL_FARM              :{G=w}Viehzucht
 STR_IND_APPLIANCE_FACTORY        :{G=n}Gerätewerk
 STR_IND_BIOREFINERY              :{G=w}Bioraffinerie
@@ -188,12 +199,14 @@ STR_IND_COKE_OVEN                :{G=w}Kokerei
 STR_IND_COPPER_SMELTER           :{G=w}Kupferhütte
 STR_IND_CRYO_PLANT               :Luftzerleger
 STR_IND_DAIRY                    :{G=w}Molkerei
+STR_IND_DEPARTMENT_STORE         :{G=n}Kaufhaus
+STR_IND_EXPLOSIVES_FACTORY       :{G=w}Sprengstofffabrik
+STR_IND_FERTILIZER_PLANT         :{G=w}Düngemittelfabrik
 STR_IND_FISHING_GROUNDS          :{G=w}Fischgründe
 STR_IND_FLOUR_MILL               :{G=w}Mühle
 STR_IND_FOUNDRY_FORGE            :{G=w}Gießerei/Schmiede
 STR_IND_FRUIT_PLANTATION         :{G=w}Obstplantage
 STR_IND_FURNITURE_FACTORY        :{G=w}Möbelfabrik
-STR_IND_DEPARTMENT_STORE         :{G=n}Kaufhaus
 STR_IND_GENERAL_STORE            :Laden
 STR_IND_GLASS_WORKS              :{G=w}Glasfabrik
 STR_IND_HOTEL                    :{G=n}Hotel
@@ -207,6 +220,7 @@ STR_IND_PETROL_STATION           :{G=w}Tankstelle
 STR_IND_PHARMACEUTICAL_PLANT     :{G=w}Arzneimittelfabrik
 STR_IND_PLASTICS_PLANT           :{G=w}Kunststofffabrik
 STR_IND_PORT                     :Hafen
+STR_IND_POTASH_MINE              :{G=n}Kalisalzbergwerk
 STR_IND_PYRITE_MINE              :{G=n}Kupferkiesbergwerk
 STR_IND_RECYCLING_DEPOT          :Wertstoffhof
 STR_IND_SALT_MINE                :{G=n}Salzbergwerk
@@ -223,13 +237,14 @@ STR_IND_TYRE_PLANT               :{G=w}Reifenfabrik
 STR_IND_VEHICLE_BODY_PLANT       :{G=w}Karosseriefabrik
 STR_IND_VEHICLE_DISTRIBUTOR      :{G=n}Autohaus
 STR_IND_VEHICLE_ENGINE_PLANT     :{G=n}Motorenwerk
-STR_IND_VEHICLE_FACTORY          :{G=w}Autofabrik
-STR_IND_VEHICLE_PARTS_PLANT      :{G=w}Autoteilefabrik
+STR_IND_VEHICLE_FACTORY          :{G=w}Fahrzeugfabrik
+STR_IND_VEHICLE_PARTS_PLANT      :{G=w}Fahrzeugteilefabrik
 STR_IND_WIRE_MILL                :{G=n}Drahtwalzwerk
 
 # Stationsnamen
 STR_STATION_ALUMINIUM_PLANT          :Aluhütte
 STR_STATION_AMMONIA_PLANT            :Ammoniakreaktor
+STR_STATION_AMMONIUM_NITRATE_PLANT   :Ammoniumnitratfabrik
 STR_STATION_ANIMAL_FARM              :Viehzucht
 STR_STATION_APPLIANCE_FACTORY        :Gerätewerk
 STR_STATION_BIOREFINERY              :Bioraffinerie
@@ -249,7 +264,9 @@ STR_STATION_COPPER_SMELTER           :Kupferhütte
 STR_STATION_CRYO_PLANT               :Luftzerleger
 STR_STATION_DAIRY                    :Molkerei
 STR_STATION_DEPARTMENT_STORE         :Kaufhaus
+STR_STATION_EXPLOSIVES_FACTORY       :Sprengstofffabrik
 STR_STATION_FARM                     :Bauernhof
+STR_STATION_FERTILIZER_PLANT         :Düngemittelfabrik
 STR_STATION_FISHING_GROUNDS          :Fischgründe
 STR_STATION_FLOUR_MILL               :Mühle
 STR_STATION_FOOD_PROCESSOR           :Lebensmittelfabrik
@@ -275,6 +292,7 @@ STR_STATION_PETROL_STATION           :Tankstelle
 STR_STATION_PHARMACEUTICAL_PLANT     :Arzneimittelfabrik
 STR_STATION_PLASTICS_PLANT           :Kunststofffabrik
 STR_STATION_PORT                     :Hafen
+STR_STATION_POTASH_MINE              :Kalisalzbergwerk
 STR_STATION_POWER_PLANT              :Kraftwerk
 STR_STATION_PRINTING_WORKS           :Druckerei
 STR_STATION_PYRITE_MINE              :Bergwerk
@@ -301,12 +319,14 @@ STR_STATION_WIRE_MILL                :Drahtwalzwerk
 # Industriefenster
 STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION :{BLACK}Transportiere mehr als 60% der produzierten Fracht um die Produktion zu erhöhen.
 STR_INDUSTRY_PREREQ_KEEP_PRODUCTION     :{BLACK}Industrie produziert am Maximum. Transportiere mehr als 60% der produzierten Fracht um diesen Produktionslevel zu halten.
+STR_ORGANIC_INDUSTRY_TEXT_PRODUCTION_BOOST:{BLACK}In weiß dargestellte Rohstoffe erhöhen die maximale Produktion.
 # Extractive Industrien (Bergwerke) zeigen die Info zum Produktionslevel und die Menge der verbleibenden Rohstoffe.
-STR_EXTRACTIVE_INDUSTRY_TEXT:{STRING}{STRING}{}{BLACK}Etwa {YELLOW}{COMMA} kt {BLACK} verbleibend (ca. {YELLOW}{COMMA} Jahre{BLACK} bei aktuellem Produktionslevel)
+STR_EXTRACTIVE_INDUSTRY_TEXT:{STRING}{}{STRING}{}{BLACK}Etwa {YELLOW}{COMMA} kt {BLACK} verbleibend (ca. {YELLOW}{COMMA} Jahre{BLACK} bei aktuellem Produktionslevel)
 # Secondary industries with optional input requirements
 STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO :{BLACK}Industrie benötigt die in schwarz dargestellten Rohstoffe zur Produktion. In weiß dargestellte Rohstoffe erhöhen die maximale Produktion.
 STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO_ANY :{BLACK}Industrie benötigt wenigstens einen der in schwarz dargestellten Rohstoffe zur Produktion. Die maximale Produktion erhöht sich mit der Anzahl der verfügbaren verschiedenen Rohstoffe. In weiß dargestellte Rohstoffe erhöhen die maximale Produktion noch weiter.
 STR_INDUSTRY_NEEDS_ANY_INPUT :{BLACK}Industrie beginnt Produktion sobald wenigstens ein Rohstoff verfügbar ist. Die maximale Produktion erhöht sich mit der Anzahl der verfügbaren verschiedenen Rohstoffe.
+STR_PRODUCTION_LIMITED_DUE_TO_MISSING_OPTIONAL_CARGO :{YELLOW}Produktion wird durch fehlende optionale Rohstoffe begrenzt!
 
 # Texte für Energiewirtschaft, Kraftwerke zeigen die Produktion, Industrien zeigen an wie viel Strom sie benötigen und ob der Bedarf gedeckt ist
 STR_POWER_PLANT_TEXT :{BLACK}Stromproduktion {YELLOW}{COMMA}{BLACK}, Bedarf {YELLOW}{COMMA}{BLACK}
@@ -346,3 +366,4 @@ STR_ERR_EXTENSION_AMMONIA_REQUIRES_INORGANIC_CHEMISTRY_BUILDING_MATERIALS:Erweit
 STR_ERR_EXTENSION_FRUITS_REQUIRES_ORGANIC_CHEMISTRY:Erweiterung "Obst und Bioenergie" erfordert die Erweiterung "Organische Chemie"
 STR_ERR_EXTENSION_METALLURGY_REQUIRES_COKE_SULPHUR:Erweiterung "Metallurgie" erfordert Erweiterung "Koks und Schwefel"
 STR_ERR_EXTENSION_VEHICLE_REQUIRES_COKE_SULPHUR:Erweiterung "Automobilbau" erfordert Erweiterung "Koks und Schwefel"
+STR_ERR_EXTENSION_PRODUCTION_BOOST_REQUIRES_AMMONIA_COKE_SULPHUR:Erweiterung "Produktionsbooster" erfordert Erweiterung "Ammoniak" oder "Koks und Schwefel".

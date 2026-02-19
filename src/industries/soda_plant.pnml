@@ -370,7 +370,7 @@ switch(FEAT_INDUSTRYTILES, SELF, soda_plant_switch_graphics_construction_state, 
 }
 
 switch (FEAT_INDUSTRYTILES, SELF, soda_plant_switch_graphics,
-	[switch_terrain_sprite(),switch_graphics_init_temp_registers()
+	[switch_tile_fences(),switch_terrain_sprite(),switch_graphics_init_temp_registers()
 	]) {
     soda_plant_switch_graphics_construction_state;
 }
@@ -483,29 +483,27 @@ switch(FEAT_INDUSTRIES, SELF, soda_plant_switch_location_check_industry_distance
 
 // about 1.5t salt and 0.8t lime for 1t soda => 1t salt + 0.5t lime -> 0.667t soda
 produce(soda_plant_produce,
-	[SALT: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0);
-	 LIME: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW0)*50/100,1) : 0;
+	[SALT: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT);
+	 LIME: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
 	 NH3_: LOAD_TEMP(TEMP_REGISTER_PRODUCTION_RAW2);
 	],
-	[SASH: LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) > 0 ? max(LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)*67/100,1) : 0;],
+	[SASH: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
+	],
 	0 // do not run again
 )
 
 switch(FEAT_INDUSTRIES, SELF, soda_plant_switch_produce, 
 	[STORE_TEMP(min(incoming_cargo_waiting("SALT"), incoming_cargo_waiting("LIME")), TEMP_REGISTER_INCOMING_CARGO_WAITING0),
-	STORE_TEMP(min(incoming_cargo_waiting("SALT"), incoming_cargo_waiting("LIME")), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
 	 
 	 calculate_raw_material_usage(),
 	 calculate_total_production(),
 	 
-	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (2-1)), TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 
-	 STORE_TEMP(incoming_cargo_waiting("NH3_"), TEMP_REGISTER_INCOMING_CARGO_WAITING2),
-	 
-	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1) > 0 ? 1 : 0, TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),
-	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS) == 1 ? LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) : min(16 + 8*LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS),LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT)), TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT),
-	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_CARGO_WAITING1), LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW2),
-
+	 STORE_TEMP(incoming_cargo_waiting("NH3_"), TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING2),
+	 limit_production_optional_cargo(1),
+	 update_permanent_storage_production_values(),
+	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING2), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW2),
+	 STORE_TEMP(percentage_of_production(50), TEMP_REGISTER_PRODUCT_1),
+	 STORE_TEMP(percentage_of_production(67), TEMP_REGISTER_PRODUCT_2),
 	 store_debug_production_data()
 	]) {
 	soda_plant_produce;

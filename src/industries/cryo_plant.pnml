@@ -461,7 +461,7 @@ switch(FEAT_INDUSTRYTILES, SELF, cryo_plant_switch_graphics_construction_state, 
 }
 
 switch (FEAT_INDUSTRYTILES, SELF, cryo_plant_switch_graphics,
-	[switch_terrain_sprite(),switch_graphics_init_temp_registers()
+	[switch_tile_fences(),switch_terrain_sprite(),switch_graphics_init_temp_registers()
 	]) {
     cryo_plant_switch_graphics_construction_state;
 }
@@ -587,17 +587,15 @@ switch(FEAT_INDUSTRIES, SELF, cryo_plant_func_calc_max_prod, 65535) {
 }
 
 switch(FEAT_INDUSTRIES, SELF, cryo_plant_switch_prod_change, 
-	[STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT), TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
-	 STORE_TEMP(max(transported_last_month_pct("O2__"),transported_last_month_pct("N2__")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
-	 STORE_TEMP(cryo_plant_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)
+	[STORE_TEMP(max(transported_last_month_pct("O2__"),transported_last_month_pct("N2__")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 STORE_TEMP(cryo_plant_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION)
 	 ])
 {
 	change_production;
 }
 
 switch(FEAT_INDUSTRIES, SELF, cryo_plant_switch_prod_change_build,
-	[initialize_extractive_resources(),
-	STORE_TEMP(max(cryo_plant_func_calc_max_prod(),128),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION)	
+	[STORE_TEMP(max(cryo_plant_func_calc_max_prod(),128),TEMP_REGISTER_MAXIMUM_PRODUCTION)	
 	])
 {
 	randomize_initial_production;
@@ -605,14 +603,19 @@ switch(FEAT_INDUSTRIES, SELF, cryo_plant_switch_prod_change_build,
 
 produce(cryo_plant_produce,
 	[],
-	[O2__: max(1,LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT)*20/100);N2__: max(1,LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT)*70/100);],
+	[O2__: LOAD_TEMP(TEMP_REGISTER_PRODUCT_1);
+	 N2__: LOAD_TEMP(TEMP_REGISTER_PRODUCT_2);
+	 ],
 	0 // do not run again
 )
 
 switch(FEAT_INDUSTRIES, SELF, cryo_plant_switch_produce,
-	[STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 // store the theoretical amount of production (production level * scaling percentage)
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT)]) {
+	[init_primary_production(),
+	 update_permanent_storage_production_values(),
+	 STORE_TEMP(percentage_of_production(20), TEMP_REGISTER_PRODUCT_1),
+	 STORE_TEMP(percentage_of_production(70), TEMP_REGISTER_PRODUCT_2),
+	 ])
+{
 	cryo_plant_produce;
 }
 
@@ -620,16 +623,9 @@ switch(FEAT_INDUSTRIES, SELF, cryo_plant_switch_produce,
 // build the industry window text here
 ////////////////////////////////////////////////////////////////////////////////
 switch(FEAT_INDUSTRIES, SELF, cryo_plant_switch_extra_text, 
-	[STORE_TEMP(cryo_plant_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION),
-	 STORE_TEMP(param_primary_production == 0 ? 100 : param_primary_production, TEMP_REGISTER_PARAM_PRODUCTION_SCALE),
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT) * LOAD_TEMP(TEMP_REGISTER_PARAM_PRODUCTION_SCALE) / 100, TEMP_REGISTER_PRODUCTION_AMOUNT),
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT), TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL),
-	 STORE_TEMP(
-		LOAD_TEMP(TEMP_REGISTER_CURRENT_PRODUCTION_LEVEL) < LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRIMARY_PRODUCTION) ? string(STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION) : string(STR_INDUSTRY_PREREQ_KEEP_PRODUCTION) | 
-		string(STR_EMPTY) << 16,
-		TEMP_REGISTER_EXTRA_TEXT_ARG0)
-	]) {
-	return string(STR_ORGANIC_INDUSTRY_TEXT);
+	[STORE_TEMP(cryo_plant_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION)])
+{
+	create_organic_industry_text;
 }
 
 switch(FEAT_INDUSTRIES, SELF, cryo_plant_switch_extra_text_fund, 
@@ -650,7 +646,7 @@ if (param_extension_ammonia) {
 		property {
 			substitute: 0;
 			map_colour: 148;
-			life_type: IND_LIFE_TYPE_ORGANIC;
+			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [cryo_plant_industry_layout_1_tilelayout,cryo_plant_industry_layout_2_tilelayout,cryo_plant_industry_layout_3_tilelayout,cryo_plant_industry_layout_4_tilelayout,cryo_plant_industry_layout_5_tilelayout];
 			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);

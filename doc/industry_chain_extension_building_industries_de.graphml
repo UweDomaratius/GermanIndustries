@@ -139,6 +139,28 @@
         </y:ShapeNode>
       </data>
     </node>
+    <node id="n11">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="50.0" width="150.0" x="850.0" y="515.0"/>
+          <y:Fill color="#5840AC" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#FFFFFF" verticalTextPosition="bottom" visible="true" width="78.044921875" x="35.9775390625" xml:space="preserve" y="15.6494140625">Kalkbrennerei<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n12">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="50.0" width="150.0" x="850.0" y="455.0"/>
+          <y:Fill color="#508CA0" transparent="false"/>
+          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="61.369140625" x="44.3154296875" xml:space="preserve" y="15.6494140625">Sodafabrik<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
     <edge id="e0" source="n0" target="n4">
       <data key="d10">
         <y:GenericEdge configuration="com.yworks.edge.framed">
@@ -277,6 +299,38 @@
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
             <y:Point x="800.0" y="630.0"/>
             <y:Point x="800.0" y="600.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:Arrows source="none" target="delta"/>
+          <y:StyleProperties>
+            <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#481470"/>
+          </y:StyleProperties>
+        </y:GenericEdge>
+      </data>
+    </edge>
+    <edge id="e11" source="n4" target="n11">
+      <data key="d9"/>
+      <data key="d10">
+        <y:GenericEdge configuration="com.yworks.edge.framed">
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="800.0" y="630.0"/>
+            <y:Point x="800.0" y="540.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="3.0"/>
+          <y:Arrows source="none" target="delta"/>
+          <y:StyleProperties>
+            <y:Property class="java.awt.Color" name="FramedEdgePainter.fillColor" value="#481470"/>
+          </y:StyleProperties>
+        </y:GenericEdge>
+      </data>
+    </edge>
+    <edge id="e12" source="n4" target="n12">
+      <data key="d9"/>
+      <data key="d10">
+        <y:GenericEdge configuration="com.yworks.edge.framed">
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="800.0" y="630.0"/>
+            <y:Point x="800.0" y="480.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="3.0"/>
           <y:Arrows source="none" target="delta"/>
