@@ -2088,14 +2088,11 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_aluminium_ext_painting
 // build the industry window text here
 ////////////////////////////////////////////////////////////////////////////////
 switch(FEAT_INDUSTRIES, SELF, port_switch_extra_text, 
-	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
-	 STORE_TEMP(
-		LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) < LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION) ? string(STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION) : string(STR_INDUSTRY_PREREQ_KEEP_PRODUCTION) | 
-		string(STR_EMPTY) << 16,
-		TEMP_REGISTER_EXTRA_TEXT_ARG0)
-	]) {
-	return string(STR_ORGANIC_INDUSTRY_TEXT);
+	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION)])
+{
+	create_organic_industry_text;
 }
+
 if (!param_extension_aluminium && !param_extension_painting_industries && !param_extension_coke_sulphur && !param_extension_vehicle) {
 	item(FEAT_INDUSTRIES, port, INDUSTRY_ID_PORT) {
 		property {

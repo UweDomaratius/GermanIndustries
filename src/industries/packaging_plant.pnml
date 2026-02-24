@@ -1131,7 +1131,7 @@ if (param_extension_packaging_industries && !param_extension_aluminium && !param
 			monthly_prod_change:      packaging_plant_switch_update_last_served_date;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           packaging_plant_switch_location_check_industry_distance;
-			extra_text_industry:      return string(STR_INDUSTRY_NEEDS_ANY_INPUT);
+			extra_text_industry:      industry_switch_extra_text_any_input;
 			extra_text_fund:          packaging_plant_switch_extra_text_fund;
 			cargo_subtype_display:    packaging_plant_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
@@ -1168,7 +1168,7 @@ if (param_extension_packaging_industries && param_extension_aluminium && !param_
 			monthly_prod_change:      packaging_plant_switch_update_last_served_date_ext_aluminium;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           packaging_plant_switch_location_check_industry_distance;
-			extra_text_industry:      return string(STR_INDUSTRY_NEEDS_ANY_INPUT);
+			extra_text_industry:      industry_switch_extra_text_any_input;
 			extra_text_fund:          packaging_plant_switch_extra_text_fund_ext_aluminium;
 			cargo_subtype_display:    packaging_plant_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
@@ -1205,7 +1205,7 @@ if (param_extension_packaging_industries && !param_extension_aluminium && param_
 			monthly_prod_change:      packaging_plant_switch_update_last_served_date_ext_glass;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           packaging_plant_switch_location_check_industry_distance;
-			extra_text_industry:      return string(STR_INDUSTRY_NEEDS_ANY_INPUT);
+			extra_text_industry:      industry_switch_extra_text_any_input;
 			cargo_subtype_display:    packaging_plant_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
@@ -1241,7 +1241,7 @@ if (param_extension_packaging_industries && param_extension_aluminium && param_e
 			monthly_prod_change:      packaging_plant_switch_update_last_served_date_ext_aluminium_ext_glass;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           packaging_plant_switch_location_check_industry_distance;
-			extra_text_industry:      return string(STR_INDUSTRY_NEEDS_ANY_INPUT);
+			extra_text_industry:      industry_switch_extra_text_any_input;
 			cargo_subtype_display:    packaging_plant_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
@@ -1277,7 +1277,7 @@ if (param_extension_packaging_industries && !param_extension_aluminium && !param
 			monthly_prod_change:      packaging_plant_switch_update_last_served_date_ext_paper;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           packaging_plant_switch_location_check_industry_distance;
-			extra_text_industry:      return string(STR_INDUSTRY_NEEDS_ANY_INPUT);
+			extra_text_industry:      industry_switch_extra_text_any_input;
 			extra_text_fund:          packaging_plant_switch_extra_text_fund;
 			cargo_subtype_display:    packaging_plant_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
@@ -1314,7 +1314,7 @@ if (param_extension_packaging_industries && param_extension_aluminium && !param_
 			monthly_prod_change:      packaging_plant_switch_update_last_served_date_ext_aluminium_ext_paper;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           packaging_plant_switch_location_check_industry_distance;
-			extra_text_industry:      return string(STR_INDUSTRY_NEEDS_ANY_INPUT);
+			extra_text_industry:      industry_switch_extra_text_any_input;
 			extra_text_fund:          packaging_plant_switch_extra_text_fund_ext_aluminium;
 			cargo_subtype_display:    packaging_plant_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
@@ -1351,7 +1351,7 @@ if (param_extension_packaging_industries && !param_extension_aluminium && param_
 			monthly_prod_change:      packaging_plant_switch_update_last_served_date_ext_glass_ext_paper;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           packaging_plant_switch_location_check_industry_distance;
-			extra_text_industry:      return string(STR_INDUSTRY_NEEDS_ANY_INPUT);
+			extra_text_industry:      industry_switch_extra_text_any_input;
 			cargo_subtype_display:    packaging_plant_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
@@ -1387,7 +1387,7 @@ if (param_extension_packaging_industries && param_extension_aluminium && param_e
 			monthly_prod_change:      packaging_plant_switch_update_last_served_date_ext_aluminium_ext_glass_ext_paper;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           packaging_plant_switch_location_check_industry_distance;
-			extra_text_industry:      return string(STR_INDUSTRY_NEEDS_ANY_INPUT);
+			extra_text_industry:      industry_switch_extra_text_any_input;
 			cargo_subtype_display:    packaging_plant_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;

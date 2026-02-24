@@ -1201,7 +1201,7 @@ switch(FEAT_INDUSTRIES, SELF, sandpit_switch_produce,
 switch(FEAT_INDUSTRIES, SELF, sandpit_switch_extra_text, 
 	[STORE_TEMP(sandpit_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION)])
 {
-	 create_extractive_industry_text();
+	 create_extractive_industry_text;
 }
 
 if (param_extension_building_materials) {

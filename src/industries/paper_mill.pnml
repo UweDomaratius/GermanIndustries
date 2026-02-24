@@ -1085,6 +1085,7 @@ if (param_extension_paper && !param_extension_recycling) {
 			location_check:           paper_mill_switch_location_check_industry_distance;
 			cargo_subtype_display:    paper_mill_switch_cargo_subtype;
 			extra_text_fund:          paper_mill_switch_extra_text_fund;
+			extra_text_industry:      industry_switch_extra_text;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
@@ -1122,7 +1123,7 @@ if (param_extension_paper && param_extension_recycling) {
 			location_check:           paper_mill_switch_location_check_industry_distance;
 			cargo_subtype_display:    paper_mill_switch_cargo_subtype;
 			extra_text_fund:          paper_mill_switch_extra_text_fund;
-			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO);
+			extra_text_industry:      industry_switch_extra_text_industry_optional_cargo;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
 		}

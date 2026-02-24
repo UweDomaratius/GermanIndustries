@@ -848,32 +848,37 @@ switch(FEAT_INDUSTRIES, SELF, chlor_alkali_plant_switch_produce,
 ////////////////////////////////////////////////////////////////////////////////
 // build the industry window text here
 ////////////////////////////////////////////////////////////////////////////////
-switch(FEAT_INDUSTRIES, SELF, chlor_alkali_plant_switch_extra_text_electricity, 
+switch(FEAT_INDUSTRIES, SELF, chlor_alkali_plant_switch_extra_text_electricity_with_warning, 
 	[
-	 // the relevant information is stored in the permanent registers of the industry, which are updated in the production cycle
-	 // now store the relevant values in the different registers
 	 STORE_TEMP(city_get_power_available(), TEMP_REGISTER_POWER_AVAILABLE),
-	 
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0), TEMP_REGISTER_EXTRA_TEXT_ARG0), 
-	 STORE_TEMP((LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) * 100) / LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0), TEMP_REGISTER_EXTRA_TEXT_ARG1), 
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_POWER_DEMAND), TEMP_REGISTER_EXTRA_TEXT_ARG2),
-	 
-	 // if (power_available_from_city == 0) -> STR_INDUSTRY_NO_POWER
-	 // else if (production_percentage == 100 && max_production > 0) -> STR_ENOUGH_POWER
-	 // else -> STR_NOT_ENOUGH_POWER
-	 STORE_TEMP(((LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) * 100) / LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0) == 0 && LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0) > 0) ? string(STR_INDUSTRY_NO_POWER) :
-	 (((LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) * 100) / LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0) == 100 && LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0) > 0) ? string(STR_INDUSTRY_ENOUGH_POWER) :
-	 ((LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0) > 0) ? string(STR_INDUSTRY_NOT_ENOUGH_POWER) : string(STR_EMPTY)))
-	 | string(STR_EMPTY) << 16, TEMP_REGISTER_EXTRA_TEXT_ARG3)
+	 STORE_TEMP(string(STR_INDUSTRY_NOT_ENOUGH_POWER) | string(STR_INDUSTRY_ELECTRICITY_TEXT) << 16, TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_POWER_DEMAND), TEMP_REGISTER_EXTRA_TEXT_ARG1),
+	 STORE_TEMP(string(STR_INDUSTRY_NEEDS_ALL_INPUT), TEMP_REGISTER_EXTRA_TEXT_ARG2),
+	])
+{
+	return string(STR_CONCAT_WITH_LINEBREAK);
+}
+
+switch(FEAT_INDUSTRIES, SELF, chlor_alkali_plant_switch_extra_text_electricity_without_warning, 
+	[
+	 STORE_TEMP(city_get_power_available(), TEMP_REGISTER_POWER_AVAILABLE),
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_POWER_DEMAND), TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 STORE_TEMP(string(STR_INDUSTRY_NEEDS_ALL_INPUT), TEMP_REGISTER_EXTRA_TEXT_ARG1),
 	])
 {
 	return string(STR_INDUSTRY_ELECTRICITY_TEXT);
 }
 
+switch(FEAT_INDUSTRIES, SELF, chlor_alkali_plant_switch_extra_text_electricity, [LOAD_PERM(PERM_REGISTER_PRODUCTION_LIMITED_BY) & 0x2])
+{
+	2: chlor_alkali_plant_switch_extra_text_electricity_with_warning;
+	chlor_alkali_plant_switch_extra_text_electricity_without_warning;
+}
+
 switch(FEAT_INDUSTRIES, SELF, chlor_alkali_plant_switch_extra_text, param_electricity_needed)
 {
 	1: chlor_alkali_plant_switch_extra_text_electricity;
-	return string(STR_EMPTY);
+	return string(STR_INDUSTRY_NEEDS_ALL_INPUT);
 }
 
 switch(FEAT_INDUSTRIES, SELF, chlor_alkali_plant_switch_extra_text_fund, 

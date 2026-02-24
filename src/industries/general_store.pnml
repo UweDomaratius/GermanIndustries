@@ -200,8 +200,6 @@ if (!param_extension_fruits) {
 			monthly_prod_change:      CB_RESULT_IND_PROD_NO_CHANGE;
 			random_prod_change:       general_store_switch_update_last_served_date;
 			location_check:           general_store_switch_location_check_industry_distance;
-			extra_text_fund:          return CB_RESULT_NO_TEXT;
-			extra_text_industry:      return CB_RESULT_NO_TEXT;
 			cargo_subtype_display:    return CB_RESULT_IND_NO_TEXT_NO_AMOUNT;
 			build_prod_change:        initialize_last_served_date;
 		}
@@ -237,8 +235,6 @@ if (param_extension_fruits) {
 			monthly_prod_change:      CB_RESULT_IND_PROD_NO_CHANGE;
 			random_prod_change:       general_store_switch_update_last_served_date_ext_fruits;
 			location_check:           general_store_switch_location_check_industry_distance;
-			extra_text_fund:          return CB_RESULT_NO_TEXT;
-			extra_text_industry:      return CB_RESULT_NO_TEXT;
 			cargo_subtype_display:    return CB_RESULT_IND_NO_TEXT_NO_AMOUNT;
 			build_prod_change:        initialize_last_served_date;
 		}

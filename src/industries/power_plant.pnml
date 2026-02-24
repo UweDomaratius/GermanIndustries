@@ -656,18 +656,13 @@ switch(FEAT_INDUSTRIES, SELF, power_plant_switch_check_availability, current_yea
 	get_construction_probability;
 }
 
-switch(FEAT_INDUSTRIES, SELF, power_plant_switch_prod_change_build,
-	[])
-{
-	return 16; // default production value has to be returned here
-}
-
 switch(FEAT_INDUSTRIES, SELF, power_plant_switch_extra_text, 
 	[
 	 // do this one first, accessing the parent seems to thrash the temp registers 0x100, 0x101 and so on
 	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PREV_POWER_DEMAND),TEMP_REGISTER_EXTRA_TEXT_ARG1),
 	 
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0),TEMP_REGISTER_EXTRA_TEXT_ARG0)
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0),TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0)/10, TEMP_REGISTER_EXTRA_TEXT_ARG2)
 	]) {
 	return string(STR_POWER_PLANT_TEXT);
 }
@@ -732,7 +727,6 @@ if (!param_extension_coke_sulphur && !param_extension_fruits) {
 
 		graphics {
 			construction_probability: power_plant_switch_check_availability;
-			build_prod_change:        power_plant_switch_prod_change_build;
 			produce_cargo_arrival:    power_plant_switch_stockpile_check;
 			produce_256_ticks:        power_plant_switch_produce;
 			monthly_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -769,7 +763,6 @@ if (param_extension_coke_sulphur && !param_extension_fruits) {
 
 		graphics {
 			construction_probability: power_plant_switch_check_availability;
-			build_prod_change:        power_plant_switch_prod_change_build;
 			produce_cargo_arrival:    power_plant_switch_stockpile_check;
 			produce_256_ticks:        power_plant_switch_produce_ext_coke_sulphur;
 			monthly_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -806,7 +799,6 @@ if (!param_extension_coke_sulphur && param_extension_fruits) {
 
 		graphics {
 			construction_probability: power_plant_switch_check_availability;
-			build_prod_change:        power_plant_switch_prod_change_build;
 			produce_cargo_arrival:    power_plant_switch_stockpile_check_ext_fruits;
 			produce_256_ticks:        power_plant_switch_produce_ext_fruits;
 			monthly_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
@@ -843,7 +835,6 @@ if (param_extension_coke_sulphur && param_extension_fruits) {
 
 		graphics {
 			construction_probability: power_plant_switch_check_availability;
-			build_prod_change:        power_plant_switch_prod_change_build;
 			produce_cargo_arrival:    power_plant_switch_stockpile_check_ext_fruits;
 			produce_256_ticks:        power_plant_switch_produce_ext_coke_sulphur_ext_fruits;
 			monthly_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;

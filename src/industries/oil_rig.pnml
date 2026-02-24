@@ -426,7 +426,7 @@ switch(FEAT_INDUSTRIES, SELF, oil_rig_switch_produce,
 switch(FEAT_INDUSTRIES, SELF, oil_rig_switch_extra_text, 
 	[STORE_TEMP(65535,TEMP_REGISTER_MAXIMUM_PRODUCTION)])
 {
-	create_extractive_industry_text();
+	create_extractive_industry_text;
 }
 
 switch(FEAT_INDUSTRIES, SELF, oil_rig_switch_extra_text_fund, 

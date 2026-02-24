@@ -664,7 +664,13 @@ switch(FEAT_INDUSTRIES, SELF, salt_mine_switch_produce_ext_production_boost,
 switch(FEAT_INDUSTRIES, SELF, salt_mine_switch_extra_text, 
 	[STORE_TEMP(salt_mine_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION)])
 {
-	 create_extractive_industry_text();
+	 create_extractive_industry_text;
+}
+
+switch(FEAT_INDUSTRIES, SELF, salt_mine_switch_extra_text_ext_production_boost, 
+	[STORE_TEMP(salt_mine_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION)])
+{
+	 create_extractive_industry_text_optional_cargo;
 }
 
 switch(FEAT_INDUSTRIES, SELF, salt_mine_switch_extra_text_fund, 
@@ -771,7 +777,7 @@ if (param_extension_basic_inorganic_chemistry && param_extension_production_boos
 			cargo_subtype_display:    salt_mine_switch_cargo_subtype;
 			location_check:           salt_mine_switch_location_check_industry_distance;
 			extra_text_fund:          salt_mine_switch_extra_text_fund;
-			extra_text_industry:      salt_mine_switch_extra_text;
+			extra_text_industry:      salt_mine_switch_extra_text_ext_production_boost;
 			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}
