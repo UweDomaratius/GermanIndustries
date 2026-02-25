@@ -301,7 +301,6 @@ item(FEAT_INDUSTRIES, fishing_grounds, INDUSTRY_ID_FISHING_GROUNDS) {
 		random_prod_change:       fishing_grounds_switch_prod_change;
 		build_prod_change:        fishing_grounds_switch_prod_change_build;
 		location_check:           fishing_grounds_switch_location_check_industry_distance;
-		extra_text_fund:          return string(STR_EMPTY);
 		extra_text_industry:      fishing_grounds_switch_extra_text;
 	}
 }

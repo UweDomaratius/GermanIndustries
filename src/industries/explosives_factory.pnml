@@ -948,15 +948,15 @@ switch(FEAT_INDUSTRIES, SELF, explosives_factory_switch_cargo_subtype, getbits(e
 }
 
 switch(FEAT_INDUSTRIES, SELF, explosives_factory_switch_extra_text_fund, 
-	[STORE_TEMP(string(STR_1880), TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	[STORE_TEMP(string(STR_1910), TEMP_REGISTER_EXTRA_TEXT_ARG0),
 	current_year]) {
-	1880..500000: return string(STR_EMPTY);
+	1910..500000: return string(STR_EMPTY);
 	return string(STR_INDUSTRY_NOT_AVAILABLE_BEFORE);
 }
 
 switch(FEAT_INDUSTRIES, SELF, explosives_factory_switch_check_availability, 
 	current_year) {
-	0..1879: return CB_RESULT_IND_NO_CONSTRUCTION;
+	0..1909: return CB_RESULT_IND_NO_CONSTRUCTION;
 	get_construction_probability;
 }
 
