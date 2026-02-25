@@ -541,6 +541,7 @@ if (!param_extension_fruits) {
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           sawmill_switch_location_check_industry_distance;
 			cargo_subtype_display:    sawmill_switch_cargo_subtype;
+			extra_text_industry:      industry_switch_extra_text;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
@@ -576,6 +577,7 @@ if (param_extension_fruits) {
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           sawmill_switch_location_check_industry_distance;
 			cargo_subtype_display:    sawmill_switch_cargo_subtype;
+			extra_text_industry:      industry_switch_extra_text;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
 		}

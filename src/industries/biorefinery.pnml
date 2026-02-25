@@ -1022,7 +1022,7 @@ switch(FEAT_INDUSTRIES, SELF, biorefinery_switch_produce,
 	 STORE_TEMP(incoming_cargo_waiting("FRUT"), TEMP_REGISTER_INCOMING_CARGO_WAITING1),
 	 
 	 calculate_productivity_any_input(2),
-
+	 
 	 store_debug_production_data(),
 	 STORE_TEMP(percentage_of_production(65), TEMP_REGISTER_PRODUCT_1), // C2H4
 	 STORE_TEMP(percentage_of_production(25), TEMP_REGISTER_PRODUCT_2), // PETR
@@ -1103,7 +1103,7 @@ if (param_extension_fruits) {
 			location_check:           biorefinery_switch_location_check_industry_distance;
 			cargo_subtype_display:    biorefinery_switch_cargo_subtype;
 			extra_text_fund:          biorefinery_switch_extra_text_fund;
-			extra_text_industry:      return string(STR_INDUSTRY_NEEDS_ANY_INPUT);
+			extra_text_industry:      industry_switch_extra_text_any_input;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
 		}

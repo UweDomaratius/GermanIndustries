@@ -909,8 +909,7 @@ if (param_extension_textile_industries && !param_extension_packaging_industries)
 			monthly_prod_change:      furniture_factory_switch_update_last_served_date_ext_textile_industries;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           furniture_factory_switch_location_check_industry_distance;
-			extra_text_industry:      return string(STR_INDUSTRY_NEEDS_ANY_INPUT);
-			extra_text_fund:          return CB_RESULT_NO_TEXT;
+			extra_text_industry:      industry_switch_extra_text_any_input;
 			cargo_subtype_display:    furniture_factory_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
@@ -946,8 +945,7 @@ if (!param_extension_textile_industries && !param_extension_packaging_industries
 			monthly_prod_change:      furnitury_factory_switch_update_last_served_date;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           furniture_factory_switch_location_check_industry_distance;
-			extra_text_industry:      return string(STR_INDUSTRY_NEEDS_ANY_INPUT);
-			extra_text_fund:          return CB_RESULT_NO_TEXT;
+			extra_text_industry:      industry_switch_extra_text_any_input;
 			cargo_subtype_display:    furniture_factory_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
@@ -984,7 +982,6 @@ if (param_extension_textile_industries && param_extension_packaging_industries) 
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           furniture_factory_switch_location_check_industry_distance;
 			extra_text_industry:      industry_switch_extra_text_industry_optional_cargo_any;
-			extra_text_fund:          return CB_RESULT_NO_TEXT;
 			cargo_subtype_display:    furniture_factory_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
@@ -1021,7 +1018,6 @@ if (!param_extension_textile_industries && param_extension_packaging_industries)
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           furniture_factory_switch_location_check_industry_distance;
 			extra_text_industry:      industry_switch_extra_text_industry_optional_cargo_any;
-			extra_text_fund:          return CB_RESULT_NO_TEXT;
 			cargo_subtype_display:    furniture_factory_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;

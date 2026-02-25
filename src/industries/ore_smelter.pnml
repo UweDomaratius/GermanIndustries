@@ -1314,6 +1314,7 @@ if (param_extension_coke_sulphur && !param_extension_painting_industries && !par
 			location_check:           ore_smelter_switch_location_check_industry_distance;
 			cargo_subtype_display:    ore_smelter_switch_cargo_subtype;
 			extra_text_fund:          ore_smelter_switch_extra_text_fund;
+			extra_text_industry:      industry_switch_extra_text;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
@@ -1350,6 +1351,7 @@ if (param_extension_coke_sulphur && param_extension_painting_industries && !para
 			location_check:           ore_smelter_switch_location_check_industry_distance;
 			cargo_subtype_display:    ore_smelter_switch_cargo_subtype;
 			extra_text_fund:          ore_smelter_switch_extra_text_fund;
+			extra_text_industry:      industry_switch_extra_text;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
@@ -1386,6 +1388,7 @@ if (param_extension_coke_sulphur && !param_extension_painting_industries && para
 			location_check:           ore_smelter_switch_location_check_industry_distance;
 			cargo_subtype_display:    ore_smelter_switch_cargo_subtype;
 			extra_text_fund:          ore_smelter_switch_extra_text_fund;
+			extra_text_industry:      industry_switch_extra_text_industry_optional_cargo;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
@@ -1422,6 +1425,7 @@ if (param_extension_coke_sulphur && param_extension_painting_industries && param
 			location_check:           ore_smelter_switch_location_check_industry_distance;
 			cargo_subtype_display:    ore_smelter_switch_cargo_subtype;
 			extra_text_fund:          ore_smelter_switch_extra_text_fund;
+			extra_text_industry:      industry_switch_extra_text_industry_optional_cargo;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
@@ -1457,6 +1461,7 @@ if (param_extension_coke_sulphur && !param_extension_painting_industries && !par
 			location_check:           ore_smelter_switch_location_check_industry_distance;
 			cargo_subtype_display:    ore_smelter_switch_cargo_subtype;
 			extra_text_fund:          ore_smelter_switch_extra_text_fund;
+			extra_text_industry:      industry_switch_extra_text;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
@@ -1493,6 +1498,7 @@ if (param_extension_coke_sulphur && param_extension_painting_industries && !para
 			location_check:           ore_smelter_switch_location_check_industry_distance;
 			cargo_subtype_display:    ore_smelter_switch_cargo_subtype;
 			extra_text_fund:          ore_smelter_switch_extra_text_fund;
+			extra_text_industry:      industry_switch_extra_text;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
@@ -1529,6 +1535,7 @@ if (param_extension_coke_sulphur && !param_extension_painting_industries && para
 			location_check:           ore_smelter_switch_location_check_industry_distance;
 			cargo_subtype_display:    ore_smelter_switch_cargo_subtype;
 			extra_text_fund:          ore_smelter_switch_extra_text_fund;
+			extra_text_industry:      industry_switch_extra_text_industry_optional_cargo;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
@@ -1565,6 +1572,7 @@ if (param_extension_coke_sulphur && param_extension_painting_industries && param
 			location_check:           ore_smelter_switch_location_check_industry_distance;
 			cargo_subtype_display:    ore_smelter_switch_cargo_subtype;
 			extra_text_fund:          ore_smelter_switch_extra_text_fund;
+			extra_text_industry:      industry_switch_extra_text_industry_optional_cargo;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
 		}

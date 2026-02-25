@@ -916,7 +916,7 @@ switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_produce_ext_ammonia_ext_recyclin
 	 STORE_TEMP(incoming_cargo_waiting("O2__"),TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING1),
 	 STORE_TEMP(incoming_cargo_waiting("SCMT"),TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING2),
 	 
-	 limit_production_optional_cargo(1),
+	 limit_production_optional_cargo(2),
 	 update_permanent_storage_production_values(),
 	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING1), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW1),
 	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING2), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW2),
@@ -979,7 +979,7 @@ switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_produce_ext_glass_ext_ammonia_ex
 	 STORE_TEMP(incoming_cargo_waiting("O2__"),TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING1),
 	 STORE_TEMP(incoming_cargo_waiting("SCMT"),TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING2),
 	 
-	 limit_production_optional_cargo(1),
+	 limit_production_optional_cargo(2),
 	 update_permanent_storage_production_values(),
 	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING1), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW1),
 	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING2), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW2),
@@ -1041,7 +1041,7 @@ switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_produce_ext_coke_sulphur_ext_amm
 	 STORE_TEMP(incoming_cargo_waiting("O2__"),TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING1),
 	 STORE_TEMP(incoming_cargo_waiting("SCMT"),TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING2),
 	 
-	 limit_production_optional_cargo(1),
+	 limit_production_optional_cargo(2),
 	 update_permanent_storage_production_values(),
 	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING1), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW1),
 	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING2), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW2),
@@ -1104,7 +1104,7 @@ switch(FEAT_INDUSTRIES, SELF, steel_mill_switch_produce_ext_glass_ext_coke_sulph
 	 STORE_TEMP(incoming_cargo_waiting("O2__"),TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING1),
 	 STORE_TEMP(incoming_cargo_waiting("SCMT"),TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING2),
 	 
-	 limit_production_optional_cargo(1),
+	 limit_production_optional_cargo(2),
 	 update_permanent_storage_production_values(),
 	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING1), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW1),
 	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING2), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW2),
@@ -1551,6 +1551,7 @@ if (!param_extension_glass && !param_extension_coke_sulphur && !param_extension_
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           steel_mill_switch_location_check_industry_distance;
 			extra_text_fund:          steel_mill_switch_extra_text_fund;
+			extra_text_industry:      industry_switch_extra_text;
 			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
@@ -1587,6 +1588,7 @@ if (param_extension_glass && !param_extension_coke_sulphur && !param_extension_a
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           steel_mill_switch_location_check_industry_distance;
 			extra_text_fund:          steel_mill_switch_extra_text_fund;
+			extra_text_industry:      industry_switch_extra_text;
 			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
@@ -1623,6 +1625,7 @@ if (!param_extension_glass && param_extension_coke_sulphur && !param_extension_a
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           steel_mill_switch_location_check_industry_distance;
 			extra_text_fund:          steel_mill_switch_extra_text_fund;
+			extra_text_industry:      industry_switch_extra_text;
 			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
@@ -1659,7 +1662,7 @@ if (param_extension_glass && param_extension_coke_sulphur && !param_extension_am
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           steel_mill_switch_location_check_industry_distance;
 			extra_text_fund:          steel_mill_switch_extra_text_fund;
-			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO);
+			extra_text_industry:      industry_switch_extra_text;
 			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
@@ -1696,6 +1699,7 @@ if (!param_extension_glass && !param_extension_coke_sulphur && param_extension_a
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           steel_mill_switch_location_check_industry_distance;
 			extra_text_fund:          steel_mill_switch_extra_text_fund;
+			extra_text_industry:      industry_switch_extra_text_industry_optional_cargo;
 			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
@@ -1732,6 +1736,7 @@ if (param_extension_glass && !param_extension_coke_sulphur && param_extension_am
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           steel_mill_switch_location_check_industry_distance;
 			extra_text_fund:          steel_mill_switch_extra_text_fund;
+			extra_text_industry:      industry_switch_extra_text_industry_optional_cargo;
 			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
@@ -1768,6 +1773,7 @@ if (!param_extension_glass && param_extension_coke_sulphur && param_extension_am
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           steel_mill_switch_location_check_industry_distance;
 			extra_text_fund:          steel_mill_switch_extra_text_fund;
+			extra_text_industry:      industry_switch_extra_text_industry_optional_cargo;
 			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
@@ -1804,6 +1810,7 @@ if (param_extension_glass && param_extension_coke_sulphur && param_extension_amm
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           steel_mill_switch_location_check_industry_distance;
 			extra_text_fund:          steel_mill_switch_extra_text_fund;
+			extra_text_industry:      industry_switch_extra_text_industry_optional_cargo;
 			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
@@ -1840,6 +1847,7 @@ if (!param_extension_glass && !param_extension_coke_sulphur && !param_extension_
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           steel_mill_switch_location_check_industry_distance;
 			extra_text_fund:          steel_mill_switch_extra_text_fund;
+			extra_text_industry:      industry_switch_extra_text_industry_optional_cargo;
 			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
@@ -1876,6 +1884,7 @@ if (param_extension_glass && !param_extension_coke_sulphur && !param_extension_a
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           steel_mill_switch_location_check_industry_distance;
 			extra_text_fund:          steel_mill_switch_extra_text_fund;
+			extra_text_industry:      industry_switch_extra_text_industry_optional_cargo;
 			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
@@ -1912,6 +1921,7 @@ if (!param_extension_glass && param_extension_coke_sulphur && !param_extension_a
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           steel_mill_switch_location_check_industry_distance;
 			extra_text_fund:          steel_mill_switch_extra_text_fund;
+			extra_text_industry:      industry_switch_extra_text_industry_optional_cargo;
 			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
@@ -1948,7 +1958,7 @@ if (param_extension_glass && param_extension_coke_sulphur && !param_extension_am
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           steel_mill_switch_location_check_industry_distance;
 			extra_text_fund:          steel_mill_switch_extra_text_fund;
-			extra_text_industry:      return string(STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO);
+			extra_text_industry:      industry_switch_extra_text_industry_optional_cargo;
 			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
@@ -1985,6 +1995,7 @@ if (!param_extension_glass && !param_extension_coke_sulphur && param_extension_a
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           steel_mill_switch_location_check_industry_distance;
 			extra_text_fund:          steel_mill_switch_extra_text_fund;
+			extra_text_industry:      industry_switch_extra_text_industry_optional_cargo;
 			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
@@ -2021,6 +2032,7 @@ if (param_extension_glass && !param_extension_coke_sulphur && param_extension_am
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           steel_mill_switch_location_check_industry_distance;
 			extra_text_fund:          steel_mill_switch_extra_text_fund;
+			extra_text_industry:      industry_switch_extra_text_industry_optional_cargo;
 			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
@@ -2057,6 +2069,7 @@ if (!param_extension_glass && param_extension_coke_sulphur && param_extension_am
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           steel_mill_switch_location_check_industry_distance;
 			extra_text_fund:          steel_mill_switch_extra_text_fund;
+			extra_text_industry:      industry_switch_extra_text_industry_optional_cargo;
 			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
@@ -2093,6 +2106,7 @@ if (param_extension_glass && param_extension_coke_sulphur && param_extension_amm
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           steel_mill_switch_location_check_industry_distance;
 			extra_text_fund:          steel_mill_switch_extra_text_fund;
+			extra_text_industry:      industry_switch_extra_text_industry_optional_cargo;
 			cargo_subtype_display:    steel_mill_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;

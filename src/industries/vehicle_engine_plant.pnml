@@ -842,6 +842,7 @@ if (param_extension_vehicle && !param_extension_aluminium && !param_extension_me
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           vehicle_engine_plant_switch_location_check_industry_distance;
 			extra_text_fund:          vehicle_engine_plant_switch_extra_text_fund;
+			extra_text_industry:      industry_switch_extra_text;
 			cargo_subtype_display:    vehicle_engine_plant_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
@@ -878,6 +879,7 @@ if (param_extension_vehicle && param_extension_aluminium && !param_extension_met
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           vehicle_engine_plant_switch_location_check_industry_distance;
 			extra_text_fund:          vehicle_engine_plant_switch_extra_text_fund;
+			extra_text_industry:      industry_switch_extra_text;
 			cargo_subtype_display:    vehicle_engine_plant_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
@@ -914,6 +916,7 @@ if (param_extension_vehicle && !param_extension_aluminium && param_extension_met
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           vehicle_engine_plant_switch_location_check_industry_distance;
 			extra_text_fund:          vehicle_engine_plant_switch_extra_text_fund;
+			extra_text_industry:      industry_switch_extra_text;
 			cargo_subtype_display:    vehicle_engine_plant_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
@@ -950,6 +953,7 @@ if (param_extension_vehicle && param_extension_aluminium && param_extension_meta
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           vehicle_engine_plant_switch_location_check_industry_distance;
 			extra_text_fund:          vehicle_engine_plant_switch_extra_text_fund;
+			extra_text_industry:      industry_switch_extra_text;
 			cargo_subtype_display:    vehicle_engine_plant_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;

@@ -2270,7 +2270,6 @@ if (param_extension_fruits && !param_extension_production_boost) {
 			random_prod_change:       fruit_plantation_switch_prod_change;
 			build_prod_change:        fruit_plantation_switch_prod_change_build;
 			location_check:           fruit_plantation_switch_location_check_industry_distance;
-			extra_text_fund:          return string(STR_EMPTY);
 			extra_text_industry:      fruit_plantation_switch_extra_text;
 		}
 	}
@@ -2307,7 +2306,6 @@ if (param_extension_fruits && param_extension_production_boost) {
 			build_prod_change:        fruit_plantation_switch_prod_change_build;
 			location_check:           fruit_plantation_switch_location_check_industry_distance;
 			cargo_subtype_display:    fruit_plantation_switch_cargo_subtype;
-			extra_text_fund:          return string(STR_EMPTY);
 			extra_text_industry:      fruit_plantation_switch_extra_text_optional_cargo;
 			stop_accept_cargo:        switch_stop_accept_cargo;
 		}

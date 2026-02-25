@@ -515,7 +515,7 @@ if (param_extension_food_industries && !param_extension_textile_industries && !p
 			build_prod_change:        initialize_last_served_date;
 			location_check:           animal_farm_switch_location_check_industry_distance;
 			cargo_subtype_display:    animal_farm_switch_cargo_subtype;
-			extra_text_fund:          return string(STR_EMPTY);
+			extra_text_industry:      industry_switch_extra_text;
 		}
 	}
 }
@@ -552,7 +552,7 @@ if (param_extension_food_industries && param_extension_textile_industries && !pa
 			build_prod_change:        initialize_last_served_date;
 			location_check:           animal_farm_switch_location_check_industry_distance;
 			cargo_subtype_display:    animal_farm_switch_cargo_subtype;
-			extra_text_fund:          return string(STR_EMPTY);
+			extra_text_industry:      industry_switch_extra_text;
 		}
 	}
 }
@@ -589,7 +589,7 @@ if (param_extension_food_industries && !param_extension_textile_industries && pa
 			build_prod_change:        initialize_last_served_date;
 			location_check:           animal_farm_switch_location_check_industry_distance;
 			cargo_subtype_display:    animal_farm_switch_cargo_subtype;
-			extra_text_fund:          return string(STR_EMPTY);
+			extra_text_industry:      industry_switch_extra_text;
 		}
 	}
 }
@@ -626,7 +626,7 @@ if (param_extension_food_industries && param_extension_textile_industries && par
 			build_prod_change:        initialize_last_served_date;
 			location_check:           animal_farm_switch_location_check_industry_distance;
 			cargo_subtype_display:    animal_farm_switch_cargo_subtype;
-			extra_text_fund:          return string(STR_EMPTY);
+			extra_text_industry:      industry_switch_extra_text;
 			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
 	}

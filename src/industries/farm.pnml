@@ -878,44 +878,14 @@ switch(FEAT_INDUSTRIES, SELF, farm_switch_produce_ext_fruits_extension_productio
 // build the industry window text here
 ////////////////////////////////////////////////////////////////////////////////
 switch(FEAT_INDUSTRIES, SELF, farm_switch_extra_text, 
-	[STORE_TEMP(farm_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
-	 STORE_TEMP(
-		LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) < LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION) ? string(STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION) : string(STR_INDUSTRY_PREREQ_KEEP_PRODUCTION) | 
-		string(STR_EMPTY) << 16,
-		TEMP_REGISTER_EXTRA_TEXT_ARG0)
-	]) {
-	return string(STR_ORGANIC_INDUSTRY_TEXT);
-}
-
-switch(FEAT_INDUSTRIES, SELF, industry_switch_extra_text_organic, 
-	[STORE_TEMP(
-		LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) < LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION) ? string(STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION) : string(STR_INDUSTRY_PREREQ_KEEP_PRODUCTION) | 
-		string(STR_EMPTY) << 16,
-		TEMP_REGISTER_EXTRA_TEXT_ARG0)
-	])
-{
-	return string(STR_ORGANIC_INDUSTRY_TEXT);
-}
-
-switch(FEAT_INDUSTRIES, SELF, industry_switch_extra_text_missing_optional_cargo_organic, 
-	[STORE_TEMP(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0),TEMP_REGISTER_EXTRA_TEXT_ARG0),
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0),TEMP_REGISTER_EXTRA_TEXT_ARG1),
-	 STORE_TEMP(string(STR_ORGANIC_INDUSTRY_TEXT_PRODUCTION_BOOST),TEMP_REGISTER_EXTRA_TEXT_ARG2),
-	 STORE_TEMP(
-		LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) < LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION) ? string(STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION) : string(STR_INDUSTRY_PREREQ_KEEP_PRODUCTION) | 
-		string(STR_EMPTY) << 16,
-		TEMP_REGISTER_EXTRA_TEXT_ARG3)
-	])
-{
-	return string(STR_PRODUCTION_LIMITED_DUE_TO_MISSING_OPTIONAL_CARGO);
+	[STORE_TEMP(farm_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION)]) {
+	create_organic_industry_text;
 }
 
 switch(FEAT_INDUSTRIES, SELF, farm_switch_extra_text_ext_production_boost, 
-	[STORE_TEMP(farm_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
-	(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0)>LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0))?1:0])
+	[STORE_TEMP(farm_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION)])
 {
-	1: industry_switch_extra_text_missing_optional_cargo_organic;
-	industry_switch_extra_text_organic;
+	create_organic_industry_text_optional_cargo;
 }
 
 switch(FEAT_INDUSTRIES, SELF, farm_switch_cargo_subtype, getbits(extra_callback_info2, 16, 8)) {
@@ -966,7 +936,6 @@ if (param_extension_textile_industries && !param_extension_food_industries && !p
 			random_prod_change:       farm_switch_prod_change_extension_textile_industry;
 			build_prod_change:        farm_switch_prod_change_build;
 			location_check:           farm_switch_location_check_industry_distance;
-			extra_text_fund:          return string(STR_EMPTY);
 			extra_text_industry:      farm_switch_extra_text;
 		}
 	}
@@ -1002,7 +971,6 @@ if (!param_extension_textile_industries && !param_extension_food_industries && !
 			random_prod_change:       farm_switch_prod_change;
 			build_prod_change:        farm_switch_prod_change_build;
 			location_check:           farm_switch_location_check_industry_distance;
-			extra_text_fund:          return string(STR_EMPTY);
 			extra_text_industry:      farm_switch_extra_text;
 		}
 	}
@@ -1038,7 +1006,6 @@ if (param_extension_food_industries && !param_extension_fruits && !param_extensi
 			random_prod_change:       farm_switch_prod_change_extension_food_industry;
 			build_prod_change:        farm_switch_prod_change_build;
 			location_check:           farm_switch_location_check_industry_distance;
-			extra_text_fund:          return string(STR_EMPTY);
 			extra_text_industry:      farm_switch_extra_text;
 		}
 	}
@@ -1074,7 +1041,6 @@ if (param_extension_textile_industries && !param_extension_food_industries && pa
 			random_prod_change:       farm_switch_prod_change_extension_textile_industry_ext_fruits;
 			build_prod_change:        farm_switch_prod_change_build;
 			location_check:           farm_switch_location_check_industry_distance;
-			extra_text_fund:          return string(STR_EMPTY);
 			extra_text_industry:      farm_switch_extra_text;
 		}
 	}
@@ -1110,7 +1076,6 @@ if (!param_extension_textile_industries && !param_extension_food_industries && p
 			random_prod_change:       farm_switch_prod_change_ext_fruits;
 			build_prod_change:        farm_switch_prod_change_build;
 			location_check:           farm_switch_location_check_industry_distance;
-			extra_text_fund:          return string(STR_EMPTY);
 			extra_text_industry:      farm_switch_extra_text;
 		}
 	}
@@ -1146,7 +1111,6 @@ if (param_extension_food_industries && param_extension_fruits && !param_extensio
 			random_prod_change:       farm_switch_prod_change_ext_food_industry_ext_fruits;
 			build_prod_change:        farm_switch_prod_change_build;
 			location_check:           farm_switch_location_check_industry_distance;
-			extra_text_fund:          return string(STR_EMPTY);
 			extra_text_industry:      farm_switch_extra_text;
 		}
 	}
@@ -1183,7 +1147,6 @@ if (param_extension_textile_industries && !param_extension_food_industries && !p
 			build_prod_change:        farm_switch_prod_change_build;
 			location_check:           farm_switch_location_check_industry_distance;
 			cargo_subtype_display:    farm_switch_cargo_subtype;
-			extra_text_fund:          return string(STR_EMPTY);
 			extra_text_industry:      farm_switch_extra_text_ext_production_boost;
 			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
@@ -1221,7 +1184,6 @@ if (!param_extension_textile_industries && !param_extension_food_industries && !
 			build_prod_change:        farm_switch_prod_change_build;
 			location_check:           farm_switch_location_check_industry_distance;
 			cargo_subtype_display:    farm_switch_cargo_subtype;
-			extra_text_fund:          return string(STR_EMPTY);
 			extra_text_industry:      farm_switch_extra_text_ext_production_boost;
 			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
@@ -1259,7 +1221,6 @@ if (param_extension_food_industries && !param_extension_fruits && param_extensio
 			build_prod_change:        farm_switch_prod_change_build;
 			location_check:           farm_switch_location_check_industry_distance;
 			cargo_subtype_display:    farm_switch_cargo_subtype;
-			extra_text_fund:          return string(STR_EMPTY);
 			extra_text_industry:      farm_switch_extra_text_ext_production_boost;
 			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
@@ -1297,7 +1258,6 @@ if (param_extension_textile_industries && !param_extension_food_industries && pa
 			build_prod_change:        farm_switch_prod_change_build;
 			location_check:           farm_switch_location_check_industry_distance;
 			cargo_subtype_display:    farm_switch_cargo_subtype;
-			extra_text_fund:          return string(STR_EMPTY);
 			extra_text_industry:      farm_switch_extra_text_ext_production_boost;
 			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
@@ -1335,7 +1295,6 @@ if (!param_extension_textile_industries && !param_extension_food_industries && p
 			build_prod_change:        farm_switch_prod_change_build;
 			location_check:           farm_switch_location_check_industry_distance;
 			cargo_subtype_display:    farm_switch_cargo_subtype;
-			extra_text_fund:          return string(STR_EMPTY);
 			extra_text_industry:      farm_switch_extra_text_ext_production_boost;
 			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
@@ -1373,7 +1332,6 @@ if (param_extension_food_industries && param_extension_fruits && param_extension
 			build_prod_change:        farm_switch_prod_change_build;
 			location_check:           farm_switch_location_check_industry_distance;
 			cargo_subtype_display:    farm_switch_cargo_subtype;
-			extra_text_fund:          return string(STR_EMPTY);
 			extra_text_industry:      farm_switch_extra_text_ext_production_boost;
 			stop_accept_cargo:        switch_stop_accept_cargo;
 		}

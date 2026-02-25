@@ -321,24 +321,34 @@ STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION :{BLACK}Transportiere mehr als 60% der p
 STR_INDUSTRY_PREREQ_KEEP_PRODUCTION     :{BLACK}Industrie produziert am Maximum. Transportiere mehr als 60% der produzierten Fracht um diesen Produktionslevel zu halten.
 STR_ORGANIC_INDUSTRY_TEXT_PRODUCTION_BOOST:{BLACK}In weiß dargestellte Rohstoffe erhöhen die maximale Produktion.
 # Extractive Industrien (Bergwerke) zeigen die Info zum Produktionslevel und die Menge der verbleibenden Rohstoffe.
-STR_EXTRACTIVE_INDUSTRY_TEXT:{STRING}{}{STRING}{}{BLACK}Etwa {YELLOW}{COMMA} kt {BLACK} verbleibend (ca. {YELLOW}{COMMA} Jahre{BLACK} bei aktuellem Produktionslevel)
+STR_EXTRACTIVE_INDUSTRY_HAS_OPTIONAL_CARGO :In weiß dargestellte Rohstoffe erhöhen die maximale Produktion.
+STR_EXTRACTIVE_INDUSTRY_TEXT_OPTIONAL_CARGO_WITH_LINEBREAK :{STRING}{}{STRING}{STRING}{STRING}{}{BLACK}Etwa {YELLOW}{COMMA} kt {BLACK} verbleibend (ca. {YELLOW}{COMMA} Jahre{BLACK} bei aktuellem Produktionslevel)
+STR_EXTRACTIVE_INDUSTRY_TEXT_OPTIONAL_CARGO_WITHOUT_LINEBREAK :{STRING}{STRING}{STRING}{STRING}{}{BLACK}Etwa {YELLOW}{COMMA} kt {BLACK} verbleibend (ca. {YELLOW}{COMMA} Jahre{BLACK} bei aktuellem Produktionslevel)
+STR_EXTRACTIVE_INDUSTRY_TEXT:{STRING}{STRING}{}{BLACK}Etwa {YELLOW}{COMMA} kt {BLACK} verbleibend (ca. {YELLOW}{COMMA} Jahre{BLACK} bei aktuellem Produktionslevel)
 # Secondary industries with optional input requirements
-STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO :{BLACK}Industrie benötigt die in schwarz dargestellten Rohstoffe zur Produktion. In weiß dargestellte Rohstoffe erhöhen die maximale Produktion.
-STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO_ANY :{BLACK}Industrie benötigt wenigstens einen der in schwarz dargestellten Rohstoffe zur Produktion. Die maximale Produktion erhöht sich mit der Anzahl der verfügbaren verschiedenen Rohstoffe. In weiß dargestellte Rohstoffe erhöhen die maximale Produktion noch weiter.
-STR_INDUSTRY_NEEDS_ANY_INPUT :{BLACK}Industrie beginnt Produktion sobald wenigstens ein Rohstoff verfügbar ist. Die maximale Produktion erhöht sich mit der Anzahl der verfügbaren verschiedenen Rohstoffe.
+STR_INDUSTRY_SCALES_WITH_CITY_SIZE :{BLACK}Produktion hängt von der Stadtgröße ab.
+STR_INDUSTRY_NEEDS_ALL_INPUT :{BLACK}Industrie benötigt alle aufgelisteten Rohstoffe zur Produktion.
+STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO :{BLACK}Industrie benötigt alle in schwarz dargestellten Rohstoffe zur Produktion. In weiß dargestellte Rohstoffe erhöhen die maximale Produktion.
+STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO_ANY :{BLACK}Produktivität: {STRING}{}{}{BLACK}Industrie benötigt wenigstens einen der in schwarz dargestellten Rohstoffe zur Produktion. Die Produktivität erhöht sich mit der Anzahl der verfügbaren verschiedenen Rohstoffe. In weiß dargestellte Rohstoffe erhöhen die maximale Produktion.
+STR_INDUSTRY_NEEDS_ANY_INPUT :{BLACK}Produktivität: {STRING}{}{}{BLACK}Industrie beginnt Produktion sobald wenigstens ein Rohstoff verfügbar ist. Die Produktivität erhöht sich mit der Anzahl der verfügbaren verschiedenen Rohstoffe.
 STR_PRODUCTION_LIMITED_DUE_TO_MISSING_OPTIONAL_CARGO :{YELLOW}Produktion wird durch fehlende optionale Rohstoffe begrenzt!
 
+# Productivity
+STR_PRODUCTIVITY_LOW :{RED}niedrig
+STR_PRODUCTIVITY_MEDIUM :{YELLOW}mittel
+STR_PRODUCTIVITY_HIGH :{GREEN}hoch
+
 # Texte für Energiewirtschaft, Kraftwerke zeigen die Produktion, Industrien zeigen an wie viel Strom sie benötigen und ob der Bedarf gedeckt ist
-STR_POWER_PLANT_TEXT :{BLACK}Stromproduktion {YELLOW}{COMMA}{BLACK}, Bedarf {YELLOW}{COMMA}{BLACK}
-STR_INDUSTRY_ELECTRICITY_TEXT :{BLACK}Industrie kann {YELLOW}{COMMA}{BLACK} Einheiten produzieren ({YELLOW}{COMMA}{BLACK}% der maximalen Produktion){}Maximale Produktion benötigt {YELLOW}{COMMA}{BLACK} Strom.{}{BLACK}{STRING}
+STR_POWER_PLANT_TEXT :{BLACK}Stromproduktion {YELLOW}{COMMA}{BLACK}, Bedarf {YELLOW}{COMMA}{BLACK}, Rohstoffverbrauch {YELLOW}{WEIGHT}{BLACK}
+STR_INDUSTRY_ELECTRICITY_TEXT :{BLACK}Industrie benötigt {YELLOW}{COMMA}{BLACK} Strom vom örtlichen Kraftwerk. {STRING}
 STR_INDUSTRY_NO_POWER :{RED}Kein Strom verfügbar, Produktion gestoppt!
 STR_INDUSTRY_NOT_ENOUGH_POWER :{YELLOW}Nicht genug Strom verfügbar, Produktion reduziert!
 STR_INDUSTRY_ENOUGH_POWER :{GREEN}Genug Strom verfügbar.
 # Texte für spezifische Industrien
-STR_ACID_PLANT_HCL_SULP :{BLACK}Industrie benötigt Schwefel oder Wasserstoff + Chlor zur Produktion. Die maximale Produktion erhöht sich, wenn alle drei Rohstoffe verfügbar sind.
-STR_ACID_PLANT_HCL_SULP_NH3 :{BLACK}Industrie benötigt Schwefel + Sauerstoff oder Wasserstoff + Chlor oder Ammoniak + Sauerstoff zur Produktion. Die maximale Produktion erhöht sich, wenn alle fünf Rohstoffe verfügbar sind.
-STR_ACID_PLANT_SULP_NH3 :{BLACK}Industrie benötigt Schwefel + Sauerstoff oder Ammoniak + Sauerstoff zur Produktion. Die maximale Produktion erhöht sich, wenn alle drei Rohstoffe verfügbar sind.
-STR_FOUNDRY_FORGE_ALUM :{BLACK}Industrie benötigt Koks + Stahl oder Koks + Aluminium zur Produktion. Die maximale Produktion erhöht sich, wenn alle drei Rohstoffe verfügbar sind.
+STR_ACID_PLANT_HCL_SULP :{BLACK}Produktivität: {STRING}{}{}{BLACK}Industrie benötigt Schwefel oder Wasserstoff + Chlor zur Produktion. Die Produktivität erhöht sich, wenn alle drei Rohstoffe verfügbar sind.
+STR_ACID_PLANT_HCL_SULP_NH3 :{BLACK}Produktivität: {STRING}{}{}{BLACK}Industrie benötigt Schwefel + Sauerstoff oder Wasserstoff + Chlor oder Ammoniak + Sauerstoff zur Produktion. Die Produktivität erhöht sich, wenn alle fünf Rohstoffe verfügbar sind.
+STR_ACID_PLANT_SULP_NH3 :{BLACK}Produktivität: {STRING}{}{}{BLACK}Industrie benötigt Schwefel + Sauerstoff oder Ammoniak + Sauerstoff zur Produktion. Die Produktivität erhöht sich, wenn alle drei Rohstoffe verfügbar sind.
+STR_FOUNDRY_FORGE_ALUM :{BLACK}Industrie benötigt Koks + Stahl oder Koks + Aluminium zur Produktion. Die Produktivität erhöht sich, wenn alle drei Rohstoffe verfügbar sind.
 
 STR_INDUSTRY_ELECTRICITY_OPTIONAL_CARGO_TEXT :{BLACK}Industrie kann {YELLOW}{COMMA}{BLACK} Einheiten produzieren ({YELLOW}{COMMA}{BLACK}% der maximalen Produktion){}Maximale Produktion benötigt {YELLOW}{COMMA}{BLACK} Strom.{}{STRING}{}{BLACK}{STRING}
 

@@ -1867,7 +1867,7 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_indu
 			monthly_prod_change:      pharmaceutical_plant_switch_update_last_served_date;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           pharmaceutical_plant_switch_location_check_industry_distance;
-			extra_text_industry:      return string(STR_INDUSTRY_NEEDS_ANY_INPUT);
+			extra_text_industry:      industry_switch_extra_text_any_input;
 			extra_text_fund:          pharmaceutical_plant_switch_extra_text_fund;
 			cargo_subtype_display:    pharmaceutical_plant_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
@@ -1941,7 +1941,7 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_indu
 			monthly_prod_change:      pharmaceutical_plant_switch_update_last_served_date_ext_organic_chemistry;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           pharmaceutical_plant_switch_location_check_industry_distance;
-			extra_text_industry:      return string(STR_INDUSTRY_NEEDS_ANY_INPUT);
+			extra_text_industry:      industry_switch_extra_text_any_input;
 			extra_text_fund:          pharmaceutical_plant_switch_extra_text_fund;
 			cargo_subtype_display:    pharmaceutical_plant_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
@@ -2015,7 +2015,7 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_indu
 			monthly_prod_change:      pharmaceutical_plant_switch_update_last_served_date_ext_coke_sulphur;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           pharmaceutical_plant_switch_location_check_industry_distance;
-			extra_text_industry:      return string(STR_INDUSTRY_NEEDS_ANY_INPUT);
+			extra_text_industry:      industry_switch_extra_text_any_input;
 			extra_text_fund:          pharmaceutical_plant_switch_extra_text_fund;
 			cargo_subtype_display:    pharmaceutical_plant_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
@@ -2089,7 +2089,7 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_indu
 			monthly_prod_change:      pharmaceutical_plant_switch_update_last_served_date_ext_organic_chemistry_ext_coke_sulphur;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           pharmaceutical_plant_switch_location_check_industry_distance;
-			extra_text_industry:      return string(STR_INDUSTRY_NEEDS_ANY_INPUT);
+			extra_text_industry:      industry_switch_extra_text_any_input;
 			extra_text_fund:          pharmaceutical_plant_switch_extra_text_fund;
 			cargo_subtype_display:    pharmaceutical_plant_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
@@ -2163,7 +2163,7 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_indu
 			monthly_prod_change:      pharmaceutical_plant_switch_update_last_served_date_ext_ammonia;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           pharmaceutical_plant_switch_location_check_industry_distance;
-			extra_text_industry:      return string(STR_INDUSTRY_NEEDS_ANY_INPUT);
+			extra_text_industry:      industry_switch_extra_text_any_input;
 			extra_text_fund:          pharmaceutical_plant_switch_extra_text_fund;
 			cargo_subtype_display:    pharmaceutical_plant_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
@@ -2237,7 +2237,7 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_indu
 			monthly_prod_change:      pharmaceutical_plant_switch_update_last_served_date_ext_organic_chemistry_ext_ammonia;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           pharmaceutical_plant_switch_location_check_industry_distance;
-			extra_text_industry:      return string(STR_INDUSTRY_NEEDS_ANY_INPUT);
+			extra_text_industry:      industry_switch_extra_text_any_input;
 			extra_text_fund:          pharmaceutical_plant_switch_extra_text_fund;
 			cargo_subtype_display:    pharmaceutical_plant_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
@@ -2311,7 +2311,7 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_indu
 			monthly_prod_change:      pharmaceutical_plant_switch_update_last_served_date_ext_coke_sulphur_ext_ammonia;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           pharmaceutical_plant_switch_location_check_industry_distance;
-			extra_text_industry:      return string(STR_INDUSTRY_NEEDS_ANY_INPUT);
+			extra_text_industry:      industry_switch_extra_text_any_input;
 			extra_text_fund:          pharmaceutical_plant_switch_extra_text_fund;
 			cargo_subtype_display:    pharmaceutical_plant_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
@@ -2385,7 +2385,7 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_indu
 			monthly_prod_change:      pharmaceutical_plant_switch_update_last_served_date_ext_organic_chemistry_ext_coke_sulphur_ext_ammonia;
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           pharmaceutical_plant_switch_location_check_industry_distance;
-			extra_text_industry:      return string(STR_INDUSTRY_NEEDS_ANY_INPUT);
+			extra_text_industry:      industry_switch_extra_text_any_input;
 			extra_text_fund:          pharmaceutical_plant_switch_extra_text_fund;
 			cargo_subtype_display:    pharmaceutical_plant_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;

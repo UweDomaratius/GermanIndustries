@@ -436,7 +436,7 @@ switch(FEAT_INDUSTRIES, SELF, oil_well_switch_produce,
 switch(FEAT_INDUSTRIES, SELF, oil_well_switch_extra_text, 
 	[STORE_TEMP(oil_well_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION)])
 {
-	create_extractive_industry_text();
+	create_extractive_industry_text;
 }
 
 switch(FEAT_INDUSTRIES, SELF, oil_well_switch_extra_text_fund, 

@@ -1224,6 +1224,39 @@ switch(FEAT_INDUSTRIES, SELF, acid_plant_switch_stockpile_check_ext_basic_inorga
 	acid_plant_produce_cap_stockpile_ext_basic_inorganic_chemistry_ext_ammonia;
 }
 
+switch(FEAT_INDUSTRIES, SELF, acid_plant_switch_extra_text_industry_ext_basic_inorganic_chemistry, 
+	[STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTIVITY_SCALE)< 65 ? 
+		string(STR_PRODUCTIVITY_LOW) : 
+		LOAD_PERM(PERM_REGISTER_PRODUCTIVITY_SCALE)> 75	? 
+			string(STR_PRODUCTIVITY_HIGH) : string(STR_PRODUCTIVITY_MEDIUM), 
+		TEMP_REGISTER_EXTRA_TEXT_ARG0)
+	])
+{
+	return string(STR_ACID_PLANT_HCL_SULP);
+}
+
+switch(FEAT_INDUSTRIES, SELF, acid_plant_switch_extra_text_industry_ext_ammonia, 
+	[STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTIVITY_SCALE)< 65 ? 
+		string(STR_PRODUCTIVITY_LOW) : 
+		LOAD_PERM(PERM_REGISTER_PRODUCTIVITY_SCALE)> 75	? 
+			string(STR_PRODUCTIVITY_HIGH) : string(STR_PRODUCTIVITY_MEDIUM), 
+		TEMP_REGISTER_EXTRA_TEXT_ARG0)
+	])
+{
+	return string(STR_ACID_PLANT_SULP_NH3);
+}
+
+switch(FEAT_INDUSTRIES, SELF, acid_plant_switch_extra_text_industry_ext_basic_inorganic_chemistry_ext_ammonia, 
+	[STORE_TEMP(LOAD_PERM(PERM_REGISTER_PRODUCTIVITY_SCALE)< 65 ? 
+		string(STR_PRODUCTIVITY_LOW) : 
+		LOAD_PERM(PERM_REGISTER_PRODUCTIVITY_SCALE)> 75	? 
+			string(STR_PRODUCTIVITY_HIGH) : string(STR_PRODUCTIVITY_MEDIUM), 
+		TEMP_REGISTER_EXTRA_TEXT_ARG0)
+	])
+{
+	return string(STR_ACID_PLANT_HCL_SULP_NH3);
+}
+
 if (param_extension_coke_sulphur && !param_extension_basic_inorganic_chemistry && !param_extension_ammonia) {
 	item(FEAT_INDUSTRIES, acid_plant, INDUSTRY_ID_ACID_PLANT) {
 		property {
@@ -1254,6 +1287,7 @@ if (param_extension_coke_sulphur && !param_extension_basic_inorganic_chemistry &
 			location_check:           acid_plant_switch_location_check_industry_distance;
 			cargo_subtype_display:    acid_plant_switch_cargo_subtype;
 			extra_text_fund:          acid_plant_switch_extra_text_fund;
+			extra_text_industry:      industry_switch_extra_text;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
@@ -1290,7 +1324,7 @@ if (param_extension_coke_sulphur && param_extension_basic_inorganic_chemistry &&
 			location_check:           acid_plant_switch_location_check_industry_distance;
 			cargo_subtype_display:    acid_plant_switch_cargo_subtype;
 			extra_text_fund:          acid_plant_switch_extra_text_fund;
-			extra_text_industry:      return string(STR_ACID_PLANT_HCL_SULP);
+			extra_text_industry:      acid_plant_switch_extra_text_industry_ext_basic_inorganic_chemistry;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
@@ -1327,7 +1361,7 @@ if (param_extension_coke_sulphur && !param_extension_basic_inorganic_chemistry &
 			location_check:           acid_plant_switch_location_check_industry_distance;
 			cargo_subtype_display:    acid_plant_switch_cargo_subtype;
 			extra_text_fund:          acid_plant_switch_extra_text_fund;
-			extra_text_industry:      return string(STR_ACID_PLANT_SULP_NH3);
+			extra_text_industry:      acid_plant_switch_extra_text_industry_ext_ammonia;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
 		}
@@ -1364,7 +1398,7 @@ if (param_extension_coke_sulphur && param_extension_basic_inorganic_chemistry &&
 			location_check:           acid_plant_switch_location_check_industry_distance;
 			cargo_subtype_display:    acid_plant_switch_cargo_subtype;
 			extra_text_fund:          acid_plant_switch_extra_text_fund;
-			extra_text_industry:      return string(STR_ACID_PLANT_HCL_SULP_NH3);
+			extra_text_industry:      acid_plant_switch_extra_text_industry_ext_basic_inorganic_chemistry_ext_ammonia;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
 		}

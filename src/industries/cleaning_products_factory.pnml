@@ -1288,6 +1288,7 @@ if (param_extension_ammonia && !param_extension_coke_sulphur && !param_extension
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           cleaning_products_factory_switch_location_check_industry_distance;
 			extra_text_fund:          cleaning_products_factory_switch_extra_text_fund;
+			extra_text_industry:      industry_switch_extra_text;
 			cargo_subtype_display:    cleaning_products_factory_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
@@ -1324,7 +1325,7 @@ if (param_extension_ammonia && param_extension_coke_sulphur && !param_extension_
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           cleaning_products_factory_switch_location_check_industry_distance;
 			extra_text_fund:          cleaning_products_factory_switch_extra_text_fund;
-			extra_text_industry:      return string(STR_INDUSTRY_NEEDS_ANY_INPUT);
+			extra_text_industry:      industry_switch_extra_text_any_input;
 			cargo_subtype_display:    cleaning_products_factory_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
@@ -1435,7 +1436,7 @@ if (param_extension_ammonia && !param_extension_coke_sulphur && !param_extension
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           cleaning_products_factory_switch_location_check_industry_distance;
 			extra_text_fund:          cleaning_products_factory_switch_extra_text_fund;
-			extra_text_industry:      return string(STR_INDUSTRY_NEEDS_ANY_INPUT);
+			extra_text_industry:      industry_switch_extra_text_any_input;
 			cargo_subtype_display:    cleaning_products_factory_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
@@ -1472,7 +1473,7 @@ if (param_extension_ammonia && param_extension_coke_sulphur && !param_extension_
 			random_prod_change:       return CB_RESULT_IND_PROD_NO_CHANGE;
 			location_check:           cleaning_products_factory_switch_location_check_industry_distance;
 			extra_text_fund:          cleaning_products_factory_switch_extra_text_fund;
-			extra_text_industry:      return string(STR_INDUSTRY_NEEDS_ANY_INPUT);
+			extra_text_industry:      industry_switch_extra_text_any_input;
 			cargo_subtype_display:    cleaning_products_factory_switch_cargo_subtype;
 			build_prod_change:        initialize_last_served_date;
 			stop_accept_cargo:        switch_stop_accept_cargo;
