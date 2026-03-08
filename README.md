@@ -33,12 +33,10 @@ A new grf will be created in a subfolder named `build`.
 
 ## License
 
-The set is licensed under the [Creative Commons](https://creativecommons.org/licenses/by-nc-sa/4.0/) CC-BY-NC-SA license.
+THe set is licensed under the [GPL v2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html) license, see also license.pt.
 
-All graphics are copied from FIRS v4, FIRS v5, or AXIS.
+All graphics are copied from FIRS v4, FIRS v5, or AXIS without any further modifications.
 AXIS can be found [here](https://github.com/EmperorJake/AXIS).
 FIRS v5 can be found [here](https://github.com/andythenorth/firs).
 
 All graphics are done by the FIRS team, with additions by Emperor Jake and GarryG.
-
-The graphics are licensed according to GPLv2, see the copyright note in the graphics folder.
