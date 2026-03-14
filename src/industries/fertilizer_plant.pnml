@@ -1296,7 +1296,6 @@ if (param_extension_production_boost && !param_extension_glass) {
 			prob_in_game: 3;
 			fund_cost_multiplier: 170;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("ACID"),accept_cargo("NH3_"),accept_cargo("NHNO"),accept_cargo("POTA"),produce_cargo("FERT",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FERTILIZER_PLANT));
 		}
@@ -1332,7 +1331,6 @@ if (param_extension_production_boost && param_extension_glass) {
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 170;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("ACID"),accept_cargo("NH3_"),accept_cargo("NHNO"),accept_cargo("POTA"),accept_cargo("QLME"),produce_cargo("FERT",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FERTILIZER_PLANT));

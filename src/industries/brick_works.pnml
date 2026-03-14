@@ -639,7 +639,6 @@ if (param_extension_building_materials) {
 			prob_in_game: 1;
 			fund_cost_multiplier: 120;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COAL"),produce_cargo("BDMT",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_BRICK_WORKS));
 		}

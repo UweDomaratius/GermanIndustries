@@ -706,7 +706,6 @@ if (param_extension_ammonia) {
 			prospect_chance: 0.75;
 			fund_cost_multiplier: 45;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [produce_cargo("O2__",0), produce_cargo("N2__",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_CRYO_PLANT));
 		}

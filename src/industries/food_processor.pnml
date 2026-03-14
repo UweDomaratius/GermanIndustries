@@ -1231,7 +1231,6 @@ if (!param_extension_basic_inorganic_chemistry && !param_extension_food_industri
 			prob_in_game: 3;
 			fund_cost_multiplier: 65;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("LVST"),accept_cargo("GRAI"),accept_cargo("FISH"),produce_cargo("FOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FOOD_PROCESSOR));
 		}
@@ -1266,7 +1265,6 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_food_industrie
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 65;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("LVST"),accept_cargo("GRAI"),accept_cargo("FISH"),accept_cargo("SALT"),accept_cargo("LYE_"),produce_cargo("FOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FOOD_PROCESSOR));
@@ -1303,7 +1301,6 @@ if (!param_extension_basic_inorganic_chemistry && param_extension_food_industrie
 			prob_in_game: 3;
 			fund_cost_multiplier: 65;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("FISH"),produce_cargo("FOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FOOD_PROCESSOR));
 		}
@@ -1338,7 +1335,6 @@ if (param_extension_basic_inorganic_chemistry && param_extension_food_industries
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 65;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("FISH"),accept_cargo("SALT"),accept_cargo("LYE_"),produce_cargo("FOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FOOD_PROCESSOR));
@@ -1375,7 +1371,6 @@ if (!param_extension_basic_inorganic_chemistry && !param_extension_food_industri
 			prob_in_game: 3;
 			fund_cost_multiplier: 65;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("LVST"),accept_cargo("GRAI"),accept_cargo("FISH"),accept_cargo("MNSP"),produce_cargo("FOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FOOD_PROCESSOR));
 		}
@@ -1410,7 +1405,6 @@ if (!param_extension_basic_inorganic_chemistry && param_extension_food_industrie
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 65;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("FISH"),accept_cargo("MNSP"),produce_cargo("FOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FOOD_PROCESSOR));
@@ -1447,7 +1441,6 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_food_industrie
 			prob_in_game: 3;
 			fund_cost_multiplier: 65;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("LVST"),accept_cargo("GRAI"),accept_cargo("FISH"),accept_cargo("SALT"),accept_cargo("LYE_"),accept_cargo("MNSP"),produce_cargo("FOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FOOD_PROCESSOR));
 		}
@@ -1481,7 +1474,6 @@ if (param_extension_basic_inorganic_chemistry && param_extension_food_industries
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 65;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("FISH"),accept_cargo("SALT"),accept_cargo("LYE_"),accept_cargo("MNSP"),produce_cargo("FOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FOOD_PROCESSOR));
@@ -1518,7 +1510,6 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_food_industrie
 			prob_in_game: 3;
 			fund_cost_multiplier: 65;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("FRUT"),accept_cargo("LVST"),accept_cargo("GRAI"),accept_cargo("FISH"),accept_cargo("SALT"),accept_cargo("LYE_"),produce_cargo("FOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FOOD_PROCESSOR));
 		}
@@ -1553,7 +1544,6 @@ if (param_extension_basic_inorganic_chemistry && param_extension_food_industries
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 65;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("FRUT"),accept_cargo("FISH"),accept_cargo("SALT"),accept_cargo("LYE_"),produce_cargo("FOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FOOD_PROCESSOR));
@@ -1590,7 +1580,6 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_food_industrie
 			prob_in_game: 3;
 			fund_cost_multiplier: 65;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("FRUT"),accept_cargo("LVST"),accept_cargo("GRAI"),accept_cargo("FISH"),accept_cargo("SALT"),accept_cargo("LYE_"),accept_cargo("MNSP"),produce_cargo("FOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FOOD_PROCESSOR));
 		}
@@ -1624,7 +1613,6 @@ if (param_extension_basic_inorganic_chemistry && param_extension_food_industries
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 65;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("FRUT"),accept_cargo("FISH"),accept_cargo("SALT"),accept_cargo("LYE_"),accept_cargo("MNSP"),produce_cargo("FOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FOOD_PROCESSOR));

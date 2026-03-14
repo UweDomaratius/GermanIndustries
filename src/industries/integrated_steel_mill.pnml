@@ -1538,7 +1538,6 @@ if (!param_extension_glass && !param_extension_coke_sulphur && !param_extension_
 			prob_in_game: 3;
 			fund_cost_multiplier: 190;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COAL"),accept_cargo("IORE"),produce_cargo("STEL",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_INTEGRATED_STEEL_MILL));
 		}
@@ -1574,7 +1573,6 @@ if (param_extension_glass && !param_extension_coke_sulphur && !param_extension_a
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 190;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COAL"),accept_cargo("IORE"),accept_cargo("QLME"),produce_cargo("STEL",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_INTEGRATED_STEEL_MILL));
@@ -1612,7 +1610,6 @@ if (!param_extension_glass && param_extension_coke_sulphur && !param_extension_a
 			prob_in_game: 3;
 			fund_cost_multiplier: 190;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COKE"),accept_cargo("IORE"),produce_cargo("STEL",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_INTEGRATED_STEEL_MILL));
 		}
@@ -1648,7 +1645,6 @@ if (param_extension_glass && param_extension_coke_sulphur && !param_extension_am
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 190;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COKE"),accept_cargo("IORE"),accept_cargo("QLME"),produce_cargo("STEL",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_INTEGRATED_STEEL_MILL));
@@ -1686,7 +1682,6 @@ if (!param_extension_glass && !param_extension_coke_sulphur && param_extension_a
 			prob_in_game: 3;
 			fund_cost_multiplier: 190;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COAL"),accept_cargo("IORE"),accept_cargo("O2__"),produce_cargo("STEL",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_INTEGRATED_STEEL_MILL));
 		}
@@ -1722,7 +1717,6 @@ if (param_extension_glass && !param_extension_coke_sulphur && param_extension_am
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 190;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COAL"),accept_cargo("IORE"),accept_cargo("QLME"),accept_cargo("O2__"),produce_cargo("STEL",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_INTEGRATED_STEEL_MILL));
@@ -1760,7 +1754,6 @@ if (!param_extension_glass && param_extension_coke_sulphur && param_extension_am
 			prob_in_game: 3;
 			fund_cost_multiplier: 190;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COKE"),accept_cargo("IORE"),accept_cargo("O2__"),produce_cargo("STEL",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_INTEGRATED_STEEL_MILL));
 		}
@@ -1796,7 +1789,6 @@ if (param_extension_glass && param_extension_coke_sulphur && param_extension_amm
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 190;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COKE"),accept_cargo("IORE"),accept_cargo("QLME"),accept_cargo("O2__"),produce_cargo("STEL",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_INTEGRATED_STEEL_MILL));
@@ -1834,7 +1826,6 @@ if (!param_extension_glass && !param_extension_coke_sulphur && !param_extension_
 			prob_in_game: 3;
 			fund_cost_multiplier: 190;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COAL"),accept_cargo("IORE"),accept_cargo("SCMT"),produce_cargo("STEL",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_INTEGRATED_STEEL_MILL));
 		}
@@ -1870,7 +1861,6 @@ if (param_extension_glass && !param_extension_coke_sulphur && !param_extension_a
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 190;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COAL"),accept_cargo("IORE"),accept_cargo("QLME"),accept_cargo("SCMT"),produce_cargo("STEL",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_INTEGRATED_STEEL_MILL));
@@ -1908,7 +1898,6 @@ if (!param_extension_glass && param_extension_coke_sulphur && !param_extension_a
 			prob_in_game: 3;
 			fund_cost_multiplier: 190;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COKE"),accept_cargo("IORE"),accept_cargo("SCMT"),produce_cargo("STEL",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_INTEGRATED_STEEL_MILL));
 		}
@@ -1944,7 +1933,6 @@ if (param_extension_glass && param_extension_coke_sulphur && !param_extension_am
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 190;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COKE"),accept_cargo("IORE"),accept_cargo("QLME"),accept_cargo("SCMT"),produce_cargo("STEL",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_INTEGRATED_STEEL_MILL));
@@ -1982,7 +1970,6 @@ if (!param_extension_glass && !param_extension_coke_sulphur && param_extension_a
 			prob_in_game: 3;
 			fund_cost_multiplier: 190;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COAL"),accept_cargo("IORE"),accept_cargo("O2__"),accept_cargo("SCMT"),produce_cargo("STEL",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_INTEGRATED_STEEL_MILL));
 		}
@@ -2018,7 +2005,6 @@ if (param_extension_glass && !param_extension_coke_sulphur && param_extension_am
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 190;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COAL"),accept_cargo("IORE"),accept_cargo("QLME"),accept_cargo("SCMT"),accept_cargo("O2__"),produce_cargo("STEL",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_INTEGRATED_STEEL_MILL));
@@ -2056,7 +2042,6 @@ if (!param_extension_glass && param_extension_coke_sulphur && param_extension_am
 			prob_in_game: 3;
 			fund_cost_multiplier: 190;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COKE"),accept_cargo("IORE"),accept_cargo("O2__"),accept_cargo("SCMT"),produce_cargo("STEL",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_INTEGRATED_STEEL_MILL));
 		}
@@ -2092,7 +2077,6 @@ if (param_extension_glass && param_extension_coke_sulphur && param_extension_amm
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 190;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COKE"),accept_cargo("IORE"),accept_cargo("QLME"),accept_cargo("SCMT"),accept_cargo("O2__"),produce_cargo("STEL",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_INTEGRATED_STEEL_MILL));

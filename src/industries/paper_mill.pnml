@@ -1071,7 +1071,6 @@ if (param_extension_paper && !param_extension_recycling) {
 			prob_in_game: 3;
 			fund_cost_multiplier: 120;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("LYE_"),accept_cargo("CHLO"),accept_cargo("WOOD"),produce_cargo("PAPR",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PAPER_MILL));
 		}
@@ -1108,7 +1107,6 @@ if (param_extension_paper && param_extension_recycling) {
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 120;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("LYE_"),accept_cargo("CHLO"),accept_cargo("WOOD"),accept_cargo("RCYC"),produce_cargo("PAPR",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PAPER_MILL));

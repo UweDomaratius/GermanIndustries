@@ -1560,7 +1560,6 @@ if (!param_extension_basic_inorganic_chemistry && !param_extension_painting_indu
 			prob_in_game: 3;
 			fund_cost_multiplier: 200;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("OIL_"),produce_cargo("PLAS",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PLASTICS_PLANT));
 		}
@@ -1596,7 +1595,6 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_painting_indus
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 200;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("OIL_"),accept_cargo("CHLO"),produce_cargo("PLAS",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PLASTICS_PLANT));
@@ -1634,7 +1632,6 @@ if (!param_extension_basic_inorganic_chemistry && param_extension_painting_indus
 			prob_in_game: 3;
 			fund_cost_multiplier: 200;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("OIL_"),accept_cargo("COAT"),produce_cargo("PLAS",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PLASTICS_PLANT));
 		}
@@ -1670,7 +1667,6 @@ if (param_extension_basic_inorganic_chemistry && param_extension_painting_indust
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 200;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("OIL_"),accept_cargo("CHLO"),accept_cargo("COAT"),produce_cargo("PLAS",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PLASTICS_PLANT));
@@ -1708,7 +1704,6 @@ if (!param_extension_basic_inorganic_chemistry && !param_extension_painting_indu
 			prob_in_game: 3;
 			fund_cost_multiplier: 200;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("C2H4"),produce_cargo("PLAS",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PLASTICS_PLANT));
 		}
@@ -1744,7 +1739,6 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_painting_indus
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 200;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("C2H4"),accept_cargo("CHLO"),produce_cargo("PLAS",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PLASTICS_PLANT));
@@ -1782,7 +1776,6 @@ if (!param_extension_basic_inorganic_chemistry && param_extension_painting_indus
 			prob_in_game: 3;
 			fund_cost_multiplier: 200;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("C2H4"),accept_cargo("COAT"),produce_cargo("PLAS",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PLASTICS_PLANT));
 		}
@@ -1818,7 +1811,6 @@ if (param_extension_basic_inorganic_chemistry && param_extension_painting_indust
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 200;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("C2H4"),accept_cargo("CHLO"),accept_cargo("COAT"),produce_cargo("PLAS",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PLASTICS_PLANT));

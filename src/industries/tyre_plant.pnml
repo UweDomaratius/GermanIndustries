@@ -807,7 +807,6 @@ if (param_extension_vehicle && !param_extension_painting_industries) {
 			prob_in_game: 3;
 			fund_cost_multiplier: 130;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("SULP"),accept_cargo("RUBR"),produce_cargo("TYRE",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_TYRE_PLANT));
 		}
@@ -843,7 +842,6 @@ if (param_extension_vehicle && param_extension_painting_industries) {
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 130;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("SULP"),accept_cargo("RUBR"),accept_cargo("CBLK"),produce_cargo("TYRE",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_TYRE_PLANT));

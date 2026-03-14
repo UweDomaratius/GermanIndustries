@@ -462,7 +462,6 @@ if (param_extension_metallurgy && !param_extension_aluminium && !param_extension
 			prob_in_game: 3;
 			fund_cost_multiplier: 190;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COKE"),accept_cargo("STEL"),produce_cargo("ENSP",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FOUNDRY_FORGE));
 		}
@@ -498,7 +497,6 @@ if (param_extension_metallurgy && param_extension_aluminium && !param_extension_
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 190;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COKE"),accept_cargo("STEL"),accept_cargo("ALUM"),produce_cargo("ENSP",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FOUNDRY_FORGE));
@@ -536,7 +534,6 @@ if (param_extension_metallurgy && !param_extension_aluminium && param_extension_
 			prob_in_game: 3;
 			fund_cost_multiplier: 190;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COKE"),accept_cargo("STEL"),produce_cargo("ENSP",0),produce_cargo("SCMT",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FOUNDRY_FORGE));
 		}
@@ -572,7 +569,6 @@ if (param_extension_metallurgy && param_extension_aluminium && param_extension_r
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 190;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COKE"),accept_cargo("STEL"),accept_cargo("ALUM"),produce_cargo("ENSP",0),produce_cargo("SCMT",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FOUNDRY_FORGE));

@@ -1275,7 +1275,6 @@ if (param_extension_ammonia && !param_extension_coke_sulphur && !param_extension
 			prob_in_game: 7;
 			fund_cost_multiplier: 95;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("SASH"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_CLEANING_PRODUCTS_FACTORY));
 		}
@@ -1311,7 +1310,6 @@ if (param_extension_ammonia && param_extension_coke_sulphur && !param_extension_
 			prob_map_gen: 8;
 			prob_in_game: 7;
 			fund_cost_multiplier: 95;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("SASH"),accept_cargo("ACID"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_CLEANING_PRODUCTS_FACTORY));
@@ -1386,7 +1384,6 @@ if (param_extension_ammonia && param_extension_coke_sulphur && param_extension_p
 			prob_in_game: 7;
 			fund_cost_multiplier: 95;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("SASH"),accept_cargo("ACID"),accept_cargo("MNSP"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_CLEANING_PRODUCTS_FACTORY));
 		}
@@ -1422,7 +1419,6 @@ if (param_extension_ammonia && !param_extension_coke_sulphur && !param_extension
 			prob_map_gen: 8;
 			prob_in_game: 7;
 			fund_cost_multiplier: 95;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("SASH"),accept_cargo("POTA"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_CLEANING_PRODUCTS_FACTORY));
@@ -1460,7 +1456,6 @@ if (param_extension_ammonia && param_extension_coke_sulphur && !param_extension_
 			prob_in_game: 7;
 			fund_cost_multiplier: 95;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("SASH"),accept_cargo("ACID"),accept_cargo("POTA"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_CLEANING_PRODUCTS_FACTORY));
 		}
@@ -1497,7 +1492,6 @@ if (param_extension_ammonia && !param_extension_coke_sulphur && param_extension_
 			prob_in_game: 7;
 			fund_cost_multiplier: 95;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("SASH"),accept_cargo("MNSP"),accept_cargo("POTA"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_CLEANING_PRODUCTS_FACTORY));
 		}
@@ -1533,7 +1527,6 @@ if (param_extension_ammonia && param_extension_coke_sulphur && param_extension_p
 			prob_map_gen: 8;
 			prob_in_game: 7;
 			fund_cost_multiplier: 95;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("SASH"),accept_cargo("ACID"),accept_cargo("MNSP"),accept_cargo("POTA"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_CLEANING_PRODUCTS_FACTORY));

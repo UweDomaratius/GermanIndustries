@@ -480,8 +480,7 @@ item(FEAT_INDUSTRIES, oil_well, INDUSTRY_ID_OIL_WELL) {
 		prob_map_gen: 4;
 		prob_in_game: 4;
 		prospect_chance: 0.75;
-		fund_cost_multiplier: 8;
-		remove_cost_multiplier: 0;
+		fund_cost_multiplier: 90;
 		remove_cost_multiplier: 0;
 		cargo_types: [produce_cargo("OIL_",0)];
 		nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_OIL_WELL));

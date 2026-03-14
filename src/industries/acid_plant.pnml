@@ -1273,7 +1273,6 @@ if (param_extension_coke_sulphur && !param_extension_basic_inorganic_chemistry &
 			prob_in_game: 1;
 			fund_cost_multiplier: 120;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("SULP"),produce_cargo("ACID",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_ORE_SMELTER));
 		}
@@ -1309,7 +1308,6 @@ if (param_extension_coke_sulphur && param_extension_basic_inorganic_chemistry &&
 			prob_map_gen: 5;
 			prob_in_game: 1;
 			fund_cost_multiplier: 120;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("SULP"),accept_cargo("H2__"),accept_cargo("CHLO"),produce_cargo("ACID",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_ORE_SMELTER));
@@ -1347,7 +1345,6 @@ if (param_extension_coke_sulphur && !param_extension_basic_inorganic_chemistry &
 			prob_in_game: 1;
 			fund_cost_multiplier: 120;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("SULP"),accept_cargo("O2__"),accept_cargo("NH3_"),produce_cargo("ACID",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_ORE_SMELTER));
 		}
@@ -1383,7 +1380,6 @@ if (param_extension_coke_sulphur && param_extension_basic_inorganic_chemistry &&
 			prob_map_gen: 5;
 			prob_in_game: 1;
 			fund_cost_multiplier: 120;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("SULP"),accept_cargo("H2__"),accept_cargo("CHLO"),accept_cargo("O2__"),accept_cargo("NH3_"),produce_cargo("ACID",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_ORE_SMELTER));

@@ -1132,7 +1132,6 @@ if (param_extension_packaging_industries && !param_extension_aluminium && !param
 			prob_in_game: 3;
 			fund_cost_multiplier: 170;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("PLAS"),produce_cargo("MNSP",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PACKAGING_PLANT));
 		}
@@ -1168,7 +1167,6 @@ if (param_extension_packaging_industries && param_extension_aluminium && !param_
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 170;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("PLAS"),accept_cargo("ALUM"),produce_cargo("MNSP",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PACKAGING_PLANT));
@@ -1206,7 +1204,6 @@ if (param_extension_packaging_industries && !param_extension_aluminium && param_
 			prob_in_game: 3;
 			fund_cost_multiplier: 170;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("PLAS"),accept_cargo("GLAS"),produce_cargo("MNSP",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PACKAGING_PLANT));
 		}
@@ -1242,7 +1239,6 @@ if (param_extension_packaging_industries && param_extension_aluminium && param_e
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 170;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("PLAS"),accept_cargo("ALUM"),accept_cargo("GLAS"),produce_cargo("MNSP",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PACKAGING_PLANT));
@@ -1280,7 +1276,6 @@ if (param_extension_packaging_industries && !param_extension_aluminium && !param
 			prob_in_game: 3;
 			fund_cost_multiplier: 170;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("PLAS"),accept_cargo("PAPR"),produce_cargo("MNSP",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PACKAGING_PLANT));
 		}
@@ -1316,7 +1311,6 @@ if (param_extension_packaging_industries && param_extension_aluminium && !param_
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 170;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("PLAS"),accept_cargo("ALUM"),accept_cargo("PAPR"),produce_cargo("MNSP",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PACKAGING_PLANT));
@@ -1354,7 +1348,6 @@ if (param_extension_packaging_industries && !param_extension_aluminium && param_
 			prob_in_game: 3;
 			fund_cost_multiplier: 170;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("PLAS"),accept_cargo("PAPR"),accept_cargo("GLAS"),produce_cargo("MNSP",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PACKAGING_PLANT));
 		}
@@ -1390,7 +1383,6 @@ if (param_extension_packaging_industries && param_extension_aluminium && param_e
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 170;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("PLAS"),accept_cargo("ALUM"),accept_cargo("GLAS"),accept_cargo("PAPR"),produce_cargo("MNSP",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PACKAGING_PLANT));

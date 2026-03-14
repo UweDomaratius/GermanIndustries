@@ -2110,7 +2110,6 @@ if (!param_extension_aluminium && !param_extension_painting_industries && !param
 			prospect_chance: 0.75;
 			fund_cost_multiplier: 152;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
 		}
@@ -2145,7 +2144,6 @@ if (param_extension_aluminium && !param_extension_painting_industries && !param_
 			prob_in_game: 1;
 			prospect_chance: 0.75;
 			fund_cost_multiplier: 152;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("AORE",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
@@ -2182,7 +2180,6 @@ if (!param_extension_aluminium && param_extension_painting_industries && !param_
 			prospect_chance: 0.75;
 			fund_cost_multiplier: 152;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("CORE",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
 		}
@@ -2217,7 +2214,6 @@ if (param_extension_aluminium && param_extension_painting_industries && !param_e
 			prob_in_game: 1;
 			prospect_chance: 0.75;
 			fund_cost_multiplier: 152;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("AORE",0),produce_cargo("CORE",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
@@ -2254,7 +2250,6 @@ if (!param_extension_aluminium && !param_extension_painting_industries && param_
 			prospect_chance: 0.75;
 			fund_cost_multiplier: 152;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("PORE",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
 		}
@@ -2289,7 +2284,6 @@ if (param_extension_aluminium && !param_extension_painting_industries && param_e
 			prob_in_game: 1;
 			prospect_chance: 0.75;
 			fund_cost_multiplier: 152;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("AORE",0),produce_cargo("PORE",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
@@ -2326,7 +2320,6 @@ if (!param_extension_aluminium && param_extension_painting_industries && param_e
 			prospect_chance: 0.75;
 			fund_cost_multiplier: 152;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("PORE",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
 		}
@@ -2362,7 +2355,6 @@ if (param_extension_aluminium && param_extension_painting_industries && param_ex
 			prospect_chance: 0.75;
 			fund_cost_multiplier: 152;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("AORE",0),produce_cargo("PORE",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
 		}
@@ -2396,7 +2388,6 @@ if (!param_extension_aluminium && !param_extension_painting_industries && !param
 			prob_in_game: 1;
 			prospect_chance: 0.75;
 			fund_cost_multiplier: 152;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("RUBR",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
@@ -2433,7 +2424,6 @@ if (param_extension_aluminium && !param_extension_painting_industries && !param_
 			prospect_chance: 0.75;
 			fund_cost_multiplier: 152;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("AORE",0),produce_cargo("RUBR",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
 		}
@@ -2468,7 +2458,6 @@ if (!param_extension_aluminium && param_extension_painting_industries && !param_
 			prob_in_game: 1;
 			prospect_chance: 0.75;
 			fund_cost_multiplier: 152;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("CORE",0),produce_cargo("RUBR",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
@@ -2505,7 +2494,6 @@ if (param_extension_aluminium && param_extension_painting_industries && !param_e
 			prospect_chance: 0.75;
 			fund_cost_multiplier: 152;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("AORE",0),produce_cargo("CORE",0),produce_cargo("RUBR",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
 		}
@@ -2540,7 +2528,6 @@ if (!param_extension_aluminium && !param_extension_painting_industries && param_
 			prob_in_game: 1;
 			prospect_chance: 0.75;
 			fund_cost_multiplier: 152;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("PORE",0),produce_cargo("RUBR",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
@@ -2577,7 +2564,6 @@ if (param_extension_aluminium && !param_extension_painting_industries && param_e
 			prospect_chance: 0.75;
 			fund_cost_multiplier: 152;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("AORE",0),produce_cargo("PORE",0),produce_cargo("RUBR",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
 		}
@@ -2613,7 +2599,6 @@ if (!param_extension_aluminium && param_extension_painting_industries && param_e
 			prospect_chance: 0.75;
 			fund_cost_multiplier: 152;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("PORE",0),produce_cargo("RUBR",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
 		}
@@ -2648,7 +2633,6 @@ if (param_extension_aluminium && param_extension_painting_industries && param_ex
 			prob_in_game: 1;
 			prospect_chance: 0.75;
 			fund_cost_multiplier: 152;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("AORE",0),produce_cargo("PORE",0),produce_cargo("RUBR",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));

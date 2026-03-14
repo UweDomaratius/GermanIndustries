@@ -2255,8 +2255,7 @@ if (param_extension_fruits && !param_extension_production_boost) {
 			prob_map_gen: 10;
 			prob_in_game: 4;
 			prospect_chance: 0.75;
-			fund_cost_multiplier: 54;
-			remove_cost_multiplier: 0;
+			fund_cost_multiplier: 50;
 			remove_cost_multiplier: 0;
 			cargo_types: [produce_cargo("FRUT",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FRUIT_PLANTATION));
@@ -2290,8 +2289,7 @@ if (param_extension_fruits && param_extension_production_boost) {
 			prob_map_gen: 10;
 			prob_in_game: 4;
 			prospect_chance: 0.75;
-			fund_cost_multiplier: 54;
-			remove_cost_multiplier: 0;
+			fund_cost_multiplier: 50;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("FERT"),produce_cargo("FRUT",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FRUIT_PLANTATION));

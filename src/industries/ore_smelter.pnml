@@ -1300,7 +1300,6 @@ if (param_extension_coke_sulphur && !param_extension_painting_industries && !par
 			prob_in_game: 1;
 			fund_cost_multiplier: 120;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COKE"),accept_cargo("PORE"),produce_cargo("IORE",0),produce_cargo("SULP",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_ORE_SMELTER));
 		}
@@ -1336,7 +1335,6 @@ if (param_extension_coke_sulphur && param_extension_painting_industries && !para
 			prob_map_gen: 5;
 			prob_in_game: 1;
 			fund_cost_multiplier: 120;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COKE"),accept_cargo("PORE"),produce_cargo("IORE",0),produce_cargo("SULP",0),produce_cargo("CORE",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_ORE_SMELTER));
@@ -1374,7 +1372,6 @@ if (param_extension_coke_sulphur && !param_extension_painting_industries && para
 			prob_in_game: 1;
 			fund_cost_multiplier: 120;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COKE"),accept_cargo("PORE"),accept_cargo("O2__"),produce_cargo("IORE",0),produce_cargo("SULP",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_ORE_SMELTER));
 		}
@@ -1411,7 +1408,6 @@ if (param_extension_coke_sulphur && param_extension_painting_industries && param
 			prob_in_game: 1;
 			fund_cost_multiplier: 120;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COKE"),accept_cargo("PORE"),accept_cargo("O2__"),produce_cargo("IORE",0),produce_cargo("SULP",0),produce_cargo("CORE",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_ORE_SMELTER));
 		}
@@ -1446,7 +1442,6 @@ if (param_extension_coke_sulphur && !param_extension_painting_industries && !par
 			prob_map_gen: 5;
 			prob_in_game: 1;
 			fund_cost_multiplier: 120;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COKE"),accept_cargo("PORE"),produce_cargo("IORE",0),produce_cargo("SULP",0),produce_cargo("ZINC",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_ORE_SMELTER));
@@ -1484,7 +1479,6 @@ if (param_extension_coke_sulphur && param_extension_painting_industries && !para
 			prob_in_game: 1;
 			fund_cost_multiplier: 120;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COKE"),accept_cargo("PORE"),produce_cargo("IORE",0),produce_cargo("SULP",0),produce_cargo("CORE",0),produce_cargo("ZINC",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_ORE_SMELTER));
 		}
@@ -1521,7 +1515,6 @@ if (param_extension_coke_sulphur && !param_extension_painting_industries && para
 			prob_in_game: 1;
 			fund_cost_multiplier: 120;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COKE"),accept_cargo("PORE"),accept_cargo("O2__"),produce_cargo("IORE",0),produce_cargo("SULP",0),produce_cargo("ZINC",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_ORE_SMELTER));
 		}
@@ -1557,7 +1550,6 @@ if (param_extension_coke_sulphur && param_extension_painting_industries && param
 			prob_map_gen: 5;
 			prob_in_game: 1;
 			fund_cost_multiplier: 120;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COKE"),accept_cargo("PORE"),accept_cargo("O2__"),produce_cargo("IORE",0),produce_cargo("SULP",0),produce_cargo("CORE",0),produce_cargo("ZINC",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_ORE_SMELTER));

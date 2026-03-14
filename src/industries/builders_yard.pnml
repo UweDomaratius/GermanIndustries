@@ -378,7 +378,6 @@ if (param_extension_building_materials) {
 			prospect_chance: 0.75;
 			fund_cost_multiplier: 15;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("WDPR"),accept_cargo("SAND"),accept_cargo("CMNT"),accept_cargo("BDMT")];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_BUILDERS_YARD));
 		}
@@ -411,7 +410,6 @@ if (!param_extension_building_materials) {
 			prob_in_game: 12;
 			prospect_chance: 0.75;
 			fund_cost_multiplier: 15;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("WDPR")];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_BUILDERS_YARD));
