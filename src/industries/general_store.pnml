@@ -188,7 +188,6 @@ if (!param_extension_fruits) {
 			prospect_chance: 0.75;
 			fund_cost_multiplier: 15;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("FOOD")];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_GENERAL_STORE));
 		}
@@ -222,7 +221,6 @@ if (param_extension_fruits) {
 			prob_in_game: 12;
 			prospect_chance: 0.75;
 			fund_cost_multiplier: 15;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("FOOD"),accept_cargo("FRUT")];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_GENERAL_STORE));

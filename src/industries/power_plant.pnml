@@ -718,8 +718,7 @@ if (!param_extension_coke_sulphur && !param_extension_fruits) {
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			prospect_chance: 0.75;
-			fund_cost_multiplier: 15;
-			remove_cost_multiplier: 0;
+			fund_cost_multiplier: 190;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COAL"),accept_cargo("OIL_")];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_POWER_PLANT));
@@ -754,8 +753,7 @@ if (param_extension_coke_sulphur && !param_extension_fruits) {
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			prospect_chance: 0.75;
-			fund_cost_multiplier: 15;
-			remove_cost_multiplier: 0;
+			fund_cost_multiplier: 190;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COAL"),accept_cargo("OIL_"),produce_cargo("SULP",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_POWER_PLANT));
@@ -790,8 +788,7 @@ if (!param_extension_coke_sulphur && param_extension_fruits) {
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			prospect_chance: 0.75;
-			fund_cost_multiplier: 15;
-			remove_cost_multiplier: 0;
+			fund_cost_multiplier: 190;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("BIOM"),accept_cargo("COAL"),accept_cargo("OIL_")];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_POWER_PLANT));
@@ -826,8 +823,7 @@ if (param_extension_coke_sulphur && param_extension_fruits) {
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			prospect_chance: 0.75;
-			fund_cost_multiplier: 15;
-			remove_cost_multiplier: 0;
+			fund_cost_multiplier: 190;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("BIOM"),accept_cargo("COAL"),accept_cargo("OIL_"),produce_cargo("SULP",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_POWER_PLANT));

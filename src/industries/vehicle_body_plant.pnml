@@ -1066,7 +1066,6 @@ if (param_extension_vehicle && !param_extension_painting_industries && !param_ex
 			prob_in_game: 3;
 			fund_cost_multiplier: 120;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("STEL"),accept_cargo("ZINC"),accept_cargo("ACID"),produce_cargo("VBOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_BODY_PLANT));
 		}
@@ -1102,7 +1101,6 @@ if (param_extension_vehicle && param_extension_painting_industries && !param_ext
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 120;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("STEL"),accept_cargo("ZINC"),accept_cargo("ACID"),accept_cargo("COAT"),produce_cargo("VBOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_BODY_PLANT));
@@ -1140,7 +1138,6 @@ if (param_extension_vehicle && !param_extension_painting_industries && param_ext
 			prob_in_game: 3;
 			fund_cost_multiplier: 120;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("STEL"),accept_cargo("ZINC"),accept_cargo("ACID"),accept_cargo("ALUM"),produce_cargo("VBOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_BODY_PLANT));
 		}
@@ -1176,7 +1173,6 @@ if (param_extension_vehicle && param_extension_painting_industries && param_exte
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 120;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("STEL"),accept_cargo("ZINC"),accept_cargo("ACID"),accept_cargo("COAT"),accept_cargo("ALUM"),produce_cargo("VBOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_BODY_PLANT));
@@ -1214,7 +1210,6 @@ if (param_extension_vehicle && !param_extension_painting_industries && param_ext
 			prob_in_game: 3;
 			fund_cost_multiplier: 120;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("ZINC"),accept_cargo("ACID"),accept_cargo("STSH"),produce_cargo("VBOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_BODY_PLANT));
 		}
@@ -1250,7 +1245,6 @@ if (param_extension_vehicle && param_extension_painting_industries && param_exte
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 120;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("ZINC"),accept_cargo("ACID"),accept_cargo("COAT"),accept_cargo("STSH"),produce_cargo("VBOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_BODY_PLANT));

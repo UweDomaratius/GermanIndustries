@@ -638,10 +638,14 @@ switch(FEAT_INDUSTRIES, SELF, cryo_plant_switch_prod_change,
 }
 
 switch(FEAT_INDUSTRIES, SELF, cryo_plant_switch_prod_change_build,
-	[STORE_TEMP(max(cryo_plant_func_calc_max_prod(),128),TEMP_REGISTER_MAXIMUM_PRODUCTION)	
+	[STORE_TEMP(max(cryo_plant_func_calc_max_prod(),128),TEMP_REGISTER_MAXIMUM_PRODUCTION),
+	 STORE_PERM(min(12+getbits(extra_callback_info2, 0, 3),LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0),
+	 STORE_PERM(min(12+getbits(extra_callback_info2, 0, 3),LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT1),
+	 STORE_PERM(min(12+getbits(extra_callback_info2, 0, 3),LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_PRODUCTION_AMOUNT0),
+	 STORE_PERM(min(12+getbits(extra_callback_info2, 0, 3),LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_PRODUCTION_AMOUNT1)
 	])
 {
-	randomize_initial_production;
+	
 }
 
 produce(cryo_plant_produce,
@@ -705,7 +709,6 @@ if (param_extension_ammonia) {
 			prob_in_game: 4;
 			prospect_chance: 0.75;
 			fund_cost_multiplier: 45;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [produce_cargo("O2__",0), produce_cargo("N2__",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_CRYO_PLANT));

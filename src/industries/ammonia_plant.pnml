@@ -1172,7 +1172,6 @@ if (param_extension_ammonia) {
 			prob_in_game: 3;
 			fund_cost_multiplier: 170;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("H2__"),accept_cargo("N2__"),produce_cargo("NH3_",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_AMMONIA_PLANT));
 		}

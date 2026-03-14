@@ -799,7 +799,6 @@ if (param_extension_painting_industries && !param_extension_organic_chemistry &&
 			prob_in_game: 3;
 			fund_cost_multiplier: 120;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("OIL_"),accept_cargo("COAL"),produce_cargo("CBLK",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_CARBON_BLACK_PLANT));
 		}
@@ -835,7 +834,6 @@ if (param_extension_painting_industries && param_extension_organic_chemistry && 
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 120;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("RFPR"),accept_cargo("COAL"),produce_cargo("CBLK",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_CARBON_BLACK_PLANT));
@@ -873,7 +871,6 @@ if (param_extension_painting_industries && !param_extension_organic_chemistry &&
 			prob_in_game: 3;
 			fund_cost_multiplier: 120;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("OIL_"),accept_cargo("COAL"),accept_cargo("O2__"),produce_cargo("CBLK",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_CARBON_BLACK_PLANT));
 		}
@@ -909,7 +906,6 @@ if (param_extension_painting_industries && param_extension_organic_chemistry && 
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 120;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("RFPR"),accept_cargo("COAL"),accept_cargo("O2__"),produce_cargo("CBLK",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_CARBON_BLACK_PLANT));

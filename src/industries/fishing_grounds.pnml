@@ -286,8 +286,7 @@ item(FEAT_INDUSTRIES, fishing_grounds, INDUSTRY_ID_FISHING_GROUNDS) {
 		prob_map_gen: 14;
 		prob_in_game: 14;
 		prospect_chance: 0.75;
-		fund_cost_multiplier: 88;
-		remove_cost_multiplier: 0;
+		fund_cost_multiplier: 50;
 		remove_cost_multiplier: 0;
 		cargo_types: [produce_cargo("FISH",0)];
 		nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FISHING_GROUNDS));

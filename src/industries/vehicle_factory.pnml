@@ -1941,7 +1941,6 @@ if (!param_extension_aluminium && !param_extension_painting_industries && !param
 			prob_in_game: 1;
 			fund_cost_multiplier: 145;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("STEL"),accept_cargo("PLAS"),produce_cargo("VEHI",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_FACTORY));
 		}
@@ -1977,7 +1976,6 @@ if (param_extension_aluminium && !param_extension_painting_industries && !param_
 			prob_in_game: 1;
 			fund_cost_multiplier: 145;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("STEL"),accept_cargo("PLAS"),accept_cargo("ALUM"),produce_cargo("VEHI",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_FACTORY));
 		}
@@ -2012,7 +2010,6 @@ if (!param_extension_aluminium && param_extension_painting_industries && !param_
 			prob_map_gen: 5;
 			prob_in_game: 1;
 			fund_cost_multiplier: 145;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("STEL"),accept_cargo("PLAS"),accept_cargo("COAT"),produce_cargo("VEHI",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_FACTORY));
@@ -2050,7 +2047,6 @@ if (param_extension_aluminium && param_extension_painting_industries && !param_e
 			prob_in_game: 1;
 			fund_cost_multiplier: 145;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("STEL"),accept_cargo("PLAS"),accept_cargo("COAT"),accept_cargo("ALUM"),produce_cargo("VEHI",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_FACTORY));
 		}
@@ -2087,7 +2083,6 @@ if (!param_extension_aluminium && !param_extension_painting_industries && param_
 			prob_in_game: 1;
 			fund_cost_multiplier: 145;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("STEL"),accept_cargo("PLAS"),accept_cargo("GLAS"),produce_cargo("VEHI",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_FACTORY));
 		}
@@ -2123,7 +2118,6 @@ if (param_extension_aluminium && !param_extension_painting_industries && param_e
 			prob_in_game: 1;
 			fund_cost_multiplier: 145;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("STEL"),accept_cargo("PLAS"),accept_cargo("ALUM"),accept_cargo("GLAS"),produce_cargo("VEHI",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_FACTORY));
 		}
@@ -2158,7 +2152,6 @@ if (!param_extension_aluminium && param_extension_painting_industries && param_e
 			prob_map_gen: 5;
 			prob_in_game: 1;
 			fund_cost_multiplier: 145;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("STEL"),accept_cargo("PLAS"),accept_cargo("COAT"),accept_cargo("GLAS"),produce_cargo("VEHI",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_FACTORY));
@@ -2196,7 +2189,6 @@ if (param_extension_aluminium && param_extension_painting_industries && param_ex
 			prob_in_game: 1;
 			fund_cost_multiplier: 145;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("STEL"),accept_cargo("PLAS"),accept_cargo("COAT"),accept_cargo("ALUM"),accept_cargo("GLAS"),produce_cargo("VEHI",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_FACTORY));
 		}
@@ -2232,7 +2224,6 @@ if (!param_extension_painting_industries && !param_extension_glass && param_exte
 			prob_map_gen: 5;
 			prob_in_game: 1;
 			fund_cost_multiplier: 145;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("PLAS"),accept_cargo("STSH"),accept_cargo("STWR"),accept_cargo("ENSP"),produce_cargo("VEHI",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_FACTORY));
@@ -2270,7 +2261,6 @@ if (param_extension_painting_industries && !param_extension_glass && param_exten
 			prob_in_game: 1;
 			fund_cost_multiplier: 145;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("PLAS"),accept_cargo("COAT"),accept_cargo("STSH"),accept_cargo("STWR"),accept_cargo("ENSP"),produce_cargo("VEHI",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_FACTORY));
 		}
@@ -2307,7 +2297,6 @@ if (!param_extension_painting_industries && param_extension_glass && param_exten
 			prob_in_game: 1;
 			fund_cost_multiplier: 145;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("PLAS"),accept_cargo("GLAS"),accept_cargo("STSH"),accept_cargo("STWR"),accept_cargo("ENSP"),produce_cargo("VEHI",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_FACTORY));
 		}
@@ -2343,7 +2332,6 @@ if (param_extension_painting_industries && param_extension_glass && param_extens
 			prob_in_game: 1;
 			fund_cost_multiplier: 145;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("PLAS"),accept_cargo("COAT"),accept_cargo("GLAS"),accept_cargo("STSH"),accept_cargo("STWR"),accept_cargo("ENSP"),produce_cargo("VEHI",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_FACTORY));
 		}
@@ -2378,7 +2366,6 @@ if (param_extension_vehicle) {
 			prob_map_gen: 5;
 			prob_in_game: 1;
 			fund_cost_multiplier: 145;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("VBOD"),accept_cargo("VENG"),accept_cargo("TYRE"),accept_cargo("VPTS"),produce_cargo("VEHI",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_FACTORY));

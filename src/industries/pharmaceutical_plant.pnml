@@ -1855,7 +1855,6 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_indu
 			prob_in_game: 3;
 			fund_cost_multiplier: 170;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
 		}
@@ -1891,7 +1890,6 @@ if (param_extension_basic_inorganic_chemistry && param_extension_packaging_indus
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 170;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("MNSP"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
@@ -1929,7 +1927,6 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_indu
 			prob_in_game: 3;
 			fund_cost_multiplier: 170;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("C2H4"),accept_cargo("RFPR"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
 		}
@@ -1965,7 +1962,6 @@ if (param_extension_basic_inorganic_chemistry && param_extension_packaging_indus
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 170;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("C2H4"),accept_cargo("RFPR"),accept_cargo("MNSP"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
@@ -2003,7 +1999,6 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_indu
 			prob_in_game: 3;
 			fund_cost_multiplier: 170;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("ACID"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
 		}
@@ -2039,7 +2034,6 @@ if (param_extension_basic_inorganic_chemistry && param_extension_packaging_indus
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 170;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("MNSP"),accept_cargo("ACID"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
@@ -2077,7 +2071,6 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_indu
 			prob_in_game: 3;
 			fund_cost_multiplier: 170;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("C2H4"),accept_cargo("RFPR"),accept_cargo("ACID"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
 		}
@@ -2113,7 +2106,6 @@ if (param_extension_basic_inorganic_chemistry && param_extension_packaging_indus
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 170;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("C2H4"),accept_cargo("RFPR"),accept_cargo("MNSP"),accept_cargo("ACID"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
@@ -2151,7 +2143,6 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_indu
 			prob_in_game: 3;
 			fund_cost_multiplier: 170;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("O2__"),accept_cargo("NH3_"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
 		}
@@ -2187,7 +2178,6 @@ if (param_extension_basic_inorganic_chemistry && param_extension_packaging_indus
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 170;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("MNSP"),accept_cargo("O2__"),accept_cargo("NH3_"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
@@ -2225,7 +2215,6 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_indu
 			prob_in_game: 3;
 			fund_cost_multiplier: 170;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("C2H4"),accept_cargo("RFPR"),accept_cargo("O2__"),accept_cargo("NH3_"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
 		}
@@ -2261,7 +2250,6 @@ if (param_extension_basic_inorganic_chemistry && param_extension_packaging_indus
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 170;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("C2H4"),accept_cargo("RFPR"),accept_cargo("MNSP"),accept_cargo("O2__"),accept_cargo("NH3_"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
@@ -2299,7 +2287,6 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_indu
 			prob_in_game: 3;
 			fund_cost_multiplier: 170;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("ACID"),accept_cargo("O2__"),accept_cargo("NH3_"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
 		}
@@ -2335,7 +2322,6 @@ if (param_extension_basic_inorganic_chemistry && param_extension_packaging_indus
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 170;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("MNSP"),accept_cargo("ACID"),accept_cargo("O2__"),accept_cargo("NH3_"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
@@ -2373,7 +2359,6 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_indu
 			prob_in_game: 3;
 			fund_cost_multiplier: 170;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("C2H4"),accept_cargo("RFPR"),accept_cargo("ACID"),accept_cargo("O2__"),accept_cargo("NH3_"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
 		}
@@ -2409,7 +2394,6 @@ if (param_extension_basic_inorganic_chemistry && param_extension_packaging_indus
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 170;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("C2H4"),accept_cargo("RFPR"),accept_cargo("MNSP"),accept_cargo("ACID"),accept_cargo("O2__"),accept_cargo("NH3_"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));

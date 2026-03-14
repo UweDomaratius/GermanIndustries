@@ -921,8 +921,7 @@ if (param_extension_textile_industries && !param_extension_food_industries && !p
 			prob_map_gen: 10;
 			prob_in_game: 10;
 			prospect_chance: 0.75;
-			fund_cost_multiplier: 8;
-			remove_cost_multiplier: 0;
+			fund_cost_multiplier: 50;
 			remove_cost_multiplier: 0;
 			cargo_types: [produce_cargo("LVST",0), produce_cargo("GRAI",0), produce_cargo("WOOL",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FARM));
@@ -956,8 +955,7 @@ if (!param_extension_textile_industries && !param_extension_food_industries && !
 			prob_map_gen: 10;
 			prob_in_game: 10;
 			prospect_chance: 0.75;
-			fund_cost_multiplier: 8;
-			remove_cost_multiplier: 0;
+			fund_cost_multiplier: 50;
 			remove_cost_multiplier: 0;
 			cargo_types: [produce_cargo("LVST",0), produce_cargo("GRAI",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FARM));
@@ -991,8 +989,7 @@ if (param_extension_food_industries && !param_extension_fruits && !param_extensi
 			prob_map_gen: 10;
 			prob_in_game: 10;
 			prospect_chance: 0.75;
-			fund_cost_multiplier: 8;
-			remove_cost_multiplier: 0;
+			fund_cost_multiplier: 50;
 			remove_cost_multiplier: 0;
 			cargo_types: [produce_cargo("GRAI",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FARM));
@@ -1026,8 +1023,7 @@ if (param_extension_textile_industries && !param_extension_food_industries && pa
 			prob_map_gen: 10;
 			prob_in_game: 10;
 			prospect_chance: 0.75;
-			fund_cost_multiplier: 8;
-			remove_cost_multiplier: 0;
+			fund_cost_multiplier: 50;
 			remove_cost_multiplier: 0;
 			cargo_types: [produce_cargo("LVST",0), produce_cargo("GRAI",0), produce_cargo("WOOL",0),produce_cargo("BIOM",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FARM));
@@ -1061,8 +1057,7 @@ if (!param_extension_textile_industries && !param_extension_food_industries && p
 			prob_map_gen: 10;
 			prob_in_game: 10;
 			prospect_chance: 0.75;
-			fund_cost_multiplier: 8;
-			remove_cost_multiplier: 0;
+			fund_cost_multiplier: 50;
 			remove_cost_multiplier: 0;
 			cargo_types: [produce_cargo("LVST",0), produce_cargo("GRAI",0),produce_cargo("BIOM",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FARM));
@@ -1096,8 +1091,7 @@ if (param_extension_food_industries && param_extension_fruits && !param_extensio
 			prob_map_gen: 10;
 			prob_in_game: 10;
 			prospect_chance: 0.75;
-			fund_cost_multiplier: 8;
-			remove_cost_multiplier: 0;
+			fund_cost_multiplier: 50;
 			remove_cost_multiplier: 0;
 			cargo_types: [produce_cargo("GRAI",0),produce_cargo("BIOM",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FARM));
@@ -1131,8 +1125,7 @@ if (param_extension_textile_industries && !param_extension_food_industries && !p
 			prob_map_gen: 10;
 			prob_in_game: 10;
 			prospect_chance: 0.75;
-			fund_cost_multiplier: 8;
-			remove_cost_multiplier: 0;
+			fund_cost_multiplier: 50;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("FERT"),produce_cargo("LVST",0), produce_cargo("GRAI",0), produce_cargo("WOOL",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FARM));
@@ -1168,8 +1161,7 @@ if (!param_extension_textile_industries && !param_extension_food_industries && !
 			prob_map_gen: 10;
 			prob_in_game: 10;
 			prospect_chance: 0.75;
-			fund_cost_multiplier: 8;
-			remove_cost_multiplier: 0;
+			fund_cost_multiplier: 50;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("FERT"),produce_cargo("LVST",0), produce_cargo("GRAI",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FARM));
@@ -1205,8 +1197,7 @@ if (param_extension_food_industries && !param_extension_fruits && param_extensio
 			prob_map_gen: 10;
 			prob_in_game: 10;
 			prospect_chance: 0.75;
-			fund_cost_multiplier: 8;
-			remove_cost_multiplier: 0;
+			fund_cost_multiplier: 50;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("FERT"),produce_cargo("GRAI",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FARM));
@@ -1242,8 +1233,7 @@ if (param_extension_textile_industries && !param_extension_food_industries && pa
 			prob_map_gen: 10;
 			prob_in_game: 10;
 			prospect_chance: 0.75;
-			fund_cost_multiplier: 8;
-			remove_cost_multiplier: 0;
+			fund_cost_multiplier: 50;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("FERT"),produce_cargo("LVST",0), produce_cargo("GRAI",0), produce_cargo("WOOL",0),produce_cargo("BIOM",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FARM));
@@ -1279,8 +1269,7 @@ if (!param_extension_textile_industries && !param_extension_food_industries && p
 			prob_map_gen: 10;
 			prob_in_game: 10;
 			prospect_chance: 0.75;
-			fund_cost_multiplier: 8;
-			remove_cost_multiplier: 0;
+			fund_cost_multiplier: 50;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("FERT"),produce_cargo("LVST",0), produce_cargo("GRAI",0),produce_cargo("BIOM",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FARM));
@@ -1316,8 +1305,7 @@ if (param_extension_food_industries && param_extension_fruits && param_extension
 			prob_map_gen: 10;
 			prob_in_game: 10;
 			prospect_chance: 0.75;
-			fund_cost_multiplier: 8;
-			remove_cost_multiplier: 0;
+			fund_cost_multiplier: 50;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("FERT"),produce_cargo("GRAI",0),produce_cargo("BIOM",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FARM));

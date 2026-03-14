@@ -724,8 +724,7 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_production_boo
 			prob_map_gen: 14;
 			prob_in_game: 14;
 			prospect_chance: 0.75;
-			fund_cost_multiplier: 8;
-			remove_cost_multiplier: 0;
+			fund_cost_multiplier: 190;
 			remove_cost_multiplier: 0;
 			cargo_types: [produce_cargo("SALT",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_SALT_MINE));
@@ -760,8 +759,7 @@ if (param_extension_basic_inorganic_chemistry && param_extension_production_boos
 			prob_map_gen: 14;
 			prob_in_game: 14;
 			prospect_chance: 0.75;
-			fund_cost_multiplier: 8;
-			remove_cost_multiplier: 0;
+			fund_cost_multiplier: 190;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("BOOM"),produce_cargo("SALT",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_SALT_MINE));

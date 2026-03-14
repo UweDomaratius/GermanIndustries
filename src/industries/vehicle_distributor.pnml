@@ -329,7 +329,6 @@ if (!param_extension_vehicle) {
 			prospect_chance: 0.75;
 			fund_cost_multiplier: 15;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("VEHI")];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_DISTRIBUTOR));
 		}
@@ -365,7 +364,6 @@ if (param_extension_vehicle) {
 			prob_in_game: 12;
 			prospect_chance: 0.75;
 			fund_cost_multiplier: 15;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("VEHI"),accept_cargo("TYRE"),accept_cargo("VPTS")];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_DISTRIBUTOR));

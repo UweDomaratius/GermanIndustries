@@ -897,7 +897,6 @@ if (param_extension_textile_industries && !param_extension_packaging_industries)
 			prob_in_game: 3;
 			fund_cost_multiplier: 200;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("WDPR"),accept_cargo("PLAS"),accept_cargo("TEXT"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FURNITURE_FACTORY));
 		}
@@ -932,7 +931,6 @@ if (!param_extension_textile_industries && !param_extension_packaging_industries
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 200;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("WDPR"),accept_cargo("PLAS"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FURNITURE_FACTORY));
@@ -969,7 +967,6 @@ if (param_extension_textile_industries && param_extension_packaging_industries) 
 			prob_in_game: 3;
 			fund_cost_multiplier: 200;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("WDPR"),accept_cargo("PLAS"),accept_cargo("TEXT"),accept_cargo("MNSP"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FURNITURE_FACTORY));
 		}
@@ -1004,7 +1001,6 @@ if (!param_extension_textile_industries && param_extension_packaging_industries)
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 200;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("WDPR"),accept_cargo("PLAS"),accept_cargo("MNSP"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FURNITURE_FACTORY));

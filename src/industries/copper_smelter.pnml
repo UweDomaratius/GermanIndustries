@@ -1467,7 +1467,6 @@ if (param_extension_painting_industries && !param_extension_coke_sulphur && !par
 			prob_in_game: 3;
 			fund_cost_multiplier: 200;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CORE"),produce_cargo("COPR",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_COPPER_SMELTER));
 		}
@@ -1503,7 +1502,6 @@ if (param_extension_painting_industries && param_extension_coke_sulphur && !para
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 200;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CORE"),accept_cargo("ACID"),produce_cargo("COPR",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_COPPER_SMELTER));
@@ -1541,7 +1539,6 @@ if (param_extension_painting_industries && !param_extension_coke_sulphur && para
 			prob_in_game: 3;
 			fund_cost_multiplier: 200;
 			remove_cost_multiplier: 0;
-			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CORE"),accept_cargo("SCMT"),produce_cargo("COPR",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_COPPER_SMELTER));
 		}
@@ -1577,7 +1574,6 @@ if (param_extension_painting_industries && param_extension_coke_sulphur && param
 			prob_map_gen: 5;
 			prob_in_game: 3;
 			fund_cost_multiplier: 200;
-			remove_cost_multiplier: 0;
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CORE"),accept_cargo("ACID"),accept_cargo("SCMT"),produce_cargo("COPR",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_COPPER_SMELTER));
