@@ -647,8 +647,8 @@ switch(FEAT_INDUSTRIES, SELF, power_plant_switch_produce_ext_coke_sulphur_ext_fr
 switch(FEAT_INDUSTRIES, SELF, power_plant_switch_extra_text_fund, 
 	[STORE_TEMP(string(STR_1880), TEMP_REGISTER_EXTRA_TEXT_ARG0),
 	current_year]) {
-	0..1880: return string(STR_INDUSTRY_NOT_AVAILABLE_BEFORE);
-	return string(STR_EMPTY);
+	1880..500000: return string(STR_EMPTY);
+	return string(STR_INDUSTRY_NOT_AVAILABLE_BEFORE);
 }
 
 switch(FEAT_INDUSTRIES, SELF, power_plant_switch_check_availability, current_year) {
