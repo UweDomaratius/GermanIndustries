@@ -539,11 +539,24 @@ switch(FEAT_INDUSTRIES, SELF, copper_ore_mine_switch_extra_text_ext_production_b
 	create_extractive_industry_text_optional_cargo;
 }
 
-switch(FEAT_INDUSTRIES, SELF, copper_ore_mine_switch_extra_text_fund, 
+switch(FEAT_INDUSTRIES, SELF, copper_ore_mine_switch_extra_text_fund_realistic, 
     [STORE_TEMP(string(STR_1800) | string(STR_1930) << 16, TEMP_REGISTER_EXTRA_TEXT_ARG0),
 	current_year]) {
 	1800..1930: return string(STR_EMPTY);
 	return string(STR_INDUSTRY_AVAILABLE_TIMEFRAME);
+}
+
+switch(FEAT_INDUSTRIES, SELF, copper_ore_mine_switch_extra_text_fund_simple, 
+    [STORE_TEMP(string(STR_1800), TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	current_year]) {
+	1800..500000: return string(STR_EMPTY);
+	return string(STR_INDUSTRY_NOT_AVAILABLE_BEFORE);
+}
+
+switch(FEAT_INDUSTRIES, SELF, copper_ore_mine_switch_extra_text_fund, param_economy_model)
+{
+	1: copper_ore_mine_switch_extra_text_fund_realistic;
+	copper_ore_mine_switch_extra_text_fund_simple;
 }
 
 // check creation type (getbits(extra_callback_info2, 0, 8))
@@ -554,10 +567,21 @@ switch(FEAT_INDUSTRIES, SELF, copper_ore_mine_switch_check_availability_map_gen,
 }
 
 // year < 1800: no creation, 1800 <= year < 1930: certain probability, 1930 <= year: no creation (take copper ore from harbours instead)
-switch(FEAT_INDUSTRIES, SELF, copper_ore_mine_switch_check_availability, current_year) {
+switch(FEAT_INDUSTRIES, SELF, copper_ore_mine_switch_check_availability_realistic, current_year) {
 	0..1799: return CB_RESULT_IND_NO_CONSTRUCTION;               // no copper ore mines before 1800
 	1930..5000000: copper_ore_mine_switch_check_availability_map_gen;  // check mode, if the map is generated with that starting year, copper ore mines should exist
 	get_construction_probability;
+}
+
+switch(FEAT_INDUSTRIES, SELF, copper_ore_mine_switch_check_availability_simple, current_year) {
+	0..1799: return CB_RESULT_IND_NO_CONSTRUCTION;               // no copper ore mines before 1800
+	get_construction_probability;
+}
+
+switch(FEAT_INDUSTRIES, SELF, copper_ore_mine_switch_check_availability, param_economy_model)
+{
+	1: copper_ore_mine_switch_check_availability_realistic;
+	copper_ore_mine_switch_check_availability_simple;
 }
 
 switch(FEAT_INDUSTRIES, SELF, copper_ore_mine_switch_random_prod_change, 

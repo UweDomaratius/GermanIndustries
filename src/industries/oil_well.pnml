@@ -439,11 +439,24 @@ switch(FEAT_INDUSTRIES, SELF, oil_well_switch_extra_text,
 	create_extractive_industry_text;
 }
 
-switch(FEAT_INDUSTRIES, SELF, oil_well_switch_extra_text_fund, 
+switch(FEAT_INDUSTRIES, SELF, oil_well_switch_extra_text_fund_realistic, 
     [STORE_TEMP(string(STR_1860) | string(STR_1985) << 16, TEMP_REGISTER_EXTRA_TEXT_ARG0),
 	current_year]) {
 	1860..1985: return string(STR_EMPTY);
 	return string(STR_INDUSTRY_AVAILABLE_TIMEFRAME);
+}
+
+switch(FEAT_INDUSTRIES, SELF, oil_well_switch_extra_text_fund_simple, 
+    [STORE_TEMP(string(STR_1860), TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	current_year]) {
+	1860..500000: return string(STR_EMPTY);
+	return string(STR_INDUSTRY_NOT_AVAILABLE_BEFORE);
+}
+
+switch(FEAT_INDUSTRIES, SELF, oil_well_switch_extra_text_fund, param_economy_model)
+{
+	1: oil_well_switch_extra_text_fund_realistic;
+	oil_well_switch_extra_text_fund_simple;
 }
 
 // check creation type (getbits(extra_callback_info2, 0, 8))
@@ -454,11 +467,23 @@ switch(FEAT_INDUSTRIES, SELF, oil_well_switch_check_availability_map_gen,
 }
 
 // year < 1860: no creation, 1860 <= year < 1950: certain probability, 1985 <= year: no creation (use oil rigs)
-switch(FEAT_INDUSTRIES, SELF, oil_well_switch_check_availability, 
+switch(FEAT_INDUSTRIES, SELF, oil_well_switch_check_availability_realistic, 
 	current_year) {
 	0..1859: return CB_RESULT_IND_NO_CONSTRUCTION;              // no coal mines before 1860
 	1985..5000000: oil_well_switch_check_availability_map_gen;  // check mode, if the map is generated with that starting year, oil wells should exist
 	get_construction_probability;
+}
+
+switch(FEAT_INDUSTRIES, SELF, oil_well_switch_check_availability_simple, 
+	current_year) {
+	0..1859: return CB_RESULT_IND_NO_CONSTRUCTION;
+	get_construction_probability;
+}
+
+switch(FEAT_INDUSTRIES, SELF, oil_well_switch_check_availability, param_economy_model)
+{
+	1: oil_well_switch_check_availability_realistic;
+	oil_well_switch_check_availability_simple;
 }
 
 switch(FEAT_INDUSTRIES, SELF, oil_well_switch_random_prod_change, 
