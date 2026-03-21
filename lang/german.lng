@@ -49,25 +49,25 @@ STR_PARAM_EXT_FOOD_INDUSTRIES_DESC :Fügt eine breitere Palette an Lebensmitteli
 STR_PARAM_EXT_PACKAGING_INDUSTRIES :Erweiterung "Verpackungsindustrie"
 STR_PARAM_EXT_PACKAGING_INDUSTRIES_DESC :Fügt Verpackungen als Fracht hinzu, die zu Industrien geliefert werden müssen, welche Waren oder Nahrungsmittel herstellen.
 STR_PARAM_EXT_GLASS :Erweiterung "Glasindustrie"
-STR_PARAM_EXT_GLASS_DESC :Fügt Industrien und Frachten hinzu, die für die Glasproduktion relevant sind. Benötigt die Erweiterung Bauindustrie.
+STR_PARAM_EXT_GLASS_DESC :Fügt Industrien und Frachten hinzu, die für die Glasproduktion relevant sind.{}{}Erfordert die Erweiterung "Bauindustrie".
 STR_PARAM_EXT_PAPER :Erweiterung "Papierindustrie"
-STR_PARAM_EXT_PAPER_DESC :Fügt Industrien hinzu, die Papier produzieren bzw. benötigen. Benötigt die Erweiterung Grundlegende Anorganische Chemie.
+STR_PARAM_EXT_PAPER_DESC :Fügt Industrien hinzu, die Papier produzieren bzw. benötigen.{}{}Erfordert die Erweiterung "Grundlegende Anorganische Chemie".
 STR_PARAM_EXT_ORGANIC_CHEMISTRY :Erweiterung "Organische Chemie"
-STR_PARAM_EXT_ORGANIC_CHEMISTRY_DESC :Fügt Industrien und Frachten hinzu, die sich mit der Verarbeitung von Erdöl beschäftigen. Benötigt die Erweiterung Grundlegende Anorganische Chemie.
+STR_PARAM_EXT_ORGANIC_CHEMISTRY_DESC :Fügt Industrien und Frachten hinzu, die sich mit der Verarbeitung von Erdöl beschäftigen.{}{}Erfordert die Erweiterung "Grundlegende Anorganische Chemie".
 STR_PARAM_EXT_COKE_SULPHUR :Erweiterung "Koks und Schwefel"
-STR_PARAM_EXT_COKE_SULPHUR_DESC :Fügt Industrien und Frachten hinzu, die sich mit der Förderung und Verarbeitung von schwefelhaltigen Erzen beschäftigen.
+STR_PARAM_EXT_COKE_SULPHUR_DESC :Fügt Industrien und Frachten hinzu, die sich mit der Förderung und Verarbeitung von schwefelhaltigen Erzen beschäftigen.{}{}Erfordert die Erweiterungen "Grundlegende anorganische Chemie" und "Farbindustrie".
 STR_PARAM_EXT_AMMONIA :Erweiterung "Ammoniaksynthese"
-STR_PARAM_EXT_AMMONIA_DESC :Fügt Industrien und Frachten hinzu, die sich mit der Synthese von Ammoniak beschäftigen.
+STR_PARAM_EXT_AMMONIA_DESC :Fügt Industrien und Frachten hinzu, die sich mit der Synthese von Ammoniak beschäftigen.{}{}Erfordert die Erweiterungen "Grundlegende anorganische Chemie" oder "Bauindustrie".
 STR_PARAM_EXT_FRUITS :Erweiterung "Früchte und Bioenergie"
-STR_PARAM_EXT_FRUITS_DESC :Fügt Industrien und Frachten hinzu, die sich mit der Verwertung von Bioabfällen beschäftigen.
+STR_PARAM_EXT_FRUITS_DESC :Fügt Industrien und Frachten hinzu, die sich mit der Verwertung von Bioabfällen beschäftigen.{}{}Erfordert die Erweiterungen "Organische Chemie" und "Grundlegende anorganische Chemie".
 STR_PARAM_EXT_METALLURGY :Erweiterung "Metallurgie"
-STR_PARAM_EXT_METALLURGY_DESC :Fügt Industrien und Frachten hinzu, die sich mit der Herstellung von Metallproduktion beschäftigen.
+STR_PARAM_EXT_METALLURGY_DESC :Fügt Industrien und Frachten hinzu, die sich mit der Herstellung von Metallproduktion beschäftigen.{}{}Erfordert die Erweiterungen "Koks und Schwefel", "Grundlegende anorganische Chemie" und "Farbindustrie".
 STR_PARAM_EXT_RECYCLING :Erweiterung "Recycling"
 STR_PARAM_EXT_RECYCLING_DESC :Fügt Industrien und Frachten hinzu, die sich mit dem Recycling von Wertstoffen beschäftigen.
 STR_PARAM_EXT_VEHICLE :Erweiterung "Automobilbau"
-STR_PARAM_EXT_VEHICLE_DESC :Fügt Industrien und Frachten hinzu, die mit Automobilbau zusammenhängen.
+STR_PARAM_EXT_VEHICLE_DESC :Fügt Industrien und Frachten hinzu, die mit Automobilbau zusammenhängen.{}{}Erfordert die Erweiterungen "Koks und Schwefel", "Grundlegende anorganische Chemie" und "Farbindustrie".
 STR_PARAM_EXT_PRODUCTION_BOOST :Erweiterung "Produktionsbooster"
-STR_PARAM_EXT_PRODUCTION_BOOST_DESC :Fügt Industrien hinzu, die der Produktion von Dünger und Sprengstoff dienen, mit denen man die Produktion von Primärindustrien erhöhen kann.
+STR_PARAM_EXT_PRODUCTION_BOOST_DESC :Fügt Industrien hinzu, die der Produktion von Dünger und Sprengstoff dienen, mit denen man die Produktion von Primärindustrien erhöhen kann.{}{}Erfordert die Erweiterungen "Ammoniaksynthese" oder "Koks und Schwefel".{}Die Erweiterung "Ammoniaksynthese" benötigt die Erweiterungen "Grundlegende anorganische Chemie" oder "Bauindustrie".{}Die Erweiterung "Koks und Schwefel" benötigt die Erweiterungen "Grundlegende anorganische Chemie" und "Farbindustrie".
 
 # Frachten
 STR_CARGO_NAME_ACID               :Säure
@@ -368,12 +368,12 @@ STR_ERR_OPENTTD_VERSION             :{ORANGE}E00: {TITLE} benötigt OpenTTD 14.0
 STR_ERR_INCOMPATIBLE_SET:{ORANGE}E01: {YELLOW}Inkompatibles Set: {ORANGE}{STRING}
 STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE :muss unterhalb der Schneegrenze platziert werden
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE :kann nicht auf steilen Hängen platziert werden
-STR_ERR_EXTENSION_GLASS_REQUIRES_EXTENSION_BUILDING_INDUSTRIES:Erweiterung "Glas" erfordert Erweiterung "Bauindustrie".
-STR_ERR_EXTENSION_PAPER_REQUIRES_EXTENSION_BASIC_INORGANIC_CHEMISTRY:Erweiterung "Papier" erfordert Erweiterung "Grundlegende anorganische Chemie".
-STR_ERR_EXTENSION_ORGANIC_CHEMISTRY_REQUIRES_EXTENSION_BASIC_INORGANIC_CHEMISTRY:Erweiterung "Organische Chemie" erfordert Erweiterung "Grundlegende anorganische Chemie".
+STR_ERR_EXTENSION_GLASS_REQUIRES_EXTENSION_BUILDING_INDUSTRIES:Erweiterung "Glas" erfordert die Erweiterung "Bauindustrie".
+STR_ERR_EXTENSION_PAPER_REQUIRES_EXTENSION_BASIC_INORGANIC_CHEMISTRY:Erweiterung "Papier" erfordert die Erweiterung "Grundlegende anorganische Chemie".
+STR_ERR_EXTENSION_ORGANIC_CHEMISTRY_REQUIRES_EXTENSION_BASIC_INORGANIC_CHEMISTRY:Erweiterung "Organische Chemie" erfordert die Erweiterung "Grundlegende anorganische Chemie".
 STR_ERR_EXTENSION_SULPHUR_COKE_REQUIRES_OTHER_EXTENSIONS:Erweiterung "Koks und Schwefel" erfordert mindestens eine der folgenden Erweiterungen: "Grundlegende anorganische Chemie", "Farbindustrie"
 STR_ERR_EXTENSION_AMMONIA_REQUIRES_INORGANIC_CHEMISTRY_BUILDING_MATERIALS:Erweiterung "Ammoniak" erfordert die Erweiterungen "Bauindustrie" und "Grundlegende anorganische Chemie"
 STR_ERR_EXTENSION_FRUITS_REQUIRES_ORGANIC_CHEMISTRY:Erweiterung "Obst und Bioenergie" erfordert die Erweiterung "Organische Chemie"
-STR_ERR_EXTENSION_METALLURGY_REQUIRES_COKE_SULPHUR:Erweiterung "Metallurgie" erfordert Erweiterung "Koks und Schwefel"
-STR_ERR_EXTENSION_VEHICLE_REQUIRES_COKE_SULPHUR:Erweiterung "Automobilbau" erfordert Erweiterung "Koks und Schwefel"
-STR_ERR_EXTENSION_PRODUCTION_BOOST_REQUIRES_AMMONIA_COKE_SULPHUR:Erweiterung "Produktionsbooster" erfordert Erweiterung "Ammoniak" oder "Koks und Schwefel".
+STR_ERR_EXTENSION_METALLURGY_REQUIRES_COKE_SULPHUR:Erweiterung "Metallurgie" erfordert die Erweiterung "Koks und Schwefel"
+STR_ERR_EXTENSION_VEHICLE_REQUIRES_COKE_SULPHUR:Erweiterung "Automobilbau" erfordert die Erweiterung "Koks und Schwefel"
+STR_ERR_EXTENSION_PRODUCTION_BOOST_REQUIRES_AMMONIA_COKE_SULPHUR:Erweiterung "Produktionsbooster" erfordert die Erweiterung "Ammoniak" oder "Koks und Schwefel".

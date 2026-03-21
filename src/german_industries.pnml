@@ -232,7 +232,7 @@ grf {
 		param_extension_production_boost {
 			type: bool;
 			name: string(STR_PARAM_EXT_PRODUCTION_BOOST);
-			desc: string(STR_PARAM_EXT_PRODUCTION_BOOST);
+			desc: string(STR_PARAM_EXT_PRODUCTION_BOOST_DESC);
 		}
 	}
 }
@@ -257,7 +257,6 @@ if (param_extension_organic_chemistry && !param_extension_basic_inorganic_chemis
 	exit;
 }
 
-// TODO: also check for extensions that are still to be implemented
 if (param_extension_coke_sulphur && !param_extension_basic_inorganic_chemistry && !param_extension_painting_industries) {
 	error(FATAL, string(STR_ERR_EXTENSION_SULPHUR_COKE_REQUIRES_OTHER_EXTENSIONS));
 	exit;

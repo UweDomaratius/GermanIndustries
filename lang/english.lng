@@ -49,25 +49,26 @@ STR_PARAM_EXT_FOOD_INDUSTRIES_DESC :Adds more diverse food processing industries
 STR_PARAM_EXT_PACKAGING_INDUSTRIES :Extension set "Packaging Industries"
 STR_PARAM_EXT_PACKAGING_INDUSTRIES_DESC :Adds additional packaging cargo to be delivered to industries producting food or goods.
 STR_PARAM_EXT_GLASS :Extension set "Glass production"
-STR_PARAM_EXT_GLASS_DESC :Adds industries and cargos related to the production of glass. Requires the extension Building industries to be activated.
+STR_PARAM_EXT_GLASS_DESC :Adds industries and cargos related to the production of glass.{}{}Requires the extension "Building industries" to be activated.
 STR_PARAM_EXT_PAPER :Extension set "Paper production"
-STR_PARAM_EXT_PAPER_DESC :Adds industries that produce or require paper. Requires the extension Basic inorganic chemistry to be activated.
+STR_PARAM_EXT_PAPER_DESC :Adds industries that produce or require paper.{}{}Requires the extension "Basic inorganic chemistry" to be activated.
 STR_PARAM_EXT_ORGANIC_CHEMISTRY :Extension set "Organic Chemistry"
-STR_PARAM_EXT_ORGANIC_CHEMISTRY_DESC :Adds industries and cargos related to the processing of crude oil. Requires the extension Basic inorganic chemistry to be activated.
+STR_PARAM_EXT_ORGANIC_CHEMISTRY_DESC :Adds industries and cargos related to the processing of crude oil.{}{}Requires the extension "Basic inorganic chemistry" to be activated.
 STR_PARAM_EXT_COKE_SULPHUR :Extension set "Coke and Sulphur"
-STR_PARAM_EXT_COKE_SULPHUR_DESC :Adds industries and cargos related to the processing of ores containing sulphur.
+STR_PARAM_EXT_COKE_SULPHUR_DESC :Adds industries and cargos related to the processing of ores containing sulphur.{}{}Requires the extensions "Basic inorganic chemistry" and "Painting Industries" to be activated.
 STR_PARAM_EXT_AMMONIA :Extension set "Ammonia synthesis"
-STR_PARAM_EXT_AMMONIA_DESC :Adds industries and cargos related to the synthesis of ammonia.
+STR_PARAM_EXT_AMMONIA_DESC :Adds industries and cargos related to the synthesis of ammonia.{}{}Requires the extensions "Basic inorganic chemistry" or "Building Industries" to be activated.
 STR_PARAM_EXT_FRUITS :Extension set "Fruits and Bio Energy"
-STR_PARAM_EXT_FRUITS_DESC :Adds industries and cargos related to the harvesting of fruits and the usage of regenerative energy sources.
+STR_PARAM_EXT_FRUITS_DESC :Adds industries and cargos related to the harvesting of fruits and the usage of regenerative energy sources.{}{}Requires the extensions "Organic chemistry" and "Basic inorganic chemistry" to be activated.
 STR_PARAM_EXT_METALLURGY :Extension set "Metallurgy"
-STR_PARAM_EXT_METALLURGY_DESC :Adds industries and cargos related to heavy industries and production of sheets, cables and other metal-based products.
+STR_PARAM_EXT_METALLURGY_DESC :Adds industries and cargos related to heavy industries and production of sheets, cables and other metal-based products.{}{}Requires the extensions "Coke and Sulphur", "Basic inorganic chemistry" and "Painting industries" to be activated.
 STR_PARAM_EXT_RECYCLING :Extension set "Recycling"
 STR_PARAM_EXT_RECYCLING_DESC :Adds industries and cargos related to the recycling of scrap materials.
 STR_PARAM_EXT_VEHICLE :Extension set "Vehicle Industries"
-STR_PARAM_EXT_VEHICLE_DESC :Adds industries and cargos related to the creation of vehicles.
+STR_PARAM_EXT_VEHICLE_DESC :Adds industries and cargos related to the creation of vehicles.{}{}Requires the extensions "Coke and Sulphur", "Basic inorganic chemistry" and "Painting industries" to be activated.
 STR_PARAM_EXT_PRODUCTION_BOOST :Erweiterung "Production boost"
-STR_PARAM_EXT_PRODUCTION_BOOST_DESC :Adds industries to that support the production of fertilizers and explosives, which in turn are used to increase production of primary industries.
+STR_PARAM_EXT_PRODUCTION_BOOST_DESC :Adds industries to that support the production of fertilizers and explosives, which in turn are used to increase production of primary industries.{}{}Requires the extensions "Ammonia synthesis" or "Coke and Sulphur" to be activated.{}Extension "Ammonia Synthesis" requires the extensions "Basic inorganic chemistry" or "Building Industries" to be activated.{}Extension "Coke and Sulphur" requires the extensions "Basic inorganic chemistry" and "Painting Industries" to be activated.
+
 
 STR_TOWN    :{STRING}
 STR_STATION :{STRING} {STRING}
