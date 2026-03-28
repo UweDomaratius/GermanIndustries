@@ -1001,7 +1001,7 @@ switch(FEAT_INDUSTRIES, SELF, explosives_factory_switch_update_last_served_date_
 
 produce(explosives_factory_produce_cap_stockpile,
 	[ACID: incoming_cargo_waiting("ACID") > 60000 ? incoming_cargo_waiting("ACID") - 60000 : 0;
-	 NH3_: incoming_cargo_waiting("NH3_") > 60000 ? incoming_cargo_waiting("NH3_") - 60000 : 0;
+	 NHNO: incoming_cargo_waiting("NHNO") > 60000 ? incoming_cargo_waiting("NHNO") - 60000 : 0;
 	 ],
 	[],
 	0 // do not run again
@@ -1016,7 +1016,7 @@ switch(FEAT_INDUSTRIES, SELF, explosives_factory_switch_stockpile_check, param_s
 produce(explosives_factory_produce_cap_stockpile_ext_aluminium,
 	[ACID: incoming_cargo_waiting("ACID") > 60000 ? incoming_cargo_waiting("ACID") - 60000 : 0;
 	 ALUM: incoming_cargo_waiting("ALUM") > 60000 ? incoming_cargo_waiting("ALUM") - 60000 : 0;
-	 NH3_: incoming_cargo_waiting("NH3_") > 60000 ? incoming_cargo_waiting("NH3_") - 60000 : 0;
+	 NHNO: incoming_cargo_waiting("NHNO") > 60000 ? incoming_cargo_waiting("NHNO") - 60000 : 0;
 	 ],
 	[],
 	0 // do not run again
@@ -1030,7 +1030,7 @@ switch(FEAT_INDUSTRIES, SELF, explosives_factory_switch_stockpile_check_ext_alum
 
 produce(explosives_factory_produce_cap_stockpile_ext_organic_chemistry,
 	[ACID: incoming_cargo_waiting("ACID") > 60000 ? incoming_cargo_waiting("ACID") - 60000 : 0;
-	 NH3_: incoming_cargo_waiting("NH3_") > 60000 ? incoming_cargo_waiting("NH3_") - 60000 : 0;
+	 NHNO: incoming_cargo_waiting("NHNO") > 60000 ? incoming_cargo_waiting("NHNO") - 60000 : 0;
 	 PETR: incoming_cargo_waiting("PETR") > 60000 ? incoming_cargo_waiting("PETR") - 60000 : 0;
 	 ],
 	[],
@@ -1047,7 +1047,7 @@ produce(explosives_factory_produce_cap_stockpile_ext_organic_chemistry_ext_alumi
 	[ACID: incoming_cargo_waiting("ACID") > 60000 ? incoming_cargo_waiting("ACID") - 60000 : 0;
 	 ALUM: incoming_cargo_waiting("ALUM") > 60000 ? incoming_cargo_waiting("ALUM") - 60000 : 0;
 	 PETR: incoming_cargo_waiting("PETR") > 60000 ? incoming_cargo_waiting("PETR") - 60000 : 0;
-	 NH3_: incoming_cargo_waiting("NH3_") > 60000 ? incoming_cargo_waiting("NH3_") - 60000 : 0;
+	 NHNO: incoming_cargo_waiting("NHNO") > 60000 ? incoming_cargo_waiting("NHNO") - 60000 : 0;
 	 ],
 	[],
 	0 // do not run again
