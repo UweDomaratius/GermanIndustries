@@ -349,11 +349,13 @@ STR_ACID_PLANT_HCL_SULP :{BLACK}Produktivität: {STRING}{}{}{BLACK}Industrie ben
 STR_ACID_PLANT_HCL_SULP_NH3 :{BLACK}Produktivität: {STRING}{}{}{BLACK}Industrie benötigt Schwefel + Sauerstoff oder Wasserstoff + Chlor oder Ammoniak + Sauerstoff zur Produktion. Die Produktivität erhöht sich, wenn alle fünf Rohstoffe verfügbar sind.
 STR_ACID_PLANT_SULP_NH3 :{BLACK}Produktivität: {STRING}{}{}{BLACK}Industrie benötigt Schwefel + Sauerstoff oder Ammoniak + Sauerstoff zur Produktion. Die Produktivität erhöht sich, wenn alle drei Rohstoffe verfügbar sind.
 STR_FOUNDRY_FORGE_ALUM :{BLACK}Industrie benötigt Koks + Stahl oder Koks + Aluminium zur Produktion. Die Produktivität erhöht sich, wenn alle drei Rohstoffe verfügbar sind.
+STR_BRICK_WORKS:{BLACK}Diese Industrie wird nach 1820 irgendwann zufällig schließen.{}Industrie benötigt alle aufgelisteten Rohstoffe zur Produktion.
 
 STR_INDUSTRY_ELECTRICITY_OPTIONAL_CARGO_TEXT :{BLACK}Industrie kann {YELLOW}{COMMA}{BLACK} Einheiten produzieren ({YELLOW}{COMMA}{BLACK}% der maximalen Produktion){}Maximale Produktion benötigt {YELLOW}{COMMA}{BLACK} Strom.{}{STRING}{}{BLACK}{STRING}
 
 # Texte für Industriefinanzierung
 STR_INDUSTRY_NOT_AVAILABLE_BEFORE :{}{BLACK}Industrie erst ab {STRING} verfügbar.
+STR_INDUSTRY_NOT_AVAILABLE_AFTER  :{}{BLACK}Industrie nur bis {STRING} verfügbar.
 STR_INDUSTRY_AVAILABLE_TIMEFRAME  :{}{BLACK}Industrie nur zwischen {STRING} und {STRING} verfügbar.
 
 # Display für Vorratsanzeige

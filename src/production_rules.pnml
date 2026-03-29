@@ -298,11 +298,13 @@ switch(FEAT_INDUSTRIES, SELF, stop_accept_cargo, getbits(extra_callback_info2, 0
 	ACID: (incoming_cargo_waiting("ACID") > 60000) ? 0 : 1;
 	ALUM: (incoming_cargo_waiting("ALUM") > 60000) ? 0 : 1;
 	AORE: (incoming_cargo_waiting("AORE") > 60000) ? 0 : 1;
+	BDMT: (incoming_cargo_waiting("BDMT") > 60000) ? 0 : 1;
 	BIOM: (incoming_cargo_waiting("BIOM") > 60000) ? 0 : 1;
 	BOOM: (incoming_cargo_waiting("BOOM") > 60000) ? 0 : 1;
 	C2H4: (incoming_cargo_waiting("C2H4") > 60000) ? 0 : 1;
 	CBLK: (incoming_cargo_waiting("CBLK") > 60000) ? 0 : 1;
 	CHLO: (incoming_cargo_waiting("CHLO") > 60000) ? 0 : 1;
+	CMNT: (incoming_cargo_waiting("CMNT") > 60000) ? 0 : 1;
 	COAL: (incoming_cargo_waiting("COAL") > 60000) ? 0 : 1;
 	COAT: (incoming_cargo_waiting("COAT") > 60000) ? 0 : 1;
 	COKE: (incoming_cargo_waiting("COKE") > 60000) ? 0 : 1;
@@ -311,8 +313,10 @@ switch(FEAT_INDUSTRIES, SELF, stop_accept_cargo, getbits(extra_callback_info2, 0
 	ENSP: (incoming_cargo_waiting("ENSP") > 60000) ? 0 : 1;
 	FERT: (incoming_cargo_waiting("FERT") > 60000) ? 0 : 1;
 	FISH: (incoming_cargo_waiting("FISH") > 60000) ? 0 : 1;
+	FOOD: (incoming_cargo_waiting("FOOD") > 60000) ? 0 : 1;
 	FRUT: (incoming_cargo_waiting("FRUT") > 60000) ? 0 : 1;
 	GLAS: (incoming_cargo_waiting("GLAS") > 60000) ? 0 : 1;
+	GOOD: (incoming_cargo_waiting("GOOD") > 60000) ? 0 : 1;
 	GRAI: (incoming_cargo_waiting("GRAI") > 60000) ? 0 : 1;
 	H2__: (incoming_cargo_waiting("H2__") > 60000) ? 0 : 1;
 	IORE: (incoming_cargo_waiting("IORE") > 60000) ? 0 : 1;
@@ -323,9 +327,11 @@ switch(FEAT_INDUSTRIES, SELF, stop_accept_cargo, getbits(extra_callback_info2, 0
 	MNSP: (incoming_cargo_waiting("MNSP") > 60000) ? 0 : 1;
 	N2__: (incoming_cargo_waiting("N2__") > 60000) ? 0 : 1;
 	NH3_: (incoming_cargo_waiting("NH3_") > 60000) ? 0 : 1;
+	NHNO: (incoming_cargo_waiting("NHNO") > 60000) ? 0 : 1;
 	O2__: (incoming_cargo_waiting("O2__") > 60000) ? 0 : 1;
 	OIL_: (incoming_cargo_waiting("OIL_") > 60000) ? 0 : 1;
 	PAPR: (incoming_cargo_waiting("PAPR") > 60000) ? 0 : 1;
+	PETR: (incoming_cargo_waiting("PETR") > 60000) ? 0 : 1;
 	PLAS: (incoming_cargo_waiting("PLAS") > 60000) ? 0 : 1;
 	PORE: (incoming_cargo_waiting("PORE") > 60000) ? 0 : 1;
 	POTA: (incoming_cargo_waiting("POTA") > 60000) ? 0 : 1;
@@ -344,6 +350,7 @@ switch(FEAT_INDUSTRIES, SELF, stop_accept_cargo, getbits(extra_callback_info2, 0
 	TEXT: (incoming_cargo_waiting("TEXT") > 60000) ? 0 : 1;
 	TYRE: (incoming_cargo_waiting("TYRE") > 60000) ? 0 : 1;
 	VBOD: (incoming_cargo_waiting("VBOD") > 60000) ? 0 : 1;
+	VEHI: (incoming_cargo_waiting("VEHI") > 60000) ? 0 : 1;
 	VENG: (incoming_cargo_waiting("VENG") > 60000) ? 0 : 1;
 	VPTS: (incoming_cargo_waiting("VPTS") > 60000) ? 0 : 1;
 	WDPR: (incoming_cargo_waiting("WDPR") > 60000) ? 0 : 1;

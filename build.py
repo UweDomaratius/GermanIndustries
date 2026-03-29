@@ -21,6 +21,33 @@ inputs.extend(cargos)
 industries = sorted(glob.glob("src/industries/*.pnml"))
 inputs.extend(industries)
 
+# check the ids from constants.py for duplicates, these can cause hard to track bugs
+industry_ids = {}
+industry_tile_ids = {}
+for key, value in constants.items():
+    if key.startswith("INDUSTRY_ID"):
+        industry_ids[key] = value
+    if key.startswith("INDUSTRY_TILE_ID"):
+        industry_tile_ids[key] = value
+
+reverse_dict = {}
+for key, value in industry_ids.items():
+    reverse_dict.setdefault(value, []).append(key)
+duplicates = {value: keys for value, keys in reverse_dict.items() if len(keys) > 1}
+if len(duplicates) > 0:
+    print("ERROR, industry ids contain duplicates")
+    print(duplicates)
+    sys.exit(1)
+    
+reverse_dict = {}
+for key, value in industry_tile_ids.items():
+    reverse_dict.setdefault(value, []).append(key)
+duplicates = {value: keys for value, keys in reverse_dict.items() if len(keys) > 1}
+if len(duplicates) > 0:
+    print("ERROR, industry tile ids contain duplicates")
+    print(duplicates)
+    sys.exit(1)
+
 # clean the build dir, we'll recreate all files
 shutil.rmtree('build',ignore_errors=True)
 Path("build").mkdir()
