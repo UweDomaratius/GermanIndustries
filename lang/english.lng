@@ -432,6 +432,7 @@ STR_INDUSTRY_ELECTRICITY_OPTIONAL_CARGO_TEXT :{BLACK}Industry can produce {YELLO
 
 # Funding window text
 STR_INDUSTRY_NOT_AVAILABLE_BEFORE :{}{BLACK}Industry not available before {STRING}.
+STR_INDUSTRY_NOT_AVAILABLE_AFTER  :{}{BLACK}Industry not available after {STRING}.
 STR_INDUSTRY_AVAILABLE_TIMEFRAME  :{}{BLACK}Industry only available between {STRING} and {STRING}.
 
 # Cargo display for stockpile

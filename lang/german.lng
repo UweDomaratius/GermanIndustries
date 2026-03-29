@@ -354,6 +354,7 @@ STR_INDUSTRY_ELECTRICITY_OPTIONAL_CARGO_TEXT :{BLACK}Industrie kann {YELLOW}{COM
 
 # Texte für Industriefinanzierung
 STR_INDUSTRY_NOT_AVAILABLE_BEFORE :{}{BLACK}Industrie erst ab {STRING} verfügbar.
+STR_INDUSTRY_NOT_AVAILABLE_AFTER  :{}{BLACK}Industrie nur bis {STRING} verfügbar.
 STR_INDUSTRY_AVAILABLE_TIMEFRAME  :{}{BLACK}Industrie nur zwischen {STRING} und {STRING} verfügbar.
 
 # Display für Vorratsanzeige
