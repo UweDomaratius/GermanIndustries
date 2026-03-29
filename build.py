@@ -42,7 +42,6 @@ if len(duplicates) > 0:
 reverse_dict = {}
 for key, value in industry_tile_ids.items():
     reverse_dict.setdefault(value, []).append(key)
-print(reverse_dict)
 duplicates = {value: keys for value, keys in reverse_dict.items() if len(keys) > 1}
 if len(duplicates) > 0:
     print("ERROR, industry tile ids contain duplicates")

@@ -427,6 +427,7 @@ STR_ACID_PLANT_HCL_SULP :{BLACK}Productivity: {STRING}{}{}{BLACK}Industry requir
 STR_ACID_PLANT_HCL_SULP_NH3 :{BLACK}Productivity: {STRING}{}{}{BLACK}Industry requires sulphur + oxygen or hydrogen + chlorine or ammonia + oxygen to produce anything. Production level will increase if all five are available.
 STR_ACID_PLANT_SULP_NH3 :{BLACK}Productivity: {STRING}{}{}{BLACK}Industry requires sulphur + oxygen or ammonia + oxygen to produce anything. Production level will increase if all three are available.
 STR_FOUNDRY_FORGE_ALUM :{BLACK}Industry requires coke + steel or coke + aluminium to produce anything. Production level will increase if all three are available.
+STR_BRICK_WORKS:{BLACK}This industry will randomly close after 1820.{}Industry requires all listed raw materials to produce anything.
 
 STR_INDUSTRY_ELECTRICITY_OPTIONAL_CARGO_TEXT :{BLACK}Industry can produce {YELLOW}{COMMA}{BLACK} items ({YELLOW}{COMMA}{BLACK}% of maximum production){}Maximum production requires {YELLOW}{COMMA}{BLACK} power.{}{STRING}{}{BLACK}{STRING}
 
