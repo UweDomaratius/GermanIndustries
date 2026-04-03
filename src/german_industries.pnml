@@ -116,6 +116,18 @@ grf {
 			};
 		}
 	}
+	
+	param {
+		param_primary_production_increase_transport_percentage {
+			type: int;
+			name: string(STR_PARAM_PRODUCTION_INCREASE_TRANSPORT_PERCENTAGE);
+			desc: string(STR_PARAM_PRODUCTION_INCREASE_TRANSPORT_PERCENTAGE_DESC);
+			min_value: 50;
+			max_value: 80;
+			def_value: 60;
+		}
+	}
+	
 	param {
 		param_extension_building_materials {
 			type: bool;

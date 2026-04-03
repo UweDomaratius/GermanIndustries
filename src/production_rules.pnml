@@ -6,8 +6,8 @@ produce(empty_produce, [], [])
 ////////////////////////////////////////////////////////////////////////////////
 // if < 30% of produced goods were transported, decrease production by 5
 // if < 40% of produced goods were transported, decrease production by 1
-// if > 60% of produced goods were transported, increase production by 1
-// if > 75% of produced goods were transported, increase production by 5
+// if > 60% of produced goods were transported, increase production by 1 (configurable param_primary_production_increase_transport_percentage)
+// if > 75% of produced goods were transported, increase production by 5 (configurable param_primary_production_increase_transport_percentage + 15)
 // Precondition: Temp storage registers hold the current production level and
 // the maximum possible production.
 // Result is written into temporary storage register 0x100 and returned as 
@@ -17,10 +17,11 @@ produce(empty_produce, [], [])
 // dynamically computed)
 ////////////////////////////////////////////////////////////////////////////////
 switch(FEAT_INDUSTRIES, SELF, set_new_production, 
-	[ 
+	[
+      STORE_TEMP(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, TEMP_REGISTER_TMP),	
 	  LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 30 ? STORE_PERM(max(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0) - 5,4), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0) : 
 	  LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 40 ? STORE_PERM(max(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0) - 1,4), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0) : 
-	  LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 75 ? STORE_PERM(min(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0)+1,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0) : 
+	  LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < (LOAD_TEMP(TEMP_REGISTER_TMP)+15) ? STORE_PERM(min(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0)+1,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0) : 
 	                                                                    STORE_PERM(min(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0)+5,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0),
 
 	  STORE_TEMP(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0)<<16,TEMP_REGISTER_CB_RESULT_IND_PROD_SET_BY_0x100)
@@ -29,8 +30,9 @@ switch(FEAT_INDUSTRIES, SELF, set_new_production,
 }
 
 switch(FEAT_INDUSTRIES, SELF, change_production,
-	[(LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) != 0 && 
-	((LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 40) || LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) > 59) &&
+	[STORE_TEMP(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, TEMP_REGISTER_TMP),	
+	(LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) != 0 && 
+	((LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) < 40) || LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) >= LOAD_TEMP(TEMP_REGISTER_TMP)) &&
 	 (LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) + 10 > LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0)) // if production is limited due to missing optional things or so, it does not make sense to increase the theoretical maximum any further
 	 )])
 {
@@ -298,13 +300,11 @@ switch(FEAT_INDUSTRIES, SELF, stop_accept_cargo, getbits(extra_callback_info2, 0
 	ACID: (incoming_cargo_waiting("ACID") > 60000) ? 0 : 1;
 	ALUM: (incoming_cargo_waiting("ALUM") > 60000) ? 0 : 1;
 	AORE: (incoming_cargo_waiting("AORE") > 60000) ? 0 : 1;
-	BDMT: (incoming_cargo_waiting("BDMT") > 60000) ? 0 : 1;
 	BIOM: (incoming_cargo_waiting("BIOM") > 60000) ? 0 : 1;
 	BOOM: (incoming_cargo_waiting("BOOM") > 60000) ? 0 : 1;
 	C2H4: (incoming_cargo_waiting("C2H4") > 60000) ? 0 : 1;
 	CBLK: (incoming_cargo_waiting("CBLK") > 60000) ? 0 : 1;
 	CHLO: (incoming_cargo_waiting("CHLO") > 60000) ? 0 : 1;
-	CMNT: (incoming_cargo_waiting("CMNT") > 60000) ? 0 : 1;
 	COAL: (incoming_cargo_waiting("COAL") > 60000) ? 0 : 1;
 	COAT: (incoming_cargo_waiting("COAT") > 60000) ? 0 : 1;
 	COKE: (incoming_cargo_waiting("COKE") > 60000) ? 0 : 1;
@@ -313,10 +313,8 @@ switch(FEAT_INDUSTRIES, SELF, stop_accept_cargo, getbits(extra_callback_info2, 0
 	ENSP: (incoming_cargo_waiting("ENSP") > 60000) ? 0 : 1;
 	FERT: (incoming_cargo_waiting("FERT") > 60000) ? 0 : 1;
 	FISH: (incoming_cargo_waiting("FISH") > 60000) ? 0 : 1;
-	FOOD: (incoming_cargo_waiting("FOOD") > 60000) ? 0 : 1;
 	FRUT: (incoming_cargo_waiting("FRUT") > 60000) ? 0 : 1;
 	GLAS: (incoming_cargo_waiting("GLAS") > 60000) ? 0 : 1;
-	GOOD: (incoming_cargo_waiting("GOOD") > 60000) ? 0 : 1;
 	GRAI: (incoming_cargo_waiting("GRAI") > 60000) ? 0 : 1;
 	H2__: (incoming_cargo_waiting("H2__") > 60000) ? 0 : 1;
 	IORE: (incoming_cargo_waiting("IORE") > 60000) ? 0 : 1;
@@ -327,11 +325,9 @@ switch(FEAT_INDUSTRIES, SELF, stop_accept_cargo, getbits(extra_callback_info2, 0
 	MNSP: (incoming_cargo_waiting("MNSP") > 60000) ? 0 : 1;
 	N2__: (incoming_cargo_waiting("N2__") > 60000) ? 0 : 1;
 	NH3_: (incoming_cargo_waiting("NH3_") > 60000) ? 0 : 1;
-	NHNO: (incoming_cargo_waiting("NHNO") > 60000) ? 0 : 1;
 	O2__: (incoming_cargo_waiting("O2__") > 60000) ? 0 : 1;
 	OIL_: (incoming_cargo_waiting("OIL_") > 60000) ? 0 : 1;
 	PAPR: (incoming_cargo_waiting("PAPR") > 60000) ? 0 : 1;
-	PETR: (incoming_cargo_waiting("PETR") > 60000) ? 0 : 1;
 	PLAS: (incoming_cargo_waiting("PLAS") > 60000) ? 0 : 1;
 	PORE: (incoming_cargo_waiting("PORE") > 60000) ? 0 : 1;
 	POTA: (incoming_cargo_waiting("POTA") > 60000) ? 0 : 1;
@@ -350,7 +346,6 @@ switch(FEAT_INDUSTRIES, SELF, stop_accept_cargo, getbits(extra_callback_info2, 0
 	TEXT: (incoming_cargo_waiting("TEXT") > 60000) ? 0 : 1;
 	TYRE: (incoming_cargo_waiting("TYRE") > 60000) ? 0 : 1;
 	VBOD: (incoming_cargo_waiting("VBOD") > 60000) ? 0 : 1;
-	VEHI: (incoming_cargo_waiting("VEHI") > 60000) ? 0 : 1;
 	VENG: (incoming_cargo_waiting("VENG") > 60000) ? 0 : 1;
 	VPTS: (incoming_cargo_waiting("VPTS") > 60000) ? 0 : 1;
 	WDPR: (incoming_cargo_waiting("WDPR") > 60000) ? 0 : 1;
@@ -553,12 +548,12 @@ switch(FEAT_INDUSTRIES, SELF, create_extractive_industry_text_optional_cargo_wit
 		// the boolean terms are the logic inverses of each other so only one string of the two can be active at a time
 		((LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) < LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)) * string(STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION)) +
 		((LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) >= LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION))* string(STR_INDUSTRY_PREREQ_KEEP_PRODUCTION)) << 16 |
-		
 		string(STR_PRODUCTION_LIMITED_DUE_TO_MISSING_OPTIONAL_CARGO),
 		TEMP_REGISTER_EXTRA_TEXT_ARG0),
-	 STORE_TEMP(string(STR_EXTRACTIVE_INDUSTRY_HAS_OPTIONAL_CARGO) << 16 | string(STR_EMPTY), TEMP_REGISTER_EXTRA_TEXT_ARG1),
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_RESOURCES) / 1000,TEMP_REGISTER_EXTRA_TEXT_ARG2),
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_RESOURCES) / (LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0)*8*12),TEMP_REGISTER_EXTRA_TEXT_ARG3)
+	 STORE_TEMP((param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage), TEMP_REGISTER_EXTRA_TEXT_ARG1),
+	 STORE_TEMP(string(STR_EXTRACTIVE_INDUSTRY_HAS_OPTIONAL_CARGO) << 16 | string(STR_EMPTY), TEMP_REGISTER_EXTRA_TEXT_ARG2),
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_RESOURCES) / 1000,TEMP_REGISTER_EXTRA_TEXT_ARG3),
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_RESOURCES) / (LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0)*8*12),TEMP_REGISTER_EXTRA_TEXT_ARG4)
 	]) {
 	return string(STR_EXTRACTIVE_INDUSTRY_TEXT_OPTIONAL_CARGO_WITH_LINEBREAK);
 }
@@ -568,11 +563,13 @@ switch(FEAT_INDUSTRIES, SELF, create_extractive_industry_text_optional_cargo_wit
 		// this logic adds the strings depending on the boolean term in front, which either evaluates to 0 or 1, which is then multiplied with the string variable
 		// the boolean terms are the logic inverses of each other so only one string of the two can be active at a time
 		((LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) < LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)) * string(STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION)) +
-		((LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) >= LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION))* string(STR_INDUSTRY_PREREQ_KEEP_PRODUCTION)) << 16 | string(STR_EMPTY),
+		((LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) >= LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION))* string(STR_INDUSTRY_PREREQ_KEEP_PRODUCTION)) << 16 |
+		string(STR_EMPTY),
 		TEMP_REGISTER_EXTRA_TEXT_ARG0),
-	 STORE_TEMP(string(STR_EXTRACTIVE_INDUSTRY_HAS_OPTIONAL_CARGO) << 16 | string(STR_EMPTY), TEMP_REGISTER_EXTRA_TEXT_ARG1),
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_RESOURCES) / 1000,TEMP_REGISTER_EXTRA_TEXT_ARG2),
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_RESOURCES) / (LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0)*8*12),TEMP_REGISTER_EXTRA_TEXT_ARG3)
+	 STORE_TEMP((param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage), TEMP_REGISTER_EXTRA_TEXT_ARG1),
+	 STORE_TEMP(string(STR_EXTRACTIVE_INDUSTRY_HAS_OPTIONAL_CARGO) << 16 | string(STR_EMPTY), TEMP_REGISTER_EXTRA_TEXT_ARG2),	 
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_RESOURCES) / 1000,TEMP_REGISTER_EXTRA_TEXT_ARG3),
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_RESOURCES) / (LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0)*8*12),TEMP_REGISTER_EXTRA_TEXT_ARG4)
 	]) {
 	return string(STR_EXTRACTIVE_INDUSTRY_TEXT_OPTIONAL_CARGO_WITHOUT_LINEBREAK);
 }
@@ -589,10 +586,11 @@ switch(FEAT_INDUSTRIES, SELF, create_extractive_industry_text,
 		// this logic adds the strings depending on the boolean term in front, which either evaluates to 0 or 1, which is then multiplied with the string variable
 		// the boolean terms are the logic inverses of each other so only one string of the two can be active at a time
 		((LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) < LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)) * string(STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION)) +
-		((LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) >= LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION))* string(STR_INDUSTRY_PREREQ_KEEP_PRODUCTION)),
+		((LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) >= LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION))* string(STR_INDUSTRY_PREREQ_KEEP_PRODUCTION)) << 16 | string(STR_EMPTY),
 		TEMP_REGISTER_EXTRA_TEXT_ARG0),
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_RESOURCES) / 1000,TEMP_REGISTER_EXTRA_TEXT_ARG1),
-	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_RESOURCES) / (LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0)*8*12),TEMP_REGISTER_EXTRA_TEXT_ARG2)
+	 STORE_TEMP((param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage), TEMP_REGISTER_EXTRA_TEXT_ARG1),
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_RESOURCES) / 1000,TEMP_REGISTER_EXTRA_TEXT_ARG2),
+	 STORE_TEMP(LOAD_PERM(PERM_REGISTER_RESOURCES) / (LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0)*8*12),TEMP_REGISTER_EXTRA_TEXT_ARG3)
 	])
 {
 	return string(STR_EXTRACTIVE_INDUSTRY_TEXT);
@@ -602,25 +600,29 @@ switch(FEAT_INDUSTRIES, SELF, create_organic_industry_text_optional_cargo_with_w
 	 [STORE_TEMP(
 		// this logic adds the strings depending on the boolean term in front, which either evaluates to 0 or 1, which is then multiplied with the string variable
 		// the boolean terms are the logic inverses of each other so only one string of the two can be active at a time
-		(((LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) < LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)) * string(STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION)) +
-		((LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) >= LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION))* string(STR_INDUSTRY_PREREQ_KEEP_PRODUCTION))) << 16 |
-		
+		((LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) < LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)) * string(STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION)) +
+		((LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) >= LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION))* string(STR_INDUSTRY_PREREQ_KEEP_PRODUCTION)) << 16 |
 		string(STR_PRODUCTION_LIMITED_DUE_TO_MISSING_OPTIONAL_CARGO),
-		TEMP_REGISTER_EXTRA_TEXT_ARG0)
+		TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 STORE_TEMP((param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage), TEMP_REGISTER_EXTRA_TEXT_ARG1),
+	 STORE_TEMP(string(STR_EXTRACTIVE_INDUSTRY_HAS_OPTIONAL_CARGO) << 16 | string(STR_EMPTY), TEMP_REGISTER_EXTRA_TEXT_ARG2),
 	]) {
-	return string(STR_CONCAT_WITH_LINEBREAK);
+	return string(STR_ORGANIC_INDUSTRY_TEXT_OPTIONAL_CARGO_WITH_LINEBREAK);
 }
 
 switch(FEAT_INDUSTRIES, SELF, create_organic_industry_text_optional_cargo_without_warning, 
 	 [STORE_TEMP(
 		// this logic adds the strings depending on the boolean term in front, which either evaluates to 0 or 1, which is then multiplied with the string variable
 		// the boolean terms are the logic inverses of each other so only one string of the two can be active at a time
-		(((LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) < LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)) * string(STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION)) +
-		((LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) >= LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION))* string(STR_INDUSTRY_PREREQ_KEEP_PRODUCTION))) << 16 |
+		((LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) < LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)) * string(STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION)) +
+		((LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) >= LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION))* string(STR_INDUSTRY_PREREQ_KEEP_PRODUCTION)) << 16 |
 		string(STR_EMPTY),
-		TEMP_REGISTER_EXTRA_TEXT_ARG0)
+		TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 STORE_TEMP((param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage), TEMP_REGISTER_EXTRA_TEXT_ARG1),
+	 STORE_TEMP(string(STR_EXTRACTIVE_INDUSTRY_HAS_OPTIONAL_CARGO) << 16 | string(STR_EMPTY), TEMP_REGISTER_EXTRA_TEXT_ARG2),	 
+		
 	]) {
-	return string(STR_CONCAT);
+	return string(STR_ORGANIC_INDUSTRY_TEXT_OPTIONAL_CARGO_WITHOUT_LINEBREAK);
 }
 
 switch(FEAT_INDUSTRIES, SELF, create_organic_industry_text_optional_cargo, 
@@ -631,15 +633,11 @@ switch(FEAT_INDUSTRIES, SELF, create_organic_industry_text_optional_cargo,
 }
 
 switch(FEAT_INDUSTRIES, SELF, create_organic_industry_text, 
-	 [STORE_TEMP(
-		// this logic adds the strings depending on the boolean term in front, which either evaluates to 0 or 1, which is then multiplied with the string variable
-		// the boolean terms are the logic inverses of each other so only one string of the two can be active at a time
-		((LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) < LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)) * string(STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION)) +
-		((LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) >= LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION))* string(STR_INDUSTRY_PREREQ_KEEP_PRODUCTION)) |
-		string(STR_EMPTY) << 16,
-		TEMP_REGISTER_EXTRA_TEXT_ARG0)
+	 [	STORE_TEMP((param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage),	TEMP_REGISTER_EXTRA_TEXT_ARG0),
+		(LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) < LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION))
 	]) {
-	return string(STR_CONCAT);
+	1: return string(STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION);
+	return string(STR_INDUSTRY_PREREQ_KEEP_PRODUCTION);
 }
 
 // fill all temp registers needed to run a production starting on any input

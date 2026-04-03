@@ -33,7 +33,8 @@ STR_PARAM_MIN_DISTANCE_SAME_INDUSTRY :Minimum distance between two industries of
 STR_PARAM_MIN_DISTANCE_SAME_INDUSTRY_DESC :Minimum distance between two industries of the same type.
 STR_PARAM_MIN_DISTANCE_RELATED_INDUSTRY :Minimum distance between two related industries.
 STR_PARAM_MIN_DISTANCE_RELATED_INDUSTRY_DESC :Minimum distance between two related industries. Related means that one industry produces something that the other accepts, creating a possible transport connection. Higher values may cause the map generation to not be able to place all industries.
-
+STR_PARAM_PRODUCTION_INCREASE_TRANSPORT_PERCENTAGE :Transport percentage required to increase primary industry production.
+STR_PARAM_PRODUCTION_INCREASE_TRANSPORT_PERCENTAGE_DESC :You need to transport at least this percentage of the production of a primary industry to allow the industry to increase production.
 STR_PARAM_EXT_BUILDING_MATERIALS :Extension set "Building Industries"
 STR_PARAM_EXT_BUILDING_MATERIALS_DESC :Adds cargos related to building, such as limestone and cement, as well as the related industries.
 STR_PARAM_EXT_TEXTILE_INDUSTRIES :Extension set "Textile Industries"
@@ -391,14 +392,15 @@ STR_STATION_VEHICLE_PARTS_PLANT      :Component Factory
 STR_STATION_WIRE_MILL                :Wire Mill
 
 # Industry window texts
-STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION :{BLACK}Transport more than 60% of the produced cargo to increase production.
-STR_INDUSTRY_PREREQ_KEEP_PRODUCTION     :{BLACK}Industry is at maximum production. Transport more than 60% of the produced cargo to keep this production level.
+STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION :{BLACK}Transport more than {COMMA}% of the produced cargo to increase production.
+STR_INDUSTRY_PREREQ_KEEP_PRODUCTION     :{BLACK}Industry is at maximum production. Transport more than {COMMA}% of the produced cargo to keep this production level.
 # Organic industries (forests, farms, ...) display the info on production level requirements.
 STR_CONCAT:{STRING}{STRING}
 STR_CONCAT_WITH_LINEBREAK:{STRING}{}{STRING}
-STR_ORGANIC_INDUSTRY_TEXT_PRODUCTION_BOOST:{BLACK}Raw materials printed in white will increase the maximum production level.
+STR_ORGANIC_INDUSTRY_TEXT_OPTIONAL_CARGO_WITH_LINEBREAK :{STRING}{}{STRING}{STRING}{STRING}
+STR_ORGANIC_INDUSTRY_TEXT_OPTIONAL_CARGO_WITHOUT_LINEBREAK :{STRING}{STRING}{STRING}{STRING}
 # Extractive Industries (mines) display both the info on production level requirements, as well as the remaining resources.
-STR_EXTRACTIVE_INDUSTRY_HAS_OPTIONAL_CARGO :Raw materials printed in white will increase the maximum production level.
+STR_EXTRACTIVE_INDUSTRY_HAS_OPTIONAL_CARGO :{BLACK}Raw materials printed in white will increase the maximum production level.
 STR_EXTRACTIVE_INDUSTRY_TEXT_OPTIONAL_CARGO_WITH_LINEBREAK :{STRING}{}{STRING}{STRING}{STRING}{}{BLACK}About {YELLOW}{COMMA} kt {BLACK} remain (est. {YELLOW}{COMMA} years{BLACK} at current production rate)
 STR_EXTRACTIVE_INDUSTRY_TEXT_OPTIONAL_CARGO_WITHOUT_LINEBREAK :{STRING}{STRING}{STRING}{STRING}{}{BLACK}About {YELLOW}{COMMA} kt {BLACK} remain (est. {YELLOW}{COMMA} years{BLACK} at current production rate)
 STR_EXTRACTIVE_INDUSTRY_TEXT:{STRING}{STRING}{}{BLACK}About {YELLOW}{COMMA} kt {BLACK} remain (est. {YELLOW}{COMMA} years{BLACK} at current production rate)
