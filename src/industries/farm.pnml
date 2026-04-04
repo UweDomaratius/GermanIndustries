@@ -621,45 +621,60 @@ switch(FEAT_INDUSTRIES, SELF, farm_func_calc_max_prod,
 
 // TODO: limit production increase to make it adapt slower (grain and lvst need time to grow)
 switch(FEAT_INDUSTRIES, SELF, farm_switch_prod_change, 
-	[STORE_TEMP(max(transported_last_month_pct("LVST"),transported_last_month_pct("GRAI")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
-	 STORE_TEMP(farm_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION)])
+	[update_last_served_date0(),
+	 STORE_TEMP(max(transported_last_month_pct("LVST"),transported_last_month_pct("GRAI")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0), PERM_REGISTER_LAST_SERVED0_11),
+	 STORE_TEMP(farm_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
+	 param_primary_production_change_volatility
+	 ])
 {
-	change_production; // use default rules to adapt production
+	0..2: change_production6;
+	change_production12; // use default rules to adapt production
 }
 
 switch(FEAT_INDUSTRIES, SELF, farm_switch_prod_change_extension_textile_industry, 
 	[STORE_TEMP(max(transported_last_month_pct("LVST"),transported_last_month_pct("GRAI"),transported_last_month_pct("WOOL")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
-	 STORE_TEMP(farm_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION)])
+	 STORE_TEMP(farm_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
+	 param_primary_production_change_volatility])
 {
-	change_production; // use default rules to adapt production
+	0..2: change_production6;
+	change_production12; // use default rules to adapt production
 }
 
 switch(FEAT_INDUSTRIES, SELF, farm_switch_prod_change_extension_food_industry, 
 	[STORE_TEMP(transported_last_month_pct("GRAI"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
-	 STORE_TEMP(farm_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION)])
+	 STORE_TEMP(farm_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
+	 param_primary_production_change_volatility])
 {
-	change_production; // use default rules to adapt production
+	0..2: change_production6;
+	change_production12; // use default rules to adapt production
 }
 
 switch(FEAT_INDUSTRIES, SELF, farm_switch_prod_change_extension_textile_industry_ext_fruits, 
 	[STORE_TEMP(max(transported_last_month_pct("LVST"),transported_last_month_pct("GRAI"),transported_last_month_pct("WOOL"),transported_last_month_pct("BIOM")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
-	 STORE_TEMP(farm_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION)])
+	 STORE_TEMP(farm_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
+	 param_primary_production_change_volatility])
 {
-	change_production; // use default rules to adapt production
+	0..2: change_production6;
+	change_production12; // use default rules to adapt production
 }
 
 switch(FEAT_INDUSTRIES, SELF, farm_switch_prod_change_ext_fruits, 
 	[STORE_TEMP(max(transported_last_month_pct("LVST"),transported_last_month_pct("GRAI"),transported_last_month_pct("BIOM")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
-	 STORE_TEMP(farm_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION)])
+	 STORE_TEMP(farm_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
+	 param_primary_production_change_volatility])
 {
-	change_production; // use default rules to adapt production
+	0..2: change_production6;
+	change_production12; // use default rules to adapt production
 }
 
 switch(FEAT_INDUSTRIES, SELF, farm_switch_prod_change_ext_food_industry_ext_fruits, 
 	[STORE_TEMP(max(transported_last_month_pct("BIOM"),transported_last_month_pct("GRAI")), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
-	 STORE_TEMP(farm_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION)])
+	 STORE_TEMP(farm_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
+	 param_primary_production_change_volatility])
 {
-	change_production; // use default rules to adapt production
+	0..2: change_production6;
+	change_production12; // use default rules to adapt production
 }
 
 // randomize production at build time based on random bits: 96t min, 152t max

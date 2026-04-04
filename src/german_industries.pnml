@@ -127,6 +127,22 @@ grf {
 			def_value: 60;
 		}
 	}
+	param {
+		param_primary_production_change_volatility {
+			type: int;
+			name: string(STR_PARAM_PRODUCTION_CHANGE_VOLATILITY);
+			desc: string(STR_PARAM_PRODUCTION_CHANGE_VOLATILITY_DESC);
+			min_value: 0;
+			max_value: 3;
+			def_value: 0;
+			names: {
+				0: string(STR_VERY_FAST);
+				1: string(STR_FAST);
+				2: string(STR_MEDIUM);
+				3: string(STR_SLOW);
+			};
+		}
+	}
 	
 	param {
 		param_extension_building_materials {

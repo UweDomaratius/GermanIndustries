@@ -35,6 +35,8 @@ STR_PARAM_MIN_DISTANCE_RELATED_INDUSTRY :Minimum distance between two related in
 STR_PARAM_MIN_DISTANCE_RELATED_INDUSTRY_DESC :Minimum distance between two related industries. Related means that one industry produces something that the other accepts, creating a possible transport connection. Higher values may cause the map generation to not be able to place all industries.
 STR_PARAM_PRODUCTION_INCREASE_TRANSPORT_PERCENTAGE :Transport percentage required to increase primary industry production.
 STR_PARAM_PRODUCTION_INCREASE_TRANSPORT_PERCENTAGE_DESC :You need to transport at least this percentage of the production of a primary industry to allow the industry to increase production.
+STR_PARAM_PRODUCTION_CHANGE_VOLATILITY :Adaptation speed for primary industry production.
+STR_PARAM_PRODUCTION_CHANGE_VOLATILITY_DESC :This value defines how fast and how often a primary industry (such as a mine) will change production if the required conditions are fulfilled.
 STR_PARAM_EXT_BUILDING_MATERIALS :Extension set "Building Industries"
 STR_PARAM_EXT_BUILDING_MATERIALS_DESC :Adds cargos related to building, such as limestone and cement, as well as the related industries.
 STR_PARAM_EXT_TEXTILE_INDUSTRIES :Extension set "Textile Industries"
@@ -70,10 +72,14 @@ STR_PARAM_EXT_VEHICLE_DESC :Adds industries and cargos related to the creation o
 STR_PARAM_EXT_PRODUCTION_BOOST :Erweiterung "Production boost"
 STR_PARAM_EXT_PRODUCTION_BOOST_DESC :Adds industries to that support the production of fertilizers and explosives, which in turn are used to increase production of primary industries.{}{}Requires the extensions "Ammonia synthesis" or "Coke and Sulphur" to be activated.{}Extension "Ammonia Synthesis" requires the extensions "Basic inorganic chemistry" or "Building Industries" to be activated.{}Extension "Coke and Sulphur" requires the extensions "Basic inorganic chemistry" and "Painting Industries" to be activated.
 
-
 STR_TOWN    :{STRING}
 STR_STATION :{STRING} {STRING}
 STR_EMPTY   : 
+
+STR_SLOW     :Slow
+STR_MEDIUM   :Medium
+STR_FAST     :Fast
+STR_VERY_FAST:Very Fast
 
 # OpenTTD only displays numbers with decimal points, which is stupid for years - so a couple of strings for years are used
 STR_1800:1800

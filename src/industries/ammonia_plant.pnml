@@ -1133,10 +1133,10 @@ switch(FEAT_INDUSTRIES, SELF, ammonia_plant_switch_check_availability,
 }
 
 switch(FEAT_INDUSTRIES, SELF, ammonia_plant_switch_update_last_served_date,
-	[update_last_served_date(),
+	[update_last_served_date0(),
 	 STORE_PERM(this_month_production("NH3_") != 0 || last_month_production("NH3_") != 0 || 
 		incoming_cargo_waiting("N2__") != 0 || incoming_cargo_waiting("H2__") != 0 ||
-		this_month_transported("NH3_") != 0 || last_month_transported("NH3_") != 0, PERM_REGISTER_LAST_SERVED11)
+		this_month_transported("NH3_") != 0 || last_month_transported("NH3_") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
