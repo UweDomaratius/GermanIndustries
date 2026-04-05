@@ -712,7 +712,7 @@ switch(FEAT_INDUSTRIES, SELF, textile_mill_switch_produce,
 	 limit_production_optional_cargo(1),
 	 update_permanent_storage_production_values(),
 	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING1), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW1),
-	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(70)), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()
 	 ])
 	{
@@ -742,7 +742,7 @@ switch(FEAT_INDUSTRIES, SELF, textile_mill_switch_produce_ext_painting_industrie
 	 // use 5% of production amount as usage of optional stuff 
 	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING1), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW1),
 	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING2), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW2),
-	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(70)), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()
 	 ])
 	{

@@ -394,7 +394,7 @@ switch(FEAT_INDUSTRIES, SELF, clothing_plant_switch_produce_ext_packaging_indust
 	 update_permanent_storage_production_values(),
 	 
 	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING0), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW1),
-	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(90)), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()
 	 ])
 	{
