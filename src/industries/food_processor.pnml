@@ -515,8 +515,9 @@ switch(FEAT_INDUSTRIES, SELF, food_processor_switch_location_check_industry_dist
 		(industry_distance(INDUSTRY_ID_SALT_MINE) >= param_min_dist_related_industry) && 
 		(industry_distance(INDUSTRY_ID_PACKAGING_PLANT) >= param_min_dist_related_industry) && 
 		// distance to related consumers
-		(industry_distance(INDUSTRY_ID_HOTEL) >= param_min_dist_related_industry) && 
-		(industry_distance(INDUSTRY_ID_GENERAL_STORE) >= param_min_dist_related_industry) && 		
+		(industry_distance(INDUSTRY_ID_HOTEL) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_GENERAL_STORE) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_OIL_RIG) >= param_min_dist_related_industry) &&
 		// distance between instances of same industry
 	    (industry_distance(INDUSTRY_ID_FOOD_PROCESSOR) >= param_min_dist_same_industry))		
 		)]) {
