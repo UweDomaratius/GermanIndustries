@@ -5041,7 +5041,7 @@ switch(FEAT_INDUSTRIES, SELF, forest_switch_location_check_industry_distance,
 	   return CB_RESULT_LOCATION_DISALLOW;
 }
 
-switch(FEAT_INDUSTRIES, SELF, forest_func_calc_max_prod, 65535) {
+switch(FEAT_INDUSTRIES, SELF, forest_func_calc_max_prod, param_primary_industry_production_cap) {
 	return;
 }
 

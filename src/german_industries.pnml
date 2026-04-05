@@ -6,26 +6,6 @@ grf {
 	min_compatible_version: 0;
 	
 	param {
-		param_primary_production {
-			type: int;
-			name: string(STR_PARAM_PRIMARY_PRODUCTION);
-			desc: string(STR_PARAM_PRIMARY_PRODUCTION_DESC);
-			min_value: 1;
-			max_value: 500;
-			def_value: 100;
-		}
-	}
-	param {
-		param_primary_resource_factor {
-			type: int;
-			name: string(STR_PARAM_PRIMARY_RESOURCE_FACTOR);
-			desc: string(STR_PARAM_PRIMARY_RESOURCE_FACTOR_DESC);
-			min_value: 1;
-			max_value: 50;
-			def_value: 5;
-		}
-	}
-	param {
 		param_economy_model {
 			type: int;
 			name: string(STR_PARAM_ECONOMY_MODEL);
@@ -117,6 +97,36 @@ grf {
 		}
 	}
 	
+	param {
+		param_primary_production {
+			type: int;
+			name: string(STR_PARAM_PRIMARY_PRODUCTION);
+			desc: string(STR_PARAM_PRIMARY_PRODUCTION_DESC);
+			min_value: 1;
+			max_value: 500;
+			def_value: 100;
+		}
+	}
+	param {
+		param_primary_resource_factor {
+			type: int;
+			name: string(STR_PARAM_PRIMARY_RESOURCE_FACTOR);
+			desc: string(STR_PARAM_PRIMARY_RESOURCE_FACTOR_DESC);
+			min_value: 1;
+			max_value: 50;
+			def_value: 5;
+		}
+	}
+	param {
+		param_primary_industry_production_cap {
+			type: int;
+			name: string(STR_PARAM_PRIMARY_INDUSTRY_PRODUCTION_CAP);
+			desc: string(STR_PARAM_PRIMARY_INDUSTRY_PRODUCTION_CAP_DESC);
+			min_value: 64;
+			max_value: 65535;
+			def_value: 65535;
+		}
+	}
 	param {
 		param_primary_production_increase_transport_percentage {
 			type: int;

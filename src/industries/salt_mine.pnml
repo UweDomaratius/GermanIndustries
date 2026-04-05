@@ -589,12 +589,12 @@ switch(FEAT_INDUSTRIES, SELF, salt_mine_switch_location_check_industry_distance,
 
 
 switch(FEAT_INDUSTRIES, SELF, salt_mine_func_calc_max_prod, 
-	param_economy_model == 0 ? 65535 :
+	param_economy_model == 0 ? param_primary_industry_production_cap :
 	  current_year <= 1859 ? 4 : 
 	  current_year <= 1894 ? (current_year-1860)+4 : 
 	  current_year <= 1914 ? (current_year-1895)*4+40 : 
 	  current_year <= 1923 ? (current_year-1915)+120 : 
-	  65535) {
+	  param_primary_industry_production_cap) {
 	return;
 }
 

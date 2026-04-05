@@ -239,7 +239,7 @@ switch(FEAT_INDUSTRIES, SELF, fishing_grounds_switch_prod_change,
 	[update_last_served_date0(),
 	 STORE_TEMP(transported_last_month_pct("FISH"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
 	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0), PERM_REGISTER_LAST_SERVED0_11),
-	 STORE_TEMP(255,TEMP_REGISTER_MAXIMUM_PRODUCTION),
+	 STORE_TEMP(param_primary_industry_production_cap,TEMP_REGISTER_MAXIMUM_PRODUCTION),
 	 param_primary_production_change_volatility
 	 ])
 {
@@ -271,7 +271,7 @@ switch(FEAT_INDUSTRIES, SELF, fishing_grounds_switch_produce,
 // build the industry window text here
 ////////////////////////////////////////////////////////////////////////////////
 switch(FEAT_INDUSTRIES, SELF, fishing_grounds_switch_extra_text, 
-	[STORE_TEMP(65535,TEMP_REGISTER_MAXIMUM_PRODUCTION)])
+	[STORE_TEMP(param_primary_industry_production_cap,TEMP_REGISTER_MAXIMUM_PRODUCTION)])
 {
 	create_organic_industry_text;
 }

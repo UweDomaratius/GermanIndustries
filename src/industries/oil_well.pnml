@@ -387,10 +387,10 @@ switch(FEAT_INDUSTRIES, SELF, oil_well_switch_location_check_industry_distance,
 }
 
 switch(FEAT_INDUSTRIES, SELF, oil_well_func_calc_max_prod, 
-	param_economy_model == 0 ? 65535 :
+	param_economy_model == 0 ? param_primary_industry_production_cap :
 	  current_year <= 1859 ? 4 : 
-	  current_year < 1970 ? min(max(4,LOAD_PERM(PERM_REGISTER_RESOURCES) / ((1970-current_year)*8*12)),65535) : 
-	  65535) {
+	  current_year < 1970 ? min(max(4,LOAD_PERM(PERM_REGISTER_RESOURCES) / ((1970-current_year)*8*12)),param_primary_industry_production_cap) : 
+	  param_primary_industry_production_cap) {
 	return;
 }
 

@@ -9,6 +9,8 @@ STR_GRF_DESCRIPTION :Deutsche Industrien für OpenTTD{}{COPYRIGHT}2025{}Basiert 
 # Set parameter
 STR_PARAM_PRIMARY_PRODUCTION :Skalierung der Produktion von Primärindustrien
 STR_PARAM_PRIMARY_PRODUCTION_DESC :Skaliert die monatliche Produktion von Primärindustrien. 100% ist voreingestellt und entspricht den originalen Industrien.
+STR_PARAM_PRIMARY_INDUSTRY_PRODUCTION_CAP :Maximale Production von Primärindustrien pro Produktionszyklus.
+STR_PARAM_PRIMARY_INDUSTRY_PRODUCTION_CAP_DESC :Definiert die maximale Produktion von Primärindustrien wie Bergwerken. Die maximale monatliche Produktion ist das 8-9 fache dieses Wertes. Die Skalierung der Primärindustrien skaliert auch diesen Maximalwert.
 STR_PARAM_PRIMARY_RESOURCE_FACTOR :Skalierung der Ressourcen von Primärindustrien
 STR_PARAM_PRIMARY_RESOURCE_FACTOR_DESC :Skaliert die Menge an Ressourcen, die eine Primärindustrie fördern kann. Wenn die Ressourcen erschöpft sind, schließt die Industrie.
 STR_PARAM_ECONOMY_MODEL :Wirtschaftsmodell

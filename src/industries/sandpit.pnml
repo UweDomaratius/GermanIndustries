@@ -1150,7 +1150,7 @@ switch(FEAT_INDUSTRIES, SELF, sandpit_switch_location_check_industry_distance,
 
 
 switch(FEAT_INDUSTRIES, SELF, sandpit_func_calc_max_prod, 
-	65535) {
+	param_primary_industry_production_cap) {
 	return;
 }
 

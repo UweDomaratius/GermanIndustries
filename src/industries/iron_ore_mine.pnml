@@ -472,13 +472,13 @@ switch(FEAT_INDUSTRIES, SELF, iron_ore_mine_switch_location_check_industry_dista
 
 
 switch(FEAT_INDUSTRIES, SELF, iron_ore_mine_func_calc_max_prod, 
-	param_economy_model == 0 ? 65535 :
+	param_economy_model == 0 ? param_primary_industry_production_cap :
 	  current_year <= 1859 ? 4 : 
 	  current_year <= 1894 ? (current_year-1860)+4 : 
 	  current_year <= 1914 ? (current_year-1895)*4+40 : 
 	  current_year <= 1923 ? 16*(current_year-1915)+120 : 
-	  current_year < 1970 ? min(max(4,LOAD_PERM(PERM_REGISTER_RESOURCES) / ((1970-current_year)*8*12)),65535) : 
-	  65535
+	  current_year < 1970 ? min(max(4,LOAD_PERM(PERM_REGISTER_RESOURCES) / ((1970-current_year)*8*12)),param_primary_industry_production_cap) : 
+	  param_primary_industry_production_cap
 	  ) {
 	return;
 }

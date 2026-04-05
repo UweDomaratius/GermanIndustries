@@ -538,7 +538,7 @@ switch(FEAT_INDUSTRIES, SELF, limestone_mine_switch_location_check_industry_dist
 
 
 switch(FEAT_INDUSTRIES, SELF, limestone_mine_func_calc_max_prod, 
-	65535) {
+	param_primary_industry_production_cap) {
 	return;
 }
 

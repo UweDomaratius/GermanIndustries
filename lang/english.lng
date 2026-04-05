@@ -9,6 +9,8 @@ STR_GRF_DESCRIPTION :German industries for OpenTTD{}{COPYRIGHT}2025{}Based on FI
 # Set parameters
 STR_PARAM_PRIMARY_PRODUCTION :Primary industry production scale
 STR_PARAM_PRIMARY_PRODUCTION_DESC :Scales the monthly production scale of primary industries. 100% is the default and matches the standard industries.
+STR_PARAM_PRIMARY_INDUSTRY_PRODUCTION_CAP :Maximum production of primary industries per production cycle.
+STR_PARAM_PRIMARY_INDUSTRY_PRODUCTION_CAP_DESC :Defines the maximum production per production cycle for primary industries (e.g. mines). The maximum monthly production is 8-9 times this value with default time scaling. Scaling the primary industry production will also scale this maximum value.
 STR_PARAM_PRIMARY_RESOURCE_FACTOR :Primary industry resources factor
 STR_PARAM_PRIMARY_RESOURCE_FACTOR_DESC :Scales the amount of resources that a primary industry can excavate. Once the resources are depleted the industry will close.
 STR_PARAM_ECONOMY_MODEL :Economy model
