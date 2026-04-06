@@ -708,6 +708,7 @@ if (param_extension_building_materials) {
 		}
 			
 		graphics {
+			construction_probability: get_construction_probability;
 			cargo_input:			  brick_works_switch_input;
 			produce_cargo_arrival:    brick_works_switch_stockpile_check; 
 			produce_256_ticks:        brick_works_switch_produce;
