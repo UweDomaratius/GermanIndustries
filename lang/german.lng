@@ -9,6 +9,8 @@ STR_GRF_DESCRIPTION :Deutsche Industrien für OpenTTD{}{COPYRIGHT}2025{}Basiert 
 # Set parameter
 STR_PARAM_PRIMARY_PRODUCTION :Skalierung der Produktion von Primärindustrien
 STR_PARAM_PRIMARY_PRODUCTION_DESC :Skaliert die monatliche Produktion von Primärindustrien. 100% ist voreingestellt und entspricht den originalen Industrien.
+STR_PARAM_PRIMARY_INDUSTRY_PRODUCTION_CAP :Maximale Production von Primärindustrien pro Produktionszyklus.
+STR_PARAM_PRIMARY_INDUSTRY_PRODUCTION_CAP_DESC :Definiert die maximale Produktion von Primärindustrien wie Bergwerken. Die maximale monatliche Produktion ist das 8-9 fache dieses Wertes. Die Skalierung der Primärindustrien skaliert auch diesen Maximalwert.
 STR_PARAM_PRIMARY_RESOURCE_FACTOR :Skalierung der Ressourcen von Primärindustrien
 STR_PARAM_PRIMARY_RESOURCE_FACTOR_DESC :Skaliert die Menge an Ressourcen, die eine Primärindustrie fördern kann. Wenn die Ressourcen erschöpft sind, schließt die Industrie.
 STR_PARAM_ECONOMY_MODEL :Wirtschaftsmodell
@@ -33,7 +35,10 @@ STR_PARAM_MIN_DISTANCE_SAME_INDUSTRY :Mindestabstand zweier Industrien des gleic
 STR_PARAM_MIN_DISTANCE_SAME_INDUSTRY_DESC :Mindestabstand zweier Industrien des gleichen Typs.
 STR_PARAM_MIN_DISTANCE_RELATED_INDUSTRY :Mindestabstand zweier verbundener Industrien
 STR_PARAM_MIN_DISTANCE_RELATED_INDUSTRY_DESC :Mindestabstand zweier verbundener Industrien. Verbunden bedeutet, dass eine Industrie etwas produziert, was die andere akzeptiert, so dass es zwischen beiden eine mögliche Transportverbindung gibt. Größere Werte können dafür sorgen, dass bei der Kartengenerierung nicht alle Industrien platziert werden können.
-
+STR_PARAM_PRODUCTION_INCREASE_TRANSPORT_PERCENTAGE :Benötigte Transportquote für Produktionserhöhung primärer Industrien.
+STR_PARAM_PRODUCTION_INCREASE_TRANSPORT_PERCENTAGE_DESC :Der Prozentsatz an transportierter Fracht, den man erreichen muss um die Produktion einer Primärindustrie (z.B. Bergwerk) zu erhöhen.
+STR_PARAM_PRODUCTION_CHANGE_VOLATILITY :Geschwindigkeit, in der Primärindustrien die Produktion verändern.
+STR_PARAM_PRODUCTION_CHANGE_VOLATILITY_DESC :Dieser Wert bestimmt, wie schnell und wie oft eine Primärindustrie (z.B. Bergwerk) die Produktion verändert wenn die notwendigen Voraussetzungen erfüllt sind.
 STR_PARAM_EXT_BUILDING_MATERIALS :Erweiterung "Bauindustrie"
 STR_PARAM_EXT_BUILDING_MATERIALS_DESC :Fügt Frachten wie Kalkstein und Zement und passende Industrien hinzu.
 STR_PARAM_EXT_TEXTILE_INDUSTRIES :Erweiterung "Textilindustrie"
@@ -68,6 +73,11 @@ STR_PARAM_EXT_VEHICLE :Erweiterung "Automobilbau"
 STR_PARAM_EXT_VEHICLE_DESC :Fügt Industrien und Frachten hinzu, die mit Automobilbau zusammenhängen.{}{}Erfordert die Erweiterungen "Koks und Schwefel", "Grundlegende anorganische Chemie" und "Farbindustrie".
 STR_PARAM_EXT_PRODUCTION_BOOST :Erweiterung "Produktionsbooster"
 STR_PARAM_EXT_PRODUCTION_BOOST_DESC :Fügt Industrien hinzu, die der Produktion von Dünger und Sprengstoff dienen, mit denen man die Produktion von Primärindustrien erhöhen kann.{}{}Erfordert die Erweiterungen "Ammoniaksynthese" oder "Koks und Schwefel".{}Die Erweiterung "Ammoniaksynthese" benötigt die Erweiterungen "Grundlegende anorganische Chemie" oder "Bauindustrie".{}Die Erweiterung "Koks und Schwefel" benötigt die Erweiterungen "Grundlegende anorganische Chemie" und "Farbindustrie".
+
+STR_SLOW     :Langsam
+STR_MEDIUM   :Mittel
+STR_FAST     :Schnell
+STR_VERY_FAST:Sehr schnell
 
 # Frachten
 STR_CARGO_NAME_ACID               :Säure
@@ -317,11 +327,10 @@ STR_STATION_VEHICLE_PARTS_PLANT      :Autoteilefabrik
 STR_STATION_WIRE_MILL                :Drahtwalzwerk
 
 # Industriefenster
-STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION :{BLACK}Transportiere mehr als 60% der produzierten Fracht um die Produktion zu erhöhen.
-STR_INDUSTRY_PREREQ_KEEP_PRODUCTION     :{BLACK}Industrie produziert am Maximum. Transportiere mehr als 60% der produzierten Fracht um diesen Produktionslevel zu halten.
-STR_ORGANIC_INDUSTRY_TEXT_PRODUCTION_BOOST:{BLACK}In weiß dargestellte Rohstoffe erhöhen die maximale Produktion.
+STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION :{BLACK}Transportiere mehr als {COMMA}% der produzierten Fracht um die Produktion zu erhöhen.
+STR_INDUSTRY_PREREQ_KEEP_PRODUCTION     :{BLACK}Industrie produziert am Maximum. Transportiere mehr als {COMMA}% der produzierten Fracht um diesen Produktionslevel zu halten.
 # Extractive Industrien (Bergwerke) zeigen die Info zum Produktionslevel und die Menge der verbleibenden Rohstoffe.
-STR_EXTRACTIVE_INDUSTRY_HAS_OPTIONAL_CARGO :In weiß dargestellte Rohstoffe erhöhen die maximale Produktion.
+STR_EXTRACTIVE_INDUSTRY_HAS_OPTIONAL_CARGO :{BLACK}In weiß dargestellte Rohstoffe erhöhen die maximale Produktion.
 STR_EXTRACTIVE_INDUSTRY_TEXT_OPTIONAL_CARGO_WITH_LINEBREAK :{STRING}{}{STRING}{STRING}{STRING}{}{BLACK}Etwa {YELLOW}{COMMA} kt {BLACK} verbleibend (ca. {YELLOW}{COMMA} Jahre{BLACK} bei aktuellem Produktionslevel)
 STR_EXTRACTIVE_INDUSTRY_TEXT_OPTIONAL_CARGO_WITHOUT_LINEBREAK :{STRING}{STRING}{STRING}{STRING}{}{BLACK}Etwa {YELLOW}{COMMA} kt {BLACK} verbleibend (ca. {YELLOW}{COMMA} Jahre{BLACK} bei aktuellem Produktionslevel)
 STR_EXTRACTIVE_INDUSTRY_TEXT:{STRING}{STRING}{}{BLACK}Etwa {YELLOW}{COMMA} kt {BLACK} verbleibend (ca. {YELLOW}{COMMA} Jahre{BLACK} bei aktuellem Produktionslevel)

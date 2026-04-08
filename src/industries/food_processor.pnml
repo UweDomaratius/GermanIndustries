@@ -515,8 +515,9 @@ switch(FEAT_INDUSTRIES, SELF, food_processor_switch_location_check_industry_dist
 		(industry_distance(INDUSTRY_ID_SALT_MINE) >= param_min_dist_related_industry) && 
 		(industry_distance(INDUSTRY_ID_PACKAGING_PLANT) >= param_min_dist_related_industry) && 
 		// distance to related consumers
-		(industry_distance(INDUSTRY_ID_HOTEL) >= param_min_dist_related_industry) && 
-		(industry_distance(INDUSTRY_ID_GENERAL_STORE) >= param_min_dist_related_industry) && 		
+		(industry_distance(INDUSTRY_ID_HOTEL) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_GENERAL_STORE) >= param_min_dist_related_industry) &&
+		(industry_distance(INDUSTRY_ID_OIL_RIG) >= param_min_dist_related_industry) &&
 		// distance between instances of same industry
 	    (industry_distance(INDUSTRY_ID_FOOD_PROCESSOR) >= param_min_dist_same_industry))		
 		)]) {
@@ -925,96 +926,96 @@ switch(FEAT_INDUSTRIES, SELF, food_processor_check_production,
 }
 
 switch(FEAT_INDUSTRIES, SELF, food_processor_switch_update_last_served_date,
-	[update_last_served_date(),
-	 STORE_PERM(food_processor_check_production() || incoming_cargo_waiting("LVST") != 0 || incoming_cargo_waiting("GRAI") != 0, PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(food_processor_check_production() || incoming_cargo_waiting("LVST") != 0 || incoming_cargo_waiting("GRAI") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, food_processor_switch_update_last_served_date_ext_basic_inorganic_chemistry,
-	[update_last_served_date(),
-	 STORE_PERM(food_processor_check_production() || incoming_cargo_waiting("LVST") != 0 || incoming_cargo_waiting("SALT") != 0 || incoming_cargo_waiting("LYE_") != 0, PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(food_processor_check_production() || incoming_cargo_waiting("LVST") != 0 || incoming_cargo_waiting("SALT") != 0 || incoming_cargo_waiting("LYE_") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, food_processor_switch_update_last_served_date_ext_basic_inorganic_chemistry_ext_fruits,
-	[update_last_served_date(),
-	 STORE_PERM(food_processor_check_production() || incoming_cargo_waiting("LVST") != 0 || incoming_cargo_waiting("SALT") != 0 || incoming_cargo_waiting("LYE_") != 0 || incoming_cargo_waiting("FRUT") != 0, PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(food_processor_check_production() || incoming_cargo_waiting("LVST") != 0 || incoming_cargo_waiting("SALT") != 0 || incoming_cargo_waiting("LYE_") != 0 || incoming_cargo_waiting("FRUT") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, food_processor_switch_update_last_served_date_ext_basic_inorganic_chemistry_ext_packaging_industries,
-	[update_last_served_date(),
-	 STORE_PERM(food_processor_check_production() || incoming_cargo_waiting("LVST") != 0 || incoming_cargo_waiting("SALT") != 0 || incoming_cargo_waiting("LYE_") != 0 || incoming_cargo_waiting("MNSP") != 0, PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(food_processor_check_production() || incoming_cargo_waiting("LVST") != 0 || incoming_cargo_waiting("SALT") != 0 || incoming_cargo_waiting("LYE_") != 0 || incoming_cargo_waiting("MNSP") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, food_processor_switch_update_last_served_date_ext_basic_inorganic_chemistry_ext_packaging_industries_ext_fruits,
-	[update_last_served_date(),
-	 STORE_PERM(food_processor_check_production() || incoming_cargo_waiting("LVST") != 0 || incoming_cargo_waiting("SALT") != 0 || incoming_cargo_waiting("LYE_") != 0 || incoming_cargo_waiting("MNSP") != 0 || incoming_cargo_waiting("FRUT") != 0, PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(food_processor_check_production() || incoming_cargo_waiting("LVST") != 0 || incoming_cargo_waiting("SALT") != 0 || incoming_cargo_waiting("LYE_") != 0 || incoming_cargo_waiting("MNSP") != 0 || incoming_cargo_waiting("FRUT") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, food_processor_switch_update_last_served_date_ext_food_industries,
-	[update_last_served_date(),
-	 STORE_PERM(food_processor_check_production(), PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(food_processor_check_production(), PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, food_processor_switch_update_last_served_date_ext_food_industries_ext_basic_inorganic_chemistry,
-	[update_last_served_date(),
-	 STORE_PERM(food_processor_check_production() || incoming_cargo_waiting("SALT") != 0 || incoming_cargo_waiting("LYE_") != 0, PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(food_processor_check_production() || incoming_cargo_waiting("SALT") != 0 || incoming_cargo_waiting("LYE_") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, food_processor_switch_update_last_served_date_ext_food_industries_ext_basic_inorganic_chemistry_ext_fruits,
-	[update_last_served_date(),
-	 STORE_PERM(food_processor_check_production() ||incoming_cargo_waiting("SALT") != 0 || incoming_cargo_waiting("LYE_") != 0 || incoming_cargo_waiting("FRUT") != 0, PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(food_processor_check_production() ||incoming_cargo_waiting("SALT") != 0 || incoming_cargo_waiting("LYE_") != 0 || incoming_cargo_waiting("FRUT") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, food_processor_switch_update_last_served_date_ext_packaging_industries,
-	[update_last_served_date(),
-	 STORE_PERM(food_processor_check_production() || incoming_cargo_waiting("MNSP") != 0, PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(food_processor_check_production() || incoming_cargo_waiting("MNSP") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, food_processor_switch_update_last_served_date_ext_basic_inorganic_chemistry_ext_food_industries_ext_packaging_industries,
-	[update_last_served_date(),
-	 STORE_PERM(food_processor_check_production() || incoming_cargo_waiting("MNSP") != 0 || incoming_cargo_waiting("SALT") != 0 || incoming_cargo_waiting("LYE_") != 0, PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(food_processor_check_production() || incoming_cargo_waiting("MNSP") != 0 || incoming_cargo_waiting("SALT") != 0 || incoming_cargo_waiting("LYE_") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, food_processor_switch_update_last_served_date_ext_basic_inorganic_chemistry_ext_food_industries_ext_packaging_industries_ext_fruits,
-	[update_last_served_date(),
-	 STORE_PERM(food_processor_check_production() || incoming_cargo_waiting("MNSP") != 0 || incoming_cargo_waiting("SALT") != 0 || incoming_cargo_waiting("LYE_") != 0 || incoming_cargo_waiting("FRUT") != 0, PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(food_processor_check_production() || incoming_cargo_waiting("MNSP") != 0 || incoming_cargo_waiting("SALT") != 0 || incoming_cargo_waiting("LYE_") != 0 || incoming_cargo_waiting("FRUT") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, food_processor_switch_update_last_served_date_ext_food_industries_ext_packaging_industries,
-	[update_last_served_date(),
-	 STORE_PERM(food_processor_check_production() || incoming_cargo_waiting("MNSP") != 0, PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(food_processor_check_production() || incoming_cargo_waiting("MNSP") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();

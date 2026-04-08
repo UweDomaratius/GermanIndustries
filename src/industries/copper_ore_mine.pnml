@@ -413,13 +413,13 @@ switch(FEAT_INDUSTRIES, SELF, copper_ore_mine_switch_location_check_industry_dis
 
 
 switch(FEAT_INDUSTRIES, SELF, copper_ore_mine_func_calc_max_prod, 
-	param_economy_model == 0 ? 65535 :
+	param_economy_model == 0 ? param_primary_industry_production_cap :
 	  current_year <= 1859 ? 4 : 
 	  current_year <= 1894 ? (current_year-1860)+4 : 
 	  current_year <= 1914 ? (current_year-1895)*4+40 : 
 	  current_year <= 1923 ? 16*(current_year-1915)+120 : 
-	  current_year < 1970 ? min(max(4,LOAD_PERM(PERM_REGISTER_RESOURCES) / ((1970-current_year)*8*12)),65535) : 
-	  65535	  
+	  current_year < 1970 ? min(max(4,LOAD_PERM(PERM_REGISTER_RESOURCES) / ((1970-current_year)*8*12)),param_primary_industry_production_cap) : 
+	  param_primary_industry_production_cap	  
 	  ) {
 	return;
 }
@@ -428,9 +428,10 @@ switch(FEAT_INDUSTRIES, SELF, copper_ore_mine_func_calc_max_prod,
 
 // if nothing has been transported at all, do not change production (industry might just not be serviced)
 switch(FEAT_INDUSTRIES, SELF, copper_ore_mine_switch_prod_change, 
-	[STORE_TEMP(transported_last_month_pct("CORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	[update_last_served_date0(),
+	 STORE_TEMP(transported_last_month_pct("CORE"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
 	 STORE_TEMP(copper_ore_mine_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
-	 
+	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0), PERM_REGISTER_LAST_SERVED0_11),
 	 LOAD_PERM(PERM_REGISTER_RESOURCES) > 0])
 {
 	1: change_production; // use default rules to adapt production

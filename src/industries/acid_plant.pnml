@@ -1120,32 +1120,32 @@ switch(FEAT_INDUSTRIES, SELF, acid_plant_check_last_production,
 }
 
 switch(FEAT_INDUSTRIES, SELF, acid_plant_switch_update_last_served_date,
-	[update_last_served_date(),
-	 STORE_PERM(acid_plant_check_last_production() || incoming_cargo_waiting("SULP") != 0, PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(acid_plant_check_last_production() || incoming_cargo_waiting("SULP") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, acid_plant_switch_update_last_served_date_ext_basic_inorganic_chemistry,
-	[update_last_served_date(),
-	 STORE_PERM(acid_plant_check_last_production() || incoming_cargo_waiting("SULP") != 0 || incoming_cargo_waiting("CHLO") != 0 || incoming_cargo_waiting("H2__") != 0, PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(acid_plant_check_last_production() || incoming_cargo_waiting("SULP") != 0 || incoming_cargo_waiting("CHLO") != 0 || incoming_cargo_waiting("H2__") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, acid_plant_switch_update_last_served_date_ext_ammonia,
-	[update_last_served_date(),
-	 STORE_PERM(acid_plant_check_last_production() || incoming_cargo_waiting("SULP") != 0 || incoming_cargo_waiting("O2__") != 0 || incoming_cargo_waiting("NH3_") != 0, PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(acid_plant_check_last_production() || incoming_cargo_waiting("SULP") != 0 || incoming_cargo_waiting("O2__") != 0 || incoming_cargo_waiting("NH3_") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, acid_plant_switch_update_last_served_date_ext_basic_inorganic_chemistry_ext_ammonia,
-	[update_last_served_date(),
-	 STORE_PERM(acid_plant_check_last_production() || incoming_cargo_waiting("SULP") != 0 || incoming_cargo_waiting("CHLO") != 0 || incoming_cargo_waiting("H2__") != 0 || incoming_cargo_waiting("O2__") != 0 || incoming_cargo_waiting("NH3_") != 0, PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(acid_plant_check_last_production() || incoming_cargo_waiting("SULP") != 0 || incoming_cargo_waiting("CHLO") != 0 || incoming_cargo_waiting("H2__") != 0 || incoming_cargo_waiting("O2__") != 0 || incoming_cargo_waiting("NH3_") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();

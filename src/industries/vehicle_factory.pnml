@@ -1602,116 +1602,116 @@ switch(FEAT_INDUSTRIES, SELF, vehicle_factory_check_production,
 }
 
 switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_update_last_served_date,
-	[update_last_served_date(),
-	 STORE_PERM(vehicle_factory_check_production() || incoming_cargo_waiting("STEL") != 0 || incoming_cargo_waiting("PLAS") != 0, PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(vehicle_factory_check_production() || incoming_cargo_waiting("STEL") != 0 || incoming_cargo_waiting("PLAS") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_update_last_served_date_ext_aluminium,
-	[update_last_served_date(),
+	[update_last_served_date0(),
 	 STORE_PERM(vehicle_factory_check_production() || incoming_cargo_waiting("STEL") != 0 || incoming_cargo_waiting("PLAS") || 
-	 incoming_cargo_waiting("ALUM") != 0, PERM_REGISTER_LAST_SERVED11)
+	 incoming_cargo_waiting("ALUM") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_update_last_served_date_ext_metallurgy,
-	[update_last_served_date(),
+	[update_last_served_date0(),
 	 STORE_PERM(vehicle_factory_check_production() || incoming_cargo_waiting("STWR") != 0 || incoming_cargo_waiting("PLAS") || 
-	 incoming_cargo_waiting("STSH") != 0 || incoming_cargo_waiting("ENSP") != 0, PERM_REGISTER_LAST_SERVED11)
+	 incoming_cargo_waiting("STSH") != 0 || incoming_cargo_waiting("ENSP") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_update_last_served_date_ext_painting_industries,
-	[update_last_served_date(),
+	[update_last_served_date0(),
 	 STORE_PERM(vehicle_factory_check_production() || incoming_cargo_waiting("STEL") != 0 || incoming_cargo_waiting("PLAS") || 
-	 incoming_cargo_waiting("COAT") != 0, PERM_REGISTER_LAST_SERVED11)
+	 incoming_cargo_waiting("COAT") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_update_last_served_date_ext_aluminium_ext_painting_industries,
-	[update_last_served_date(),
+	[update_last_served_date0(),
 	 STORE_PERM(vehicle_factory_check_production() || incoming_cargo_waiting("STEL") != 0 || incoming_cargo_waiting("PLAS") || 
-	 incoming_cargo_waiting("ALUM") != 0 || incoming_cargo_waiting("COAT") != 0, PERM_REGISTER_LAST_SERVED11)
+	 incoming_cargo_waiting("ALUM") != 0 || incoming_cargo_waiting("COAT") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_update_last_served_date_ext_metallurgy_ext_painting_industries,
-	[update_last_served_date(),
+	[update_last_served_date0(),
 	 STORE_PERM(vehicle_factory_check_production() || incoming_cargo_waiting("STWR") != 0 || incoming_cargo_waiting("PLAS") || 
-	 incoming_cargo_waiting("STSH") != 0 || incoming_cargo_waiting("COAT") != 0 || incoming_cargo_waiting("ENSP") != 0, PERM_REGISTER_LAST_SERVED11)
+	 incoming_cargo_waiting("STSH") != 0 || incoming_cargo_waiting("COAT") != 0 || incoming_cargo_waiting("ENSP") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_update_last_served_date_ext_glass,
-	[update_last_served_date(),
+	[update_last_served_date0(),
 	 STORE_PERM(vehicle_factory_check_production() || incoming_cargo_waiting("STEL") != 0 || incoming_cargo_waiting("PLAS") != 0 || 
-	 incoming_cargo_waiting("GLAS") != 0, PERM_REGISTER_LAST_SERVED11)
+	 incoming_cargo_waiting("GLAS") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_update_last_served_date_ext_aluminium_ext_glass,
-	[update_last_served_date(),
+	[update_last_served_date0(),
 	 STORE_PERM(vehicle_factory_check_production() || incoming_cargo_waiting("STEL") != 0 || incoming_cargo_waiting("PLAS") || 
-	 incoming_cargo_waiting("ALUM") != 0 || incoming_cargo_waiting("GLAS") != 0, PERM_REGISTER_LAST_SERVED11)
+	 incoming_cargo_waiting("ALUM") != 0 || incoming_cargo_waiting("GLAS") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_update_last_served_date_ext_metallurgy_ext_glass,
-	[update_last_served_date(),
+	[update_last_served_date0(),
 	 STORE_PERM(vehicle_factory_check_production() || incoming_cargo_waiting("STWR") != 0 || incoming_cargo_waiting("PLAS") || 
-	 incoming_cargo_waiting("STSH") != 0 || incoming_cargo_waiting("GLAS") != 0 || incoming_cargo_waiting("ENSP") != 0, PERM_REGISTER_LAST_SERVED11)
+	 incoming_cargo_waiting("STSH") != 0 || incoming_cargo_waiting("GLAS") != 0 || incoming_cargo_waiting("ENSP") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_update_last_served_date_ext_painting_industries_ext_glass,
-	[update_last_served_date(),
+	[update_last_served_date0(),
 	 STORE_PERM(vehicle_factory_check_production() || incoming_cargo_waiting("STEL") != 0 || incoming_cargo_waiting("PLAS") || 
-	 incoming_cargo_waiting("COAT") != 0 || incoming_cargo_waiting("GLAS") != 0, PERM_REGISTER_LAST_SERVED11)
+	 incoming_cargo_waiting("COAT") != 0 || incoming_cargo_waiting("GLAS") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_update_last_served_date_ext_aluminium_ext_painting_industries_ext_glass,
-	[update_last_served_date(),
+	[update_last_served_date0(),
 	 STORE_PERM(vehicle_factory_check_production() || incoming_cargo_waiting("STEL") != 0 || incoming_cargo_waiting("PLAS") || 
-	 incoming_cargo_waiting("ALUM") != 0 || incoming_cargo_waiting("COAT") != 0 || incoming_cargo_waiting("GLAS") != 0, PERM_REGISTER_LAST_SERVED11)
+	 incoming_cargo_waiting("ALUM") != 0 || incoming_cargo_waiting("COAT") != 0 || incoming_cargo_waiting("GLAS") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_update_last_served_date_ext_painting_industries_ext_glass_ext_metallurgy,
-	[update_last_served_date(),
+	[update_last_served_date0(),
 	 STORE_PERM(vehicle_factory_check_production() || incoming_cargo_waiting("STWR") != 0 || incoming_cargo_waiting("PLAS") || 
-	 incoming_cargo_waiting("STSH") != 0 || incoming_cargo_waiting("COAT") != 0 || incoming_cargo_waiting("GLAS") != 0 || incoming_cargo_waiting("ENSP") != 0, PERM_REGISTER_LAST_SERVED11)
+	 incoming_cargo_waiting("STSH") != 0 || incoming_cargo_waiting("COAT") != 0 || incoming_cargo_waiting("GLAS") != 0 || incoming_cargo_waiting("ENSP") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, vehicle_factory_switch_update_last_served_date_ext_vehicle,
-	[update_last_served_date(),
+	[update_last_served_date0(),
 	 STORE_PERM(vehicle_factory_check_production() || incoming_cargo_waiting("VBOD") != 0 || incoming_cargo_waiting("VENG") || 
-	 incoming_cargo_waiting("TYRE") != 0 || incoming_cargo_waiting("VPTS") != 0, PERM_REGISTER_LAST_SERVED11)
+	 incoming_cargo_waiting("TYRE") != 0 || incoming_cargo_waiting("VPTS") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();

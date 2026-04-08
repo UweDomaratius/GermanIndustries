@@ -2152,18 +2152,21 @@ switch(FEAT_INDUSTRIES, SELF, fruit_plantation_switch_location_check_industry_di
 
 // before 1920 no proper fertilizer was available, so maximum production was limited
 switch(FEAT_INDUSTRIES, SELF, fruit_plantation_func_calc_max_prod, 
-	param_economy_model == 0 ? 65535 :
+	param_economy_model == 0 ? param_primary_industry_production_cap :
 	  current_year <= 1920 ? 40 : 
-	  65535) {
+	  param_primary_industry_production_cap) {
 	return;
 }
 
-// TODO: limit production increase to make it adapt slower (grain and lvst need time to grow)
 switch(FEAT_INDUSTRIES, SELF, fruit_plantation_switch_prod_change, 
-	[STORE_TEMP(transported_last_month_pct("FRUT"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
-	 STORE_TEMP(fruit_plantation_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION)])
+	[update_last_served_date0(),
+	 STORE_TEMP(transported_last_month_pct("FRUT"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0), PERM_REGISTER_LAST_SERVED0_11),
+	 STORE_TEMP(fruit_plantation_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
+	 param_primary_production_change_volatility])
 {
-	change_production; // use default rules to adapt production
+	0..2: change_production6;
+	change_production12; // use default rules to adapt production
 }
 
 // randomize production at build time based on random bits: 96t min, 152t max

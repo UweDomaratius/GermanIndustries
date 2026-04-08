@@ -297,16 +297,16 @@ switch(FEAT_INDUSTRIES, SELF, vehicle_distributor_switch_check_availability,
 }
 
 switch(FEAT_INDUSTRIES, SELF, vehicle_distributor_switch_update_last_served_date,
-	[update_last_served_date(),
-	 STORE_PERM(incoming_cargo_waiting("VEHI") != 0, PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(incoming_cargo_waiting("VEHI") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, vehicle_distributor_switch_update_last_served_date_ext_vehicle,
-	[update_last_served_date(),
-	 STORE_PERM(incoming_cargo_waiting("VEHI") != 0 || incoming_cargo_waiting("VPTS") != 0 || incoming_cargo_waiting("TYRE") != 0, PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(incoming_cargo_waiting("VEHI") != 0 || incoming_cargo_waiting("VPTS") != 0 || incoming_cargo_waiting("TYRE") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();

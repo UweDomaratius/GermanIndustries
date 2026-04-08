@@ -1369,64 +1369,64 @@ switch(FEAT_INDUSTRIES, SELF, plastics_plant_check_production,
 }
 
 switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_update_last_served_date,
-	[update_last_served_date(),
-	 STORE_PERM(plastics_plant_check_production() || incoming_cargo_waiting("OIL_") != 0, PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(plastics_plant_check_production() || incoming_cargo_waiting("OIL_") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_update_last_served_date_ext_basic_inorganic_chemistry,
-	[update_last_served_date(),
-	 STORE_PERM(plastics_plant_check_production() || incoming_cargo_waiting("OIL_") != 0 || incoming_cargo_waiting("CHLO") != 0, PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(plastics_plant_check_production() || incoming_cargo_waiting("OIL_") != 0 || incoming_cargo_waiting("CHLO") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_update_last_served_date_ext_painting_industries,
-	[update_last_served_date(),
-	 STORE_PERM(plastics_plant_check_production() || incoming_cargo_waiting("OIL_") != 0 || incoming_cargo_waiting("COAT") != 0, PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(plastics_plant_check_production() || incoming_cargo_waiting("OIL_") != 0 || incoming_cargo_waiting("COAT") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_update_last_served_date_ext_basic_inorganic_chemistry_ext_painting_industries,
-	[update_last_served_date(),
-	 STORE_PERM(plastics_plant_check_production() || incoming_cargo_waiting("OIL_") != 0 || incoming_cargo_waiting("COAT") != 0 || incoming_cargo_waiting("CHLO") != 0, PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(plastics_plant_check_production() || incoming_cargo_waiting("OIL_") != 0 || incoming_cargo_waiting("COAT") != 0 || incoming_cargo_waiting("CHLO") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_update_last_served_date_ext_organic_chemistry,
-	[update_last_served_date(),
-	 STORE_PERM(plastics_plant_check_production() || incoming_cargo_waiting("C2H4") != 0, PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(plastics_plant_check_production() || incoming_cargo_waiting("C2H4") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_update_last_served_date_ext_basic_inorganic_chemistry_ext_organic_chemistry,
-	[update_last_served_date(),
-	 STORE_PERM(plastics_plant_check_production() || incoming_cargo_waiting("C2H4") != 0 || incoming_cargo_waiting("CHLO") != 0, PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(plastics_plant_check_production() || incoming_cargo_waiting("C2H4") != 0 || incoming_cargo_waiting("CHLO") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_update_last_served_date_ext_painting_industries_ext_organic_chemistry,
-	[update_last_served_date(),
-	 STORE_PERM(plastics_plant_check_production() || incoming_cargo_waiting("C2H4") != 0 || incoming_cargo_waiting("COAT") != 0, PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(plastics_plant_check_production() || incoming_cargo_waiting("C2H4") != 0 || incoming_cargo_waiting("COAT") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, plastics_plant_switch_update_last_served_date_ext_basic_inorganic_chemistry_ext_painting_industries_ext_organic_chemistry,
-	[update_last_served_date(),
-	 STORE_PERM(plastics_plant_check_production() || incoming_cargo_waiting("C2H4") != 0 || incoming_cargo_waiting("COAT") != 0 || incoming_cargo_waiting("CHLO") != 0, PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(plastics_plant_check_production() || incoming_cargo_waiting("C2H4") != 0 || incoming_cargo_waiting("COAT") != 0 || incoming_cargo_waiting("CHLO") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
