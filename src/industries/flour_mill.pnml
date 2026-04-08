@@ -1082,16 +1082,16 @@ switch(FEAT_INDUSTRIES, SELF, flour_mill_check_production,
 }
 
 switch(FEAT_INDUSTRIES, SELF, flour_mill_switch_update_last_served_date,
-	[update_last_served_date(),
-	 STORE_PERM(flour_mill_check_production(), PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(flour_mill_check_production(), PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, flour_mill_switch_update_last_served_date_ext_packaging_industries,
-	[update_last_served_date(),
-	 STORE_PERM(flour_mill_check_production() || incoming_cargo_waiting("MNSP") != 0, PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(flour_mill_check_production() || incoming_cargo_waiting("MNSP") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();

@@ -902,13 +902,13 @@ switch(FEAT_INDUSTRIES, SELF, chlor_alkali_plant_switch_cargo_subtype, getbits(e
 }
 
 switch(FEAT_INDUSTRIES, SELF, chlor_alkali_plant_switch_update_last_served_date,
-	[update_last_served_date(),
+	[update_last_served_date0(),
 	// no need to check for LYE_ or H2__, if CHLO is produced so are the others
 	 STORE_PERM(this_month_production("CHLO") != 0 || last_month_production("CHLO") != 0 || 
 		incoming_cargo_waiting("SALT") != 0 || 
 		this_month_transported("CHLO") != 0 || last_month_transported("CHLO") != 0 ||
 		this_month_transported("LYE_") != 0 || last_month_transported("LYE_") != 0 ||
-		this_month_transported("H2__") != 0 || last_month_transported("H2__") != 0, PERM_REGISTER_LAST_SERVED11)
+		this_month_transported("H2__") != 0 || last_month_transported("H2__") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();

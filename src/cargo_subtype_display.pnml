@@ -470,6 +470,13 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_fert_white,
 	return 0x3800 + string(STR_EMPTY);
 }
 
+switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_food_white, 
+	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("FOOD") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
+	 getbits(extra_callback_info2, 16, 8)]) {
+	FOOD: return 0x3800 + string(STR_CARGO_SUBTYPE_DISPLAY_OPTIONAL_CARGO_AVAILABLE);
+	return 0x3800 + string(STR_EMPTY);
+}
+
 switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_glas_white, 
 	[STORE_TEMP(getbits(extra_callback_info2, 16, 8) | incoming_cargo_waiting("GLAS") << 16,TEMP_REGISTER_EXTRA_TEXT_ARG0),
 	 getbits(extra_callback_info2, 16, 8)]) {
@@ -547,6 +554,7 @@ switch(FEAT_INDUSTRIES, SELF, switch_cargo_subtype_display_info_white,
 	BOOM: switch_cargo_subtype_display_info_boom_white;
 	COAT: switch_cargo_subtype_display_info_coat_white;
 	FERT: switch_cargo_subtype_display_info_fert_white;
+	FOOD: switch_cargo_subtype_display_info_food_white;
 	GLAS: switch_cargo_subtype_display_info_glas_white;
 	LYE_: switch_cargo_subtype_display_info_lye_white;
 	MNSP: switch_cargo_subtype_display_info_mnsp_white;

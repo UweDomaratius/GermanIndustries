@@ -156,16 +156,16 @@ switch(FEAT_INDUSTRIES, SELF, general_store_switch_produce_extension_fruits,
 }
 
 switch(FEAT_INDUSTRIES, SELF, general_store_switch_update_last_served_date,
-	[update_last_served_date(),
-	 STORE_PERM(incoming_cargo_waiting("FOOD"), PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(incoming_cargo_waiting("FOOD"), PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, general_store_switch_update_last_served_date_ext_fruits,
-	[update_last_served_date(),
-	 STORE_PERM(incoming_cargo_waiting("FOOD") != 0 || incoming_cargo_waiting("FRUT") != 0, PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(incoming_cargo_waiting("FOOD") != 0 || incoming_cargo_waiting("FRUT") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();

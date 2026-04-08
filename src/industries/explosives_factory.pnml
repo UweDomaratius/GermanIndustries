@@ -968,32 +968,32 @@ switch(FEAT_INDUSTRIES, SELF, explosives_factory_check_production,
 }
 
 switch(FEAT_INDUSTRIES, SELF, explosives_factory_switch_update_last_served_date,
-	[update_last_served_date(),
-	 STORE_PERM(explosives_factory_check_production(), PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(explosives_factory_check_production(), PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, explosives_factory_switch_update_last_served_date_ext_aluminium,
-	[update_last_served_date(),
-	 STORE_PERM(explosives_factory_check_production() || incoming_cargo_waiting("ALUM") != 0, PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(explosives_factory_check_production() || incoming_cargo_waiting("ALUM") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, explosives_factory_switch_update_last_served_date_ext_organic_chemistry,
-	[update_last_served_date(),
-	 STORE_PERM(explosives_factory_check_production() || incoming_cargo_waiting("PETR") != 0, PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(explosives_factory_check_production() || incoming_cargo_waiting("PETR") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, explosives_factory_switch_update_last_served_date_ext_organic_chemistry_ext_aluminium,
-	[update_last_served_date(),
-	 STORE_PERM(explosives_factory_check_production() || incoming_cargo_waiting("PETR") != 0 || incoming_cargo_waiting("ALUM") != 0, PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(explosives_factory_check_production() || incoming_cargo_waiting("PETR") != 0 || incoming_cargo_waiting("ALUM") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();

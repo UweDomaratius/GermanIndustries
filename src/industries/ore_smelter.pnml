@@ -1227,16 +1227,16 @@ switch(FEAT_INDUSTRIES, SELF, ore_smelter_check_production,
 }
 
 switch(FEAT_INDUSTRIES, SELF, ore_smelter_switch_update_last_served_date,
-	[update_last_served_date(),
-	 STORE_PERM(ore_smelter_check_production(), PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(ore_smelter_check_production(), PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();
 }
 
 switch(FEAT_INDUSTRIES, SELF, ore_smelter_switch_update_last_served_date_ext_ammonia,
-	[update_last_served_date(),
-	 STORE_PERM(ore_smelter_check_production() || incoming_cargo_waiting("O2__") != 0, PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(ore_smelter_check_production() || incoming_cargo_waiting("O2__") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();

@@ -1150,13 +1150,15 @@ switch(FEAT_INDUSTRIES, SELF, sandpit_switch_location_check_industry_distance,
 
 
 switch(FEAT_INDUSTRIES, SELF, sandpit_func_calc_max_prod, 
-	65535) {
+	param_primary_industry_production_cap) {
 	return;
 }
 
 switch(FEAT_INDUSTRIES, SELF, sandpit_switch_prod_change, 
-	[STORE_TEMP(transported_last_month_pct("SAND"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
+	[update_last_served_date0(),
+	 STORE_TEMP(transported_last_month_pct("SAND"), TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0),
 	 STORE_TEMP(sandpit_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
+	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0), PERM_REGISTER_LAST_SERVED0_11),
 	 LOAD_PERM(PERM_REGISTER_RESOURCES) > 0])
 {
 	1: change_production; // use default rules to adapt production

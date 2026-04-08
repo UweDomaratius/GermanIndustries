@@ -2948,10 +2948,10 @@ switch(FEAT_INDUSTRIES, SELF, coke_oven_switch_cargo_subtype, getbits(extra_call
 }
 
 switch(FEAT_INDUSTRIES, SELF, coke_oven_switch_update_last_served_date,
-	[update_last_served_date(),
+	[update_last_served_date0(),
 	 STORE_PERM(this_month_production("COKE") != 0 || last_month_production("COKE") != 0 || 
 		incoming_cargo_waiting("COAL") != 0 ||
-		this_month_transported("COKE") != 0 || last_month_transported("COKE") != 0, PERM_REGISTER_LAST_SERVED11)
+		this_month_transported("COKE") != 0 || last_month_transported("COKE") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();

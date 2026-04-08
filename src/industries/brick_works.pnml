@@ -627,8 +627,8 @@ switch(FEAT_INDUSTRIES, SELF, brick_works_switch_cargo_subtype, build_date >= da
 }
 
 switch(FEAT_INDUSTRIES, SELF, brick_works_switch_update_last_served_date,
-	[update_last_served_date(),
-	 STORE_PERM(this_month_production("BDMT") != 0 || last_month_production("BDMT") != 0 || incoming_cargo_waiting("COAL") != 0 || incoming_cargo_waiting("WOOD") != 0 || this_month_transported("BDMT") != 0 || last_month_transported("BDMT") != 0, PERM_REGISTER_LAST_SERVED11)
+	[update_last_served_date0(),
+	 STORE_PERM(this_month_production("BDMT") != 0 || last_month_production("BDMT") != 0 || incoming_cargo_waiting("COAL") != 0 || incoming_cargo_waiting("WOOD") != 0 || this_month_transported("BDMT") != 0 || last_month_transported("BDMT") != 0, PERM_REGISTER_LAST_SERVED0_11)
 	])
 {
 	check_secondary_industry_closure();

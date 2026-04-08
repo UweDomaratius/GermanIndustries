@@ -9,6 +9,8 @@ STR_GRF_DESCRIPTION :German industries for OpenTTD{}{COPYRIGHT}2025{}Based on FI
 # Set parameters
 STR_PARAM_PRIMARY_PRODUCTION :Primary industry production scale
 STR_PARAM_PRIMARY_PRODUCTION_DESC :Scales the monthly production scale of primary industries. 100% is the default and matches the standard industries.
+STR_PARAM_PRIMARY_INDUSTRY_PRODUCTION_CAP :Maximum production of primary industries per production cycle.
+STR_PARAM_PRIMARY_INDUSTRY_PRODUCTION_CAP_DESC :Defines the maximum production per production cycle for primary industries (e.g. mines). The maximum monthly production is 8-9 times this value with default time scaling. Scaling the primary industry production will also scale this maximum value.
 STR_PARAM_PRIMARY_RESOURCE_FACTOR :Primary industry resources factor
 STR_PARAM_PRIMARY_RESOURCE_FACTOR_DESC :Scales the amount of resources that a primary industry can excavate. Once the resources are depleted the industry will close.
 STR_PARAM_ECONOMY_MODEL :Economy model
@@ -33,7 +35,10 @@ STR_PARAM_MIN_DISTANCE_SAME_INDUSTRY :Minimum distance between two industries of
 STR_PARAM_MIN_DISTANCE_SAME_INDUSTRY_DESC :Minimum distance between two industries of the same type.
 STR_PARAM_MIN_DISTANCE_RELATED_INDUSTRY :Minimum distance between two related industries.
 STR_PARAM_MIN_DISTANCE_RELATED_INDUSTRY_DESC :Minimum distance between two related industries. Related means that one industry produces something that the other accepts, creating a possible transport connection. Higher values may cause the map generation to not be able to place all industries.
-
+STR_PARAM_PRODUCTION_INCREASE_TRANSPORT_PERCENTAGE :Transport percentage required to increase primary industry production.
+STR_PARAM_PRODUCTION_INCREASE_TRANSPORT_PERCENTAGE_DESC :You need to transport at least this percentage of the production of a primary industry to allow the industry to increase production.
+STR_PARAM_PRODUCTION_CHANGE_VOLATILITY :Adaptation speed for primary industry production.
+STR_PARAM_PRODUCTION_CHANGE_VOLATILITY_DESC :This value defines how fast and how often a primary industry (such as a mine) will change production if the required conditions are fulfilled.
 STR_PARAM_EXT_BUILDING_MATERIALS :Extension set "Building Industries"
 STR_PARAM_EXT_BUILDING_MATERIALS_DESC :Adds cargos related to building, such as limestone and cement, as well as the related industries.
 STR_PARAM_EXT_TEXTILE_INDUSTRIES :Extension set "Textile Industries"
@@ -69,10 +74,14 @@ STR_PARAM_EXT_VEHICLE_DESC :Adds industries and cargos related to the creation o
 STR_PARAM_EXT_PRODUCTION_BOOST :Erweiterung "Production boost"
 STR_PARAM_EXT_PRODUCTION_BOOST_DESC :Adds industries to that support the production of fertilizers and explosives, which in turn are used to increase production of primary industries.{}{}Requires the extensions "Ammonia synthesis" or "Coke and Sulphur" to be activated.{}Extension "Ammonia Synthesis" requires the extensions "Basic inorganic chemistry" or "Building Industries" to be activated.{}Extension "Coke and Sulphur" requires the extensions "Basic inorganic chemistry" and "Painting Industries" to be activated.
 
-
 STR_TOWN    :{STRING}
 STR_STATION :{STRING} {STRING}
 STR_EMPTY   : 
+
+STR_SLOW     :Slow
+STR_MEDIUM   :Medium
+STR_FAST     :Fast
+STR_VERY_FAST:Very Fast
 
 # OpenTTD only displays numbers with decimal points, which is stupid for years - so a couple of strings for years are used
 STR_1800:1800
@@ -391,14 +400,15 @@ STR_STATION_VEHICLE_PARTS_PLANT      :Component Factory
 STR_STATION_WIRE_MILL                :Wire Mill
 
 # Industry window texts
-STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION :{BLACK}Transport more than 60% of the produced cargo to increase production.
-STR_INDUSTRY_PREREQ_KEEP_PRODUCTION     :{BLACK}Industry is at maximum production. Transport more than 60% of the produced cargo to keep this production level.
+STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION :{BLACK}Transport more than {COMMA}% of the produced cargo to increase production.
+STR_INDUSTRY_PREREQ_KEEP_PRODUCTION     :{BLACK}Industry is at maximum production. Transport more than {COMMA}% of the produced cargo to keep this production level.
 # Organic industries (forests, farms, ...) display the info on production level requirements.
 STR_CONCAT:{STRING}{STRING}
 STR_CONCAT_WITH_LINEBREAK:{STRING}{}{STRING}
-STR_ORGANIC_INDUSTRY_TEXT_PRODUCTION_BOOST:{BLACK}Raw materials printed in white will increase the maximum production level.
+STR_ORGANIC_INDUSTRY_TEXT_OPTIONAL_CARGO_WITH_LINEBREAK :{STRING}{}{STRING}{STRING}{STRING}
+STR_ORGANIC_INDUSTRY_TEXT_OPTIONAL_CARGO_WITHOUT_LINEBREAK :{STRING}{STRING}{STRING}{STRING}
 # Extractive Industries (mines) display both the info on production level requirements, as well as the remaining resources.
-STR_EXTRACTIVE_INDUSTRY_HAS_OPTIONAL_CARGO :Raw materials printed in white will increase the maximum production level.
+STR_EXTRACTIVE_INDUSTRY_HAS_OPTIONAL_CARGO :{BLACK}Raw materials printed in white will increase the maximum production level.
 STR_EXTRACTIVE_INDUSTRY_TEXT_OPTIONAL_CARGO_WITH_LINEBREAK :{STRING}{}{STRING}{STRING}{STRING}{}{BLACK}About {YELLOW}{COMMA} kt {BLACK} remain (est. {YELLOW}{COMMA} years{BLACK} at current production rate)
 STR_EXTRACTIVE_INDUSTRY_TEXT_OPTIONAL_CARGO_WITHOUT_LINEBREAK :{STRING}{STRING}{STRING}{STRING}{}{BLACK}About {YELLOW}{COMMA} kt {BLACK} remain (est. {YELLOW}{COMMA} years{BLACK} at current production rate)
 STR_EXTRACTIVE_INDUSTRY_TEXT:{STRING}{STRING}{}{BLACK}About {YELLOW}{COMMA} kt {BLACK} remain (est. {YELLOW}{COMMA} years{BLACK} at current production rate)
