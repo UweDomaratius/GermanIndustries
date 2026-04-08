@@ -723,7 +723,7 @@ switch(FEAT_INDUSTRIES, SELF, vehicle_body_plant_switch_produce,
 	 limit_production_optional_cargo(1),
 	 update_permanent_storage_production_values(),
 	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING2), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW2),
-	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(90)), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()
 	])
 {
@@ -748,15 +748,11 @@ switch(FEAT_INDUSTRIES, SELF, vehicle_body_plant_switch_produce_ext_aluminium,
 	 calculate_total_production(),
 	 calculate_number_of_waiting_cargos(),
 	 
-	 // calculate productivity: 50% with 1 waiting cargo, 90% with 3 waiting cargos
-	 // formula: 50 + (num_waiting_cargos-1)*(40 / (number of possible cargos-1))
-	 STORE_TEMP(50 + (LOAD_TEMP(TEMP_REGISTER_NUMBER_OF_WAITING_CARGOS)-1) * (40 / (3-1)), TEMP_REGISTER_PRODUCTIVITY_SCALE),
-	 
 	 STORE_TEMP(incoming_cargo_waiting("ACID"), TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING3),
 	 limit_production_optional_cargo(1),
 	 update_permanent_storage_production_values(),
 	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING3), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW3),
-	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(90)), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()
 	])
 {
@@ -783,7 +779,7 @@ switch(FEAT_INDUSTRIES, SELF, vehicle_body_plant_switch_produce_ext_metallurgy,
 	 limit_production_optional_cargo(1),
 	 update_permanent_storage_production_values(),
 	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING2), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW2),
-	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(90)), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()
 	])
 {
@@ -811,7 +807,7 @@ switch(FEAT_INDUSTRIES, SELF, vehicle_body_plant_switch_produce_ext_painting_ind
 	 limit_production_optional_cargo(1),
 	 update_permanent_storage_production_values(),
 	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING3), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW3),
-	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(90)), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()
 	])
 {
@@ -839,7 +835,7 @@ switch(FEAT_INDUSTRIES, SELF, vehicle_body_plant_switch_produce_ext_painting_ind
 	 limit_production_optional_cargo(1),
 	 update_permanent_storage_production_values(),
 	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING3), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW3),
-	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(90)), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()
 	])
 {
@@ -868,7 +864,7 @@ switch(FEAT_INDUSTRIES, SELF, vehicle_body_plant_switch_produce_ext_painting_ind
 	 limit_production_optional_cargo(1),
 	 update_permanent_storage_production_values(),
 	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING4), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW4),
-	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(90)), TEMP_REGISTER_PRODUCT_1),
 	 store_debug_production_data()
 	])
 {

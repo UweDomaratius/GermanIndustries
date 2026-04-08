@@ -518,7 +518,7 @@ switch(FEAT_INDUSTRIES, SELF, brewery_switch_produce_ext_glass,
 	 
 	 // use 5% of production amount as usage of optional stuff 
  	 STORE_TEMP(min(LOAD_TEMP(TEMP_REGISTER_INCOMING_OPT_CARGO_WAITING0), LOAD_TEMP(TEMP_REGISTER_PRODUCTION_AMOUNT) / 5), TEMP_REGISTER_PRODUCTION_RAW1),
-	 STORE_TEMP(percentage_of_production(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)), TEMP_REGISTER_PRODUCT_1),
+	 STORE_TEMP(percentage_of_production(LOAD_TEMP(50)), TEMP_REGISTER_PRODUCT_1),
  	 store_debug_production_data()
 	 ])
 {
