@@ -155,7 +155,8 @@ switch(FEAT_INDUSTRIES, SELF, randomize_initial_production,
 switch(FEAT_INDUSTRIES, SELF, initialize_extractive_resources,
 	[
 	STORE_TEMP(param_primary_resource_factor == 0 ? 5 : param_primary_resource_factor, TEMP_REGISTER_PRODUCTIVITY_SCALE),
-	STORE_PERM(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)*250000 + getbits(extra_callback_info2, 3, 3)*LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)*250000,PERM_REGISTER_RESOURCES)
+	STORE_PERM(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)*250000 + getbits(extra_callback_info2, 3, 3)*LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)*250000,PERM_REGISTER_RESOURCES),
+	STORE_PERM(LOAD_PERM(PERM_REGISTER_RESOURCES), PERM_REGISTER_PRIMARY_LAST_PRIMARY_RESOURCE_INCREASE)
 	]
 )
 {
@@ -287,7 +288,8 @@ switch(FEAT_INDUSTRIES, SELF, initialize_last_served_date,
 }
 
 switch(FEAT_INDUSTRIES, SELF, extractive_industry_new_resources_found, 
-	[STORE_PERM(LOAD_TEMP(TEMP_REGISTER_RESOURCES), PERM_REGISTER_RESOURCES),
+	[STORE_PERM(LOAD_PERM(PERM_REGISTER_RESOURCES), PERM_REGISTER_PRIMARY_LAST_PRIMARY_RESOURCE_INCREASE),
+	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_RESOURCES)+LOAD_PERM(PERM_REGISTER_RESOURCES), PERM_REGISTER_RESOURCES),
 	 STORE_TEMP(string(STR_NEWS_INDUSTRY_PRODUCTION_NEW_RESOURCES_FOUND), 0x100)
 	]
 )
@@ -297,11 +299,23 @@ switch(FEAT_INDUSTRIES, SELF, extractive_industry_new_resources_found,
 
 // random 5% chance of increasing resources of an extractive industry
 // precondition: TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0 contains the relevant value of the industry
+// however, the industry can only "find new resources" if more than half the resources since the last "find new resources" event have been used up,
+// and the new find will be at most 1/3 of the current remaining resources, and if the current resources are less than 300kT nothing new will be "found"
+// This will ensure that resources will eventually deplete, even if new resources are found whenever possible:
+// Original resources 50kT -> increase only once 25kT has been reached, at most 16.6kT will be added
+// next increase only possible at 12.5kT, at most 6.25kT will be added - and so on
 switch(FEAT_INDUSTRIES, SELF, extractive_industry_switch_random_prod_change, 
 	[STORE_TEMP(param_primary_resource_factor == 0 ? 5 : param_primary_resource_factor, TEMP_REGISTER_PRODUCTIVITY_SCALE),
 	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)*250000 + getbits(extra_callback_info2, 8, 3)*LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)*250000,TEMP_REGISTER_RESOURCES),
+	 // new resources can increase existing resources by at most 1/3 of current resources
+	 STORE_TEMP(min(LOAD_PERM(PERM_REGISTER_PRIMARY_LAST_PRIMARY_RESOURCE_INCREASE)/3,LOAD_TEMP(TEMP_REGISTER_RESOURCES), TEMP_REGISTER_RESOURCES),
 	 (getbits(extra_callback_info2,0,8) < 13) && // 5% of 255
-	(LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) > 0) && (LOAD_TEMP(TEMP_REGISTER_RESOURCES) > LOAD_PERM(PERM_REGISTER_RESOURCES))
+	(LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) > 0) && // industry must be actively served
+	 // more than half of the resources since last resource increase have to be excavated
+	(LOAD_PERM(PERM_REGISTER_RESOURCES) < LOAD_PERM(PERM_REGISTER_PRIMARY_LAST_PRIMARY_RESOURCE_INCREASE)/2) &&
+	 // no additional resources to be found if current resources are less than 300kT
+	 (LOAD_PERM(PERM_REGISTER_RESOURCES) > 300000)
+	)
 	])
 {
 	1: extractive_industry_new_resources_found;
