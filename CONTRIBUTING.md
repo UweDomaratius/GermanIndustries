@@ -12,6 +12,8 @@ In case of a bug report, please provide the exact version of the set that you en
 Without these, and especially without knowing which extensions you turned on or off, it will be impossible to figure out the problem.
 If possible, provide screenshots of any error message.
 
+Important note: If you have disabled the check for incompatible GRFs, I will not look into the issue until you have checked that using an incompatible GRF was not the root cause of the problem.
+
 ## Providing changes
 
 In case you feel like contributing to the set development, feel free to fork the repository and provide your input as a new [pull request](https://github.com/UweDomaratius/GermanIndustries/pulls).
