@@ -73,6 +73,8 @@ STR_PARAM_EXT_VEHICLE :Erweiterung "Automobilbau"
 STR_PARAM_EXT_VEHICLE_DESC :Fügt Industrien und Frachten hinzu, die mit Automobilbau zusammenhängen.{}{}Erfordert die Erweiterungen "Koks und Schwefel", "Grundlegende anorganische Chemie" und "Farbindustrie".
 STR_PARAM_EXT_PRODUCTION_BOOST :Erweiterung "Produktionsbooster"
 STR_PARAM_EXT_PRODUCTION_BOOST_DESC :Fügt Industrien hinzu, die der Produktion von Dünger und Sprengstoff dienen, mit denen man die Produktion von Primärindustrien erhöhen kann.{}{}Erfordert die Erweiterungen "Ammoniaksynthese" oder "Koks und Schwefel".{}Die Erweiterung "Ammoniaksynthese" benötigt die Erweiterungen "Grundlegende anorganische Chemie" oder "Bauindustrie".{}Die Erweiterung "Koks und Schwefel" benötigt die Erweiterungen "Grundlegende anorganische Chemie" und "Farbindustrie".
+STR_PARAM_SKIP_CHECKS :Überspringe die Prüfung auf inkompatible GRFs
+STR_PARAM_SKIP_CHECKS_DESC :Wer unbedingt inkompatible Sets benutzen will kann das hiermit tun.{}Das wird zu nicht funktionierenden Industrien und kaputten Spielständen führen, kann den PC zerstören und dein Haus in Brand setzen. Beschwer dich also hinterher nicht.
 
 STR_SLOW     :Langsam
 STR_MEDIUM   :Mittel

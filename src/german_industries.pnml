@@ -273,6 +273,13 @@ grf {
 			desc: string(STR_PARAM_EXT_PRODUCTION_BOOST_DESC);
 		}
 	}
+	param {
+		param_skip_checks {
+			type: bool;
+			name: string(STR_PARAM_SKIP_CHECKS);
+			desc: string(STR_PARAM_SKIP_CHECKS_DESC);
+		}
+	}
 }
 
 if (ttd_platform != PLATFORM_OPENTTD || openttd_version < version_openttd(14, 0)) {
@@ -325,6 +332,7 @@ if (param_extension_production_boost && (!param_extension_ammonia || !param_exte
 	exit;
 }
 
+if (!param_skip_checks) {
 if (grf_future_status("\F1\25\00\05")) {
 	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET, "FIRS v1"));
 }
@@ -495,6 +503,7 @@ if (grf_future_status("DD\06\01")) {
 }
 if (grf_future_status("\42\58\00\02")) {
 	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET, "Vanilla Industries in Stockpiling mode"));
+}
 }
 
 

@@ -73,6 +73,8 @@ STR_PARAM_EXT_VEHICLE :Extension set "Vehicle Industries"
 STR_PARAM_EXT_VEHICLE_DESC :Adds industries and cargos related to the creation of vehicles.{}{}Requires the extensions "Coke and Sulphur", "Basic inorganic chemistry" and "Painting industries" to be activated.
 STR_PARAM_EXT_PRODUCTION_BOOST :Erweiterung "Production boost"
 STR_PARAM_EXT_PRODUCTION_BOOST_DESC :Adds industries to that support the production of fertilizers and explosives, which in turn are used to increase production of primary industries.{}{}Requires the extensions "Ammonia synthesis" or "Coke and Sulphur" to be activated.{}Extension "Ammonia Synthesis" requires the extensions "Basic inorganic chemistry" or "Building Industries" to be activated.{}Extension "Coke and Sulphur" requires the extensions "Basic inorganic chemistry" and "Painting Industries" to be activated.
+STR_PARAM_SKIP_CHECKS :Skip check for incompatible GRFs
+STR_PARAM_SKIP_CHECKS_DESC :If you really insist on using an incompatible NewGRF you can enable this.{}This will void all warranties, corrupt your savegame, may set your PC on fire and God will kill a kitten. You have been warned.
 
 STR_TOWN    :{STRING}
 STR_STATION :{STRING} {STRING}
