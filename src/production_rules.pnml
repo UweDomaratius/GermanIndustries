@@ -17,20 +17,20 @@ produce(empty_produce, [], [])
 // dynamically computed)
 ////////////////////////////////////////////////////////////////////////////////
 switch(FEAT_INDUSTRIES, SELF, set_new_production, 
-	[
-      STORE_TEMP(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, TEMP_REGISTER_TMP),	
+	[ STORE_TEMP(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, TEMP_REGISTER_TMP),	
 	  LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE0) < 30 ? STORE_PERM(max(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0) - 5,4), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0) : 
 	  LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE0) < 40 ? STORE_PERM(max(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0) - 1,4), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0) : 
 	  LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE0) < (LOAD_TEMP(TEMP_REGISTER_TMP)+15) ? STORE_PERM(min(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0)+1,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0) : 
 	                                                                    STORE_PERM(min(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0)+5,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0),
-
+	  STORE_PERM(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0),PERM_REGISTER_DBG_MAXIMUM_POSSIBLE_PRODUCTION),
 	  STORE_TEMP(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0)<<16,TEMP_REGISTER_CB_RESULT_IND_PROD_SET_BY_0x100)
 	]) {
 	return CB_RESULT_IND_PROD_SET_BY_0x100;
 }
 
 switch(FEAT_INDUSTRIES, SELF, count_transport_percentage1,
-	[STORE_TEMP(LOAD_PERM(PERM_REGISTER_LAST_SERVED0_11), TEMP_REGISTER_TRANSPORT_PERCENTAGE0)
+	[STORE_TEMP(LOAD_PERM(PERM_REGISTER_LAST_SERVED0_11), TEMP_REGISTER_TRANSPORT_PERCENTAGE0),
+	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE0),PERM_REGISTER_DBG_TRANSPORT_PERCENTAGE),
 	])
 {
 }
@@ -76,7 +76,12 @@ switch(FEAT_INDUSTRIES, SELF, count_transport_percentage12,
 // 2. calculate transport percentage over months
 // 3. adapt production according to percentage
 switch(FEAT_INDUSTRIES, SELF, check_for_production_change, 
-	[LOAD_PERM(PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT) == 0 &&
+	[STORE_PERM(LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE0), PERM_REGISTER_DBG_TRANSPORT_PERCENTAGE),
+	 STORE_PERM(LOAD_PERM(PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT) == 0 &&
+	 LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE0) != 0 && 
+	((LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE0) < 40) || LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE0) >= LOAD_TEMP(TEMP_REGISTER_TMP)) &&
+	 (LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) + 10 > LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0)),PERM_REGISTER_DBG_TRANSPORT_PCT_IN_RANGE),
+	 LOAD_PERM(PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT) == 0 &&
 	 LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE0) != 0 && 
 	((LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE0) < 40) || LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE0) >= LOAD_TEMP(TEMP_REGISTER_TMP)) &&
 	 (LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) + 10 > LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0)) // if production is limited due to missing optional things or so, it does not make sense to increase the theoretical maximum any further
@@ -122,6 +127,7 @@ switch(FEAT_INDUSTRIES, SELF, change_production1,
 switch(FEAT_INDUSTRIES, SELF, change_production, 
 	[STORE_TEMP(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, TEMP_REGISTER_TMP),
 	 STORE_PERM(LOAD_PERM(PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT)+1, PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT),
+	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_TMP),PERM_REGISTER_DBG_TRANSPORT_PCT_TO_BE_EXCEEDED),
 	 param_primary_production_change_volatility
 	])
 {
@@ -155,7 +161,8 @@ switch(FEAT_INDUSTRIES, SELF, randomize_initial_production,
 switch(FEAT_INDUSTRIES, SELF, initialize_extractive_resources,
 	[
 	STORE_TEMP(param_primary_resource_factor == 0 ? 5 : param_primary_resource_factor, TEMP_REGISTER_PRODUCTIVITY_SCALE),
-	STORE_PERM(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)*250000 + getbits(extra_callback_info2, 3, 3)*LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)*250000,PERM_REGISTER_RESOURCES)
+	STORE_PERM(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)*250000 + getbits(extra_callback_info2, 3, 3)*LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)*250000,PERM_REGISTER_RESOURCES),
+	STORE_PERM(LOAD_PERM(PERM_REGISTER_RESOURCES), PERM_REGISTER_PRIMARY_LAST_PRIMARY_RESOURCE_INCREASE)
 	]
 )
 {
@@ -287,7 +294,8 @@ switch(FEAT_INDUSTRIES, SELF, initialize_last_served_date,
 }
 
 switch(FEAT_INDUSTRIES, SELF, extractive_industry_new_resources_found, 
-	[STORE_PERM(LOAD_TEMP(TEMP_REGISTER_RESOURCES), PERM_REGISTER_RESOURCES),
+	[STORE_PERM(LOAD_PERM(PERM_REGISTER_RESOURCES), PERM_REGISTER_PRIMARY_LAST_PRIMARY_RESOURCE_INCREASE),
+	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_RESOURCES)+LOAD_PERM(PERM_REGISTER_RESOURCES), PERM_REGISTER_RESOURCES),
 	 STORE_TEMP(string(STR_NEWS_INDUSTRY_PRODUCTION_NEW_RESOURCES_FOUND), 0x100)
 	]
 )
@@ -297,11 +305,27 @@ switch(FEAT_INDUSTRIES, SELF, extractive_industry_new_resources_found,
 
 // random 5% chance of increasing resources of an extractive industry
 // precondition: TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0 contains the relevant value of the industry
+// however, the industry can only "find new resources" if more than half the resources since the last "find new resources" event have been used up,
+// and the new find will be at most 1/4 of the current remaining resources, and if the current resources are less than 300kT nothing new will be "found"
 switch(FEAT_INDUSTRIES, SELF, extractive_industry_switch_random_prod_change, 
 	[STORE_TEMP(param_primary_resource_factor == 0 ? 5 : param_primary_resource_factor, TEMP_REGISTER_PRODUCTIVITY_SCALE),
 	 STORE_TEMP(LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)*250000 + getbits(extra_callback_info2, 8, 3)*LOAD_TEMP(TEMP_REGISTER_PRODUCTIVITY_SCALE)*250000,TEMP_REGISTER_RESOURCES),
-	 (getbits(extra_callback_info2,0,8) < 13) && // 5% of 255
-	(LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) > 0) && (LOAD_TEMP(TEMP_REGISTER_RESOURCES) > LOAD_PERM(PERM_REGISTER_RESOURCES))
+	 // new resources can increase existing resources by at most 1/4 of current resources
+	 STORE_TEMP(min(LOAD_PERM(PERM_REGISTER_PRIMARY_LAST_PRIMARY_RESOURCE_INCREASE)/4,LOAD_TEMP(TEMP_REGISTER_RESOURCES)), TEMP_REGISTER_RESOURCES),
+	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_RESOURCES),PERM_REGISTER_DBG_PRODUCTION_INCREASE_AMOUNT),
+	 STORE_PERM((getbits(extra_callback_info2,0,8) < 13),PERM_REGISTER_DBG_PRODUCTION_INCREASE_5PCT),
+	 STORE_PERM(((LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) > 0) && // industry must be actively served
+	 // more than half of the resources since last resource increase have to be excavated
+	(LOAD_PERM(PERM_REGISTER_RESOURCES) < LOAD_PERM(PERM_REGISTER_PRIMARY_LAST_PRIMARY_RESOURCE_INCREASE)*2/3) &&
+	 // no additional resources to be found if current resources are less than 300kT
+	 (LOAD_PERM(PERM_REGISTER_RESOURCES) > 300000)),PERM_REGISTER_DBG_PRODUCTION_INCREASE_CONDITIONS),
+	 ((getbits(extra_callback_info2,0,8) < 13) && // 5% of 255
+	(LOAD_TEMP(TEMP_REGISTER_TRANSPORTED_LAST_MONTH_PCT_CARGO0) > 0) && // industry must be actively served
+	 // more than half of the resources since last resource increase have to be excavated
+	(LOAD_PERM(PERM_REGISTER_RESOURCES) < LOAD_PERM(PERM_REGISTER_PRIMARY_LAST_PRIMARY_RESOURCE_INCREASE)*2/3) &&
+	 // no additional resources to be found if current resources are less than 300kT
+	 (LOAD_PERM(PERM_REGISTER_RESOURCES) > 300000)
+	)
 	])
 {
 	1: extractive_industry_new_resources_found;

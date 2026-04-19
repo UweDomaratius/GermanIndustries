@@ -574,6 +574,7 @@ constants = {
     "PERM_REGISTER_PRODUCTIVITY_SCALE":"19",    # production_scale value when dependent on number of waiting cargos
     "PERM_REGISTER_PRODUCTION_LIMITED_BY":"20", # bitmask, see production_rules
     "PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT":"21", # count how often the monthly change prod CB has been called
+    "PERM_REGISTER_PRIMARY_LAST_PRIMARY_RESOURCE_INCREASE": "22", # amount of resources at which the last "new resources found" event happened
     
     # track whether industry was used over last 12 months
     "PERM_REGISTER_LAST_SERVED0_00": "30",                
@@ -677,4 +678,11 @@ constants = {
     "PERM_REGISTER_DBG_PRODUCT_3": "134",
     "PERM_REGISTER_DBG_PRODUCT_4": "135",
     "PERM_REGISTER_DBG_PRODUCT_5": "136",
+    "PERM_REGISTER_DBG_MAXIMUM_POSSIBLE_PRODUCTION": "137",
+    "PERM_REGISTER_DBG_PRODUCTION_INCREASE_AMOUNT": "138",
+    "PERM_REGISTER_DBG_PRODUCTION_INCREASE_5PCT": "139",
+    "PERM_REGISTER_DBG_PRODUCTION_INCREASE_CONDITIONS": "140",
+    "PERM_REGISTER_DBG_TRANSPORT_PERCENTAGE": "141",
+    "PERM_REGISTER_DBG_TRANSPORT_PCT_IN_RANGE": "142",
+    "PERM_REGISTER_DBG_TRANSPORT_PCT_TO_BE_EXCEEDED": "143"
 }
