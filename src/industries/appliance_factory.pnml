@@ -995,7 +995,6 @@ if (param_extension_metallurgy && !param_extension_packaging_industries) {
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [appliance_factory_tilelayout_1,appliance_factory_tilelayout_2,appliance_factory_tilelayout_3];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_APPLIANCE_FACTORY);
@@ -1005,6 +1004,14 @@ if (param_extension_metallurgy && !param_extension_packaging_industries) {
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("ENSP"),accept_cargo("STWR"),accept_cargo("PLAS"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_APPLIANCE_FACTORY));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1031,7 +1038,6 @@ if (param_extension_metallurgy && param_extension_packaging_industries) {
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [appliance_factory_tilelayout_1,appliance_factory_tilelayout_2,appliance_factory_tilelayout_3];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_APPLIANCE_FACTORY);
@@ -1041,6 +1047,14 @@ if (param_extension_metallurgy && param_extension_packaging_industries) {
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("ENSP"),accept_cargo("STWR"),accept_cargo("MNSP"),accept_cargo("PLAS"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_APPLIANCE_FACTORY));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {

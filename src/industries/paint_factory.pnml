@@ -869,7 +869,6 @@ if (param_extension_painting_industries && !param_extension_building_materials &
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [paint_factory_tilelayout_1,paint_factory_tilelayout_2];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PAINT_FACTORY);
@@ -879,6 +878,14 @@ if (param_extension_painting_industries && !param_extension_building_materials &
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("IORE"),accept_cargo("COPR"),accept_cargo("CBLK"),produce_cargo("COAT",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PAINT_FACTORY));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -904,7 +911,6 @@ if (param_extension_painting_industries && param_extension_building_materials &&
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [paint_factory_tilelayout_1,paint_factory_tilelayout_2];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PAINT_FACTORY);
@@ -914,6 +920,14 @@ if (param_extension_painting_industries && param_extension_building_materials &&
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("IORE"),accept_cargo("COPR"),accept_cargo("CBLK"),accept_cargo("LIME"),produce_cargo("COAT",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PAINT_FACTORY));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -940,7 +954,6 @@ if (param_extension_painting_industries && !param_extension_building_materials &
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [paint_factory_tilelayout_1,paint_factory_tilelayout_2];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PAINT_FACTORY);
@@ -950,6 +963,14 @@ if (param_extension_painting_industries && !param_extension_building_materials &
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("IORE"),accept_cargo("COPR"),accept_cargo("CBLK"),accept_cargo("ACID"),produce_cargo("COAT",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PAINT_FACTORY));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -975,7 +996,6 @@ if (param_extension_painting_industries && param_extension_building_materials &&
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [paint_factory_tilelayout_1,paint_factory_tilelayout_2];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PAINT_FACTORY);
@@ -985,6 +1005,14 @@ if (param_extension_painting_industries && param_extension_building_materials &&
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("IORE"),accept_cargo("COPR"),accept_cargo("CBLK"),accept_cargo("LIME"),accept_cargo("ACID"),produce_cargo("COAT",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PAINT_FACTORY));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {

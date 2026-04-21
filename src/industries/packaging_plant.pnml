@@ -1124,7 +1124,6 @@ if (param_extension_packaging_industries && !param_extension_aluminium && !param
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [packaging_plant_industry_layout_1_tilelayout,packaging_plant_industry_layout_2_tilelayout,packaging_plant_industry_layout_3_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PACKAGING_PLANT);
@@ -1134,6 +1133,14 @@ if (param_extension_packaging_industries && !param_extension_aluminium && !param
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("PLAS"),produce_cargo("MNSP",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PACKAGING_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1160,7 +1167,6 @@ if (param_extension_packaging_industries && param_extension_aluminium && !param_
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [packaging_plant_industry_layout_1_tilelayout,packaging_plant_industry_layout_2_tilelayout,packaging_plant_industry_layout_3_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PACKAGING_PLANT);
@@ -1170,6 +1176,14 @@ if (param_extension_packaging_industries && param_extension_aluminium && !param_
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("PLAS"),accept_cargo("ALUM"),produce_cargo("MNSP",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PACKAGING_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1196,7 +1210,6 @@ if (param_extension_packaging_industries && !param_extension_aluminium && param_
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [packaging_plant_industry_layout_1_tilelayout,packaging_plant_industry_layout_2_tilelayout,packaging_plant_industry_layout_3_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PACKAGING_PLANT);
@@ -1206,6 +1219,14 @@ if (param_extension_packaging_industries && !param_extension_aluminium && param_
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("PLAS"),accept_cargo("GLAS"),produce_cargo("MNSP",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PACKAGING_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1232,7 +1253,6 @@ if (param_extension_packaging_industries && param_extension_aluminium && param_e
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [packaging_plant_industry_layout_1_tilelayout,packaging_plant_industry_layout_2_tilelayout,packaging_plant_industry_layout_3_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PACKAGING_PLANT);
@@ -1242,6 +1262,14 @@ if (param_extension_packaging_industries && param_extension_aluminium && param_e
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("PLAS"),accept_cargo("ALUM"),accept_cargo("GLAS"),produce_cargo("MNSP",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PACKAGING_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1268,7 +1296,6 @@ if (param_extension_packaging_industries && !param_extension_aluminium && !param
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [packaging_plant_industry_layout_1_tilelayout,packaging_plant_industry_layout_2_tilelayout,packaging_plant_industry_layout_3_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PACKAGING_PLANT);
@@ -1278,6 +1305,14 @@ if (param_extension_packaging_industries && !param_extension_aluminium && !param
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("PLAS"),accept_cargo("PAPR"),produce_cargo("MNSP",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PACKAGING_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1304,7 +1339,6 @@ if (param_extension_packaging_industries && param_extension_aluminium && !param_
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [packaging_plant_industry_layout_1_tilelayout,packaging_plant_industry_layout_2_tilelayout,packaging_plant_industry_layout_3_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PACKAGING_PLANT);
@@ -1314,6 +1348,14 @@ if (param_extension_packaging_industries && param_extension_aluminium && !param_
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("PLAS"),accept_cargo("ALUM"),accept_cargo("PAPR"),produce_cargo("MNSP",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PACKAGING_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1340,7 +1382,6 @@ if (param_extension_packaging_industries && !param_extension_aluminium && param_
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [packaging_plant_industry_layout_1_tilelayout,packaging_plant_industry_layout_2_tilelayout,packaging_plant_industry_layout_3_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PACKAGING_PLANT);
@@ -1350,6 +1391,14 @@ if (param_extension_packaging_industries && !param_extension_aluminium && param_
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("PLAS"),accept_cargo("PAPR"),accept_cargo("GLAS"),produce_cargo("MNSP",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PACKAGING_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1376,7 +1425,6 @@ if (param_extension_packaging_industries && param_extension_aluminium && param_e
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [packaging_plant_industry_layout_1_tilelayout,packaging_plant_industry_layout_2_tilelayout,packaging_plant_industry_layout_3_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PACKAGING_PLANT);
@@ -1386,6 +1434,14 @@ if (param_extension_packaging_industries && param_extension_aluminium && param_e
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("PLAS"),accept_cargo("ALUM"),accept_cargo("GLAS"),accept_cargo("PAPR"),produce_cargo("MNSP",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PACKAGING_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {

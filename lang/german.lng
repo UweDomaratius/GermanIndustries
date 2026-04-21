@@ -23,6 +23,8 @@ STR_PARAM_FORBID_INDUSTRY_GENERATION :Verbiete Erzeugung von Industrien
 STR_PARAM_FORBID_INDUSTRY_GENERATION_DESC :Wenn diese Option aktiviert ist, werden Industrien nur noch während des Spielstarts zusammen mit der Karte generiert. Der Spieler kann weiterhin neue Industrien finanzieren.
 STR_PARAM_FORBID_INDUSTRY_CLOSURE :Verbiete das Schließen von Industrien.
 STR_PARAM_FORBID_INDUSTRY_CLOSURE_DESC :Wenn diese Option aktiviert ist, werden Industrien nicht schließen. Minen und ähnliche Industrien werden trotzdem schließen, wenn sie keine Materialien mehr fördern können. Selbst wenn Schließungen erlaubt sind, werden keine Industrien schließen solange sie beliefert werden.
+STR_PARAM_FORBID_LAST_INDUSTRY_CLOSURE :Verbiete das Schließen der einzigen Industrie eines Types.
+STR_PARAM_FORBID_LAST_INDUSTRY_CLOSURE_DESC :Wenn diese Option aktiviert ist, werden Industrien nicht schließen, wenn es nur eine einzige Instanz der Industrie auf der Karte gibt. Hat nur einen Effekt wenn das Schließen von Industrien erlaubt ist.
 STR_PARAM_STOCKPILE_CAP :Verhalten wenn zu viele Rohstoffe in einer Industrie warten
 STR_PARAM_STOCKPILE_CAP_DESC :Bestimmt das Verhalten für den Fall, dass das Lagerlimit für eine Industrie erreicht wird. Wenn man es auf Verwerfen stellt, werden weitere angelieferter Güter verworfen. Die Anlieferung wird aber bezahlt. Wenn man es auf Annahme verweigern stellt, wird die Industrie die Lieferung nicht akzeptieren, das liefernde Fahrzeug kann dann nicht abladen. Die Dokumentation enthält eine genauere Beschreibung.
 STR_PARAM_STOCKPILE_DISCARD :Verwerfen

@@ -889,7 +889,6 @@ if (param_extension_textile_industries && !param_extension_packaging_industries)
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [furniture_factory_tilelayout_1,furniture_factory_tilelayout_2,furniture_factory_tilelayout_3,furniture_factory_tilelayout_4,furniture_factory_tilelayout_5];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_FURNITURE_FACTORY);
@@ -899,6 +898,14 @@ if (param_extension_textile_industries && !param_extension_packaging_industries)
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("WDPR"),accept_cargo("PLAS"),accept_cargo("TEXT"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FURNITURE_FACTORY));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -924,7 +931,6 @@ if (!param_extension_textile_industries && !param_extension_packaging_industries
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [furniture_factory_tilelayout_1,furniture_factory_tilelayout_2,furniture_factory_tilelayout_3,furniture_factory_tilelayout_4,furniture_factory_tilelayout_5];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_FURNITURE_FACTORY);
@@ -934,6 +940,14 @@ if (!param_extension_textile_industries && !param_extension_packaging_industries
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("WDPR"),accept_cargo("PLAS"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FURNITURE_FACTORY));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -959,7 +973,6 @@ if (param_extension_textile_industries && param_extension_packaging_industries) 
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [furniture_factory_tilelayout_1,furniture_factory_tilelayout_2,furniture_factory_tilelayout_3,furniture_factory_tilelayout_4,furniture_factory_tilelayout_5];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_FURNITURE_FACTORY);
@@ -969,6 +982,14 @@ if (param_extension_textile_industries && param_extension_packaging_industries) 
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("WDPR"),accept_cargo("PLAS"),accept_cargo("TEXT"),accept_cargo("MNSP"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FURNITURE_FACTORY));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -994,7 +1015,6 @@ if (!param_extension_textile_industries && param_extension_packaging_industries)
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [furniture_factory_tilelayout_1,furniture_factory_tilelayout_2,furniture_factory_tilelayout_3,furniture_factory_tilelayout_4,furniture_factory_tilelayout_5];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_FURNITURE_FACTORY);
@@ -1004,6 +1024,14 @@ if (!param_extension_textile_industries && param_extension_packaging_industries)
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("WDPR"),accept_cargo("PLAS"),accept_cargo("MNSP"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FURNITURE_FACTORY));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {

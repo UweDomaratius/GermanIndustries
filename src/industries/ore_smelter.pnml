@@ -1292,7 +1292,6 @@ if (param_extension_coke_sulphur && !param_extension_painting_industries && !par
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [ore_smelter_tilelayout_1, ore_smelter_tilelayout_2, ore_smelter_tilelayout_3, ore_smelter_tilelayout_4];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_ORE_SMELTER);
@@ -1302,6 +1301,14 @@ if (param_extension_coke_sulphur && !param_extension_painting_industries && !par
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COKE"),accept_cargo("PORE"),produce_cargo("IORE",0),produce_cargo("SULP",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_ORE_SMELTER));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1328,7 +1335,6 @@ if (param_extension_coke_sulphur && param_extension_painting_industries && !para
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [ore_smelter_tilelayout_1, ore_smelter_tilelayout_2, ore_smelter_tilelayout_3, ore_smelter_tilelayout_4];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_ORE_SMELTER);
@@ -1338,6 +1344,14 @@ if (param_extension_coke_sulphur && param_extension_painting_industries && !para
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COKE"),accept_cargo("PORE"),produce_cargo("IORE",0),produce_cargo("SULP",0),produce_cargo("CORE",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_ORE_SMELTER));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1364,7 +1378,6 @@ if (param_extension_coke_sulphur && !param_extension_painting_industries && para
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [ore_smelter_tilelayout_1, ore_smelter_tilelayout_2, ore_smelter_tilelayout_3, ore_smelter_tilelayout_4];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_ORE_SMELTER);
@@ -1374,6 +1387,14 @@ if (param_extension_coke_sulphur && !param_extension_painting_industries && para
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COKE"),accept_cargo("PORE"),accept_cargo("O2__"),produce_cargo("IORE",0),produce_cargo("SULP",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_ORE_SMELTER));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1400,7 +1421,6 @@ if (param_extension_coke_sulphur && param_extension_painting_industries && param
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [ore_smelter_tilelayout_1, ore_smelter_tilelayout_2, ore_smelter_tilelayout_3, ore_smelter_tilelayout_4];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_ORE_SMELTER);
@@ -1410,6 +1430,14 @@ if (param_extension_coke_sulphur && param_extension_painting_industries && param
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COKE"),accept_cargo("PORE"),accept_cargo("O2__"),produce_cargo("IORE",0),produce_cargo("SULP",0),produce_cargo("CORE",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_ORE_SMELTER));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1435,7 +1463,6 @@ if (param_extension_coke_sulphur && !param_extension_painting_industries && !par
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [ore_smelter_tilelayout_1, ore_smelter_tilelayout_2, ore_smelter_tilelayout_3, ore_smelter_tilelayout_4];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_ORE_SMELTER);
@@ -1445,6 +1472,14 @@ if (param_extension_coke_sulphur && !param_extension_painting_industries && !par
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COKE"),accept_cargo("PORE"),produce_cargo("IORE",0),produce_cargo("SULP",0),produce_cargo("ZINC",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_ORE_SMELTER));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1471,7 +1506,6 @@ if (param_extension_coke_sulphur && param_extension_painting_industries && !para
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [ore_smelter_tilelayout_1, ore_smelter_tilelayout_2, ore_smelter_tilelayout_3, ore_smelter_tilelayout_4];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_ORE_SMELTER);
@@ -1481,6 +1515,14 @@ if (param_extension_coke_sulphur && param_extension_painting_industries && !para
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COKE"),accept_cargo("PORE"),produce_cargo("IORE",0),produce_cargo("SULP",0),produce_cargo("CORE",0),produce_cargo("ZINC",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_ORE_SMELTER));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1507,7 +1549,6 @@ if (param_extension_coke_sulphur && !param_extension_painting_industries && para
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [ore_smelter_tilelayout_1, ore_smelter_tilelayout_2, ore_smelter_tilelayout_3, ore_smelter_tilelayout_4];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_ORE_SMELTER);
@@ -1517,6 +1558,14 @@ if (param_extension_coke_sulphur && !param_extension_painting_industries && para
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COKE"),accept_cargo("PORE"),accept_cargo("O2__"),produce_cargo("IORE",0),produce_cargo("SULP",0),produce_cargo("ZINC",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_ORE_SMELTER));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1543,7 +1592,6 @@ if (param_extension_coke_sulphur && param_extension_painting_industries && param
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [ore_smelter_tilelayout_1, ore_smelter_tilelayout_2, ore_smelter_tilelayout_3, ore_smelter_tilelayout_4];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_ORE_SMELTER);
@@ -1553,6 +1601,14 @@ if (param_extension_coke_sulphur && param_extension_painting_industries && param
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COKE"),accept_cargo("PORE"),accept_cargo("O2__"),produce_cargo("IORE",0),produce_cargo("SULP",0),produce_cargo("CORE",0),produce_cargo("ZINC",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_ORE_SMELTER));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {

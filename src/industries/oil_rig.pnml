@@ -525,7 +525,7 @@ if (!param_extension_production_boost) {
 			life_type: IND_LIFE_TYPE_EXTRACTIVE;
 			min_cargo_distr: 1;
 			layouts: [oil_rig_layout_1_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_BUILT_ON_WATER,IND_FLAG_AI_CREATES_AIR_AND_SHIP_ROUTES);
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_BUILT_ON_WATER, IND_FLAG_AI_CREATES_AIR_AND_SHIP_ROUTES, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: TTD_STR_INDUSTRY_NAME_OIL_RIG;
@@ -561,7 +561,7 @@ if (param_extension_production_boost) {
 			life_type: IND_LIFE_TYPE_EXTRACTIVE;
 			min_cargo_distr: 1;
 			layouts: [oil_rig_layout_1_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_BUILT_ON_WATER,IND_FLAG_AI_CREATES_AIR_AND_SHIP_ROUTES);
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_BUILT_ON_WATER, IND_FLAG_AI_CREATES_AIR_AND_SHIP_ROUTES, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: TTD_STR_INDUSTRY_NAME_OIL_RIG;

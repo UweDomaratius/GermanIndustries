@@ -43,6 +43,14 @@ grf {
 		}
 	}
 	param {
+		param_forbid_last_industry_closure {
+			type: bool;
+			name: string(STR_PARAM_FORBID_LAST_INDUSTRY_CLOSURE);
+			desc: string(STR_PARAM_FORBID_LAST_INDUSTRY_CLOSURE_DESC);
+			def_value: 1;
+		}
+	}
+	param {
 		param_max_industries_on_map {
 			type: int;
 			name: string(STR_PARAM_MAX_INDUSTRIES_ON_MAP);

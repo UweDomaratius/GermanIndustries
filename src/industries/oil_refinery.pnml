@@ -715,7 +715,6 @@ if (param_extension_organic_chemistry && !param_extension_coke_sulphur) {
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [oil_refinery_tilelayout_1,oil_refinery_tilelayout_2,oil_refinery_tilelayout_3,oil_refinery_tilelayout_4];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: TTD_STR_INDUSTRY_NAME_OIL_REFINERY;
@@ -725,6 +724,14 @@ if (param_extension_organic_chemistry && !param_extension_coke_sulphur) {
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("OIL_"),produce_cargo("RFPR",0),produce_cargo("PETR",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_OIL_REFINERY));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -751,7 +758,6 @@ if (param_extension_organic_chemistry && param_extension_coke_sulphur) {
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [oil_refinery_tilelayout_1,oil_refinery_tilelayout_2,oil_refinery_tilelayout_3,oil_refinery_tilelayout_4];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: TTD_STR_INDUSTRY_NAME_OIL_REFINERY;
@@ -761,6 +767,14 @@ if (param_extension_organic_chemistry && param_extension_coke_sulphur) {
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("OIL_"),produce_cargo("RFPR",0),produce_cargo("PETR",0),produce_cargo("SULP",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_OIL_REFINERY));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {

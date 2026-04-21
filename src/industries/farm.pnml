@@ -929,7 +929,6 @@ if (param_extension_textile_industries && !param_extension_food_industries && !p
 			life_type: IND_LIFE_TYPE_ORGANIC;
 			min_cargo_distr: 1;
 			layouts: [farm_industry_layout_1_tilelayout,farm_industry_layout_2_tilelayout,farm_industry_layout_3_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_PLANT_FIELDS_PERIODICALLY,IND_FLAG_PLANT_FIELDS_WHEN_BUILT);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: TTD_STR_INDUSTRY_NAME_FARM;
@@ -940,6 +939,14 @@ if (param_extension_textile_industries && !param_extension_food_industries && !p
 			remove_cost_multiplier: 0;
 			cargo_types: [produce_cargo("LVST",0), produce_cargo("GRAI",0), produce_cargo("WOOL",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FARM));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_PLANT_FIELDS_PERIODICALLY, IND_FLAG_PLANT_FIELDS_WHEN_BUILT); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_PLANT_FIELDS_PERIODICALLY, IND_FLAG_PLANT_FIELDS_WHEN_BUILT, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 	
 		graphics {
@@ -963,7 +970,6 @@ if (!param_extension_textile_industries && !param_extension_food_industries && !
 			life_type: IND_LIFE_TYPE_ORGANIC;
 			min_cargo_distr: 1;
 			layouts: [farm_industry_layout_1_tilelayout,farm_industry_layout_2_tilelayout,farm_industry_layout_3_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_PLANT_FIELDS_PERIODICALLY,IND_FLAG_PLANT_FIELDS_WHEN_BUILT);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: TTD_STR_INDUSTRY_NAME_FARM;
@@ -974,6 +980,14 @@ if (!param_extension_textile_industries && !param_extension_food_industries && !
 			remove_cost_multiplier: 0;
 			cargo_types: [produce_cargo("LVST",0), produce_cargo("GRAI",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FARM));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_PLANT_FIELDS_PERIODICALLY, IND_FLAG_PLANT_FIELDS_WHEN_BUILT); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_PLANT_FIELDS_PERIODICALLY, IND_FLAG_PLANT_FIELDS_WHEN_BUILT, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 	
 		graphics {
@@ -997,7 +1011,6 @@ if (param_extension_food_industries && !param_extension_fruits && !param_extensi
 			life_type: IND_LIFE_TYPE_ORGANIC;
 			min_cargo_distr: 1;
 			layouts: [farm_industry_layout_4_tilelayout,farm_industry_layout_5_tilelayout,farm_industry_layout_6_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_PLANT_FIELDS_PERIODICALLY,IND_FLAG_PLANT_FIELDS_WHEN_BUILT);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: TTD_STR_INDUSTRY_NAME_FARM;
@@ -1008,6 +1021,14 @@ if (param_extension_food_industries && !param_extension_fruits && !param_extensi
 			remove_cost_multiplier: 0;
 			cargo_types: [produce_cargo("GRAI",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FARM));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_PLANT_FIELDS_PERIODICALLY, IND_FLAG_PLANT_FIELDS_WHEN_BUILT); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_PLANT_FIELDS_PERIODICALLY, IND_FLAG_PLANT_FIELDS_WHEN_BUILT, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 	
 		graphics {
@@ -1031,7 +1052,6 @@ if (param_extension_textile_industries && !param_extension_food_industries && pa
 			life_type: IND_LIFE_TYPE_ORGANIC;
 			min_cargo_distr: 1;
 			layouts: [farm_industry_layout_1_tilelayout,farm_industry_layout_2_tilelayout,farm_industry_layout_3_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_PLANT_FIELDS_PERIODICALLY,IND_FLAG_PLANT_FIELDS_WHEN_BUILT);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: TTD_STR_INDUSTRY_NAME_FARM;
@@ -1042,6 +1062,14 @@ if (param_extension_textile_industries && !param_extension_food_industries && pa
 			remove_cost_multiplier: 0;
 			cargo_types: [produce_cargo("LVST",0), produce_cargo("GRAI",0), produce_cargo("WOOL",0),produce_cargo("BIOM",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FARM));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_PLANT_FIELDS_PERIODICALLY, IND_FLAG_PLANT_FIELDS_WHEN_BUILT); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_PLANT_FIELDS_PERIODICALLY, IND_FLAG_PLANT_FIELDS_WHEN_BUILT, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 	
 		graphics {
@@ -1065,7 +1093,6 @@ if (!param_extension_textile_industries && !param_extension_food_industries && p
 			life_type: IND_LIFE_TYPE_ORGANIC;
 			min_cargo_distr: 1;
 			layouts: [farm_industry_layout_1_tilelayout,farm_industry_layout_2_tilelayout,farm_industry_layout_3_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_PLANT_FIELDS_PERIODICALLY,IND_FLAG_PLANT_FIELDS_WHEN_BUILT);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: TTD_STR_INDUSTRY_NAME_FARM;
@@ -1076,6 +1103,14 @@ if (!param_extension_textile_industries && !param_extension_food_industries && p
 			remove_cost_multiplier: 0;
 			cargo_types: [produce_cargo("LVST",0), produce_cargo("GRAI",0),produce_cargo("BIOM",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FARM));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_PLANT_FIELDS_PERIODICALLY, IND_FLAG_PLANT_FIELDS_WHEN_BUILT); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_PLANT_FIELDS_PERIODICALLY, IND_FLAG_PLANT_FIELDS_WHEN_BUILT, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 	
 		graphics {
@@ -1099,7 +1134,6 @@ if (param_extension_food_industries && param_extension_fruits && !param_extensio
 			life_type: IND_LIFE_TYPE_ORGANIC;
 			min_cargo_distr: 1;
 			layouts: [farm_industry_layout_4_tilelayout,farm_industry_layout_5_tilelayout,farm_industry_layout_6_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_PLANT_FIELDS_PERIODICALLY,IND_FLAG_PLANT_FIELDS_WHEN_BUILT);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: TTD_STR_INDUSTRY_NAME_FARM;
@@ -1110,6 +1144,14 @@ if (param_extension_food_industries && param_extension_fruits && !param_extensio
 			remove_cost_multiplier: 0;
 			cargo_types: [produce_cargo("GRAI",0),produce_cargo("BIOM",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FARM));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_PLANT_FIELDS_PERIODICALLY, IND_FLAG_PLANT_FIELDS_WHEN_BUILT); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_PLANT_FIELDS_PERIODICALLY, IND_FLAG_PLANT_FIELDS_WHEN_BUILT, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 	
 		graphics {
@@ -1133,7 +1175,6 @@ if (param_extension_textile_industries && !param_extension_food_industries && !p
 			life_type: IND_LIFE_TYPE_ORGANIC;
 			min_cargo_distr: 1;
 			layouts: [farm_industry_layout_1_tilelayout,farm_industry_layout_2_tilelayout,farm_industry_layout_3_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_PLANT_FIELDS_PERIODICALLY,IND_FLAG_PLANT_FIELDS_WHEN_BUILT);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: TTD_STR_INDUSTRY_NAME_FARM;
@@ -1144,6 +1185,14 @@ if (param_extension_textile_industries && !param_extension_food_industries && !p
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("FERT"),produce_cargo("LVST",0), produce_cargo("GRAI",0), produce_cargo("WOOL",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FARM));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_PLANT_FIELDS_PERIODICALLY, IND_FLAG_PLANT_FIELDS_WHEN_BUILT); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_PLANT_FIELDS_PERIODICALLY, IND_FLAG_PLANT_FIELDS_WHEN_BUILT, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 	
 		graphics {
@@ -1169,7 +1218,6 @@ if (!param_extension_textile_industries && !param_extension_food_industries && !
 			life_type: IND_LIFE_TYPE_ORGANIC;
 			min_cargo_distr: 1;
 			layouts: [farm_industry_layout_1_tilelayout,farm_industry_layout_2_tilelayout,farm_industry_layout_3_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_PLANT_FIELDS_PERIODICALLY,IND_FLAG_PLANT_FIELDS_WHEN_BUILT);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: TTD_STR_INDUSTRY_NAME_FARM;
@@ -1180,6 +1228,14 @@ if (!param_extension_textile_industries && !param_extension_food_industries && !
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("FERT"),produce_cargo("LVST",0), produce_cargo("GRAI",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FARM));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_PLANT_FIELDS_PERIODICALLY, IND_FLAG_PLANT_FIELDS_WHEN_BUILT); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_PLANT_FIELDS_PERIODICALLY, IND_FLAG_PLANT_FIELDS_WHEN_BUILT, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 	
 		graphics {
@@ -1205,7 +1261,6 @@ if (param_extension_food_industries && !param_extension_fruits && param_extensio
 			life_type: IND_LIFE_TYPE_ORGANIC;
 			min_cargo_distr: 1;
 			layouts: [farm_industry_layout_4_tilelayout,farm_industry_layout_5_tilelayout,farm_industry_layout_6_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_PLANT_FIELDS_PERIODICALLY,IND_FLAG_PLANT_FIELDS_WHEN_BUILT);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: TTD_STR_INDUSTRY_NAME_FARM;
@@ -1216,6 +1271,14 @@ if (param_extension_food_industries && !param_extension_fruits && param_extensio
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("FERT"),produce_cargo("GRAI",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FARM));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_PLANT_FIELDS_PERIODICALLY, IND_FLAG_PLANT_FIELDS_WHEN_BUILT); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_PLANT_FIELDS_PERIODICALLY, IND_FLAG_PLANT_FIELDS_WHEN_BUILT, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 	
 		graphics {
@@ -1241,7 +1304,6 @@ if (param_extension_textile_industries && !param_extension_food_industries && pa
 			life_type: IND_LIFE_TYPE_ORGANIC;
 			min_cargo_distr: 1;
 			layouts: [farm_industry_layout_1_tilelayout,farm_industry_layout_2_tilelayout,farm_industry_layout_3_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_PLANT_FIELDS_PERIODICALLY,IND_FLAG_PLANT_FIELDS_WHEN_BUILT);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: TTD_STR_INDUSTRY_NAME_FARM;
@@ -1252,6 +1314,14 @@ if (param_extension_textile_industries && !param_extension_food_industries && pa
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("FERT"),produce_cargo("LVST",0), produce_cargo("GRAI",0), produce_cargo("WOOL",0),produce_cargo("BIOM",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FARM));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_PLANT_FIELDS_PERIODICALLY, IND_FLAG_PLANT_FIELDS_WHEN_BUILT); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_PLANT_FIELDS_PERIODICALLY, IND_FLAG_PLANT_FIELDS_WHEN_BUILT, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 	
 		graphics {
@@ -1277,7 +1347,6 @@ if (!param_extension_textile_industries && !param_extension_food_industries && p
 			life_type: IND_LIFE_TYPE_ORGANIC;
 			min_cargo_distr: 1;
 			layouts: [farm_industry_layout_1_tilelayout,farm_industry_layout_2_tilelayout,farm_industry_layout_3_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_PLANT_FIELDS_PERIODICALLY,IND_FLAG_PLANT_FIELDS_WHEN_BUILT);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: TTD_STR_INDUSTRY_NAME_FARM;
@@ -1288,6 +1357,14 @@ if (!param_extension_textile_industries && !param_extension_food_industries && p
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("FERT"),produce_cargo("LVST",0), produce_cargo("GRAI",0),produce_cargo("BIOM",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FARM));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_PLANT_FIELDS_PERIODICALLY, IND_FLAG_PLANT_FIELDS_WHEN_BUILT); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_PLANT_FIELDS_PERIODICALLY, IND_FLAG_PLANT_FIELDS_WHEN_BUILT, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 	
 		graphics {
@@ -1313,7 +1390,6 @@ if (param_extension_food_industries && param_extension_fruits && param_extension
 			life_type: IND_LIFE_TYPE_ORGANIC;
 			min_cargo_distr: 1;
 			layouts: [farm_industry_layout_4_tilelayout,farm_industry_layout_5_tilelayout,farm_industry_layout_6_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_PLANT_FIELDS_PERIODICALLY,IND_FLAG_PLANT_FIELDS_WHEN_BUILT);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: TTD_STR_INDUSTRY_NAME_FARM;
@@ -1324,6 +1400,14 @@ if (param_extension_food_industries && param_extension_fruits && param_extension
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("FERT"),produce_cargo("GRAI",0),produce_cargo("BIOM",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FARM));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_PLANT_FIELDS_PERIODICALLY, IND_FLAG_PLANT_FIELDS_WHEN_BUILT); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_PLANT_FIELDS_PERIODICALLY, IND_FLAG_PLANT_FIELDS_WHEN_BUILT, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 	
 		graphics {

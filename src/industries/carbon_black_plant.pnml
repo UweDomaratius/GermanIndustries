@@ -791,7 +791,6 @@ if (param_extension_painting_industries && !param_extension_organic_chemistry &&
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [carbon_black_plant_tilelayout_1,carbon_black_plant_tilelayout_2,carbon_black_plant_tilelayout_3];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_CARBON_BLACK_PLANT);
@@ -801,6 +800,14 @@ if (param_extension_painting_industries && !param_extension_organic_chemistry &&
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("OIL_"),accept_cargo("COAL"),produce_cargo("CBLK",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_CARBON_BLACK_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -827,7 +834,6 @@ if (param_extension_painting_industries && param_extension_organic_chemistry && 
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [carbon_black_plant_tilelayout_1,carbon_black_plant_tilelayout_2,carbon_black_plant_tilelayout_3];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_CARBON_BLACK_PLANT);
@@ -837,6 +843,14 @@ if (param_extension_painting_industries && param_extension_organic_chemistry && 
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("RFPR"),accept_cargo("COAL"),produce_cargo("CBLK",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_CARBON_BLACK_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -863,7 +877,6 @@ if (param_extension_painting_industries && !param_extension_organic_chemistry &&
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [carbon_black_plant_tilelayout_1,carbon_black_plant_tilelayout_2,carbon_black_plant_tilelayout_3];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_CARBON_BLACK_PLANT);
@@ -873,6 +886,14 @@ if (param_extension_painting_industries && !param_extension_organic_chemistry &&
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("OIL_"),accept_cargo("COAL"),accept_cargo("O2__"),produce_cargo("CBLK",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_CARBON_BLACK_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -899,7 +920,6 @@ if (param_extension_painting_industries && param_extension_organic_chemistry && 
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [carbon_black_plant_tilelayout_1,carbon_black_plant_tilelayout_2,carbon_black_plant_tilelayout_3];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_CARBON_BLACK_PLANT);
@@ -909,6 +929,14 @@ if (param_extension_painting_industries && param_extension_organic_chemistry && 
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("RFPR"),accept_cargo("COAL"),accept_cargo("O2__"),produce_cargo("CBLK",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_CARBON_BLACK_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {

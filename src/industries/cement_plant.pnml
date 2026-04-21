@@ -1058,7 +1058,6 @@ if (param_extension_building_materials) {
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [cement_plant_tilelayout_1,cement_plant_tilelayout_2,cement_plant_tilelayout_3,cement_plant_tilelayout_4,cement_plant_tilelayout_5];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_CEMENT_PLANT);
@@ -1068,6 +1067,14 @@ if (param_extension_building_materials) {
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("SAND"),accept_cargo("LIME"),produce_cargo("CMNT",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_CEMENT_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {

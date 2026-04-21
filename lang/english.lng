@@ -23,6 +23,8 @@ STR_PARAM_FORBID_INDUSTRY_GENERATION :Forbid industry generation
 STR_PARAM_FORBID_INDUSTRY_GENERATION_DESC :When enabled, no industries will spawn during gameplay. Industries will be generated at map generation and can be funded/prospected by the player.
 STR_PARAM_FORBID_INDUSTRY_CLOSURE :Forbid industry closure
 STR_PARAM_FORBID_INDUSTRY_CLOSURE_DESC :When enabled, no industries will close during gameplay. Extractive industries like mines will still close once they run out of materials to produce. Even with closures enabled, industries that are being served will not close.
+STR_PARAM_FORBID_LAST_INDUSTRY_CLOSURE :Forbid industry closure for last industry on map
+STR_PARAM_FORBID_LAST_INDUSTRY_CLOSURE_DESC :When enabled, industries will not be closed if they are the only instance of that industry on the map. Only has an effect if closures of industries are enabled in general.
 STR_PARAM_STOCKPILE_CAP :Behavior when reaching stockpile limit
 STR_PARAM_STOCKPILE_CAP_DESC :Define what to do when the stockpile limit is reached. When set to discard, incoming freight will be discarded. The delivery will be paid, the cargo will simply vanish. When set to stop acceptance, the industry will stop simply not accept the cargo, the vehicle will not be able to unload. See documentation for more details.
 STR_PARAM_STOCKPILE_DISCARD :Discard

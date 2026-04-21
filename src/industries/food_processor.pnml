@@ -1224,7 +1224,6 @@ if (!param_extension_basic_inorganic_chemistry && !param_extension_food_industri
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [food_processor_industry_layout_1_tilelayout,food_processor_industry_layout_2_tilelayout,food_processor_industry_layout_3_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: TTD_STR_INDUSTRY_NAME_FOOD_PROCESSING_PLANT;
@@ -1234,6 +1233,14 @@ if (!param_extension_basic_inorganic_chemistry && !param_extension_food_industri
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("LVST"),accept_cargo("GRAI"),accept_cargo("FISH"),produce_cargo("FOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FOOD_PROCESSOR));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1259,7 +1266,6 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_food_industrie
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [food_processor_industry_layout_1_tilelayout,food_processor_industry_layout_2_tilelayout,food_processor_industry_layout_3_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: TTD_STR_INDUSTRY_NAME_FOOD_PROCESSING_PLANT;
@@ -1269,6 +1275,14 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_food_industrie
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("LVST"),accept_cargo("GRAI"),accept_cargo("FISH"),accept_cargo("SALT"),accept_cargo("LYE_"),produce_cargo("FOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FOOD_PROCESSOR));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1294,7 +1308,6 @@ if (!param_extension_basic_inorganic_chemistry && param_extension_food_industrie
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [food_processor_industry_layout_1_tilelayout,food_processor_industry_layout_2_tilelayout,food_processor_industry_layout_3_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: TTD_STR_INDUSTRY_NAME_FOOD_PROCESSING_PLANT;
@@ -1304,6 +1317,14 @@ if (!param_extension_basic_inorganic_chemistry && param_extension_food_industrie
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("FISH"),produce_cargo("FOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FOOD_PROCESSOR));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1329,7 +1350,6 @@ if (param_extension_basic_inorganic_chemistry && param_extension_food_industries
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [food_processor_industry_layout_1_tilelayout,food_processor_industry_layout_2_tilelayout,food_processor_industry_layout_3_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: TTD_STR_INDUSTRY_NAME_FOOD_PROCESSING_PLANT;
@@ -1339,6 +1359,14 @@ if (param_extension_basic_inorganic_chemistry && param_extension_food_industries
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("FISH"),accept_cargo("SALT"),accept_cargo("LYE_"),produce_cargo("FOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FOOD_PROCESSOR));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1364,7 +1392,6 @@ if (!param_extension_basic_inorganic_chemistry && !param_extension_food_industri
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [food_processor_industry_layout_1_tilelayout,food_processor_industry_layout_2_tilelayout,food_processor_industry_layout_3_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: TTD_STR_INDUSTRY_NAME_FOOD_PROCESSING_PLANT;
@@ -1374,6 +1401,14 @@ if (!param_extension_basic_inorganic_chemistry && !param_extension_food_industri
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("LVST"),accept_cargo("GRAI"),accept_cargo("FISH"),accept_cargo("MNSP"),produce_cargo("FOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FOOD_PROCESSOR));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1399,7 +1434,6 @@ if (!param_extension_basic_inorganic_chemistry && param_extension_food_industrie
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [food_processor_industry_layout_1_tilelayout,food_processor_industry_layout_2_tilelayout,food_processor_industry_layout_3_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: TTD_STR_INDUSTRY_NAME_FOOD_PROCESSING_PLANT;
@@ -1409,6 +1443,14 @@ if (!param_extension_basic_inorganic_chemistry && param_extension_food_industrie
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("FISH"),accept_cargo("MNSP"),produce_cargo("FOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FOOD_PROCESSOR));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1434,7 +1476,6 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_food_industrie
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [food_processor_industry_layout_1_tilelayout,food_processor_industry_layout_2_tilelayout,food_processor_industry_layout_3_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: TTD_STR_INDUSTRY_NAME_FOOD_PROCESSING_PLANT;
@@ -1444,6 +1485,14 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_food_industrie
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("LVST"),accept_cargo("GRAI"),accept_cargo("FISH"),accept_cargo("SALT"),accept_cargo("LYE_"),accept_cargo("MNSP"),produce_cargo("FOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FOOD_PROCESSOR));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1468,7 +1517,6 @@ if (param_extension_basic_inorganic_chemistry && param_extension_food_industries
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [food_processor_industry_layout_1_tilelayout,food_processor_industry_layout_2_tilelayout,food_processor_industry_layout_3_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: TTD_STR_INDUSTRY_NAME_FOOD_PROCESSING_PLANT;
@@ -1478,6 +1526,14 @@ if (param_extension_basic_inorganic_chemistry && param_extension_food_industries
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("FISH"),accept_cargo("SALT"),accept_cargo("LYE_"),accept_cargo("MNSP"),produce_cargo("FOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FOOD_PROCESSOR));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1503,7 +1559,6 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_food_industrie
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [food_processor_industry_layout_1_tilelayout,food_processor_industry_layout_2_tilelayout,food_processor_industry_layout_3_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: TTD_STR_INDUSTRY_NAME_FOOD_PROCESSING_PLANT;
@@ -1513,6 +1568,14 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_food_industrie
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("FRUT"),accept_cargo("LVST"),accept_cargo("GRAI"),accept_cargo("FISH"),accept_cargo("SALT"),accept_cargo("LYE_"),produce_cargo("FOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FOOD_PROCESSOR));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1538,7 +1601,6 @@ if (param_extension_basic_inorganic_chemistry && param_extension_food_industries
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [food_processor_industry_layout_1_tilelayout,food_processor_industry_layout_2_tilelayout,food_processor_industry_layout_3_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: TTD_STR_INDUSTRY_NAME_FOOD_PROCESSING_PLANT;
@@ -1548,6 +1610,14 @@ if (param_extension_basic_inorganic_chemistry && param_extension_food_industries
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("FRUT"),accept_cargo("FISH"),accept_cargo("SALT"),accept_cargo("LYE_"),produce_cargo("FOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FOOD_PROCESSOR));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1573,7 +1643,6 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_food_industrie
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [food_processor_industry_layout_1_tilelayout,food_processor_industry_layout_2_tilelayout,food_processor_industry_layout_3_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: TTD_STR_INDUSTRY_NAME_FOOD_PROCESSING_PLANT;
@@ -1583,6 +1652,14 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_food_industrie
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("FRUT"),accept_cargo("LVST"),accept_cargo("GRAI"),accept_cargo("FISH"),accept_cargo("SALT"),accept_cargo("LYE_"),accept_cargo("MNSP"),produce_cargo("FOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FOOD_PROCESSOR));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1607,7 +1684,6 @@ if (param_extension_basic_inorganic_chemistry && param_extension_food_industries
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [food_processor_industry_layout_1_tilelayout,food_processor_industry_layout_2_tilelayout,food_processor_industry_layout_3_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: TTD_STR_INDUSTRY_NAME_FOOD_PROCESSING_PLANT;
@@ -1617,6 +1693,14 @@ if (param_extension_basic_inorganic_chemistry && param_extension_food_industries
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("FRUT"),accept_cargo("FISH"),accept_cargo("SALT"),accept_cargo("LYE_"),accept_cargo("MNSP"),produce_cargo("FOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_FOOD_PROCESSOR));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {

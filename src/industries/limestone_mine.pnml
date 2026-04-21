@@ -662,7 +662,7 @@ item(FEAT_INDUSTRIES, limestone_mine, INDUSTRY_ID_LIMESTONE_MINE) {
 		life_type: IND_LIFE_TYPE_EXTRACTIVE;
 		min_cargo_distr: 1;
 		layouts: [limestone_mine_industry_layout_1_tilelayout,limestone_mine_industry_layout_2_tilelayout,limestone_mine_industry_layout_3_tilelayout,limestone_mine_industry_layout_4_tilelayout];
-		spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+		spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE);
 		conflicting_ind_types: [];
 		random_sound_effects: [];
 		name: string(STR_IND_LIMESTONE_MINE);
@@ -699,7 +699,7 @@ if (param_extension_building_materials && param_extension_production_boost) {
 			life_type: IND_LIFE_TYPE_EXTRACTIVE;
 			min_cargo_distr: 1;
 			layouts: [limestone_mine_industry_layout_1_tilelayout,limestone_mine_industry_layout_2_tilelayout,limestone_mine_industry_layout_3_tilelayout,limestone_mine_industry_layout_4_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_LIMESTONE_MINE);

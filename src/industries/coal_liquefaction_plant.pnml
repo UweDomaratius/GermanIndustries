@@ -1220,7 +1220,6 @@ if (param_extension_organic_chemistry) {
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [coal_liquefaction_plant_tilelayout_1, coal_liquefaction_plant_tilelayout_2, coal_liquefaction_plant_tilelayout_3, coal_liquefaction_plant_tilelayout_4, coal_liquefaction_plant_tilelayout_5];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_COAL_LIQUEFACTION_PLANT);
@@ -1230,6 +1229,14 @@ if (param_extension_organic_chemistry) {
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COAL"),accept_cargo("H2__"),produce_cargo("PETR",0),produce_cargo("C2H4",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_COAL_LIQUEFACTION_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {

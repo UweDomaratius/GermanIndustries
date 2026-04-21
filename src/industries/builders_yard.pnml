@@ -369,7 +369,6 @@ if (param_extension_building_materials) {
 			life_type: IND_LIFE_TYPE_BLACK_HOLE;
 			min_cargo_distr: 1;
 			layouts: [builders_yard_tilelayout_1, builders_yard_tilelayout_2, builders_yard_tilelayout_3, builders_yard_tilelayout_4];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_BUILDERS_YARD);
@@ -380,6 +379,14 @@ if (param_extension_building_materials) {
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("WDPR"),accept_cargo("SAND"),accept_cargo("CMNT"),accept_cargo("BDMT")];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_BUILDERS_YARD));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 		graphics {
 			construction_probability: get_construction_probability;
@@ -402,7 +409,6 @@ if (!param_extension_building_materials) {
 			life_type: IND_LIFE_TYPE_BLACK_HOLE;
 			min_cargo_distr: 1;
 			layouts: [builders_yard_tilelayout_1, builders_yard_tilelayout_2, builders_yard_tilelayout_3, builders_yard_tilelayout_4];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_BUILDERS_YARD);
@@ -413,6 +419,14 @@ if (!param_extension_building_materials) {
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("WDPR")];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_BUILDERS_YARD));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 		graphics {
 			construction_probability: get_construction_probability;
