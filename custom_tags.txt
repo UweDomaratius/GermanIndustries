@@ -1,2 +1,0 @@
-VERSION:local build 2026-04-21 19:01:38
-TITLE :GIST - German Industries Set
