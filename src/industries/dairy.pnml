@@ -1256,7 +1256,6 @@ if (param_extension_food_industries && !param_extension_basic_inorganic_chemistr
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [dairy_tilelayout_1,dairy_tilelayout_2,dairy_tilelayout_3,dairy_tilelayout_4,dairy_tilelayout_5,dairy_tilelayout_6];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_DAIRY);
@@ -1266,6 +1265,14 @@ if (param_extension_food_industries && !param_extension_basic_inorganic_chemistr
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("MILK"),produce_cargo("FOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_DAIRY));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1291,7 +1298,6 @@ if (param_extension_food_industries && param_extension_basic_inorganic_chemistry
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [dairy_tilelayout_1,dairy_tilelayout_2,dairy_tilelayout_3,dairy_tilelayout_4,dairy_tilelayout_5,dairy_tilelayout_6];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_DAIRY);
@@ -1301,6 +1307,14 @@ if (param_extension_food_industries && param_extension_basic_inorganic_chemistry
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("MILK"),accept_cargo("LYE_"),produce_cargo("FOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_DAIRY));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1326,7 +1340,6 @@ if (param_extension_food_industries && !param_extension_basic_inorganic_chemistr
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [dairy_tilelayout_1,dairy_tilelayout_2,dairy_tilelayout_3,dairy_tilelayout_4,dairy_tilelayout_5,dairy_tilelayout_6];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_DAIRY);
@@ -1336,6 +1349,14 @@ if (param_extension_food_industries && !param_extension_basic_inorganic_chemistr
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("MILK"),accept_cargo("MNSP"),produce_cargo("FOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_DAIRY));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1361,7 +1382,6 @@ if (param_extension_food_industries && param_extension_basic_inorganic_chemistry
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [dairy_tilelayout_1,dairy_tilelayout_2,dairy_tilelayout_3,dairy_tilelayout_4,dairy_tilelayout_5,dairy_tilelayout_6];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_DAIRY);
@@ -1371,6 +1391,14 @@ if (param_extension_food_industries && param_extension_basic_inorganic_chemistry
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("MILK"),accept_cargo("LYE_"),accept_cargo("MNSP"),produce_cargo("FOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_DAIRY));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {

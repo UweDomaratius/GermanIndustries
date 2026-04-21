@@ -128,7 +128,6 @@ item(FEAT_INDUSTRIES, department_store, INDUSTRY_ID_DEPARTMENT_STORE) {
 		life_type: IND_LIFE_TYPE_BLACK_HOLE;
 		min_cargo_distr: 1;
 		layouts: [department_store_tilelayout];
-		spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_ONLY_IN_TOWNS);
 		conflicting_ind_types: [];
 		random_sound_effects: [];
 		name: string(STR_IND_DEPARTMENT_STORE);
@@ -139,6 +138,14 @@ item(FEAT_INDUSTRIES, department_store, INDUSTRY_ID_DEPARTMENT_STORE) {
 		remove_cost_multiplier: 0;
 		cargo_types: [accept_cargo("GOOD")];
 		nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_DEPARTMENT_STORE));
+	}
+	if (param_forbid_last_industry_closure)
+	{
+		property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ONLY_IN_TOWNS); }
+	}
+	else
+	{
+		property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ONLY_IN_TOWNS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 	}
         
 	graphics {

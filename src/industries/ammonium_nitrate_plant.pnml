@@ -873,7 +873,6 @@ if (param_extension_production_boost) {
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [ammonium_nitrate_plant_tilelayout_1,ammonium_nitrate_plant_tilelayout_2,ammonium_nitrate_plant_tilelayout_3,ammonium_nitrate_plant_tilelayout_4,ammonium_nitrate_plant_tilelayout_5,ammonium_nitrate_plant_tilelayout_6];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_AMMONIUM_NITRATE_PLANT);
@@ -883,6 +882,14 @@ if (param_extension_production_boost) {
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("ACID"),accept_cargo("NH3_"),produce_cargo("NHNO",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_AMMONIUM_NITRATE_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {

@@ -821,7 +821,6 @@ if (param_extension_vehicle && !param_extension_aluminium && !param_extension_me
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [vehicle_engine_plant_tilelayout_1,vehicle_engine_plant_tilelayout_2];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_VEHICLE_ENGINE_PLANT);
@@ -831,6 +830,14 @@ if (param_extension_vehicle && !param_extension_aluminium && !param_extension_me
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("STEL"),produce_cargo("VENG",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_ENGINE_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -857,7 +864,6 @@ if (param_extension_vehicle && param_extension_aluminium && !param_extension_met
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [vehicle_engine_plant_tilelayout_1,vehicle_engine_plant_tilelayout_2];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_VEHICLE_ENGINE_PLANT);
@@ -867,6 +873,14 @@ if (param_extension_vehicle && param_extension_aluminium && !param_extension_met
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("STEL"),accept_cargo("ALUM"),produce_cargo("VENG",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_ENGINE_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -893,7 +907,6 @@ if (param_extension_vehicle && !param_extension_aluminium && param_extension_met
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [vehicle_engine_plant_tilelayout_1,vehicle_engine_plant_tilelayout_2];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_VEHICLE_ENGINE_PLANT);
@@ -903,6 +916,14 @@ if (param_extension_vehicle && !param_extension_aluminium && param_extension_met
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("STEL"),accept_cargo("ENSP"),accept_cargo("STWR"),produce_cargo("VENG",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_ENGINE_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -929,7 +950,6 @@ if (param_extension_vehicle && param_extension_aluminium && param_extension_meta
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [vehicle_engine_plant_tilelayout_1,vehicle_engine_plant_tilelayout_2];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_VEHICLE_ENGINE_PLANT);
@@ -939,6 +959,14 @@ if (param_extension_vehicle && param_extension_aluminium && param_extension_meta
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("STEL"),accept_cargo("ALUM"),accept_cargo("ENSP"),accept_cargo("STWR"),produce_cargo("VENG",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_ENGINE_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {

@@ -695,7 +695,6 @@ if (param_extension_building_materials) {
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [brick_works_tilelayout_1,brick_works_tilelayout_2,brick_works_tilelayout_3];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_BRICK_WORKS);
@@ -705,6 +704,14 @@ if (param_extension_building_materials) {
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COAL"),accept_cargo("WOOD"),produce_cargo("BDMT",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_BRICK_WORKS));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {

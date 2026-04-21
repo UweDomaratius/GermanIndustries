@@ -711,7 +711,6 @@ if (!param_extension_coke_sulphur && !param_extension_fruits) {
 			life_type: IND_LIFE_TYPE_BLACK_HOLE;
 			min_cargo_distr: 1;
 			layouts: [power_plant_tilelayout_1,power_plant_tilelayout_2,power_plant_tilelayout_3];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: TTD_STR_INDUSTRY_NAME_POWER_STATION;
@@ -722,6 +721,14 @@ if (!param_extension_coke_sulphur && !param_extension_fruits) {
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COAL"),accept_cargo("OIL_")];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_POWER_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 
 		graphics {
@@ -746,7 +753,6 @@ if (param_extension_coke_sulphur && !param_extension_fruits) {
 			life_type: IND_LIFE_TYPE_BLACK_HOLE;
 			min_cargo_distr: 1;
 			layouts: [power_plant_tilelayout_1,power_plant_tilelayout_2,power_plant_tilelayout_3];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: TTD_STR_INDUSTRY_NAME_POWER_STATION;
@@ -757,6 +763,14 @@ if (param_extension_coke_sulphur && !param_extension_fruits) {
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("COAL"),accept_cargo("OIL_"),produce_cargo("SULP",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_POWER_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 
 		graphics {
@@ -781,7 +795,6 @@ if (!param_extension_coke_sulphur && param_extension_fruits) {
 			life_type: IND_LIFE_TYPE_BLACK_HOLE;
 			min_cargo_distr: 1;
 			layouts: [power_plant_tilelayout_1,power_plant_tilelayout_2,power_plant_tilelayout_3];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: TTD_STR_INDUSTRY_NAME_POWER_STATION;
@@ -792,6 +805,14 @@ if (!param_extension_coke_sulphur && param_extension_fruits) {
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("BIOM"),accept_cargo("COAL"),accept_cargo("OIL_")];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_POWER_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 
 		graphics {
@@ -816,7 +837,6 @@ if (param_extension_coke_sulphur && param_extension_fruits) {
 			life_type: IND_LIFE_TYPE_BLACK_HOLE;
 			min_cargo_distr: 1;
 			layouts: [power_plant_tilelayout_1,power_plant_tilelayout_2,power_plant_tilelayout_3];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: TTD_STR_INDUSTRY_NAME_POWER_STATION;
@@ -827,6 +847,14 @@ if (param_extension_coke_sulphur && param_extension_fruits) {
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("BIOM"),accept_cargo("COAL"),accept_cargo("OIL_"),produce_cargo("SULP",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_POWER_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 
 		graphics {

@@ -206,7 +206,6 @@ if (param_extension_organic_chemistry) {
 			life_type: IND_LIFE_TYPE_BLACK_HOLE;
 			min_cargo_distr: 1;
 			layouts: [petrol_station_tilelayout_1, petrol_station_tilelayout_2];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_ONLY_IN_TOWNS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PETROL_STATION);
@@ -217,6 +216,14 @@ if (param_extension_organic_chemistry) {
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("PETR")];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PETROL_STATION));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ONLY_IN_TOWNS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ONLY_IN_TOWNS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {

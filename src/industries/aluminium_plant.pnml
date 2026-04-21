@@ -1674,7 +1674,6 @@ if (param_extension_aluminium && !param_extension_basic_inorganic_chemistry && !
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [aluminium_plant_tilelayout_1, aluminium_plant_tilelayout_2, aluminium_plant_tilelayout_3];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_ALUMINIUM_PLANT);
@@ -1684,6 +1683,14 @@ if (param_extension_aluminium && !param_extension_basic_inorganic_chemistry && !
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("AORE"),produce_cargo("ALUM",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_ALUMINIUM_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1709,7 +1716,6 @@ if (param_extension_aluminium && param_extension_basic_inorganic_chemistry && !p
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [aluminium_plant_tilelayout_1, aluminium_plant_tilelayout_2, aluminium_plant_tilelayout_3];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_ALUMINIUM_PLANT);
@@ -1719,6 +1725,14 @@ if (param_extension_aluminium && param_extension_basic_inorganic_chemistry && !p
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("AORE"),accept_cargo("LYE_"),produce_cargo("ALUM",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_ALUMINIUM_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1745,7 +1759,7 @@ if (param_extension_aluminium && !param_extension_basic_inorganic_chemistry && p
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [aluminium_plant_tilelayout_1, aluminium_plant_tilelayout_2, aluminium_plant_tilelayout_3];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_ALUMINIUM_PLANT);
@@ -1780,7 +1794,7 @@ if (param_extension_aluminium && param_extension_basic_inorganic_chemistry && pa
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [aluminium_plant_tilelayout_1, aluminium_plant_tilelayout_2, aluminium_plant_tilelayout_3];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_ALUMINIUM_PLANT);

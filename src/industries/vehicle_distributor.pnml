@@ -320,7 +320,6 @@ if (!param_extension_vehicle) {
 			life_type: IND_LIFE_TYPE_BLACK_HOLE;
 			min_cargo_distr: 1;
 			layouts: [vehicle_distributor_tilelayout_1, vehicle_distributor_tilelayout_2, vehicle_distributor_tilelayout_3];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_VEHICLE_DISTRIBUTOR);
@@ -331,6 +330,14 @@ if (!param_extension_vehicle) {
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("VEHI")];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_DISTRIBUTOR));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -356,7 +363,6 @@ if (param_extension_vehicle) {
 			life_type: IND_LIFE_TYPE_BLACK_HOLE;
 			min_cargo_distr: 1;
 			layouts: [vehicle_distributor_tilelayout_1, vehicle_distributor_tilelayout_2, vehicle_distributor_tilelayout_3];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_VEHICLE_DISTRIBUTOR);
@@ -367,6 +373,14 @@ if (param_extension_vehicle) {
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("VEHI"),accept_cargo("TYRE"),accept_cargo("VPTS")];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_DISTRIBUTOR));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {

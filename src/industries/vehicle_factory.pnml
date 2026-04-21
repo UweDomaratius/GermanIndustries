@@ -1933,7 +1933,6 @@ if (!param_extension_aluminium && !param_extension_painting_industries && !param
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [vehicle_factory_tilelayout_1,vehicle_factory_tilelayout_2,vehicle_factory_tilelayout_3,vehicle_factory_tilelayout_4];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_VEHICLE_FACTORY);
@@ -1943,6 +1942,14 @@ if (!param_extension_aluminium && !param_extension_painting_industries && !param
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("STEL"),accept_cargo("PLAS"),produce_cargo("VEHI",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_FACTORY));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1968,7 +1975,6 @@ if (param_extension_aluminium && !param_extension_painting_industries && !param_
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [vehicle_factory_tilelayout_1,vehicle_factory_tilelayout_2,vehicle_factory_tilelayout_3,vehicle_factory_tilelayout_4];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_VEHICLE_FACTORY);
@@ -1978,6 +1984,14 @@ if (param_extension_aluminium && !param_extension_painting_industries && !param_
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("STEL"),accept_cargo("PLAS"),accept_cargo("ALUM"),produce_cargo("VEHI",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_FACTORY));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -2003,7 +2017,6 @@ if (!param_extension_aluminium && param_extension_painting_industries && !param_
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [vehicle_factory_tilelayout_1,vehicle_factory_tilelayout_2,vehicle_factory_tilelayout_3,vehicle_factory_tilelayout_4];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_VEHICLE_FACTORY);
@@ -2013,6 +2026,14 @@ if (!param_extension_aluminium && param_extension_painting_industries && !param_
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("STEL"),accept_cargo("PLAS"),accept_cargo("COAT"),produce_cargo("VEHI",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_FACTORY));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -2039,7 +2060,6 @@ if (param_extension_aluminium && param_extension_painting_industries && !param_e
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [vehicle_factory_tilelayout_1,vehicle_factory_tilelayout_2,vehicle_factory_tilelayout_3,vehicle_factory_tilelayout_4];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_VEHICLE_FACTORY);
@@ -2049,6 +2069,14 @@ if (param_extension_aluminium && param_extension_painting_industries && !param_e
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("STEL"),accept_cargo("PLAS"),accept_cargo("COAT"),accept_cargo("ALUM"),produce_cargo("VEHI",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_FACTORY));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -2075,7 +2103,6 @@ if (!param_extension_aluminium && !param_extension_painting_industries && param_
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [vehicle_factory_tilelayout_1,vehicle_factory_tilelayout_2,vehicle_factory_tilelayout_3,vehicle_factory_tilelayout_4];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_VEHICLE_FACTORY);
@@ -2085,6 +2112,14 @@ if (!param_extension_aluminium && !param_extension_painting_industries && param_
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("STEL"),accept_cargo("PLAS"),accept_cargo("GLAS"),produce_cargo("VEHI",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_FACTORY));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -2110,7 +2145,6 @@ if (param_extension_aluminium && !param_extension_painting_industries && param_e
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [vehicle_factory_tilelayout_1,vehicle_factory_tilelayout_2,vehicle_factory_tilelayout_3,vehicle_factory_tilelayout_4];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_VEHICLE_FACTORY);
@@ -2120,6 +2154,14 @@ if (param_extension_aluminium && !param_extension_painting_industries && param_e
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("STEL"),accept_cargo("PLAS"),accept_cargo("ALUM"),accept_cargo("GLAS"),produce_cargo("VEHI",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_FACTORY));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -2145,7 +2187,6 @@ if (!param_extension_aluminium && param_extension_painting_industries && param_e
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [vehicle_factory_tilelayout_1,vehicle_factory_tilelayout_2,vehicle_factory_tilelayout_3,vehicle_factory_tilelayout_4];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_VEHICLE_FACTORY);
@@ -2155,6 +2196,14 @@ if (!param_extension_aluminium && param_extension_painting_industries && param_e
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("STEL"),accept_cargo("PLAS"),accept_cargo("COAT"),accept_cargo("GLAS"),produce_cargo("VEHI",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_FACTORY));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -2181,7 +2230,6 @@ if (param_extension_aluminium && param_extension_painting_industries && param_ex
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [vehicle_factory_tilelayout_1,vehicle_factory_tilelayout_2,vehicle_factory_tilelayout_3,vehicle_factory_tilelayout_4];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_VEHICLE_FACTORY);
@@ -2191,6 +2239,14 @@ if (param_extension_aluminium && param_extension_painting_industries && param_ex
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("STEL"),accept_cargo("PLAS"),accept_cargo("COAT"),accept_cargo("ALUM"),accept_cargo("GLAS"),produce_cargo("VEHI",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_FACTORY));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -2217,7 +2273,6 @@ if (!param_extension_painting_industries && !param_extension_glass && param_exte
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [vehicle_factory_tilelayout_1,vehicle_factory_tilelayout_2,vehicle_factory_tilelayout_3,vehicle_factory_tilelayout_4];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_VEHICLE_FACTORY);
@@ -2227,6 +2282,14 @@ if (!param_extension_painting_industries && !param_extension_glass && param_exte
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("PLAS"),accept_cargo("STSH"),accept_cargo("STWR"),accept_cargo("ENSP"),produce_cargo("VEHI",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_FACTORY));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -2253,7 +2316,6 @@ if (param_extension_painting_industries && !param_extension_glass && param_exten
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [vehicle_factory_tilelayout_1,vehicle_factory_tilelayout_2,vehicle_factory_tilelayout_3,vehicle_factory_tilelayout_4];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_VEHICLE_FACTORY);
@@ -2263,6 +2325,14 @@ if (param_extension_painting_industries && !param_extension_glass && param_exten
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("PLAS"),accept_cargo("COAT"),accept_cargo("STSH"),accept_cargo("STWR"),accept_cargo("ENSP"),produce_cargo("VEHI",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_FACTORY));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -2289,7 +2359,6 @@ if (!param_extension_painting_industries && param_extension_glass && param_exten
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [vehicle_factory_tilelayout_1,vehicle_factory_tilelayout_2,vehicle_factory_tilelayout_3,vehicle_factory_tilelayout_4];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_VEHICLE_FACTORY);
@@ -2299,6 +2368,14 @@ if (!param_extension_painting_industries && param_extension_glass && param_exten
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("PLAS"),accept_cargo("GLAS"),accept_cargo("STSH"),accept_cargo("STWR"),accept_cargo("ENSP"),produce_cargo("VEHI",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_FACTORY));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -2324,7 +2401,6 @@ if (param_extension_painting_industries && param_extension_glass && param_extens
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [vehicle_factory_tilelayout_1,vehicle_factory_tilelayout_2,vehicle_factory_tilelayout_3,vehicle_factory_tilelayout_4];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_VEHICLE_FACTORY);
@@ -2334,6 +2410,14 @@ if (param_extension_painting_industries && param_extension_glass && param_extens
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("PLAS"),accept_cargo("COAT"),accept_cargo("GLAS"),accept_cargo("STSH"),accept_cargo("STWR"),accept_cargo("ENSP"),produce_cargo("VEHI",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_FACTORY));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -2359,7 +2443,6 @@ if (param_extension_vehicle) {
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [vehicle_factory_tilelayout_1,vehicle_factory_tilelayout_2,vehicle_factory_tilelayout_3,vehicle_factory_tilelayout_4];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_VEHICLE_FACTORY);
@@ -2369,6 +2452,14 @@ if (param_extension_vehicle) {
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("VBOD"),accept_cargo("VENG"),accept_cargo("TYRE"),accept_cargo("VPTS"),produce_cargo("VEHI",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_VEHICLE_FACTORY));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {

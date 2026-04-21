@@ -1459,7 +1459,6 @@ if (param_extension_painting_industries && !param_extension_coke_sulphur && !par
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [copper_smelter_tilelayout_1, copper_smelter_tilelayout_2, copper_smelter_tilelayout_3];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_COPPER_SMELTER);
@@ -1469,6 +1468,14 @@ if (param_extension_painting_industries && !param_extension_coke_sulphur && !par
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CORE"),produce_cargo("COPR",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_COPPER_SMELTER));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1495,7 +1502,6 @@ if (param_extension_painting_industries && param_extension_coke_sulphur && !para
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [copper_smelter_tilelayout_1, copper_smelter_tilelayout_2, copper_smelter_tilelayout_3];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_COPPER_SMELTER);
@@ -1505,6 +1511,14 @@ if (param_extension_painting_industries && param_extension_coke_sulphur && !para
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CORE"),accept_cargo("ACID"),produce_cargo("COPR",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_COPPER_SMELTER));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1531,7 +1545,6 @@ if (param_extension_painting_industries && !param_extension_coke_sulphur && para
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [copper_smelter_tilelayout_1, copper_smelter_tilelayout_2, copper_smelter_tilelayout_3];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_COPPER_SMELTER);
@@ -1541,6 +1554,14 @@ if (param_extension_painting_industries && !param_extension_coke_sulphur && para
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CORE"),accept_cargo("SCMT"),produce_cargo("COPR",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_COPPER_SMELTER));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1567,7 +1588,6 @@ if (param_extension_painting_industries && param_extension_coke_sulphur && param
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [copper_smelter_tilelayout_1, copper_smelter_tilelayout_2, copper_smelter_tilelayout_3];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_COPPER_SMELTER);
@@ -1577,6 +1597,14 @@ if (param_extension_painting_industries && param_extension_coke_sulphur && param
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CORE"),accept_cargo("ACID"),accept_cargo("SCMT"),produce_cargo("COPR",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_COPPER_SMELTER));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {

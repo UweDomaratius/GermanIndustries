@@ -2395,7 +2395,6 @@ if (!param_extension_aluminium && !param_extension_painting_industries && !param
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [port_tilelayout_1,port_tilelayout_2,port_tilelayout_3,port_tilelayout_4,port_tilelayout_5];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_BUILT_ON_WATER);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PORT);
@@ -2406,6 +2405,14 @@ if (!param_extension_aluminium && !param_extension_painting_industries && !param
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_BUILT_ON_WATER); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_BUILT_ON_WATER, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -2430,7 +2437,6 @@ if (param_extension_aluminium && !param_extension_painting_industries && !param_
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [port_tilelayout_1,port_tilelayout_2,port_tilelayout_3,port_tilelayout_4,port_tilelayout_5];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_BUILT_ON_WATER);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PORT);
@@ -2441,6 +2447,14 @@ if (param_extension_aluminium && !param_extension_painting_industries && !param_
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("AORE",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_BUILT_ON_WATER); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_BUILT_ON_WATER, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -2465,7 +2479,6 @@ if (!param_extension_aluminium && param_extension_painting_industries && !param_
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [port_tilelayout_1,port_tilelayout_2,port_tilelayout_3,port_tilelayout_4,port_tilelayout_5];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_BUILT_ON_WATER);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PORT);
@@ -2476,6 +2489,14 @@ if (!param_extension_aluminium && param_extension_painting_industries && !param_
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("CORE",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_BUILT_ON_WATER); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_BUILT_ON_WATER, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -2500,7 +2521,6 @@ if (param_extension_aluminium && param_extension_painting_industries && !param_e
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [port_tilelayout_1,port_tilelayout_2,port_tilelayout_3,port_tilelayout_4,port_tilelayout_5];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_BUILT_ON_WATER);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PORT);
@@ -2511,6 +2531,14 @@ if (param_extension_aluminium && param_extension_painting_industries && !param_e
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("AORE",0),produce_cargo("CORE",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_BUILT_ON_WATER); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_BUILT_ON_WATER, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -2535,7 +2563,6 @@ if (!param_extension_aluminium && !param_extension_painting_industries && param_
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [port_tilelayout_1,port_tilelayout_2,port_tilelayout_3,port_tilelayout_4,port_tilelayout_5];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_BUILT_ON_WATER);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PORT);
@@ -2546,6 +2573,14 @@ if (!param_extension_aluminium && !param_extension_painting_industries && param_
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("PORE",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_BUILT_ON_WATER); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_BUILT_ON_WATER, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -2570,7 +2605,6 @@ if (param_extension_aluminium && !param_extension_painting_industries && param_e
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [port_tilelayout_1,port_tilelayout_2,port_tilelayout_3,port_tilelayout_4,port_tilelayout_5];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_BUILT_ON_WATER);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PORT);
@@ -2581,6 +2615,14 @@ if (param_extension_aluminium && !param_extension_painting_industries && param_e
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("AORE",0),produce_cargo("PORE",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_BUILT_ON_WATER); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_BUILT_ON_WATER, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -2605,7 +2647,6 @@ if (!param_extension_aluminium && param_extension_painting_industries && param_e
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [port_tilelayout_1,port_tilelayout_2,port_tilelayout_3,port_tilelayout_4,port_tilelayout_5];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_BUILT_ON_WATER);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PORT);
@@ -2616,6 +2657,14 @@ if (!param_extension_aluminium && param_extension_painting_industries && param_e
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("PORE",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_BUILT_ON_WATER); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_BUILT_ON_WATER, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -2640,7 +2689,6 @@ if (param_extension_aluminium && param_extension_painting_industries && param_ex
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [port_tilelayout_1,port_tilelayout_2,port_tilelayout_3,port_tilelayout_4,port_tilelayout_5];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_BUILT_ON_WATER);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PORT);
@@ -2651,6 +2699,14 @@ if (param_extension_aluminium && param_extension_painting_industries && param_ex
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("AORE",0),produce_cargo("PORE",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_BUILT_ON_WATER); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_BUILT_ON_WATER, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -2674,7 +2730,6 @@ if (!param_extension_aluminium && !param_extension_painting_industries && !param
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [port_tilelayout_1,port_tilelayout_2,port_tilelayout_3,port_tilelayout_4,port_tilelayout_5];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_BUILT_ON_WATER);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PORT);
@@ -2685,6 +2740,14 @@ if (!param_extension_aluminium && !param_extension_painting_industries && !param
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("RUBR",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_BUILT_ON_WATER); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_BUILT_ON_WATER, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -2709,7 +2772,6 @@ if (param_extension_aluminium && !param_extension_painting_industries && !param_
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [port_tilelayout_1,port_tilelayout_2,port_tilelayout_3,port_tilelayout_4,port_tilelayout_5];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_BUILT_ON_WATER);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PORT);
@@ -2720,6 +2782,14 @@ if (param_extension_aluminium && !param_extension_painting_industries && !param_
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("AORE",0),produce_cargo("RUBR",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_BUILT_ON_WATER); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_BUILT_ON_WATER, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -2744,7 +2814,6 @@ if (!param_extension_aluminium && param_extension_painting_industries && !param_
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [port_tilelayout_1,port_tilelayout_2,port_tilelayout_3,port_tilelayout_4,port_tilelayout_5];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_BUILT_ON_WATER);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PORT);
@@ -2755,6 +2824,14 @@ if (!param_extension_aluminium && param_extension_painting_industries && !param_
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("CORE",0),produce_cargo("RUBR",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_BUILT_ON_WATER); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_BUILT_ON_WATER, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -2779,7 +2856,6 @@ if (param_extension_aluminium && param_extension_painting_industries && !param_e
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [port_tilelayout_1,port_tilelayout_2,port_tilelayout_3,port_tilelayout_4,port_tilelayout_5];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_BUILT_ON_WATER);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PORT);
@@ -2790,6 +2866,14 @@ if (param_extension_aluminium && param_extension_painting_industries && !param_e
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("AORE",0),produce_cargo("CORE",0),produce_cargo("RUBR",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_BUILT_ON_WATER); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_BUILT_ON_WATER, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -2814,7 +2898,6 @@ if (!param_extension_aluminium && !param_extension_painting_industries && param_
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [port_tilelayout_1,port_tilelayout_2,port_tilelayout_3,port_tilelayout_4,port_tilelayout_5];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_BUILT_ON_WATER);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PORT);
@@ -2825,6 +2908,14 @@ if (!param_extension_aluminium && !param_extension_painting_industries && param_
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("PORE",0),produce_cargo("RUBR",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_BUILT_ON_WATER); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_BUILT_ON_WATER, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -2849,7 +2940,6 @@ if (param_extension_aluminium && !param_extension_painting_industries && param_e
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [port_tilelayout_1,port_tilelayout_2,port_tilelayout_3,port_tilelayout_4,port_tilelayout_5];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_BUILT_ON_WATER);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PORT);
@@ -2860,6 +2950,14 @@ if (param_extension_aluminium && !param_extension_painting_industries && param_e
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("AORE",0),produce_cargo("PORE",0),produce_cargo("RUBR",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_BUILT_ON_WATER); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_BUILT_ON_WATER, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -2884,7 +2982,6 @@ if (!param_extension_aluminium && param_extension_painting_industries && param_e
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [port_tilelayout_1,port_tilelayout_2,port_tilelayout_3,port_tilelayout_4,port_tilelayout_5];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_BUILT_ON_WATER);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PORT);
@@ -2895,6 +2992,14 @@ if (!param_extension_aluminium && param_extension_painting_industries && param_e
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("PORE",0),produce_cargo("RUBR",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_BUILT_ON_WATER); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_BUILT_ON_WATER, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -2919,7 +3024,6 @@ if (param_extension_aluminium && param_extension_painting_industries && param_ex
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [port_tilelayout_1,port_tilelayout_2,port_tilelayout_3,port_tilelayout_4,port_tilelayout_5];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS,IND_FLAG_BUILT_ON_WATER);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PORT);
@@ -2930,6 +3034,14 @@ if (param_extension_aluminium && param_extension_painting_industries && param_ex
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("GOOD"),accept_cargo("VEHI"),produce_cargo("COAL",0),produce_cargo("OIL_",0),produce_cargo("IORE",0),produce_cargo("AORE",0),produce_cargo("PORE",0),produce_cargo("RUBR",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PORT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_BUILT_ON_WATER); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_BUILT_ON_WATER, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {

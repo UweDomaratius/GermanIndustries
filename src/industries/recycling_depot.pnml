@@ -284,7 +284,6 @@ if (param_extension_recycling && (param_extension_glass || param_extension_paper
 			life_type: IND_LIFE_TYPE_ORGANIC;
 			min_cargo_distr: 1;
 			layouts: [recycling_depot_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_RECYCLING_DEPOT);
@@ -294,6 +293,14 @@ if (param_extension_recycling && (param_extension_glass || param_extension_paper
 			remove_cost_multiplier: 0;
 			cargo_types: [produce_cargo("RCYC",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_RECYCLING_DEPOT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {

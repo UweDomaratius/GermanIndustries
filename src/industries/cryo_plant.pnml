@@ -817,7 +817,6 @@ if (param_extension_ammonia) {
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [cryo_plant_industry_layout_1_tilelayout,cryo_plant_industry_layout_2_tilelayout,cryo_plant_industry_layout_3_tilelayout,cryo_plant_industry_layout_4_tilelayout,cryo_plant_industry_layout_5_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_CRYO_PLANT);
@@ -828,6 +827,14 @@ if (param_extension_ammonia) {
 			remove_cost_multiplier: 0;
 			cargo_types: [produce_cargo("O2__",0), produce_cargo("N2__",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_CRYO_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 	
 		graphics {

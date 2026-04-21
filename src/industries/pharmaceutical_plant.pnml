@@ -1847,7 +1847,6 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_indu
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [pharmaceutical_plant_industry_layout_1_tilelayout,pharmaceutical_plant_industry_layout_2_tilelayout,pharmaceutical_plant_industry_layout_3_tilelayout,pharmaceutical_plant_industry_layout_4_tilelayout,pharmaceutical_plant_industry_layout_5_tilelayout,pharmaceutical_plant_industry_layout_6_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PHARMACEUTICAL_PLANT);
@@ -1857,6 +1856,14 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_indu
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1883,7 +1890,6 @@ if (param_extension_basic_inorganic_chemistry && param_extension_packaging_indus
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [pharmaceutical_plant_industry_layout_1_tilelayout,pharmaceutical_plant_industry_layout_2_tilelayout,pharmaceutical_plant_industry_layout_3_tilelayout,pharmaceutical_plant_industry_layout_4_tilelayout,pharmaceutical_plant_industry_layout_5_tilelayout,pharmaceutical_plant_industry_layout_6_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PHARMACEUTICAL_PLANT);
@@ -1893,6 +1899,14 @@ if (param_extension_basic_inorganic_chemistry && param_extension_packaging_indus
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("MNSP"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1919,7 +1933,6 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_indu
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [pharmaceutical_plant_industry_layout_1_tilelayout,pharmaceutical_plant_industry_layout_2_tilelayout,pharmaceutical_plant_industry_layout_3_tilelayout,pharmaceutical_plant_industry_layout_4_tilelayout,pharmaceutical_plant_industry_layout_5_tilelayout,pharmaceutical_plant_industry_layout_6_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PHARMACEUTICAL_PLANT);
@@ -1929,6 +1942,14 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_indu
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("C2H4"),accept_cargo("RFPR"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1955,7 +1976,6 @@ if (param_extension_basic_inorganic_chemistry && param_extension_packaging_indus
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [pharmaceutical_plant_industry_layout_1_tilelayout,pharmaceutical_plant_industry_layout_2_tilelayout,pharmaceutical_plant_industry_layout_3_tilelayout,pharmaceutical_plant_industry_layout_4_tilelayout,pharmaceutical_plant_industry_layout_5_tilelayout,pharmaceutical_plant_industry_layout_6_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PHARMACEUTICAL_PLANT);
@@ -1965,6 +1985,14 @@ if (param_extension_basic_inorganic_chemistry && param_extension_packaging_indus
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("C2H4"),accept_cargo("RFPR"),accept_cargo("MNSP"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1991,7 +2019,6 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_indu
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [pharmaceutical_plant_industry_layout_1_tilelayout,pharmaceutical_plant_industry_layout_2_tilelayout,pharmaceutical_plant_industry_layout_3_tilelayout,pharmaceutical_plant_industry_layout_4_tilelayout,pharmaceutical_plant_industry_layout_5_tilelayout,pharmaceutical_plant_industry_layout_6_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PHARMACEUTICAL_PLANT);
@@ -2001,6 +2028,14 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_indu
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("ACID"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -2027,7 +2062,6 @@ if (param_extension_basic_inorganic_chemistry && param_extension_packaging_indus
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [pharmaceutical_plant_industry_layout_1_tilelayout,pharmaceutical_plant_industry_layout_2_tilelayout,pharmaceutical_plant_industry_layout_3_tilelayout,pharmaceutical_plant_industry_layout_4_tilelayout,pharmaceutical_plant_industry_layout_5_tilelayout,pharmaceutical_plant_industry_layout_6_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PHARMACEUTICAL_PLANT);
@@ -2037,6 +2071,14 @@ if (param_extension_basic_inorganic_chemistry && param_extension_packaging_indus
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("MNSP"),accept_cargo("ACID"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -2063,7 +2105,6 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_indu
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [pharmaceutical_plant_industry_layout_1_tilelayout,pharmaceutical_plant_industry_layout_2_tilelayout,pharmaceutical_plant_industry_layout_3_tilelayout,pharmaceutical_plant_industry_layout_4_tilelayout,pharmaceutical_plant_industry_layout_5_tilelayout,pharmaceutical_plant_industry_layout_6_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PHARMACEUTICAL_PLANT);
@@ -2073,6 +2114,14 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_indu
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("C2H4"),accept_cargo("RFPR"),accept_cargo("ACID"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -2099,7 +2148,6 @@ if (param_extension_basic_inorganic_chemistry && param_extension_packaging_indus
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [pharmaceutical_plant_industry_layout_1_tilelayout,pharmaceutical_plant_industry_layout_2_tilelayout,pharmaceutical_plant_industry_layout_3_tilelayout,pharmaceutical_plant_industry_layout_4_tilelayout,pharmaceutical_plant_industry_layout_5_tilelayout,pharmaceutical_plant_industry_layout_6_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PHARMACEUTICAL_PLANT);
@@ -2109,6 +2157,14 @@ if (param_extension_basic_inorganic_chemistry && param_extension_packaging_indus
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("C2H4"),accept_cargo("RFPR"),accept_cargo("MNSP"),accept_cargo("ACID"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -2135,7 +2191,6 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_indu
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [pharmaceutical_plant_industry_layout_1_tilelayout,pharmaceutical_plant_industry_layout_2_tilelayout,pharmaceutical_plant_industry_layout_3_tilelayout,pharmaceutical_plant_industry_layout_4_tilelayout,pharmaceutical_plant_industry_layout_5_tilelayout,pharmaceutical_plant_industry_layout_6_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PHARMACEUTICAL_PLANT);
@@ -2145,6 +2200,14 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_indu
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("O2__"),accept_cargo("NH3_"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -2171,7 +2234,6 @@ if (param_extension_basic_inorganic_chemistry && param_extension_packaging_indus
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [pharmaceutical_plant_industry_layout_1_tilelayout,pharmaceutical_plant_industry_layout_2_tilelayout,pharmaceutical_plant_industry_layout_3_tilelayout,pharmaceutical_plant_industry_layout_4_tilelayout,pharmaceutical_plant_industry_layout_5_tilelayout,pharmaceutical_plant_industry_layout_6_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PHARMACEUTICAL_PLANT);
@@ -2181,6 +2243,14 @@ if (param_extension_basic_inorganic_chemistry && param_extension_packaging_indus
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("MNSP"),accept_cargo("O2__"),accept_cargo("NH3_"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -2207,7 +2277,6 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_indu
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [pharmaceutical_plant_industry_layout_1_tilelayout,pharmaceutical_plant_industry_layout_2_tilelayout,pharmaceutical_plant_industry_layout_3_tilelayout,pharmaceutical_plant_industry_layout_4_tilelayout,pharmaceutical_plant_industry_layout_5_tilelayout,pharmaceutical_plant_industry_layout_6_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PHARMACEUTICAL_PLANT);
@@ -2217,6 +2286,14 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_indu
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("C2H4"),accept_cargo("RFPR"),accept_cargo("O2__"),accept_cargo("NH3_"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -2243,7 +2320,6 @@ if (param_extension_basic_inorganic_chemistry && param_extension_packaging_indus
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [pharmaceutical_plant_industry_layout_1_tilelayout,pharmaceutical_plant_industry_layout_2_tilelayout,pharmaceutical_plant_industry_layout_3_tilelayout,pharmaceutical_plant_industry_layout_4_tilelayout,pharmaceutical_plant_industry_layout_5_tilelayout,pharmaceutical_plant_industry_layout_6_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PHARMACEUTICAL_PLANT);
@@ -2253,6 +2329,14 @@ if (param_extension_basic_inorganic_chemistry && param_extension_packaging_indus
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("C2H4"),accept_cargo("RFPR"),accept_cargo("MNSP"),accept_cargo("O2__"),accept_cargo("NH3_"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -2279,7 +2363,6 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_indu
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [pharmaceutical_plant_industry_layout_1_tilelayout,pharmaceutical_plant_industry_layout_2_tilelayout,pharmaceutical_plant_industry_layout_3_tilelayout,pharmaceutical_plant_industry_layout_4_tilelayout,pharmaceutical_plant_industry_layout_5_tilelayout,pharmaceutical_plant_industry_layout_6_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PHARMACEUTICAL_PLANT);
@@ -2289,6 +2372,14 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_indu
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("ACID"),accept_cargo("O2__"),accept_cargo("NH3_"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -2315,7 +2406,6 @@ if (param_extension_basic_inorganic_chemistry && param_extension_packaging_indus
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [pharmaceutical_plant_industry_layout_1_tilelayout,pharmaceutical_plant_industry_layout_2_tilelayout,pharmaceutical_plant_industry_layout_3_tilelayout,pharmaceutical_plant_industry_layout_4_tilelayout,pharmaceutical_plant_industry_layout_5_tilelayout,pharmaceutical_plant_industry_layout_6_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PHARMACEUTICAL_PLANT);
@@ -2325,6 +2415,14 @@ if (param_extension_basic_inorganic_chemistry && param_extension_packaging_indus
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("MNSP"),accept_cargo("ACID"),accept_cargo("O2__"),accept_cargo("NH3_"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -2351,7 +2449,6 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_indu
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [pharmaceutical_plant_industry_layout_1_tilelayout,pharmaceutical_plant_industry_layout_2_tilelayout,pharmaceutical_plant_industry_layout_3_tilelayout,pharmaceutical_plant_industry_layout_4_tilelayout,pharmaceutical_plant_industry_layout_5_tilelayout,pharmaceutical_plant_industry_layout_6_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PHARMACEUTICAL_PLANT);
@@ -2361,6 +2458,14 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_packaging_indu
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("C2H4"),accept_cargo("RFPR"),accept_cargo("ACID"),accept_cargo("O2__"),accept_cargo("NH3_"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -2387,7 +2492,6 @@ if (param_extension_basic_inorganic_chemistry && param_extension_packaging_indus
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [pharmaceutical_plant_industry_layout_1_tilelayout,pharmaceutical_plant_industry_layout_2_tilelayout,pharmaceutical_plant_industry_layout_3_tilelayout,pharmaceutical_plant_industry_layout_4_tilelayout,pharmaceutical_plant_industry_layout_5_tilelayout,pharmaceutical_plant_industry_layout_6_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PHARMACEUTICAL_PLANT);
@@ -2397,6 +2501,14 @@ if (param_extension_basic_inorganic_chemistry && param_extension_packaging_indus
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("CHLO"),accept_cargo("H2__"),accept_cargo("C2H4"),accept_cargo("RFPR"),accept_cargo("MNSP"),accept_cargo("ACID"),accept_cargo("O2__"),accept_cargo("NH3_"),produce_cargo("GOOD",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PHARMACEUTICAL_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {

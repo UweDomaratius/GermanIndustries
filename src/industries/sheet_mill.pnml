@@ -1473,7 +1473,6 @@ if (param_extension_metallurgy && !param_extension_aluminium && !param_extension
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [sheet_mill_tilelayout_1,sheet_mill_tilelayout_2,sheet_mill_tilelayout_3,sheet_mill_tilelayout_4,sheet_mill_tilelayout_5,sheet_mill_tilelayout_6,sheet_mill_tilelayout_7,sheet_mill_tilelayout_8];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_SHEET_MILL);
@@ -1483,6 +1482,14 @@ if (param_extension_metallurgy && !param_extension_aluminium && !param_extension
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("STEL"),accept_cargo("ACID"),accept_cargo("LYE_"),produce_cargo("STSH",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_SHEET_MILL));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1509,7 +1516,6 @@ if (param_extension_metallurgy && param_extension_aluminium && !param_extension_
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [sheet_mill_tilelayout_1,sheet_mill_tilelayout_2,sheet_mill_tilelayout_3,sheet_mill_tilelayout_4,sheet_mill_tilelayout_5,sheet_mill_tilelayout_6,sheet_mill_tilelayout_7,sheet_mill_tilelayout_8];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_SHEET_MILL);
@@ -1519,6 +1525,14 @@ if (param_extension_metallurgy && param_extension_aluminium && !param_extension_
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("STEL"),accept_cargo("ACID"),accept_cargo("LYE_"),accept_cargo("ALUM"),produce_cargo("STSH",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_SHEET_MILL));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1545,7 +1559,6 @@ if (param_extension_metallurgy && !param_extension_aluminium && param_extension_
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [sheet_mill_tilelayout_1,sheet_mill_tilelayout_2,sheet_mill_tilelayout_3,sheet_mill_tilelayout_4,sheet_mill_tilelayout_5,sheet_mill_tilelayout_6,sheet_mill_tilelayout_7,sheet_mill_tilelayout_8];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_SHEET_MILL);
@@ -1555,6 +1568,14 @@ if (param_extension_metallurgy && !param_extension_aluminium && param_extension_
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("STEL"),accept_cargo("ACID"),accept_cargo("LYE_"),produce_cargo("STSH",0),produce_cargo("SCMT",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_SHEET_MILL));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1581,7 +1602,6 @@ if (param_extension_metallurgy && param_extension_aluminium && param_extension_r
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [sheet_mill_tilelayout_1,sheet_mill_tilelayout_2,sheet_mill_tilelayout_3,sheet_mill_tilelayout_4,sheet_mill_tilelayout_5,sheet_mill_tilelayout_6,sheet_mill_tilelayout_7,sheet_mill_tilelayout_8];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_SHEET_MILL);
@@ -1591,6 +1611,14 @@ if (param_extension_metallurgy && param_extension_aluminium && param_extension_r
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("STEL"),accept_cargo("ACID"),accept_cargo("LYE_"),accept_cargo("ALUM"),produce_cargo("STSH",0),produce_cargo("SCMT",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_SHEET_MILL));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {

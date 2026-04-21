@@ -720,7 +720,7 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_production_boo
 			life_type: IND_LIFE_TYPE_EXTRACTIVE;
 			min_cargo_distr: 1;
 			layouts: [salt_mine_industry_layout_1_tilelayout,salt_mine_industry_layout_2_tilelayout,salt_mine_industry_layout_3_tilelayout,salt_mine_industry_layout_4_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_SALT_MINE);
@@ -755,7 +755,7 @@ if (param_extension_basic_inorganic_chemistry && param_extension_production_boos
 			life_type: IND_LIFE_TYPE_EXTRACTIVE;
 			min_cargo_distr: 1;
 			layouts: [salt_mine_industry_layout_1_tilelayout,salt_mine_industry_layout_2_tilelayout,salt_mine_industry_layout_3_tilelayout,salt_mine_industry_layout_4_tilelayout];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_SALT_MINE);

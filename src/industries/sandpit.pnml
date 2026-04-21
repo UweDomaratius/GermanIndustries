@@ -1216,7 +1216,7 @@ item(FEAT_INDUSTRIES, sandpit, INDUSTRY_ID_SANDPIT) {
 		life_type: IND_LIFE_TYPE_EXTRACTIVE;
 		min_cargo_distr: 1;
 		layouts: [sandpit_layout_1_tilelayout,sandpit_layout_2_tilelayout];
-		spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
+		spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE);
 		conflicting_ind_types: [];
 		random_sound_effects: [];
 		name: string(STR_IND_SANDPIT);

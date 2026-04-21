@@ -1552,7 +1552,6 @@ if (!param_extension_basic_inorganic_chemistry && !param_extension_painting_indu
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [plastics_plant_tilelayout_1,plastics_plant_tilelayout_2,plastics_plant_tilelayout_3,plastics_plant_tilelayout_4,plastics_plant_tilelayout_5,plastics_plant_tilelayout_6,plastics_plant_tilelayout_7];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PLASTICS_PLANT);
@@ -1562,6 +1561,14 @@ if (!param_extension_basic_inorganic_chemistry && !param_extension_painting_indu
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("OIL_"),produce_cargo("PLAS",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PLASTICS_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1588,7 +1595,6 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_painting_indus
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [plastics_plant_tilelayout_1,plastics_plant_tilelayout_2,plastics_plant_tilelayout_3,plastics_plant_tilelayout_4,plastics_plant_tilelayout_5,plastics_plant_tilelayout_6,plastics_plant_tilelayout_7];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PLASTICS_PLANT);
@@ -1598,6 +1604,14 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_painting_indus
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("OIL_"),accept_cargo("CHLO"),produce_cargo("PLAS",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PLASTICS_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1624,7 +1638,6 @@ if (!param_extension_basic_inorganic_chemistry && param_extension_painting_indus
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [plastics_plant_tilelayout_1,plastics_plant_tilelayout_2,plastics_plant_tilelayout_3,plastics_plant_tilelayout_4,plastics_plant_tilelayout_5,plastics_plant_tilelayout_6,plastics_plant_tilelayout_7];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PLASTICS_PLANT);
@@ -1634,6 +1647,14 @@ if (!param_extension_basic_inorganic_chemistry && param_extension_painting_indus
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("OIL_"),accept_cargo("COAT"),produce_cargo("PLAS",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PLASTICS_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1660,7 +1681,6 @@ if (param_extension_basic_inorganic_chemistry && param_extension_painting_indust
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [plastics_plant_tilelayout_1,plastics_plant_tilelayout_2,plastics_plant_tilelayout_3,plastics_plant_tilelayout_4,plastics_plant_tilelayout_5,plastics_plant_tilelayout_6,plastics_plant_tilelayout_7];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PLASTICS_PLANT);
@@ -1670,6 +1690,14 @@ if (param_extension_basic_inorganic_chemistry && param_extension_painting_indust
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("OIL_"),accept_cargo("CHLO"),accept_cargo("COAT"),produce_cargo("PLAS",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PLASTICS_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1696,7 +1724,6 @@ if (!param_extension_basic_inorganic_chemistry && !param_extension_painting_indu
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [plastics_plant_tilelayout_1,plastics_plant_tilelayout_2,plastics_plant_tilelayout_3,plastics_plant_tilelayout_4,plastics_plant_tilelayout_5,plastics_plant_tilelayout_6,plastics_plant_tilelayout_7];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PLASTICS_PLANT);
@@ -1706,6 +1733,14 @@ if (!param_extension_basic_inorganic_chemistry && !param_extension_painting_indu
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("C2H4"),produce_cargo("PLAS",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PLASTICS_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1732,7 +1767,6 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_painting_indus
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [plastics_plant_tilelayout_1,plastics_plant_tilelayout_2,plastics_plant_tilelayout_3,plastics_plant_tilelayout_4,plastics_plant_tilelayout_5,plastics_plant_tilelayout_6,plastics_plant_tilelayout_7];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PLASTICS_PLANT);
@@ -1742,6 +1776,14 @@ if (param_extension_basic_inorganic_chemistry && !param_extension_painting_indus
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("C2H4"),accept_cargo("CHLO"),produce_cargo("PLAS",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PLASTICS_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1768,7 +1810,6 @@ if (!param_extension_basic_inorganic_chemistry && param_extension_painting_indus
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [plastics_plant_tilelayout_1,plastics_plant_tilelayout_2,plastics_plant_tilelayout_3,plastics_plant_tilelayout_4,plastics_plant_tilelayout_5,plastics_plant_tilelayout_6,plastics_plant_tilelayout_7];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PLASTICS_PLANT);
@@ -1778,6 +1819,14 @@ if (!param_extension_basic_inorganic_chemistry && param_extension_painting_indus
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("C2H4"),accept_cargo("COAT"),produce_cargo("PLAS",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PLASTICS_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
@@ -1804,7 +1853,6 @@ if (param_extension_basic_inorganic_chemistry && param_extension_painting_indust
 			life_type: IND_LIFE_TYPE_PROCESSING;
 			min_cargo_distr: 1;
 			layouts: [plastics_plant_tilelayout_1,plastics_plant_tilelayout_2,plastics_plant_tilelayout_3,plastics_plant_tilelayout_4,plastics_plant_tilelayout_5,plastics_plant_tilelayout_6,plastics_plant_tilelayout_7];
-			spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS);
 			conflicting_ind_types: [];
 			random_sound_effects: [];
 			name: string(STR_IND_PLASTICS_PLANT);
@@ -1814,6 +1862,14 @@ if (param_extension_basic_inorganic_chemistry && param_extension_painting_indust
 			remove_cost_multiplier: 0;
 			cargo_types: [accept_cargo("C2H4"),accept_cargo("CHLO"),accept_cargo("COAT"),produce_cargo("PLAS",0)];
 			nearby_station_name: string(STR_STATION, string(STR_TOWN),string(STR_STATION_PLASTICS_PLANT));
+		}
+		if (param_forbid_last_industry_closure)
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS); }
+		}
+		else
+		{
+			property { spec_flags: bitmask(IND_FLAG_LONG_CARGO_TYPE_LISTS, IND_FLAG_ALLOW_CLOSING_LAST_INSTANCE); }
 		}
 			
 		graphics {
