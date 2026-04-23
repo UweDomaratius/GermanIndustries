@@ -512,6 +512,15 @@ if (grf_future_status("DD\06\01")) {
 if (grf_future_status("\42\58\00\02")) {
 	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET, "Vanilla Industries in Stockpiling mode"));
 }
+if (grf_future_status("jdr\02")) {
+	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET, "wannaroo-tourist-set"));
+}
+if (grf_future_status("jdr\83")) {
+	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET, "wannaroo-basic-industries"));
+}
+if (grf_future_status("jdr\04")) {
+	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET, "wannaroo-tourist-industries"));
+}
 }
 
 
