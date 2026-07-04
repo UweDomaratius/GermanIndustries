@@ -658,10 +658,8 @@ switch(FEAT_INDUSTRIES, SELF, cryo_plant_set_new_production0,
 }
 
 switch(FEAT_INDUSTRIES, SELF, cryo_plant_change_production0,
-	[LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE0) != 0 && 
-	((LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE0) < 40) || LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE0) >= LOAD_TEMP(TEMP_REGISTER_TMP)) &&
-	 (LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) + 10 > LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0))
-	 // if production is limited due to missing optional things or so, it does not make sense to increase the theoretical maximum any further
+	[(LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE0) != 0 || LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0) == 0) && 
+	((LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE0) < 40) || LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE0) >= LOAD_TEMP(TEMP_REGISTER_TMP))
 	 ])
 {
 	1: cryo_plant_set_new_production0();
@@ -680,10 +678,8 @@ switch(FEAT_INDUSTRIES, SELF, cryo_plant_set_new_production1,
 }
 
 switch(FEAT_INDUSTRIES, SELF, cryo_plant_change_production1,
-	[LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE1) != 0 && 
-	((LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE1) < 40) || LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE1) >= LOAD_TEMP(TEMP_REGISTER_TMP)) &&
-	 (LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT1) + 10 > LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT1)) 
-	 // if production is limited due to missing optional things or so, it does not make sense to increase the theoretical maximum any further
+	[(LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE1) != 0 || LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT1) == 0) && 
+	((LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE1) < 40) || LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE1) >= LOAD_TEMP(TEMP_REGISTER_TMP))
 	 ])
 {
 	1: cryo_plant_set_new_production1();
@@ -691,7 +687,8 @@ switch(FEAT_INDUSTRIES, SELF, cryo_plant_change_production1,
 }
 
 switch(FEAT_INDUSTRIES, SELF, cryo_plant_change_production,
-	[cryo_plant_change_production0(),
+	[STORE_TEMP(cryo_plant_func_calc_max_prod(), TEMP_REGISTER_MAXIMUM_PRODUCTION),
+	 cryo_plant_change_production0(),
 	 cryo_plant_change_production1()
 	])
 {
