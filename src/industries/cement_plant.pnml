@@ -79,7 +79,7 @@ spritelayout cement_plant_spritelayout_1 {
 		xoffset: 0;		yoffset: 0;		zoffset: 0;
 		xextent: 16;	yextent: 16;	zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -127,7 +127,7 @@ spritelayout cement_plant_spritelayout_2 {
 		xoffset: 0;		yoffset: 0;		zoffset: 0;
 		xextent: 16;	yextent: 16;	zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}            
 	building {
 		sprite: TTD_FENCE_X;
@@ -175,7 +175,7 @@ spritelayout cement_plant_spritelayout_3 {
 		xoffset: 0;		yoffset: 0;		zoffset: 0;
 		xextent: 16;	yextent: 16;	zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -223,7 +223,7 @@ spritelayout cement_plant_spritelayout_4 {
 		xoffset: 0;		yoffset: 0;		zoffset: 0;
 		xextent: 16;	yextent: 16;	zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -271,7 +271,7 @@ spritelayout cement_plant_spritelayout_5 {
 		xoffset: 0;		yoffset: 0;		zoffset: 0;
 		xextent: 16;	yextent: 16;	zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -319,7 +319,7 @@ spritelayout cement_plant_spritelayout_6 {
 		xoffset: 0;		yoffset: 0;		zoffset: 0;
 		xextent: 16;	yextent: 16;	zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -367,7 +367,7 @@ spritelayout cement_plant_spritelayout_7 {
 		xoffset: 0;		yoffset: 0;		zoffset: 0;
 		xextent: 16;	yextent: 16;	zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -415,7 +415,7 @@ spritelayout cement_plant_spritelayout_8 {
 		xoffset: 0;		yoffset: 0;		zoffset: 0;
 		xextent: 16;	yextent: 16;	zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -463,7 +463,7 @@ spritelayout cement_plant_spritelayout_9 {
 		xoffset: 0;		yoffset: 0;		zoffset: 0;
 		xextent: 16;	yextent: 16;	zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -511,7 +511,7 @@ spritelayout cement_plant_spritelayout_10 {
 		xoffset: 0;		yoffset: 0;		zoffset: 0;
 		xextent: 16;	yextent: 16;	zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -559,7 +559,7 @@ spritelayout cement_plant_spritelayout_11 {
 		xoffset: 0;		yoffset: 0;		zoffset: 0;
 		xextent: 16;	yextent: 16;	zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_SMOKE_SPRITE_WHITE_BIG + ((animation_frame + 0)%8);
@@ -623,7 +623,7 @@ spritelayout cement_plant_spritelayout_clay_staithe {
 		xoffset: 0;		yoffset: 0;		zoffset: 0;
 		xextent: 16;	yextent: 16;	zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -671,7 +671,7 @@ spritelayout cement_plant_spritelayout_stone_staithe {
 		xoffset: 0;		yoffset: 0;		zoffset: 0;
 		xextent: 16;	yextent: 16;	zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;

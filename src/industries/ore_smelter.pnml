@@ -124,7 +124,7 @@ spritelayout ore_smelter_spritelayout_greeble {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -193,7 +193,7 @@ spritelayout ore_smelter_spritelayout_roaster_1 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -262,7 +262,7 @@ spritelayout ore_smelter_spritelayout_roaster_2 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_SMOKE_SPRITE_WHITE_BIG + ((animation_frame + 0)%8);
@@ -343,7 +343,7 @@ spritelayout ore_smelter_spritelayout_chimney {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_SMOKE_SPRITE_WHITE_BIG + ((animation_frame + 0)%8);
@@ -424,7 +424,7 @@ spritelayout ore_smelter_spritelayout_acid_plant_1 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -493,7 +493,7 @@ spritelayout ore_smelter_spritelayout_acid_plant_2 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -562,7 +562,7 @@ spritelayout ore_smelter_spritelayout_metal_1 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -631,7 +631,7 @@ spritelayout ore_smelter_spritelayout_metal_2 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -700,7 +700,7 @@ spritelayout ore_smelter_spritelayout_office {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;

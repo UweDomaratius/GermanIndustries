@@ -128,7 +128,7 @@ spritelayout coal_liquefaction_plant_spritelayout_oven_battery_pipes_only {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -196,7 +196,7 @@ spritelayout coal_liquefaction_plant_spritelayout_oven_battery_larry_car {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -264,7 +264,7 @@ spritelayout coal_liquefaction_plant_spritelayout_silo {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_SMOKE_SPRITE_WHITE_BIG + ((animation_frame + 0)%8);
@@ -344,7 +344,7 @@ spritelayout coal_liquefaction_plant_spritelayout_pusher_rails_empty {
 		yextent: 8;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: coal_liquefaction_plant_spriteset_7_0(0);
@@ -357,7 +357,7 @@ spritelayout coal_liquefaction_plant_spritelayout_pusher_rails_empty {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -425,7 +425,7 @@ spritelayout coal_liquefaction_plant_spritelayout_pusher_rails_animated {
 		yextent: 8;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: coal_liquefaction_plant_spriteset_6_0(0);
@@ -438,7 +438,7 @@ spritelayout coal_liquefaction_plant_spritelayout_pusher_rails_animated {
 		yextent: 8;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: coal_liquefaction_plant_spriteset_7_0(0);
@@ -451,7 +451,7 @@ spritelayout coal_liquefaction_plant_spritelayout_pusher_rails_animated {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -519,7 +519,7 @@ spritelayout coal_liquefaction_plant_spritelayout_pusher_rails_with_house {
 		yextent: 8;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: coal_liquefaction_plant_spriteset_8_0(0);
@@ -532,7 +532,7 @@ spritelayout coal_liquefaction_plant_spritelayout_pusher_rails_with_house {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -600,7 +600,7 @@ spritelayout coal_liquefaction_plant_spritelayout_quench_tower {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -668,7 +668,7 @@ spritelayout coal_liquefaction_plant_spritelayout_gas_plant_1 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -736,7 +736,7 @@ spritelayout coal_liquefaction_plant_spritelayout_coal_handling_front {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -804,7 +804,7 @@ spritelayout coal_liquefaction_plant_spritelayout_coal_handling_rear {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;

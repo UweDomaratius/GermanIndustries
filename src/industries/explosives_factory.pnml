@@ -67,7 +67,7 @@ spritelayout explosives_factory_spritelayout_paper_store_empty {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -120,7 +120,7 @@ spritelayout explosives_factory_spritelayout_paper_store_full {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -172,7 +172,7 @@ spritelayout explosives_factory_spritelayout_wood_store_forklift {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -224,7 +224,7 @@ spritelayout explosives_factory_spritelayout_wood_store_full {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -276,7 +276,7 @@ spritelayout explosives_factory_spritelayout_chemical_tanks {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -328,7 +328,7 @@ spritelayout explosives_factory_spritelayout_tall_building_1 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -380,7 +380,7 @@ spritelayout explosives_factory_spritelayout_tall_building_2 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -432,7 +432,7 @@ spritelayout explosives_factory_spritelayout_pulp_processor {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_SMOKE_SPRITE_WHITE_BIG + ((animation_frame + 0)%8);
@@ -496,7 +496,7 @@ spritelayout explosives_factory_spritelayout_boilerhouse {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;

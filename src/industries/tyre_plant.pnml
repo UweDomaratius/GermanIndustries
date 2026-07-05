@@ -62,7 +62,7 @@ spritelayout tyre_plant_spritelayout_silos {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -114,7 +114,7 @@ spritelayout tyre_plant_spritelayout_building_large_door {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -166,7 +166,7 @@ spritelayout tyre_plant_spritelayout_building_roof_chimneys {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -218,7 +218,7 @@ spritelayout tyre_plant_spritelayout_boilerhouse {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_SMOKE_SPRITE_WHITE_SMALL + (animation_frame / 4);
@@ -294,7 +294,7 @@ spritelayout tyre_plant_spritelayout_horizontal_tanks {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -346,7 +346,7 @@ spritelayout tyre_plant_spritelayout_gatehouse {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -398,7 +398,7 @@ spritelayout tyre_plant_spritelayout_tyres_1 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -450,7 +450,7 @@ spritelayout tyre_plant_spritelayout_tyres_2 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;

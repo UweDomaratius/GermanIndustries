@@ -62,7 +62,7 @@ spritelayout synthetic_rubber_plant_spritelayout_1 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_SMOKE_SPRITE_WHITE_BIG + ((animation_frame + 1)%8);
@@ -138,7 +138,7 @@ spritelayout synthetic_rubber_plant_spritelayout_2 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -190,7 +190,7 @@ spritelayout synthetic_rubber_plant_spritelayout_3 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -242,7 +242,7 @@ spritelayout synthetic_rubber_plant_spritelayout_4 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -294,7 +294,7 @@ spritelayout synthetic_rubber_plant_spritelayout_5 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -346,7 +346,7 @@ spritelayout synthetic_rubber_plant_spritelayout_6 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -398,7 +398,7 @@ spritelayout synthetic_rubber_plant_spritelayout_7 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -450,7 +450,7 @@ spritelayout synthetic_rubber_plant_spritelayout_8 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -502,7 +502,7 @@ spritelayout synthetic_rubber_plant_spritelayout_9 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -554,7 +554,7 @@ spritelayout synthetic_rubber_plant_spritelayout_10 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
