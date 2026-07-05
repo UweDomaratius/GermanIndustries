@@ -53,7 +53,7 @@ spritelayout vehicle_parts_plant_spritelayout_large_building_1 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -105,7 +105,7 @@ spritelayout vehicle_parts_plant_spritelayout_large_building_2 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -157,7 +157,7 @@ spritelayout vehicle_parts_plant_spritelayout_large_building_3 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -209,7 +209,7 @@ spritelayout vehicle_parts_plant_spritelayout_4 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -261,7 +261,7 @@ spritelayout vehicle_parts_plant_spritelayout_5 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;

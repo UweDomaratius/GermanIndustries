@@ -76,7 +76,7 @@ spritelayout potash_mine_spritelayout_headgear_animated {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 }
 spritelayout potash_mine_spritelayout_exit_trestle_animated {
@@ -96,7 +96,7 @@ spritelayout potash_mine_spritelayout_exit_trestle_animated {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 }
 spritelayout potash_mine_spritelayout_crusher_front_part {
@@ -116,7 +116,7 @@ spritelayout potash_mine_spritelayout_crusher_front_part {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 }
 spritelayout potash_mine_spritelayout_crusher_rear_part {
@@ -136,7 +136,7 @@ spritelayout potash_mine_spritelayout_crusher_rear_part {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 }
 spritelayout potash_mine_spritelayout_hut_vents {
@@ -156,7 +156,7 @@ spritelayout potash_mine_spritelayout_hut_vents {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 }
 spritelayout potash_mine_spritelayout_ore_1 {
@@ -176,7 +176,7 @@ spritelayout potash_mine_spritelayout_ore_1 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 }
 spritelayout potash_mine_spritelayout_ore_2 {
@@ -196,7 +196,7 @@ spritelayout potash_mine_spritelayout_ore_2 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 }
 spritelayout potash_mine_spritelayout_winding_house {
@@ -216,7 +216,7 @@ spritelayout potash_mine_spritelayout_winding_house {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_SMOKE_SPRITE_DARK_SMALL + (animation_frame / 4);
@@ -260,7 +260,7 @@ spritelayout potash_mine_spritelayout_exit_shed_rear {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: LOAD_TEMP(TEMP_REGISTER_HIDE_TILE);
+		hide_sprite: 0;
 	}
 }
 

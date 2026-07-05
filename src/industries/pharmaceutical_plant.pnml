@@ -52,7 +52,7 @@ spritelayout pharmaceutical_plant_spritelayout_horizontal_tanks {
 		xoffset: 0;		yoffset: 0;		zoffset: 0;
 		xextent: 16;	yextent: 16;	zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: pharmaceutical_plant_spriteset_2(0);
@@ -109,7 +109,7 @@ spritelayout pharmaceutical_plant_spritelayout_frac_columns {
 		xoffset: 0;		yoffset: 0;		zoffset: 0;
 		xextent: 16;	yextent: 16;	zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
     building {
 		sprite: TTD_FENCE_X;
@@ -157,7 +157,7 @@ spritelayout pharmaceutical_plant_spritelayout_drop_tower_and_thin_chimney {
 		xoffset: 0;		yoffset: 0;		zoffset: 0;
 		xextent: 16;	yextent: 16;	zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -205,7 +205,7 @@ spritelayout pharmaceutical_plant_spritelayout_large_building {
 		xoffset: 0;		yoffset: 0;		zoffset: 0;
 		xextent: 16;	yextent: 16;	zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -253,7 +253,7 @@ spritelayout pharmaceutical_plant_spritelayout_fat_chimney {
 		xoffset: 0;		yoffset: 0;		zoffset: 0;
 		xextent: 16;	yextent: 16;	zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_SMOKE_SPRITE_WHITE_SMALL + (animation_frame / 4);
@@ -349,7 +349,7 @@ spritelayout pharmaceutical_plant_spritelayout_spherical_tanks {
 		xoffset: 0;		yoffset: 0;		zoffset: 0;
 		xextent: 16;	yextent: 16;	zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
     building {
 		sprite: TTD_FENCE_X;
@@ -397,7 +397,7 @@ spritelayout pharmaceutical_plant_spritelayout_vertical_tanks {
 		xoffset: 0;		yoffset: 0;		zoffset: 0;
 		xextent: 16;	yextent: 16;	zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
     building {
 		sprite: TTD_FENCE_X;
@@ -446,7 +446,7 @@ spritelayout pharmaceutical_plant_spritelayout_barrels {
 		xoffset: 0;		yoffset: 0;		zoffset: 0;
 		xextent: 16;	yextent: 16;	zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
     building {
 		sprite: TTD_FENCE_X;

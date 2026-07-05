@@ -73,7 +73,7 @@ spritelayout copper_smelter_spritelayout_tanks {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -141,7 +141,7 @@ spritelayout copper_smelter_spritelayout_thickening_tank {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -209,7 +209,7 @@ spritelayout copper_smelter_spritelayout_big_shed {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -277,7 +277,7 @@ spritelayout copper_smelter_spritelayout_flue_stack {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_SMOKE_SPRITE_WHITE_BIG + ((animation_frame + 0)%8);
@@ -357,7 +357,7 @@ spritelayout copper_smelter_spritelayout_ore_handling_front {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_SMOKE_SPRITE_WHITE_BIG + ((animation_frame + 1)%8);
@@ -449,7 +449,7 @@ spritelayout copper_smelter_spritelayout_ore_handling_rear {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -517,7 +517,7 @@ spritelayout copper_smelter_spritelayout_copper_forklift {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -585,7 +585,7 @@ spritelayout copper_smelter_spritelayout_small_shed {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -653,7 +653,7 @@ spritelayout copper_smelter_spritelayout_stack_vent_thing {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;
@@ -776,7 +776,7 @@ spritelayout copper_smelter_spritelayout_transformer {
 		yextent: 16;
 		zextent: 16;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 	building {
 		sprite: TTD_FENCE_X;

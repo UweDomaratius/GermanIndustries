@@ -31,7 +31,7 @@ spritelayout fishing_grounds_spritelayout_1 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 }
 spritelayout fishing_grounds_spritelayout_2 {
@@ -51,7 +51,7 @@ spritelayout fishing_grounds_spritelayout_2 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 }
 spritelayout fishing_grounds_spritelayout_3 {
@@ -71,7 +71,7 @@ spritelayout fishing_grounds_spritelayout_3 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 }
 spritelayout fishing_grounds_spritelayout_4 {
@@ -84,7 +84,7 @@ spritelayout fishing_grounds_spritelayout_4 {
 		sprite: fishing_grounds_spriteset_5(0);
 		recolour_mode: RECOLOUR_REMAP;
 		palette: PALETTE_USE_DEFAULT;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 		always_draw: 1;
 	}            
 	building {
@@ -98,7 +98,7 @@ spritelayout fishing_grounds_spritelayout_4 {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: 0;
 	}
 }
 

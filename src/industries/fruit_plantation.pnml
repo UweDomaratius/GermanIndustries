@@ -22,7 +22,7 @@ spritelayout fruit_plantation_house_spritelayout {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (construction_state == 0 || LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: construction_state == 0;
 	}
 }
 spritelayout fruit_plantation_shed_spritelayout {
@@ -42,7 +42,7 @@ spritelayout fruit_plantation_shed_spritelayout {
 		yextent: 16;
 		zextent: 32;
 		always_draw: 0;
-		hide_sprite: (construction_state < 2 || LOAD_TEMP(TEMP_REGISTER_HIDE_TILE));
+		hide_sprite: construction_state < 2;
 	}
 }
 spritelayout fruit_plantation_slope_aware_ground_with_trees_10 {
