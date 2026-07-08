@@ -658,7 +658,8 @@ switch(FEAT_INDUSTRIES, SELF, cryo_plant_set_new_production0,
 }
 
 switch(FEAT_INDUSTRIES, SELF, cryo_plant_change_production0,
-	[(LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE0) != 0 || LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0) == 0) && 
+	[STORE_TEMP(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, TEMP_REGISTER_TMP),
+	(LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE0) != 0 || (LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0) < LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0))) && 
 	((LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE0) < 40) || LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE0) >= LOAD_TEMP(TEMP_REGISTER_TMP))
 	 ])
 {
@@ -678,7 +679,8 @@ switch(FEAT_INDUSTRIES, SELF, cryo_plant_set_new_production1,
 }
 
 switch(FEAT_INDUSTRIES, SELF, cryo_plant_change_production1,
-	[(LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE1) != 0 || LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT1) == 0) && 
+	[STORE_TEMP(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, TEMP_REGISTER_TMP),
+	(LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE1) != 0 || (LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT1) < LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT1))) && 
 	((LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE1) < 40) || LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE1) >= LOAD_TEMP(TEMP_REGISTER_TMP))
 	 ])
 {
@@ -704,32 +706,32 @@ switch(FEAT_INDUSTRIES, SELF, cryo_plant_check_prod_change,
 }
 
 switch(FEAT_INDUSTRIES, SELF, cryo_plant_switch_prod_change12, 
-	[cryo_plant_count_transport_percentage12(),
-	 STORE_PERM(LOAD_PERM(PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT) == 12 ? 0 : LOAD_PERM(PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT), PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT)
+	[STORE_PERM(LOAD_PERM(PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT) == 12 ? 0 : LOAD_PERM(PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT), PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT),
+	 cryo_plant_count_transport_percentage12()
 	])
 {
 	cryo_plant_check_prod_change;
 }
 
 switch(FEAT_INDUSTRIES, SELF, cryo_plant_switch_prod_change6, 
-	[cryo_plant_count_transport_percentage6(),
-	 STORE_PERM(LOAD_PERM(PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT) == 6 ? 0 : LOAD_PERM(PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT), PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT)
+	[STORE_PERM(LOAD_PERM(PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT) == 6 ? 0 : LOAD_PERM(PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT), PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT),
+	cryo_plant_count_transport_percentage6()
 	])
 {
 	cryo_plant_check_prod_change;
 }
 
 switch(FEAT_INDUSTRIES, SELF, cryo_plant_switch_prod_change3, 
-	[cryo_plant_count_transport_percentage3(),
-	 STORE_PERM(LOAD_PERM(PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT) == 3 ? 0 : LOAD_PERM(PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT), PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT)
+	[STORE_PERM(LOAD_PERM(PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT) == 3 ? 0 : LOAD_PERM(PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT), PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT),
+	 cryo_plant_count_transport_percentage3(),
 	])
 {
 	cryo_plant_check_prod_change;
 }
 
 switch(FEAT_INDUSTRIES, SELF, cryo_plant_switch_prod_change1, 
-	[cryo_plant_count_transport_percentage1(),
-	 STORE_PERM(0, PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT)
+	[STORE_PERM(0, PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT),
+	 cryo_plant_count_transport_percentage1()	 
 	])
 {
 	cryo_plant_check_prod_change;
@@ -738,10 +740,11 @@ switch(FEAT_INDUSTRIES, SELF, cryo_plant_switch_prod_change1,
 switch(FEAT_INDUSTRIES, SELF, cryo_plant_switch_monthly_prod_change, 
 	[update_last_served_date0(),
 	 update_last_served_date1(),
-	 STORE_PERM(transported_last_month_pct("N2__"), PERM_REGISTER_LAST_SERVED0_11),
-	 STORE_PERM(transported_last_month_pct("O2__"), PERM_REGISTER_LAST_SERVED1_11),
+	 STORE_PERM(transported_last_month_pct("O2__"), PERM_REGISTER_LAST_SERVED0_11),
+	 STORE_PERM(transported_last_month_pct("N2__"), PERM_REGISTER_LAST_SERVED1_11),
 	 STORE_TEMP(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, TEMP_REGISTER_TMP),
 	 STORE_PERM(LOAD_PERM(PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT)+1, PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT),
+	 STORE_PERM(LOAD_TEMP(TEMP_REGISTER_TMP),PERM_REGISTER_DBG_TRANSPORT_PCT_TO_BE_EXCEEDED),
 	 param_primary_production_change_volatility])
 {
 	0: cryo_plant_switch_prod_change1;
