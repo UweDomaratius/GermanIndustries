@@ -575,6 +575,7 @@ constants = {
     "PERM_REGISTER_PRODUCTION_LIMITED_BY":"20", # bitmask, see production_rules
     "PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT":"21", # count how often the monthly change prod CB has been called
     "PERM_REGISTER_PRIMARY_LAST_PRIMARY_RESOURCE_INCREASE": "22", # amount of resources at which the last "new resources found" event happened
+    "PERM_REGISTER_POWER_PLANT_PROD_CYCLE": "23", # cycle through 6 variations to ensure all raw materials are used somewhat similarly
     
     # track whether industry was used over last 12 months
     "PERM_REGISTER_LAST_SERVED0_00": "30",                
