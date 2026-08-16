@@ -1014,7 +1014,7 @@ item(FEAT_INDUSTRYTILES, plastics_plant_tile3, INDUSTRY_TILE_ID_PLASTICS_PLANT_3
 			animation_triggers: bitmask();
 		}
 	}
-	if (param_extension_organic_chemistry) {
+	if (param_extension_painting_industries) {
 		property {
 			substitute:         0;
 			land_shape_flags:   0;
