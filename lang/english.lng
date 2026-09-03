@@ -329,6 +329,7 @@ STR_IND_VEHICLE_PARTS_PLANT    :Component Factory
 STR_IND_WIRE_MILL              :Wire Mill
 
 # station names related to industries
+STR_STATION_ACID_PLANT               :Acid Plant
 STR_STATION_ALUMINIUM_PLANT          :Aluminium Plant
 STR_STATION_AMMONIA_PLANT            :Ammonia Plant
 STR_STATION_AMMONIUM_NITRATE_PLANT   :Ammonium Nitrate Plant

@@ -256,6 +256,7 @@ STR_IND_VEHICLE_PARTS_PLANT      :{G=w}Fahrzeugteilefabrik
 STR_IND_WIRE_MILL                :{G=n}Drahtwalzwerk
 
 # Stationsnamen
+STR_STATION_ACID_PLANT               :Säurefabrik
 STR_STATION_ALUMINIUM_PLANT          :Aluhütte
 STR_STATION_AMMONIA_PLANT            :Ammoniakreaktor
 STR_STATION_AMMONIUM_NITRATE_PLANT   :Ammoniumnitratfabrik
