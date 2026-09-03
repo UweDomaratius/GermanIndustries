@@ -344,9 +344,9 @@ STR_STATION_CHLOR_ALKALI_PLANT       :Chloralkali Process Plant
 STR_STATION_CLEANING_PRODUCTS_FACTORY:Cleaning Products Factory
 STR_STATION_CLOTHING_PLANT           :Clothing Plant
 STR_STATION_COAL_LIQUEFACTION_PLANT  :Coal Liquefaction Plant
-STR_STATION_COAL_MINE                :Mining
+STR_STATION_COAL_MINE                :Mine
 STR_STATION_COKE_OVEN                :Coke Oven
-STR_STATION_COPPER_ORE_MINE          :Mining
+STR_STATION_COPPER_ORE_MINE          :Mine
 STR_STATION_COPPER_SMELTER           :Copper Smelter
 STR_STATION_CRYO_PLANT               :Cryo Plant
 STR_STATION_DAIRY                    :Dairy
@@ -365,9 +365,9 @@ STR_STATION_GENERAL_STORE            :General Store
 STR_STATION_GLASS_WORKS              :Glass Works
 STR_STATION_HOTEL                    :Hotel
 STR_STATION_INTEGRATED_STEEL_MILL    :Integrated Steel Mill
-STR_STATION_IRON_ORE_MINE            :Mining
+STR_STATION_IRON_ORE_MINE            :Mine
 STR_STATION_LIME_KILN                :Lime Kiln
-STR_STATION_LIMESTONE_MINE           :Mining
+STR_STATION_LIMESTONE_MINE           :Mine
 STR_STATION_OIL_REFINERY             :Refinery
 STR_STATION_OIL_RIG                  :Oil Rig
 STR_STATION_OIL_WELL                 :Oil Wells
@@ -381,7 +381,7 @@ STR_STATION_PLASTICS_PLANT           :Plastics Plant
 STR_STATION_PORT                     :Port
 STR_STATION_POTASH_MINE              :Potash Mine
 STR_STATION_POWER_PLANT              :Powerplant
-STR_STATION_PYRITE_MINE              :Mining
+STR_STATION_PYRITE_MINE              :Mine
 STR_STATION_PRINTING_WORKS           :Printing Works
 STR_STATION_RECYCLING_DEPOT          :Recycling Depot
 STR_STATION_SALT_MINE                :Salt Mine
