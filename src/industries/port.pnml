@@ -1703,7 +1703,7 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_produce_ext_aluminium_ext_painting_ind
 switch(FEAT_INDUSTRIES, SELF, port_set_new_production0,
 	[ LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE0) < 30 ? STORE_PERM(max(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0) - 5,4), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0) : 
 	  LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE0) < 40 ? STORE_PERM(max(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0) - 1,4), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0) : 
-	  LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE0) < (LOAD_TEMP(TEMP_REGISTER_TMP)+15) ? STORE_PERM(min(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0)+1,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0) : 
+	  LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE0) < (LOAD_PERM(PERM_REGISTER_TRANSPORT_PERCENTAGE)+15) ? STORE_PERM(min(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0)+1,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0) : 
 	                                                                    STORE_PERM(min(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0)+5,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0),
 	  STORE_TEMP(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0)<<16,TEMP_REGISTER_CB_RESULT_IND_PROD_SET_BY_0x100)
 	]) {
@@ -1712,7 +1712,7 @@ switch(FEAT_INDUSTRIES, SELF, port_set_new_production0,
 
 switch(FEAT_INDUSTRIES, SELF, port_change_production0,
 	[LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE0) != 0 && 
-	((LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE0) < 40) || LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE0) >= LOAD_TEMP(TEMP_REGISTER_TMP)) &&
+	((LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE0) < 40) || LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE0) >= LOAD_PERM(PERM_REGISTER_TRANSPORT_PERCENTAGE)) &&
 	 (LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT0) + 10 > LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT0))
 	 // if production is limited due to missing optional things or so, it does not make sense to increase the theoretical maximum any further
 	 ])
@@ -1724,7 +1724,7 @@ switch(FEAT_INDUSTRIES, SELF, port_change_production0,
 switch(FEAT_INDUSTRIES, SELF, port_set_new_production1,
 	[ LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE1) < 30 ? STORE_PERM(max(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT1) - 5,4), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT1) : 
 	  LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE1) < 40 ? STORE_PERM(max(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT1) - 1,4), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT1) : 
-	  LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE1) < (LOAD_TEMP(TEMP_REGISTER_TMP)+15) ? STORE_PERM(min(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT1)+1,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT1) : 
+	  LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE1) < (LOAD_PERM(PERM_REGISTER_TRANSPORT_PERCENTAGE)+15) ? STORE_PERM(min(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT1)+1,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT1) : 
 	                                                                    STORE_PERM(min(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT1)+5,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT1),
 	  STORE_TEMP(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT1)<<16,TEMP_REGISTER_CB_RESULT_IND_PROD_SET_BY_0x100)
 	]) {
@@ -1733,7 +1733,7 @@ switch(FEAT_INDUSTRIES, SELF, port_set_new_production1,
 
 switch(FEAT_INDUSTRIES, SELF, port_change_production1,
 	[LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE1) != 0 && 
-	((LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE1) < 40) || LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE1) >= LOAD_TEMP(TEMP_REGISTER_TMP)) &&
+	((LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE1) < 40) || LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE1) >= LOAD_PERM(PERM_REGISTER_TRANSPORT_PERCENTAGE)) &&
 	 (LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT1) + 10 > LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT1))
 	 // if production is limited due to missing optional things or so, it does not make sense to increase the theoretical maximum any further
 	 ])
@@ -1745,7 +1745,7 @@ switch(FEAT_INDUSTRIES, SELF, port_change_production1,
 switch(FEAT_INDUSTRIES, SELF, port_set_new_production2,
 	[ LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE2) < 30 ? STORE_PERM(max(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT2) - 5,4), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT2) : 
 	  LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE2) < 40 ? STORE_PERM(max(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT2) - 1,4), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT2) : 
-	  LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE2) < (LOAD_TEMP(TEMP_REGISTER_TMP)+15) ? STORE_PERM(min(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT2)+1,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT2) : 
+	  LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE2) < (LOAD_PERM(PERM_REGISTER_TRANSPORT_PERCENTAGE)+15) ? STORE_PERM(min(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT2)+1,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT2) : 
 	                                                                    STORE_PERM(min(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT2)+5,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT2),
 	  STORE_TEMP(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT2)<<16,TEMP_REGISTER_CB_RESULT_IND_PROD_SET_BY_0x100)
 	]) {
@@ -1754,7 +1754,7 @@ switch(FEAT_INDUSTRIES, SELF, port_set_new_production2,
 
 switch(FEAT_INDUSTRIES, SELF, port_change_production2,
 	[LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE2) != 0 && 
-	((LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE2) < 40) || LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE2) >= LOAD_TEMP(TEMP_REGISTER_TMP)) &&
+	((LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE2) < 40) || LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE2) >= LOAD_PERM(PERM_REGISTER_TRANSPORT_PERCENTAGE)) &&
 	 (LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT2) + 10 > LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT2))
 	 // if production is limited due to missing optional things or so, it does not make sense to increase the theoretical maximum any further
 	 ])
@@ -1766,7 +1766,7 @@ switch(FEAT_INDUSTRIES, SELF, port_change_production2,
 switch(FEAT_INDUSTRIES, SELF, port_set_new_production3,
 	[ LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE3) < 30 ? STORE_PERM(max(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT3) - 5,4), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT3) : 
 	  LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE3) < 40 ? STORE_PERM(max(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT3) - 1,4), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT3) : 
-	  LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE3) < (LOAD_TEMP(TEMP_REGISTER_TMP)+15) ? STORE_PERM(min(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT3)+1,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT3) : 
+	  LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE3) < (LOAD_PERM(PERM_REGISTER_TRANSPORT_PERCENTAGE)+15) ? STORE_PERM(min(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT3)+1,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT3) : 
 	                                                                    STORE_PERM(min(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT3)+5,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT3),
 	  STORE_TEMP(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT3)<<16,TEMP_REGISTER_CB_RESULT_IND_PROD_SET_BY_0x100)
 	])
@@ -1776,7 +1776,7 @@ switch(FEAT_INDUSTRIES, SELF, port_set_new_production3,
 
 switch(FEAT_INDUSTRIES, SELF, port_change_production3,
 	[LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE3) != 0 && 
-	((LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE3) < 40) || LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE3) >= LOAD_TEMP(TEMP_REGISTER_TMP)) &&
+	((LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE3) < 40) || LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE3) >= LOAD_PERM(PERM_REGISTER_TRANSPORT_PERCENTAGE)) &&
 	 (LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT3) + 10 > LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT3))
 	 // if production is limited due to missing optional things or so, it does not make sense to increase the theoretical maximum any further
 	 ])
@@ -1788,7 +1788,7 @@ switch(FEAT_INDUSTRIES, SELF, port_change_production3,
 switch(FEAT_INDUSTRIES, SELF, port_set_new_production4,
 	[ LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE4) < 30 ? STORE_PERM(max(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT4) - 5,4), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT4) : 
 	  LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE4) < 40 ? STORE_PERM(max(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT4) - 1,4), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT4) : 
-	  LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE4) < (LOAD_TEMP(TEMP_REGISTER_TMP)+15) ? STORE_PERM(min(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT4)+1,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT4) : 
+	  LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE4) < (LOAD_PERM(PERM_REGISTER_TRANSPORT_PERCENTAGE)+15) ? STORE_PERM(min(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT4)+1,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT4) : 
 	                                                                    STORE_PERM(min(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT4)+5,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT4),
 	  STORE_TEMP(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT4)<<16,TEMP_REGISTER_CB_RESULT_IND_PROD_SET_BY_0x100)
 	]) {
@@ -1797,7 +1797,7 @@ switch(FEAT_INDUSTRIES, SELF, port_set_new_production4,
 
 switch(FEAT_INDUSTRIES, SELF, port_change_production4,
 	[LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE4) != 0 && 
-	((LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE4) < 40) || LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE4) >= LOAD_TEMP(TEMP_REGISTER_TMP)) &&
+	((LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE4) < 40) || LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE4) >= LOAD_PERM(PERM_REGISTER_TRANSPORT_PERCENTAGE)) &&
 	 (LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT4) + 10 > LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT4))
 	 // if production is limited due to missing optional things or so, it does not make sense to increase the theoretical maximum any further
 	 ])
@@ -1809,7 +1809,7 @@ switch(FEAT_INDUSTRIES, SELF, port_change_production4,
 switch(FEAT_INDUSTRIES, SELF, port_set_new_production5,
 	[ LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE5) < 30 ? STORE_PERM(max(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT5) - 5,4), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT5) : 
 	  LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE5) < 40 ? STORE_PERM(max(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT5) - 1,4), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT5) : 
-	  LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE5) < (LOAD_TEMP(TEMP_REGISTER_TMP)+15) ? STORE_PERM(min(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT5)+1,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT5) : 
+	  LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE5) < (LOAD_PERM(PERM_REGISTER_TRANSPORT_PERCENTAGE)+15) ? STORE_PERM(min(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT5)+1,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT5) : 
 	                                                                    STORE_PERM(min(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT5)+5,LOAD_TEMP(TEMP_REGISTER_MAXIMUM_PRODUCTION)), PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT5),
 	  STORE_TEMP(LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT5)<<16,TEMP_REGISTER_CB_RESULT_IND_PROD_SET_BY_0x100)
 	]) {
@@ -1818,7 +1818,7 @@ switch(FEAT_INDUSTRIES, SELF, port_set_new_production5,
 
 switch(FEAT_INDUSTRIES, SELF, port_change_production5,
 	[LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE5) != 0 && 
-	((LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE5) < 40) || LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE5) >= LOAD_TEMP(TEMP_REGISTER_TMP)) &&
+	((LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE5) < 40) || LOAD_TEMP(TEMP_REGISTER_TRANSPORT_PERCENTAGE5) >= LOAD_PERM(PERM_REGISTER_TRANSPORT_PERCENTAGE)) &&
 	 (LOAD_PERM(PERM_REGISTER_PRODUCTION_AMOUNT5) + 10 > LOAD_PERM(PERM_REGISTER_MAXIMUM_PRODUCTION_AMOUNT5))
 	 // if production is limited due to missing optional things or so, it does not make sense to increase the theoretical maximum any further
 	 ])
@@ -2027,7 +2027,7 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change,
 	 STORE_PERM(transported_last_month_pct("COAL"), PERM_REGISTER_LAST_SERVED0_11),
 	 STORE_PERM(transported_last_month_pct("OIL_"), PERM_REGISTER_LAST_SERVED1_11),
 	 STORE_PERM(transported_last_month_pct("IORE"), PERM_REGISTER_LAST_SERVED2_11),
-	 STORE_TEMP(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, TEMP_REGISTER_TMP),
+	 STORE_PERM(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, PERM_REGISTER_TRANSPORT_PERCENTAGE),
 	 STORE_PERM(LOAD_PERM(PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT)+1, PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT),
 	 param_primary_production_change_volatility])
 {
@@ -2047,7 +2047,7 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_aluminium,
 	 STORE_PERM(transported_last_month_pct("OIL_"), PERM_REGISTER_LAST_SERVED1_11),
 	 STORE_PERM(transported_last_month_pct("IORE"), PERM_REGISTER_LAST_SERVED2_11),
 	 STORE_PERM(transported_last_month_pct("AORE"), PERM_REGISTER_LAST_SERVED3_11),
-	 STORE_TEMP(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, TEMP_REGISTER_TMP),
+	 STORE_PERM(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, PERM_REGISTER_TRANSPORT_PERCENTAGE),
 	 STORE_PERM(LOAD_PERM(PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT)+1, PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT),
 	 param_primary_production_change_volatility
 	])
@@ -2060,7 +2060,7 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_aluminium,
 
 switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_painting_industries, 
 	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
-         update_last_served_date0(),
+     update_last_served_date0(),
 	 update_last_served_date1(),
 	 update_last_served_date2(),
 	 update_last_served_date3(),
@@ -2068,7 +2068,7 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_painting_industries,
 	 STORE_PERM(transported_last_month_pct("OIL_"), PERM_REGISTER_LAST_SERVED1_11),
 	 STORE_PERM(transported_last_month_pct("IORE"), PERM_REGISTER_LAST_SERVED2_11),
 	 STORE_PERM(transported_last_month_pct("CORE"), PERM_REGISTER_LAST_SERVED3_11),
-	 STORE_TEMP(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, TEMP_REGISTER_TMP),
+	 STORE_PERM(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, PERM_REGISTER_TRANSPORT_PERCENTAGE),
 	 STORE_PERM(LOAD_PERM(PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT)+1, PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT),
 	 param_primary_production_change_volatility
 	])
@@ -2081,7 +2081,7 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_painting_industries,
 
 switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_aluminium_ext_painting_industries, 
 	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
-         update_last_served_date0(),
+     update_last_served_date0(),
 	 update_last_served_date1(),
 	 update_last_served_date2(),
 	 update_last_served_date3(),
@@ -2091,7 +2091,7 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_aluminium_ext_painting
 	 STORE_PERM(transported_last_month_pct("IORE"), PERM_REGISTER_LAST_SERVED2_11),
 	 STORE_PERM(transported_last_month_pct("AORE"), PERM_REGISTER_LAST_SERVED3_11),
 	 STORE_PERM(transported_last_month_pct("CORE"), PERM_REGISTER_LAST_SERVED4_11),
-	 STORE_TEMP(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, TEMP_REGISTER_TMP),
+	 STORE_PERM(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, PERM_REGISTER_TRANSPORT_PERCENTAGE),
 	 STORE_PERM(LOAD_PERM(PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT)+1, PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT),
 	 param_primary_production_change_volatility
 	])
@@ -2104,7 +2104,7 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_aluminium_ext_painting
 
 switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_coke_sulphur, 
 	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
-         update_last_served_date0(),
+     update_last_served_date0(),
 	 update_last_served_date1(),
 	 update_last_served_date2(),
 	 update_last_served_date3(),
@@ -2112,7 +2112,7 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_coke_sulphur,
 	 STORE_PERM(transported_last_month_pct("OIL_"), PERM_REGISTER_LAST_SERVED1_11),
 	 STORE_PERM(transported_last_month_pct("IORE"), PERM_REGISTER_LAST_SERVED2_11),
 	 STORE_PERM(transported_last_month_pct("PORE"), PERM_REGISTER_LAST_SERVED3_11),
-	 STORE_TEMP(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, TEMP_REGISTER_TMP),
+	 STORE_PERM(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, PERM_REGISTER_TRANSPORT_PERCENTAGE),
 	 STORE_PERM(LOAD_PERM(PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT)+1, PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT),
 	 param_primary_production_change_volatility
 	])
@@ -2125,7 +2125,7 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_coke_sulphur,
 
 switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_aluminium_ext_coke_sulphur, 
 	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
-         update_last_served_date0(),
+     update_last_served_date0(),
 	 update_last_served_date1(),
 	 update_last_served_date2(),
 	 update_last_served_date3(),
@@ -2135,7 +2135,7 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_aluminium_ext_coke_sul
 	 STORE_PERM(transported_last_month_pct("IORE"), PERM_REGISTER_LAST_SERVED2_11),
 	 STORE_PERM(transported_last_month_pct("AORE"), PERM_REGISTER_LAST_SERVED3_11),
 	 STORE_PERM(transported_last_month_pct("PORE"), PERM_REGISTER_LAST_SERVED4_11),
-	 STORE_TEMP(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, TEMP_REGISTER_TMP),
+	 STORE_PERM(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, PERM_REGISTER_TRANSPORT_PERCENTAGE),
 	 STORE_PERM(LOAD_PERM(PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT)+1, PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT),
 	 param_primary_production_change_volatility
 	])
@@ -2148,7 +2148,7 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_aluminium_ext_coke_sul
 
 switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_painting_industries_ext_coke_sulphur, 
 	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
-         update_last_served_date0(),
+     update_last_served_date0(),
 	 update_last_served_date1(),
 	 update_last_served_date2(),
 	 update_last_served_date3(),
@@ -2156,7 +2156,7 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_painting_industries_ex
 	 STORE_PERM(transported_last_month_pct("OIL_"), PERM_REGISTER_LAST_SERVED1_11),
 	 STORE_PERM(transported_last_month_pct("IORE"), PERM_REGISTER_LAST_SERVED2_11),
 	 STORE_PERM(transported_last_month_pct("PORE"), PERM_REGISTER_LAST_SERVED3_11),
-	 STORE_TEMP(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, TEMP_REGISTER_TMP),
+	 STORE_PERM(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, PERM_REGISTER_TRANSPORT_PERCENTAGE),
 	 STORE_PERM(LOAD_PERM(PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT)+1, PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT),
 	 param_primary_production_change_volatility
 	])
@@ -2169,7 +2169,7 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_painting_industries_ex
 
 switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_aluminium_ext_painting_industries_ext_coke_sulphur, 
 	[STORE_TEMP(port_func_calc_max_prod(),TEMP_REGISTER_MAXIMUM_PRODUCTION),
-         update_last_served_date0(),
+     update_last_served_date0(),
 	 update_last_served_date1(),
 	 update_last_served_date2(),
 	 update_last_served_date3(),
@@ -2179,7 +2179,7 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_aluminium_ext_painting
 	 STORE_PERM(transported_last_month_pct("IORE"), PERM_REGISTER_LAST_SERVED2_11),
 	 STORE_PERM(transported_last_month_pct("AORE"), PERM_REGISTER_LAST_SERVED3_11),
 	 STORE_PERM(transported_last_month_pct("PORE"), PERM_REGISTER_LAST_SERVED4_11),
-	 STORE_TEMP(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, TEMP_REGISTER_TMP),
+	 STORE_PERM(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, PERM_REGISTER_TRANSPORT_PERCENTAGE),
 	 STORE_PERM(LOAD_PERM(PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT)+1, PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT),
 	 param_primary_production_change_volatility
 	])
@@ -2200,7 +2200,7 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_vehicle,
 	 STORE_PERM(transported_last_month_pct("OIL_"), PERM_REGISTER_LAST_SERVED1_11),
 	 STORE_PERM(transported_last_month_pct("IORE"), PERM_REGISTER_LAST_SERVED2_11),
 	 STORE_PERM(transported_last_month_pct("RUBR"), PERM_REGISTER_LAST_SERVED3_11),
-	 STORE_TEMP(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, TEMP_REGISTER_TMP),
+	 STORE_PERM(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, PERM_REGISTER_TRANSPORT_PERCENTAGE),
 	 STORE_PERM(LOAD_PERM(PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT)+1, PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT),
 	 param_primary_production_change_volatility
 	])
@@ -2223,7 +2223,7 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_aluminium_ext_vehicle,
 	 STORE_PERM(transported_last_month_pct("IORE"), PERM_REGISTER_LAST_SERVED2_11),
 	 STORE_PERM(transported_last_month_pct("AORE"), PERM_REGISTER_LAST_SERVED3_11),
 	 STORE_PERM(transported_last_month_pct("RUBR"), PERM_REGISTER_LAST_SERVED4_11),
-	 STORE_TEMP(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, TEMP_REGISTER_TMP),
+	 STORE_PERM(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, PERM_REGISTER_TRANSPORT_PERCENTAGE),
 	 STORE_PERM(LOAD_PERM(PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT)+1, PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT),
 	 param_primary_production_change_volatility
 	])
@@ -2246,7 +2246,7 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_painting_industries_ex
 	 STORE_PERM(transported_last_month_pct("IORE"), PERM_REGISTER_LAST_SERVED2_11),
 	 STORE_PERM(transported_last_month_pct("CORE"), PERM_REGISTER_LAST_SERVED3_11),
 	 STORE_PERM(transported_last_month_pct("RUBR"), PERM_REGISTER_LAST_SERVED4_11),
-	 STORE_TEMP(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, TEMP_REGISTER_TMP),
+	 STORE_PERM(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, PERM_REGISTER_TRANSPORT_PERCENTAGE),
 	 STORE_PERM(LOAD_PERM(PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT)+1, PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT),
 	 param_primary_production_change_volatility
 	])
@@ -2271,7 +2271,7 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_aluminium_ext_painting
 	 STORE_PERM(transported_last_month_pct("AORE"), PERM_REGISTER_LAST_SERVED3_11),
 	 STORE_PERM(transported_last_month_pct("CORE"), PERM_REGISTER_LAST_SERVED4_11),
 	 STORE_PERM(transported_last_month_pct("RUBR"), PERM_REGISTER_LAST_SERVED5_11),
-	 STORE_TEMP(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, TEMP_REGISTER_TMP),
+	 STORE_PERM(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, PERM_REGISTER_TRANSPORT_PERCENTAGE),
 	 STORE_PERM(LOAD_PERM(PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT)+1, PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT),
 	 param_primary_production_change_volatility
 	])
@@ -2294,7 +2294,7 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_coke_sulphur_ext_vehic
 	 STORE_PERM(transported_last_month_pct("IORE"), PERM_REGISTER_LAST_SERVED2_11),
 	 STORE_PERM(transported_last_month_pct("PORE"), PERM_REGISTER_LAST_SERVED3_11),
 	 STORE_PERM(transported_last_month_pct("RUBR"), PERM_REGISTER_LAST_SERVED4_11),
-	 STORE_TEMP(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, TEMP_REGISTER_TMP),
+	 STORE_PERM(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, PERM_REGISTER_TRANSPORT_PERCENTAGE),
 	 STORE_PERM(LOAD_PERM(PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT)+1, PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT),
 	 param_primary_production_change_volatility
 	])
@@ -2319,7 +2319,7 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_aluminium_ext_coke_sul
 	 STORE_PERM(transported_last_month_pct("AORE"), PERM_REGISTER_LAST_SERVED3_11),
 	 STORE_PERM(transported_last_month_pct("PORE"), PERM_REGISTER_LAST_SERVED4_11),
 	 STORE_PERM(transported_last_month_pct("RUBR"), PERM_REGISTER_LAST_SERVED5_11),
-	 STORE_TEMP(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, TEMP_REGISTER_TMP),
+	 STORE_PERM(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, PERM_REGISTER_TRANSPORT_PERCENTAGE),
 	 STORE_PERM(LOAD_PERM(PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT)+1, PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT),
 	 param_primary_production_change_volatility
 	])
@@ -2342,7 +2342,7 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_painting_industries_ex
 	 STORE_PERM(transported_last_month_pct("IORE"), PERM_REGISTER_LAST_SERVED2_11),
 	 STORE_PERM(transported_last_month_pct("PORE"), PERM_REGISTER_LAST_SERVED3_11),
 	 STORE_PERM(transported_last_month_pct("RUBR"), PERM_REGISTER_LAST_SERVED4_11),
-	 STORE_TEMP(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, TEMP_REGISTER_TMP),
+	 STORE_PERM(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, PERM_REGISTER_TRANSPORT_PERCENTAGE),
 	 STORE_PERM(LOAD_PERM(PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT)+1, PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT),
 	 param_primary_production_change_volatility
 	])
@@ -2367,7 +2367,7 @@ switch(FEAT_INDUSTRIES, SELF, port_switch_prod_change_ext_aluminium_ext_painting
 	 STORE_PERM(transported_last_month_pct("AORE"), PERM_REGISTER_LAST_SERVED3_11),
 	 STORE_PERM(transported_last_month_pct("PORE"), PERM_REGISTER_LAST_SERVED4_11),
 	 STORE_PERM(transported_last_month_pct("RUBR"), PERM_REGISTER_LAST_SERVED5_11),
-	 STORE_TEMP(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, TEMP_REGISTER_TMP),
+	 STORE_PERM(param_primary_production_increase_transport_percentage < 50 ? 60 : param_primary_production_increase_transport_percentage, PERM_REGISTER_TRANSPORT_PERCENTAGE),
 	 STORE_PERM(LOAD_PERM(PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT)+1, PERM_REGISTER_MONTHLY_PROD_CHANGE_COUNT),
 	 param_primary_production_change_volatility
 	])
