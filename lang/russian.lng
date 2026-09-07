@@ -557,6 +557,7 @@ STR_IND_WIRE_MILL.gen                 :кабельного завода
 STR_IND_WIRE_MILL.acc                 :кабельный завод
 
 # station names related to industries
+STR_STATION_ACID_PLANT               :{G=}Сернокислотный завод
 STR_STATION_ALUMINIUM_PLANT          :{G=m}Алюминиевый завод
 STR_STATION_AMMONIA_PLANT            :{G=m}Аммиачный завод
 STR_STATION_AMMONIUM_NITRATE_PLANT   :{G=m}Азотный завод
