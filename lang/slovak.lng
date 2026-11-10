@@ -1,0 +1,592 @@
+##grflangid 0x16
+##plural 10
+##gender m z s
+##case gen
+# This is the Slovak language file
+
+# GRF name and description definitions
+STR_GRF_NAME        :{TITLE} {VERSION}
+STR_GRF_DESCRIPTION :Nemecký priemysel pre OpenTTD{}{COPYRIGHT}2025{}Založené na «FIRS» v5 od autora andythenorth a ďalších.{}Licencia: GPLv2, CC-BY-NC-SA v4.0
+
+# Set parameters
+STR_PARAM_PRIMARY_PRODUCTION :Objem produkcie prvovýroby
+STR_PARAM_PRIMARY_PRODUCTION_DESC :Upravuje objem mesačnej produkcie prvovýroby (napr. bane). Predvolená hodnota je 100 %, čo zodpovedá štandardnému priemyslu.
+STR_PARAM_PRIMARY_INDUSTRY_PRODUCTION_CAP :Maximálna produkcia prvovýroby (napr. bane) na jeden výrobný cyklus
+STR_PARAM_PRIMARY_INDUSTRY_PRODUCTION_CAP_DESC :Definuje maximálnu produkciu prvovýroby, ako sú bane. Maximálna mesačná produkcia je 8-9-násobok tejto hodnoty. Škálovanie prvovýroby tiež zvyšuje túto maximálnu hodnotu.
+STR_PARAM_PRIMARY_RESOURCE_FACTOR :Škálovanie zdrojov v prvovýrobe
+STR_PARAM_PRIMARY_RESOURCE_FACTOR_DESC :Upravuje množstvo zdrojov, ktoré môže prvovýroba vyťažiť. Keď sa zdroje vyčerpajú, daný priemysel zanikne.
+STR_PARAM_ECONOMY_MODEL :Ekonomický model
+STR_PARAM_ECONOMY_MODEL_DESC :Realistický model simuluje historické úrovne dostupnosti a zlepšenia produktivity. Jednoduchý model históriu reálnej ekonomiky ignoruje. Ďalšie podrobnosti nájdete v dokumentácii.
+STR_PARAM_ECONOMY_MODEL_SIMPLE :Jednoduchá (stála) ekonomika.
+STR_PARAM_ECONOMY_MODEL_REALISTIC :Realistická ekonomika
+STR_PARAM_ELECTRICITY_NEEDED :Priemyselné odvetvia vyžadujú elektrickú energiu
+STR_PARAM_ELECTRICITY_NEEDED_DESC :Niektoré odvetvia priemyslu vyžadujú na výrobu tovaru elektrickú energiu. Elektrickú energiu vyrábajú elektrárne, ktoré naopak musia byť zásobované zdrojmi.
+STR_PARAM_FORBID_INDUSTRY_GENERATION :Zakázať vytváranie priemyslu
+STR_PARAM_FORBID_INDUSTRY_GENERATION_DESC :Keď je táto možnosť povolená, závody sa generujú iba na začiatku hry, spolu s mapou. Hráč však stále môže financovať vznik nových závodov.
+STR_PARAM_FORBID_INDUSTRY_CLOSURE :Zakázať uzatváranie závodov
+STR_PARAM_FORBID_INDUSTRY_CLOSURE_DESC :Ak je táto možnosť povolená, závody nezaniknú. Bane a podobné prevádzky však zaniknú, ak už nebudú môcť ťažiť suroviny. Aj keď je zánik závodov povolený, žiadny z nich nezanikne, pokiaľ bude mať zabezpečené dodávky.
+STR_PARAM_FORBID_LAST_INDUSTRY_CLOSURE :Zakázať zatvorenie jediného závody daného typu
+STR_PARAM_FORBID_LAST_INDUSTRY_CLOSURE_DESC :Keď je táto možnosť povolená, závody nezaniknú, ak sa na mape nachádza iba jeden zástupca daného typu priemyslu. Toto nastavenie má vplyv iba vtedy, ak je zánik závodov povolený.
+STR_PARAM_STOCKPILE_CAP :Správanie pri dosiahnutí maximálnych úrovní zásob
+STR_PARAM_STOCKPILE_CAP_DESC :Definujte, čo sa má stať po dosiahnutí limitu skladových zásob. Pri nastavení „zahodiť“ bude prichádzajúci náklad zahodený. ​​Dodávka bude preplatená, no samotný náklad jednoducho zmizne. Pri nastavení „zastaviť príjem“ závod prestane náklad prijímať a vozidlo ho nebude môcť vyložiť. Bližšie informácie nájdete v dokumentácii.
+STR_PARAM_STOCKPILE_DISCARD :Zahodiť
+STR_PARAM_STOCKPILE_STOP_ACCEPT :Odmietnuť prevzatie
+STR_PARAM_MAX_INDUSTRIES_ON_MAP :Obmedzte počet závodov na mape
+STR_PARAM_MAX_INDUSTRIES_ON_MAP_DESC :Ak je nastavená nenulová hodnota, počet vytvorených závodov je touto hodnotou obmedzený. Toto obmedzenie sa vzťahuje na všetky priemyselné odvetvia na mape a nemá vplyv na generovanie mapy, ale iba na náhodné vytváranie závodov počas hrania.
+STR_PARAM_MAX_INDUSTRIES_PER_TYPE_ON_MAP :Obmedzte počet závodov jednotlivých typov
+STR_PARAM_MAX_INDUSTRIES_PER_TYPE_ON_MAP_DESC :Ak je nastavená hodnota vyššia ako 0, počet závodov na mape je touto hodnotou obmedzený. Počet sa sleduje samostatne pre každý typ odvetvia a tento limit sa vzťahuje iba na náhodné vytváranie nových závodov počas hry.
+STR_PARAM_MIN_DISTANCE_SAME_INDUSTRY :Minimálna vzdialenosť medzi dvoma závodmi rovnakého typu
+STR_PARAM_MIN_DISTANCE_SAME_INDUSTRY_DESC :Minimálna vzdialenosť medzi dvoma závodmi rovnakého typu.
+STR_PARAM_MIN_DISTANCE_RELATED_INDUSTRY :Minimálna vzdialenosť medzi dvoma prepojenými závodmi
+STR_PARAM_MIN_DISTANCE_RELATED_INDUSTRY_DESC :Minimálna vzdialenosť medzi dvoma prepojenými závodmi. „Prepojené“ znamená, že jeden závod produkuje niečo, čo druhý závod prijíma, takže medzi nimi môže existovať potenciálne dopravné spojenie. Vyššie hodnoty môžu spôsobiť, že niektoré závody sa počas generovania mapy nepodarí na ňu umiestniť.
+STR_PARAM_PRODUCTION_INCREASE_TRANSPORT_PERCENTAGE :Potrebný prepravený objem pre nárast výroby v prvovýrobe
+STR_PARAM_PRODUCTION_INCREASE_TRANSPORT_PERCENTAGE_DESC :Podiel prepraveného nákladu, ktorý je potrebné dosiahnuť na zvýšenie produkcie prvovýroby (napr. bane).
+STR_PARAM_PRODUCTION_CHANGE_VOLATILITY :Rýchlosť prispôsobovania v prvovýrobe
+STR_PARAM_PRODUCTION_CHANGE_VOLATILITY_DESC :Táto hodnota určuje, ako rýchlo a ako často prvovýroba (napr. bane) upravuje svoju produkciu po splnení potrebných podmienok. 
+STR_PARAM_EXT_BUILDING_MATERIALS :Rozšírenie o „Stavebný priemysel“
+STR_PARAM_EXT_BUILDING_MATERIALS_DESC :Pridá náklad súvisiaci so stavebníctvom ako napr. vápenec a cement a tiež príslušné závody.
+STR_PARAM_EXT_TEXTILE_INDUSTRIES :Rozšírenie o „Textilný priemysel“
+STR_PARAM_EXT_TEXTILE_INDUSTRIES_DESC :Pridá náklad súvisiaci s výrobou textilu a odevov, ako napríklad vlnu a textilné výrobky a tiež príslušné závody.
+STR_PARAM_EXT_ALUMINIUM :Rozšírenie o „Hlinikársky priemysel“
+STR_PARAM_EXT_ALUMINIUM_DESC :Pridá výrobu hliníka z bauxitu a príslušné závody, ktoré hliník vyžadujú.
+STR_PARAM_EXT_BASIC_INORGANIC_CHEMISTRY :Rozšírenie o „Základná anorganická chémia“
+STR_PARAM_EXT_BASIC_INORGANIC_CHEMISTRY_DESC :Pridá základný chémický priemysel založený na výrobe sodíka a chlóru a tiež príslušné závody.
+STR_PARAM_EXT_PAINTING_INDUSTRIES :Rozšírenie o „Priemysel náterových hmôt“
+STR_PARAM_EXT_PAINTING_INDUSTRIES_DESC :Pridá chemické závody, ktoré vyrábajú farby z rôznych surovín.
+STR_PARAM_EXT_FOOD_INDUSTRIES :Rozšírenie o „Potravinársky priemysel“
+STR_PARAM_EXT_FOOD_INDUSTRIES_DESC :Pridá širšiu škálu potravinárskych závodov.
+STR_PARAM_EXT_PACKAGING_INDUSTRIES :Rozšírenie o „Obalový priemysel“
+STR_PARAM_EXT_PACKAGING_INDUSTRIES_DESC :Pridá obalový materiál ako náklad, ktorý je potrebné doručiť do závodov vyrábajúcich tovar alebo potravinárske výrobky.
+STR_PARAM_EXT_GLASS :Rozšírenie o „Sklársky priemysel“
+STR_PARAM_EXT_GLASS_DESC :Pridá náklad a závody súvisiace s výrobou skla.{}{}Vyžaduje rozšírenie „Stavebný priemysel“.
+STR_PARAM_EXT_PAPER :Rozšírenie o „Papierenský priemysel“
+STR_PARAM_EXT_PAPER_DESC :Pridá závody, ktoré vyrábajú alebo vyžadujú papier.{}{}Vyžaduje rozšírenie „Základná anorganická chémia“.
+STR_PARAM_EXT_ORGANIC_CHEMISTRY :Rozšírenie o „Organická chémia“
+STR_PARAM_EXT_ORGANIC_CHEMISTRY_DESC :Zahŕňa náklad a závody súvisiace so spracovaním ropy.{}{}Vyžaduje rozšírenie „Základná anorganická chémia“.
+STR_PARAM_EXT_COKE_SULPHUR :Rozšírenie „Koks a síra“
+STR_PARAM_EXT_COKE_SULPHUR_DESC :Pridáva náklad a závody súvisiace so spracovaním rúd obsahujúcich síru.{}{}Vyžaduje rozšírenia „Základná anorganická chémia“ a „Priemysel náterových hmôt“.
+STR_PARAM_EXT_AMMONIA :Rozšírenie „Syntéza amoniaku“
+STR_PARAM_EXT_AMMONIA_DESC :Pridáva náklad a závody súvisiace so syntézou amoniaku.{}{}Vyžaduje rozšírenia „Základná anorganická chémia“ a „Stavebný priemysel“.
+STR_PARAM_EXT_FRUITS :Rozšírenie „Ovocie a bioenergia“
+STR_PARAM_EXT_FRUITS_DESC :Pridáva náklad a závody súvisiace so zberom ovocia a využívaním obnoviteľných zdrojov energie.{}{}Vyžaduje rozšírenia „Organická chémia“ a „Základná anorganická chémia“.
+STR_PARAM_EXT_METALLURGY :Rozšírenie o „Metalurgický priemysel“
+STR_PARAM_EXT_METALLURGY_DESC :Pridáva náklad a závody súvisiace s ťažkým priemyslom a výrobou plechov, káblov a iných výrobkov na báze kovov.{}{}Vyžaduje rozšírenia „Koks a síra“, „Základy anorganickej chémie“ a „Priemysel náterových hmôt“.
+STR_PARAM_EXT_RECYCLING :Rozšírenie „Recyklácia“
+STR_PARAM_EXT_RECYCLING_DESC :Pridáva náklad a závody súvisiace s recykláciou odpadových materiálov.
+STR_PARAM_EXT_VEHICLE :Rozšírenie o „Automobilový priemysel“
+STR_PARAM_EXT_VEHICLE_DESC :Pridáva náklad a závody súvisiace s výrobou vozidiel.{}{}Vyžaduje rozšírenia „Koks a síra“, „Základy anorganickej chémie“ a „Priemysel náterových hmôt“.
+STR_PARAM_EXT_PRODUCTION_BOOST :Rozšírenie „Zvyšovanie produkcie“
+STR_PARAM_EXT_PRODUCTION_BOOST_DESC :Pridáva závody zamerané na výrobu hnojív a výbušnín, ktoré možno využiť na zvýšenie produkcie v prvovýrobe.{}{}Vyžaduje rozšírenia „Syntéza amoniaku“ a „Koks a síra“.{}Rozšírenie „Syntéza amoniaku“ vyžaduje rozšírenie „Základná anorganická chémia“ alebo „Stavebný priemysel“.{}Rozšírenie „Koks a síra“ vyžaduje rozšírenia „Základná anorganická chémia“ a „Priemysel náterových hmôt“.
+STR_PARAM_SKIP_CHECKS :Preskočiť kontrolu nekompatibilných NewGRF
+STR_PARAM_SKIP_CHECKS_DESC :Ak naozaj trváte na použití nekompatibilného NewGRF, urobte tak tu.{}Môže to viesť k nefunkčným priemyselným odvetviam, poškodeným súborom s uloženými pozíciami, môže to prípadne zničiť váš počítač a spôsobiť požiar vo vašom dome. Nesťažujte sa, boli ste varovaní.
+
+STR_TOWN    :{STRING}
+STR_STATION :{STRING} {STRING}
+STR_EMPTY   : 
+
+STR_SLOW     :pomaly
+STR_MEDIUM   :stredne
+STR_FAST     :rýchlo
+STR_VERY_FAST:veľmi rýchlo
+
+# OpenTTD only displays numbers with decimal points, which is stupid for years - so a couple of strings for years are used
+STR_1800:1800
+STR_1850:1850
+STR_1860:1860
+STR_1880:1880
+STR_1900:1900
+STR_1910:1910
+STR_1930:1930
+STR_1950:1950
+STR_1985:1985
+
+# cargo type name
+STR_CARGO_NAME_ACID                   :{G=z}Kyseliny
+STR_CARGO_NAME_ACID.gen               :kyselín
+STR_CARGO_NAME_ALUMINIUM              :{G=m}Hliník
+STR_CARGO_NAME_ALUMINIUM.gen          :hliníka
+STR_CARGO_NAME_AMMONIA                :{G=m}Čpavok
+STR_CARGO_NAME_AMMONIA.gen            :čpavku
+STR_CARGO_NAME_AMMONIUM_NITRATE       :{G=m}Dusičnan amónny
+STR_CARGO_NAME_AMMONIUM_NITRATE.gen   :dusičnanu amónneho
+STR_CARGO_NAME_BAUXITE                :{G=m}Bauxit
+STR_CARGO_NAME_BAUXITE.gen            :bauxitu
+STR_CARGO_NAME_BIOMASS                :{G=z}Biomasa
+STR_CARGO_NAME_BIOMASS.gen            :biomasy
+STR_CARGO_NAME_BUILDING_MATERIALS     :{G=z}Tehly
+STR_CARGO_NAME_BUILDING_MATERIALS.gen :tehiel
+STR_CARGO_NAME_CARBON_BLACK           :{G=z}Sadze
+STR_CARGO_NAME_CARBON_BLACK.gen       :sadzí
+STR_CARGO_NAME_CEMENT                 :{G=m}Cement
+STR_CARGO_NAME_CEMENT.gen             :cementu
+STR_CARGO_NAME_CHLORINE               :{G=m}Chlór
+STR_CARGO_NAME_CHLORINE.gen           :chlóru
+STR_CARGO_NAME_COKE                   :{G=m}Koks
+STR_CARGO_NAME_COKE.gen               :koksu
+STR_CARGO_NAME_COPPER                 :{G=z}Meď
+STR_CARGO_NAME_COPPER.gen             :medi
+STR_CARGO_NAME_COPPER_ORE             :{G=z}Medená ruda
+STR_CARGO_NAME_COPPER_ORE.gen         :medenej rudy
+STR_CARGO_NAME_ETHYLENE               :{G=m}Etylén
+STR_CARGO_NAME_ETHYLENE.gen           :etylénu
+STR_CARGO_NAME_EXPLOSIVES             :{G=z}Výbušniny
+STR_CARGO_NAME_EXPLOSIVES.gen         :výbušnín
+STR_CARGO_NAME_FERTILIZER             :{G=m}Hnojivá
+STR_CARGO_NAME_FERTILIZER.gen         :hnojív
+STR_CARGO_NAME_FISH                   :{G=z}Ryby
+STR_CARGO_NAME_FISH.gen               :rýb
+STR_CARGO_NAME_FRUITS                 :{G=s}Ovocie
+STR_CARGO_NAME_FRUITS.gen             :ovocia
+STR_CARGO_NAME_GLASS                  :{G=s}Sklo
+STR_CARGO_NAME_GLASS.gen              :skla
+STR_CARGO_NAME_HYDROGEN               :{G=m}Vodík
+STR_CARGO_NAME_HYDROGEN.gen           :vodíka
+STR_CARGO_NAME_LIMESTONE              :{G=m}Vápenec
+STR_CARGO_NAME_LIMESTONE.gen          :vápenca
+STR_CARGO_NAME_LYE                    :{G=m}Hydroxid sodný
+STR_CARGO_NAME_LYE.gen                :hydroxidu sodného
+STR_CARGO_NAME_MACHINE_PARTS          :{G=z}Strojové súčiastky
+STR_CARGO_NAME_MACHINE_PARTS.gen      :strojových súčiastok
+STR_CARGO_NAME_METAL_SHEETS           :{G=m}Plechy
+STR_CARGO_NAME_METAL_SHEETS.gen       :plechov
+STR_CARGO_NAME_METAL_WIRE             :{G=m}Drôty a káble
+STR_CARGO_NAME_METAL_WIRE.gen         :drôtov a káblov
+STR_CARGO_NAME_MILK                   :{G=s}Mlieko
+STR_CARGO_NAME_MILK.gen               :mlieka
+STR_CARGO_NAME_N2                     :{G=m}Dusík
+STR_CARGO_NAME_N2.gen                 :dusíka
+STR_CARGO_NAME_NAPHTHA                :{G=z}Nafta
+STR_CARGO_NAME_NAPHTHA.gen            :nafty
+STR_CARGO_NAME_O2                     :{G=m}Kyslík
+STR_CARGO_NAME_O2.gen                 :kyslíka
+STR_CARGO_NAME_PACKAGING              :{G=m}Obaly
+STR_CARGO_NAME_PACKAGING.gen          :obalov
+STR_CARGO_NAME_PAINT                  :{G=z}Farby
+STR_CARGO_NAME_PAINT.gen              :farieb
+STR_CARGO_NAME_PETROL                 :{G=m}Benzín
+STR_CARGO_NAME_PETROL.gen             :benzín
+STR_CARGO_NAME_PLASTICS               :{G=m}Plasty
+STR_CARGO_NAME_PLASTICS.gen           :plastov
+STR_CARGO_NAME_POTASH                 :{G=z}Potaš
+STR_CARGO_NAME_POTASH.gen             :potaše
+STR_CARGO_NAME_PYRITE_ORE             :{G=z}Pyritová ruda
+STR_CARGO_NAME_PYRITE_ORE.gen         :pyritovej rudy
+STR_CARGO_NAME_QUICKLIME              :{G=s}Pálené vápno
+STR_CARGO_NAME_QUICKLIME.gen          :páleného vápna
+STR_CARGO_NAME_RECYCLABLES            :{G=m}Recyklát
+STR_CARGO_NAME_RECYCLABLES.gen        :recyklátu
+STR_CARGO_NAME_RUBBER                 :{G=z}Guma
+STR_CARGO_NAME_RUBBER.gen             :gumy
+STR_CARGO_NAME_SALT                   :{G=z}Soľ
+STR_CARGO_NAME_SALT.gen               :soli
+STR_CARGO_NAME_SAND                   :{G=m}Piesok
+STR_CARGO_NAME_SAND.gen               :piesku
+STR_CARGO_NAME_SCRAP_METAL            :{G=m}Kovový šrot
+STR_CARGO_NAME_SCRAP_METAL.gen        :kovového šrotu
+STR_CARGO_NAME_SODA                   :{G=m}Uhličitan sodný
+STR_CARGO_NAME_SODA.gen               :uhličitanu sodného
+STR_CARGO_NAME_SULPHUR                :{G=z}Síra
+STR_CARGO_NAME_SULPHUR.gen            :síry
+STR_CARGO_NAME_TEXTILES               :{G=z}Textílie
+STR_CARGO_NAME_TEXTILES.gen           :textílií
+STR_CARGO_NAME_TIMBER                 :{G=s}Rezivo
+STR_CARGO_NAME_TIMBER.gen             :reziva
+STR_CARGO_NAME_TYRE                   :{G=z}Pneumatiky
+STR_CARGO_NAME_TYRE.gen               :pneumatík
+STR_CARGO_NAME_VEHICLE_BODY           :{G=z}Кarosérie
+STR_CARGO_NAME_VEHICLE_BODY.gen       :karosérií
+STR_CARGO_NAME_VEHICLE_ENGINE         :{G=m}Motory
+STR_CARGO_NAME_VEHICLE_ENGINE.gen     :motorov
+STR_CARGO_NAME_VEHICLE_PARTS          :{G=z}Autosúčiastky
+STR_CARGO_NAME_VEHICLE_PARTS.gen      :autosúčiastok
+STR_CARGO_NAME_VEHICLES               :{G=s}Autá
+STR_CARGO_NAME_VEHICLES.gen           :áut
+STR_CARGO_NAME_WOOL                   :{G=z}Vlna
+STR_CARGO_NAME_WOOL.gen               :vlny
+STR_CARGO_NAME_ZINC                   :{G=m}Zinok
+STR_CARGO_NAME_ZINC.gen               :zinku
+
+# cargo long form ("x units of cargo")
+STR_QUANTITY_ACID                 :{WEIGHT} kyselín
+STR_QUANTITY_ALUMINIUM            :{WEIGHT} hliníka
+STR_QUANTITY_AMMONIA              :{WEIGHT} čpavku
+STR_QUANTITY_AMMONIUM_NITRATE     :{WEIGHT} dusičnanu ammónneho
+STR_QUANTITY_BAUXITE              :{WEIGHT} bauxitu
+STR_QUANTITY_BIOMASS              :{WEIGHT} biomasy
+STR_QUANTITY_BUILDING_MATERIALS   :{WEIGHT} tehál
+STR_QUANTITY_CARBON_BLACK         :{WEIGHT} sadzí
+STR_QUANTITY_CEMENT               :{WEIGHT} cementu
+STR_QUANTITY_CHLORINE             :{WEIGHT} chlóru
+STR_QUANTITY_COKE                 :{WEIGHT} koksu
+STR_QUANTITY_COPPER               :{WEIGHT} medi
+STR_QUANTITY_COPPER_ORE           :{WEIGHT} medenej rudy
+STR_QUANTITY_ETHYLENE             :{WEIGHT} etylénu
+STR_QUANTITY_EXPLOSIVES           :{WEIGHT} výbušnín
+STR_QUANTITY_FERTILIZER           :{WEIGHT} hnojív
+STR_QUANTITY_FISH                 :{WEIGHT} rýb
+STR_QUANTITY_FRUITS               :{WEIGHT} ovocia
+STR_QUANTITY_GLASS                :{WEIGHT} skla
+STR_QUANTITY_GOODS                :{WEIGHT} tovaru
+STR_QUANTITY_HYDROGEN             :{WEIGHT} vodíka
+STR_QUANTITY_LIMESTONE            :{WEIGHT} vápenca
+STR_QUANTITY_LYE                  :{WEIGHT} hydroxidu sodného
+STR_QUANTITY_MACHINE_PARTS        :{WEIGHT} strojových súčiastok
+STR_QUANTITY_METAL_SHEETS         :{WEIGHT} plechov
+STR_QUANTITY_METAL_WIRE           :{WEIGHT} drôtov a káblov
+STR_QUANTITY_MILK                 :{WEIGHT} mlieka
+STR_QUANTITY_N2                   :{WEIGHT} dusíka
+STR_QUANTITY_NAPHTHA              :{WEIGHT} nafty
+STR_QUANTITY_O2                   :{WEIGHT} kyslíka
+STR_QUANTITY_OIL                  :{WEIGHT} ropy
+STR_QUANTITY_PACKAGING            :{WEIGHT} obalov
+STR_QUANTITY_PAINT                :{WEIGHT} farieb
+STR_QUANTITY_PETROL               :{WEIGHT} benzínu
+STR_QUANTITY_PLASTICS             :{WEIGHT} plastov
+STR_QUANTITY_POTASH               :{WEIGHT} potaše
+STR_QUANTITY_PYRITE_ORE           :{WEIGHT} pyritovej rudy
+STR_QUANTITY_QUICKLIME            :{WEIGHT} páleného vápna
+STR_QUANTITY_RECYCLABLES          :{WEIGHT} recyklátu
+STR_QUANTITY_RUBBER               :{WEIGHT} gumy
+STR_QUANTITY_SALT                 :{WEIGHT} soli
+STR_QUANTITY_SAND                 :{WEIGHT} piesku
+STR_QUANTITY_SCRAP_METAL          :{WEIGHT} kovového šrotu
+STR_QUANTITY_SODA                 :{WEIGHT} uhličitanu sodného
+STR_QUANTITY_SULPHUR              :{WEIGHT} síry
+STR_QUANTITY_TEXTILES             :{WEIGHT} textílií
+STR_QUANTITY_TIMBER               :{WEIGHT} reziva
+STR_QUANTITY_TYRE                 :{WEIGHT} pneumatík
+STR_QUANTITY_VEHICLE_BODY         :{WEIGHT} karosérií
+STR_QUANTITY_VEHICLE_ENGINE       :{WEIGHT} motorov
+STR_QUANTITY_VEHICLE_PARTS        :{WEIGHT} autosúčiastok
+STR_QUANTITY_VEHICLES             :{COMMA} {P auto autá áut}
+STR_QUANTITY_WOOL                 :{WEIGHT} vlny
+STR_QUANTITY_ZINC                 :{WEIGHT} zinku
+
+# cargo abbreviation (used e.g. in station overview list to denote waiting cargo)
+STR_CID_ACID                      :{TINYFONT}KSLN
+STR_CID_ALUMINIUM                 :{TINYFONT}HLNK
+STR_CID_AMMONIA                   :{TINYFONT}ČPVK
+STR_CID_AMMONIUM_NITRATE          :{TINYFONT}DUAM
+STR_CID_BAUXITE                   :{TINYFONT}BAUX
+STR_CID_BIOMASS                   :{TINYFONT}BIOM
+STR_CID_BUILDING_MATERIALS        :{TINYFONT}TEHL
+STR_CID_CARBON_BLACK              :{TINYFONT}SADZ
+STR_CID_CEMENT                    :{TINYFONT}CMNT
+STR_CID_CHLORINE                  :{TINYFONT}CHLR
+STR_CID_COKE                      :{TINYFONT}KOKS
+STR_CID_COPPER                    :{TINYFONT}MEĎ
+STR_CID_COPPER_ORE                :{TINYFONT}MDRD
+STR_CID_ETHYLENE                  :{TINYFONT}ETLN
+STR_CID_EXPLOSIVES                :{TINYFONT}VBŠN
+STR_CID_FERTILIZER                :{TINYFONT}HNJV
+STR_CID_FISH                      :{TINYFONT}RYBY
+STR_CID_FOOD                      :{TINYFONT}JEDL
+STR_CID_FRUITS                    :{TINYFONT}OVOC
+STR_CID_GLASS                     :{TINYFONT}SKLO
+STR_CID_HYDROGEN                  :{TINYFONT}VODK
+STR_CID_LIMESTONE                 :{TINYFONT}VPNC
+STR_CID_LYE                       :{TINYFONT}LÚH
+STR_CID_MACHINE_PARTS             :{TINYFONT}STRS
+STR_CID_METAL_SHEETS              :{TINYFONT}PLCH
+STR_CID_METAL_WIRE                :{TINYFONT}DRÔT
+STR_CID_MILK                      :{TINYFONT}MLIE
+STR_CID_N2                        :{TINYFONT}DUSÍ
+STR_CID_NAPHTHA                   :{TINYFONT}NFTA
+STR_CID_O2                        :{TINYFONT}KYSL
+# do not use the cargo label MNSP here, MNSP is used to improve compatibility with vehicle sets designed for FIRS/AXIS,
+# introducing another cargo label would make it more complicated for vehicle set developers
+STR_CID_PACKAGING                 :{TINYFONT}OBAL
+STR_CID_PAINT                     :{TINYFONT}FARB
+STR_CID_PETROL                    :{TINYFONT}BENZ
+STR_CID_PLASTICS                  :{TINYFONT}PLST
+STR_CID_POTASH                    :{TINYFONT}POTŠ
+STR_CID_PYRITE_ORE                :{TINYFONT}PYRI
+STR_CID_QUICKLIME                 :{TINYFONT}VÁPN
+STR_CID_RECYCLABLES               :{TINYFONT}RECY
+STR_CID_RUBBER                    :{TINYFONT}GUMA
+STR_CID_SALT                      :{TINYFONT}SOĽ
+STR_CID_SAND                      :{TINYFONT}PIES
+STR_CID_SCRAP_METAL               :{TINYFONT}ŠROT
+STR_CID_SODA                      :{TINYFONT}SÓDA
+STR_CID_SULPHUR                   :{TINYFONT}SÍRA
+STR_CID_TEXTILES                  :{TINYFONT}TXTL
+STR_CID_TIMBER                    :{TINYFONT}REZI
+STR_CID_TYRE                      :{TINYFONT}PNEU
+STR_CID_VEHICLE_BODY              :{TINYFONT}KARO
+STR_CID_VEHICLE_ENGINE            :{TINYFONT}MOTR
+STR_CID_VEHICLE_PARTS             :{TINYFONT}AUTS
+STR_CID_VEHICLES                  :{TINYFONT}AUTO
+STR_CID_WOOL                      :{TINYFONT}VLNA
+STR_CID_ZINC                      :{TINYFONT}ZINK
+
+# Industries
+STR_IND_ACID_PLANT                    :{G=z}Továreň na výrobu kyselín
+STR_IND_ACID_PLANT.gen                :továrne na výrobu kyselín
+STR_IND_ALUMINIUM_PLANT               :{G=z}Hlinikáreň
+STR_IND_ALUMINIUM_PLANT.gen           :hlinikárne
+STR_IND_AMMONIA_PLANT                 :{G=z}Továreň na čpavok
+STR_IND_AMMONIA_PLANT.gen             :továrne na čpavok
+STR_IND_AMMONIUM_NITRATE_PLANT        :{G=z}Továreň na dusič.amónny
+STR_IND_AMMONIUM_NITRATE_PLANT.gen    :továrne na dusič.amónny
+STR_IND_ANIMAL_FARM                   :{G=z}Zvieracia farma
+STR_IND_ANIMAL_FARM.gen               :zvieracej farmy
+STR_IND_APPLIANCE_FACTORY             :{G=z}Továreň na spotrebiče
+STR_IND_APPLIANCE_FACTORY.gen         :továrne na spotrebiče
+STR_IND_BIOREFINERY                   :{G=z}Biorafinéria
+STR_IND_BIOREFINERY.gen               :biorafinérie
+STR_IND_BREWERY                       :{G=m}Pivovar
+STR_IND_BREWERY.gen                   :pivovaru
+STR_IND_BRICK_WORKS                   :{G=z}Tehelňa
+STR_IND_BRICK_WORKS.gen               :tehelne
+STR_IND_BUILDERS_YARD                 :{G=z}Stavebniny
+STR_IND_BUILDERS_YARD.gen             :stavebnín
+STR_IND_CARBON_BLACK_PLANT            :{G=z}Továreň na sadze
+STR_IND_CARBON_BLACK_PLANT.gen        :továrne na sadze
+STR_IND_CEMENT_PLANT                  :{G=z}Cementáreň
+STR_IND_CEMENT_PLANT.gen              :cementárne
+STR_IND_CHLOR_ALKALI_PLANT            :{G=z}Továreň na chlór a lúh
+STR_IND_CHLOR_ALKALI_PLANT.gen        :továrne na chlór a lúh
+STR_IND_CLEANING_PRODUCTS_FACTORY     :{G=z}Továreň na čistiace prostriedky
+STR_IND_CLEANING_PRODUCTS_FACTORY.gen :továrne na čistiace prostriedky
+STR_IND_CLOTHING_PLANT                :{G=m}Odevný závod
+STR_IND_CLOTHING_PLANT.gen            :odevného závodu
+STR_IND_COAL_LIQUEFACTION_PLANT       :{G=m}Hydrogenačný závod
+STR_IND_COAL_LIQUEFACTION_PLANT.gen   :hydrogenačného závodu
+STR_IND_COKE_OVEN                     :{G=z}Koksovňa
+STR_IND_COKE_OVEN.gen                 :koksovne
+STR_IND_COPPER_SMELTER                :{G=z}Medená huta
+STR_IND_COPPER_SMELTER.gen            :medenej huty
+STR_IND_CRYO_PLANT                    :{G=z}Výrobňa priemyselných plynov
+STR_IND_CRYO_PLANT.gen                :výrobne priemyselných plynov
+STR_IND_DAIRY                         :{G=z}Mliekareň
+STR_IND_DAIRY.gen                     :mliekarne
+STR_IND_DEPARTMENT_STORE              :{G=m}Obchodný dom
+STR_IND_DEPARTMENT_STORE.gen          :obchodného domu
+STR_IND_EXPLOSIVES_FACTORY            :{G=z}Továreň na výbušniny
+STR_IND_EXPLOSIVES_FACTORY.gen        :továrne na výbušniny
+STR_IND_FERTILIZER_PLANT              :{G=z}Továreň na hnojivá
+STR_IND_FERTILIZER_PLANT.gen          :továrne na hnojivá
+STR_IND_FISHING_GROUNDS               :{G=m}Rybolovný revír
+STR_IND_FISHING_GROUNDS.gen           :rybolovného revíru
+STR_IND_FLOUR_MILL                    :{G=m}Mlyn
+STR_IND_FLOUR_MILL.gen                :mlyna
+STR_IND_FOUNDRY_FORGE                 :{G=z}Zlievareň/kováč. dielňa
+STR_IND_FOUNDRY_FORGE.gen             :zlievarne/kováč. dielne
+STR_IND_FRUIT_PLANTATION              :{G=m}Ovocný sad
+STR_IND_FRUIT_PLANTATION.gen          :ovocného sadu
+STR_IND_FURNITURE_FACTORY             :{G=z}Továreň na nábytok
+STR_IND_FURNITURE_FACTORY.gen         :továrne na nábytok
+STR_IND_GENERAL_STORE                 :{G=m}Obchod so zmiešaným tovarom
+STR_IND_GENERAL_STORE.gen             :obchodu so zmiešaným tovarom
+STR_IND_GLASS_WORKS                   :{G=z}Skláreň
+STR_IND_GLASS_WORKS.gen               :sklárne
+STR_IND_HOTEL                         :{G=m}Hotel
+STR_IND_HOTEL.gen                     :hotela
+STR_IND_INTEGRATED_STEEL_MILL         :{G=z}Oceliareň
+STR_IND_INTEGRATED_STEEL_MILL.gen     :oceliarne
+STR_IND_LIME_KILN                     :{G=z}Vápenka
+STR_IND_LIME_KILN.gen                 :vápenky
+STR_IND_LIMESTONE_MINE                :{G=m}Vápencový lom
+STR_IND_LIMESTONE_MINE.gen            :vápencového lomu
+STR_IND_ORE_SMELTER                   :{G=z}Huta na rudy
+STR_IND_ORE_SMELTER.gen               :huty na rudy
+STR_IND_PACKAGING_PLANT               :{G=z}Výrobňa obalov
+STR_IND_PACKAGING_PLANT.gen           :výrobne obalov
+STR_IND_PAINT_FACTORY                 :{G=z}Továreň na farby
+STR_IND_PAINT_FACTORY.gen             :továrne na farby
+STR_IND_PETROL_STATION                :{G=z}Čerpacia stanica
+STR_IND_PETROL_STATION.gen            :čerpacej stanice
+STR_IND_PHARMACEUTICAL_PLANT          :{G=m}Farmaceutický závod
+STR_IND_PHARMACEUTICAL_PLANT.gen      :farmaceutického závodu
+STR_IND_PLASTICS_PLANT                :{G=m}Závod na výrobu plastov
+STR_IND_PLASTICS_PLANT.gen            :závodu na výrobu plastov
+STR_IND_PORT                          :{G=m}Prístav
+STR_IND_PORT.gen                      :prístavu
+STR_IND_POTASH_MINE                   :{G=z}Baňa na draselné soli
+STR_IND_POTASH_MINE.gen               :bane na draselné soli
+STR_IND_PYRITE_MINE                   :{G=z}Pyritová baňa
+STR_IND_PYRITE_MINE.gen               :pyritovej bane
+STR_IND_RECYCLING_DEPOT               :{G=m}Zberný dvor
+STR_IND_RECYCLING_DEPOT.gen           :zberného dvora
+STR_IND_SALT_MINE                     :{G=z}Soľná baňa
+STR_IND_SALT_MINE.gen                 :soľnej bane
+STR_IND_SANDPIT                       :{G=z}Pieskovňa
+STR_IND_SANDPIT.gen                   :pieskovne
+STR_IND_SCRAP_YARD                    :{G=z}Skládka kovového šrotu
+STR_IND_SCRAP_YARD.gen                :skládky kovového šrotu
+STR_IND_SHEET_MILL                    :{G=z}Valcovňa plechov
+STR_IND_SHEET_MILL.gen                :valcovne plechov
+STR_IND_SODA_PLANT                    :{G=m}Závod na výrobu sódy
+STR_IND_SODA_PLANT.gen                :závodu na výrobu sódy
+STR_IND_STEAMCRACKER                  :{G=m}Parný krakovací reaktor
+STR_IND_STEAMCRACKER.gen              :parného krakovacieho reaktora
+STR_IND_STEAMREFORMER                 :{G=m}Parný reformovací reaktor
+STR_IND_STEAMREFORMER.gen             :parného reformovacieho reaktora
+STR_IND_STOCKYARD                     :{G=m}Mäsokombinát
+STR_IND_STOCKYARD.gen                 :mäsokombinátu
+STR_IND_SYNTHETIC_RUBBER_PLANT        :{G=z}Gumáreň
+STR_IND_SYNTHETIC_RUBBER_PLANT.gen    :gumárne
+STR_IND_TEXTILE_MILL                  :{G=z}Textilná továreň
+STR_IND_TEXTILE_MILL.gen              :textilnej továrne
+STR_IND_TYRE_PLANT                    :{G=z}Továreň na pneumatiky
+STR_IND_TYRE_PLANT.gen                :továrne na pneumatiky
+STR_IND_VEHICLE_BODY_PLANT            :{G=z}Karosáreň
+STR_IND_VEHICLE_BODY_PLANT.gen        :karosárne
+STR_IND_VEHICLE_DISTRIBUTOR           :{G=z}Predajňa automobilov
+STR_IND_VEHICLE_DISTRIBUTOR.gen       :predajne automobilov
+STR_IND_VEHICLE_ENGINE_PLANT          :{G=z}Motoráreň
+STR_IND_VEHICLE_ENGINE_PLANT.gen      :motorárne
+STR_IND_VEHICLE_FACTORY               :{G=z}Automobilka
+STR_IND_VEHICLE_FACTORY.gen           :automobilky
+STR_IND_VEHICLE_PARTS_PLANT           :{G=z}Továreň na autodiely
+STR_IND_VEHICLE_PARTS_PLANT.gen       :továrne na autodiely
+STR_IND_WIRE_MILL                     :{G=z}Drôtovňa
+STR_IND_WIRE_MILL.gen                 :drôtovne
+
+# station names related to industries
+STR_STATION_ACID_PLANT               :{G=z}- Továreň na kyselinu
+STR_STATION_ALUMINIUM_PLANT          :{G=z}- Hlinikáreň
+STR_STATION_AMMONIA_PLANT            :{G=z}- Továreň na čpavok
+STR_STATION_AMMONIUM_NITRATE_PLANT   :{G=z}- Továreň na dusičnan amónny
+STR_STATION_ANIMAL_FARM              :{G=z}- Zvieracia farma
+STR_STATION_APPLIANCE_FACTORY        :{G=z}- Továreň na spotrebiče
+STR_STATION_BIOREFINERY              :{G=z}- Biorafinéria
+STR_STATION_BREWERY                  :{G=m}- Pivovar
+STR_STATION_BRICK_WORKS              :{G=z}- Tehelňa
+STR_STATION_BUILDERS_YARD            :{G=z}- Stavebniny
+STR_STATION_CARBON_BLACK_PLANT       :{G=z}- Továreň na sadze
+STR_STATION_CEMENT_PLANT             :{G=z}- Cementáreň
+STR_STATION_CHLOR_ALKALI_PLANT       :{G=m}- Továreň na chlór a lúh
+STR_STATION_CLEANING_PRODUCTS_FACTORY:{G=z}- Továreň na čističe
+STR_STATION_CLOTHING_PLANT           :{G=z}- Ozeta
+STR_STATION_COAL_LIQUEFACTION_PLANT  :{G=m}- Hydrogenačný závod
+STR_STATION_COAL_MINE                :{G=z}- Uhoľná baňa
+STR_STATION_COKE_OVEN                :{G=z}- Koksovňa
+STR_STATION_COPPER_ORE_MINE          :{G=z}- Medená baňa
+STR_STATION_COPPER_SMELTER           :{G=z}- Medená huta
+STR_STATION_CRYO_PLANT               :{G=z}- Výrobňa plynov
+STR_STATION_DAIRY                    :{G=z}- Mliekareň
+STR_STATION_DEPARTMENT_STORE         :{G=m}- Obchodný dom
+STR_STATION_EXPLOSIVES_FACTORY       :{G=z}- Dynamitka
+STR_STATION_FARM                     :{G=z}- Farma
+STR_STATION_FERTILIZER_PLANT         :{G=s}- Duslo
+STR_STATION_FISHING_GROUNDS          :{G=m}- Rybník
+STR_STATION_FLOUR_MILL               :{G=m}- Mlyn
+STR_STATION_FOOD_PROCESSOR           :{G=m}- Potravinársky závod
+STR_STATION_FOREST                   :{G=m}- Les
+STR_STATION_FOUNDRY_FORGE            :{G=z}- Zlievareň
+STR_STATION_FRUIT_PLANTATION         :{G=m}- Ovocný sad
+STR_STATION_FURNITURE_FACTORY        :{G=z}- Nábytkáreň
+STR_STATION_GENERAL_STORE            :{G=m}- Obchod
+STR_STATION_GLASS_WORKS              :{G=z}- Skláreň
+STR_STATION_HOTEL                    :{G=m}- Hotel
+STR_STATION_INTEGRATED_STEEL_MILL    :{G=z}- Oceliareň
+STR_STATION_IRON_ORE_MINE            :{G=z}- Železorudná baňa
+STR_STATION_LIME_KILN                :{G=z}- Vápenka
+STR_STATION_LIMESTONE_MINE           :{G=m}- Vápencový lom
+STR_STATION_OIL_REFINERY             :{G=z}- Rafinéria
+STR_STATION_OIL_RIG                  :{G=z}- Vrtná plošina
+STR_STATION_OIL_WELL                 :{G=m}- Ropný vrt
+STR_STATION_ORE_SMELTER              :{G=z}- Huta
+STR_STATION_PACKAGING_PLANT          :{G=z}- Výrobňa obalov
+STR_STATION_PAINT_FACTORY            :{G=z}- Továreň na farby
+STR_STATION_PAPER_MILL               :{G=z}- Papiereň
+STR_STATION_PETROL_STATION           :{G=z}- Čerpačka
+STR_STATION_PHARMACEUTICAL_PLANT     :{G=m}- Farmaceutický závod
+STR_STATION_PLASTICS_PLANT           :{G=z}- Plastika
+STR_STATION_PORT                     :{G=m}- Prístav
+STR_STATION_POTASH_MINE              :{G=z}- Baňa na dras. soli
+STR_STATION_POWER_PLANT              :{G=z}- Elektráreň
+STR_STATION_PYRITE_MINE              :{G=z}- Pyritová baňa
+STR_STATION_PRINTING_WORKS           :{G=z}- Tlačiareň
+STR_STATION_RECYCLING_DEPOT          :{G=m}- Zberný dvor
+STR_STATION_SALT_MINE                :{G=z}- Soľná baňa
+STR_STATION_SANDPIT                  :{G=z}- Pieskovňa
+STR_STATION_SAWMILL                  :{G=z}- Píla
+STR_STATION_SCRAP_YARD               :{G=s}- Šrotovisko
+STR_STATION_SHEET_MILL               :{G=z}- Valcovňa plechov
+STR_STATION_SODA_PLANT               :{G=z}- Výrobňa sódy
+STR_STATION_STEAMCRACKER             :{G=m}- Krakovací reaktor
+STR_STATION_STEAMREFORMER            :{G=m}- Reformovací reaktor
+STR_STATION_STOCKYARD                :{G=m}- Mäsokombinát
+STR_STATION_SYNTHETIC_RUBBER_PLANT   :{G=z}- Gumáreň
+STR_STATION_TEXTILE_MILL             :{G=z}- Textilná továreň
+STR_STATION_TYRE_PLANT               :{G=z}- Továreň na pneumatiky
+STR_STATION_VEHICLE_BODY_PLANT       :{G=z}- Karosáreň
+STR_STATION_VEHICLE_DISTRIBUTOR      :{G=m}- Autosalón
+STR_STATION_VEHICLE_ENGINE_PLANT     :{G=z}- Motoráreň
+STR_STATION_VEHICLE_FACTORY          :{G=z}- Automobilka
+STR_STATION_VEHICLE_PARTS_PLANT      :{G=z}- Továreň na autodiely
+STR_STATION_WIRE_MILL                :{G=z}- Drôtovňa
+
+# Industry window texts
+STR_INDUSTRY_PREREQ_INCREASE_PRODUCTION :{BLACK}Na zvýšenie objemu výroby preprav viac než {COMMA}% z vyprodukovaného nákladu.
+STR_INDUSTRY_PREREQ_KEEP_PRODUCTION     :{BLACK}Závod dosiahol maximálny objem výroby. Na jeho udržanie preprav viac než {COMMA}% z vyprodukovaného objemu.
+# Organic industries (forests, farms, ...) display the info on production level requirements.
+STR_CONCAT:{STRING}{STRING}
+STR_CONCAT_WITH_LINEBREAK:{STRING}{}{STRING}
+STR_ORGANIC_INDUSTRY_TEXT_OPTIONAL_CARGO_WITH_LINEBREAK :{STRING}{}{STRING}{STRING}{STRING}
+STR_ORGANIC_INDUSTRY_TEXT_OPTIONAL_CARGO_WITHOUT_LINEBREAK :{STRING}{STRING}{STRING}{STRING}
+# Extractive Industries (mines) display both the info on production level requirements, as well as the remaining resources.
+STR_EXTRACTIVE_INDUSTRY_HAS_OPTIONAL_CARGO :{BLACK}Suroviny zobrazené bielou farbou zvyšujú maximálny objem výroby.
+STR_EXTRACTIVE_INDUSTRY_TEXT_OPTIONAL_CARGO_WITH_LINEBREAK :{STRING}{}{STRING}{STRING}{STRING}{}{BLACK}Zostáva cca {YELLOW}{COMMA} kiloton{P a y ""} {BLACK} (približne {YELLOW}{COMMA} {P rok roky rokov}{BLACK} pri súčasnom tempe výroby)
+STR_EXTRACTIVE_INDUSTRY_TEXT_OPTIONAL_CARGO_WITHOUT_LINEBREAK :{STRING}{STRING}{STRING}{STRING}{}{BLACK}Zostáva cca  {YELLOW}{COMMA} kiloton{P a y ""} {BLACK} (približne {YELLOW}{COMMA} {P rok roky rokov}{BLACK} pri súčasnom tempe výroby)
+STR_EXTRACTIVE_INDUSTRY_TEXT:{STRING}{STRING}{}{BLACK}Zostáva cca {YELLOW}{COMMA} kiloton{P a y ""} {BLACK} (približne {YELLOW}{COMMA} {P rok roky rokov}{BLACK} pri súčasnom tempe výroby)
+# Secondary industries with optional input requirements
+STR_INDUSTRY_SCALES_WITH_CITY_SIZE :{BLACK}Objem výroby závisí od veľkosti mesta.
+STR_INDUSTRY_NEEDS_ALL_INPUT :{BLACK}Závod na výrobu potrebuje všetky uvedené suroviny.
+STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO :{BLACK}Závod na výrobu vyžaduje všetky suroviny zobrazené čiernou farbou. Suroviny zobrazené bielou farbou zvyšujú maximálnu produkciu.
+STR_INDUSTRY_HAS_OPTIONAL_INPUT_CARGO_ANY :{BLACK}Produktivita: {STRING}{}{}{BLACK}Závod vyžaduje na výrobu aspoň jednu zo surovín zobrazených čiernou farbou. Objem výroby rastie s počtom dostupných rozličných surovín. Suroviny zobrazené bielou farbou zvyšujú maximálnu výrobnú kapacitu.
+STR_INDUSTRY_NEEDS_ANY_INPUT :{BLACK}Produktivita: {STRING}{}{}{BLACK}Závod začína výrobu hneď, čo je k dispozícii aspoň jedna surovina. Objem výroby rastie s počtom rôznych dostupných surovín.
+STR_PRODUCTION_LIMITED_DUE_TO_MISSING_OPTIONAL_CARGO :{}{YELLOW}Výroba je obmedzená chýbajúcimi voliteľnými surovinami!
+
+# Productivity
+STR_PRODUCTIVITY_LOW :{RED}nízka
+STR_PRODUCTIVITY_MEDIUM :{YELLOW}stredná
+STR_PRODUCTIVITY_HIGH :{GREEN}vysoká
+
+# Text that has to do with energy production, power plant displays how much power is produced and demanded,
+# Industries show much power they need for their current production and if their demand is met
+STR_POWER_PLANT_TEXT:{BLACK}Vyrobená elektrina {YELLOW}{COMMA}{BLACK} z požadovaných {YELLOW}{COMMA}{BLACK}, spotreba surovín: {YELLOW}{WEIGHT}{BLACK}
+STR_INDUSTRY_ELECTRICITY_TEXT :{BLACK}Priemysel vyžaduje {YELLOW}{COMMA}{BLACK} {P jednotku jednotky jednotiek} elektriny z miestnej elektrárne. {STRING}
+
+STR_INDUSTRY_NO_POWER :{RED}Nedostatok elektriny, výroba bola zastavená!
+STR_INDUSTRY_NOT_ENOUGH_POWER :{YELLOW}Nedostatok elektriny, výroba bola znížená!
+STR_INDUSTRY_ENOUGH_POWER :{GREEN}K dispozícii je dostatok energie.
+# Custom texts for industries
+STR_ACID_PLANT_HCL_SULP :{BLACK}Produktivita: {STRING}{}{}{BLACK}Závod vyžaduje na výrobu buď síru, alebo vodík s chlórom. Objem výroby rastie, keď sú k dispozícii všetky tri suroviny.
+STR_ACID_PLANT_HCL_SULP_NH3 :{BLACK}Produktivita: {STRING}{}{}{BLACK}Závod na výrobu čohokoľvek vyžaduje síru + kyslík, vodík + chlór alebo čpavok + kyslík. Objem výroby sa zvýši, ak bude dostupných všetkých päť surovín.
+STR_ACID_PLANT_SULP_NH3 :{BLACK}Produktivita: {STRING}{}{}{BLACK}Závod na výrobu čohokoľvek vyžaduje síru + kyslík alebo amoniak + kyslík. Objem výroby sa zvýši, ak sú k dispozícii všetky tri suroviny.
+STR_FOUNDRY_FORGE_ALUM :{BLACK}Závod na výrobu čohokoľvek vyžaduje koks + oceľ alebo koks + hliník. Objem výroby sa zvýši, ak sú k dispozícii všetky tri suroviny.
+STR_BRICK_WORKS:{BLACK}Toto odvetvie zanikne náhodne po roku 1820{}Na výrobu si vyžaduje všetky uvedené suroviny.
+
+
+STR_INDUSTRY_ELECTRICITY_OPTIONAL_CARGO_TEXT :{BLACK}Závod môže vyrobiť {YELLOW}{COMMA}{BLACK} {P jednotku jednotky jednotiek} ({YELLOW}{COMMA}{BLACK}% maximálneho objemu výroby){}Na dosiahnutie maximálneho objemu výroby treba {YELLOW}{COMMA} {P jednotku jednotky jednotiek}{BLACK} elektriny.{}{STRING}{}{BLACK}{STRING}
+
+# Funding window text
+STR_INDUSTRY_NOT_AVAILABLE_BEFORE :{}{BLACK}Odvetvie nie je dostupné pred rokom {STRING}.
+STR_INDUSTRY_NOT_AVAILABLE_AFTER  :{}{BLACK}Odvetvie nie je dostupné po roku {STRING}.
+STR_INDUSTRY_AVAILABLE_TIMEFRAME  :{}{BLACK}Odvetvie je dostupné len od r. {STRING} po {STRING}.
+
+# Cargo display for stockpile
+STR_CARGO_SUBTYPE_DISPLAY_CARGO_AVAILABLE          :{BLACK} ({CARGO_SHORT} na sklade)
+STR_CARGO_SUBTYPE_DISPLAY_OPTIONAL_CARGO_AVAILABLE :{WHITE} ({CARGO_SHORT} na sklade)
+
+# News messages
+STR_NEWS_INDUSTRY_PRODUCTION_NEW_RESOURCES_FOUND :Bolo objavené nové ložisko!
+
+# Error texts
+STR_ERR_OPENTTD_VERSION:{ORANGE}E00:{TITLE} vyžaduje OpenTTD verzie 14.0 alebo novšej
+STR_ERR_INCOMPATIBLE_SET:{ORANGE}E01: {YELLOW}Nekompatibilná sada: {ORANGE}{STRING}
+STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE :musí ležať pod hranicou snehu.
+STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE :nemôže ležať na strmých svahoch.
+STR_ERR_EXTENSION_GLASS_REQUIRES_EXTENSION_BUILDING_INDUSTRIES:Rozšírenie „Sklársky priemysel“ vyžaduje, aby bolo aktivované rozšírenie „Stavebný priemysel“.
+STR_ERR_EXTENSION_PAPER_REQUIRES_EXTENSION_BASIC_INORGANIC_CHEMISTRY:Rozšírenie „Papierenský priemysel“ vyžaduje, aby bolo aktivované rozšírenie „Základná anorganická chémia“.
+STR_ERR_EXTENSION_ORGANIC_CHEMISTRY_REQUIRES_EXTENSION_BASIC_INORGANIC_CHEMISTRY:Rozšírenie „Organická chémia“ vyžaduje, aby bolo aktivované rozšírenie „Základná anorganická chémia“.
+STR_ERR_EXTENSION_SULPHUR_COKE_REQUIRES_OTHER_EXTENSIONS:Rozšírenie „Koks a síra“ vyžaduje, aby bolo aktivované aspoň jedno rozšírenie z: „Základná anorganická chémia“ alebo „Priemysel náterových hmôt“.
+STR_ERR_EXTENSION_AMMONIA_REQUIRES_INORGANIC_CHEMISTRY_BUILDING_MATERIALS:Rozšírenie „Syntéza amoniaku“ vyžaduje, aby bolo aktivované rozšírenia „Základná anorganická chémia“ a „Stavebný priemysel“.
+STR_ERR_EXTENSION_FRUITS_REQUIRES_ORGANIC_CHEMISTRY:Rozšírenie „Ovocie a bioenergia“ vyžaduje, aby bolo aktivované rozšírenie „Organická chémia“.
+STR_ERR_EXTENSION_METALLURGY_REQUIRES_COKE_SULPHUR:Rozšírenie „Metalurgický priemysel“ vyžaduje, aby bolo aktivované rozšírenie „Koks a síra“.
+STR_ERR_EXTENSION_VEHICLE_REQUIRES_COKE_SULPHUR:Rozšírenie „Automobilový priemysel“ vyžaduje, aby bolo aktivované rozšírenie „Koks a síra“.
+STR_ERR_EXTENSION_PRODUCTION_BOOST_REQUIRES_AMMONIA_COKE_SULPHUR:Rozšírenie „Zvyšovanie produkcie“ vyžaduje, aby boli aktivované rozšírenia „Syntéza amoniaku“ a „Koks a síra“.
+
